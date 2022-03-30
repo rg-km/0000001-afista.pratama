@@ -9,6 +9,10 @@ type ErrorDataNotFound struct {
 	errCode int32
 }
 
+// type error interface {
+// 	Error() string
+// }
+
 // Karena error merupakan interface, kita harus mengimplementasikan method signature dari interface error yaitu Error() string.
 // Kode dibawah ini merupakan implementasi dari method Error().
 // Kita juga dapat menyesuaikan pesan error yang ingin di return.
