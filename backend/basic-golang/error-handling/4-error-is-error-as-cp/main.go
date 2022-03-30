@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 )
 
 // Dari contoh yang telah diberikan, coba kamu gunakan errors.Is untuk mengecek jenis error tertentu.
