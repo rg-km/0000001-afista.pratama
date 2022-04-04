@@ -13,7 +13,6 @@ import (
 )
 
 var _ = Describe("GET JSON Response", func() {
-
 	Describe("GET Table By total", func() {
 		It("get json response from server by total table invalid request", func() {
 			req, err := http.NewRequest(http.MethodGet, "http://localhost:8080/table?total=", nil)

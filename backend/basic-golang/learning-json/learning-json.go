@@ -26,9 +26,8 @@ type DummyJSON struct {
 }
 
 func main() {
-	// json Marshal , json.Unmarshal
-	// dari struct / object golang ke json
-	// nangkap value dari json ke struct / object golang
+	// json Marshal : dari struct / object golang ke json
+	// json.Unmarshal: nangkap value dari json ke struct / object golang
 
 	// var dummyData DummyJSON
 
@@ -59,4 +58,12 @@ func main() {
 
 	// casting ke string
 	fmt.Println(string(respByte))
+
+	// package / module lain untuk mengirim ke luar output
+	// I/O
+
+	// http biasa
+	// kirim ke http, tcp
+	// simpan ke service lain
+	// kirim ke bahasa lain
 }
