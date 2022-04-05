@@ -11,7 +11,11 @@ import (
 )
 
 func main() {
-	db := &db.CsvDB{}
+	// factory pattern
+
+	// salah satu pilar Object Oriented programming => encapsulation
+	// db := &db.CsvDB{}
+	db := db.NewCsvDB()
 	usersRepo := repository.NewUserRepository(db)
 	productsRepo := repository.NewProductRepository(db)
 	cartItemRepo := repository.NewCartItemRepository(db)

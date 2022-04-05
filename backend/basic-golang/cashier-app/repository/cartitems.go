@@ -7,7 +7,7 @@ import (
 )
 
 type CartItemRepository struct {
-	db db.DB
+	db db.DB // konektornya dari si db
 }
 
 func NewCartItemRepository(db db.DB) CartItemRepository {
