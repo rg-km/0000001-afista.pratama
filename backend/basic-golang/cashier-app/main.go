@@ -10,6 +10,28 @@ import (
 	"github.com/ruang-guru/playground/backend/basic-golang/cashier-app/ui"
 )
 
+// tambahan materi sedikit
+// penjelasan API , http memberikan output json
+
+// API : application program interface
+
+// 1 folder , mono repo, single repo (html, css, js, php) -> complexity, data storage, scalability, SECURITY
+// server & client
+// backend & frontend
+// (business logic, database) <-> (tampilan, responsive, efek2) (interface / GUI)
+
+// API ()
+// BE : golang - FE: web - javascript
+// JSON (kirim2 data antar bahasa pemrograman)
+
+// routingan / path
+
+// authorization ?
+
+// data => db => repository -> terminal
+//							-> ui
+//							-> api
+
 func main() {
 	// factory pattern
 

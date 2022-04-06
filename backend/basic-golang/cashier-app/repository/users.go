@@ -30,19 +30,21 @@ func (u *UserRepository) LoadOrCreate() ([]User, error) {
 
 	var users []User
 
-	for _, dat := range data {
-		user := User{
-			Username: dat[0],
-			Password: dat[1],
-		}
+	for i, dat := range data {
+		if i != 0 {
+			user := User{
+				Username: dat[0],
+				Password: dat[1],
+			}
 
-		if dat[2] == "true" {
-			user.Loggedin = true
-		} else {
-			user.Loggedin = false
-		}
+			if dat[2] == "true" {
+				user.Loggedin = true
+			} else {
+				user.Loggedin = false
+			}
 
-		users = append(users, user)
+			users = append(users, user)
+		}
 	}
 
 	return users, nil
@@ -59,6 +61,10 @@ func (u UserRepository) Login(username string, password string) (*string, error)
 	// dan password di terminal == password di users.csv
 	// berarti dapat akses login
 
+	if err := u.LogoutAll(); err != nil {
+		return nil, err
+	}
+
 	users, err := u.SelectAll()
 	if err != nil {
 		return nil, err
@@ -71,7 +77,7 @@ func (u UserRepository) Login(username string, password string) (*string, error)
 		}
 	}
 
-	return nil, errors.New("username & password invalid")
+	return nil, errors.New("Login Failed")
 }
 
 func (u *UserRepository) FindLoggedinUser() (*string, error) {
@@ -89,11 +95,26 @@ func (u *UserRepository) FindLoggedinUser() (*string, error) {
 		}
 	}
 
-	return nil, errors.New("user not login")
+	return nil, errors.New("no user is logged in")
 }
 
 func (u *UserRepository) Logout(username string) error {
-	return nil // TODO: replace this
+	//return nil
+
+	// kita cari dulu user yang login, kemudian kita ubah loggedin menjadi false
+	userLogin, err := u.FindLoggedinUser()
+	if err != nil {
+		return err
+	}
+
+	// if userLogin == &username {
+	// 	u.changeStatus(username, false)
+	// 	return nil
+	// }
+
+	// return errors.New("user not logged in")
+
+	return u.changeStatus(*userLogin, false)
 }
 
 func (u *UserRepository) Save(users []User) error {
@@ -106,7 +127,7 @@ func (u *UserRepository) Save(users []User) error {
 			user.Username, user.Password,
 		}
 
-		if user.Loggedin == true {
+		if user.Loggedin {
 			newRow = append(newRow, "true")
 		} else {
 			newRow = append(newRow, "false")
@@ -124,15 +145,41 @@ func (u *UserRepository) changeStatus(username string, status bool) error {
 		return err
 	}
 
+	// error disini
 	for i := 0; i < len(users); i++ {
 		if users[i].Username == username {
-			users[i].Loggedin = true
+			users[i].Loggedin = status
+			return u.Save(users)
 		}
 	}
 
-	return u.Save(users)
+	return errors.New("user not found")
 }
 
 func (u *UserRepository) LogoutAll() error {
-	return nil // TODO: replace this
+	//return nil // TODO: replace this
+
+	// dapatkan semua user, dan ubah semuanya menjadi false
+
+	users, err := u.SelectAll()
+	if err != nil {
+		return err
+	}
+
+	var updateUsers []User
+
+	for i := 0; i < len(users); i++ {
+		if users[i].Loggedin {
+			users[i].Loggedin = false
+		}
+
+		updateUsers = append(updateUsers, users[i])
+	}
+
+	err = u.Save(users)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
