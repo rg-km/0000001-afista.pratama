@@ -1,7 +1,6 @@
 package api
 
 import (
-	"encoding/json"
 	"net/http"
 )
 
@@ -20,5 +19,5 @@ type ProductListSuccessResponse struct {
 }
 
 func (api *API) productList(w http.ResponseWriter, req *http.Request) {
-	encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
+	// encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
 }

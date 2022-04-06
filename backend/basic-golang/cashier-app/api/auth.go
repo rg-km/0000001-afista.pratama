@@ -18,5 +18,5 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) logout(w http.ResponseWriter, req *http.Request) {
-	encoder.Encode(AuthErrorResponse{Error: ""}) // TODO: replace this
+	// encoder.Encode(AuthErrorResponse{Error: ""}) // TODO: replace this
 }

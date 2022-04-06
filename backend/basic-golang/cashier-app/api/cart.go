@@ -56,5 +56,5 @@ func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
-	encoder.Encode(CartListSuccessResponse{CartItems: []repository.CartItem{}}) // TODO: replace this
+	// encoder.Encode(CartListSuccessResponse{CartItems: []repository.CartItem{}}) // TODO: replace this
 }
