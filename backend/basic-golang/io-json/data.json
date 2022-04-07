@@ -1,0 +1,37 @@
+[
+	{
+	"nama": "si A",
+	"nilai": 100,
+	"kelas": "BE01"
+	},
+	{
+	"nama": "si B",
+	"nilai": 90,
+	"kelas": "BE02"
+	},
+	{
+	"nama": "si C",
+	"nilai": 95,
+	"kelas": "BE01"
+	},
+	{
+	"nama": "si D",
+	"nilai": 100,
+	"kelas": "BE02"
+	},
+	{
+	"nama": "si D",
+	"nilai": 100,
+	"kelas": "BE02"
+	},
+	{
+	"nama": "si D",
+	"nilai": 100,
+	"kelas": "BE02"
+	},
+	{
+	"nama": "si D",
+	"nilai": 100,
+	"kelas": "BE02"
+	}
+	]

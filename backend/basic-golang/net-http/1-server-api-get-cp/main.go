@@ -1,10 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
 )
 
 // Dari contoh sebelumnya tambahkan filter untuk

@@ -33,6 +33,7 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) logout(w http.ResponseWriter, req *http.Request) {
+<<<<<<< HEAD
 	username := req.URL.Query().Get("username")
 	err := api.usersRepo.Logout(username)
 	if err != nil {
@@ -43,4 +44,7 @@ func (api *API) logout(w http.ResponseWriter, req *http.Request) {
 	}
 
 	encoder.Encode(AuthErrorResponse{Error: ""}) // TODO: replace this
+=======
+	// encoder.Encode(AuthErrorResponse{Error: ""}) // TODO: replace this
+>>>>>>> 709389bab4a4c744b6239109076774a155e4eb5a
 }

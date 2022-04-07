@@ -1,0 +1,11 @@
+{
+    "items" : ["item 1", "item 2", "item 3"],
+    "obj" : {
+        "nama" : "afis",
+        "age" : 23,
+        "address" : "lumajang / jember",
+        "tinggi" : 172.32,
+        "jomblo" : true,
+        "mobil" : null
+    }
+}

@@ -12,17 +12,20 @@ import (
 // Lalu bagaimana untuk melakukan operational `if else` condition? kita bisa lakukan seperti berikut:
 
 func main() {
-	textTemplate := `{{if (gt .Age 16) }} 
-Halo {{ .FirstName }}, Selamat usia kamu sudah memenuhi syarat untuk membuat SIM!
-{{ else }} 
-Halo {{ .FirstName }}, Mohon maaf usia kamu masih belum memenuhi syarat.
-{{ end }}`
+
+	// (gt .Age 16) , Age >= 16
+	textTemplate := `
+		{{if (ge .Age 16) }} 
+			Halo {{ .FirstName }}, Selamat usia kamu sudah memenuhi syarat untuk membuat SIM!
+		{{ else }} 
+			Halo {{ .FirstName }}, Mohon maaf usia kamu masih belum memenuhi syarat.
+		{{ end }}`
 
 	type User struct {
 		FirstName string
 		Age       int
 	}
-	u := User{"Rogu", 17} // set value dari struct user dan disimpan ke variable u
+	u := User{"Rogu", 16} // set value dari struct user dan disimpan ke variable u
 	tmpl, err := template.New("test").Parse(textTemplate)
 	if err != nil {
 		panic(err)

@@ -4,3 +4,5 @@ baris 3
 baris 4
 baris 5
 baris 6
+
+baris 1\nbaris 2\n baris 3\n .....
