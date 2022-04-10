@@ -1,8 +1,11 @@
 package api
 
 import (
+<<<<<<< HEAD
 	"encoding/json"
 	"fmt"
+=======
+>>>>>>> 709389bab4a4c744b6239109076774a155e4eb5a
 	"net/http"
 )
 
@@ -21,6 +24,7 @@ type ProductListSuccessResponse struct {
 }
 
 func (api *API) productList(w http.ResponseWriter, req *http.Request) {
+<<<<<<< HEAD
 	encoder := json.NewEncoder(w)
 
 	response := ProductListSuccessResponse{}
@@ -41,4 +45,7 @@ func (api *API) productList(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(products)
 
 	encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
+=======
+	// encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
+>>>>>>> 709389bab4a4c744b6239109076774a155e4eb5a
 }

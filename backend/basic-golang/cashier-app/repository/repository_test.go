@@ -250,5 +250,4 @@ var _ = Describe("Cashier Apps", func() {
 			})
 		})
 	})
-
 })

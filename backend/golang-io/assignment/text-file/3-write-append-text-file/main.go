@@ -23,5 +23,6 @@ func main() {
 	if err != nil {
 		log.Printf("failed reading file: %s", err)
 	}
+
 	log.Printf("%s", data)
 }
