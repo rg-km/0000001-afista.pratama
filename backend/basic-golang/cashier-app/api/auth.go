@@ -33,6 +33,7 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) logout(w http.ResponseWriter, req *http.Request) {
+
 	username := req.URL.Query().Get("username")
 	err := api.usersRepo.Logout(username)
 	if err != nil {
