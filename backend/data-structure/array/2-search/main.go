@@ -42,11 +42,15 @@ func main() {
 
 func LinearSearch(arr []int, search int) string {
 	searchResult := fmt.Sprintf("%d not found!", search)
+
+	// kalau udah ketemu, looping kita stop, return
+	// check dari tiap array
 	for i := 0; i < len(arr); i++ {
 		if search == arr[i] {
 			searchResult = fmt.Sprintf("%d found at position %d", search, i+1)
 			return searchResult
 		}
 	}
+
 	return searchResult
 }
