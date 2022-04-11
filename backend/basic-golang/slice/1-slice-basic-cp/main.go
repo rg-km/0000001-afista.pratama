@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // Disini teman teman akan mencoba untuk
 // melakukan penambahan data pada slice.
 // Buatlah variable slice dengan tipe data string.
@@ -11,4 +9,14 @@ import "fmt"
 // Outputkan jawabannya ya pastikan cap dan len nya adalah 2
 func main() {
 	// TODO: answer here
+}
+
+// AddToSlice is function to add string parameter to slice data
+func AddToSlice(fn string, ln string) []string {
+	var sliceData []string
+
+	sliceData = append(sliceData, fn)
+	sliceData = append(sliceData, ln)
+
+	return sliceData
 }

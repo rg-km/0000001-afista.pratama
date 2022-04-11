@@ -10,7 +10,6 @@ import "fmt"
 
 func GetMenu() []map[string]interface{} {
 	var menu []map[string]interface{}
-
 	// TODO: answer here
 
 	return menu

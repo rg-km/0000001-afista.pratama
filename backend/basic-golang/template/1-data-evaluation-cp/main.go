@@ -19,6 +19,9 @@ type Account struct {
 	Balance int
 }
 
+// TDD, test driven development
+// BDD, behavior driven development
+
 func ExecuteToByteBuffer(account Account) ([]byte, error) {
 	var textTemplate string
 	// TODO: answer here
