@@ -100,7 +100,7 @@ func (u *CartItemRepository) ResetCartItems() error {
 		{"category", "product_name", "price", "quantity"},
 	}
 
-	// error disini producs => cart_items
+	// error disini products => cart_items
 	err := u.db.Save("cart_items", resetData)
 	if err != nil {
 		return err

@@ -223,7 +223,6 @@ kalau tidak kosong, tampilkan list carts dari dashboard
         }
     ]
 }
-
 ```
 
 For simplicity, we only use HTTP GET here.
