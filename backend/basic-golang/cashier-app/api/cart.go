@@ -66,9 +66,6 @@ func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
-<<<<<<< HEAD
-	// encoder.Encode(CartListSuccessResponse{CartItems: []repository.CartItem{}}) // TODO: replace this
-=======
 	cartItems, err := api.cartItemRepo.SelectAll()
 	encoder := json.NewEncoder(w)
 	defer func() {
@@ -81,5 +78,4 @@ func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(cartItems)
 
 	encoder.Encode(CartListSuccessResponse{CartItems: []repository.CartItem{}}) // TODO: replace this
->>>>>>> 6a266f35b3e5d854980b80d4d6208d897f7008b9
 }
