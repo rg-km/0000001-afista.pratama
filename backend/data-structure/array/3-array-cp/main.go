@@ -15,7 +15,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var sentences = []string{"Andi suka bermain bola", "Saya sedang belajar struktur data", "Terima kasih"}
@@ -23,14 +26,30 @@ func main() {
 }
 
 func MostWordsFound(sentences []string) int {
-	ans := 0
+	ans := 0 //5
 	for _, sentence := range sentences {
-		max := CountWords(sentence)
-		// TODO: answer here
+		//["Andi suka bermain bola", "Saya sedang belajar struktur data", "Terima kasih"]
+
+		max := CountWords(sentence) // 2
+		if max > ans {
+			ans = max
+		}
 	}
 	return ans
 }
 
 func CountWords(sentence string) int {
-	return 0 // TODO: replace this
+	// split (" ") => array of word
+	// kita hitung berapa jumlah katanya
+
+	// "aku semangat belajar"
+
+	// ["aku", "semangat", "belajar"] => 3
+	// len(words)
+
+	words := strings.Split(sentence, " ")
+
+	totalWord := len(words)
+
+	return totalWord
 }
