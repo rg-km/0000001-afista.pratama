@@ -21,12 +21,12 @@ func (s *Set) Add(elem string) {
 }
 
 // Delete - menghapus elemen dari set
-func (s *Set) Delete(elem string) (bool, error) {
+func (s *Set) Delete(elem string) (bool, error) { // Remove
 	return fmt.Errorf("replace this with your code") // TODO: replace this
 }
 
 // Contains - memeriksa apakah elemen ada dalam set
-func (s *Set) Contains(elem string) bool {
+func (s *Set) Contains(elem string) bool { // Exist function
 	return false // TODO: replace this
 }
 

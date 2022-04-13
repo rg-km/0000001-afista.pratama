@@ -12,6 +12,11 @@
 // untuk melakukan rotasi kiri dengan nilai 4, array mengalami urutan perubahan berikut:
 // [1,2,3,4,5] -> [2,3,4,5,1] -> [3,4,5,1,2] -> [4,5,1,2,3] -> [5,1,2,3,4]
 
+// 1.000.000
+// overkill
+// merge sort, quick sort, counting, radix, dll (complex) => setup (10 detik), running (max 6 detik) , 16 detik
+// bubble sort  => setup (1 detik), sorting (3 menit) , 3 menit 1 detik
+
 package main
 
 import "fmt"
@@ -41,7 +46,7 @@ func Sort(arr []int) []int {
 }
 
 func RotateLeft(d int, arr []int) []int {
-	// [1,2,3,4,5] => [2,3,4,5] + [1] = [2,3,4,5,1]
+	// [1,2,3,4,5] => [1], [2,3,4,5] => [2,3,4,5] + [1] = [2,3,4,5,1]
 	// [2,3,4,5,1] => [3,4,5,1] + [2] = [3,4,5,1,2]
 	// [3,4,5,1,2] => [4,5,1,2] + [3] = [4,5,1,2,3]
 

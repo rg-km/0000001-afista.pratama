@@ -33,8 +33,8 @@ var r, f, n int
 var q Queue
 
 func init() {
-	r = -1
-	f = -1
+	r = -1 // [nil, nil, nil, nil, nil]
+	f = -1 // [nil, nil, nil, nil, nil]
 	n = 4
 	q = make(Queue, 5)
 	for i := range q {
@@ -105,10 +105,25 @@ func main() {
 
 func (q Queue) InsertRear(rearValue string) (Queue, error) {
 	return q, nil // TODO: replace this
+
+	// insert rear, menambahkan dari belakang dan ditaruh di posisi paling depan yang kosong
+	// 0,0,0,0,0
+	// add aaa
+	// aaa,0,0,0,0
+	// add bbb
+	// aaa, bbb,0,0,0
 }
 
 func (q Queue) InsertFront(frontValue string) (Queue, error) {
 	return q, nil // TODO: replace this
+
+	// insert front, menambahkan dari depan dan kalau depan sudah diisi, tampikan error
+
+	// 0,0,0,0,0
+	// add front aaa
+	// aaa,0,0,0,0
+	// add bbb
+	// error
 }
 
 func (q Queue) deleteRear() (string, error) {

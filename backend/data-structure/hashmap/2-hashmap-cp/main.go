@@ -7,7 +7,7 @@
 // Explanation: Jika ditata, "knee" dan "keen" memiliki huruf-huruf yang sama, hanya berbeda urutan
 //
 // Contoh 2
-// Input: a = "fried", b = "fired"
+// Input: a = "fried", b = "fired" //list huruf sama , anagram
 // Output: "Anagram"
 // Explanation: Jika ditata, "fried" dan "fired" memiliki huruf-huruf yang sama, hanya berbeda urutan
 //
@@ -27,8 +27,8 @@ func main() {
 }
 
 func AnagramsChecker(str1 string, str2 string) string {
-	//return ""
-
+	// return ""
+	// "apple" 5 | "paddle" 6
 	// 1 mengecek panjangnya dari str1 dan str2 , kalau beda sudah pasti tidak anagram : "Bukan Anagram"
 
 	if len(str1) != len(str2) {
@@ -37,34 +37,43 @@ func AnagramsChecker(str1 string, str2 string) string {
 
 	// 2 ditata ke dalam sebuah map
 	// kita tata huruf2nya
+
+	// str1 = "keen" , str2 = "knee"
+
+	/*
+		str1 {
+			"k" : 1,
+			"e" : 2,
+			"n" : 1
+		}
+
+		str2 {
+			"k" : 1,
+			"n" : 1,
+			"e" : 2
+		}
+	*/
+
 	var map1 = make(map[int32]int)
+	// var map1 = make(map[string]int)
 	var map2 = make(map[int32]int)
 
-	for i := 0; i < len(str1); i++ {
-		var key = int32(str1[i])
-
-		if _, ok := map1[key]; ok {
-			map1[key]++
-		} else {
-			map1[key] = 1
-		}
+	for _, val := range str1 {
+		map1[val]++
+		// map1[string(val)]++
 	}
 
-	for i := 0; i < len(str2); i++ {
-		var key = int32(str2[i])
-
-		if _, ok := map2[key]; ok {
-			map2[key]++
-		} else {
-			map2[key] = 1
-		}
+	for _, val := range str2 {
+		map2[val]++
 	}
 
-	// knee , kenn
+	// knee {k:1, n:1, e:2}, kenn {k:1, e:1, n:2}
 	// keen , knee
 
 	// tidak dicek, kalau total tiap2 huruf sama, berarti "Anagram"
 	for key, value := range map1 {
+		// {"k" : 1,"e" : 2,"n" : 1}
+
 		if map2[key] != value {
 			return "Bukan Anagram"
 		}

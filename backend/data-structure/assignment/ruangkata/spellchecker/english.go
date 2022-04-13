@@ -50,8 +50,19 @@ func NewEnglishSpellChecker() (SpellChecker, error) {
 
 func (s *spellchecker) CheckWord(word string) bool {
 	return false // TODO: replace this
+
+	// list data ada di : spellchecker
+
+	// ngecek di map spellchecker, datanya ada atau nggk, parameternya dari si word
+	// kalau ada di list map spellchecker, return true
+	// kalau nggk ada return false
 }
 
 func (s *spellchecker) CheckSentence(sentence string) (validWords []string, invalidWords []string) {
 	return nil, nil // TODO: replace this
+
+	// kita split dulu katanya, splitter strings "hello world" => ["hello", "world"]
+
+	// looping
+	// di cek menggunakan method CheckWord
 }
