@@ -48,3 +48,15 @@ func main() {
 func CountStudents(students []int, sandwiches []int) int {
 	0 // TODO: replace this
 }
+
+// st: [0,1,1]  sw: [0,0,1] => st 0 : sw 0
+// st: [1,1] sw: [0,1] =>  st 1 : sw 0
+// st: [1,1] sw: [0,1] => st 1: sw: 0
+
+// tinggal 2
+
+// 0,1,0  : 0,0,1
+// 1,0 : 0,1
+// 0,1 : 0,1
+// 1: 1
+// output 0

@@ -27,4 +27,7 @@ func Intersection(str1, str2 []string) (inter []string) {
 
 func RemoveDuplicates(elements []string) (nodups []string) {
 	return []string{} // TODO: replace this
+	// a,a,b,c,d
+
+	// a,b,c,d
 }

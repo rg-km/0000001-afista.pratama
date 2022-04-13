@@ -23,15 +23,24 @@ func main() {
 
 func union(int1, int2 []int) []int {
 	hash := make(map[int]bool)
+	/*
+		1: true
+		2: true
+		3: true
+		4: true
+	*/
 
+	// 1,2,3,4,5
 	for _, item := range int1 {
 		hash[item] = true
 	}
 
+	// 1,3,4,5
 	for _, item := range int2 {
 		if _, exist := hash[item]; !exist {
 			int1 = append(int1, item)
 		}
 	}
+
 	return int1
 }
