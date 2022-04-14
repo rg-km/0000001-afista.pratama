@@ -40,23 +40,49 @@ package main
 import "fmt"
 
 func main() {
-	var students = []int{1, 1, 1, 0, 0, 1}
-	var sandwiches = []int{1, 0, 0, 0, 1, 1}
+	var students = []int{1, 1, 1, 0, 0, 1}   // konsep queue
+	var sandwiches = []int{1, 0, 0, 0, 1, 1} // konsep queue
 	fmt.Println(CountStudents(students, sandwiches))
 }
 
 func CountStudents(students []int, sandwiches []int) int {
-	0 // TODO: replace this
+	// |1,0,1,0 |  (f) st1-1,st2-0,st3-1,st4-0  (t)
+	// |1,0,1,0 |  (f) st2-0,st3-1,st4-0 , st1-1 (t)
+	// |1,0,1 | (f) st3-1,st4-0 , st1-1 (t)
+
+	// st: [0,1,1]  sw: [0,0,1] => st 0 : sw 0
+	// st: [1,1] sw: [0,1] =>  st 1 : sw 0
+	// st: [1,1] sw: [0,1] => st 1: sw: 0
+
+	// tinggal 2
+
+	// 0,1,0  : 0,0,1
+	// 1,0 : 0,1
+	// 0,1 : 0,1
+	// 1: 1
+	// output 0
+
+	// tanda
+	isExist := false
+
+	for {
+		isExist = false
+		for _, student := range students {
+			if student == sandwiches[0] {
+				isExist = true
+				break
+			}
+		}
+
+		if !isExist {
+			return len(students)
+		}
+
+		if students[0] == sandwiches[0] {
+			students = students[1:]
+			sandwiches = sandwiches[1:]
+		} else {
+			students = append(students[1:], students[0])
+		}
+	}
 }
-
-// st: [0,1,1]  sw: [0,0,1] => st 0 : sw 0
-// st: [1,1] sw: [0,1] =>  st 1 : sw 0
-// st: [1,1] sw: [0,1] => st 1: sw: 0
-
-// tinggal 2
-
-// 0,1,0  : 0,0,1
-// 1,0 : 0,1
-// 0,1 : 0,1
-// 1: 1
-// output 0
