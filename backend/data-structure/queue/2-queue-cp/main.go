@@ -136,7 +136,6 @@ func (q Queue) InsertFront(frontValue string) (Queue, error) {
 		f = 0
 		r = 0
 	} else {
-
 		// [nil, afis, nil,nil, nil] , f = 1, r = 1
 		// [jaya, afis, nil,nil, nil] , f = 0, r = 1
 		f--

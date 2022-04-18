@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // Implementasikan MusicPlayer yang merupakan representasi dari pemutar musik.
 // MusicPlayer memiliki atribut Playlist. Playlist merupakan daftar lagu yang tersimpan.
 // Sebagai gambaran, seperti pada Spotify, playlist merepresentasikan lagu-lagu yang disimpan dalam satu playlist yang sama.
