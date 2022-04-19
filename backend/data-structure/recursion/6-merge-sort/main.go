@@ -3,6 +3,22 @@ package main
 
 import "fmt"
 
+func main() {
+	unsorted := []int{10, 6, 2, 1, 5, 8, 3, 4, 7, 9}
+	sorted := mergeSort(unsorted)
+
+	fmt.Println(sorted)
+
+	fmt.Println(5 / 2)
+
+	// sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+// [10, 6, 2, 1, 5, 8, 3, 4, 7, 9]
+
+// [10, 6, 2, 1, 5] [8, 3, 4, 7, 9]
+// [] []
+
 func mergeSort(items []int) []int {
 	if len(items) < 2 {
 		return items
@@ -10,15 +26,6 @@ func mergeSort(items []int) []int {
 	first := mergeSort(items[:len(items)/2])
 	second := mergeSort(items[len(items)/2:])
 	return merge(first, second)
-}
-
-func main() {
-	unsorted := []int{10, 6, 2, 1, 5, 8, 3, 4, 7, 9}
-	sorted := mergeSort(unsorted)
-
-	fmt.Println(sorted)
-
-	// sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
 
 func merge(a []int, b []int) []int {

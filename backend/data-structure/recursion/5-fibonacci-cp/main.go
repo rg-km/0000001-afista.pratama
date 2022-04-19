@@ -16,6 +16,8 @@
 // F(9) = 34
 // ...
 
+// 0, 1, 1, 2, 3, 5, 8, 13, dst
+
 // Dua suku pertama barisan tersebut adalah 0, 1.
 // Contoh: fib(0) = 0, fib(1) = 1, fib(2) = 1
 
@@ -23,8 +25,10 @@ package main
 
 import "fmt"
 
-func FibonacciRecursion(i int) int {
+// 0,1,1,2,3,5, 8
 
+// 5
+func FibonacciRecursion(i int) int {
 	if i == 0 {
 		return 0
 	}
@@ -34,6 +38,12 @@ func FibonacciRecursion(i int) int {
 	}
 
 	// TODO: answer here
+	return FibonacciRecursion(i-1) + FibonacciRecursion(i-2)
+	// lempar paremeter 5
+	// FibonacciRecursion(4) 							+ FibonacciRecursion(3)
+	// 2 + 1
+	// 1 + 1
+	// 1 + 0
 }
 
 func main() {

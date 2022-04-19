@@ -9,7 +9,7 @@ var _ = Describe("Main", func() {
 	Describe("Count Digits", func() {
 		When("input some number", func() {
 			It("should return the number of digits", func() {
-				Expect(CountDigits(1996)).To(Equal(4))
+				Expect(CountDigits(1991)).To(Equal(4))
 			})
 		})
 	})
