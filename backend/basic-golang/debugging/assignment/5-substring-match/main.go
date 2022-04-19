@@ -9,9 +9,12 @@ func main() {
 		Sample Input/Output
 		IsExistInSource("hello", "ll") -> True
 		IsExistInSource("hello", "hel") -> True
+		IsExistInSource("hello", "heo") -> False
+		IsExistInSource("hello", "lle") -> False
 		IsExistInSource("aaaa", "bb") -> False
 	*/
 	res := IsExistInSource("hello", "ll")
+	// res := IsExistInSource("hello", "heo")
 	fmt.Println(res)
 
 	// Try correct answer:
