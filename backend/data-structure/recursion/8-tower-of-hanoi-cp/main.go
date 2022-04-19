@@ -57,13 +57,20 @@ import "fmt"
 var Solution []string
 
 func TowerOfHanoi(n int, fromRod string, auxRod string, toRod string) {
+	// if n == 0 {
+	// 	return
+	// }
+
+	// Solution = append(Solution, fmt.Sprintf("Move disk %d from rod %s to rod %s", n, fromRod, toRod))
+
 	if n == 0 {
 		return
 	}
 
-	// TODO: answer here
+	TowerOfHanoi(n-1, fromRod, auxRod, toRod)
 	Solution = append(Solution, fmt.Sprintf("Move disk %d from rod %s to rod %s", n, fromRod, toRod))
-	// TODO: answer here
+
+	TowerOfHanoi(n-1, auxRod, toRod, fromRod)
 }
 
 func main() {
@@ -74,3 +81,10 @@ func main() {
 	}
 
 }
+
+//    --
+//   ----
+//  ------
+// --------
+
+//    "A"          "B"			"C"

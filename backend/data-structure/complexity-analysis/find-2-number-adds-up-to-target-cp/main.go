@@ -3,6 +3,8 @@
 // Targetnya adalah 4
 // Lalu outputnya adalah index: [2, 3]
 
+// salah : [0, 0]
+
 // Penjelasan
 // Nomor 1 di index 2
 // Nomor 3 di index 3
@@ -27,12 +29,31 @@ func main() {
 	fmt.Println(output)
 }
 
+//[2,5,1,3] , target 6
 func TwoTargetSums(nums []int, target int) []int {
 	numberMap := make(map[int]int)
-	output := make([]int, 2)
+	/*
+		{
+			2:0,
+			5:1,
+			1:2
+		}
+	*/
+	output := make([]int, 2) // [nil, nil]
+
 	for i := 0; i < len(nums); i++ {
+		// target 4
+		// 6 - 2 = 4
 		val, ok := numberMap[target-nums[i]]
-		// TODO: answer here
+
+		if ok {
+			output[0] = val
+			output[1] = i
+			return output
+		}
+
+		numberMap[nums[i]] = i
 	}
-	return output
+
+	return output // [1,2]
 }

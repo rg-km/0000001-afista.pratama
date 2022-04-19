@@ -8,7 +8,7 @@ func main() {
 		if not exist return -1
 
 		Example input/output
-		www.ruangguru.com -> 1
+		www.ruangguru.com -> 1 // hhh, wewewe
 		helloworld -> -1
 	*/
 	result := ThreeConsecutiveCharacterPosition("helloworld")
@@ -21,9 +21,17 @@ func ThreeConsecutiveCharacterPosition(word string) int {
 			return i
 		}
 	}
+
 	return -1
 }
 
 func ThreeConsecutiveCharacterPositionCorrect(word string) int {
-	return 0 // TODO: replace this
+	for i := 0; i < len(word)-3; i++ {
+		if word[i] == word[i+1] && word[i] == word[i+2] {
+			// return 1
+			// return i + 1
+			return i + 1
+		}
+	}
+	return -1
 }

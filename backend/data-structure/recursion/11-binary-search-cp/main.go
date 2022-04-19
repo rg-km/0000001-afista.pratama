@@ -14,6 +14,13 @@ func main() {
 
 // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
+// [1, 2, 3, 4, 5] [6, 7, 8, 9, 10] // 1 ops
+//					[6,7] [8,9,10] //  1 ops
+// 							[8] [9,10] // 1 ops
+
+// 3 ops
+// kalau menggunakan looping, 9 ops
+
 /*
 		5
 	   / \
@@ -25,13 +32,25 @@ func main() {
 
 */
 
+// angka ada, return 1 // true
+// nggk ada , return 0 // false
+
 //Recursive Binary Search
 func BinarySearch(numList []int64, key int64) int {
 	low := 0
 	high := len(numList) - 1
 
 	if low <= high {
-		// TODO: answer here
+
+		mid := (high + low) / 2
+		if numList[mid] > key {
+			return BinarySearch(numList[:mid], key)
+		} else if numList[mid] < key {
+			return BinarySearch(numList[mid+1:], key)
+		} else {
+			return 1
+		}
 	}
+
 	return 0
 }

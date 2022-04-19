@@ -42,12 +42,25 @@ func main() {
 	}
 }
 
+// [2,4,6,8,7],
+// [[2],4,6,8,7] => 2 == 4
+// [2,[4],6,8,7] => 4 == 6
+// [2,4,[6],8,7] => 6 => 8
+// [2,4,6,[8],7] => 8 == 7
+// [2,4,6,7,8]
+
+// O(n^2)
+// operasinya akan berjalan 2 kali lipat
+// 10^2 => 100 operasi
+// 100^2 => 10_000 operasi
 func SelectionSort(arr []int) []int {
 	len := len(arr)
 	for i := 0; i < len-1; i++ {
-		minIndex := i
+		minIndex := i // big number in index
 		for j := i + 1; j < len; j++ {
-			// TODO: answer here
+			if arr[j] < arr[minIndex] {
+				arr[j], arr[minIndex] = arr[minIndex], arr[j]
+			}
 		}
 	}
 

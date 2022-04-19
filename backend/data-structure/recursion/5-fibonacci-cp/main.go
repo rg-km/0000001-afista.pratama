@@ -37,10 +37,9 @@ func FibonacciRecursion(i int) int {
 		return 1
 	}
 
-	// TODO: answer here
 	return FibonacciRecursion(i-1) + FibonacciRecursion(i-2)
 	// lempar paremeter 5
-	// FibonacciRecursion(4) 							+ FibonacciRecursion(3)
+	// FibonacciRecursion(4) + FibonacciRecursion(3)
 	// 2 + 1
 	// 1 + 1
 	// 1 + 0

@@ -5,7 +5,7 @@ package main
 
 import "fmt"
 
-//var count int = 0
+// var count int = 0
 
 //function to count digits
 func CountDigits(num int) int {
@@ -15,8 +15,18 @@ func CountDigits(num int) int {
 		return 0
 	}
 	//return count
-
 }
+
+// 1441
+// 1 + CountDigits(144) 144
+// 1 + 1 + CountDigits(14)
+// 1 + 1 + 1 + CountDigits(1)
+// 1 + 1 + 1 + 1 + CountDigits(0) => 0
+// 1 + 1 + 1 + 1 + 0
+// 4
+
+// 1441 => 4
+// 200_000 = 6
 
 func main() {
 	var num int = 0
