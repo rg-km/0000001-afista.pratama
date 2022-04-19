@@ -15,8 +15,8 @@ func main() {
 	fmt.Println(res)
 
 	// Try correct answer:
-	// resCorrect := ScoreRankCorrect(arr)
-	// fmt.Println(resCorrect)
+	//resCorrect := ScoreRankCorrect(arr)
+	//fmt.Println(resCorrect)
 }
 
 func ScoreRank(score int) string {

@@ -7,8 +7,8 @@ func main() {
 		Convert the given second to 00:00:00 hour minute second format
 
 		Example Input/Output
-		30 -> 00:00:30
-		70 -> 00:01:10
+		30 -> "00:00:30"
+		70 -> "00:01:10" // 60
 		67812 -> 18:50:12
 		678120 -> 188:22:00
 

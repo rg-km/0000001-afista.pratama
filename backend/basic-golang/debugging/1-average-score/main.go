@@ -29,9 +29,11 @@ func getAverageScore(score []int) float32 {
 }
 
 func getAverageScoreCorrect(score []int) float32 {
+	// handle for nil array
 	if len(score) == 0 {
 		return 0
 	}
+
 	sum := 0
 
 	for i := 0; i < len(score); i++ {

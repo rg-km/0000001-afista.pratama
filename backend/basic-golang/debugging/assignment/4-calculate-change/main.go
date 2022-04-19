@@ -9,6 +9,7 @@ func main() {
 		Ex: payment: 5000, price 1000 -> result 4000
 			payment: 2000, price 5000 -> result -1
 			payment: 100000, price 100000 -> result 5000
+			payment: 110000, price 100000 -> result 10.000 + discount 5% (5000) = 15000
 	*/
 	res := CalculateChange(5000, 1000)
 	fmt.Println(res)

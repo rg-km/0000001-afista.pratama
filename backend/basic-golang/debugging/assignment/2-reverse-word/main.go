@@ -12,8 +12,8 @@ func main() {
 	fmt.Println(res)
 
 	// Try correct answer:
-	// resCorrect := ReverseWordCorrect(arr)
-	// fmt.Println(resCorrect)
+	//resCorrect := ReverseWordCorrect(arr)
+	//fmt.Println(resCorrect)
 }
 
 func ReverseWord(word string) string {
