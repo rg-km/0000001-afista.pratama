@@ -11,9 +11,17 @@ func init() {
 	start = time.Now()
 }
 
+// review
+// go => menjalankan eksekusi kode secara concurrency
+// ---------------------
+/* |	thread		    |
+   main ---- go func()
+*/
+
 //Pada program ini kita melakukan pemanggilan API secara sequential
 //Bagaimana cara agar program ini dapat berjalan secara concurrent ?
 func main() {
+	// blocking
 	APICallA()
 	APICallB()
 	time.Sleep(200 * time.Millisecond)

@@ -6,6 +6,10 @@ import "fmt"
 //gunakan fungsi squareWorker untuk menerima dan mengirim data yang sudah dipangkatkan
 
 //fungsi ini digunakan untuk menerima angka lalu mengembalikan hasil pangkat 2 angka tersebut
+// 4 => 16
+// 5 => 25
+// 6 => 36
+
 func squareWorker(workerInput <-chan int, workerOutput chan<- int) {
 	for {
 		num := <-workerInput      // menerima angka
@@ -18,6 +22,8 @@ func createRequest(workerInput, resultChan chan<- int, workerOutput <-chan int) 
 	for i := 1; i < 16; i++ {
 		var res int
 		// TODO: answer here
+		// tinggal main channel
+
 		resultSum += res
 		fmt.Printf("hasil pangkat 2 angka %d adalah: %d\n", i, res) // 0 1 4 9 16
 	}

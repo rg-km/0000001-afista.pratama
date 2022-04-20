@@ -25,6 +25,7 @@ var _ = Describe("Goroutine", func() {
 				break
 			}
 		}
+
 		Expect(loop).To(Equal(false))
 	})
 })

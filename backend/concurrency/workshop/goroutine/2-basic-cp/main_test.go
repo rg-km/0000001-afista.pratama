@@ -11,7 +11,7 @@ import (
 var _ = Describe("Goroutine", func() {
 	When("blocking happen", func() {
 		It("switch to other goroutine", func() {
-			multiplyCalled := false
+			multiplyCalled := false // true
 			start(&multiplyCalled)
 			Expect(multiplyCalled).To(Equal(true))
 		})
