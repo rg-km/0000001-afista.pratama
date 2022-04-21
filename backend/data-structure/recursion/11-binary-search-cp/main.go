@@ -41,6 +41,13 @@ func BinarySearch(numList []int64, key int64) int {
 	high := len(numList) - 1
 
 	if low <= high {
+		// mencari angka 7
+		// [3,4,5,6,7,8] , 6 + 0 / 2, idx 3 => 6
+		//  [3,4,5] [6,7,8]
+		// [6,7,8] => 2 + 0 / 2 , idx 1 => 7
+		// [6] [7,8]
+
+		// [7,8] [7] dan [8]
 
 		mid := (high + low) / 2
 		if numList[mid] > key {

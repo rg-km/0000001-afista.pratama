@@ -9,6 +9,12 @@ type Ball struct{ hits int }
 
 func main() {
 	table := make(chan *Ball) // channel dengan tipe *Ball
+
+	// handleError := make(chan error)
+	// if <- handleError != nil {
+	// 	// tampilkan errornya
+	// }
+
 	go player("ping", table)
 	go player("pong", table)
 

@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func main() { // goroutine
 	input := make(chan string, 10)
 
 	go receiver(input)
@@ -13,7 +13,6 @@ func main() {
 		input <- "every 500 millisecond"
 		time.Sleep(500 * time.Millisecond)
 	}
-
 }
 
 func receiver(input chan string) {

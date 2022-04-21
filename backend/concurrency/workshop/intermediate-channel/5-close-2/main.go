@@ -7,6 +7,14 @@ import (
 
 //Data dalam buffered channel masih bisa diambil
 //walaupun channel sudah di close
+
+// menutup si channel
+
+// 				close 		belum diclose
+// send			fatal			aman
+// receive		aman			aman
+// close		fatal			aman
+
 func main() {
 	output := make(chan string, 10)
 

@@ -9,6 +9,7 @@ func main() {
 	output := make(chan string, 10)
 
 	go sender(output)
+	//time.Sleep(100 * time.Millisecond)
 	for msg := range output {
 		fmt.Println(msg)
 	}
@@ -16,10 +17,13 @@ func main() {
 
 func sender(output chan string) {
 	for i := 0; i < 10; i++ {
-		output <- "every 500 millisecond"
-		time.Sleep(500 * time.Millisecond)
+		fmt.Println("send to channel", i)
+		output <- "every 200 millisecond"
+		time.Sleep(200 * time.Millisecond)
 	}
+
 	close(output)
+	//fmt.Println("channel close")
 }
 
 //jika menggunakan for ... range channel

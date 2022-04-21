@@ -20,6 +20,13 @@ func (c *character) awake(movementInput, attackInput chan string) {
 		//ketika menerima dari movementInput maka jalankan
 		//fmt.Printf("%s bergerak ke %s\n", c.name, c.activity)
 		// TODO: answer here
-
+		select {
+		case movement := <-movementInput:
+			c.activity = movement
+			fmt.Printf("%s bergerak ke %s\n", c.name, c.activity)
+		case attack := <-attackInput:
+			c.activity = attack
+			fmt.Printf("%s melakukan serangan %s\n", c.name, c.activity)
+		}
 	}
 }
