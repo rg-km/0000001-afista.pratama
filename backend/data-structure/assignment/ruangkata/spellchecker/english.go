@@ -49,9 +49,34 @@ func NewEnglishSpellChecker() (SpellChecker, error) {
 }
 
 func (s *spellchecker) CheckWord(word string) bool {
-	return false // TODO: replace this
+	word = strings.ToLower(word)
+	if _, ok := s.words[word]; ok {
+		return true
+	}
+
+	return false // list data ada di : spellchecker
+
+	// ngecek di map spellchecker, datanya ada atau nggk, parameternya dari si word
+	// kalau ada di list map spellchecker, return true
+	// kalau nggk ada return false
 }
 
 func (s *spellchecker) CheckSentence(sentence string) (validWords []string, invalidWords []string) {
-	return nil, nil // TODO: replace this
+	// return nil, nil // TODO: replace this
+
+	words := strings.Split(sentence, " ")
+	validWords = []string{}
+	invalidWords = []string{}
+	for _, word := range words {
+		if s.CheckWord(word) {
+			validWords = append(validWords, word)
+		} else {
+			invalidWords = append(invalidWords, word)
+		}
+	}
+
+	return validWords, invalidWords
+
+	// looping
+	// di cek menggunakan method CheckWord
 }

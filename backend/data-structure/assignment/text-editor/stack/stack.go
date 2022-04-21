@@ -46,3 +46,6 @@ func (s *Stack) SetToEmpty() {
 	s.Top = -1
 	s.Data = nil
 }
+
+// [1,2,3,4], top = 3
+// SetToEmpty => seperti reset => [], top = -1

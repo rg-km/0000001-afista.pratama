@@ -33,9 +33,9 @@ var r, f, n int
 var q Queue
 
 func init() {
-	r = -1
-	f = -1
-	n = 4
+	r = -1 // [nil, nil, nil, nil, nil]
+	f = -1 // [nil, nil, nil, nil, nil]
+	n = 4  // index = max index 4
 	q = make(Queue, 5)
 	for i := range q {
 		q[i] = "nil"
@@ -104,20 +104,62 @@ func main() {
 }
 
 func (q Queue) InsertRear(rearValue string) (Queue, error) {
-	return q, nil // TODO: replace this
+	if r == n {
+		return q, fmt.Errorf("Overflow")
+	}
+	// datanya masih kosongan, berarti
+	if f == -1 {
+		f = 0 // front skrg ada di index 0
+	}
+	r++ //kalau kosongan => dari -1 menjadi 0 , kalau tidak -1 , si r++
+	q[r] = rearValue
+	return q, nil
 }
+
+//insert rear, menambahkan dari belakang dan ditaruh di posisi paling depan yang kosong
+// nil,nil,nil,nil,nil
+// add aaa
+// aaa,nil,nil,nil,nil
+// add bbb
+// aaa,bbb,nil,nil,nil
+
+// f = 0 , r = 0
+// f = 0 , r +1 = 1
+// f = 0 , r +1 = 2
+// f = 0 , r +1 = 3
 
 func (q Queue) InsertFront(frontValue string) (Queue, error) {
-	return q, nil // TODO: replace this
+	if r == 0 {
+		return q, fmt.Errorf("element cannot be inserted")
+	}
+	if f == -1 {
+		f = 0
+		r = 0
+	} else {
+		// [nil, afis, nil,nil, nil] , f = 1, r = 1
+		// [jaya, afis, nil,nil, nil] , f = 0, r = 1
+		f--
+	}
+
+	q[f] = frontValue
+	return q, nil
 }
 
+// insert front, menambahkan dari depan dan kalau depan sudah diisi, tampikan error
+
+// nil,nil,nil,nil,nil
+// add front aaa
+// aaa,nil,nil,nil,nil
+// add bbb
+// error
+
 func (q Queue) deleteRear() (string, error) {
-	if r == -1 {
+	if r == -1 { // kalau tidak ada data
 		return "", fmt.Errorf("element cannot be deleted")
 	}
 	y := q[r]
 	q[r] = "nil"
-	if f == r {
+	if f == r { // kondisi si queue nya datanya kosong setelah dihapus
 		f = -1
 		r = -1
 	} else {
@@ -127,14 +169,14 @@ func (q Queue) deleteRear() (string, error) {
 }
 
 func (q Queue) deleteFront() (string, error) {
-	if f == -1 {
+	if f == -1 { // kondisi filenya kosong
 		return "", fmt.Errorf("underflow")
 	}
 
 	y := q[f]
 	q[f] = "nil"
 
-	if f == r {
+	if f == r { // kondisi si queue nya datanya kosong setelah dihapus
 		f = -1
 		r = -1
 	} else {

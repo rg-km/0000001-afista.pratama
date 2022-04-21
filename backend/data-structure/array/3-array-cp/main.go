@@ -1,4 +1,7 @@
 // Kalimat adalah daftar kata yang dipisahkan oleh satu spasi tanpa spasi awal atau akhir.
+
+// ex: afista pratama => untuk mengecek kata di kalimat, cukup cek spasinya
+
 // Kita diberikan serangkaian string dengan nama sentences, di mana setiap sentences[i] mewakili satu kalimat.
 // Kembalikan jumlah maksimum kata yang muncul dalam satu kalimat.
 //
@@ -12,6 +15,10 @@
 // Output: 4
 // Explanation: jumlah kata terbanyak ada di "Andi suka bermain bola" dan "Budi suka bermain basket", karena terdapat 4 kata dibandingkan kalimat lainnya, 2 kata
 // Ada kemungkinan bahwa beberapa kalimat mengandung jumlah kata yang sama.
+
+// mencari angka terbesar [4 kata, 5 kata, 2 kata]
+// penampung = awali dengan value di index 0 = 5 kata
+// output 5
 
 package main
 
@@ -38,6 +45,8 @@ func MostWordsFound(sentences []string) int {
 	return ans
 }
 
+// CountWords is function helper to get total of word in sentence
+// ex : "afista pratama" => 2
 func CountWords(sentence string) int {
 	// split (" ") => array of word
 	// kita hitung berapa jumlah katanya

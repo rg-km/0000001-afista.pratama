@@ -31,8 +31,8 @@ var _ = Describe("Scoreboard", func() {
 		When("they have the same correct answer", func() {
 			It("prioritize the one with smaller name", func() {
 				scores := main.Scores([]main.Score{
-					{"Agus", 2, 4, 0}, //score: 3*4 - 4 = 8
-					{"Budi", 2, 4, 0}, //score: 2*4 - 0 = 8
+					{"Agus", 2, 4, 0}, //score: 2*4 - 4 = 4
+					{"Budi", 2, 4, 0}, //score: 2*4 - 4 = 4
 				})
 				expected := []string{"Agus", "Budi"}
 				Expect(scores.TopStudents()).To(Equal(expected))
