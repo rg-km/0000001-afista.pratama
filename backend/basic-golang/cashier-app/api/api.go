@@ -20,20 +20,6 @@ func NewAPI(usersRepo repository.UserRepository, productsRepo repository.Product
 	api := API{
 		usersRepo, productsRepo, cartItemRepo, transactionRepo, mux,
 	}
-<<<<<<< HEAD
-	// handle tiap rooting, root routing tidak ada
-
-	mux.HandleFunc("/api/user/login", api.login)
-	mux.HandleFunc("/api/user/logout", api.logout)
-	mux.HandleFunc("/api/dashboard", api.dashboard)
-	mux.HandleFunc("/api/products", api.productList)
-	mux.HandleFunc("/api/cart/add", api.addToCart)
-	mux.HandleFunc("/api/cart/clear", api.clearCart)
-	mux.HandleFunc("/api/carts", api.cartList)
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-
-	})
-=======
 
 	mux.HandleFunc("/api/user/login", api.login)
 	mux.HandleFunc("/api/user/logout", api.logout)
@@ -50,7 +36,6 @@ func NewAPI(usersRepo repository.UserRepository, productsRepo repository.Product
 	// mux.HandleFunc("/api/cart/clear", api.clearCart)
 
 	// TODO: answer here
->>>>>>> c0397392214e368e84db7e7b9a1534ca43781bfb
 
 	return api
 }
