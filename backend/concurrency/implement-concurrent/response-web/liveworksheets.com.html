@@ -1,0 +1,2208 @@
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+
+
+
+
+
+
+<script src="https://www.liveworksheets.com/jquery.min.js"></script>
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Liveworksheets.com - Interactive worksheets maker for all languages and subjects</title>
+<meta name="keywords" content="live worksheets, interactive worksheets, online activities, online exercises, downloadable worksheets, teaching, learning, teaching resources, teachers, education, infant, primary, secondary">
+<meta name="description" content="Liveworksheets transforms your traditional printable worksheets into self-correcting interactive exercises that the students can do online and send to the teacher.">
+<link rel="canonical" href="https://www.liveworksheets.com"/>
+
+<link rel="alternate" hreflang="es" href="https://es.liveworksheets.com" />
+
+<link rel='stylesheet' href='https://files.liveworksheets.com/style.css?v=61' type='text/css'>
+
+
+<script language="javascript">
+
+
+function chooseworksheetslanguage() {
+window.location.href = "?worksheetslanguage=" + document.getElementById("worksheetslanguage").value;
+}
+
+function choosemessageboardlanguage() {
+window.location.href = "?messageboardlanguage=" + document.getElementById("messageboardlanguage").value;
+}
+
+
+function yoursubscriptionexpired() {
+var elemDiv = document.createElement('div');
+elemDiv.setAttribute("id", "subscriptionexpireddiv");
+elemDiv.style.cssText = ' padding-left: 10px; padding-right: 10px;position:fixed;top:150px;width:500px;height:500px;z-index: 36;margin-right:auto;margin-left:auto;right:0;left:0; background-color: #FFFFFF;border: 1px solid #999999;border-radius: 0px;box-shadow: 0px 0px 8px #999999;';
+var elhtml = '<div align="center"><br><br><font face="Arial" size="3"><b>';
+elhtml = elhtml + 'Your subscription has expired. Please renew your subscription or change your plan to Teacher100 (free).<br><br><br><br><br><br>';
+elhtml = elhtml + '<a class="enlace" href="mysubscription/mysubscription.asp">Renew my subscription</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="mysubscription/mysubscription.asp">Change my subscription</a>';
+elhtml = elhtml + '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+elhtml = elhtml + '<span class="enlace" onclick="document.getElementById(\'subscriptionexpireddiv\').style.display =\'none\'">Close</span>';
+elhtml = elhtml + '</b></font></div>';
+elemDiv.innerHTML = elhtml;
+document.body.appendChild(elemDiv);
+}
+
+function animatescrollright(cantidad,milisegundos,numerodescroll) {
+  	$( "#hiddenscroll" + numerodescroll ).animate({
+    	scrollLeft: "+=" + cantidad
+  	}, milisegundos);
+  	document.getElementById('scrollleftimg' + numerodescroll).style.display='block';
+}
+
+function animatescrollleft(cantidad,milisegundos,numerodescroll) {
+  	$( "#hiddenscroll" + numerodescroll ).animate({
+    	scrollLeft: "-=" + cantidad
+  	}, milisegundos);
+}
+
+function ordenarIdiomasworksheets() {
+	var opcionesmostradas = 0;
+	var selElem = document.getElementById("worksheetslanguage");
+    var tmpAry = new Array();
+    for (var i=0;i<selElem.options.length;i++) {
+        tmpAry[i] = new Array();
+        tmpAry[i][0] = selElem.options[i].text;
+        tmpAry[i][1] = selElem.options[i].value;
+    }
+    tmpAry.sort();
+    while (selElem.options.length > 0) {
+        selElem.options[0] = null;
+    }
+    
+    for (var i=0;i<tmpAry.length;i++) {
+    	if (tmpAry[i][1].toLowerCase() == "") {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[0] = op;
+	        opcionesmostradas++;
+        }
+    }
+    
+    for (var i=0;i<mostusedlangs.length;i++) {
+	        var op = new Option(mostusedlangs[i][0], mostusedlangs[i][1]);
+	        selElem.options[opcionesmostradas] = op;
+	        opcionesmostradas++;
+    }
+    
+    var op = new Option("", "");
+	selElem.options[opcionesmostradas] = op;
+	opcionesmostradas++;
+	        
+    for (var i=0;i<tmpAry.length;i++) {
+	    if (tmpAry[i][1].length > 0) {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[opcionesmostradas] = op;
+		        if (tmpAry[i][1].toLowerCase() == '') {
+		        selElem.options[opcionesmostradas].selected = true;
+		        }
+	        opcionesmostradas++;
+	    }
+    }
+    return;
+}
+
+
+function ordenarIdiomasmessageboard() {
+	var opcionesmostradas = 0;
+	var selElem = document.getElementById("messageboardlanguage");
+    var tmpAry = new Array();
+    for (var i=0;i<selElem.options.length;i++) {
+        tmpAry[i] = new Array();
+        tmpAry[i][0] = selElem.options[i].text;
+        tmpAry[i][1] = selElem.options[i].value;
+    }
+    tmpAry.sort();
+    while (selElem.options.length > 0) {
+        selElem.options[0] = null;
+    }
+    
+    for (var i=0;i<tmpAry.length;i++) {
+    	if (tmpAry[i][1].toLowerCase() == "") {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[0] = op;
+	        opcionesmostradas++;
+        }
+    }
+    
+    for (var i=0;i<mostusedlangs.length;i++) {
+	        var op = new Option(mostusedlangs[i][0], mostusedlangs[i][1]);
+	        selElem.options[opcionesmostradas] = op;
+	        opcionesmostradas++;
+    }
+    
+    var op = new Option("", "");
+	selElem.options[opcionesmostradas] = op;
+	opcionesmostradas++;
+	        
+    for (var i=0;i<tmpAry.length;i++) {
+	    if (tmpAry[i][1].length > 0) {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[opcionesmostradas] = op;
+		        if (tmpAry[i][1].toLowerCase() == '') {
+		        selElem.options[opcionesmostradas].selected = true;
+		        }
+	        opcionesmostradas++;
+	    }
+    }
+    return;
+}
+
+
+
+</script>
+<style>
+
+.hiddenscroll {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.hiddenscroll::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.communitymessagediv:hover {
+	background-color: #edf7fc;
+}
+
+</style>
+
+<script type="application/ld+json">
+
+{
+
+"@context": "http://schema.org",
+
+"@type": "WebSite",
+
+"url": "https://www.liveworksheets.com/",
+
+	"potentialAction": {
+	
+	"@type": "SearchAction",
+	
+	"target": "https://www.liveworksheets.com/search.asp?content={search_term_string}",
+	
+	"query-input": "required name=search_term_string"
+	
+	}
+	
+}
+</script>
+
+
+
+
+
+
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+
+!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+apstag.init({
+  pubID: '434bb5e4-3704-4b75-b36c-785a444462bd',
+  adServer: 'googletag',
+  simplerGPT: true,
+  schain: {
+    complete: 1,
+    ver: '1.0',
+    nodes: [
+      {
+        asi: 'theadengine.com',
+        sid: '1345',
+        hp: 1,
+      },
+    ],
+  },
+});
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+  googletag.cmd.push(function() {
+    var mapping1 = googletag.sizeMapping()
+                            .addSize([0, 0], [[320, 50]])
+                            .addSize([748, 200], [[728, 90]])
+                            .build();
+
+    googletag.defineSlot('/98948493,22685051986/liveworksheets_multisize_anchor', [[728,90],[320,50]], 'div-gpt-ad-2415540-3')
+             .defineSizeMapping(mapping1)
+             .addService(googletag.pubads());
+
+   googletag.pubads().disableInitialLoad();
+      googletag.enableServices();
+    });
+googletag.cmd.push(function(){ 
+  apstag.fetchBids({ 
+  timeout: 2000 }, 
+    function(bids) {
+      apstag.setDisplayBids(); 
+      googletag.pubads().refresh();
+  }); 
+}); 
+</script>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6721505224230815" crossorigin="anonymous"></script>
+
+ <script language="javascript">
+var mostrandologin = 0;
+var mostrandomenuteachers = 0;
+var mostrandomenuworksheets = 0;
+var mostrandomenuworkbooks = 0;
+
+function mostrarLogin() {
+	if (mostrandologin < 1) {
+		document.getElementById("capalogin").style.display = "block";
+		mostrandologin = 1;
+	} else {
+		document.getElementById("capalogin").style.display = "none";
+		mostrandologin = 0;
+	}
+}
+
+function mostrarLogin2() {
+	if (mostrandologin < 1) {
+		document.getElementById("teachersloginspan").style.display = "block";
+		mostrandologin = 1;
+	} else {
+		document.getElementById("teachersloginspan").style.display = "none";
+		mostrandologin = 0;
+	}
+}
+
+function closeLogin() {
+		document.getElementById("capalogin").style.display = "none";
+		mostrandologin = 0;
+}
+
+
+function ejecutaronload() {
+
+thisurl = window.location.href;
+separarurl = thisurl.split("liveworksheets.co");
+document.getElementById("linktospanish").href = "https://es.liveworksheets.co" + separarurl[1];
+document.getElementById("linktoenglish").href = "https://www.liveworksheets.co" + separarurl[1];
+
+
+
+	if (separarurl[0].indexOf("es.") > 0 ) {
+	document.getElementById("spanlinktospanish").innerHTML = "Español";
+	} else {
+	document.getElementById("spanlinktoenglish").innerHTML = "English";
+	}
+
+}
+
+var idiomasdebusquedaordenados = 0;
+
+function mostrarbusquedaavanzada() {
+	if (document.getElementById("capabusquedaavanzada").offsetHeight < 100) {
+		$( "#capabusquedaavanzada").animate({
+			height: "250px"
+		}, 500, function() {
+			window.addEventListener('click', clickedoutsidebusquedaavanzada, false);
+		});
+	} else {
+		$( "#capabusquedaavanzada").animate({
+			height: "0px"
+		}, 500, function() {
+			window.removeEventListener('click', clickedoutsidebusquedaavanzada, false);
+		});
+	}
+	if (idiomasdebusquedaordenados == 0) {
+		ordenarIdiomasBusqueda();
+		idiomasdebusquedaordenados = 1;
+	}
+}
+ 
+var clickedoutsidebusquedaavanzada = function (event) {
+	if (document.getElementById('capabusquedaavanzada').contains(event.target)){
+		
+	} else{
+		mostrarbusquedaavanzada();
+		
+	}
+};
+
+
+function desplegarmenuteachers(pixeles) {
+	if (document.getElementById("teachersmenu").offsetHeight < 50) {
+		$( "#teachersmenu").animate({
+			height:  pixeles + "px"
+		}, 500, function() {
+			document.getElementById("teachersdropdowntriangle").style.transform = "rotate(180deg)";// Animation complete.
+			window.addEventListener('click', clickedoutsideteachersmenu, false);
+		});
+		
+	} else {
+		$( "#teachersmenu").animate({
+			height: "36px"
+		}, 500, function() {
+			document.getElementById("teachersdropdowntriangle").style.transform = "rotate(0deg)";// Animation complete.
+		});
+	}
+}
+
+function desplegarmenuteacherssinodesplegado(pixeles) {
+	if (document.getElementById("teachersmenu").offsetHeight < 50) {
+		$( "#teachersmenu").animate({
+			height:  pixeles + "px"
+		}, 500, function() {
+			document.getElementById("teachersdropdowntriangle").style.transform = "rotate(180deg)";// Animation complete.
+			window.addEventListener('click', clickedoutsideteachersmenu, false);
+		});
+	}
+}
+
+var clickedoutsideteachersmenu = function (event) {
+	if (document.getElementById('teachersmenu').contains(event.target)){
+		
+	} else{
+		desplegarmenuteachers(36);
+		window.removeEventListener('click', clickedoutsideteachersmenu, false);
+	}
+};
+
+
+function desplegarmakeinteractiveworksheets(pixeles) {
+	if (document.getElementById("makeinteractiveworksheetsdiv").offsetHeight < 50) {
+		$( "#makeinteractiveworksheetsdiv").animate({
+			height:  pixeles + "px"
+		}, 500, function() {
+			window.addEventListener('click', clickedoutsidemakeinteractiveworksheets, false);
+		});
+		
+	} else {
+		$( "#makeinteractiveworksheetsdiv").animate({
+			height: "30px"
+		}, 500, function() {
+
+		});
+	}
+}
+
+var clickedoutsidemakeinteractiveworksheets = function (event) {
+	if (document.getElementById('makeinteractiveworksheetsdiv').contains(event.target)){
+		
+	} else{
+		desplegarmakeinteractiveworksheets(30);
+		window.removeEventListener('click', clickedoutsidemakeinteractiveworksheets, false);
+	}
+};
+
+
+function desplegarmakeinteractiveworkbooks(pixeles) {
+	if (document.getElementById("makeinteractiveworkbooksdiv").offsetHeight < 50) {
+		$( "#makeinteractiveworkbooksdiv").animate({
+			height:  pixeles + "px"
+		}, 500, function() {
+			window.addEventListener('click', clickedoutsidemakeinteractiveworkbooks, false);
+		});
+		
+	} else {
+		$( "#makeinteractiveworkbooksdiv").animate({
+			height: "30px"
+		}, 500, function() {
+
+		});
+	}
+}
+
+var clickedoutsidemakeinteractiveworkbooks = function (event) {
+	if (document.getElementById('makeinteractiveworkbooksdiv').contains(event.target)){
+		
+	} else{
+		desplegarmakeinteractiveworkbooks(30);
+		window.removeEventListener('click', clickedoutsidemakeinteractiveworkbooks, false);
+	}
+};
+
+
+ 
+var mostusedlangs = [["English","en"],["Spanish","es"],["Malay","ms"],["Indonesian","id"],["Arabic","ar"],["Thai","th"],["Portuguese","pt"],["Vietnamese","vi"],["Chinese","zh"],["Catalan","ca"],["French","fr"],["Greek (modern)","el"],["Italian","it"],["Romanian","ro"],["German","de"]];
+
+function ordenarIdiomasBusqueda() {
+	var opcionesmostradas = 0;
+	var selElem = document.getElementById("languagebusqueda");
+    var tmpAry = new Array();
+    for (var i=0;i<selElem.options.length;i++) {
+        tmpAry[i] = new Array();
+        tmpAry[i][0] = selElem.options[i].text;
+        tmpAry[i][1] = selElem.options[i].value;
+    }
+    tmpAry.sort();
+    while (selElem.options.length > 0) {
+        selElem.options[0] = null;
+    }
+    
+    for (var i=0;i<tmpAry.length;i++) {
+    	if (tmpAry[i][1].toLowerCase() == "") {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[0] = op;
+	        opcionesmostradas++;
+        }
+    }
+    
+    for (var i=0;i<mostusedlangs.length;i++) {
+	        var op = new Option(mostusedlangs[i][0], mostusedlangs[i][1]);
+	        selElem.options[opcionesmostradas] = op;
+	        opcionesmostradas++;
+    }
+        
+    for (var i=0;i<tmpAry.length;i++) {
+        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+        selElem.options[opcionesmostradas] = op;
+        opcionesmostradas++;
+    }
+    return;
+}
+
+var numerodemensajesemergentes = 0;
+
+function mensajeemergente(texto,anchuramensaje,alturamensaje) {
+	var elemDiv = document.createElement('div');
+	elemDiv.setAttribute("id", "mensajeemergente" + numerodemensajesemergentes);
+	elemDiv.style.cssText = ' padding-left: 10px; padding-right: 10px;position:fixed;width:' + anchuramensaje + 'px;height:' + alturamensaje + 'px;z-index: 36000000;top:0;bottom:0;left:0;right:0;margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto; background-color: #FFFFFF;border: 1px solid #999999;border-radius: 0px;box-shadow: 0px 0px 8px #999999;';
+	var elhtml = '<div style="position:absolute;top:5px;right:5px;width:15px;height:20px;"><span class="enlace" style="font-size:16px" onclick="ocultarmensajeemergente(' + numerodemensajesemergentes + ')">x</span></div>';
+	elhtml = elhtml + '<table width="100%" height="100%"><tr><td valign="middle" align="center">';
+	elhtml = elhtml + texto;
+	elhtml = elhtml + '</td></tr></table>';
+	elemDiv.innerHTML = elhtml;
+	document.body.appendChild(elemDiv);
+	numerodemensajesemergentes = numerodemensajesemergentes + 1;
+}
+
+function ocultarmensajeemergente(numero) {
+    var element = document.getElementById("mensajeemergente" + numero);
+    element.parentNode.removeChild(element);
+}
+
+
+</script>
+
+
+
+
+
+
+
+</head>
+
+<body onload="ejecutaronload(),ordenarIdiomasworksheets(),ordenarIdiomasmessageboard()">
+
+
+
+
+
+<div align="center" id="franjaazul" style="position:absolute;top:0px;left:0;width:100%;min-width:1160px;height:81px;background-color:#0a4073">
+</div>
+
+
+
+<div align="center" id="bordesuperior" style="position:relative;top:0px;left:0;right:0;width:1160px;min-height:130px;margin-left:auto;margin-right:auto;">
+
+
+
+	<div id="capalogo" style="position:absolute;top:5px;left:0px;width:250px;height:30px">
+		<a href="https://www.liveworksheets.com" title="Live Worksheets - homepage"><img id="wswo" class="qwertyuiopasdfghjklzxcvbnm" alt="Live Worksheets" src="https://files.liveworksheets.com/images/logomayusculasblanco.png" border="0" width="300"></a>
+	</div>
+
+
+
+	<div id="capabuscar" style="position:absolute;top:5px;left:340px;width:500px;height:24px;">
+				<form id="formulariodebusqueda" method="GET" action="https://www.liveworksheets.com/search.asp">
+				<input name="content" type="text" style="background-color:#edeff0;position:absolute;top:0px;right:0px;height:24px;width:500px;font-size:14px;font-family:Arial;border-radius: 3px;border: 1px solid #d4d3d3;" placeholder="Search interactive worksheets">
+				<img onclick="document.getElementById('formulariodebusqueda').submit()" src="https://files.liveworksheets.com/images/searchicon.png" style="cursor:pointer;width:20px;height:20px;position:absolute;top:3px;right:5px;border: 0px solid #0066FF;border-radius:0 3px 3px 0;">
+				</form>
+	</div>
+  
+
+		
+		<div align="left" id="capaenlacebusquedaavanzada" style="position:absolute;z-index:100001;top:20px;left:850px;width:120px;height:14px;">
+			<span class="enlaceblanco" style="font-size:12px" onclick="mostrarbusquedaavanzada()">Advanced search</span>
+		</div>
+	
+
+
+
+	<div id="capabusquedaavanzada" style="position:absolute;z-index:100003;top:0px;left:300px;width:540px;height:0px;overflow:hidden;background-color:#508cc3;border-radius:0px 0px 10px 10px">
+		<div style="position:absolute;top:5px;right:5px;width:20px;height:20px;">
+		<span class="enlaceblanco" style="font-size:16px" onclick="mostrarbusquedaavanzada()">x</span>
+		</div>
+		<form method="GET" action="https://www.liveworksheets.com/search.asp">
+			<div align="center">
+			<font color="#FFFFFF">
+				<span style="font-size:20px"><b>Advanced search</b></span>
+				<br><br>
+				Content: <input type="text" name="content" id="contentbusqueda" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:400px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+				<br><br>
+				Language:
+				<select id="languagebusqueda" name="language" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:180px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+					<option value="">      </option>
+					
+							<option value="aa">Afar</option>
+					
+							<option value="ab">Abkhaz</option>
+					
+							<option value="ae">Avestan</option>
+					
+							<option value="af">Afrikaans</option>
+					
+							<option value="ak">Akan</option>
+					
+							<option value="am">Amharic</option>
+					
+							<option value="an">Aragonese</option>
+					
+							<option value="ar">Arabic</option>
+					
+							<option value="as">Assamese</option>
+					
+							<option value="at">Asturianu</option>
+					
+							<option value="ah">Athabascan</option>
+					
+							<option value="av">Avaric</option>
+					
+							<option value="ay">Aymara</option>
+					
+							<option value="az">Azerbaijani</option>
+					
+							<option value="ba">Bashkir</option>
+					
+							<option value="be">Belarusian</option>
+					
+							<option value="bg">Bulgarian</option>
+					
+							<option value="bh">Bihari</option>
+					
+							<option value="bi">Bislama</option>
+					
+							<option value="bm">Bambara</option>
+					
+							<option value="bn">Bengali, Bangla</option>
+					
+							<option value="bo">Tibetan Standard, Tibetan, Central</option>
+					
+							<option value="br">Breton</option>
+					
+							<option value="bs">Bosnian</option>
+					
+							<option value="ca">Catalan</option>
+					
+							<option value="ce">Chechen</option>
+					
+							<option value="ch">Chamorro</option>
+					
+							<option value="co">Corsican</option>
+					
+							<option value="cr">Cree</option>
+					
+							<option value="cs">Czech</option>
+					
+							<option value="cu">Old Church Slavonic, Church Slavonic,Old Bulgarian</option>
+					
+							<option value="cv">Chuvash</option>
+					
+							<option value="cy">Welsh</option>
+					
+							<option value="da">Danish</option>
+					
+							<option value="de">German</option>
+					
+							<option value="dv">Divehi, Dhivehi, Maldivian</option>
+					
+							<option value="dz">Dzongkha</option>
+					
+							<option value="ee">Ewe</option>
+					
+							<option value="el">Greek (modern)</option>
+					
+							<option value="en">English</option>
+					
+							<option value="eo">Esperanto</option>
+					
+							<option value="es">Spanish</option>
+					
+							<option value="et">Estonian</option>
+					
+							<option value="eu">Basque</option>
+					
+							<option value="fa">Persian (Farsi)</option>
+					
+							<option value="ff">Fula, Fulah, Pulaar, Pular</option>
+					
+							<option value="fi">Finnish</option>
+					
+							<option value="fj">Fijian</option>
+					
+							<option value="fo">Faroese</option>
+					
+							<option value="fr">French</option>
+					
+							<option value="fy">Western Frisian</option>
+					
+							<option value="ga">Irish</option>
+					
+							<option value="gd">Scottish Gaelic, Gaelic</option>
+					
+							<option value="gl">Galician</option>
+					
+							<option value="gn">Guaraní</option>
+					
+							<option value="gu">Gujarati</option>
+					
+							<option value="gv">Manx</option>
+					
+							<option value="ha">Hausa</option>
+					
+							<option value="he">Hebrew (modern)</option>
+					
+							<option value="hi">Hindi</option>
+					
+							<option value="ho">Hiri Motu</option>
+					
+							<option value="hr">Croatian</option>
+					
+							<option value="ht">Haitian, Haitian Creole</option>
+					
+							<option value="hu">Hungarian</option>
+					
+							<option value="hy">Armenian</option>
+					
+							<option value="hz">Herero</option>
+					
+							<option value="ia">Interlingua</option>
+					
+							<option value="id">Indonesian</option>
+					
+							<option value="ie">Interlingue</option>
+					
+							<option value="ig">Igbo</option>
+					
+							<option value="ii">Nuosu</option>
+					
+							<option value="ik">Inupiaq</option>
+					
+							<option value="io">Ido</option>
+					
+							<option value="is">Icelandic</option>
+					
+							<option value="it">Italian</option>
+					
+							<option value="iu">Inuktitut</option>
+					
+							<option value="ja">Japanese</option>
+					
+							<option value="jv">Javanese</option>
+					
+							<option value="ka">Georgian</option>
+					
+							<option value="kaa">Karakalpak</option>
+					
+							<option value="kg">Kongo</option>
+					
+							<option value="ki">Kikuyu, Gikuyu</option>
+					
+							<option value="kj">Kwanyama, Kuanyama</option>
+					
+							<option value="kk">Kazakh</option>
+					
+							<option value="kl">Kalaallisut, Greenlandic</option>
+					
+							<option value="km">Khmer</option>
+					
+							<option value="kn">Kannada</option>
+					
+							<option value="ko">Korean</option>
+					
+							<option value="kr">Kanuri</option>
+					
+							<option value="ks">Kashmiri</option>
+					
+							<option value="ku">Kurdish</option>
+					
+							<option value="kv">Komi</option>
+					
+							<option value="kw">Cornish</option>
+					
+							<option value="ky">Kyrgyz</option>
+					
+							<option value="la">Latin</option>
+					
+							<option value="lb">Luxembourgish, Letzeburgesch</option>
+					
+							<option value="lg">Ganda</option>
+					
+							<option value="li">Limburgish, Limburgan, Limburger</option>
+					
+							<option value="ln">Lingala</option>
+					
+							<option value="lo">Lao</option>
+					
+							<option value="lt">Lithuanian</option>
+					
+							<option value="lu">Luba-Katanga</option>
+					
+							<option value="lv">Latvian</option>
+					
+							<option value="mg">Malagasy</option>
+					
+							<option value="mh">Marshallese</option>
+					
+							<option value="mi">M&#257;ori</option>
+					
+							<option value="mk">Macedonian</option>
+					
+							<option value="ml">Malayalam</option>
+					
+							<option value="mn">Mongolian</option>
+					
+							<option value="mr">Marathi (Mar&#257;&#7789;h&#299;)</option>
+					
+							<option value="ms">Malay</option>
+					
+							<option value="mt">Maltese</option>
+					
+							<option value="my">Burmese</option>
+					
+							<option value="na">Nauruan</option>
+					
+							<option value="nb">Norwegian Bokmål</option>
+					
+							<option value="nd">Northern Ndebele</option>
+					
+							<option value="ne">Nepali</option>
+					
+							<option value="ng">Ndonga</option>
+					
+							<option value="nl">Dutch</option>
+					
+							<option value="nn">Norwegian Nynorsk</option>
+					
+							<option value="no">Norwegian</option>
+					
+							<option value="nr">Southern Ndebele</option>
+					
+							<option value="nv">Navajo, Navaho</option>
+					
+							<option value="ny">Chichewa, Chewa, Nyanja</option>
+					
+							<option value="oc">Occitan</option>
+					
+							<option value="oj">Ojibwe, Ojibwa</option>
+					
+							<option value="om">Oromo</option>
+					
+							<option value="or">Oriya</option>
+					
+							<option value="os">Ossetian, Ossetic</option>
+					
+							<option value="pa">Eastern Punjabi, Eastern Panjabi</option>
+					
+							<option value="pi">P&#257;li</option>
+					
+							<option value="pl">Polish</option>
+					
+							<option value="ps">Pashto, Pushto</option>
+					
+							<option value="pt">Portuguese</option>
+					
+							<option value="qu">Quechua</option>
+					
+							<option value="rm">Romansh</option>
+					
+							<option value="rn">Kirundi</option>
+					
+							<option value="ro">Romanian</option>
+					
+							<option value="ru">Russian</option>
+					
+							<option value="rw">Kinyarwanda</option>
+					
+							<option value="sa">Sanskrit (Sa&#7745;sk&#7771;ta)</option>
+					
+							<option value="sc">Sardinian</option>
+					
+							<option value="sd">Sindhi</option>
+					
+							<option value="se">Northern Sami</option>
+					
+							<option value="sg">Sango</option>
+					
+							<option value="si">Sinhalese, Sinhala</option>
+					
+							<option value="sk">Slovak</option>
+					
+							<option value="sl">Slovene</option>
+					
+							<option value="sm">Samoan</option>
+					
+							<option value="sn">Shona</option>
+					
+							<option value="so">Somali</option>
+					
+							<option value="sq">Albanian</option>
+					
+							<option value="sr">Serbian</option>
+					
+							<option value="ss">Swati</option>
+					
+							<option value="st">Southern Sotho</option>
+					
+							<option value="su">Sundanese</option>
+					
+							<option value="sv">Swedish</option>
+					
+							<option value="sw">Swahili</option>
+					
+							<option value="ta">Tamil</option>
+					
+							<option value="te">Telugu</option>
+					
+							<option value="tg">Tajik</option>
+					
+							<option value="th">Thai</option>
+					
+							<option value="ti">Tigrinya</option>
+					
+							<option value="tk">Turkmen</option>
+					
+							<option value="tl">Tagalog</option>
+					
+							<option value="tn">Tswana</option>
+					
+							<option value="to">Tonga (Tonga Islands)</option>
+					
+							<option value="tr">Turkish</option>
+					
+							<option value="ts">Tsonga</option>
+					
+							<option value="tt">Tatar</option>
+					
+							<option value="tw">Twi</option>
+					
+							<option value="ty">Tahitian</option>
+					
+							<option value="ug">Uyghur</option>
+					
+							<option value="uk">Ukrainian</option>
+					
+							<option value="ur">Urdu</option>
+					
+							<option value="uz">Uzbek</option>
+					
+							<option value="va">Valencian</option>
+					
+							<option value="ve">Venda</option>
+					
+							<option value="vi">Vietnamese</option>
+					
+							<option value="vo">Volapük</option>
+					
+							<option value="wa">Walloon</option>
+					
+							<option value="wo">Wolof</option>
+					
+							<option value="xh">Xhosa</option>
+					
+							<option value="yi">Yiddish</option>
+					
+							<option value="yo">Yoruba</option>
+					
+							<option value="za">Zhuang, Chuang</option>
+					
+							<option value="zh">Chinese</option>
+					
+							<option value="zu">Zulu</option>
+					
+
+            	</select>
+					&nbsp;&nbsp; 
+					Subject: <input type="text" name="subject" id="subjectbusqueda" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:120px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">&nbsp;&nbsp;
+				<br><br>
+					Grade/level: <input type="text" name="level" id="levelbusqueda" size="26" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:120px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+					&nbsp;&nbsp; 
+					Age:
+					<select id="agebusqueda" name="age" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:50px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+			            <option value=""> </option>
+			            <option value="3">3</option>
+			            <option value="4">4</option>
+			            <option value="5">5</option>
+			            <option value="6">6</option>
+			            <option value="7">7</option>
+			            <option value="8">8</option>
+			            <option value="9">9</option>
+			            <option value="10">10</option>
+			            <option value="11">11</option>
+			            <option value="12">12</option>
+			            <option value="13">13</option>
+			            <option value="14">14</option>
+			            <option value="15">15</option>
+			            <option value="16">16</option>
+			            <option value="17">17</option>
+			            <option value="18">18+</option>
+			            </select>
+
+				<br><br>
+				Search:
+				<select id="searchin" name="searchin" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:240px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+					<option value="all" selected>All worksheets</option>
+					<option value="followed">Only my followed users</option>
+					<option value="favourites">Only my favourite worksheets</option>
+					<option value="own">Only my own worksheets</option>
+            	</select>				
+				<br><br>
+					<input type="submit" value="Search" name="Search" style="box-sizing:content-box;background-color:#FFFFFF;height:20px;width:80px;font-size:14px;font-family:Arial;border-radius: 6px;border: 1px solid #d4d3d3;">
+			</font>
+			</div>
+		</form>
+	</div>
+
+
+
+	<div id="capacambiaridioma" style="position:absolute;top:5px;right:0px;width:200px;height:30px">
+		<table cellpadding="0" cellspacing="0" height="100%" width="100%">
+			<tr>
+				<td align="right" valign="top">
+					<font style="font-size:14px" color="#f7f17b"><span id="spanlinktoenglish"><a class="enlace" style="color:#ffffff" href="https://www.liveworksheets.com" id="linktoenglish">English</a></span>&nbsp;&nbsp;-&nbsp;&nbsp;<span id="spanlinktospanish"><a class="enlace" style="color:#ffffff" href="https://es.liveworksheets.com" id="linktospanish">Español</a></span></font>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+	<div id="capamenu" style="position:absolute;top:45px;left:0px;width:100%;height:34px;background-color:#0a4073">
+
+
+		<div align="center" style="position:absolute;top:0px;left:0px;width:80px;min-height:30px;">
+			<table width="100%">
+				<tr>
+				<td align="center" valign="middle" height="30px" width="100%">
+					<a class="enlacesmenu" href="https://www.liveworksheets.com">Home</a>
+				</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div align="center" style="position:absolute;top:0px;left:80px;width:150px;min-height:30px;">
+			<table width="100%">
+				<tr>
+				<td align="center" valign="middle" height="30px" width="100%">
+					<a class="enlacesmenu" href="https://www.liveworksheets.com/aboutthis_en.asp">About this site</a>
+				</td>
+				</tr>
+			</table>
+		</div>
+
+		<div align="center" style="position:absolute;top:0px;left:230px;width:220px;min-height:30px;">
+			<table width="100%">
+				<tr>
+				<td align="center" valign="middle" height="30px" width="100%">
+					<a class="enlacesmenu" href="https://www.liveworksheets.com/worksheets/en">Interactive worksheets</a>
+				</td>
+				</tr>
+			</table>
+		</div>	
+		
+		<div id="makeinteractiveworksheetsdiv" align="center" style="position:absolute;z-index:100002;top:0px;left:450px;width:260px;height:30px;background-color:#0a4073;overflow:hidden;border-radius:0px 0px 10px 10px">
+			<table width="100%">
+				<tr>
+				<td align="center" valign="middle" height="30px" width="100%">
+					<span class="enlacesmenu" onclick="desplegarmakeinteractiveworksheets(180)">Make interactive worksheets</span>
+				</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle" height="38px" width="100%">
+						<a class="enlacesmenu" href="https://www.liveworksheets.com/lwsmaker/gettingstarted.asp">Tutorial</a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle" height="38px" width="100%">
+					
+						<a class="enlacesmenu" href="https://youtu.be/V5AM_qToJyc">Video tutorial</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle" height="38px" width="100%">
+						<a class="enlacesmenu" href="https://www.liveworksheets.com/lwsmaker/index.asp">Get started</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		<div id="makeinteractiveworkbooksdiv" align="center" style="position:absolute;z-index:100002;top:0px;left:710px;width:260px;height:30px;;background-color:#0a4073;overflow:hidden;border-radius:0px 0px 10px 10px">
+			<table width="100%">
+				<tr>
+					<td align="center" valign="middle" height="30px" width="100%">
+						<span class="enlacesmenu" onclick="desplegarmakeinteractiveworkbooks(140)">Make interactive workbooks</span>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle" height="38px" width="100%">
+						
+						<a class="enlacesmenu" href="https://youtu.be/yQYNnSvqM24">Video tutorial</a>
+						
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+
+
+			
+
+			<div align="center" style="position:absolute;top:0px;left:970px;width:120px;min-height:30px;">
+				<table width="100%">
+					<tr>
+					<td align="center" valign="middle" height="30px" width="100%">
+						
+					</td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div align="center" style="position:absolute;top:0px;left:1090px;width:70px;min-height:30px;">
+				<table width="100%">
+					<tr>
+					<td align="center" valign="middle" height="30px" width="100%">
+						<a class="enlacesmenu" href="https://www.liveworksheets.com/help/">Help</a>
+					</td>
+					</tr>
+				</table>
+			</div>
+
+		
+
+
+		<div align="center" style="position:absolute;z-index:100001;top:36px;left:0px;width:220px;height:36px;background-color:#508cc3;border-radius:0px 0px 10px 10px">
+			<table width="100%">
+				<tr>
+				<td align="center" valign="middle" height="30px" width="100%">
+					<a class="enlacesmenu" href="https://www.liveworksheets.com/workbooks">Students access</a>
+				</td>
+				</tr>
+			</table>
+		</div>
+
+ 
+
+		<div id="teachersmenu" align="center" style="position:absolute;z-index:100001;top:36px;right:0px;width:220px;height:36px;background-color:#508cc3;border-radius:0px 0px 10px 10px;overflow:hidden">
+			<table width="100%">
+				<tr>
+					<td align="center" valign="middle" height="30px" width="100%">
+						
+							<span class="enlacesmenu" onclick="desplegarmenuteachers(320)">Teachers access&nbsp;&nbsp;<img id="teachersdropdowntriangle" src="https://files.liveworksheets.com/images/dropdownwhite.png"></span>
+						
+					</td>
+				</tr>
+				
+					<tr>
+						<td align="center" valign="middle" height="38px" width="100%">
+								
+									<form id="formulariologin" method="POST" action="https://www.liveworksheets.com/login.asp">
+								
+								<br>
+								<font color="#FFFFFF" style="font-size: 11pt">Username or email: </font><br>
+								<input type="text" id="usernamelogin" name="usernamelogin" size="30" onchange="this.value=this.value.trim()" onfocus="desplegarmenuteacherssinodesplegado(320)" style="box-sizing:content-box;background-color:#edeff0;height:20px;width:160px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;">
+								<br><br>
+								<font color="#FFFFFF" style="font-size: 11pt">Password: </font><br>
+								<input type="password" id="passwordlogin" name="passwordlogin" size="20" onchange="this.value=this.value.trim()" onfocus="desplegarmenuteacherssinodesplegado(320)" style="box-sizing:content-box;background-color:#edeff0;height:20px;width:160px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;"><br>
+								<font color="#FFFFFF" size="2">
+								<input type="checkbox" name="rememberme" value="yes">Remember me
+								<br>&nbsp;<br>
+								<input type="submit" value="Enter" name="Send" style="box-sizing:content-box;background-color:#ffffff;height:20px;width:100px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;"><br><br>
+								</form>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" valign="middle" height="38px" width="100%">
+							<a class="enlacesmenu" href="https://www.liveworksheets.com/register/register.asp">Register</a>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" valign="middle" height="38px" width="100%">
+							<a class="enlacesmenu" href="https://www.liveworksheets.com/myaccount/forgotmypassword.asp">Forgot my password</a>
+						</td>
+					</tr>
+				 
+			</table>
+		</div>
+
+			
+	</div>
+ 
+</div>
+
+
+
+<div class="capalogin" id="capalogin" style="background-color:#508cc3;border:0px;border-radius:10px">
+	<table border="0" width="300px" height="300px" cellspacing="0" cellpadding="0" align="center">
+		<tr>
+			<td width="300" align="center" width="1000">
+			<font color="#FFFFFF" style="font-size: 18pt"><span id="logintitle">Log in: </span></font><br><br>
+			
+				<form id="formulariologin" method="POST" action="https://www.liveworksheets.com/login.asp">
+			
+			<font color="#FFFFFF" style="font-size: 11pt">Username or email: </font><br>
+			<input type="text" id="usernamelogin" name="usernamelogin" size="30" onchange="this.value=this.value.trim()" style="background-color:#edeff0;height:20px;width:200px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;">
+			<br><br>
+			<font color="#FFFFFF" style="font-size: 11pt">Password: </font><br>
+			<input type="password" id="passwordlogin" name="passwordlogin" size="20" onchange="this.value=this.value.trim()" style="background-color:#edeff0;height:20px;width:200px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;"><br>
+			<font color="#FFFFFF" size="2">
+			<input type="checkbox" name="rememberme" value="yes">Remember me
+			<br>&nbsp;<br>
+			<input type="submit" value="Enter" name="Send" style="height:20px;width:100px;font-size:14px;border-radius: 3px;border: 1px solid #d4d3d3;"><br><br>
+			<a class="enlaceblanco" href="https://www.liveworksheets.com/register/register.asp">Register</a><br>
+			<a class="enlaceblanco" href="https://www.liveworksheets.com/myaccount/forgotmypassword.asp">Forgot my password</a><br><br></font>
+			<font size="3"><span class="enlaceblanco" onclick="closeLogin()">Close</span></font>
+			</p>
+			</form>
+			</td>
+
+		</tr>
+	</table>
+</div>
+<div class="capalogin" id="capafollow"></div>
+
+
+
+<div id="capacontenido" class="capacontenido" style="width:1160px">
+
+	
+
+
+
+	<div align="center">
+		<!-- Sharingbuttons.io -->
+		<!-- Sharingbutton Facebook -->
+		<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww%2Eliveworksheets%2Ecom" target="_blank" rel="noopener" aria-label="Share on Facebook">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+			</div>Share on Facebook</div>
+		</a>
+
+		<!-- Sharingbutton Twitter -->
+		<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Liveworksheets+transforms+your+traditional+printable+worksheets+into+self%2Dcorrecting+interactive+exercises+that+the+students+can+do+online+and+send+to+the+teacher%2E&amp;url=https%3A%2F%2Fwww%2Eliveworksheets%2Ecom" target="_blank" rel="noopener" aria-label="Share on Twitter">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+			</div>Share on Twitter</div>
+		</a>
+
+		<!-- Sharingbutton Pinterest -->
+		<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww%2Eliveworksheets%2Ecom&amp;media=https%3A%2F%2Fwww%2Eliveworksheets%2Ecom%2Fimages%2Flogomayusculasblanco%2Epng;description=Liveworksheets+transforms+your+traditional+printable+worksheets+into+self%2Dcorrecting+interactive+exercises+that+the+students+can+do+online+and+send+to+the+teacher%2E" target="_blank" rel="noopener" aria-label="Share on Pinterest">
+		<div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.14.5C5.86.5 2.7 5 2.7 8.75c0 2.27.86 4.3 2.7 5.05.3.12.57 0 .66-.33l.27-1.06c.1-.32.06-.44-.2-.73-.52-.62-.86-1.44-.86-2.6 0-3.33 2.5-6.32 6.5-6.32 3.55 0 5.5 2.17 5.5 5.07 0 3.8-1.7 7.02-4.2 7.02-1.37 0-2.4-1.14-2.07-2.54.4-1.68 1.16-3.48 1.16-4.7 0-1.07-.58-1.98-1.78-1.98-1.4 0-2.55 1.47-2.55 3.42 0 1.25.43 2.1.43 2.1l-1.7 7.2c-.5 2.13-.08 4.75-.04 5 .02.17.22.2.3.1.14-.18 1.82-2.26 2.4-4.33.16-.58.93-3.63.93-3.63.45.88 1.8 1.65 3.22 1.65 4.25 0 7.13-3.87 7.13-9.05C20.5 4.15 17.18.5 12.14.5z"/></svg>
+			</div>Share on Pinterest</div>
+		</a>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<br><br>
+	<div align="center">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6721505224230815"
+			crossorigin="anonymous"></script>
+		<!-- 1000x100 -->
+		<ins class="adsbygoogle"
+			style="display:inline-block;width:1000px;height:100px"
+			data-ad-client="ca-pub-6721505224230815"
+			data-ad-slot="8250980790"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<br><br>
+ 
+	<br>
+	<div align="left" class="divcontenido" style="position:relative">
+		<div align="right" style="position:absolute;right:10px;top:10px;height:20px;width:200px">
+		Language: <select id="worksheetslanguage" name="worksheetslanguage" style="width:120px" onchange="chooseworksheetslanguage()">
+					<option value="">All languages</option>
+					
+					<option value="aa">Afar</option>
+					
+					<option value="ab">Abkhaz</option>
+					
+					<option value="ae">Avestan</option>
+					
+					<option value="af">Afrikaans</option>
+					
+					<option value="ak">Akan</option>
+					
+					<option value="am">Amharic</option>
+					
+					<option value="an">Aragonese</option>
+					
+					<option value="ar">Arabic</option>
+					
+					<option value="as">Assamese</option>
+					
+					<option value="at">Asturianu</option>
+					
+					<option value="ah">Athabascan</option>
+					
+					<option value="av">Avaric</option>
+					
+					<option value="ay">Aymara</option>
+					
+					<option value="az">Azerbaijani</option>
+					
+					<option value="ba">Bashkir</option>
+					
+					<option value="be">Belarusian</option>
+					
+					<option value="bg">Bulgarian</option>
+					
+					<option value="bh">Bihari</option>
+					
+					<option value="bi">Bislama</option>
+					
+					<option value="bm">Bambara</option>
+					
+					<option value="bn">Bengali, Bangla</option>
+					
+					<option value="bo">Tibetan Standard, Tibetan, Central</option>
+					
+					<option value="br">Breton</option>
+					
+					<option value="bs">Bosnian</option>
+					
+					<option value="ca">Catalan</option>
+					
+					<option value="ce">Chechen</option>
+					
+					<option value="ch">Chamorro</option>
+					
+					<option value="co">Corsican</option>
+					
+					<option value="cr">Cree</option>
+					
+					<option value="cs">Czech</option>
+					
+					<option value="cu">Old Church Slavonic, Church Slavonic,Old Bulgarian</option>
+					
+					<option value="cv">Chuvash</option>
+					
+					<option value="cy">Welsh</option>
+					
+					<option value="da">Danish</option>
+					
+					<option value="de">German</option>
+					
+					<option value="dv">Divehi, Dhivehi, Maldivian</option>
+					
+					<option value="dz">Dzongkha</option>
+					
+					<option value="ee">Ewe</option>
+					
+					<option value="el">Greek (modern)</option>
+					
+					<option value="en">English</option>
+					
+					<option value="eo">Esperanto</option>
+					
+					<option value="es">Spanish</option>
+					
+					<option value="et">Estonian</option>
+					
+					<option value="eu">Basque</option>
+					
+					<option value="fa">Persian (Farsi)</option>
+					
+					<option value="ff">Fula, Fulah, Pulaar, Pular</option>
+					
+					<option value="fi">Finnish</option>
+					
+					<option value="fj">Fijian</option>
+					
+					<option value="fo">Faroese</option>
+					
+					<option value="fr">French</option>
+					
+					<option value="fy">Western Frisian</option>
+					
+					<option value="ga">Irish</option>
+					
+					<option value="gd">Scottish Gaelic, Gaelic</option>
+					
+					<option value="gl">Galician</option>
+					
+					<option value="gn">Guaraní</option>
+					
+					<option value="gu">Gujarati</option>
+					
+					<option value="gv">Manx</option>
+					
+					<option value="ha">Hausa</option>
+					
+					<option value="he">Hebrew (modern)</option>
+					
+					<option value="hi">Hindi</option>
+					
+					<option value="ho">Hiri Motu</option>
+					
+					<option value="hr">Croatian</option>
+					
+					<option value="ht">Haitian, Haitian Creole</option>
+					
+					<option value="hu">Hungarian</option>
+					
+					<option value="hy">Armenian</option>
+					
+					<option value="hz">Herero</option>
+					
+					<option value="ia">Interlingua</option>
+					
+					<option value="id">Indonesian</option>
+					
+					<option value="ie">Interlingue</option>
+					
+					<option value="ig">Igbo</option>
+					
+					<option value="ii">Nuosu</option>
+					
+					<option value="ik">Inupiaq</option>
+					
+					<option value="io">Ido</option>
+					
+					<option value="is">Icelandic</option>
+					
+					<option value="it">Italian</option>
+					
+					<option value="iu">Inuktitut</option>
+					
+					<option value="ja">Japanese</option>
+					
+					<option value="jv">Javanese</option>
+					
+					<option value="ka">Georgian</option>
+					
+					<option value="kaa">Karakalpak</option>
+					
+					<option value="kg">Kongo</option>
+					
+					<option value="ki">Kikuyu, Gikuyu</option>
+					
+					<option value="kj">Kwanyama, Kuanyama</option>
+					
+					<option value="kk">Kazakh</option>
+					
+					<option value="kl">Kalaallisut, Greenlandic</option>
+					
+					<option value="km">Khmer</option>
+					
+					<option value="kn">Kannada</option>
+					
+					<option value="ko">Korean</option>
+					
+					<option value="kr">Kanuri</option>
+					
+					<option value="ks">Kashmiri</option>
+					
+					<option value="ku">Kurdish</option>
+					
+					<option value="kv">Komi</option>
+					
+					<option value="kw">Cornish</option>
+					
+					<option value="ky">Kyrgyz</option>
+					
+					<option value="la">Latin</option>
+					
+					<option value="lb">Luxembourgish, Letzeburgesch</option>
+					
+					<option value="lg">Ganda</option>
+					
+					<option value="li">Limburgish, Limburgan, Limburger</option>
+					
+					<option value="ln">Lingala</option>
+					
+					<option value="lo">Lao</option>
+					
+					<option value="lt">Lithuanian</option>
+					
+					<option value="lu">Luba-Katanga</option>
+					
+					<option value="lv">Latvian</option>
+					
+					<option value="mg">Malagasy</option>
+					
+					<option value="mh">Marshallese</option>
+					
+					<option value="mi">M&#257;ori</option>
+					
+					<option value="mk">Macedonian</option>
+					
+					<option value="ml">Malayalam</option>
+					
+					<option value="mn">Mongolian</option>
+					
+					<option value="mr">Marathi (Mar&#257;&#7789;h&#299;)</option>
+					
+					<option value="ms">Malay</option>
+					
+					<option value="mt">Maltese</option>
+					
+					<option value="my">Burmese</option>
+					
+					<option value="na">Nauruan</option>
+					
+					<option value="nb">Norwegian Bokmål</option>
+					
+					<option value="nd">Northern Ndebele</option>
+					
+					<option value="ne">Nepali</option>
+					
+					<option value="ng">Ndonga</option>
+					
+					<option value="nl">Dutch</option>
+					
+					<option value="nn">Norwegian Nynorsk</option>
+					
+					<option value="no">Norwegian</option>
+					
+					<option value="nr">Southern Ndebele</option>
+					
+					<option value="nv">Navajo, Navaho</option>
+					
+					<option value="ny">Chichewa, Chewa, Nyanja</option>
+					
+					<option value="oc">Occitan</option>
+					
+					<option value="oj">Ojibwe, Ojibwa</option>
+					
+					<option value="om">Oromo</option>
+					
+					<option value="or">Oriya</option>
+					
+					<option value="os">Ossetian, Ossetic</option>
+					
+					<option value="pa">Eastern Punjabi, Eastern Panjabi</option>
+					
+					<option value="pi">P&#257;li</option>
+					
+					<option value="pl">Polish</option>
+					
+					<option value="ps">Pashto, Pushto</option>
+					
+					<option value="pt">Portuguese</option>
+					
+					<option value="qu">Quechua</option>
+					
+					<option value="rm">Romansh</option>
+					
+					<option value="rn">Kirundi</option>
+					
+					<option value="ro">Romanian</option>
+					
+					<option value="ru">Russian</option>
+					
+					<option value="rw">Kinyarwanda</option>
+					
+					<option value="sa">Sanskrit (Sa&#7745;sk&#7771;ta)</option>
+					
+					<option value="sc">Sardinian</option>
+					
+					<option value="sd">Sindhi</option>
+					
+					<option value="se">Northern Sami</option>
+					
+					<option value="sg">Sango</option>
+					
+					<option value="si">Sinhalese, Sinhala</option>
+					
+					<option value="sk">Slovak</option>
+					
+					<option value="sl">Slovene</option>
+					
+					<option value="sm">Samoan</option>
+					
+					<option value="sn">Shona</option>
+					
+					<option value="so">Somali</option>
+					
+					<option value="sq">Albanian</option>
+					
+					<option value="sr">Serbian</option>
+					
+					<option value="ss">Swati</option>
+					
+					<option value="st">Southern Sotho</option>
+					
+					<option value="su">Sundanese</option>
+					
+					<option value="sv">Swedish</option>
+					
+					<option value="sw">Swahili</option>
+					
+					<option value="ta">Tamil</option>
+					
+					<option value="te">Telugu</option>
+					
+					<option value="tg">Tajik</option>
+					
+					<option value="th">Thai</option>
+					
+					<option value="ti">Tigrinya</option>
+					
+					<option value="tk">Turkmen</option>
+					
+					<option value="tl">Tagalog</option>
+					
+					<option value="tn">Tswana</option>
+					
+					<option value="to">Tonga (Tonga Islands)</option>
+					
+					<option value="tr">Turkish</option>
+					
+					<option value="ts">Tsonga</option>
+					
+					<option value="tt">Tatar</option>
+					
+					<option value="tw">Twi</option>
+					
+					<option value="ty">Tahitian</option>
+					
+					<option value="ug">Uyghur</option>
+					
+					<option value="uk">Ukrainian</option>
+					
+					<option value="ur">Urdu</option>
+					
+					<option value="uz">Uzbek</option>
+					
+					<option value="va">Valencian</option>
+					
+					<option value="ve">Venda</option>
+					
+					<option value="vi">Vietnamese</option>
+					
+					<option value="vo">Volapük</option>
+					
+					<option value="wa">Walloon</option>
+					
+					<option value="wo">Wolof</option>
+					
+					<option value="xh">Xhosa</option>
+					
+					<option value="yi">Yiddish</option>
+					
+					<option value="yo">Yoruba</option>
+					
+					<option value="za">Zhuang, Chuang</option>
+					
+					<option value="zh">Chinese</option>
+					
+					<option value="zu">Zulu</option>
+					
+				</select>
+		</div>
+		<font size="4"><b>
+		
+			&nbsp;&nbsp;&nbsp;&nbsp;Latest contributions
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="index.asp?q=yesterday">Most popular yesterday</a>
+		
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="index.asp?q=lastweek">Most popular this week</a>
+		
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="index.asp?q=following">Following</a>
+		
+		</b>
+		</font>
+	 	<br><br>
+		
+		<div class="hiddenscroll" style="width:1150px;height:3250px;overflow-x:hidden;overflow-y:hidden" id="fichas">
+			<table border="0" cellpadding="10" cellspacing="0" width="1100">
+				<tr> 
+				
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Tests_and_exams/E12-test_25.4_cp3032145ph">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250931482494780/thumb204250931482494780.jpg" border="0" alt="Interactive worksheet E12-test 25.4" title="E12-test 25.4&#13;Language: &#13;Grade/level: 12&#13;School subject: English as a Second Language (ESL)&#13;Main content: Tests and exams&#13;Other contents: TEST">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Tests_and_exams/E12-test_25.4_cp3032145ph">
+											E12-test 25.4
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>thuyanh6990</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/Science/Seasons/Ws_6_je3032144pf">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250923341790010/thumb204250923341790010.jpg" border="0" alt="Interactive worksheet Ws 6" title="Ws 6&#13;Language: &#13;Grade/level: 1&#13;School subject: Science&#13;Main content: Seasons&#13;Other contents: Day and night">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/Science/Seasons/Ws_6_je3032144pf">
+											Ws 6
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>Ms_Feby</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/uj3032143nx">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/2/20/202202027571152268/thumb202202027571152268.jpg" border="0" alt="Interactive worksheet Caesarova šifra" title="Caesarova šifra&#13;Language: &#13;Grade/level: 6&#13;School subject: informatika&#13;Main content: Šifrování&#13;Other contents: Caesarova šifra">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/uj3032143nx">
+											Caesarova šifra
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>salusova</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/oz3032142bh">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250918493803305/thumb204250918493803305.jpg" border="0" alt="Interactive worksheet Predicting Outcome Worksheet" title="Predicting Outcome Worksheet&#13;Language: &#13;Grade/level: Grade 1&#13;School subject: Mathematics 1&#13;Main content: Predicting Outcome&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/oz3032142bh">
+											Predicting Outcome Worksheet
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>teacher_cjm</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+						<tr>
+						<td colspan="4" width="1100px" height="320px" valign="top" align="center">
+								<!-- Video Player -->
+								<script type="text/javascript" language="javascript" src="https://live.primis.tech/live/liveView.php?s=110171&schain=1.0,1!theadengine.com,[1345],1"></script>
+								<!--End Video Player -->
+								<br><br>
+						</td>
+						</tr>
+					
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Family_members/ASS_Unit_7_ms3032141er">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/20425084557222737/thumb20425084557222737.jpg" border="0" alt="Interactive worksheet ASS Unit 7" title="ASS Unit 7&#13;Language: &#13;Grade/level: 7 years&#13;School subject: English as a Second Language (ESL)&#13;Main content: Family members&#13;Other contents: This is ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Family_members/ASS_Unit_7_ms3032141er">
+											ASS Unit 7
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>earlyriser</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/ab3032140is">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250858043803431/thumb204250858043803431.jpg" border="0" alt="Interactive worksheet Lws feladatlapok" title="Lws feladatlapok&#13;Language: &#13;Grade/level: 6.&#13;School subject: vegyes&#13;Main content: Vegyes&#13;Other contents: vegyes">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/ab3032140is">
+											Lws feladatlapok
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>kkriszta0619</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/zi3032139ge">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/1/22/201221834441152268/thumb201221834441152268.jpg" border="0" alt="Interactive worksheet Výrazy - roznásobení a vytýkání" title="Výrazy - roznásobení a vytýkání&#13;Language: &#13;Grade/level: 8&#13;School subject: Matematika&#13;Main content: Úprava výrazů&#13;Other contents: úprava výrazů">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/zi3032139ge">
+											Výrazy - roznásobení a vytýkání
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>salusova</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/ph3032138px">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/1/27/201271245481152268/thumb201271245481152268.jpg" border="0" alt="Interactive worksheet Výrazy - násobení mnohočlenů a vytýkání" title="Výrazy - násobení mnohočlenů a vytýkání&#13;Language: &#13;Grade/level: 8&#13;School subject: Matematika&#13;Main content: Úprava výrazů&#13;Other contents: úprava výrazů">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/ph3032138px">
+											Výrazy - násobení mnohočlenů a vytýkání
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>salusova</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/vb3032136vt">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250912423803365/thumb204250912423803365.jpg" border="0" alt="Interactive worksheet Added value" title="Added value&#13;Language: &#13;Grade/level: Starters&#13;School subject: English as a Second Language (ESL)&#13;Main content: The body and the face&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/vb3032136vt">
+											Added value
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>iSpeak_Academic</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/ah3032135yc">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/20425092414961313/thumb20425092414961313.jpg" border="0" alt="Interactive worksheet Hardware PC" title="Hardware PC&#13;Language: &#13;Grade/level: 4 ESO&#13;School subject: TIC&#13;Main content: Partes internas del PC&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/ah3032135yc">
+											Hardware PC
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>AndresGR</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/cn3032133gk">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/20425092658816760/thumb20425092658816760.jpg" border="0" alt="Interactive worksheet Sao Paulo" title="Sao Paulo&#13;Language: &#13;Grade/level: 3 high school&#13;School subject: GEography CLIL&#13;Main content: Geography, urban growth&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/cn3032133gk">
+											Sao Paulo
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>hankajen</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/id/Ilmu_Pengetahuan_Alam_(IPA)/Sistem_pernapasan/Lkpd_kelas_5_sistem_pernapasan_manusia_vm3032132hh">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250929297838/thumb204250921113761190.jpg" border="0" alt="Interactive worksheet Lkpd kelas 5 sistem pernapasan manusia" title="Lkpd kelas 5 sistem pernapasan manusia&#13;Language: &#13;Grade/level: 5&#13;School subject: Ilmu Pengetahuan Alam (IPA)&#13;Main content: Sistem pernapasan&#13;Other contents: pernapasan manusia">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/id/Ilmu_Pengetahuan_Alam_(IPA)/Sistem_pernapasan/Lkpd_kelas_5_sistem_pernapasan_manusia_vm3032132hh">
+											Lkpd kelas 5 sistem pernapasan manusia
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>karinsyaharanii</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/kh3032131lg">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250920551169545/thumb204250920551169545.jpg" border="0" alt="Interactive worksheet Есть ли у весны праздничный календарь" title="Есть ли у весны праздничный календарь&#13;Language: &#13;Grade/level: 2&#13;School subject: я исследую мир&#13;Main content: Проверочное задание&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/kh3032131lg">
+											Есть ли у весны праздничный календарь
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>Gladyranna</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/sk3032130zd">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250919463803346/thumb204250919463803346.jpg" border="0" alt="Interactive worksheet Lkpd pai kelas 9" title="Lkpd pai kelas 9&#13;Language: &#13;Grade/level: 9&#13;School subject: SMP&#13;Main content: Lkpd&#13;Other contents: LKPD PAI 9">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/sk3032130zd">
+											Lkpd pai kelas 9
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>erick424</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/yk3032129hf">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250901591068798/thumb204250901591068798.jpg" border="0" alt="Interactive worksheet 5.sinif" title="5.sinif&#13;Language: &#13;Grade/level: 5&#13;School subject: Türk Dili&#13;Main content: Ses olaylari&#13;Other contents: BOŞLUK DOLDURMA">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/yk3032129hf">
+											5.sinif
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>aytacoter</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/Social_Science/Ancient_History/Celts,_Greeks_and_Phoenicians_ks3032128zv">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/20425092326254059/thumb20425092326254059.jpg" border="0" alt="Interactive worksheet Celts, Greeks and Phoenicians" title="Celts, Greeks and Phoenicians&#13;Language: &#13;Grade/level: Grade 4&#13;School subject: Social Science&#13;Main content: Ancient History&#13;Other contents: Iberians, Greeks and Phoenicians">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/Social_Science/Ancient_History/Celts,_Greeks_and_Phoenicians_ks3032128zv">
+											Celts, Greeks and Phoenicians
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>CristinaGondosElCoto</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/li3032127bg">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250910321032783/thumb204250910321032783.jpg" border="0" alt="Interactive worksheet Parts of Speech: noun, verb, adjective, adverb" title="Parts of Speech: noun, verb, adjective, adverb&#13;Language: &#13;Grade/level: Grade 4&#13;School subject: Grammar ESL&#13;Main content: Nouns, verbs, adjectives, adverbs&#13;Other contents: -">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/li3032127bg">
+											Parts of Speech: noun, verb, adjective, adverb
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>adymatus2</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Writing/FFs2_-_Unit_8_-_Grapes_(25-4-2022)_gi3032126vj">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250914572221432/thumb204250914572221432.jpg" border="0" alt="Interactive worksheet FFs2 - Unit 8 - Grapes (25-4-2022)" title="FFs2 - Unit 8 - Grapes (25-4-2022)&#13;Language: &#13;Grade/level: Grapes&#13;School subject: English as a Second Language (ESL)&#13;Main content: Writing&#13;Other contents: Answering">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Writing/FFs2_-_Unit_8_-_Grapes_(25-4-2022)_gi3032126vj">
+											FFs2 - Unit 8 - Grapes (25-4-2022)
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>MissHana98</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Tests_and_exams/Flyers-Mini_Test-Unit3-L5^6_tl3032125kv">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250906153780227/thumb204250906153780227.jpg" border="0" alt="Interactive worksheet Flyers-Mini Test-Unit3-L5+6" title="Flyers-Mini Test-Unit3-L5+6&#13;Language: &#13;Grade/level: Flyers&#13;School subject: English as a Second Language (ESL)&#13;Main content: Tests and exams&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Tests_and_exams/Flyers-Mini_Test-Unit3-L5^6_tl3032125kv">
+											Flyers-Mini Test-Unit3-L5+6
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>AMSLINK</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/om3032124aa">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250919423783579/thumb204250919423783579.jpg" border="0" alt="Interactive worksheet Ciudades" title="Ciudades&#13;Language: &#13;Grade/level: ESO&#13;School subject: Geografía&#13;Main content: Ciudades&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/om3032124aa">
+											Ciudades
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>Elena2891</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/jf3032123ip">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/20425091919185434/thumb20425091919185434.jpg" border="0" alt="Interactive worksheet Читацькі запитання (3)" title="Читацькі запитання (3)&#13;Language: &#13;Grade/level: 2&#13;School subject: читання&#13;Main content: Позакласне читання&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/jf3032123ip">
+											Читацькі запитання (3)
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>HannaS</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/es/Español_como_Lengua_Extranjera_(ELE)/Los_animales/Animales_my3032122vx">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250745561333407/thumb204250745561333407.jpg" border="0" alt="Interactive worksheet Animales" title="Animales&#13;Language: &#13;Grade/level: 1&#13;School subject: Español como Lengua Extranjera (ELE)&#13;Main content: Los animales&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/es/Español_como_Lengua_Extranjera_(ELE)/Los_animales/Animales_my3032122vx">
+											Animales
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>silviadiazduran</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/fi3032121ae">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250623293802976/thumb204250623293802976.jpg" border="0" alt="Interactive worksheet Jurnal ramadhan" title="Jurnal ramadhan&#13;Language: &#13;Grade/level: 6&#13;School subject: Agama&#13;Main content: Jurnal Ramadhan&#13;Other contents: ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/fi3032121ae">
+											Jurnal ramadhan
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>Rofiuddarojat</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+							<td width="280px" height="400px" valign="top" align="center">
+											
+
+											<a href="https://www.liveworksheets.com/worksheets/en/English_language/Grammar/E8-u10-no3_rr3032120ny">
+											<div class="worksheetpreview" style="height:340px;width:240px;overflow:hidden">
+											<img src="https://files.liveworksheets.com/def_files/2022/4/25/204250907512803532/thumb204250907512803532.jpg" border="0" alt="Interactive worksheet E8-u10-no3" title="E8-u10-no3&#13;Language: &#13;Grade/level: SECONDARY&#13;School subject: English language&#13;Main content: Grammar&#13;Other contents: VOCABULARY ">
+											</div>
+											</a>
+											<br>
+											<font size="3">
+											<a class="enlace" href="https://www.liveworksheets.com/worksheets/en/English_language/Grammar/E8-u10-no3_rr3032120ny">
+											E8-u10-no3
+											</a>
+											<br>
+											</font>
+											<font size="2" color="#666666">by <b>ttbn87</b>
+											<br>&nbsp;<br>
+											</font>
+							</td> 
+						
+						</tr>
+						
+						<td width="280px" height="400px" valign="top" align="center">
+						&nbsp;
+						</td>
+						
+			</table>
+		</div>
+	</div>
+
+
+	
+
+</div>
+
+<br><br><br><br><br><br>
+
+
+
+	<!-- GPT AdSlot 3 for Ad unit 'liveworksheets_multisize_anchor' ### Size: [[728,90],[320,50]] -->
+	<div id='div-gpt-ad-2415540-3' style="position: fixed; left: 0; bottom: 0; text-align: center; z-index: 9999999; background-color: rgba(255, 255, 255, 0.8); border-top: 1px solid lightgray; width: 100%; max-width: 100%">
+	<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-2415540-3'); });
+	</script>
+	</div>
+	<!-- End AdSlot 3 -->
+
+<div align="center" id="capabottommenu" style="z-index:0;position:relative;top:20px;margin-right:auto;margin-left:auto;width:1160px;font-size:16px">
+
+<font face="Arial"><a class="enlace" href="https://www.liveworksheets.com/terms_of_use_en.asp">Terms of use</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Arial"><a class="enlace" href="https://www.liveworksheets.com/privacypolicy_en.asp">Privacy policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Arial"><a class="enlace" href="https://www.liveworksheets.com/cookies_en.asp">Cookies configuration</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Arial"><a class="enlace" href="https://www.liveworksheets.com/reportcopyright.asp">Report copyright infringement</a></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Arial"><a class="enlace" href="https://www.liveworksheets.com/contact.asp">Contact</a></font>
+
+<p>&nbsp;</p>
+<br><br><br><br><br>
+</div>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  //ga('create', 'UA-2079983-7', 'auto');
+  //ga('send', 'pageview');
+
+  var GA_LOCAL_STORAGE_KEY = 'ga:clientId';
+
+  if (window.localStorage) {
+    ga('create', 'UA-2079983-7', {
+      'storage': 'none',
+      'clientId': localStorage.getItem(GA_LOCAL_STORAGE_KEY)
+    });
+    ga(function(tracker) {
+      localStorage.setItem(GA_LOCAL_STORAGE_KEY, tracker.get('clientId'));
+    });
+    ga('send', 'pageview');
+  }
+</script>
+
+</div>
+</body>
+
+</html>

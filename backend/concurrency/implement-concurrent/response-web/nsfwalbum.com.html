@@ -1,0 +1,219 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="apple-touch-fullscreen" content="YES" />
+<title>Erotic photos search engine</title>
+<meta name="description" content="Daily updated best erotic photos." />
+<meta name="keywords" content="porn pictures, sex pictures, xxx photos, sex images, porn photos, porn pics, sex pics" />
+<meta name="referrer" content="none">
+<meta name="referrer" content="never">
+<meta name="referrer" content="no-referrer">
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="/favicon/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/favicon/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;" />
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="/favicon/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+<meta name="apple-mobile-web-app-status-bar" content="#FFFFFF">
+<link rel="manifest" href="/favicon/manifest.js">
+<meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script src="/js/jquery-3.4.min.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="/js/jquery.flex-images.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="/js/my.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script src="/js/app.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<link href="/css/cheatsheet.css" rel="stylesheet">
+<link href="/css/my.css" rel="stylesheet">
+</head>
+<body>
+<script src="https://nsfwalbum.com/efds435m432.js" type="ce44347de43f3abbaa559f50-text/javascript"></script>
+<script type="ce44347de43f3abbaa559f50-text/javascript">
+	var nextP = 1;
+	var ScrollDebounce = true;
+	
+    $(window).on("load resize scroll",function(e){
+		
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 1500) {
+		
+		    if (ScrollDebounce) {
+                ScrollDebounce = false;
+			
+			    $("#backendLoading").show();						 			
+			
+                var queryString =  rfc3986EncodeURIComponent("");
+  						
+				     $.ajax({
+		                async: true,  
+                        type: "get",
+                        data: "&queryString="+queryString+"&prev_items=4&p="+nextP,
+                        url: "//nsfwalbum.com/backend.php",
+                        success: function( response ) {
+
+                            var data = response;
+						
+						    $(".backend").append(data);
+							
+	                        $('.flexP'+nextP+' img.thumbPhoto').each(function() {
+						
+						        $(this).on('load', function(){
+                                    loadImage(this);
+						        });  
+	
+						        $(this).on('error', function(){
+                                    loadImage(this);
+						        });  
+								
+                            });	
+							
+							
+                            var flexContainerWidth = $('.flexP'+nextP).width();
+                            var thumbSize = (flexContainerWidth / 2) - 2;
+		
+                            $('.flexP'+nextP+' .item').each(function() {
+						        
+								$(this).width(thumbSize);
+								$(this).height(thumbSize);
+
+                            });								
+						    
+							
+						    
+			                $("#backendLoading").hide();						 
+						 
+						    nextP = nextP + 1;
+						 
+                            setTimeout(function () { ScrollDebounce = true; }, 100);
+						 						 						 						 
+                        }
+	                });		 
+            }
+        				 
+        }
+		
+    });	
+	
+    function rfc3986EncodeURIComponent (str) {  
+         return encodeURIComponent(str).replace(/[!'()*]/g, escape);  
+    }
+	//====================//
+	</script>
+<div class="container-fluid">
+<header class="header">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<a style="font-family: 'Roboto', sans-serif; font-weight: 900; " class="navbar-brand" href="/">NSFWalbum.com</a>
+<button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav  mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">New</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/models/">Sites/Models</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/cdn-cgi/l/email-protection#96f2fbf5f7d6f8e5f0e1f7faf4e3fbb8f5f9fb">DMCA</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" target="_blank" href="/copy/tos.php">Terms of service</a>
+</li>
+<li>
+<form action='/?search' method='get' class="form-inline my-2 my-lg-0">
+<input class="form-control mr-sm-2" type="search" placeholder="Text or image url" aria-label="Search" name="search" value="">
+<button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+</form>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<noscript>
+             <div class="alert alert-danger" role="alert">
+                 This site requires JavaScript.
+             </div>
+        </noscript>
+<div class="row content backend"></div>
+<div id="backendLoading">
+<div class="d-flex justify-content-center text-center">
+<div class="spinner-border" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+</div>
+</div>
+<footer>
+<div class="col text-center">
+<div class="bottom-title">
+<a href="https://nsfwalbum.com">NSFWalbum</a>
+</div>
+</div>
+<div id="bottom_finish_line"></div>
+<div class="col text-center">
+<div class="bottom_text">
+NSFWALBUM.COM <br /> Erotic photos search engine. </div>
+</div>
+</footer>
+</div>
+<div id="return-to-top"> <i class="fas fa-arrow-up"></i> </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="ce44347de43f3abbaa559f50-text/javascript">
+	$(document).ready(function() {
+
+  		   $('#DONATE_FORM').popup();
+
+           $.fn.popup.defaults.pagecontainer = '#page'
+    });
+	</script>
+<div id="DONATE_FORM" style="width: 340px; height: 130px;">
+<div class="popup_content">
+<button type="button" class="close DONATE_FORM_close" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+BTC: <a href="bitcoin:1MJMCQbcAPPN1h8pHCEzoAMXkqxjZjM67X">1MJMCQbcAPPN1h8pHCEzoAMXkqxjZjM67X</a><br />
+BCH: <a href="bitcoincash:qrxcemge4yet7t39ayqtlx4nhdx3uqmp0yqflgyatr">qrxcemge4yet7t39ayqtlx4nhdx3uqmp0yqflgyatr</a><br />
+Please donate to keep this site alive.<br />
+</div>
+</div>
+<div style="display:none; width:1px; height:1px;">
+<script type="ce44347de43f3abbaa559f50-text/javascript"><!--
+	     document.write("<a href='//www.liveinternet.ru/click' "+
+	     "target=_blank><img src='//counter.yadro.ru/hit?t39.1;r"+
+	     escape(document.referrer)+((typeof(screen)=="undefined")?"":
+	     ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+	     screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+	     ";"+Math.random()+
+	     "' alt='' title='LiveInternet' "+
+	     "border='0' width='1' height='1'><\/a>")
+	     //-->
+	     </script>
+</div>
+<script type="ce44347de43f3abbaa559f50-text/javascript">    
+(function () {
+    try{ Object.defineProperty(document.currentScript, "textContent", {get: () => "" }); } catch (err) {}
+    var myEl = {el: null}; var event = new CustomEvent('getexoloader', {"detail": myEl}); window.document.dispatchEvent(event); var ExoLoader = myEl.el;
+ExoLoader.serve({"script_url":"/3.php"});  
+ })();
+ </script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="ce44347de43f3abbaa559f50-|49" defer=""></script></body>
+</html>

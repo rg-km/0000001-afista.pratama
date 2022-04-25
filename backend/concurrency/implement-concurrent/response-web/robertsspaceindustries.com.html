@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="Roberts Space Industries | Follow the development of Star Citizen and Squadron 42" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/rsi/static/images/RSI-fb.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.80.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.383d8.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.5627b.css' media="all" rel="stylesheet"/>
+      
+            <script src='https://sentry.turbulent.ca/js-sdk-loader/2e12f629641e4f21a3c1f5da10e1b474.min.js' crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        Sentry.onLoad(function() {
+          Sentry.init({
+            dsn: 'https://2e12f629641e4f21a3c1f5da10e1b474@sentry.turbulent.ca/53',
+            environment: 'prod',
+            release: 'rsi-website@6.80.0',
+            maxBreadcrumbs: 50,
+            debug: 1 ? true : false,
+            ignoreErrors: ['Sign In failed. Please confirm you are not a bot', 'MultiStepRequired']
+          });
+        });
+      </script>
+      <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.80.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.80.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>Roberts Space Industries | Follow the development of Star Citizen and Squadron 42</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.b5517.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.b0cd4.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.11bb4.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '82tmYg:h2apXzD/vrfvcfgmXw8jdw', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          new RSI.Home.Main({ hasIdentity: false });
+          
+          
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+<link rel="alternate" type="application/rss+xml" title="RSI Comm-Link RSS" href="https://robertsspaceindustries.com/comm-link/rss"/>
+<script src='/rsi/static/packages/pages/rsi.page.home.build.b03d6.js'></script>
+
+    
+
+  <style>
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.80.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="home" class="" >
+
+    
+  <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="1"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar "></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.5627b.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+<div id="home-background">
+  <div class="bg-home-stars"></div>
+</div>
+
+
+    <div id="contentbody" class="" style="">
+      
+<div id="home-features-carousel" class="c-features-carousel">
+        
+  <div class="c-features-carousel__item feature js-feature" data-type="image" data-media-duration="10000" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+        <picture>
+              <source srcset="https://media.robertsspaceindustries.com/u32r6p2wfkr4e/store_slideshow_large_zoom.jpg" media="(max-width: 1420px)" />
+        <source srcset="https://media.robertsspaceindustries.com/u32r6p2wfkr4e/channel_item_full.jpg" media="(min-width: 1110px)" />
+        <source srcset="https://media.robertsspaceindustries.com/u32r6p2wfkr4e/store_slideshow_small_zoom.jpg" media="(min-width: 735px)" />
+        <source srcset="https://media.robertsspaceindustries.com/u32r6p2wfkr4e/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+
+        <img srcset="https://media.robertsspaceindustries.com/u32r6p2wfkr4e/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18501-Refine-Your-Prospects-With-The-MISC-Expanse">Refine Your Prospects With The MISC Expanse</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18501-Refine-Your-Prospects-With-The-MISC-Expanse">
+        <span class="label">
+          View More
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="image" data-media-duration="10000" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+        <picture>
+              <source srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/store_slideshow_large_zoom.jpg" media="(max-width: 1420px)" />
+        <source srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/channel_item_full.jpg" media="(min-width: 1110px)" />
+        <source srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/store_slideshow_small_zoom.jpg" media="(min-width: 735px)" />
+        <source srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+
+        <img srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18561-Spring-Merchandise-Sale">Spring Merchandise Sale</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18561-Spring-Merchandise-Sale">
+        <span class="label">
+          View More
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="image" data-media-duration="10000" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+        <picture>
+              <source srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/store_slideshow_large_zoom.png" media="(max-width: 1420px)" />
+        <source srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/channel_item_full.png" media="(min-width: 1110px)" />
+        <source srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/store_slideshow_small_zoom.png" media="(min-width: 735px)" />
+        <source srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/wallpaper_thumb.png" media="(min-width: 360px)" />
+
+        <img srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/heap_infobox.png" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18539-Alpha-317-Now-In-Testing">Alpha 3.17 - Now in Testing</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18539-Alpha-317-Now-In-Testing">
+        <span class="label">
+          View More
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="video" data-media-duration="10060" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+          <video muted preload="metadata">
+        <source src="/media/nyzncqdw9qyoyr/webm/ISC_E31710_Carousel_220331.webm" type="video/webm">
+        <source src="/media/nyzncqdw9qyoyr/mp4/ISC_E31710_Carousel_220331.mp4" type="video/mp4">
+      </video>
+        <picture>
+              <source srcset="/media/2qh8j20v912g8r/store_slideshow_large_zoom/ISC_033122B.jpg" media="(max-width: 1420px)" />
+        <source srcset="/media/2qh8j20v912g8r/channel_item_full/ISC_033122B.jpg" media="(min-width: 1110px)" />
+        <source srcset="/media/2qh8j20v912g8r/store_slideshow_small_zoom/ISC_033122B.jpg" media="(min-width: 735px)" />
+        <source srcset="/media/2qh8j20v912g8r/wallpaper_thumb/ISC_033122B.jpg" media="(min-width: 360px)" />
+
+        <img srcset="/media/2qh8j20v912g8r/heap_infobox/ISC_033122B.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18612-Inside-Star-Citizen">Inside Star Citizen</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18612-Inside-Star-Citizen">
+        <span class="label">
+          Expanse Glance
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="video" data-media-duration="10040" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+          <video muted preload="metadata">
+        <source src="/media/xgi5y6w2ip1dbr/webm/PAT3170_100_V2_RefuelingCarousel.webm" type="video/webm">
+        <source src="/media/xgi5y6w2ip1dbr/mp4/PAT3170_100_V2_RefuelingCarousel.mp4" type="video/mp4">
+      </video>
+        <picture>
+              <source srcset="/media/w3ukvzpvf25d5r/store_slideshow_large_zoom/SCL_032522B.jpg" media="(max-width: 1420px)" />
+        <source srcset="/media/w3ukvzpvf25d5r/channel_item_full/SCL_032522B.jpg" media="(min-width: 1110px)" />
+        <source srcset="/media/w3ukvzpvf25d5r/store_slideshow_small_zoom/SCL_032522B.jpg" media="(min-width: 735px)" />
+        <source srcset="/media/w3ukvzpvf25d5r/wallpaper_thumb/SCL_032522B.jpg" media="(min-width: 360px)" />
+
+        <img srcset="/media/w3ukvzpvf25d5r/heap_infobox/SCL_032522B.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18593-Alpha-317-Ship-To-Ship-Refueling">Alpha 3.17 - Ship to Ship Refueling</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18593-Alpha-317-Ship-To-Ship-Refueling">
+        <span class="label">
+          View More
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="video" data-media-duration="29430" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+          <video muted preload="metadata">
+        <source src="/media/hsij6apkcvmxcr/webm/PAT3140_100_Clip_02_210720.webm" type="video/webm">
+        <source src="/media/hsij6apkcvmxcr/mp4/PAT3140_100_Clip_02_210720.mp4" type="video/mp4">
+      </video>
+        <picture>
+              <source srcset="/media/vow9bkxkqtedrr/store_slideshow_large_zoom/SCSGthumb.jpg" media="(max-width: 1420px)" />
+        <source srcset="/media/vow9bkxkqtedrr/channel_item_full/SCSGthumb.jpg" media="(min-width: 1110px)" />
+        <source srcset="/media/vow9bkxkqtedrr/store_slideshow_small_zoom/SCSGthumb.jpg" media="(min-width: 735px)" />
+        <source srcset="/media/vow9bkxkqtedrr/wallpaper_thumb/SCSGthumb.jpg" media="(min-width: 360px)" />
+
+        <img srcset="/media/vow9bkxkqtedrr/heap_infobox/SCSGthumb.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18381-New-Player-Guide-Star-Citizen">New Player Guide - Star Citizen</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18381-New-Player-Guide-Star-Citizen">
+        <span class="label">
+          View More
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+      
+  <div class="c-features-carousel__item feature js-feature" data-type="video" data-media-duration="10000" data-cta="Play now">
+    <div class="c-features-carousel__item-grid-bg"></div>
+
+          <video muted preload="metadata">
+        <source src="/media/ztf1zgu5yrl7vr/webm/316PatchRSICarousel_PAT3160_100_v008_Carousel02_PatchFeatures_211217.webm" type="video/webm">
+        <source src="/media/ztf1zgu5yrl7vr/mp4/316PatchRSICarousel_PAT3160_100_v008_Carousel02_PatchFeatures_211217.mp4" type="video/mp4">
+      </video>
+        <picture>
+              <source srcset="https://media.robertsspaceindustries.com/92g1tur3p2ov2/store_slideshow_large_zoom.jpg" media="(max-width: 1420px)" />
+        <source srcset="https://media.robertsspaceindustries.com/92g1tur3p2ov2/channel_item_full.jpg" media="(min-width: 1110px)" />
+        <source srcset="https://media.robertsspaceindustries.com/92g1tur3p2ov2/store_slideshow_small_zoom.jpg" media="(min-width: 735px)" />
+        <source srcset="https://media.robertsspaceindustries.com/92g1tur3p2ov2/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+
+        <img srcset="https://media.robertsspaceindustries.com/92g1tur3p2ov2/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+          </picture>
+
+    <div class="c-features-carousel__item-wrapper">
+      <h1 class="c-features-carousel__item-title">
+        <a href="/comm-link/transmission/18452-Return-To-Jumptown-Alpha-316">Return to Jumptown - Alpha 3.16</a>
+      </h1>
+
+            
+      <a class="c-features-carousel__item-link arrows-button" href="/comm-link/transmission/18452-Return-To-Jumptown-Alpha-316">
+        <span class="label">
+          Discover the new features and content in Alpha 3.16: Return to Jumptown
+        </span>
+        <div class="arrow-wrapper">
+          <span class="arrow arrow0"></span>
+          <span class="arrow arrow1"></span>
+          <span class="arrow arrow2"></span>
+        </div>
+      </a>
+
+      <div class="hover"></div>
+    </div>
+  </div>
+
+
+<div class="video-loader js-video-loader">
+  <div class="inner"></div>
+</div>
+
+<ul class="c-features-carousel__pagination">
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="0">
+      1
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="1">
+      2
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="2">
+      3
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="3">
+      4
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="4">
+      5
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="5">
+      6
+    </li>
+      <li class="c-features-carousel__pagination-item js-features-carousel-go-to-item" data-feature="6">
+      7
+    </li>
+  </ul>
+</div>
+
+<div class="home-wrapper">
+  
+      <div class="live-stats wrapper">
+      <div class="glow-page-title live-stats-title">
+  <div class="inner-title">
+    <h2 class="title">Live Stats</h2>
+    <div class="cboth"></div>
+  </div>
+</div>
+      <div class="container">
+        <div class="glow-crowdfunding-stats js-crowdfunding-live-stats">
+
+     <div class="live-stat" id="starcitizenStats">
+  <ul class="glow-mini-breadcrumb">
+    <li class="nav-item section">STAR CITIZEN</li></ul>
+  <div class="value js-value">
+    <div class="js-number-counter number-counter show-loading js-fans-counter" id="fans_counter">
+  <div class="loading js-loading blink">Loading</div>
+  <div class="error js-error blink">error</div>
+  <div class="prepend"></div>
+  <div class="number"></div>
+  <div class="digits js-digits">
+            <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="seperator">,</div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="seperator">,</div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+    <div class="mask">
+    <div class="carousel">
+                                  <div class="item on" rel="0">0</div>
+              <div class="item " rel="1">1</div>
+              <div class="item " rel="2">2</div>
+              <div class="item " rel="3">3</div>
+              <div class="item " rel="4">4</div>
+              <div class="item " rel="5">5</div>
+              <div class="item " rel="6">6</div>
+              <div class="item " rel="7">7</div>
+              <div class="item " rel="8">8</div>
+              <div class="item " rel="9">9</div>
+          </div>
+  </div>
+        </div>
+  <div class="append"></div>
+  <div class="cboth"></div>
+</div>
+  </div>
+  <p class="name">Have joined the universe.</p>
+  <p class="text">Do the same and be a part of creating a living, breathing First Person Universe where you and your friends will be able to explore the stars with unparalleled immersion.</p>
+  <a href=/star-citizen/play-now alt="home_crowdfunding_reserve_your_ship" 
+    class="js-google-analytics-event-tracker"
+    data-event-category="FlyNow" data-event-label="scStatsClick">
+      Prepare For Flight</a>
+</div>   
+     <div class="live-stat" id="squadronStats">
+  <ul class="glow-mini-breadcrumb">
+    <li class="nav-item section">SQUADRON 42</li></ul>
+  <div class="value js-value">
+      </div>
+  <p class="name">Answer <br/> the Call.</p>
+  <p class="text">Join the fight and help support the ongoing development of Squadron 42, an unprecedented single-player adventure set in the Star Citizen Universe.</p>
+  <a href=/squadron42 alt="home_crowdfunding_reserve_your_ship">Enlist Today</a>
+</div>   </div>      </div>
+    </div>
+  
+    <div class="flipboard-news-wrapper">
+        <div class="glow-page-title with-link flipboard-latest-news-title wrapper">
+  <div class="inner-title">
+    <h2 class="title">Latest COMM-LINKS</h2>
+    <div class="cboth"></div>
+  </div>
+  <div class="link-title ">
+    <div class="link">
+      <a href="/comm-link" title="" class="view-all">View all</a>
+        </div>
+  </div>
+</div>
+    <div class="flipboard-boxes flipboard-latest-news wrapper">
+                        
+                                                                    <article class="box post three-third type-D js-box ">
+  <a href="/comm-link/spectrum-dispatch/18628-Untold-Tales-Prophet-Of-Pyro" title="Untold Tales: Prophet of Pyro">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Spectrum Dispatch</li></ul>
+
+      <h3 class="title">Untold Tales: Prophet of Pyro</h3>
+          
+           <p class="excerpt">
+        Untold Tales investigates a mysterious voice heard on Pyro II and how it has come to shape the system's history.
+      </p>
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">5 days ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">24</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="/media/u9s6j6y6ah4bmr/channel_item_full/UntoldTales_noTitle.jpg" media="(min-width: 1110px)" />
+        <source srcset="/media/u9s6j6y6ah4bmr/store_slideshow_small_zoom/UntoldTales_noTitle.jpg" media="(min-width: 735px)" />
+      <source srcset="/media/u9s6j6y6ah4bmr/wallpaper_thumb/UntoldTales_noTitle.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/u9s6j6y6ah4bmr/store_slideshow_small_zoom/UntoldTales_noTitle.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/u9s6j6y6ah4bmr/heap_infobox/UntoldTales_noTitle.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                                <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/citizens/18626-This-Week-In-Star-Citizen" title="This Week in Star Citizen">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Citizens</li></ul>
+
+      <h3 class="title">This Week in Star Citizen</h3>
+              <h4 class="subtitle">
+                      <span class="glow-arrows-button article-link small-size orange">
+  <span class="label">April 18, 2022</span>  <span class="arrow"></span>
+</span>                  </h4>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">6 days ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">29</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/d148sts0e9wa9r/wallpaper_thumb/10.png" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/d148sts0e9wa9r/store_slideshow_small_zoom/10.png" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/d148sts0e9wa9r/heap_infobox/10.png" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                      <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/transmission/18561-Spring-Merchandise-Sale" title="Spring Merchandise Sale">
+
+    <header class="info">
+                        <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Spring Merchandise Sale</h3>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="https://media.robertsspaceindustries.com/wik8dgbo8miub/store_slideshow_small_zoom.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="https://media.robertsspaceindustries.com/wik8dgbo8miub/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                      <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/transmission/18624-Roadmap-Roundup-April-13-2022" title="Roadmap Roundup - April 13, 2022">
+
+    <header class="info">
+                        <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Roadmap Roundup - April 13, 2022</h3>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/qoxio5lo5vxv3r/wallpaper_thumb/ROADMAPBANNER.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/qoxio5lo5vxv3r/store_slideshow_small_zoom/ROADMAPBANNER.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/qoxio5lo5vxv3r/heap_infobox/ROADMAPBANNER.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                  </div>
+    <div class="cboth"></div>
+    <div class="wrapper">
+      <div class="flipboard-boxes-end "></div>    </div>
+    
+              
+            <div class="glow-page-title with-link flipboard-latest-news-title wrapper">
+  <div class="inner-title">
+    <h2 class="title">Star Citizen Shows</h2>
+    <div class="cboth"></div>
+  </div>
+  <div class="link-title ">
+    <div class="link">
+      <a href="/comm-link?type=video" title="" class="view-all">View all</a>
+        </div>
+  </div>
+</div>
+      <div class="flipboard-boxes wrapper flipboard-community-news">
+                                                                                                  <article class="box post three-third type-D js-box ">
+  <a href="/comm-link/transmission/18619-Star-Citizen-Live" title="Star Citizen Live">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">video</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Star Citizen Live</h3>
+              <h4 class="subtitle">
+                      Actor Feature Team Q&A
+                  </h4>
+          
+           <p class="excerpt">
+        On this week's episode of Star Citizen Live, Jonny, Joeis, and Chris tackle the community's questions on all things your...
+      </p>
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">VIEW MORE</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">18</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="/media/dz7z2x8skih6vr/channel_item_full/SCL_040822B.jpg" media="(min-width: 1110px)" />
+        <source srcset="/media/dz7z2x8skih6vr/store_slideshow_small_zoom/SCL_040822B.jpg" media="(min-width: 735px)" />
+      <source srcset="/media/dz7z2x8skih6vr/wallpaper_thumb/SCL_040822B.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/dz7z2x8skih6vr/store_slideshow_small_zoom/SCL_040822B.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/dz7z2x8skih6vr/heap_infobox/SCL_040822B.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                          <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/transmission/18614-Star-Citizen-Live" title="Star Citizen Live">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">video</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Star Citizen Live</h3>
+              <h4 class="subtitle">
+                      <span class="glow-arrows-button article-link small-size orange">
+  <span class="label">A Complete Waste of an Hour</span>  <span class="arrow"></span>
+</span>                  </h4>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">VIEW MORE</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">3 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">42</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/buf47bg52qh94r/wallpaper_thumb/SCL_040122B.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/buf47bg52qh94r/store_slideshow_small_zoom/SCL_040122B.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/buf47bg52qh94r/heap_infobox/SCL_040122B.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                          <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/transmission/18612-Inside-Star-Citizen" title="Inside Star Citizen">
+
+    <header class="info">
+                        <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">video</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Inside Star Citizen</h3>
+              <h4 class="subtitle">
+                      <span class="glow-arrows-button article-link small-size orange">
+  <span class="label">Expanse Glance</span>  <span class="arrow"></span>
+</span>                  </h4>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">VIEW MORE</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">1 month ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">125</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/2qh8j20v912g8r/wallpaper_thumb/ISC_033122B.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/2qh8j20v912g8r/store_slideshow_small_zoom/ISC_033122B.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/2qh8j20v912g8r/heap_infobox/ISC_033122B.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                          <article class="box post one-third type-B js-box ">
+  <a href="/comm-link/transmission/18607-Star-Citizen-Live" title="Star Citizen Live">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">video</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Star Citizen Live</h3>
+              <h4 class="subtitle">
+                      <span class="glow-arrows-button article-link small-size orange">
+  <span class="label">EU PU Gameplay Feature Team</span>  <span class="arrow"></span>
+</span>                  </h4>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">VIEW MORE</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">1 month ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">18</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/w3ukvzpvf25d5r/wallpaper_thumb/SCL_032522B.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/w3ukvzpvf25d5r/store_slideshow_small_zoom/SCL_032522B.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/w3ukvzpvf25d5r/heap_infobox/SCL_032522B.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                        </div>
+      <div class="cboth"></div>
+      <div class="wrapper">
+        <div class="flipboard-boxes-end "></div>      </div>
+      
+                  
+                  <div class="developer-tracker wrapper">
+        <div class="glow-page-title with-link developer-tracker-title">
+  <div class="inner-title">
+    <h2 class="title">Latest developer activity</h2>
+    <div class="cboth"></div>
+  </div>
+  <div class="link-title ">
+    <div class="link">
+      <a href="/community/devtracker" title="" class="view-all">View all</a>
+        </div>
+  </div>
+</div>
+          <div class="devtracker-list">
+      <a href="/spectrum/community/SC/forum/50259/thread/there-are-two-words-that-i-am-asking-you-to-think-/5028750" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/nejmfduhhw37lr/heap_infobox/Pavatar_22.jpg?v=1374210412" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">D_Haddock</div>
+          <div class="handle">DHaddock_CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">3 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">Ask The Devs</span>
+        <span class="thread">There are two words that I am asking you to think long and hard about.</span>
+      </div>
+      <p class="details">That&#039;s a powerful argument.</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-17-0w-ptu-8045326-patch-notes/5028667" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/to3sa6d6ydkrsr/heap_infobox/Pacvinyl-Clear-600x600.png?v=1617059850" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Wakapedia-CIG</div>
+          <div class="handle">Wakapedia-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">3 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">Patch Notes</span>
+        <span class="thread">Star Citizen Alpha 3.17.0w PTU.8045326 Patch Notes</span>
+      </div>
+      <p class="details">Star Citizen Patch 3.17.0w Alpha Patch 3.17.0w has been released to the PTU, and is now available to test!   Patch should now show: VERSION 3.17.0-PTU.8045326.  It is...</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/50259/thread/is-vulture-have-repair-option/5027709" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/5l8na90m808ywr/heap_infobox/Choice02.png?v=1615188565" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Savrals-CIG</div>
+          <div class="handle">Savrals-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">3 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">Ask The Devs</span>
+        <span class="thread">Is Vulture have repair option?</span>
+      </div>
+      <p class="details">Hi, It is inside the Vulture.  Cheers</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-17-0v-ptu-8043552-patch-notes/5026680" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/to3sa6d6ydkrsr/heap_infobox/Pacvinyl-Clear-600x600.png?v=1617059850" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Wakapedia-CIG</div>
+          <div class="handle">Wakapedia-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">4 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">Patch Notes</span>
+        <span class="thread">Star Citizen Alpha 3.17.0v PTU.8043552 Patch Notes</span>
+      </div>
+      <p class="details">Star Citizen Patch 3.17.0v Alpha Patch 3.17.0v has been released to the PTU, and is now available to test!   Patch should now show: VERSION 3.17.0-PTU.8043552.  It is...</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/3/thread/the-pu-server-begins-to-degraded-as-soon-as-evocat/5026163" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/cn5utgu7cngvfr/heap_infobox/ChrisWayne_cap_ElfenOhrEdition.png?v=1592802502" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Chris Wayne Schmitt | CIG</div>
+          <div class="handle">Wayne-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">4 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">General</span>
+        <span class="thread">The PU Server begins to degraded as soon as Evocati starts</span>
+      </div>
+      <p class="details">It is as @Valdrin says, PTU and PU don&#039;t share infrastructure. We treat the PU as a Live environment, and it doesn&#039;t share anything with the PTU environments.</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/3/thread/first-person-to-obtain-a-pips-drink-dispenser/5025902" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/cn5utgu7cngvfr/heap_infobox/ChrisWayne_cap_ElfenOhrEdition.png?v=1592802502" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Chris Wayne Schmitt | CIG</div>
+          <div class="handle">Wayne-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">4 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">General</span>
+        <span class="thread">First Person to Obtain a Pips Drink Dispenser?</span>
+      </div>
+      <p class="details">@Trenton_Esperon Just out of curiosity, did this happen in 3.17 or 3.16.1? And congratulations on your first pips drink dispenser. :sweat_smile:</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/3/thread/explanation-for-adding-shield-faces-back-to-s2-shi/5025758" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/kqmzp4db0qa1ir/heap_infobox/21687606_10210963113617345_3584026649992489103_n.jpg?v=1513094342" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">YogiKlatt_CIG</div>
+          <div class="handle">YogiKlatt-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">4 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">General</span>
+        <span class="thread">Explanation for adding shield faces back to S2 shields?</span>
+      </div>
+      <p class="details">It was always planned to give bigger ships more shield control, we just didn&#039;t get to try it out until now. Nothing is set in stone either. We have several CLs ready...</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/3/thread/gen12-progress-and-performance-improvements-in-3-1/5024681" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="/rsi/static/images/account/avatar_default.jpg" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Silvan-CIG</div>
+          <div class="handle">Silvan-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">5 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">General</span>
+        <span class="thread">Gen12 Progress and Performance Improvements in 3.17</span>
+      </div>
+      <p class="details">Hey everyone!  It&#039;s time for another update on Gen12 as a lot of exciting things has been happening behind the scenes and we&#039;ve been hearing a lot of voices in the...</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  <a href="/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-17-0u-ptu-8040904-patch-notes/5024214" class="devpost">
+    <div class="devpost-wrapper">
+      <div class="info">
+        <img src="https://robertsspaceindustries.com/media/to3sa6d6ydkrsr/heap_infobox/Pacvinyl-Clear-600x600.png?v=1617059850" width="45" height="45" />
+        <div class="poster">
+          <div class="nickname">Wakapedia-CIG</div>
+          <div class="handle">Wakapedia-CIG</div>
+        </div>
+        <div class="date">
+          <span class="label">Date</span>
+          <span class="time">5 days ago</span>
+        </div>
+      </div>
+      <div class="topic">
+        <span class="category">Patch Notes</span>
+        <span class="thread">Star Citizen Alpha 3.17.0u PTU.8040935 Patch Notes</span>
+      </div>
+      <p class="details">Star Citizen Patch 3.17.0u Alpha Patch 3.17.0u has been released to the PTU, and is now available to test!   Patch should now show: VERSION 3.17.0-PTU.8040935.  It is...</p>
+      <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+    </div>
+  </a>
+  </div>
+  <div class="cboth"></div>
+        <div class="flipboard-boxes-end "></div>      </div>
+            
+
+
+            <div class="glow-page-title with-link flipboard-latest-news-title wrapper">
+  <div class="inner-title">
+    <h2 class="title">More COMM-LINKS</h2>
+    <div class="cboth"></div>
+  </div>
+  <div class="link-title ">
+    <div class="link">
+      <a href="/comm-link" title="" class="view-all">View all</a>
+        </div>
+  </div>
+</div>
+      <div class="flipboard-boxes wrapper flipboard-sku-content js-flipboard-sku-content">
+                                                                <article class="box post two-third type-A js-box ">
+  <a href="/comm-link/transmission/18621-Squadron-42-Monthly-Report-March-2022" title="Squadron 42 Monthly Report: March 2022  ">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Squadron 42 Monthly Report: March 2022  </h3>
+          
+           <p class="excerpt">
+        Welcome to March’s Squadron 42 development report. Enclosed you will find details on the latest progress made across the...
+      </p>
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>          <div class="complement">
+        
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">9</span>
+  </div>
+
+
+      </div>
+        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/quavjl950i4gjr/store_slideshow_small_zoom/Cloudimperiumgames_SQ42_EnvironmentArt.png" media="(min-width: 735px)" />
+      <source srcset="/media/quavjl950i4gjr/wallpaper_thumb/Cloudimperiumgames_SQ42_EnvironmentArt.png" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/quavjl950i4gjr/store_slideshow_small_zoom/Cloudimperiumgames_SQ42_EnvironmentArt.png" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/quavjl950i4gjr/heap_infobox/Cloudimperiumgames_SQ42_EnvironmentArt.png" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                                <article class="box post one-third type-E js-box ">
+  <a href="/comm-link/spectrum-dispatch/18623-New-United-Lobbyists-Under-Scrutiny-After-Arrests" title="New United: Lobbyists Under Scrutiny After Arrests">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Spectrum Dispatch</li></ul>
+
+      <h3 class="title">New United: Lobbyists Under Scrutiny...</h3>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="/media/pxmlnowtjqestr/wallpaper_thumb/NULobbyist_FI.png" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="/media/pxmlnowtjqestr/store_slideshow_small_zoom/NULobbyist_FI.png" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="/media/pxmlnowtjqestr/heap_infobox/NULobbyist_FI.png" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      <aside class="complement">
+      
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">11</span>
+  </div>
+
+
+    </aside>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                                <article class="box post one-third type-E js-box ">
+  <a href="/comm-link/citizens/18622-This-Week-In-Star-Citizen" title="This Week in Star Citizen">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Citizens</li></ul>
+
+      <h3 class="title">This Week in Star Citizen</h3>
+              <h4 class="subtitle">
+                      April 11, 2022
+                  </h4>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="https://media.robertsspaceindustries.com/xokkt2hoayrq1/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="https://media.robertsspaceindustries.com/xokkt2hoayrq1/store_slideshow_small_zoom.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="https://media.robertsspaceindustries.com/xokkt2hoayrq1/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      <aside class="complement">
+      
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">38</span>
+  </div>
+
+
+    </aside>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                                <article class="box post one-third type-E js-box ">
+  <a href="/comm-link/transmission/18539-Alpha-317-Now-In-Testing" title="Alpha 3.17 - Now in Testing">
+
+    <header class="info">
+                        <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Alpha 3.17 - Now in Testing</h3>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/wallpaper_thumb.png" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="https://media.robertsspaceindustries.com/4dhjuv52doo2q/store_slideshow_small_zoom.png" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="https://media.robertsspaceindustries.com/4dhjuv52doo2q/heap_infobox.png" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      <aside class="complement">
+      
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">2 weeks ago</span>
+  </div>
+
+
+    </aside>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+                                                                <article class="box post one-third type-E js-box ">
+  <a href="/comm-link/transmission/18617-Star-Citizen-Monthly-Report-March-2022" title="Star Citizen Monthly Report: March 2022">
+
+    <header class="info">
+                                                    <ul class="glow-mini-breadcrumb">
+  <li class="nav-item channel">post</li>  <li class="nav-item section">Transmission</li></ul>
+
+      <h3 class="title">Star Citizen Monthly Report: March 2022</h3>
+          
+            
+      <span class="glow-arrows-button article-link small-size left-arrow orange">
+  <span class="label">Read More</span>  <span class="arrow"></span>
+</span>        </header>
+    <div class="bg">
+      <div class="shade"></div>
+        <picture>
+  
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="https://media.robertsspaceindustries.com/te2p4h2006nre/wallpaper_thumb.jpg" media="(min-width: 360px)" />
+    <!--[if IE 9]></video><![endif]-->
+    
+    <!--[if lt IE 9]>
+    <img src="https://media.robertsspaceindustries.com/te2p4h2006nre/store_slideshow_small_zoom.jpg" alt="" />
+    <![endif]-->
+
+    <!--[if !lt IE 9]> -->
+        <img srcset="https://media.robertsspaceindustries.com/te2p4h2006nre/heap_infobox.jpg" alt="" class="js-object-fit-img" />
+        <!-- <![endif]-->
+  </picture>
+
+    </div>
+      <aside class="complement">
+      
+  <div class="date">
+    <span class="name">Date</span>
+    <span class="value">3 weeks ago</span>
+  </div>
+  <div class="comments">
+    <span class="name">Comments</span>
+    <span class="value">43</span>
+  </div>
+
+
+    </aside>
+      
+    <div class="glow-corners top-corners"></div>
+<div class="glow-corners bottom-corners"></div>
+  </a>
+</article>
+              </div>
+      <div class="cboth"></div>
+      <div class="flipboard-load-more wrapper">
+        <div class="glow-load-more-btn js-glow-load-more-btn load-more-wrapper">
+  <div class="sec-left"></div>
+  <div class="chevron left"></div>
+  <div class="sec-middle">
+    <div class="label-inner off">
+      <span class="label">Auto Load</span>
+      <a class="control js-glow-load-more-control" data-action="on">on</a>
+      <span class="lm-separator">/</span>
+      <a class="control js-glow-load-more-control active" data-action="off">off</a>
+    </div>
+  </div>
+  <div class="chevron right"></div>
+  <div class="sec-right"></div>
+</div>      </div>
+          </div>
+      </div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+  <div id="matrix-overlay">
+
+  <div class="matrix-overlay__header">
+
+    <h2 class="matrix-overlay__title">Discover our universe</h2>
+    <div class="matrix-overlay__title-buttons">
+      <p>Don't show me again</p>
+      <div id="hideWscInput" class="matrix-overlay__checkbox-container">
+        <input type="checkbox" name="hideWsc" id="hideWsc" value="1">
+        <label for="hideWsc"></label>
+      </div>
+      <div class="matrix-overlay__button-container" >
+        <button id="overlay_close" type="button" class="wtsc-icon-close"></button>
+      </div>
+    </div>
+
+  </div>
+
+  <style type="text/css">
+    #matrix-overlay .matrix-overlay__body {
+      -webkit-clip-path: url('#overlayClip');
+      clip-path: url('#overlayClip');
+    }
+  </style>
+
+  <div class="matrix-overlay__body">
+      <svg width="150" height="100" viewBox="0 0 150 100" class="svg-clip">
+      <clipPath id="overlayClip">
+        <path class="top-left-corner" d="M0,50 L0,45 C0,42.2385763 1.58158792,38.4196324 3.53491394,36.4678136 L36.4959741,3.53218638 C38.4482532,1.58141371 42.2681513,0 45.0300472,0 L50,0 L50,50 L0,50 Z"></path>
+        <path class="top-left-corner-mobile" d="M0,50 L0,41 L0,24.7849755 C0,22.0229735 1.70343431,18.329169 3.79941514,16.5391686 L19.3663539,3.24475985 C21.464713,1.45272847 25.4074857,0 28.1658901,0 L50,0 L50,50 L0,50 Z"/>
+        <path class="bottom-right-corner" d="M100,100 L100,95 C100,92.2385763 101.581588,88.4196324 103.534914,86.4678136 L136.495974,53.5321864 C138.448253,51.5814137 142.268151,50 145.030047,50 L150,50 L150,100 L100,100 Z" transform="translate(125.000000, 75.000000) rotate(-180.000000) translate(-125.000000, -75.000000)"></path>
+        <path class="bottom-right-corner-mobile" d="M99.8140072,99.7704482 L99.8140072,90.7704482 L99.8140072,74.5554237 C99.8140072,71.7934217 101.517442,68.0996171 103.613422,66.3096168 L119.180361,53.015208 C121.27872,51.2231766 125.221493,49.7704482 127.979897,49.7704482 L149.814007,49.7704482 L149.814007,99.7704482 L99.8140072,99.7704482 Z" transform="rotate(-180 125 75)"/>
+
+        <rect class="top-box" x="50" y="0" width="100" height="50"></rect>
+        <rect class="bottom-box" x="0" y="50" width="100" height="50"></rect>
+      </clipPath>
+    </svg>
+                <a href="/star-citizen" class="matrix-overlay__link matrix-overlay__left" data-m1="/media/fqw0ryo8lwif3r/source/Source.jpg" data-m2="/media/myhyy73lm08p8r/source/Source.jpg" data-wscitem="home_matrix_sc|media_one|media_two">
+      <div class="matrix-overlay__text-row">
+        <div class="matrix-overlay__logo-wrapper">
+          <img class="matrix-overlay__logo" id="matrix-overlay__SClogo" src="/rsi/static/images/matrix-overlay/SC_Logo.png" alt="Star Citizen">
+          <img class="matrix-overlay__logo--active" id="matrix-overlay__SClogo__active" src="/rsi/static/images/matrix-overlay/SC_LogoActive.png" alt="Star Citizen">
+        </div>
+        <div class="verticalBar"></div>
+        <p class="matrix-overlay__text">Join The<br />
+Universe</p>
+      </div>
+    </a>
+                    <a href="/squadron42" class="matrix-overlay__link matrix-overlay__center" data-m1="/media/z7xqbbkzqu2xjr/source/Source.jpg" data-m2="/media/jwo1atzm0mm6sr/source/Source.jpg" data-wscitem="home_matrix_s42|media_one|media_two">
+      <div class="matrix-overlay__text-row">
+        <div class="matrix-overlay__logo-wrapper">
+          <img class="matrix-overlay__logo" id="matrix-overlay__S42logo" src="/rsi/static/images/matrix-overlay/S42_Logo.png" alt="Squadron 42">
+          <img class="matrix-overlay__logo--active" id="matrix-overlay__S42logo__active" src="/rsi/static/images/matrix-overlay/S42_LogoActive.png" alt="Squadron 42">
+        </div>
+        <div class="verticalBar"></div>
+        <p class="matrix-overlay__text">Start The<br />
+Adventure</p>
+      </div>
+    </a>
+                    <a href="/" class="matrix-overlay__link matrix-overlay__right" data-m1="/media/9kc8k2b49hro0r/source/Source.jpg" data-m2="/media/ejczr1k7t2ctmr/source/Source.jpg" data-wscitem="home_matrix_rsi|media_one|media_two">
+      <div class="matrix-overlay__text-row">
+        <div class="matrix-overlay__logo-wrapper">
+          <img class="matrix-overlay__logo" id="matrix-overlay__RSIlogo" src="/rsi/static/images/matrix-overlay/RSI_Logo.png" alt="RSI">
+          <img class="matrix-overlay__logo--active" id="matrix-overlay__RSIlogo__active" src="/rsi/static/images/matrix-overlay/RSI_LogoActive.png" alt="RSI">
+        </div>
+        <div class="verticalBar"></div>
+        <p class="matrix-overlay__text">Follow The<br />
+Development</p>
+      </div>
+    </a>
+    
+  </div>
+</div>
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge/redeem-code" class="c-platform-footer-link">Redeem a code</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.383d8.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1RWF1QTQ==","queueTime":0,"applicationTime":90,"atts":"TxVZFANOSBg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

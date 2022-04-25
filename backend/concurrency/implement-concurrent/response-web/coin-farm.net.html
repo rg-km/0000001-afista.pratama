@@ -1,0 +1,598 @@
+
+<html><head>
+<meta charset="UTF-8">
+<title>Coin Farm - online farm with money withdrawal</title>
+<meta name="description" content="Coin Farm - online game with real money withdrawal. Buy birds, sell eggs, exchange resources for real money. Your passive income is here.">
+<meta name="keywords" content="Игра с выводом, денег, вывод денег, money withdrawal, заработок в интернете, investment game, online, вложений, заработать, ферма, денежная ферма, заработать на ферме, golden birds, Coin Farm, golden mine, goldenbirds, moneybirds, money birds, goldenfarm, золотые птички, ферма, игра с выводом денег">
+<script src="https://hcaptcha.com/1/api.js?explicit&hl=en" async defer></script>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://coin-farm.net" />
+<meta property="og:image" content="https://coin-farm.net/img/promo.jpg">
+<link href="/style/nprogress.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/nprogress.js"></script>
+<link href="/style/style.css?id=185" rel="stylesheet" type="text/css">
+<link href="/style/mobile.css?id=185" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/functions.js"></script>
+<link rel="icon" type="image/png" href="/img/birds/king-bird.png">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://coin-farm.net" />
+<meta name="viewport" content="width=device-width,height=1214">
+<meta name="MobileOptimized" content="width" />
+<script>
+function noenter2() {
+  if (window.event && window.event.keyCode == 13){
+document.getElementById("login1").style.display="none";
+
+document.getElementById("login2").style.display="block";
+    setTimeout(function () {
+
+document.getElementById("login2").style.opacity="1";
+    }, 50);
+
+  return !(window.event && window.event.keyCode == 13);
+ }else
+    return true;}
+
+
+
+
+function PayPassEnter() {
+  if (window.event && window.event.keyCode == 13){
+document.getElementById("pay1").style.display="none";
+
+document.getElementById("pay2").style.display="block";
+    setTimeout(function () {
+
+document.getElementById("pay2").style.opacity="1";
+    }, 50);
+
+  return !(window.event && window.event.keyCode == 13);
+ }else
+    return true;}
+
+
+function PayPass() {
+
+document.getElementById("pay1").style.display="none";
+
+document.getElementById("pay2").style.display="block";
+    setTimeout(function () {
+
+document.getElementById("pay2").style.opacity="1";
+    }, 50);
+}
+</script>
+</head>
+<body class="mobile">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a href="/" style="display: inline-block;display:none;"><div class="mobile-logo-2"></div></a>
+<button class="navbar-toggler" id="nav-btn" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="nav-balance">
+<div class="field-ar"><a href="/account/insert">{!BALANCE_B!}</a> <span style="margin:3px 10px 0px 0px;">[<a href="/account/insert"><b></b></a>]</span></div>
+<div class="field-ars"><a href="/account/payment">{!BALANCE_P!}</a> <span style="margin:3px 10px 0px 0px;">[<a href="/account/payment"></a>]</span></div>
+</div>
+<div style="display:inline-block;vertical-align: top;margin-left:9px;">
+</div>
+<div style="float:right;">
+<div class="nav-account">
+<span style="margin:3px 10px 0px 0px;">Welcome, <b></b></span>
+</div>
+<button onclick="location.href='/signup';" class="new_button st_new_button" style="width: auto !important;padding: 5.6px 19px 7px 19px !important;min-width: 10px;margin-right:2px !important;">Create account</button>
+<button onclick="location.href='/login';" class="new_button st_new_button" style="width: auto !important;padding: 5.6px 19px 7px 19px !important;min-width: 10px;">Enter</button>
+</div>
+<div class="collapse navbar-collapse" id="navbarNav">
+</div>
+</nav>
+<script>
+$('#nav-btn').click(function() {
+  $('#menu-left').toggleClass('menu-show');
+});
+
+NProgress.start();
+setTimeout(function() { NProgress.done(); }, 300);
+
+function loadPage(href){
+  NProgress.start();
+  setTimeout(function() { NProgress.done(); }, 300);
+  $("#content_block").load(href);
+  clearInterval(interval);
+};
+</script>
+<div class="wrap-loop">
+<div class="wrap">
+<div class="header">
+<a href="/" style="display: block;"><div class="logo-2"></div></a>
+<div class="toolbar">
+<div class="main-container f32" style="display:;">
+<div class="trans_lang">
+<div class="button_top trans_lang_btn">
+<span class="flag_ls" style="background: url(/img/flags/en.png) no-repeat;" style="float: left;margin-top: -1px;margin-left: -9px;"></span>
+<span class="lang-set">EN</span><i class="down-lang"></i>
+</div>
+<div class="drop-content-lang">
+<p onclick="SelectLanguage('en')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/uk.png) no-repeat;"></span>English</p>
+<p onclick="SelectLanguage('es')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/es.png) no-repeat;"></span>Español</p>
+<p onclick="SelectLanguage('esl')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/esl.png) no-repeat;margin-top: 5px;"></span>Español (Latin)</p>
+<p onclick="SelectLanguage('fr')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/fr.png) no-repeat;"></span>Français</p>
+<p onclick="SelectLanguage('it')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/it.png) no-repeat;"></span>Italiano</p>
+<p onclick="SelectLanguage('tr')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/tr.png) no-repeat;"></span>Türkçe</p>
+<p onclick="SelectLanguage('br')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/br.png) no-repeat;"></span>Brazil</p>
+<p onclick="SelectLanguage('pt')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/pt.png) no-repeat;"></span>Português</p>
+<p onclick="SelectLanguage('id')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/id.png) no-repeat;"></span>Indonesia</p>
+<p onclick="SelectLanguage('my')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/my.png) no-repeat;"></span>Malay</p>
+<p onclick="SelectLanguage('th')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/th.png) no-repeat;"></span>ภาษาไทย</p>
+<p onclick="SelectLanguage('ru')" class="f_d_l"><span class="flag_l" style="background: url(/img/flags/ru.png) no-repeat;"></span>Русский</p>
+</div>
+</div>
+<script>
+
+function SelectLanguage(language){
+      $.ajax({
+        type: "POST",
+        url: "/ajax/language.php",
+        dataType: "text",
+        data: {
+          NewLanguage: language
+        },
+        success: function(response) {
+        window.location.replace(window.location.href);
+        },
+      });
+}
+
+$( ".trans_lang_btn" ).click(function() {
+  $( ".drop-content-lang" ).toggleClass('display-block');
+});
+</script>
+</div>
+</div>
+<ul class="hd-menu">
+<li><div class="h-bird-2"></div><a href="/" class="current go_yellow lm">Main</a></li>
+<li><div class="h-bird-3"></div><a href="/withdraws" class="go_brown lm">Payments</a><div style="z-index: 0;" class="new"></div></li>
+<li><div class="h-bird-1"></div><a href="/rules" class="go_red lm">Rules</a></li>
+<li><div class="h-bird-0"></div><a href="/about" class="go_green lm">About</a></li>
+<li><div class="h-bird-4"></div><a class="go_blue lm" href="/calculate">Calculate</a></li>
+<li><div class="h-bird-6"></div><a class="go_king lm" href="/support/all" style="z-index: 5;position: relative;">Support</a></li>
+<div class="faq" href="/faq" style=""><a href="/faq"></a></div>
+<a class="video" href="/video" style="display:none;"></a>
+<link href="/style/style_tour.css?id=1" rel="stylesheet" type="text/css">
+<style>
+.bonus-chest{
+    animation: bonus-chest 9s ease infinite;
+}
+.bonus-chest-dust{
+  animation: bonus-chest-dust-2 2s ease infinite;
+}
+</style>
+<div class="bonus-chest bonus-chest-2" onclick="window.location.href = '/signup';">
+<div class="bonus-chest-3"></div>
+<div class="bonus-chest-dust"></div>
+<div class="bonus-chest-light-1"></div>
+</div>
+<div class="bonus-pack-2" style="opacity:0;width:0px;height:0px;"></div>
+</ul>
+<script>
+var bonus_time = 0;
+  function bonus_timer(timestamp){
+      if (timestamp < 0) timestamp = 0;
+
+      var day = Math.floor( (timestamp/60/60) / 24);
+      var hour = Math.floor(timestamp/60/60);
+      var mins = Math.floor((timestamp - hour*60*60)/60);
+      var secs = Math.floor(timestamp - hour*60*60 - mins*60);
+      var left_hour = Math.floor( (timestamp - day*24*60*60) / 60 / 60 );
+
+      $('span.bon_hours').text(left_hour);
+
+      if(String(left_hour).length > 1)
+          $('span.bon_hours').text(left_hour + ":");
+      else
+          $('span.bon_hours').text("0" + left_hour + ":");
+
+      if(String(mins).length > 1)
+          $('span.bon_mins').text(mins + ":");
+      else
+          $('span.bon_mins').text("0" + mins + ":");
+      if(String(secs).length > 1)
+          $('span.bon_secs').text(secs);
+      else
+          $('span.bon_secs').text("0" + secs);
+
+  }
+      setInterval(function(){
+          bonus_time = bonus_time - 1;
+          bonus_timer(bonus_time);
+          if(bonus_time <= 0){
+
+          }
+      }, 1000);
+
+
+	  bonus_time = bonus_time - 1;
+    bonus_timer(bonus_time);
+
+
+		  setTimeout(function(){
+           document.getElementById("bonus_timer").style.display = "inline-block";
+      }, 100);
+
+
+</script>
+<form action="" method="POST" id="get_bonus" style="display:none;">
+<input type="hidden" name="bonus">
+</form>
+<script>
+
+function bonus_open() {
+$( "#get_bonus" ).submit();
+};
+
+
+function bonus_open_2() {
+    document.getElementById("popup-bonus").style.display = "block";
+    window.setTimeout(function(){
+  document.getElementById("popup-bonus").style.opacity = "1";
+  }, 10);
+};
+
+function bonus_close() {
+document.getElementById("popup-bonus").style.opacity = "0";
+      window.setTimeout(function(){
+      document.getElementById("popup-bonus").style.display = "none";
+    }, 300);
+
+
+
+};
+
+
+
+
+
+
+function bonus_register() {
+  document.getElementById("b-main").style.display = "block";
+  document.getElementById("bonus_register").style.display = "inline-block";
+  window.setTimeout(function(){
+document.getElementById("b-main").style.opacity = "1";
+}, 10);
+
+};
+</script>
+</div>
+<div class="content">
+<div class="cl-left" id="menu-left"><div class="menu-left-div"><div class="autoriz">
+<div class="prof-title">Sign in account</div>
+<form action="/login" method="post" id='log-in-form-1'>
+<div id="login2" style="display: none;" class="why-1">
+<table width="200" border="0" align="center" style="margin-top: 0px;">
+<tbody>
+<tr>
+<td align="center" style="">
+</td></tr>
+<tr>
+<td colspan="2" align="center" valign="top"><input name="captcha" class="lg" type="text" size="25" maxlength="50" /></td>
+</tr>
+<tr height="5">
+<td align="center" colspan="2" valign="top"><input type="submit" value="Enter" class="btn_btn btn_in" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="login1">
+<table width="200" border="0" align="center" style="margin-top: 0px;">
+<tbody>
+<tr>
+<td colspan="2">Email:<br><input onkeypress="return noenter()" name="log_email" type="text" size="23" maxlength="35" class="lg"></td>
+</tr>
+<tr>
+<td colspan="2">Password [<a href="/recovery" class="rs-ps">Forgot password?</a>]:<br><input onkeypress="return noenter()" name="pass" type="password" size="23" maxlength="35" class="ps"></td>
+</tr>
+<tr height="5">
+<script type="text/javascript">
+function onSubmit_LogIn(token) {
+document.getElementById("log-in-form-1").submit();
+}
+
+function noenter() {
+  if (window.event && window.event.keyCode == 13){
+$("#btn_login").click();
+  return !(window.event && window.event.keyCode == 13);
+ }else
+    return true;}
+</script>
+<td align="center" valign="top">
+<button class="btn_btn btn_in h-captcha" id="btn_login" data-sitekey="99b78ad2-949f-4620-a479-abbee3b3c4ce" data-size="invisible" data-callback='onSubmit_LogIn'>Enter</button>
+</td>
+</form> <td align="center" valign="top"><p style="font-size:14px; " onclick="location.href='/signup';" class="reg phover">Registration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<script type="text/javascript">
+
+function ToggleHiden1(a){
+var e=document.getElementById(a);
+document.getElementById("login1").style.display="none";
+
+document.getElementById("login2").style.display="block";
+    setTimeout(function () {
+
+document.getElementById("login2").style.opacity="1";
+    }, 50);
+
+
+}
+
+
+
+
+</script>
+<div class="statistic">
+<div class="prof-title">Statistics</div>
+<table cellspacing="0" border="0" align="center">
+<tbody>
+<tr>
+<td class="stats-line">All participants:</td>
+<td class="stats-line-st">3119118 Users</td>
+</tr>
+<tr>
+<td class="stats-line">New for 24 hours:</td>
+<td class="stats-line-st">1576 Users</td>
+</tr>
+<tr>
+<td class="stats-line">Active today:</td>
+<td class="stats-line-st">18678 Users</td>
+</tr>
+</tbody>
+</table>
+<div class="st-btn">
+<button onclick="location.href='/signup';" class="new_button st_new_button" style="">Create account</button>
+</div>
+</div>
+<div class="stat" style="padding-top: 5px;">
+<div class="h-title" style="font-family: sans-serif;">Payment systems:</div>
+<div class="cntrl-ps">
+</div>
+</div>
+</div>
+</div></div>
+<div class="cl-right content_s" id="content_s">
+<span id="content_block" style="display: contents;">
+</body>
+</html>
+<style>
+.shriftmob {
+    font-family: inherit;
+    font-weight: 600;
+}
+.shriftstac {
+font-family: initial;
+font-weight: 500;
+font-size: 20;
+}
+</style>
+<style>
+ul.general {
+    font-size: 19px;
+    list-style: none;
+    line-height: 35px;
+    margin-left: 25px;
+    color: #27A021;
+    width: 631px;
+    padding: 0;
+}
+.imgmargin {margin-left: 14px;}
+.mrg_auto{margin: 0 auto !important;}
+.land_ribbon{
+    background: url(../img/main-header-1.png) no-repeat;
+    background-size: 607px 73px;
+    display: inline-block;
+    text-align: center;
+    width: 607px;
+    height: 73px;
+    font-family: Segoe Print;
+    font-weight: 800;
+    font-size: 21px;
+    vertical-align: middle;
+line-height: 51px;
+text-shadow: 1px 1px 2px #121558;
+color: #ffffff !important;
+margin: -62px 0 0 3px;
+}
+.general_title {
+    font-family: SegoePrintRegular,Arial;
+    font-size: 30px;
+    font-weight: normal;
+    color: #617a32;
+    display: table-cell;
+    white-space: pre;
+    padding: 0 0.5em;
+}
+.seperator {
+    width: 50%;
+    display: table-cell;
+    height: 5px;
+    position: relative;
+    vertical-align: middle;
+}
+.seperator .sep_line {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    display: block;
+    background: url(/img/separator.png) repeat-x;
+    top: 1px;
+}
+</style>
+<div class="silver-bk" style="border-radius: 30px;margin: 13px 0px 0px 0px;">
+<div class="land_ribbon">Earn money by playing!</div>
+<div class="intro-header">
+<h2 style="margin-top: 20px; padding-bottom:0px;color: #2d2d2d;"><center class="shriftstac">Coin Farm with money withdrawal<br>Stable earnings with our affiliate program</h2>
+</div>
+<style>
+.intro-step-text{
+  width: 273px;
+  font-size: 1.195em !important;
+    font-weight: 600;
+    color: #4c4c4b;
+    text-shadow: 0px 0px 0px #efe9d3, 1px 1px 2px #f7f4eb;
+}
+.intro-table{margin: -10px 0 9px 0px;}
+.intro-table td{padding-top: 10px;}
+.intro-table td p{padding-left: 6px;}
+
+.gift-ru{margin-left: -12px !important;}
+.gift-en{margin-left: -38px !important;}
+.gift-es{margin-left: -38px !important;}
+.gift-fr{margin-left: -38px !important;}
+.gift-tr{margin-left: -38px !important;}
+</style>
+<table class="intro-table">
+<tbody>
+<tr>
+<td><img src="/img/intro/step-1.png" style="width: 125px;"></td><td class="intro-step-text"><p><a href='/account/farm'>Buy birds</a>, they will lay eggs for you</p></td>
+<td><img src="/img/intro/step-2.png" style="width: 125px;"></td><td class="intro-step-text"><p>Eggs will be stored in the <a href='/account/store'>warehouse</a>, collect them</p></td>
+</tr>
+<tr>
+<td><img src="/img/intro/step-3.png" style="width: 125px;"></td><td class="intro-step-text"><p><a href='/account/market'>Sell eggs</a> and you will get gold</p></td>
+<td><img src="/img/intro/step-4.png" style="width: 125px;"></td><td class="intro-step-text"><p>Invite friends, exchange resources for <a href='/account/payment'>real money</a> and buy more birds to get more income!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="mrg_auto width90p">
+<span class="seperator"><span class="sep_line"></span></span>
+<h4 class="general_title">Start right now</h4>
+<span class="seperator"><span class="sep_line"></span></span>
+</div>
+<style>
+.btn-index {
+  width: 222px;
+  height: 41.5px;
+  background: url(/img/notify/btn-main.png) no-repeat;
+  background-size: 222px 41.5px;
+  margin: 5px 0 11px 0;
+  z-index: 2;
+  display: inline-block;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+  font-family: "Tahoma";
+  font-size: 13px;
+  text-shadow: 0px 1px 2px rgb(75, 84, 33);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color .3s ease;
+  line-height: 40.5px;
+}
+.btn-index:hover{
+	color: #e9f6a7;
+}
+.btn-index:active{
+	margin: 6px 0 10px 0;
+}
+
+.btn-index-ru {font-size: 17px;text-transform: none;line-height: 44px;}
+
+.gift-table{
+	margin-top:25px;
+}
+.gift-table td{
+	width: 50%;
+}
+.gift-text{
+	font-size: 1.115em !important;
+    font-weight: 600;
+    color: #4c4c4b;
+    text-shadow: 0px 0px 0px #efe9d3, 1px 1px 2px #f7f4eb;
+	margin-top: 3px;
+}
+.gift-text-en{font-size: 1.195em !important;padding-left: 41px;}
+.gift-text-es{font-size: 1.195em !important;padding-left: 16px;}
+.gift-text-tr{font-size: 1.195em !important;padding-left: 12px;}
+.gift-text-ru{font-size: 1.115em !important;padding-left: 18px;}
+
+</style>
+<center>
+<table class="gift-table">
+<tbody>
+<tr>
+<td>
+<p class="gift-text gift-text-en">Create account right now and get «<font color='#539200'>Green</font>» bird +300 gold coins for free</p>
+</td>
+<td>
+<img src="/img/gift-gold.png" style="margin-left:-11px;margin-top:-21px;width: 320px;">
+</td>
+</tr>
+</tbody>
+</table>
+<span type="button" onclick="window.location.href='/signup'" class="btn-index btn-index-en">Create account</span>
+</center>
+<div class="mrg_auto width90p">
+<span class="seperator"><span class="sep_line"></span></span>
+<h4 class="general_title">Our advantages</h4>
+<span class="seperator"><span class="sep_line"></span></span>
+</div>
+<style>
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 142px;
+}
+.caption {
+display: block;
+font-size: 1.195em;
+font-weight: 600;
+color: #464646;
+text-shadow: 0px 0px 0px #efe9d3, 1px 1px 2px #f7f4eb;
+font-family: initial;
+margin-top:5px;
+}
+</style>
+<div id="why" style="display:;padding-left:10px;margin:20px 0;vertical-align:top;">
+<div class="item"><img alt="Fund" src="/img/benefits/1.png" loading="eager" style="width: 119px;width: 124px;height: 134px;"><span class="caption">Reserve fund</span></div>
+<div class="item"><img alt="Payback" src="/img/benefits/2.png" loading="eager" style="width: 144px;"><span class="caption">Payments</span></div>
+<div class="item"><img alt="Stability" src="/img/benefits/3.png" loading="eager" style="width: 157px;"><span class="caption">Stability</span></div>
+<div class="item"><img alt="Technical support" src="/img/benefits/4.png" loading="eager" style="width: 153px;"><span class="caption">24/7 Support</span></div>
+</div>
+<hr class="hr3">
+<p class="ins-m-footer">You will be able to buy much more birds if you <a onclick="purch_show()" style="cursor:pointer;">purchase gold coins</a>.</p>
+<script>
+$('.intro-table a, .ins-m-footer a').each(function () {
+    var $this = $(this),
+        href = $this.attr('href');
+    $this.attr('href', "/signup");
+})
+</script>
+</div>
+<link href="/style/style_tour.css?id=1057" rel="stylesheet" type="text/css">
+<style>
+/*
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+.b_cell_text {
+    text-shadow: 1px 1px 1px #000 !important;
+    color: #ffe300 !important;
+}
+*/
+</style>
+</span></div>
+<div class="clr"></div>
+<div class="footer">
+<div class="bottom_tree"></div>
+<center>
+<div class="footer-text">coin-farm.net - ALL RIGHTS RESERVED - DDoS Protected, SSL Certified - Supported by <a style="color:#f7f7f7;" href="https://cloudflare.com/" target="_blank">Cloudflare</a></div>
+</center>
+</div>
+<script type="text/javascript" src="/js/scrollReveal.js"></script>
+<script>
+        window.scrollReveal = new scrollReveal({viewportFactor:0.33, reset: true, init: true});
+    </script>
+

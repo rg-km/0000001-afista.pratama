@@ -1,0 +1,453 @@
+
+
+<!doctype html>
+<html lang="en">
+<head><title>
+	SnowTrace: Avalanche C-Chain Blockchain Explorer
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="format-detection" content="telephone=no" />
+   <meta name="Description" content="SnowTrace allows you to explore and search the Avalanche blockchain for transactions, addresses, tokens, prices and other activities taking place on Avalanche C-Chain (AVAX)" /> <meta name="author" content="snowtrace.io" /> <meta name="keywords" content="Avalanche, C-Chain, AVAX, explorer, search, blockchain, crypto, currency" /> <meta property="og:title" content="SnowTrace: Avalanche C-Chain Blockchain Explorer" /> <meta property="og:description" content="SnowTrace allows you to explore and search the Avalanche C-Chain blockchain for transactions, addresses, tokens, prices and other activities taking place on Avalanche C-Chain (AVAX)" /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="SnowTrace: Avalanche C-Chain Blockchain Explorer" /> <meta property="og:url" content="http://snowtrace.io/" /> <meta property="og:image" content="https://snowtrace.io/images/brandassets/image.png" /> <meta property="og:image:alt" content="Visit snowtrace.io" /> <meta name="twitter:card" content="summary_large_image" /> <meta name="twitter:site" content="@SnowTrace" /> <meta name="twitter:title" content="SnowTrace: Avalanche C-Chain Blockchain Explorer" /> <meta property="twitter:description" content="SnowTrace allows you to explore and search the Avalanche C-Chain blockchain for transactions, addresses, tokens, prices and other activities taking place on Avalanche C-Chain (AVAX)" /> <meta property="twitter:image" content="https://snowtrace.io/images/brandassets/image.png" /> 
+
+    <link rel="shortcut icon" href="/images/favicon.ico?v=22.4.1.0">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-62SMKSTK50"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+        gtag('config','G-62SMKSTK50', { 'anonymize_ip': true });
+    </script>
+    
+
+    <script>
+  
+        
+        availableAd = [];
+        gotAd = ["ShowAds					"];
+        
+    </script>
+    
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css?v=22.4.1.0">
+    <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css?v=22.4.1.0">
+    <link rel="stylesheet" href="/assets/vendor/hs-megamenu/src/hs.megamenu.css?v=22.4.1.0">
+    <link rel="stylesheet" href="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?v=22.4.1.0">
+   <link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css?v=22.4.1.0">
+    <link rel="stylesheet" href="/assets/css/theme.min.css?v=22.4.1.0"> 
+    <link rel="stylesheet" href="/assets/css/custom.css?v=22.4.1.0">    
+
+    <script src="/assets/vendor/jquery/dist/jquery.min.js?v=22.4.1.0"></script>     
+    <script type="text/javascript" src="/jss/blockies.js?v=22.4.1.0"></script>   
+    <style>
+        .ui-autocomplete {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: default
+        }
+        .ui-state-active {
+            border-color: #e7eaf3;
+            background: #f8fafd;
+        }
+        body.dark-mode .ui-state-active {
+            background-color: #252525;
+            border-color: #323232;
+        }
+        .sticky-top {
+            z-index: 999;
+        }
+    </style>
+
+    
+   
+    <style>
+        .ui-autocomplete {
+            z-index: 3;
+        }
+    </style>
+<meta name="description" content="SnowTrace allows you to explore and search the Avalanche C-Chain blockchain for transactions, addresses, tokens, prices and other activities taking place on Avalanche C-Chain (AVAX)" /></head>
+<body id="body">
+    <div class="wrapper">
+        
+        <header id="header" class="u-header ">
+            <div class="u-header__section py-1 ">
+                <div id="logoAndNav" class="container">
+                    <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space ">
+                        <div class="w-lg-auto">
+                            <a class="navbar-brand  pt-md-0" href="/" target="_parent" aria-label="SnowTrace">
+                                <img id="logo-header" width=160 src="/images/logo.svg?v=22.4.1.0" alt="Logo">   
+                                 
+                            </a>
+                          
+                            
+
+                        </div>
+                        <div>
+                            
+                            <button type="button" class="navbar-toggler btn u-hamburger"
+                                aria-label="Toggle navigation"
+                                aria-expanded="false"
+                                aria-controls="navBar"
+                                data-toggle="collapse"
+                                data-target="#navBar">
+                                <span id="hamburgerTrigger" class="u-hamburger__box">
+                                    <span class="u-hamburger__inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="d-flex flex-column w-100">
+                            <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse order-md-2">
+                                <ul class="navbar-nav u-header__navbar-nav px-2 px-md-0">
+                                    <li id="LI_default" class="nav-item u-header__nav-item active" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                        <a class="nav-link u-header__nav-link" href="/" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Home</a>
+                                    </li>
+                                    <li id="LI_blockchain" class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                        <a id="blockchainMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Blockchain</a>
+
+                                        <ul id="blockchainSubMenu" class="hs-sub-menu u-header__sub-menu  u-header__sub-menu--spacer" aria-labelledby="blockchainMegaMenu" style="min-width: 230px;">
+                                            <li id="LI_accountall"><a href="/accounts" class="nav-link u-header__sub-menu-nav-link">Top Accounts</a></li>
+                                            <li class="dropdown-divider"></li>    
+                                            <li id="LI12"><a href="/txs" class="nav-link u-header__sub-menu-nav-link">View Txns</a></li>
+                                            <li id="LI16"><a href="/txsPending" class="nav-link u-header__sub-menu-nav-link">View Pending Txns</a></li>
+                                            <li id="LI14"><a href="/txsInternal" class="nav-link u-header__sub-menu-nav-link">View Contract Internal Txns</a></li>
+                                            
+                                            
+                                            <li class="dropdown-divider"></li>
+                                            <li id="LI_blocks">
+                                                <a id="navBlocks" class="nav-link u-header__sub-menu-nav-link" href="/blocks" aria-haspopup="true" aria-expanded="false" aria-controls="navSubBlocks">View Blocks</a></li>
+                                           <li id="LI8" class="d-none"><a class="nav-link u-header__sub-menu-nav-link" href="/uncles">View Uncles</a></li>
+                                            <li class="divider"></li>
+                                            
+                                            <li class="dropdown-divider"></li>                                            
+                                           
+                                            <li id="LI_contract_verified"><a href="/contractsVerified" class="nav-link u-header__sub-menu-nav-link">Verified Contracts</a></li>
+                                        </ul>
+                                    </li>
+                                     <li id="LI_Tokens" class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                        <a id="testTokensMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="testTokensSubMenu">Tokens</a>
+                                        <ul id="testTokensSubMenu" class="hs-sub-menu u-header__sub-menu  u-header__sub-menu--spacer" aria-labelledby="testTokensMegaMenu" style="min-width: 230px;">
+                                            <li id="LI18"><a class="nav-link u-header__sub-menu-nav-link" href="/tokens">ERC20 Tokens By MarketCap</a></li>
+                                             <li id="LI3"><a class="nav-link u-header__sub-menu-nav-link" href="/tokentxns">View ERC20 Transfers</a></li>                                          
+                                            <li class="dropdown-divider"></li>
+                                            <li id="LI42"><a class="nav-link u-header__sub-menu-nav-link" href="/tokens-nft">ERC721 Top Tokens</a></li>
+                                            <li id="LI40"><a class="nav-link u-header__sub-menu-nav-link" href="/tokentxns-nft">View ERC721 Transfers</a></li>
+                                            
+                                            <li class="dropdown-divider"></li>
+                                            <li id="LI30"><a class="nav-link u-header__sub-menu-nav-link" href="/tokens-nft1155">ERC1155 Top Tokens</a></li>
+                                            <li id="LI33"><a class="nav-link u-header__sub-menu-nav-link" href="/tokentxns-nft1155">View ERC1155 Transfers <sup></sup></a></li>
+                                            
+                                        </ul>
+                                    </li>         
+                                     <li id="LI_resources" class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                        <a id="resourcesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="resourcesSubMenu">Resources</a>
+                                        <ul id="resourcesSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" aria-labelledby="resourcesMegaMenu" style="min-width: 230px;">
+                                            <li id="LI_charts2"><a class="nav-link u-header__sub-menu-nav-link" href="/charts">Charts &amp;  Stats</a></li>
+                                            <li id="LI_topstat"><a class="nav-link u-header__sub-menu-nav-link" href="/topstat">Top Statistics</a></li>
+                                            
+                                           
+                                        </ul>
+                                    </li>    
+                                     <li id="LI_Misc" class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-position="right">
+                                        <a id="moreMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">More</a>
+                                        <div class="hs-mega-menu w-80 u-header__sub-menu" aria-labelledby="moreMegaMenu">
+                                            <div class="row u-header__mega-menu-wrapper">
+
+                                                <div class="col-sm-6 col-md-4 col-lg mb-4 mb-lg-0">
+                                                    <span class="u-header__sub-menu-title">Developers</span>
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                        <li id="LI11"><a class="nav-link u-header__sub-menu-nav-link" href="/apis"><i class="fa fa-angle-right small mr-1"></i>APIs</a></li>
+                                                        <li id="LI20"><a class="nav-link u-header__sub-menu-nav-link" href="/verifyContract"><i class="fa fa-angle-right small mr-1"></i>Verify Contract</a></li>
+                                                        <li id="LI23"><a class="nav-link u-header__sub-menu-nav-link" href="/opcode-tool"><i class="fa fa-angle-right small mr-1"></i>Byte to Opcode</a></li>                                           
+                                                        <li id="LI15"><a class="nav-link u-header__sub-menu-nav-link" href="/pushTx"><i class="fa fa-angle-right small mr-1"></i>Broadcast TXN</a></li>      
+                                                        <li id="LI7"><a class="nav-link u-header__sub-menu-nav-link" href="/vyper"><i class="fa fa-angle-right small mr-1"></i>Vyper Online Compiler</a></li>
+                                                        <li id="LI6"><a class="nav-link u-header__sub-menu-nav-link" href="/contractdiffchecker"><i class="fa fa-angle-right small mr-1"></i>Contract Diff Checker</a></li>
+                                                    </ul>
+                                                </div>                   
+                                                
+                                               <div class="col-sm-6 col-md-4 col-lg mb-4 mb-lg-0">
+                                                    <span class="u-header__sub-menu-title">Explore</span>
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">                                                                                                                
+                                                        <li id="LI21"><a class="nav-link u-header__sub-menu-nav-link" href="/gastracker"><i class="fa fa-angle-right small mr-1"></i>Gas Tracker<sup><span class='badge badge-success font-size-default ml-1'> New</span></sup></a></li>
+                                                        <li id="LI9"><a class="nav-link u-header__sub-menu-nav-link" href="/dextracker"><i class="fa fa-angle-right small mr-1"></i>DEX Tracker <sup><span class='badge badge-success font-size-default ml-1'> New</span></sup></a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="col-sm-6 col-md-4 col-lg mb-4 mb-lg-0">
+                                                    <span class="u-header__sub-menu-title">Tools</span>
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">   
+                                                         <li id="LI41"><a class="nav-link u-header__sub-menu-nav-link" href="/labelcloud"><i class="fa fa-angle-right small mr-1"></i>Label Word Cloud</a></li>                     
+                                                        <li id="LI28"><a class="nav-link u-header__sub-menu-nav-link" href="/tokenapprovalchecker"><i class="fa fa-angle-right small mr-1"></i>Token Approvals <sup><span class='badge badge-secondary font-size-default ml-1'> Beta</span></sup></a></li>
+                                                        <li id="LI50"><a class="nav-link u-header__sub-menu-nav-link" href="/unitconverter"><i class="fa fa-angle-right small mr-1"></i>Unit Converter </a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- End Resources - Mega Menu -->
+                                    </li>
+
+                                   
+                                   
+                                    <li class="u-header__nav-separator"></li>
+                                    
+                                    <li class="nav-item my-2 my-md-0">
+                                        <a class="u-header__nav-link" href="/login">
+                                            <i class="fa fa-user-circle mr-1"></i>Sign In
+                                        </a>
+                                    </li>
+                                      
+                                   <li class="u-header__nav-separator"></li>
+                                    <li class="nav-item hs-has-sub-menu u-header__nav-item my-md-n1" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                        <a id="explorersWithDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle u-header__nav-link-toggle--mobile pr-0" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="explorersDropdown">
+                                            
+                                                
+                                            <span class="btn btn-sm btn-icon btn-soft-primary cursor-pointer d-none d-md-inline-block">
+                                                    <img class="u-xs-avatar btn-icon__inner" src="/images/svg/brands/main.svg?v=22.4.1.0" alt="Logo1">
+                                                 </span>
+                                                
+                                                
+                                           
+                                            <span class="d-inline-block d-md-none">Explorers</span>
+                                        </a>
+                                        
+                                        <ul id="explorersDropdown" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer dropdown-menu-md-right animated fadeOut" aria-labelledby="explorersWithDropdown" style="min-width: 200px; display: none;">
+                                            <li><a class='nav-link u-header__sub-menu-nav-link' href='https://snowtrace.io/'>Avalanche Mainnet</a></li><li class='dropdown-divider'></li><li><a class='nav-link u-header__sub-menu-nav-link' href='https://testnet.snowtrace.io'>Avalanche Fuji Testnet</a></li>                                            
+                                        </ul>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+
+                            
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main id="content"  role="main">
+            <input type="hidden" name="hdnAgeText" id="hdnAgeText" value="Age" />
+            <input type="hidden" name="hdnDateTimeText" id="hdnDateTimeText" value="Date Time (UTC)" />
+            <input type="hidden" name="hdnAgeTitle" id="hdnAgeTitle" value="Click to show Age Format" />
+            <input type="hidden" name="hdnDateTimeTitle" id="hdnDateTimeTitle" value="Click to show Datetime Format" />
+            
+    
+      <section class="bg-img-hero-main bg-dark">
+          <div class="container space-top-2 space-bottom-3">
+          
+      
+
+        <!-- Search -->
+        <div class="row justify-content-center align-items-center mb-4">
+          <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 text-center">
+            <div class="pr-lg-4 pr-xll-5">
+              
+                <h1 class="h4 mb-3 text-white ">
+                    Avalanche C-Chain Explorer           
+                </h1>
+              
+                
+                 <form class="mb-3" action="/search" method="GET">
+                    <div class="input-group input-group-shadow">
+                        <div class="input-group-prepend d-none d-md-block">
+                            <!-- Select -->
+                            <select name="f" class="custom-select custom-arrow-select input-group-text font-size-base filterby text-left">
+                                <option selected value="0">All Filters</option>
+                                <option value="1">Addresses</option>
+                                <option value="2">Tokens</option>
+                                <option value="3">Name Tags</option>
+                                <option value="4">Labels</option>
+                                <option value="5">Websites</option>
+                            </select>
+                            <!-- End Select -->
+                        </div>
+
+                        <input id="txtSearchInput" type="text" class="form-control searchautocomplete" placeholder="Search by Address / Txn Hash / Block / Token" aria-describedby="button-header-search" name="q" onkeyup="handleSearchText(this);">
+                        <input type="hidden" value="" id="hdnSearchText" />
+                        <input id="hdnIsTestNet" value="False" type="hidden" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Text Ads -->
+                
+                    <p class="text-white-70 mb-0" style="min-height:22px">
+                
+                
+                        </p>
+                
+
+              <!-- End Text Ads -->             
+            
+            </div>
+          </div>
+
+        </div>
+        <!-- End Search -->
+      </div>
+    </section>
+
+
+    <div class="container space-bottom-1 mt-n5">
+         
+
+      <!-- Stats -->
+       <div id="ContentPlaceHolder1_mainboxes" class="card mb-4">
+            <div class="card-body ">
+                <div class="row mx-gutters-md-1">
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="media align-items-center ">
+                            <figure class="u-sm-avatar mr-2">
+                                <div class="u-xs-avatar mx-auto">
+                                    
+                                    <img src="/images/svg/brands/mainbrand-1.svg?v=22.4.1.0"  width="28px" style="margin-left:-4px">
+                                    
+                                    
+                                </div>
+                            </figure>
+                            <div class="media-body">
+                                <h2 class="font-size-1 text-uppercase text-secondary mb-0">AVAX Price</h2>
+                                <a class='text-size-1 text-link' href='/chart/price' rel='tooltip' data-toggle='tooltip' data-placement='bottom' title='View Historical AVAX Price'>$68.42<span class="text-secondary"> @ 0.001776 BTC</span><span class='text-danger small'> (-6.41%)</span></a>
+                            </div>
+                        </div>
+
+
+                        <hr class="hr-space-lg">
+
+                        <div class="media align-items-center">
+                             
+                                <figure class="u-sm-avatar mr-2">
+                                    <img src="/images/svg/icons/icon-8.svg" alt="Market Cap">
+                                </figure>
+                             
+                                <div class="media-body">
+                                    <h2 class="font-size-1 text-uppercase text-secondary mb-0">Market Cap
+                                    </h2>                                
+                                        <a class='text-size-1 text-link' href='/stat/supply' rel='tooltip' data-placement='bottom' title='Market cap of AVAX on Avalanche Chain, click to Learn More'>$18,378,917,676.00 <span class='text-secondary'>(268,619,083 AVAX)</span></a>                                
+                                </div>
+                            
+                        </div>
+                      
+                        <hr class="d-block d-md-none hr-space-lg">
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 u-ver-divider u-ver-divider--left u-ver-divider--none-md">
+                        <div class="media align-items-center">
+                               
+                                
+                            <figure class="u-sm-avatar mr-2">
+                                <img src="/images/svg/icons/icon-2-1.svg?v=22.4.1.0" alt="Network Difficulty">
+                            </figure>
+                             
+
+
+                            <div class="media-body">
+                                 <h2 class="font-size-1 text-uppercase text-secondary mb-0">Transactions</h2>
+                                 <a href='/txs' class='text-size-1 text-link' rel='tooltip' data-toggle='tooltip' data-placement='left' data-html='true' title='Total Transactions Counter<br>(Update every 5 mins)'>160.46 M</a><span class='text-secondary small' rel='tooltip' data-toggle='tooltip' data-placement='bottom' title='Transactions per Second'> (9.8 TPS)</span>
+                            </div>
+                            
+                            <div class="text-right" title="GasTracker Estimate for Average Gas">
+                                <h2 class="font-size-1 text-uppercase text-secondary mb-0">Med Gas Price</h2>
+                                <a href='/gastracker' class='text-size-1 text-link'>57 nAVAX <span class='text-secondary small'>($0.08)</span></a>
+                            </div>
+                            
+                        </div>
+                        
+
+
+                        <hr class="hr-space-lg">
+                      
+                        <div class="media align-items-center">
+                              
+
+                            <figure class="u-sm-avatar mr-2">
+                                <img src="/images/svg/icons/icon-51.svg?v=1.6" alt="SVG">
+                            </figure>
+                            
+                            
+                            
+
+                            <div class="media-body">
+                              <h2 class="font-size-1 text-uppercase text-secondary mb-0">Latest Block</h2>
+                                <a class='text-size-1 text-link' href="blocks" rel='tooltip' data-placement='bottom' title="The latest Block No"><span id='lastblock'>13875458</span></a>
+                                <a data-toggle='tooltip' href='/chart/blocktime' class='small text-secondary  text-link' data-placement='right' data-title='Average Block Time (The latest 5000 blocks)'>(<span id='avgblocktime'>2.0s</span>)</a>
+                            </div>
+                             
+                            <div class="text-right">
+                                <h2 class="font-size-1 text-uppercase text-secondary mb-0">Burnt Fees</h2>
+                                <a href='/chart/dailyburnt' class='text-size-1 text-link' rel='tooltip' data-toggle='tooltip' data-placement='left' data-html='true' title='' data-original-title='Total Sum of Fees Burnt on Avalanche'>1,524,508.97 AVAX</a>
+                            </div>
+                             
+                        </div>
+                      
+                        <hr class="d-block d-md-none hr-space-lg">
+                    </div>
+
+                    <div class="col-md-12 col-lg-4 u-ver-divider u-ver-divider--left u-ver-divider--none-lg">
+                        <hr class="d-none d-md-block d-lg-none my-4">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h2 class="font-size-1 text-uppercase text-secondary mb-0">Avalanche C-Chain TRANSACTION HISTORY LAST 14 DAYS</h2>
+                            <div class="position-relative float-right z-index-2">
+                                <a id="customchartsinvoker" class="btn btn-xs btn-icon btn-soft-secondary" href="javascript:;" role="button"
+                                    aria-controls="customcharts"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    data-unfold-event="click"
+                                    data-unfold-target="#customcharts"
+                                    data-unfold-type="css-animation"
+                                    data-unfold-duration="300"
+                                    data-unfold-delay="300"
+                                    data-unfold-hide-on-scroll="true"
+                                    data-unfold-animation-in="slideInUp"
+                                    data-unfold-animation-out="fadeOut">
+                                    <i class="fa fa-ellipsis-v btn-icon__inner"></i>
+                                </a>
+
+                                <div id="customcharts" class="dropdown-menu dropdown-menu-right dropdown-unfold" aria-labelledby="customchartsinvoker">
+                                    <a class="dropdown-item" href="/chart/tx">View Detailed Chart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="container-1" class="" style="height: 106px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         
+      <!-- End Stats -->
+    
+
+        <!-- Ads -->
+         
+        <div class="d-block d-lg-none text-center pl-lg-4 pl-xll-5 mb-4">
+         
+            
+            
+        </div>
+         
+        <!-- End Ads -->
+
+      <!-- Lastest Blocks & Transactions -->
+      <div class="row mb-5">
+        <!-- Blocks -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="card shadow-lg border-0 h-100">
+            <!-- Card Header -->
+              <div class="card-body p-4">
+                  <h2 class="card-header-title">Latest Blocks</h2>
+
+                  <hr class="hr-space my-4">
+                  <!-- End Card Header -->
+
+                  <div class="js-scrollbar overflow-hidden pr-4 mr-n4 " style="height: 420px;">
+                      <div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875458'>13875458</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='7000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0x2525fa9e8f38fe9ebacf8edce6e43873c4b7974b945732e7af6dfc3d359782e4'>0x2525fa9e8f38fe9ebacf8edce6e43873c4b7974b945732e7af6dfc3d359782e4</a></span><a href="/txs?block=13875458" data-toggle='tooltip' title="Transactions in this Block">17 txns </a> <span class="small text-secondary">in 1 sec</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>15969 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>15969 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875457'>13875457</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='8000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xe23090324365863990a434a48bf0e21217156e2e82b31a895f0a738c1cb7916d'>0xe23090324365863990a434a48bf0e21217156e2e82b31a895f0a738c1cb7916d</a></span><a href="/txs?block=13875457" data-toggle='tooltip' title="Transactions in this Block">16 txns </a> <span class="small text-secondary">in 2 secs</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>16341 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>16341 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875456'>13875456</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='10000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0x227974b6e511a85d1005a5138685b5c9990720ca8a5936662626f90602ea1488'>0x227974b6e511a85d1005a5138685b5c9990720ca8a5936662626f90602ea1488</a></span><a href="/txs?block=13875456" data-toggle='tooltip' title="Transactions in this Block">27 txns </a> <span class="small text-secondary">in 3 secs</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>30009 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>30009 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875455'>13875455</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='13000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xbfc45e9ef1934c72d1b4707e3e67bdc3eb906003832021404f813566372e7407'>0xbfc45e9ef1934c72d1b4707e3e67bdc3eb906003832021404f813566372e7407</a></span><a href="/txs?block=13875455" data-toggle='tooltip' title="Transactions in this Block">21 txns </a> <span class="small text-secondary">in 1 sec</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>23658 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>23658 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875454'>13875454</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='14000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xf89e93f7cf0ca6e62533e15ba651dca9c9e2e288ed78772f8cd59fc23bde5cbf'>0xf89e93f7cf0ca6e62533e15ba651dca9c9e2e288ed78772f8cd59fc23bde5cbf</a></span><a href="/txs?block=13875454" data-toggle='tooltip' title="Transactions in this Block">21 txns </a> <span class="small text-secondary">in 2 secs</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>28058 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>28058 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875453'>13875453</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='16000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xb5e6bf3190afbdb089c6e75c1160186ad1c1624b6fb208fd59571b63e715af76'>0xb5e6bf3190afbdb089c6e75c1160186ad1c1624b6fb208fd59571b63e715af76</a></span><a href="/txs?block=13875453" data-toggle='tooltip' title="Transactions in this Block">27 txns </a> <span class="small text-secondary">in 2 secs</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>23901 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>23901 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875452'>13875452</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='18000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xab5a5bd876e768a7160c7eb9eae1b356cd35ae09e1bba2f4e5773f5a548d0066'>0xab5a5bd876e768a7160c7eb9eae1b356cd35ae09e1bba2f4e5773f5a548d0066</a></span><a href="/txs?block=13875452" data-toggle='tooltip' title="Transactions in this Block">15 txns </a> <span class="small text-secondary">in 3 secs</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>26967 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>26967 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875451'>13875451</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='21000'></span></div></div></div><div class='col-sm-8'><div class='d-flex justify-content-between align-items-center'><div class='text-nowrap'><span class='d-block mb-1 mb-sm-0'>Hash  <a class='hash-tag text-truncate' href='/block/0xd5d9803d2662755263c13b379e01d44ade36dd074927715d518108a09097be55'>0xd5d9803d2662755263c13b379e01d44ade36dd074927715d518108a09097be55</a></span><a href="/txs?block=13875451" data-toggle='tooltip' title="Transactions in this Block">12 txns </a> <span class="small text-secondary">in 1 sec</span><span class='d-inline-block d-sm-none'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>16392 AVAX</span></span></div><div class='d-none d-sm-block'><span class='u-label u-label--xs u-label--badge-in u-label--secondary text-center text-nowrap' data-toggle='tooltip' title='Burned Fees'>🔥 0<b>.</b>16392 AVAX</span></div></div></div></div><hr class='hr-space'><div class='row'><div class='col-sm-4'><div class='media align-items-sm-center mr-4 mb-1 mb-sm-0'><div class='d-none d-sm-flex mr-2'><span class='btn  btn-icon btn-soft-secondary'><span class='btn-icon__inner text-dark'>BK</span></span></div><div class='media-body'><span class='d-inline-block d-sm-none'>Block</span> <a href='/block/13875450'>13875450</a><span class='d-sm-block small text-secondary ml-1 ml-sm-0 text-nowrap' data-countdown='22000'></span></div></div></div>

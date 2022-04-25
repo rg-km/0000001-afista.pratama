@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1385888663",accountID:"3339936",trustKey:"66686",xpid:"VwUEWF9QDhABV1FXAAcHVlYD",licenseKey:"NRJS-5286d81bb9e3d9fca1e",applicationID:"1305760022"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(32),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(33),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(33),a=t(32);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(32),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(29),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(32),s=t(33),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(34);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],28:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(31),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],29:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],30:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],31:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],32:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],33:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],34:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(32),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!S++){var t=T.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(R,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+T.offset],null,"api"),s("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=h+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===v.readyState&&i()}function i(){s("mark",["domContent",a()+T.offset],null,"api")}var a=t(26),s=t("handle"),c=t(32),f=t("ee"),u=t(30),d=t(27),p=t(21),l=t(23),h=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,w="addEventListener",g="attachEvent",y=m.XMLHttpRequest,x=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var E=""+location,R={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1215.min.js"},O=y&&x&&x[w]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:u,disabled:b};if(!b){t(20),t(28),v[w]?(v[w]("DOMContentLoaded",i,l(!1)),m[w]("load",r,l(!1))):(v[g]("onreadystatechange",o),m[g]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var S=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(33),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+<link rel="alternate" type="application/rss+xml" title="Tulane University RSS" href="https://tulane.edu/rss.xml" />
+<link rel="shortcut icon" href="https://tulane.edu/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="width" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="apple-touch-icon-precomposed" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-76x76.png" sizes="76x76" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-120x120.png" sizes="120x120" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-57x57.png" sizes="57x57" />
+<link rel="apple-touch-icon" href="https://tulane.edu/sites/all/themes/tulane/apple-touch-icon-60x60.png" sizes="60x60" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Tulane University</title>
+  <link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_75EYY5uwOb2aJkWIqCpve8j5038bRVsJNFyY-eS2auU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_2-IlU6zFk8375re398__rlZlzcVcBY1Jx9ZDD2Gv7uI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed:400,700%7cMerriweather" media="all" />
+<link type="text/css" rel="stylesheet" href="https://use.typekit.net/uhc4ubq.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cloud.typography.com/6869476/6995212/css/fonts.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_AxdzxSMHgDnVtp2zqmuRZIrirJwHR3Q2HvnciamaXUI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_l7Tns0BwHdm3-vixmMx612bCCQA2w-E2L9DIA2-Qohg.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://tulane.edu/sites/default/files/css/css_vXVwupIJ5r26Kc21avj7KqpVcw7uArpJNQRM596xIKM.css" media="all" />
+<!---
+<link rel="stylesheet" href="https://use.typekit.net/uhc4ubq.css">
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6869476/6995212/css/fonts.css" />
+--->
+<link rel="stylesheet" href="https://use.typekit.net/bnc8qfp.css">
+<style>
+@media(max-width: 64em) {.l-region.l-region--map {margin-top: 30px !important;} .front .splash {margin-top: 14px;}}
+.l-region.l-region--map {margin-top: 7px;}
+
+.wrap.splash__wrap {max-width: 100% !important; background: rgb(0, 0, 0, 0.6) !important; max-height: 240px !important}
+@media(min-width: 64em){
+.header-overlay .nav {overflow: visible !important;display: block;}
+.wrap.splash__wrap {max-height: 100px !important}
+.header__util__link {padding: 0;}
+}
+.splash__container {padding: 0 1rem !important; max-width: 80em; margin: auto; background: none !important }
+.splash__container .splash__heading {padding-top: 10px}
+.splash__container .button {margin-bottom: 20px;}
+@media (min-width: 64em){.splash {margin-top: 0 !important}}
+
+@media (max-width:64em){.front .wrap.splash__wrap {margin-top: 30px;} .front .wrap.splash__wrap {margin-top: 500px;}}
+.view-footer {clear: both;}
+/* flyout */ .pane-nodeblock-765021 {float: left; min-width: 100%; }
+.modal__container .slide-up img {width: 800px;}
+@media(min-width: 64em) {/* .panel-pane {clear: left; */}}
+
+.pane-nodeblock-1774644, .pane-nodeblock-1774704, .pane-nodeblock-1774712 {    max-width: 1280px;    margin: auto;  border-bottom: 1px solid #ccc;   padding-bottom: 20px; display: block;}
+
+.pane-nodeblock-1774712 { min-width: 100%; margin-bottom: 0;    padding-bottom: 0;border-bottom: 0; float: left;}
+.pane-nodeblock-1774712  p{margin-bottom: 0;}
+.pane-nodeblock-1774712  p img{ margin-left: 0;}
+.pane-nodeblock-1774712 h5 {padding-top: 10px}
+.pane-nodeblock-1774712  p  a{margin-top: 20px}
+.pane-nodeblock-1774712  .wrap{    max-width: 1200px;    margin: auto; }
+@media(max-width: 64em){  .pane-nodeblock-1774712 p, .pane-nodeblock-1774712 h5 {max-width: 550px; margin: auto}}
+
+.pane-nodeblock-1774644 p img, .pane-nodeblock-1774644 p a, .pane-nodeblock-1774644 h3{margin: auto; text-align: center;} 
+
+
+@media(min-width: 32em) and (max-width: 62em){.pane-nodeblock-1774644 .grid__item {width: 33% !important; }}
+.l-region--news {margin-top: 30px;}
+.view-events-imported-json {background-color: #eee;}
+.view-events-imported-json .view-content {    max-width: 1200px;    margin: auto;}
+.card .wrapper {    background: url(https://www.harvard.edu/sites/default/files/feature_item_media/HUHS_3_1800x900.jpg) no-repeat center left;    background-size: cover;}
+.card .wrapper--no-pad {    padding: 0;    max-width: 1300px;}
+.card.padding-sm {    padding: 3.75em 2em;}
+.c-bg-blue-dark {   background-color: #293352;}
+.card .txt-center {    text-align: center;}
+.card .float-right {    float: right;}
+.card-callout-bg-img, .card-callout-bg-img>[style] {    background-repeat: no-repeat;    background-position: center center;    background-size: cover;}
+.card {    background: #fff;    position: relative;    overflow: hidden;}
+.card .txt-h1-alt, .card--large .card__title {    font-size: 2.25em;    line-height: 1.16667;    padding: 0 0 .38889em 0; font-family: bookmania;    font-weight: 300;    font-style: normal;}
+.card.c-txt-white, .card.c-txt-white a, .card.c-txt-white a:hover, .card.c-txt-white a:focus, .card.c-txt-white a, .c-txt-white h1, .card.c-txt-white h6, .card.c-txt-white p {    color: #fff !important;}
+.card h2 a {    text-decoration: none;    font-family: inherit; background-image: none !important;}
+.card a {    background-color: transparent;}
+.card a,.card  button,.card  .btn {    font-family: Gotham, sans-serif;    font-weight: 400;    font-style: normal;}
+.card button,.card  .btn { -webkit-appearance: none; background: transparent; border: 1px solid; border-radius: 3px; cursor: pointer; display: inline-block; font-size: 1em; font-weight: inherit; line-height: normal; padding: 1em; text-align: center; text-decoration: none !important; -webkit-transition: background .2s; transition: background .2s; text-transform: uppercase;}
+.card-callout-bg-img__content {    background: rgba(0,0,0,0.625);    float: right;    padding: 160px 40px;    width: 50%;}
+@media screen and (max-width: 900px){.card-callout-bg-img__content {    width: 100%;  padding: 120px 40px; }}
+</style>
+<style>
+@media(max-width: 64em) {
+.alert__text{ margin-top: 0; padding: 0 0 0 0;}
+.node-type-universal-landing .splash {margin-top: -50px !important}
+.node-type-universal-landing .alert {padding-top: 30px;}
+.node-type-universal-landing .alert__text {margin-top: 0 !important; padding-top: 0 !important;}
+.front .alert {padding-top: 150px;}
+}
+@media(max-width:64em){.front .alert {margin-top: 55px !important;}}
+</style>
+<style>.grid__content--wrapper h3{font-size: 1.25em !important; font-weight: bold !important; line-height: 1.25em !important;}</style>
+<style>
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+padding-bottom: 30px;
+}
+</style>
+<style>
+ .accordion__toggle {    display: block;    padding: 0.5rem 0;    font-size: 1.1rem !important;    line-height: 1.1 !important;    font-weight: bold !important;  } 
+.accordion__interior ol {padding: 10px !important;}
+</style>
+<style>
+@media(min-width: 64em){
+.l-region--primary-nav { min-width: 850px !important}
+.nav__primary ul li ul a{margin-left: 0 !important; }
+.nav__primary ul li ul .first a {padding-top: 20px !important; }
+.nav__primary ul li ul .last a{padding-bottom: 15px !important; }
+}
+.l-region--tactical-nav {font-variant: none !important; text-transform: uppercase;font-weight: normal !important; font-size: 0.75rem !important}
+.sliding-popup-bottom a{color: black !important;}
+.search__container .button {font-size: 0.9rem; padding: 0.6rem 1rem;}
+
+.node-type-universal h1 {margin-top: -40px}
+
+/* webform styles */
+.webform-component .description {padding-top: 15px;}
+.webform-component .form-file {margin: 6px}
+.webform-component-radios label{max-width: 200px; float: left;}
+.webform-component-radios .form-radios {float: left;margin-left: 5px;}
+.webform-component-radios .form-type-radio input {margin-left: 3px;}
+
+
+</style>
+<style>@media(max-width: 64em){.node-type-universal-landing .section {margin: 0 10px;}}</style>
+<style type="text/css">
+.blue-dividers img {margin: auto; width: 150px; height: 150px;}
+.blue-dividers {border-top: 1px solid #67ccf2;border-bottom: 1px solid #67ccf2;margin: 0 15%; padding: 40px 0; font-family: bookmania;font-size: 1.2rem; font-weight: 700;}
+.blue-dividers p {max-width: 80%;margin: auto;}
+</style>
+<style>
+@media(min-width: 65em){
+.header__util__item--audience { padding-right: 6px;}
+.search__submit {    padding: 0 .2rem .47rem .36rem; }
+.search__submit .svgstore svg {  width: 90%; }
+}
+@media(max-width: 65em){.header__util__item--search{margin-top: 5px}}
+.search__container .button {font-size: 0.9rem; font-weight: normal;}
+.search__container .button:hover {background: #395974 !important;}
+.search__container .search__submit {padding: .2rem;}
+.search__container .search__submit .svgstore {width: 60%; margin-top: -5px;margin-bottom: -5px; margin-left: auto; margin-right: auto;}</style>
+<style>
+.student1 {display: none;}
+.student2 {display: none;}
+.student3 {display: none;}
+.student4 {display: none;}
+.student5 {display: block;}
+.student6 {display: none;}
+.student7 {display: none;}
+.student8 {display: none;}
+</style>
+<style>.modal .button {border: none;}.button {margin: 2px}</style>
+<style>
+.menu a:hover{text-decoration: none !important;}
+@media(min-width: 65em){.header__util__item--search {min-width: 100px;}
+.sf-clone-parent { display:none }
+.header-overlay .nav {    position: relative;    top: auto; display: block; overflow: hidden;}
+.node-type-universal-landing .nav {margin-top: 0;}
+}
+@media(max-width: 65em){
+.l-region--primary-nav {margin-top: 60px;}
+.front .l-region--primary-nav {margin-top: 20px;}
+}
+.node-type-universal-landing .nav{min-height: 30px;}
+#superfish-2 {display: none;}
+.nav__primary ul li ul li a:hover {text-decoration: underline;}
+.mobile-site-title {display: none; }
+</style>
+<style>
+.view-id-news_stories_imported_json {max-width: 1080px; margin-left: auto; margin-right: auto; margin-bottom: 0; overflow: hidden;}
+
+/*
+@media(min-width: 34em) and (max-width: 64em) {.view-id-news_stories_imported_json {margin-bottom: 950px;}}
+@media(min-width: 65em) {.view-id-news_stories_imported_json {margin-bottom: 440px;}}
+*/
+
+@media(max-width: 65em) {.l-region--alert {padding-top: 10px ;}}
+.l-region--alert {  margin-bottom: 50px;}
+</style>
+<style>
+@media(max-width: 65em){
+.not-front .l-region--alert{ margin-top: 5px;}
+/* .front .l-region--alert {margin-top: -50px;} */
+}
+@media(min-width: 65em){ .front .alert {margin-top: 40px !important}}
+</style>
+<style>
+.node-type-universal h1 {margin-top: 0;}
+</style>
+<style>
+.header {position: relative !important; margin-top: 0; /* margin-bottom: 10px; */ }
+.not-front .header{margin-top: -50px;}
+@media(min-width: 65em){.header{margin-bottom: 0;margin-top: -50px;} .l-region--tactical-nav .l-region--tactical-nav {display: none}}
+</style>
+<style> .addthis-smartlayers-desktop {display: none;}</style>
+<style> #skip-to:focus {margin: 50px !important; position: relative; z-index: 5; border: 2px solid red !important; padding: 10px;}</style>
+<style>
+.footer a.button:hover {    background: #fff;}
+footer a.button {color: #1e6344 !important;}</style>
+<style>@media(max-width: 65em) {.nav {display: none;}}</style>
+<script type="text/javascript">
+var i = 0;
+
+function addClick(n){   
+    if(n % 2 == 0){ 
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".nav { display: block; }";
+    document.body.appendChild(css);
+    } else { 
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".nav { display: none; }";
+    document.body.appendChild(css);
+    }
+    n++;
+    return n;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("header__nav-toggle__close").onclick = function fun() {
+    i=addClick(i);
+    }
+});
+
+
+
+
+	$('a.sf-depth-2').focusout(function() {
+		if($(this).closest('li').hasClass('last')){
+			console.log('last child');
+			$(this).closest('li.menuparent').find('a.menuparent').trigger('click');
+		}
+	});
+</script>
+<style>.sliding-popup-bottom, .sliding-popup-top {    background: #0779bf !important; }</style>
+<style>.panel-pane.pane-pane-messages{display: none;}</style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "8l8gwzlwwp");
+</script>
+<meta name="msvalidate.01" content="7CF8859EE97517E42D8A84B2626CECAB" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQL0R37F2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQL0R37F2R');
+</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/profiles/lightning/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")</script>
+<script src="https://tulane.edu/sites/default/files/js/js_hFyssOQhsL4zoxLl1v-ggyCleffIo8Azo9R3qWILLcY.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>window.jQuery.ui || document.write("<script src='/profiles/lightning/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")</script>
+<script src="https://tulane.edu/sites/default/files/js/js_7sAwgkEp4fBfu4xAECjif0rQgEdRXldLbMITG5ayE8Y.js"></script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="https://tulane.edu/sites/default/files/js/js_l1iEl-hY65c79QTBBcl2tmNsnQFuMrbhOOFZUO_dkyw.js"></script>
+<![endif]-->
+<script src="https://tulane.edu/sites/default/files/js/js_wr_JpMjWuY-Ch9t6l9QDl7sgNCgJ6LF2NYUrIfc4YYg.js"></script>
+<script defer="defer" src="//script.crazyegg.com/pages/scripts/0051/9615.js"></script>
+<script src="https://tulane.edu/sites/default/files/js/js_bwabsQZ-w4DAtnKypts1hep_o-3h9J6viJAN6UpWRU8.js"></script>
+<script src="https://tulane.edu/sites/default/files/js/js_z28i9EXnp2ZN-zGum7fIflR-D6fyCFPu7D0SL7INqgU.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"jquery_version":"1.10","theme":"tulane","theme_token":"flkr9_Y68yNsGUqtlitpD85fWH0Klrx1e8YB5MSOsPE","js":{"0":1,"1":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"sites\/all\/themes\/tulane\/js\/instafeed.min.js":1,"sites\/all\/themes\/tulane\/js\/map-pin-swap.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"2":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/js\/no-js.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"3":1,"misc\/ui\/jquery.ui.position-1.13.0-backport.js":1,"misc\/ui\/jquery.ui.dialog-1.13.0-backport.js":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/js\/jquery.cookie-1.4.1.min.js":1,"misc\/ajax.js":1,"profiles\/lightning\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/themes\/tulane\/libraries\/html5shiv\/html5shiv.min.js":1,"sites\/all\/themes\/tulane\/libraries\/html5shiv\/html5shiv-printshiv.min.js":1,"sites\/all\/themes\/tulane\/libraries\/selectivizr\/selectivizr.min.js":1,"sites\/all\/themes\/tulane\/libraries\/respond\/respond.min.js":1,"profiles\/lightning\/modules\/contrib\/linkit\/js\/linkit.js":1,"misc\/progress.js":1,"profiles\/lightning\/modules\/contrib\/linkit\/editors\/ckeditor\/linkitDialog.js":1,"\/\/script.crazyegg.com\/pages\/scripts\/0051\/9615.js":1,"https:\/\/www.google.com\/recaptcha\/api.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sftouchscreen.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/themes\/tulane\/js\/svg4everybody.min.js":1,"sites\/all\/themes\/tulane\/js\/tulane.behaviors.js":1},"css":{"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"profiles\/lightning\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/lightning\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"profiles\/lightning\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/comment\/comment.theme.css":1,"profiles\/lightning\/modules\/contrib\/ember_support\/css\/ember-token.css":1,"profiles\/lightning\/modules\/contrib\/ember_support\/css\/ember-workbench.css":1,"modules\/node\/node.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"profiles\/lightning\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"misc\/ui\/jquery.ui.slider.css":1,"profiles\/lightning\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"https:\/\/fonts.googleapis.com\/css?family=Roboto Condensed:400,700%7cMerriweather":1,"https:\/\/use.typekit.net\/uhc4ubq.css":1,"https:\/\/cloud.typography.com\/6869476\/6995212\/css\/fonts.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"public:\/\/ctools\/css\/8695a9d3e23511e74e4cde79b7ae1666.css":1,"sites\/all\/themes\/tulane\/css\/tulane.styles.css":1,"sites\/all\/themes\/tulane\/css\/tulane.no-query.css":1,"all:0":1}},"linkit":{"autocompletePath":"https:\/\/tulane.edu\/linkit\/autocomplete\/___profile___?s=","dashboardPath":"\/linkit\/dashboard\/","currentInstance":{}},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":1,"popup_scrolling_confirmation":0,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cdiv\u003EThis site uses cookies and similar technologies to provide you with our services, enhance the performance and functionality of our services, analyze the use of our products and services, and assist with our advertising and marketing efforts.\u00a0\u00a0\u003Ca href=\u0022https:\/\/tulane.edu\/privacy\u0022\u003EPrivacy Notice\u003C\/a\u003E\u00a0\u00a0\u00a0\u003Ca href=\u0022https:\/\/tulane.edu\/gdpr-privacy-policy\u0022\u003EGDPR Privacy Policy\u003C\/a\u003E\u003C\/div\u003E\n          \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EACCEPT\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n                \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EACCEPT\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\n\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-and-contracting-office","popup_link_new_window":1,"popup_position":null,"fixed_top_position":1,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":1,"reload_page":0,"domain":"","domain_all_sites":0,"popup_eu_only_js":0,"cookie_lifetime":"100","cookie_session":false,"disagree_do_not_show_popup":0,"method":"default","allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\n\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false,"withdraw_button_on_info_popup":0,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":1,"cookie_name":"","containing_element":"body","automatic_cookies_removal":1},"currentPath":"node","currentPathIsAdmin":false,"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast","dropShadows":false},"plugins":{"touchscreen":{"mode":"window_width","breakpoint":65,"breakpointUnit":"em"},"smallscreen":{"mode":"window_width","breakpoint":65,"breakpointUnit":"em","title":"Primary Navigation"},"supposition":true}}},"urlIsAjaxTrusted":{"\/search-results":true}});</script>
+</head>
+<body class="html front not-logged-in page-node header-overlay">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W9ZD83" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9ZD83');</script>
+<!-- End Google Tag Manager -->
+  
+  
+<a tabindex="1" href="#main-content" id="skip-to" class="element-invisible element-focusable">Skip to main content</a>
+
+  <!-- start header page main w/o margins -->
+<header class=header>
+  <div class=wrap>
+    <a class=header__logo-short href="//tulane.edu">
+      <span class="svgstore svgstore--logo-text-short">
+        <svg>
+          <title>Tulane Home</title>
+          <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#logo-text-short></use>
+        </svg>
+      </span>
+    </a>
+    <a class=header__logo-text href="//tulane.edu">
+      <span class="svgstore svgstore--logo-text">
+        <svg>
+          <title>Tulane Home</title>
+          <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#logo-text></use>
+        </svg>
+      </span>
+    </a>
+    <div class=header__secondary>
+        <div class="l-region l-region--tactical-nav">
+    <div class="panel-pane pane-block pane-menu-block-4 pane-menu-block">
+            <div class="menu-block-wrapper menu-block-4 menu-name-menu-tactical-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-10616"><a href="http://admission.tulane.edu/contact" title="">Request Info</a></li>
+<li class="leaf menu-mlid-10621"><a href="http://admission.tulane.edu/visit" title="">Visit</a></li>
+<li class="leaf menu-mlid-10626"><a href="http://admission.tulane.edu/apply" title="">Apply</a></li>
+<li class="leaf menu-mlid-10631"><a href="http://giving.tulane.edu" title="">Give to Tulane</a></li>
+<li class="last leaf menu-mlid-29476"><a href="http://alumni.tulane.edu" title="">Alumni</a></li>
+</ul></div>
+    </div>
+  </div>
+    </div>
+
+    <a id="header__nav-toggle__close" aria-label="Open and close Menu" class="header__nav-toggle" href="#">
+      <span class="header__nav-toggle__open">
+        <span class="svgstore svgstore--bars">
+          <svg>
+            <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#bars></use>
+          </svg>
+        </span>
+      </span>
+      <span aria-label="Close Menu" class="header__nav-toggle__close">
+        <span class="svgstore svgstore--x">
+          <svg>
+            <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#x></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+    <div class=header__secondary>
+          </div>
+
+<!--- start Search and Info For --->
+    <ul class=header__util>
+     <li class="header__util__item header__util__item--audience">
+	<a id="myInfoModaltrigger" href=# class="" data-toggle="modal" data-target="#myInfoModal">
+          <span class="header__util__icon">
+              <span class="svgstore svgstore--person">
+                <svg>
+                  <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#person></use>
+                </svg>
+              </span>
+            </span>Information For...</a>
+      </li>
+      <li class="header__util__item header__util__item--search">
+	<a id="mySearchModaltrigger" href=# class="" data-toggle="modal" data-target="#mySearchModal">
+          <span class="header__util__icon">
+              <span class="svgstore svgstore--search">
+                <svg>
+                  <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#search></use>
+                </svg>
+              </span>
+            </span>Search</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- end header -->
+
+
+<!-- Information for Modal -->
+<div class="modal fade" id="myInfoModal" tabindex="-1" role="dialog" aria-labelledby="Info for" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myInfoModalLabel">Information for...</h4>
+      </div>
+      <div class="modal-body">
+      	<div class=audience__container>  <div class="l-region l-region--audience-nav">
+    <div class="panel-pane pane-block pane-menu-block-3 pane-menu-block">
+            <div class="menu-block-wrapper menu-block-3 menu-name-menu-audience-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-10596"><a href="/current-students">Current Students</a></li>
+<li class="leaf menu-mlid-28091"><a href="/faculty-staff" title="Faculty &amp; Staff">Faculty &amp; Staff</a></li>
+<li class="leaf menu-mlid-219471"><a href="/makeway/leading-with-purpose">Leading With Purpose</a></li>
+<li class="leaf menu-mlid-10606"><a href="/parent-family-resources">Parents &amp; Families</a></li>
+<li class="last leaf menu-mlid-10611"><a href="/visitors">Visitors</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="button" data-dismiss="modal">Close</button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Modal -->
+<div class="modal fade" id="mySearchModal" tabindex="-1" role="dialog" aria-labelledby="Search" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="mySearchModalLabel">Search Tulane</h4>
+      </div>
+      <div class="modal-body">
+        <div class="l-region l-region--search">
+    <div class="panel-pane pane-block pane-search-form pane-search">
+            <form class="search-block-form search__form" action="/search-results" method="get" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<button type="submit" class="search__submit"><span class="svgstore svgstore--search"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/tulane/images/svgstore.svg#search"></use></svg></span>Search</button><div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-eASsz79A4fSNNR5to6Yni8mv5SfSfx8OJw2zTjUm4co" />
+<input type="hidden" name="form_id" value="search_block_form" />
+<input type="hidden" name="gse_id" value="017967096760080950669:bl9vlsogwoo" />
+</div>
+</div></form>    </div>
+  </div>
+      <a class="button button--green search__button" href="/departments">Tulane A-Z</a>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="button" data-dismiss="modal">Close</button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- start main nav -->
+<div class=nav id="nav" >
+  <div class=wrap>
+    <a class=nav__logo href=//tulane.edu>
+      <span class="svgstore svgstore--logo">
+        <svg>
+          <title>Tulane Home</title>
+          <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#logo></use>
+        </svg>
+      </span>
+    </a>
+
+    <a class=nav__logo-text href=//tulane.edu>
+      <span class="svgstore svgstore--logo-text">
+        <svg>
+          <title>Tulane Home</title>
+          <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#logo-text></use>
+        </svg>
+      </span>
+    </a>
+
+    <div class=nav__primary>
+<div class="mobile-site-title"><a href="/">Home</a></div>
+        <div class="l-region l-region--primary-nav">
+    <div class="panel-pane pane-block pane-superfish-1 pane-superfish">
+            <ul  id="superfish-1" class="menu sf-menu sf-menu-primary-navigation sf-horizontal sf-style-none"><li id="menu-10641-1" class="first odd sf-item-1 sf-depth-1 menuparent"><a href="/about" class="sf-depth-1 menuparent">About</a><ul><li id="menu-16736-1" class="first odd sf-item-1 sf-depth-2"><a href="/about/history-and-traditions" class="sf-depth-2">History and Traditions</a></li><li id="menu-16741-1" class="middle even sf-item-2 sf-depth-2"><a href="/about/leadership-and-administration" class="sf-depth-2">Leadership and Administration</a></li><li id="menu-16746-1" class="middle odd sf-item-3 sf-depth-2"><a href="/about/visiting-tulane" class="sf-depth-2">Visiting Tulane</a></li><li id="menu-12951-1" class="middle even sf-item-4 sf-depth-2"><a href="/about/why-tulane" class="sf-depth-2">Why Tulane</a></li><li id="menu-17376-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="/about/facts-and-figures" class="sf-depth-2">Facts and Figures</a></li><li id="menu-247846-1" class="last even sf-item-6 sf-depth-2 sf-no-children"><a href="/core-values" title="" class="sf-depth-2">Core Values</a></li></ul></li><li id="menu-10646-1" class="middle even sf-item-2 sf-depth-1 menuparent"><a href="/academics" class="sf-depth-1 menuparent">Academics</a><ul><li id="menu-16921-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/academics/schools-and-college" class="sf-depth-2">Schools and College</a></li><li id="menu-16811-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="http://admission.tulane.edu/academics/majors-minors" title="" class="sf-depth-2">Majors and Minors</a></li><li id="menu-12956-1" class="middle odd sf-item-3 sf-depth-2"><a href="/academics/undergraduate" class="sf-depth-2">Undergraduate Education</a></li><li id="menu-12961-1" class="middle even sf-item-4 sf-depth-2"><a href="/academics/graduate-education" class="sf-depth-2">Graduate Education</a></li><li id="menu-18941-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="/academics/culture-community-engagement" title="Community Engagement is part of a Tulane education." class="sf-depth-2">Community Engagement</a></li><li id="menu-16916-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="/academics/libraries" class="sf-depth-2">Libraries</a></li><li id="menu-16831-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="http://summerschool.tulane.edu" title="" class="sf-depth-2">Summer Programs</a></li><li id="menu-209428-1" class="middle even sf-item-8 sf-depth-2 sf-no-children"><a href="https://summer.tulane.edu" title="" class="sf-depth-2">Pre-College Programs</a></li><li id="menu-16776-1" class="last odd sf-item-9 sf-depth-2 sf-no-children"><a href="/academics/undergraduate-education/academic-resources" class="sf-depth-2">Academic Resources</a></li></ul></li><li id="menu-10651-1" class="middle odd sf-item-3 sf-depth-1 menuparent"><a href="/admission-aid" class="sf-depth-1 menuparent">Admission &amp; Aid</a><ul><li id="menu-12966-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="http://admission.tulane.edu" title="" class="sf-depth-2">Undergraduate Admission</a></li><li id="menu-12971-1" class="middle even sf-item-2 sf-depth-2"><a href="/academics/graduate-education" title="" class="sf-depth-2">Graduate Admission</a></li><li id="menu-13891-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="/admission-aid/international-admission" class="sf-depth-2">International Admission</a></li><li id="menu-19761-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="/admission-aid/part-time-studies" title="Part-Time Studies at Tulane" class="sf-depth-2">Part-Time Studies</a></li><li id="menu-16841-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="/admission-aid/cost-and-financial-aid" class="sf-depth-2">Cost and Financial Aid</a></li><li id="menu-16846-1" class="last even sf-item-6 sf-depth-2 sf-no-children"><a href="/admission-aid/visit-and-connect" class="sf-depth-2">Visit and Connect</a></li></ul></li><li id="menu-10656-1" class="middle even sf-item-4 sf-depth-1 menuparent"><a href="/research-at-tulane" class="sf-depth-1 menuparent">Research</a><ul><li id="menu-207974-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/covid-19/research-and-innovation" title="" class="sf-depth-2">COVID-19 Research</a></li><li id="menu-18896-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/research/health-bioinnovation" class="sf-depth-2">Health and Bioinnovation</a></li><li id="menu-18901-1" class="middle odd sf-item-3 sf-depth-2"><a href="/research/global-studies" class="sf-depth-2">Global Studies</a></li><li id="menu-18906-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="/research/environment-energy-resilience" class="sf-depth-2">Environment, Energy and Resilience</a></li><li id="menu-62971-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="http://news.tulane.edu/pr/research-in-real-time" title="" class="sf-depth-2">Research in Real Time</a></li><li id="menu-17681-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="/centers-and-institutes" class="sf-depth-2">Centers and Institutes</a></li><li id="menu-16851-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="/research/vice-president-research" class="sf-depth-2">Vice President for Research</a></li><li id="menu-245952-1" class="last even sf-item-8 sf-depth-2 sf-no-children"><a href="https://research.tulane.edu/achievement-awards" title="" class="sf-depth-2">Research, Scholarship and Artistic Achievement Awards</a></li></ul></li><li id="menu-10661-1" class="middle odd sf-item-5 sf-depth-1 menuparent"><a href="/life-tulane" class="sf-depth-1 menuparent">Life at Tulane</a><ul><li id="menu-16856-1" class="first odd sf-item-1 sf-depth-2"><a href="/life-tulane/campus-life" class="sf-depth-2">Campus Life</a></li><li id="menu-211215-1" class="middle even sf-item-2 sf-depth-2"><a href="/edi" class="sf-depth-2">Equity, Diversity and Inclusion</a></li><li id="menu-16896-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="/life-tulane/city-smarts" class="sf-depth-2">City Smarts</a></li><li id="menu-16906-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="/life-tulane/entrepreneurship-nola" class="sf-depth-2">Entrepreneurship in NOLA</a></li><li id="menu-16891-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="/life-tulane/celebrated-events" class="sf-depth-2">Celebrated Events</a></li><li id="menu-16996-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="/life-tulane/nola-destinations" class="sf-depth-2">Destinations in NOLA</a></li><li id="menu-16901-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="/life-tulane/art-and-culture" class="sf-depth-2">Art and Culture</a></li><li id="menu-16911-1" class="last even sf-item-8 sf-depth-2 sf-no-children"><a href="/life-tulane/committed-community" class="sf-depth-2">Committed to Community</a></li></ul></li><li id="menu-169096-1" class="middle even sf-item-6 sf-depth-1 menuparent"><a href="https://news.tulane.edu/" title="" class="sf-depth-1 menuparent">News &amp; Events</a><ul><li id="menu-203591-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/covid-19/communications/in-the-news" title="" class="sf-depth-2">COVID-19 In the News</a></li><li id="menu-169101-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://news.tulane.edu/" title="" class="sf-depth-2">Tulane Today</a></li><li id="menu-169106-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://tulanian.tulane.edu/" title="" class="sf-depth-2">Tulanian Magazine</a></li><li id="menu-169111-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://events.tulane.edu/calendar" title="" class="sf-depth-2">Calendar of Events</a></li><li id="menu-169116-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://news.tulane.edu/tulane-experts" title="" class="sf-depth-2">Experts</a></li><li id="menu-169121-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="https://news.tulane.edu/pr" title="" class="sf-depth-2">Press Releases</a></li><li id="menu-215283-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://news.tulane.edu/statements" title="" class="sf-depth-2">Statements</a></li><li id="menu-209813-1" class="last even sf-item-8 sf-depth-2"><a href="/on-good-authority" class="sf-depth-2">On Good Authority Podcast</a></li></ul></li><li id="menu-13896-1" class="last odd sf-item-7 sf-depth-1 sf-no-children"><a href="http://www.tulanegreenwave.com/" title="" class="sf-depth-1">Athletics</a></li></ul>    </div>
+  </div>
+    </div>
+    <div class=nav__secondary>
+        <div class="l-region l-region--tactical-nav">
+      <div class="l-region l-region--tactical-nav">
+    <div class="panel-pane pane-block pane-menu-block-4 pane-menu-block">
+            <div class="menu-block-wrapper menu-block-4 menu-name-menu-tactical-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-10616"><a href="http://admission.tulane.edu/contact" title="">Request Info</a></li>
+<li class="leaf menu-mlid-10621"><a href="http://admission.tulane.edu/visit" title="">Visit</a></li>
+<li class="leaf menu-mlid-10626"><a href="http://admission.tulane.edu/apply" title="">Apply</a></li>
+<li class="leaf menu-mlid-10631"><a href="http://giving.tulane.edu" title="">Give to Tulane</a></li>
+<li class="last leaf menu-mlid-29476"><a href="http://alumni.tulane.edu" title="">Alumni</a></li>
+</ul></div>
+    </div>
+  </div>
+  </div>
+    </div>
+    <ul class=nav__util>
+     <li class="nav__util__item ">
+	<a id="myInfoModaltrigger" href=# class="" data-toggle="modal" data-target="#myInfoModal">
+          <span class="nav__util__icon">
+              <span class="svgstore svgstore--person">
+                <svg>
+                  <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#person></use>
+                </svg>
+              </span>
+            </span>Information For...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- end main nav -->
+<!-- end header -->
+
+<!-- alert -->
+    <div class="l-region l-region--alert">
+    <div class="panel-pane pane-views pane-alert">
+            <div class="view view-alert view-id-alert view-display-id-block view-dom-id-ccb1df7d5502050e69bcb26fa07c057e">
+            <div class="view-header">
+      <style>
+<!--/*--><![CDATA[/* ><!--*/
+.node-type-universal-landing .splash {margin-top: -50px !important}
+ .home-alert {/* min-height: 155px; */ min-height: 55px;} 
+/*--><!]]>*/
+</style>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="alert" style="background:#bfdeee;color:#000000">
+  <div class="wrap">
+    <div class="main main--full">
+      <div class="alert__text">
+        <a href="#" class="alert__close" style="color:#000000">
+          <span class="hide">Close</span>
+          <span class="svgstore svgstore--x">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/tulane/images/svgstore.svg#x"></use>
+            </svg>
+          </span>
+        </a>
+        
+  <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+
+.alert {background: #E6FBFF !important;padding-top: 0 !important; padding-bottom: 0 !important}.alert p a img{ display: inline-block !important;margin-bottom: -5px !important}
+.alert .rtc a{background-image: none !important;color: #395974 !important;font-size: 20px;font-weight: bold;font-family: "Gotham A","Gotham B",sans-serif !important;}
+@media(min-width: 65em){.front .alert, .front .l-region--alert  { margin: 0 !important; }}
+
+/*--><!]]>*/
+</style>
+
+
+<p class="rtc"><a href="/covid-19">Stronger TUgether: COVID-19 RESOURCES <img alt="Arrow indicator " src="/sites/default/files/rightarrow-02.png" style="width: 25px; height: 25px;" /></a></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+<!-- end alert -->
+
+
+<a id="main-content"></a>
+<div class="panel-pane pane-block pane-nodeblock-1011741 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><style>
+<!--/*--><![CDATA[/* ><!--*/
+.splash{background-image: url("/sites/default/files/images/featured-map-pin/gibson_may2021.jpg") !important;} 
+/*--><!]]>*/
+</style>
+<div class="splash">
+	<div class="wrap splash__wrap">
+		<div class="splash__container">
+			<div class="splash__heading"><a id="main-content"></a>Our Core Values</div>
+      		<a aria-label="Learn more about the Tulane Innovation Institute" class="button" href="/core-values" style="background-color: #395974;">Learn More</a>
+    		</div>
+  	</div>
+</div>
+
+<!---
+<style>.splash{background-image: url("/sites/default/files/arrival_center2.jpg") !important;} @media(max-width: 64em){.splash__container {margin-top: -420px !important;} .splash__heading {line-height: 1.0em}}</style>
+<div class="splash" >
+	<div class="wrap splash__wrap" >
+		<div class="splash__container">
+			<div class="splash__heading">Justice Ginsburg left her mark on law students, alumni</div>
+      		<a class="button" href="https://law.tulane.edu/news/justice-ginsburg-left-her-mark-tulane-law-students-alumni" style="background-color: #395974;">Read More</a>
+    		</div>
+  	</div>
+</div>
+--->
+</div></div></div>    </div>
+<div class="panel-pane pane-block pane-nodeblock-765021 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><style>
+<!--/*--><![CDATA[/* ><!--*/
+
+.flexslider {border: 0}
+#flyoutMobile p {
+font-size:1.05rem;
+color: #fff /*#67CEF3 */; 
+margin: -5px 0 10px 0;
+text-align: center; 
+padding-bottom: 10px;
+font-family: freight-sans-pro, "FreightSans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#flyoutMobile{width: 100%;display: block;}
+
+@media(min-width: 80em){.splash__container { padding-bottom: 18px}}
+.removelinkdefault {text-decoration: none;}
+
+/*--><!]]>*/
+</style>
+
+  <section id="flyoutMobile" style="background:#255b4e;">
+        <a href="https://audacious.tulane.edu/" class="removelinkdefault" style="padding: 10px 5px 0 5px; font-family: CaslonGraD; color:#fff; width:100%; display:block; text-align:center;font-size: 1.65rem;" id="AudaciousMobile">Only the Audacious</a><p>The campaign for an ever bolder Tulane</p>
+    </section>
+</div></div></div>    </div>
+<div class="panel-pane pane-block pane-nodeblock-1778878 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+.bg-gray-body { background: #ebebeb;min-height: 50px;}
+.social_connect_green{ max-width: 270px !important;}
+.social_connect_green svg {width: 25px;text-align: center;float: none;}
+.social_connect_green li {max-height: 25px;    list-style: none !important;    display: inline-block;    min-width: 50px;}
+iframe { width:100%; margin: auto;}
+.desktop{display:none;}
+.mobile{display:block; }
+@media(min-width:64em){
+.desktop{display:block; margin-bottom: -5px; }
+.mobile{display: none;}
+}
+
+/*--><!]]>*/
+</style>
+
+<script src="https://snapwidget.com/js/snapwidget.js"></script>
+
+<div class="desktop"><iframe src="https://snapwidget.com/embed/849310" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe></div>
+<div class="mobile"><iframe src="https://snapwidget.com/embed/966122" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe></div>
+
+<style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+.social_connect_green svg{
+fill: #003300 !important;
+.body__social__ul li {margin-left: 10px;}
+}
+
+/*--><!]]>*/
+</style>
+<div class="bg-gray-body">
+<ul class="body__social__ul social_connect_green " style="max-width: 500px;margin-left: auto; margin-right:auto;">
+	<li><a aria-label="Social media link to Tulane Instagram account" class="body__social__link" href="http://www.instagram.com/tulaneu/" target="_blank"><span class="svgstore svgstore--instagram"><svg>
+	<title>Tulane on Instagram</title>
+	<use xlink:href="/sites/all/themes/tulane/images/svgstore.svg#instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use> </svg> </span> </a></li>
+	<li><a aria-label="Social media link to Tulane Twitter account" class="body__social__link" href="http://www.twitter.com/Tulane" target="_blank"><span class="svgstore svgstore--twitter"><svg>
+	<title>Tulane on Twitter</title>
+	<use xlink:href="/sites/all/themes/tulane/images/svgstore.svg#twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use> </svg> </span> </a></li>
+	<li><a class="body__social__link" href="http://www.facebook.com/TulaneU/" target="_blank" aria-label="Social media link to Tulane Facebook account"><span class="svgstore svgstore--facebook"><svg>
+	<title>Tulane on Facebook</title>
+	<use xlink:href="/sites/all/themes/tulane/images/svgstore.svg#facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use> </svg> </span> </a></li>
+	<li><a class="body__social__link" href="http://www.youtube.com/user/Tulane" target="_blank" aria-label="Social media link to Tulane Youtube account"><span class="svgstore svgstore--youtube"><svg>
+	<title>Tulane on Youtube</title>
+	<use xlink:href="/sites/all/themes/tulane/images/svgstore.svg#youtube" xmlns:xlink="http://www.w3.org/1999/xlink"></use> </svg> </span> </a></li>
+	<li><a class="body__social__link" href="http://www.linkedin.com/edu/school?id=18439" target="_blank" aria-label="Social media link to Tulane LinkedIn account"><span class="svgstore svgstore--linkedin"><svg>
+	<title>Tulane on LinkedIn</title>
+	<use xlink:href="/sites/all/themes/tulane/images/svgstore.svg#linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use> </svg> </span> </a></li>
+</ul>
+</div>
+</div></div></div>    </div>
+<div class="panel-pane pane-views pane-news-stories-imported-json">
+            <div class="view view-news-stories-imported-json view-id-news_stories_imported_json view-display-id-block view-dom-id-115dc4a47d1a7b700f35891d985a15ad">
+            <div class="view-header">
+      <style>
+<!--/*--><![CDATA[/* ><!--*/
+
+.view-news-stories-imported-json .section__heading {margin-bottom: -10px}
+.view-news-stories-imported-json .field-content a {float: left !important; background-image: none !important;}
+.view-news-stories-imported-json .feed {min-height: 310px}
+.grid__item--4 {min-height: 370px;}
+.section__footer {margin-bottom: 20px;}
+
+
+/*--><!]]>*/
+</style>
+
+<div class="view-content">
+	<div class="section">
+  		<div class="section__header">
+    			<div class="section__heading">Tulane News</div>
+  		</div>
+  
+		<div class="grid"></div></div></div>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div>        <span><div class="grid__item grid__item--4">
+        <div class="feed">
+		<div class="feed__image">
+	  		<div class="slide-up-containter">
+                              <div><img src="https://news.tulane.edu/sites/default/files/LAW-pbc-1954_600_1.jpg" width="800" height="600" alt="Tulane Law graduates" /></div>
+                         </div>
+                 </div>
+          <span class="field-content"><a href="https://news.tulane.edu/news/commencement-2020-here">Commencement 2020 is here!</a></span>
+        </div>
+</div></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div>        <span><div class="grid__item grid__item--4">
+        <div class="feed">
+		<div class="feed__image">
+	  		<div class="slide-up-containter">
+                              <div><img src="https://news.tulane.edu/sites/default/files/gramm600.jpg" width="800" height="600" alt="Kimberly Gramm" /></div>
+                         </div>
+                 </div>
+          <span class="field-content"><a href="https://news.tulane.edu/pr/veteran-leader-head-tulanes-new-innovation-institute">Veteran leader to head Tulane’s new Innovation Institute </a></span>
+        </div>
+</div></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div>        <span><div class="grid__item grid__item--4">
+        <div class="feed">
+		<div class="feed__image">
+	  		<div class="slide-up-containter">
+                              <div><img src="https://news.tulane.edu/sites/default/files/Azaleas2019_thumb.jpg" width="800" height="600" alt="Shield on campus" /></div>
+                         </div>
+                 </div>
+          <span class="field-content"><a href="https://news.tulane.edu/news/tulane-announces-core-values-are-foundational-university">Tulane announces core values that are foundational to university </a></span>
+        </div>
+</div></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div>        <span><div class="grid__item grid__item--4">
+        <div class="feed">
+		<div class="feed__image">
+	  		<div class="slide-up-containter">
+                              <div><img src="https://news.tulane.edu/sites/default/files/mcruffin600.jpg" width="800" height="600" alt="MCR" /></div>
+                         </div>
+                 </div>
+          <span class="field-content"><a href="https://news.tulane.edu/news/award-winning-author-maurice-carlos-ruffin-discusses-diversity-literature-and-what-inspired-him">Award-winning author Maurice Carlos Ruffin discusses diversity in literature and what inspired him to start writing</a></span>
+        </div>
+</div></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      
+  		<div class="section__footer">
+    		<a class="button" href="//news.tulane.edu">View Tulane News</a>
+  		</div>    </div>
+  
+  
+</div>    </div>
+<div class="panel-pane pane-views pane-events-imported-json">
+            <div class="view view-events-imported-json view-id-events_imported_json view-display-id-block view-dom-id-d0366213a64e3890bb32f61c55227d62">
+            <div class="view-header">
+      <style>
+<!--/*--><![CDATA[/* ><!--*/
+
+.pane-events-imported-json .views-row.views-row-1.views-row-odd.views-row-first:before, 
+.pane-events-imported-json .views-row.views-row-2.views-row-even:before, 
+.pane-events-imported-json .views-row.views-row-3.views-row-odd:before, 
+.pane-events-imported-json .views-row.views-row-4.views-row-even:before {display: none;}
+
+.pane-events-imported-json ul li{width: 100%;}
+@media only screen and (min-width:580px) {.pane-events-imported-json ul li{width: 50%;}}
+@media only screen and (min-width:1023px) {.pane-events-imported-json ul li{width: 25%;}}
+.pane-events-imported-json ul li{float: left;list-style: none; padding-left: 0px !important}
+.pane-events-imported-json .event {padding:  0 0.5rem 1rem 0.5rem;}
+.pane-events-imported-json .grid__item .event__title {min-height: 80px} 
+.pane-events-imported-json .grid__item .event__month{color: #017ba3 !important; border-top: 0.125rem solid #017ba3; max-width: 30%; margin: auto;}
+.pane-events-imported-json .grid__item .event__day {color: #017ba3 !important;}
+
+/*--><!]]>*/
+</style>
+<p> </p>
+  <div class="section__header">
+    <div class="section__heading">Upcoming Events</div>
+  </div>
+
+<div class="grid"></div>    </div>
+  
+  
+  
+      <div class="view-content">
+      <div class="item-list"><ul>  <li class="views-row views-row-1 views-row-odd views-row-first">  
+          <div class="grid__item grid__item--1">
+<div class="event">
+<div class="event__type"><a href="https://events.tulane.edu/event-type/Public">Public</a></div>    
+          <div class="event__title"><a href="https://events.tulane.edu/content/impacts-research-panel-and-networking-event">Impacts in Research: Panel and Networking Event</a></div>    
+          <span class="event__month">Apr</span>    
+          <span class="event__day">24</span>  </li>
+  <li class="views-row views-row-2 views-row-even">  
+          <div class="grid__item grid__item--1">
+<div class="event">
+<div class="event__type"><a href="https://events.tulane.edu/event-type/Public">Public</a></div>    
+          <div class="event__title"><a href="https://events.tulane.edu/content/shop-good-spring-art-market">Shop for Good Spring Art Market</a></div>    
+          <span class="event__month">Apr</span>    
+          <span class="event__day">26</span>  </li>
+  <li class="views-row views-row-3 views-row-odd">  
+          <div class="grid__item grid__item--1">
+<div class="event">
+<div class="event__type"><a href="https://events.tulane.edu/event-type/Public">Public</a></div>    
+          <div class="event__title"><a href="https://events.tulane.edu/content/music-midday-47">Music @ Midday</a></div>    
+          <span class="event__month">Apr</span>    
+          <span class="event__day">27</span>  </li>
+  <li class="views-row views-row-4 views-row-even views-row-last">  
+          <div class="grid__item grid__item--1">
+<div class="event">
+<div class="event__type"><a href="https://events.tulane.edu/event-type/Public">Public</a></div>    
+          <div class="event__title"><a href="https://events.tulane.edu/content/tu-tones-final-concert">Tu Tones Final Concert </a></div>    
+          <span class="event__month">Apr</span>    
+          <span class="event__day">27</span>  </li>
+</ul></div>    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      
+
+  <div class="section__footer">
+    <a class="button" href="https://events.tulane.edu">View Campus Calendar</a>
+  </div>    </div>
+  
+  
+</div>    </div>
+<div class="panel-pane pane-block pane-nodeblock-1787929 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><p><img alt="flourish" src="/sites/default/files/colorbar_new.png" style="width: 400px; padding-top:20px; padding-bottom:20px; margin: auto;" /></p>
+
+
+<div class="section__heading">Explore Tulane</div>
+<div class="l-region l-region--feature">
+         <div class="featured" style="background-image: url('https://tulane.edu/sites/default/files/images/home-page-feature/blurflags.jpg');">
+
+
+  <a class="featured__item " href="/academics/undergraduate">
+    <div class="wrap">
+      <div class="featured__container">
+        <span class="featured__icon">
+          <span class="svgstore svgstore--arrow-circle">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/tulane/images/svgstore.svg#arrow-circle"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="featured__text">
+  <div class="field field--name-field-hf-distinctions-label field--type-text field--label-hidden">
+    Undergraduate Education  </div>
+</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a class="featured__item " href="/academics/graduate-education">
+    <div class="wrap">
+      <div class="featured__container">
+        <span class="featured__icon">
+          <span class="svgstore svgstore--arrow-circle">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/tulane/images/svgstore.svg#arrow-circle"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="featured__text">
+  <div class="field field--name-field-hf-facts-figures-label field--type-text field--label-hidden">
+    Graduate Education  </div>
+</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a class="featured__item " href="https://admission.tulane.edu/academics/majors-minors">
+    <div class="wrap">
+      <div class="featured__container">
+        <span class="featured__icon">
+          <span class="svgstore svgstore--arrow-circle">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/tulane/images/svgstore.svg#arrow-circle"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="featured__text">
+  <div class="field field--name-field-hf-connect-tulane-label field--type-text field--label-hidden">
+    Majors &amp; Minors  </div>
+</span>
+      </div>
+    </div>
+  </a>
+</div>
+    </div>
+
+</div></div></div>    </div>
+<footer class=footer>
+  <div class=wrap>
+    <a class=footer__logo href="//tulane.edu"><div style="color:#030;">Link to Tulane Home Page</div>
+      <span class="svgstore svgstore--logo-shield">
+        <svg>
+          <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#logo-shield></use>
+        </svg>
+      </span>
+    </a>
+    <div class=footer__top>
+        <div class="l-region l-region--footer-left">
+    <div class="panel-pane pane-block pane-nodeblock-1019281 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><div class="footer__info">
+<div class="footer__info__heading">Tulane University</div>
+<div class="footer__info__text">6823 St. Charles Avenue<br />New Orleans, LA 70118<br />504-865-5000</div>
+<p><a class="button button--full" href="/maps-directions">Maps &amp; Directions</a>
+</p></div>
+</div></div></div>    </div>
+  </div>
+        <div class="l-region l-region--footer-middle">
+    <div class="panel-pane pane-block pane-nodeblock-1019286 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><div class="footer__nav">
+<ul class="menu">
+<li><a href="http://news.tulane.edu">News</a></li>
+<li><a href="http://giving.tulane.edu">Give to Tulane</a></li>
+<li><a href="http://tulanehealthcare.com/">Medical Center</a></li>
+<li><a href="/contact-us">Contact Us</a></li>
+<li><a href="/feedback">Website Feedback</a></li>
+</ul>
+</div>
+<div class="footer__nav">
+<ul class="menu">
+<li><a href="http://hr.tulane.edu/jobs">Jobs at Tulane</a></li>
+<li><a href="https://outlook.com/tulane.edu">Email</a></li>
+<li><a href="http://tulane.edu/mytulane">MyTulane</a></li>
+<li><a href="https://gibson.tulane.edu/">Gibson Online</a></li>
+<li><a href="/copyright-notice">Copyright</a></li>
+<li><a href="/privacy">Privacy</a></li>
+</ul>
+</div>
+</div></div></div>    </div>
+  </div>
+        <div class="l-region l-region--footer-right">
+    <div class="panel-pane pane-block pane-nodeblock-1019651 pane-nodeblock">
+            <div class="field field--name-field-rtw-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><div></div></div></div></div>    </div>
+  </div>
+    </div>
+    <div class=footer__bottom>
+     <ul class=footer__social>
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.instagram.com/tulaneu/ target="_blank">
+            <span class="svgstore svgstore--instagram">
+              <svg>
+                <title>Like Tulane University on Instagram</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#instagram></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.twitter.com/Tulane target="_blank">
+            <span class="svgstore svgstore--twitter">
+              <svg>
+                <title>Follow Tulane on Twitter</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#twitter></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.facebook.com/TulaneU/ target="_blank">
+            <span class="svgstore svgstore--facebook">
+              <svg>
+                <title>Like Tulane University on Facebook</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#facebook></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.youtube.com/user/Tulane target="_blank">
+            <span class="svgstore svgstore--youtube">
+              <svg>
+                <title>Watch Tulane University YouTube channel</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#youtube></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+<!---
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.flickr.com/groups/tulaneuniversity/ target="_blank">
+            <span class="svgstore svgstore--flickr">
+              <svg>
+                <title>Browse Tulane University on Flickr</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#flickr></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.pinterest.com/tulaneu/ target="_blank">
+            <span class="svgstore svgstore--pinterest-p">
+              <svg>
+                <title>See Tulane University on Pinterest</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#pinterest-p></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+--->
+        <li class=footer__social__item>
+          <a class=footer__social__link href=http://www.linkedin.com/edu/school?id=18439 target="_blank">
+            <span class="svgstore svgstore--linkedin">
+              <svg>
+                <title>Follow Tulane University on LinkedIn</title>
+                <use xlink:href=/sites/all/themes/tulane/images/svgstore.svg#linkedin></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <div class=footer__copyright>&copy 2022 Tulane University</div>
+    </div>
+  </div>
+</footer>  <script>window.eu_cookie_compliance_cookie_name = "";</script>
+<script>window.eu_cookie_compliance_cookie_name = "";</script>
+<script src="https://tulane.edu/sites/default/files/js/js_pBcibERveYlA6Es9zQrsSullhFMGkNu89PAVSmW5nOg.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-5286d81bb9e3d9fca1e","applicationID":"1305760022","transactionName":"MwMHMhQFV0QHBUdYDApJMBQPSxZeCAJWSU0UDhU=","queueTime":0,"applicationTime":16,"atts":"H0QERFwfREo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

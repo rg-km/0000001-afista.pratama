@@ -1,0 +1,213 @@
+
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 lte9 lte8 lte7 lte6 no-js"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 lte9 lte8 lte7 no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8 lte9 lte8 no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9 lte9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html id="html" lang="en" class="no-mobile no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="Letterboxd is a social platform for sharing your taste in film. Use it as a diary to record your opinion about films as you watch them, or just to keep track of films you’ve seen in the past. Rate, review and tag films as you add them. Find and follow your friends to see what they’re enjoying. Keep a watchlist of films you’d like to see, and create lists/collections on any topic." />
+	
+	
+	<meta property="og:url" content="https://letterboxd.com/" />
+	<meta property="og:title" content="Letterboxd &bull; Your life in film" />
+	<meta property="og:image" content="https://s.ltrbxd.com/static/img/default-share.e38c5d62.png" />
+	
+	<meta name="application-name" content="Letterboxd" />
+	<meta name="theme-color" content="#445566" />
+	<meta name="msapplication-TileColor" content="#445566" />
+	<meta name="apple-itunes-app" content="app-id=1054271011, affiliate-data=11l5KW" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	function ga() {}
+
+	// Default consent to 'denied'.
+	gtag('consent', 'default', {
+		'analytics_storage': 'denied',
+		'ad_storage': 'denied',
+	});
+</script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3ECBB4D7L"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+	
+		var analytic_params = {};
+		
+		
+analytic_params['user_type'] = 'Visitor';
+		analytic_params['template'] = '/object/homepage';
+		
+		
+
+		if (analytic_params.member_type) {
+			gtag('set', 'user_properties', { 
+				member_type: analytic_params.member_type,
+			});
+			delete analytic_params.member_type;
+		}
+		var config = {
+			...analytic_params,
+			'cookie_domain': 'letterboxd.com', 
+			'optimize_id': 'GTM-TB8HSDN', 
+		};
+		gtag('config', 'G-D3ECBB4D7L', config);
+
+		
+	</script>
+
+
+	<script>
+		var isMobile = false,
+			isMobileOptimised = true,
+			renderMobile = false,
+			useStaticFonts = false,
+			disableFrameProtection = false;
+	</script>
+	<title>Letterboxd &bull; Social film discovery.</title>
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="author" type="text/plain" href="/humans.txt" />
+	<link rel="mask-icon" href="https://s.ltrbxd.com/static/img/icons/letterboxd-decal-l-16px.5fe24c7d.svg" color="#445566" />
+	<link rel="shortcut icon" sizes="196x196" href="https://s.ltrbxd.com/static/img/icons/touch-icon-192x192.257b84e7.png" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Letterboxd" href="/static/opensearch.xml" />
+	
+	
+	<!--[if lte IE 9 ]>
+		<link href="https://s.ltrbxd.com/static/css/ie9-1.min.075b2c15.css" rel="stylesheet" media="screen, projection"/>
+		<link href="https://s.ltrbxd.com/static/css/ie9-2.min.a11d8c63.css" rel="stylesheet" media="screen, projection"/>
+	<![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!-->
+		<link href="https://s.ltrbxd.com/static/css/main.min.9e4c94a9.css" rel="stylesheet" media="screen, projection"/>
+	<!--<![endif]-->
+	<!--[if lte IE 6]><script>location.replace("/errors/ie6");</script><![endif]-->
+	<!--[if IE 7]><script>location.replace("/errors/ie7");</script><![endif]-->
+	<!--[if IE 8]><script>location.replace("/errors/ie8");</script><![endif]-->
+	<!--[if IE 9]><script>location.replace("/errors/ie9");</script><![endif]-->
+	
+	
+	
+	<link href="https://s.ltrbxd.com/static/css/desktop.min.506e7cd4.css" rel="stylesheet" media="screen, projection"/>
+
+	<script>
+		var baseURL = "";
+		var successMessages = [];
+		var errorMessages = [];
+		var stickyMessages = [];
+		var globals = {
+			autoAddFilm: false			
+			, spinners: {
+				ajax_242d35: 'https://s.ltrbxd.com/static/img/spinner-dark-2x.fda24f88.gif',
+				spinner_12_2C3641: 'https://s.ltrbxd.com/static/img/spinner-dark-2x.fda24f88.gif',
+				spinner_14_20272f: 'https://s.ltrbxd.com/static/img/spinner-dark-2x.fda24f88.gif',
+				spinner_16_161B21: 'https://s.ltrbxd.com/static/img/spinner-dark-2x.fda24f88.gif'
+			}
+		};
+		var supermodelCSRF = "";
+		var gRecaptchaKey = '6Le3mMIUAAAAAEXbwZ7M1R5jEv0V5xbvj7bgXq2g';
+		var person = {
+			username: ""
+			, loggedIn: false
+			
+			, showAds: true
+			, role: "guest"
+			, hasExtendedServiceFilters: false
+			, canBulkAddToLists: false
+			, canFilterOwned: false
+			, hasHqRole: false
+			, canHaveHqDashboard: false
+			, hasMemberStatistics: false
+			, blockedMembers: []
+			, showAdultContent: false
+			, validated: null
+			, trusted: false
+			, hasBlocked : function(member) { for (var i = 0; i !== person.blockedMembers.length; i++) {if (person.blockedMembers[i] === member) return true;} return false; }
+			, viewingTags: []
+			, hasMoreTags: true
+		};
+		var disableAds = false;
+		
+		
+		
+supermodelCSRF = "102f4c11eafd38e34d5f";
+
+		
+
+		
+		
+		
+			if ( screen.width < 768 ) {
+				var date = new Date();
+				var maxAge = 365 * 24 * 60 * 60;
+				date.setTime(date.getTime() + maxAge * 1000);
+				var expires = '; expires=' + date.toUTCString();
+				document.cookie = "useMobileSite=yes" + expires + "; path=/; maxAge=" + maxAge;
+				if ( document.cookie && document.cookie.indexOf("useMobileSite=yes") >= 0 ) {
+					window.location.reload(true);
+				} else {
+					// No cookies.  No Mobile version.
+				}
+			}
+		
+
+		var isWindows = navigator.platform.toUpperCase().indexOf('WIN') >= 0; // Detect windows platform
+		if (isWindows) { document.documentElement.classList.add('is-windows'); }
+
+	</script>
+
+	<script src="https://s.ltrbxd.com/static/js/main.min.ded954bd.js"></script>
+	
+
+
+
+
+
+	<script>
+		if ( $.cookie("letterboxd.admin.signed.in") === person.username ) {
+			successMessages.push("You are signed in as " + person.username);
+			$(function(){$("#header, #content, body").css("background","#543");});
+		}
+	</script>
+	
+
+	
+	
+
+
+
+
+
+	
+	
+	<script>
+		var tyche = {
+			mode: "tyche",
+			config: "//config.playwire.com/1024338/v2/websites/72804/banner.json",
+			passiveMode: false, 
+			
+			custom_tags: [
+				
+				'', 
+				'', 
+				'intl_true', 
+				'', 
+				'' 
+			],
+			onReady: () => {
+				if (window.onTycheReady) window.onTycheReady(window.tyche)
+			},
+		}
+	</script>
+	<script id="tyche" src="//cdn.intergient.com/pageos/pageos.js"></script>
+	<script src="https://btloader.com/tag?o=5150306120761344&upapi=true" async></script>
+

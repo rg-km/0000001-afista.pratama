@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png"><link rel="shortcut icon" href="/assets/images/favicons/favicon.ico"><title>USTravelDocs</title><base id="base"><script>(() => {
+      const pathList = location.pathname.split('/').filter(v => v);
+      console.log(pathList)
+      const base = document.querySelector("#base");
+      base.href = '/' + pathList[0] + '/' + pathList[1] + '/';
+      if (pathList.length === 2) pathList.push("index-page");
+      const html = document.querySelector("html");
+      if (pathList[1] == 'ZT' || pathList[1] == 'zt')
+        pathList[1]='zh';
+      
+      html.lang = pathList[1];
+
+      html.classList.add(...pathList);
+    })();</script><link href="/css/chunk-1361fbd2.fa3faf5a.css" rel="prefetch"><link href="/css/chunk-87b2b400.7548cad3.css" rel="prefetch"><link href="/css/chunk-c9739cd2.4c6965cc.css" rel="prefetch"><link href="/css/chunk-da349a2e.34ac65e1.css" rel="prefetch"><link href="/js/chunk-1361fbd2.67131754.js" rel="prefetch"><link href="/js/chunk-87b2b400.d4cd2e08.js" rel="prefetch"><link href="/js/chunk-c9739cd2.ff8a0ddd.js" rel="prefetch"><link href="/js/chunk-da349a2e.35d20bfc.js" rel="prefetch"><link href="/css/app.b0069b80.css" rel="preload" as="style"><link href="/js/app.7c6cbea4.js" rel="preload" as="script"><link href="/js/chunk-vendors.9d6d1ad0.js" rel="preload" as="script"><link href="/css/app.b0069b80.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but ustraveldocs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.9d6d1ad0.js"></script><script src="/js/app.7c6cbea4.js"></script></body></html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+    content="ZIP Extractor is a free app for creating and opening ZIP files on PC, Mac, Android, iPhone, and Google Drive.">
+    <meta name="keywords" content="ZIP, RAR, unzip, unrar, zip opener, zip extractor, 7z, tar, bzip, create, zip creator, rar opener, extract, compress, decompress, password, view, open, free, app, mac, PC, android, iphone, zip, google, drive, cloud">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>ZIP Extractor - Free App for Opening ZIP Files</title>
+
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="styles-main-4-25-min.css">
+
+    <script async src="bootloader-4-25-min.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header">
+      <div id="headerInfo">
+        <div id="headerSubInfo">
+          <div id="headerIcon">
+          </div>
+          <img id="headerIconImg" src="images/zip.png" alt="ZIP Extractor" />
+
+          <div id="mainAppTitle">ZIP Extractor</div>
+
+          <h1 id="mainAppSubTitle" class="hideOnMobileOrDisplayBlock">
+            Free app for opening ZIP files
+          </h1>
+
+        </div> <!-- ENDS HEADER SUBINFO-->
+
+        <div id="profileImageDiv">
+          <div id="profileName"></div>
+          <img id="profileImageImg" src="images/default_person.svg" alt="Google Account" title="Google Account" />
+        </div>
+      </div> <!-- ENDS HEADER INFO -->
+    </div> <!-- ENDS HEADER -->
+
+    <div id="centeredBodyContent">
+      <div id="mainWrapper">
+        <div id="appContent">
+          <div id="mainApp">
+            <div id="adHeading">
+              &#9662; ADVERTISEMENT &#9662;
+            </div>
+
+            <div id="topBanner" class="topBanner">
+              <ins class="adsbygoogle topBannerIns"
+                   data-ad-client="ca-pub-6406277318721692"
+                   data-ad-slot="7504760783"></ins>
+            </div>
+
+            <div id="preview" class="cardShadow" hidden>
+              <div id="previewHeader">
+                <div id="previewTopBar">
+                  <div id="previewItemInfoContainer">
+                    <div id="previewItemIcon">
+                      <i id="previewItemIconImg" class="material-icons previewItemIconImg">add</i>
+                    </div>
+                    <div id="previewSpinner" class="newSpinnerDiv" hidden>
+                      <img src="images/spinner-44.gif" class="newSpinnerImg" alt="Loading..." />
+                    </div>
+                    <div id="previewItemFilename">
+                    </div>
+                    <div id="previewItemSize" hidden>
+                    </div>
+                  </div> <!-- ENDS PreviewItemInfoContainer-->
+
+                  <div id="previewToolbar">
+                  </div> <!-- ENDS Preview Toolbar -->
+
+                  <div id="previewNavBar">
+                    <button id="previewPrevButton" tabIndex="0" class="ze-button ze-icon-button previewNavButton" aria-label="Previous File" hidden title="Preview file">
+                      <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large">skip_previous</i>
+                    </button>
+                    <button id="previewNextButton" tabIndex="0" class="ze-button ze-icon-button previewNavButton previewButtonSpace" aria-label="Next File" hidden title="Next file">
+                      <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large">skip_next</i>
+                    </button>
+                    <button id="previewCloseButton" tabIndex="0" class="ze-button ze-icon-button previewNavButton" aria-label="Close" title="Close preview">
+                      <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large">close</i>
+                    </button>
+                  </div> <!-- ENDS Preview Nav Bar -->
+                </div> <!-- ENDS Preivew Top Bar -->
+
+                <div id="previewHeaderInfo">
+
+                  <div id="previewZipFilenameAndStatus">
+                  </div>
+
+                  <div id="previewOpenWithButtonContainer">
+
+                    <button id="previewSaveToDriveButton" tabIndex="0" class="ze-button ze-button--raised--colored ze-button-left primaryButton" aria-label="Save to Drive" hidden>
+                      <img src="images/drive-add.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true" alt="Save to Drive" />
+                      <span class="hideOnMobileOrDisplayInline">Save to Drive</span>
+                    </button>
+                    <button id="previewOpenInDriveButton" tabIndex="0" class="ze-button ze-button--raised--colored ze-button-left primaryButton" aria-label="Open in Drive" hidden>
+                      <img src="images/drive-main.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true"  alt="Open in Drive" />
+                      <span class="hideOnMobileOrDisplayInline">Open in Drive</span>
+                    </button>
+
+                    <button id="previewDownloadButton" tabIndex="0" class="ze-button ze-button--raised--colored ze-button-left primaryButton" aria-label="Download" hidden>
+                      <i class="material-icons ze-button-icon">save_alt</i>
+                      <span class="hideOnMobileOrDisplayInline">Download</span>
+                    </button>
+
+                    <button id="previewCancelButton" class="ze-button ze-button--colored cancelButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">cancel</i>
+                      Cancel
+                    </button>
+                  </div>
+
+                </div> <!-- ENDS Preview Header Info-->
+
+                <div id="previewProgressBarContainer">
+                  <div id="previewProgressBar" class="linear-progress previewProgressBar">
+                    <div class="linear-progressbar linear-progress-bar bar1"></div>
+                  </div>
+                </div>
+              </div> <!-- Ends Preview Header-->
+
+              <div id="previewContent">
+                <div id="previewImageContent" hidden>
+                  <img id="previewImg" src="images/cleardot.gif" alt="ZIP File Preview Image" />
+                </div>
+
+                <div id="previewAudioContent" hidden>
+                  <audio id="previewAud" controls="controls" preload="auto" autoplay="autoplay">
+                  </audio>
+                </div>
+
+                <div id="previewTextContent" hidden>
+                  <pre id="previewTxt" class="prettyprint"></pre>
+                </div>
+
+                <div id="previewGenericContent" class="previewCenteredContent" hidden>
+                  <div id="previewGen" class="previewCenteredSubContent">
+                    <div id="noPreviewInfo">
+                      <i id="noPreviewIcon" class="material-icons noPreviewIcon">insert_drive_file</i>
+                      No preview available
+                    </div>
+                    <div id="noPreviewDetails">
+                      <p>Download this file by clicking the <span class="mediumBold">Download</span> button above
+                      <p>You can then open it on your computer
+                    </div>
+                  </div>
+                </div>
+
+                <div id="previewErrorContent" class="previewCenteredContent" hidden>
+                  <div id="previewErr" class="previewCenteredSubContent">
+                    <i class="material-icons previewErrorIcon">warning</i>
+                    <div id="previewErrorInfo">
+                      Oops! ZIP Extractor couldn't preview this file
+                    </div>
+                    <div id="previewErrorCaption">
+                    </div>
+                    <div id="previewErrorDetails">
+                    </div>
+                  </div>
+                </div>
+
+                <div id="previewPdfContent" hidden>
+                  <embed id="previewPdf" type="application/pdf" />
+                </div>
+
+                <div id="previewVideoContent" hidden>
+                  <video id="previewVid" controls="controls" autoplay="autoplay">
+                  </video>
+                </div>
+
+                <div id="previewDriveContent" class="previewCenteredContent" hidden>
+
+                  <div id="previewDriveSaveToDriveFirst" class="previewCenteredSubContent" hidden>
+                    <img class="material-icons previewInfoIcon previewInfoIconDrive" src="images/drive-logo.svg" alt="Google Drive" />
+
+                    <div id="previewSaveToDriveInfo">
+                      This file can be viewed in Google Drive
+                    </div>
+                    <div id="previewSaveToDriveCaption">
+                      To view this item, save it to Google Drive using the <span class="mediumBold">Save to Drive</span> button above.
+                    </div>
+                    <div id="previewSaveToDriveDetails" hidden>
+                      In order to Save to Drive, an authorization popup will appear requiring your approval.
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- ENDS PREVIEW CONTENT-->
+            </div> <!-- ENDS PREVIEW -->
+
+            <div id="zipTable" class="cardShadow" hidden>
+              <div id="mainAppHeader" hidden>
+                <div id="mainAppHeaderContent">
+                  <div id="mainLabelContainer">
+                    <i id="mainIcon" class="material-icons mainIcon" aria-hidden="true" hidden>info_outline</i>
+                    <div id="mainSpinner" class="newSpinnerDiv">
+                      <img src="images/spinner-44.gif" class="newSpinnerImg" alt="Loading..." />
+                    </div>
+                    <div id="mainLabel">
+                      Loading...
+                    </div>
+
+                    <div id="buttonContainer">
+                      <button id="fixEncodingButton" class="ze-button ze-button--colored" aria-label="Fix Encoding" hidden>
+                        <i class="material-icons ze-button-icon-large ze-button-icon-elevated">font_download</i>
+                        Fix Encoding
+                      </button>
+
+                      <button id="editZipButton" class="ze-button ze-button--colored" aria-label="Edit ZIP File" hidden>
+                        <i class="material-icons ze-button-icon-large ze-button-icon-elevated">edit</i>
+                        Edit ZIP File
+                      </button>
+
+                      <button id="doneEditingZipButton" class="ze-button ze-button--colored doneEditingZipButton" aria-label="Done Editing ZIP File" hidden>
+                        Done
+                        <i class="material-icons ze-button-icon-large ze-button-icon-elevated doneEditingZipButtonIcon">check</i>
+                      </button>
+
+                      <button id="closeButton" class="ze-button ze-icon-button closeButton" aria-label="Close" hidden>
+                        <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large">clear</i>
+                      </button>
+                    </div> <!-- ENDS BUTTON CONTAINER -->
+                  </div> <!-- ENDS MAIN LABEL CONTAINER -->
+
+                  <div id="secondaryLabelContainer">
+                    <div id="secondaryLabelLinkCombo">
+                      <div id="secondaryLabel">
+                      </div>
+                      <div id="secondaryLabelLink" hidden>
+                      </div>
+                    </div>
+
+                    <div id="zipPasswordInputContainer" hidden>
+                      <i class="material-icons zipPasswordCaptionIcon">vpn_key</i>
+                      <input id="zipPasswordInput" type="password" placeholder="Password" autocomplete="chrome-off">
+
+                      <button id="showZipPasswordButton" tabIndex="0" class="ze-button ze-icon-button showHideZipPasswordButton" aria-label="Show password" title="Show password">
+                        <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large">visibility</i>
+                      </button>
+                      <button id="hideZipPasswordButton" tabIndex="0" class="ze-button ze-icon-button showHideZipPasswordButton" aria-label="Hide password" hidden title="Hide password">
+                        <i class="material-icons ze-icon-button-icon ze-icon-button-icon-large ze-icon-button-icon-blue">visibility_off</i>
+                      </button>
+
+                      <button id="checkPasswordButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                        <i class="material-icons ze-button-icon" aria-hidden="true">lock_open</i>
+                        Check Password
+                      </button>
+
+                      <button id="setPasswordButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                        <i class="material-icons ze-button-icon" aria-hidden="true">lock</i>
+                        Set Password
+                      </button>
+
+                      <div id="encryptionPrompt" class="hideOnMobileOrDisplayBlock" hidden>
+                        <button id="encryptionPromptCheckbox" class="ze-button ze-button--colored ze-icon-button encryptionPromptCheckbox">
+                          <i class="material-icons ze-icon-button-icon ze-checkbox-button">check_box_outline_blank</i>
+                        </button>
+                        <div id="encryptionPromptText">
+                          Use strong encryption (requires ZIP Extractor or WinZip to open)
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="addFilesButtonContainer" hidden>
+                      <button id="addFilesFromComputerButton" class="ze-button ze-button--raised--colored primaryButton">
+                        <i class="material-icons ze-button-icon" aria-hidden="true">add_circle_outline</i>
+                        <span class="hideOnMobileOrDisplayInline">Add Files...</span>
+                      </button>
+
+                      <button id="addFolderButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton">
+                        <i class="material-icons ze-button-icon" aria-hidden="true">create_new_folder</i>
+                        <span class="hideOnMobileOrDisplayInline">Add Folder...</span>
+                      </button>
+
+                      <button id="addFilesToZipFromDriveButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton">
+                        <img src="images/drive-main.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true"  alt="Add from Drive..." />
+                        <span class="hideOnMobileOrDisplayInline">Add from Drive...</span>
+                      </button>
+
+                      <button id="addPasswordButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                        <i class="material-icons ze-button-icon" aria-hidden="true">enhanced_encryption</i>
+                        <span class="hideOnMobileOrDisplayInline">Add Password...</span>
+                      </button>
+                    </div>
+
+                    <button id="sendFeedbackButton" class="ze-button ze-button--colored ze-button-right" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">comment</i>
+                      Send Feedback
+                    </button>
+
+                    <button id="rateAppButton" class="ze-button ze-button--raised--colored ze-button-right primaryButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">favorite_border</i>
+                      Rate this App on Google
+                    </button>
+
+                    <button id="retryButton" class="ze-button ze-button--raised ze-button-right retryButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">refresh</i>
+                      Retry
+                    </button>
+
+                    <button id="cancelButton" class="ze-button ze-button--colored cancelButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">cancel</i>
+                      Cancel
+                    </button>
+
+                    <button id="addZipPartFromComputerButton" class="ze-button ze-button--raised--colored primaryButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">computer</i>
+                      <span class="hideOnMobileOrDisplayInline">Add ZIP Part from Computer...</span>
+                    </button>
+
+                    <button id="addZipPartFromDriveButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                      <img src="images/drive-main.svg" class="material-icons ze-button-icon" aria-hidden="true"  alt="Add ZIP Part from Drive..." />
+                      <span class="hideOnMobileOrDisplayInline">Add ZIP Part from Drive...</span>
+                    </button>
+
+                    <button id="extractButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                      <img src="images/drive-add.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true" alt="Extract" />
+                      Extract
+                    </button>
+
+                    <button id="viewFilesButton" class="ze-button ze-button--raised--colored ze-button-right primaryButton" hidden>
+                      <img src="images/drive-main.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true" alt="View Files" />
+                      View Files
+                    </button>
+
+                    <button id="saveZipToDriveButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                      <img src="images/drive-add.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true" alt="Save ZIP to Drive" />
+                      Save ZIP to Drive
+                    </button>
+
+                    <button id="openZipInDriveButton" tabIndex="0" class="ze-button ze-button--raised--colored ze-button-left primaryButton" aria-label="Open in Drive" hidden>
+                      <img src="images/drive-main.svg" class="material-icons ze-button-icon previewSaveToDriveButtonIcon" aria-hidden="true" alt="View ZIP in Drive" />
+                      View ZIP in Drive
+                    </button>
+
+                    <button id="downloadZipButton" class="ze-button ze-button--raised--colored ze-button-left primaryButton" hidden>
+                      <i class="material-icons ze-button-icon" aria-hidden="true">save_alt</i>
+                      <span class="hideOnMobileOrDisplayInline">Download ZIP</span>
+                    </button>
+
+                  </div> <!-- ENDS Secondary Label Container -->
+
+                  <div id="progressBarContainer">
+                    <div id="mainProgressBar" class="linear-progress mainProgressBar">
+                      <div class="linear-progressbar linear-progress-bar bar1"></div>
+                    </div>
+                  </div>
+                </div> <!-- ENDS MAIN APP HEADER CONTENT -->
+              </div> <!-- ENDS MAIN APP HEADER -->
+
+              <div id="fileTableContainer" hidden>
+                <div id="fileTableHeader">
+                  <div id="zipFilenameInputContainer" hidden>
+                    <input id="zipFilenameInput" placeholder="ZIP Filename" autocomplete="chrome-off">
+                  </div>
+
+                  <div id="fileTableHeaderLabel">
+                  </div>
+
+                  <div id="fileTableHeaderSize">
+                  </div>
+
+                  <div id="rootStatus">
+                    <div id="rootStatusIconContainer" hidden>
+                      <i id="rootStatusIcon" class="material-icons">add</i>
+                    </div>
+
+                    <div id="rootStatusSpinner" class="newSpinnerDiv" hidden>
+                      <img src="images/spinner-44.gif" class="newSpinnerImg" alt="Loading..." />
+                    </div>
+
+                    <button id="selectAllCheckbox" class="ze-button ze-button--colored ze-icon-button selectAllCheckbox">
+                      <i class="material-icons ze-icon-button-icon ze-checkbox-button">check_box</i>
+                    </button>
+                  </div> <!-- ENDS ROOT STATUS CELL -->
+                </div> <!-- ENDS FILE TABLE HEADER-->
+
+                <div id="fileTableSubHeader" hidden>
+                  <i id="fileTableSubHeaderIcon" class="material-icons">info_outline</i>
+                  <div id="fileTableSubHeaderLabel">
+                  </div>
+                </div>
+
+                <div id="fileTableItems">
+                </div> <!-- ENDS FILE TABLE ITEMS-->
+
+                <div id="fileTableAlternateImage" hidden>
+                  <img id="fileTableAlternateImageImg" src="images/cleardot.gif" alt="Alternate ZIP Image" />
+                </div> <!-- ENDS FILE TABLE ALTERNATE IMAGE -->
+
+              </div> <!-- ENDS FILE TABLE CONTAINER -->
+            </div> <!-- ENDS ZIPTABLE -->
+
+            <!-- BEGIN Scrollable Start Page Content -->
+            <div id="mainScrollableContent" class="cardShadow">
+
+              <div id="zipDropArea" class="zipDropArea" hidden>
+                <div id="zipDropAreaContent">
+                  <div id="zipDropAreaIcon">
+                    <img id="zipDropAreaIconImg" src="images/zip.png" alt="ZIP Drag and Drop" />
+                  </div>
+                  <div id="zipDropAreaText">
+                    Drop ZIP file here
+                  </div>
+                </div>
+              </div>
+
+              <!-- BEGIN ScrollableContentContainer -->
+              <div id="mainScrollableContentSubContainer">
+
+                <!-- BEGIN Scrollable StartCard -->
+                <div id="startCard">
+                  <div id="startPagePrompt">
+
+                    <h2>Welcome to ZIP Extractor</h2>
+
+                    <div id="startPageText">
+                      <div id="startPageIcon">
+                        <img id="startPageIconImgDrive" class="startPageIconImg" src="images/drive-logo.svg" alt="Google Drive" visibilityHidden />
+                        <img id="startPageIconImgGmail" class="startPageIconImg" src="images/gmail-logo.svg" alt="Gmail" hidden />
+                        <img id="startPageIconImgGeneral" class="startPageIconImg" src="images/zip.png" alt="ZIP Extractor" hidden />
+                      </div>
+
+                      <div id="startPageDetailsContainer">
+                        <div id="topDndRegionContainer">
+                          <p>ZIP Extractor is a free app for opening ZIP files in Google Drive and Gmail. We're proud to have over 60 million users!
+
+                          <!-- BEGIN THREE OPTIONS FOR START PAGE -->
+
+                          <!-- GENERAL USER -->
+                          <div id="startPageGeneralDetails" class="startPageDetails" hidden>
+                              <p id="secondaryIntroText">With ZIP Extractor you can open a ZIP file of your choice, and then unzip, view, and download the files inside.
+
+                              <p id="startPageGeneralDetailsCallToAction" class="callToActionPara" visibilityHidden>To get started, open a ZIP file with one of the buttons below.
+                          </div>
+
+                          <!-- GMAIL USER -->
+                          <div id="startPageGmailDetails" class="startPageDetails" hidden>
+                            <p>You've opened a Gmail attachment with ZIP Extractor. This will allow you to unzip the attachment and download the files inside.
+
+                            <p id="startPageGmailDetailsCallToAction" class="callToActionPara" visibilityHidden>To continue, authorize ZIP Extractor with the button below.
+                          </div>
+
+                          <!-- DRIVE USER -->
+                          <div id="startPageDriveDetails" class="startPageDetails" hidden>
+                            <p>You've opened a ZIP file in Google Drive with ZIP Extractor. This will allow you to unzip the file and download the files inside.
+
+                            <p id="startPageDriveDetailsCallToAction" class="callToActionPara" visibilityHidden>To continue, authorize ZIP Extractor with the button below.
+                          </div>
+
+                          <!-- NEW ZIP FILE USER -->
+                          <div id="startPageNewDetails" class="startPageDetails" hidden>
+                            <p>You've chosen to create a new ZIP file with ZIP Extractor. Please wait while the application loads.
+                          </div>
+
+                        </div> <!-- ENDS TOP dndDisablePointerEventsRegion -->
+
+                        <!-- ALL BUTTONS CONTAINER -->
+                        <div id="startButtonsContainer">
+
+                          <!-- GENERAL BUTTON CONTAINER -->
+                          <div id="generalButtonContainer" hidden>
+
+                            <button id="openZipFromComputerButton" class="ze-button ze-button--raised--colored openButton openButtonLeft openButtonFirstLine">
+                              <i class="material-icons ze-button-icon-large" aria-hidden="true">computer</i>
+                              Open ZIP From Computer
+                            </button>
+
+                            <button id="openZipFromDriveButton" class="ze-button ze-button--raised--colored ze-button openButton openButtonLeft openButtonSecondLine">
+                              <img src="images/drive-main.svg" class="material-icons ze-button-icon-large previewSaveToDriveButtonIcon" aria-hidden="true" alt="Open ZIP from Drive" />
+                              Open ZIP From Google Drive
+                            </button>
+
+                            <button id="createNewZipButton" class="ze-button ze-button--raised--colored openButton">
+                              <img class="material-icons ze-button-icon-large ze-button-icon-background ze-create-button-icon" src="images/create_64.png" alt="Create New ZIP File" />
+                              Create New ZIP
+                            </button>
+                          </div> <!-- ENDS GENERAL BUTTON CONTAINER -->
+
+                          <!-- AUTH BUTTON CONTAINER -->
+                          <div id="authButtonContainer">
+                            <div id="checkingAuthSpinner">
+                              Loading...
+                              <img src="images/spinner-44.gif" class="newSpinnerImg checkingAuthSpinnerImg" alt="Loading..." />
+                            </div>
+
+                            <button id="authButton" class="ze-button ze-button--raised--colored" hidden>
+                              <i class="material-icons ze-button-icon-large" aria-hidden="true">cloud_done</i>
+                              Authorize ZIP Extractor
+                            </button>
+                            <div id="authButtonDetails">
+                            </div>
+                          </div> <!-- ENDS AUTH BUTTON CONTAINER -->
+                        </div> <!-- ENDS ALL BUTTONS CONTAINER -->
+                      </div> <!-- ENDS startPageDetailsContainer-->
+                    </div> <!-- ENDS startPageText-->
+                  </div> <!-- ENDS START PAGE PROMPT -->
+                </div> <!-- ENDS START CARD -->
+
+                <div id="bottomDndRegionContainer">
+                  <div id="textBlockHowToUse" class="textBlock">
+                    <h2>How to use ZIP Extractor</h2>
+                    <ol>
+                      <li>To begin, select a ZIP file to open from Gmail, Google Drive, or your computer. You can also use drag-and-drop.
+                      <li>Once displayed, click on any individual file inside the ZIP to view or download it.
+                      <li>Press the "Extract" button to extract the selected files to Google Drive.
+                      <li>A new folder will be created in Google Drive for the unzipped files ending with "(Unzipped Files)".
+                      <li>After extraction, click "View Files" to go to the unzipped files in Google Drive.
+                    </ol>
+                  </div>
+
+                  <div id="textBlock0" class="textBlock">
+                    <h2>How ZIP Extractor Works</h2>
+                    <ul>
+                      <li>ZIP Extractor is a pure JavaScript web app. All extraction and decompression is done on your computer, directly in your web browser, and not on any server.
+                      <li>ZIP Extractor can open password-protected files.
+                          The password is only used on your computer to open the file and is never sent over the network.
+                      <li>ZIP Extractor supports ZIP, RAR, 7-Zip (*.7z), TAR, GZIP (*.gz), BZIP2 (*.bz2), LZIP (*.lz), and XZ (*.xz) file formats.
+                    </ul>
+                  </div>
+
+                  <div id="textBlock1" class="textBlock">
+                    <h2>General Information About ZIP Files</h2>
+
+                    <p class="paragraph-top">
+                    ZIP files are compressed archives that group together one or more files into a single file, compressing the files (making them smaller) that are contained inside. The ZIP file format is very popular for efficiently storing and transferring groups of files in a variety of business and personal applications.
+                    <p>
+                    The ZIP file format dates to the late 1980s when it received heavy use in pre-internet-era Bulletin Board Systems, or BBSes. In this era, file transfers occurred using MODEMs and transfer speeds were very limited. Using ZIP compression regularly saved minutes or even hours off of file transfers. It also allowed for multiple files and folders to be grouped together ("zipped") and transferred as a single ZIP file. Once received, the ZIP file would then be opened and its contents decompressed ("unzipped") onto a user's computer.
+                    <p>
+                    Today, the ZIP file format remains in heavy use in the internet and in the cloud, with billions of such files in circulation. In the cloud, ZIP files are commonly found as both Gmail attachments, as well as files stored in Google Drive or other cloud-based storage systems such as Dropbox and Microsoft OneDrive.
+                    <p>
+                    In addition to compression, ZIP files are <em>archives</em> that can group together multiple files and folders. When this is done, the path and folder information of the file tree is preserved inside the ZIP file. This makes the ZIP file format convenient for sharing and distributing groups of files.
+
+                    <h3>Examples of ZIP File Uses</h3>
+                    <p class="paragraph-top">
+                    ZIP files are common across a variety of business areas, including industries ranging from medical, insurance, legal, mortgage, banking and financial, scientific, equities and trading, SEO (Search Engine Optimization), and education industries.
+
+                    <p>
+                    Here are some specified real-world examples of actual usage of ZIP files:
+                      <ul>
+                          <li>A car insurance agent ZIPs and emails information related to a person's health insurance, homeowner's insurance, auto insurance, or life insurance policy.
+                          <li>A real estate agent scans and ZIPs a sales contract and sends it to a mortgage broker for a home loan when buying a home.
+                          <li>An attorney or lawyer for a law firm ZIPs together a set of related legal documents such as a will, trust, claim, or other estate planning documents and shares them with their client.
+                          <li>A university student ZIPs a homework assignment and related files and sends it to their instructor or professor in an online degree program.
+                          <li>A tax accountant ZIPs and emails a copy of a person's federal and state tax returns for review before filing with the IRS.</li>
+                      </ul>
+
+                    <p>
+                    ZIP files can contain multiple files of different types. Common files that can be included in a ZIP archive include PDFs, images, videos, and Microsoft Office documents including Microsoft Word, Microsoft Excel, and Microsoft PowerPoint (*.DOCX, *.XLSX, *.PPTX file formats).
+
+                    <h3>Creating and Opening ZIP Files</h3>
+                    <p class="paragraph-top">
+                    ZIP Extractor and most modern operating systems have built-in functionality to create ZIP files.
+                    <ul>
+                      <li>On Windows or PC, to create a ZIP file, right-click files in Windows Explorer and select “Send to -> Compressed (zipped) Folder.”
+                      <li>On a Mac running Mac OS, create a ZIP file by right-clicking files in Finder and select "Compress [name_of_file].”
+                      <Li>On a Chromebook running Chrome OS, choose one more files in the Files app and then select “Zip selection.”
+                      <li>In ZIP Extractor, click "Create New ZIP" and from there you can add files and folders to be compressed, including files from Google Drive. You can also drag-and-drop files and folders onto the main screen to ZIP them.
+                      <li>In your internet browser, you can also use the URL shortcut <a href="https://zip.new" target="_blank">zip.new</a> to go directly to the ZIP Extractor "Create New ZIP" screen.
+                    </ul>
+                    <p>
+                    On Windows, Mac, or Chrome OS, a ZIP file can be extracted (decompressed) by double-clicking it. Then, the individual files will be unzipped into a new directory and available to preview, edit, print, etc.
+                    <p>
+                    ZIP Extractor provides the same decompression functionality that standard operating systems provide, except that ZIP Extractor supports many more formats than the basic built-in functionality of most ZIP programs. Most importantly, ZIP Extractor is designed bottom-up to work directly in the cloud. Because there is no built-in ability to unzip ZIP files in Google Drive or Gmail, ZIP Extractor is a third-party application that provides this functionality.
+
+                    <h3>Encryption and Password Protection</h3>
+                    <p class="paragraph-top">
+                    The ZIP file format provides support for basic password-protected ZIP files. More recently, the ZIP format was <a href="https://www.winzip.com/win/en/aes_info.html" target="_blank">enhanced</a> with the ability to create files with strong encryption, using AES (Advanced Encryption Standard). This "strong encryption" approach is much more secure than the original version, but it is less compatible because Windows and Mac cannot open them. ZIP files using "strong encryption" require ZIP Extractor, WinZip, or other more advanced program to open.
+                    <p>
+                    Other archive formats, including RAR and 7-Zip, also allow passwords. These formats have a special ability to also encrypt the names of the files contained in the archive file (using the supplied password), in addition to file content.
+                    <p>
+                    ZIP Extractor has full support for opening ZIP, RAR, and 7-Zip files with all types of passwords and encryption formats. It can also create ZIP files with both the standard encryption (compatible with Windows and Mac) or "strong encryption" (requiring ZIP Extractor or WinZip to open).
+                  </div>
+
+                  <div></div>
+
+                  <div id="textBlock2" class="textBlock">
+                    <h2>Compressed Archive File Formats: ZIP, RAR, and 7-Zip</h2>
+                    <p class="paragraph-top">
+                    The three most common file compression formats in circulation today are ZIP, RAR, and 7-Zip; ZIP files are the most common. Details for each file type are provided below.
+                    <h3>The ZIP File Format</h3>
+                    <p class="paragraph-top">
+                    The <a href="https://en.wikipedia.org/wiki/Zip_(file_format)" target="_blank">ZIP file format</a> is notable for being both an <em>archive</em> file format (which can contain multiple files and folders) as well as a <em>compression</em> file format (which means the file data itself can be compressed). Although ZIP files are by far the most common such compressed archive format, there are others, described below.
+                    <p>
+                    The ZIP file format was introduced by PKWARE&reg; in 1989, and the file format and specification have been evolving ever since. The formal ZIP file specification is published as an <a href="https://support.pkware.com/home/pkzip/developer-tools/appnote" target="_blank">Application Note</a> by its creator PKWARE.
+                    <p>
+                    The ZIP file format is notable for supporting many different <em>compression methods</em>. The traditional compression method used by ZIP files, referred to as <em>Deflate</em>, is by far the most common. When a ZIP file is created with ZIP Extractor or your operating system, these are generally the compression methods used. However, certain ZIP programs can create ZIP files using more advanced compression methods including LZMA, BZIP2, PPMD, and XZ (LZMA2).
+                    <p>
+                    ZIP Extractor supports opening all types and versions of ZIP files. Full support is provided for ZIP files using any of the above compression methods, including encrypted ZIP files requiring a password to open.
+
+                    <h3>RAR File Format</h3>
+                    <p class="paragraph-top">
+                    The <a href="https://en.wikipedia.org/wiki/RAR_(file_format)" target="_blank">RAR file format</a> (from <u>R</u>oshal <u>AR</u>chive named after its author Eugene Roshal) is conceptually similar to ZIP files in that it supports archiving (grouping) files and folders together into a single file, while also compressing the file data. The RAR format dates back to the early 1980s, and can provide high compression ratios (producing smaller files). However, this comes at the expense of speed, with the PPMd and LZMA compression methods used by RAR having generally higher computational demands than the Deflate algorithm used by ZIP.
+
+                    <p>
+                    RAR is a highly proprietary format, and RAR files may only be created using the <a href="https://www.rarlab.com/" target="_blank">WinRar</a> software program or companion command-line tool. Fortunately, the ability to open and decompress RAR files is "open source" and there are many programs that can do this, including ZIP Extractor.
+
+                    <p>
+                    ZIP Extractor has full support for opening the latest version of the RAR file format (Version 5) as well as older versions (Version 3 and Version 4). This includes full support for RAR files with a password.  More information can be found at the <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000450.shtml" target="_blank">Library of Congress</a> entry for RAR files.
+
+                    <h3>7-Zip (7z) File Format</h3>
+                    <p class="paragraph-top">
+                    The <a href="https://www.7-zip.org/7z.html" target="_blank">7-Zip file format</a> (also known as 7z) is a relatively new compressed archive format that, like ZIP and RAR, supports grouping and compressing multiple files and folders into a single file. This format generally uses the LZMA and LZMA2 compression method by default. However, the open architecture of the 7-Zip format provides support for other compression methods including BZIP2, PPMd, and ZIP's Deflate. In practice, however, 7-Zip files created with these compression methods are rare.
+
+                    <p>
+                    Notably, the 7-Zip format provides support for <em>filters</em>, which can lead to greater compression ratios on certain types of files. For example, the BCJ filter used by 7-Zip can result in smaller file sizes for certain executable file formats (such as *.exe files).
+
+                    <p>
+                    ZIP extractor supports opening all variants of 7-Zip files, using any combination of compression method and filter. This also includes full support encrypted and password-protected 7-Zip files.
+
+
+                    <h2>The TAR Archive File Format</h2>
+                    <p class="paragraph-top">
+                    The <a href="https://en.wikipedia.org/wiki/Tar_(computing)" target="_blank">TAR file format</a> (from <u>T</u>ape <u>AR</u>chive) is a long-established format that is very important to computing in general. Being an <a href="https://en.wikipedia.org/wiki/Archive_file" target="_blank">archive format</a>, TAR files do not involve compression at all. Instead, the purpose of a TAR file is to group together (or <em>archive</em>) sets of files and folders in a reliable way.
+
+                    <p>
+                    TAR is a well established, long-running <a href="https://en.wikipedia.org/wiki/File_archiver">file archiver</a> program that has received important updates over the years. It is generally considered well suited to the task of "archiving" and is appropriate for long-term storage and preservation of sets of files. Originally, this was designed for archival storage on tape drives circa early 1980s (hence its name, Tape ARchive). More commonly today it is encountered on UNIX/Linux systems to create compressed files when used in conjunction with a compressor.
+
+                    <p>
+                    Importantly, the TAR file format by itself doesn't handle compression. For this reason TAR files are almost always subsequently compressed with a pure compression method that isn't responsible for archiving. Such methods, described below, by design do not record any archive information about the data being compressed, such as file names or sizes. In this sense, the TAR file's job is to archive (group) files and folders, while a compressor's job is to compress the resulting TAR file into a smaller file.
+
+                    <p>
+                    Most commonly, after the TAR file is created, compression is then done using the GZIP compression program (described below). This results in a file with extension <em>*.tar.gz</em>, where the <em>gz</em> indicates compression of the TAR file with the GZIP program. The BZIP2, LZIP, and XZ compression programs can also be used, resulting in files with extension <em>*.tar.bz2</em>, <em>*.tar.lz</em>, and <em>*.tar.xz</em>, respectively.
+
+                    <h3>GZIP, BZIP2, XZ, and LZIP File Compressors</h3>
+                    <p class="paragraph-top">
+                    Separate from the archiving task performed by TAR is the task of data compression. This is done by compression methods that operate purely on a generic stream of data, and which do not record any archive information about the files contained within. The most common examples include:
+
+                    <ol>
+                      <li>The <a href="https://en.wikipedia.org/wiki/Gzip" target="_blank">GZIP file format</a> (*.tar.gz or *.tgz). Applies <a href="https://en.wikipedia.org/wiki/DEFLATE" target="_blank">Deflate</a> compression to the file data, with some additional metadata. In common use but has some problems with the format specification. More information available at <a href="https://www.gzip.org/" target="_blank">gzip.org</a>.
+                      <li>The <a href="https://en.wikipedia.org/wiki/Bzip2" target="_blank">BZIP2 file format</a> (*.tar.bz2 or *.tbz). Applies <a href="http://www.bzip.org/" target="_blank">BZIP2</a> compression to the file data, and includes metadata including built-in data integrity checks for each compressed block. More information available at <a href="https://www.sourceware.org/bzip2/" target="_blank">sourceware.org/bzip2</a>.
+                      <li>The <a href="https://en.wikipedia.org/wiki/Lzip" target="_blank">LZIP file format</a> (*.tar.lz or *.tlz). Applies <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm">LZMA</a> compression to the file, with important features such as data integrity and indexing to allow for efficient multi-block processing and parallel decompression. More information available at <a href="http://nongnu.org/lzip/" target="_blank">nongnu.org/lzip</a>.
+                      <li>The <a href="https://en.wikipedia.org/wiki/XZ_Utils" target="_blank">XZ file format</a> (*.tar.xz or *.txz). Applies LZMA2 compression to the file data with special features to support parallel / multi-threaded decompression. More information available at <a href="https://tukaani.org/xz/" target="_blank">tukaani.org/xz</a>.
+                    </ol>
+
+                    <p>
+                    ZIP Extractor supports opening and decompressing all of the above compressed TAR formats.
+                  </div>
+
+                  <div id="textBlock3" class="textBlock">
+                    <h2>Further reading</h2>
+                    <p class="paragraph-top">
+                    <a href="https://en.wikipedia.org/wiki/Data_compression" target="_blank">Data compression</a> has a long and interesting history. Over the years, this field has produced a wide variety of compressed file formats. These formats range from those commonly used today (as explored above) to more obscure ones that never gained traction. For further reading, see the <a href="https://en.wikipedia.org/wiki/List_of_archive_formats" target="_blank">List of archive formats</a>.
+                  </div>
+
+                </div> <!-- ENDS BOTTOM dndDisablePointerEventsRegion -->
+
+                <div id="footer">
+                  <div id="about">
+                    <div id="copyright">Copyright &copy; 2021 ZIP Extractor&reg;</div>
+                    <div id="applinks">
+                      <a href='privacy.html' target="_blank">Privacy Policy</a> |
+                      <a href='terms.html' target="_blank">Terms</a> |
+                      <a href="contact.html" target="_blank">Contact Us</a>
+                    </div>
+                  </div> <!-- ENDS ABOUT -->
+                </div> <!-- ENDS FOOTER -->
+
+              </div>
+
+              <input type="file" id="openLocalZipFileInputEl" multiple accept=".zip,.zipx,.rar,.7z,.gz,.tar,.tgz,.bz2,.bz,.bzip,.bzip2,.tbz,.tbz2,.lzma,.lz,.tlz,.xz,.txz,.jar,.war,.ear,.epub,.apk,.z01,.z02,.z03,.z04,.z05,.z06,.z07,.z08,.z09,.z10,.z11,.z12,.z13,.z14,.z15,.z16,.z17,.z18,.z19,.z20,.z21,.z22,.z23,.z24,.z25" hidden />
+              <input type="file" id="addLocalFileInputEl" multiple hidden />
+              <input type="file" id="addLocalFolderInputEl" webkitdirectory directory multiple hidden />
+              <input type="file" id="openLocalZipPartFileInputEl" multiple hidden accept=".z01,.z02,.z03,.z04,.z05,.z06,.z07,.z08,.z09,.z10,.z11,.z12,.z13,.z14,.z15,.z16,.z17,.z18,.z19,.z20,.z21,.z22,.z23,.z24,.z25" />
+
+              <a id="downloadAnchorEl" href="" download="" hidden></a>
+
+            </div> <!-- ENDS MAIN SCROLLABLE CONTENT -->
+
+            <!-- BEGIN Unsupported Browser DIV -->
+            <div id="unsupportedBrowserContent" class="cardShadow" hidden>
+              <h2 id="unsupportedBrowserHeading">Unsupported Browser</h2>
+              <div id="unsupportedBrowserText">
+                <p>Our apologies, but ZIP Extractor does not support the Internet Explorer web browser.
+                <p>In order to use ZIP Extractor, please use a different web browser.
+              </div>
+
+              <div id="downloadWebBrowserText">
+                <p>ZIP Extractor supports the following web browsers, which you can download and install using the links below:
+                <ul>
+                  <li>Microsoft Edge - <a target="_blank" href="https://www.microsoft.com/edge">www.microsoft.com/edge</a>
+                  <li>Mozilla Firefox - <a target="_blank" href="https://www.mozilla.org/firefox/new/">www.mozilla.org/firefox/new</a>
+                  <li>Google Chrome - <a target="_blank" href="https://www.google.com/chrome/">www.google.com/chrome</a>
+                </ul>
+              </div>
+            </div> <!-- ENDS Unsupported Browser Div -->
+
+            <!-- BEGIN Enable Cookies DIV -->
+            <div id="enableCookiesContent" class="cardShadow" hidden>
+              <h2 id="enableCookiesHeading">Cookies are Disabled</h2>
+              <div id="enableCookiesText">
+                <p>Our apologies, but ZIP Extractor needs to have cookies enabled in order to sign in with Google.
+                   <a target="_blank" href="https://developers.google.com/identity/sign-in/web/troubleshooting#third-party_cookies_and_data_blocked">Learn more</a>
+                <!-- <p>In order to use ZIP Extractor with Google, please allow cookies using the steps below. -->
+              </div>
+
+              <div id="enableCookiesStepsText">
+                <p>You may allow cookies for ZIP Extractor with these steps:
+                <ol>
+                  <li>In Google Chrome, click the "eye" icon on the far right side of the address bar:
+                    <br>
+                    <img id="enableCookiesImg1" src="images/cleardot.gif" data-src="images/enable-cookies-icon-final.png" alt="Enable Cookies Info 1" />
+                  <li>In the popup that appears, click "Site not working?" and then click "Allow cookies":
+                    <br>
+                    <div id="enableCookiesImages">
+                      <img id="enableCookiesImg2" src="images/cleardot.gif" data-src="images/enable-cookies-notworking-final.png" alt="Enable Cookies Info 2" />
+                      <img id="enableCookiesImg3" src="images/cleardot.gif" data-src="images/enable-cookies-allow-final.png" alt="Enable Cookies Info 3" />
+                    </div>
+
+                  <li>The page will automatically reload and you will then be able to use ZIP Extractor with Google.</li>
+                </ol>
+              </div>
+            </div> <!-- ENDS Enable Cookies Div -->
+
+            <!-- BEGIN App Load Failure DIV -->
+            <div id="appLoadErrorContent" class="cardShadow" hidden>
+              <h2 id="appLoadErrorHeading">Application Load Error</h2>
+              <div id="appLoadErrorInfo">
+                <p>Our apologies, but ZIP Extractor was not able to load.
+                <p>Please see the troubleshooting options below.
+              </div>
+
+              <div id="appLoadErrorOptions">
+                <ul>
+                  <li>Try reloading the page.</li>
+                  <li>Check your internet connection. Often times, a temporary issue with your internet connection can prevent ZIP Extractor from loading correctly.
+                  <li>Try loading ZIP Extractor in an "Incognito" or "Private Browsing" window. This will prevent any add-ons or extensions from running and interfering with the page.
+                  <li>Uninstall or disable any unneeded browser extensions that may be present.
+
+                  <li>Try using a different web browser:
+                    <ul>
+                      <li>Microsoft Edge - <a target="_blank" href="https://www.microsoft.com/edge">www.microsoft.com/edge</a>
+                      <li>Mozilla Firefox - <a target="_blank" href="https://www.mozilla.org/firefox/new/">www.mozilla.org/firefox/new</a>
+                      <li>Google Chrome - <a target="_blank" href="https://www.google.com/chrome/">www.google.com/chrome</a>
+                    </ul>
+                </ul>
+
+                <p>If the above steps do not resolve your issue, please contact ZIP Extractor technical support with the error message below by emailing
+                  <a href='mailto:support@zipextractor.app?subject=ZIP%20Extractor%20Error%20Message'>support@zipextractor.app</a>.
+
+                <!-- Details to be populated dynamically via script -->
+                <div id="appLoadErrorDetails">
+                </div>
+
+              </div>
+            </div> <!-- ENDS App Load Error Div -->
+
+            <!-- BEGIN App Test Div - For testing only -->
+            <div id="appTestContent" hidden>
+              <h2 id="appTestContentHeading">Test</h2>
+              <div id="appTestContentLog">
+              </div>
+            </div> <!-- ENDS App Test Div -->
+
+          </div> <!-- ENDS MAIN APP -->
+        </div> <!-- ENDS APP CONTENT  -->
+      </div> <!-- ENDS MAIN -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+
+<style>
+		.admin-bar #skin {
+			top: 32px;
+		}
+		.admin-bar #top-heroboard.sticky-fixed {
+			top: 106px;
+		}
+		#sticky-bottom,
+		#sticky-top {
+			background: rgba(255, 255, 255, 0.9);
+			overflow: hidden;
+			text-align: center;
+			width: 100%;
+		}
+		.theme-dark #sticky-bottom,
+		.theme-dark #sticky-top {
+			background: rgba(0, 0, 0, 0.9);
+		}
+		#sticky-top {
+			display: block;
+			height: 50px;
+			position: fixed;
+			top: 0;
+			z-index: 100001;
+		}
+		#sticky-bottom {
+			bottom: 0;
+			display: block;
+			height: 50px;
+			position: fixed;
+			z-index: 99999;
+		}
+		#sticky-bottom.show {
+			min-height: 50px;
+		}
+		#skin {
+			display: none;
+			position: fixed !important;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+		}
+		#top-heroboard {
+			display: none;
+			margin-top: 1.5rem;    
+			margin-bottom: 0.5rem;
+			min-height: 270px;
+			position: relative;
+		}
+		#top-heroboard.sticky-fixed {
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: 74px;
+			width: 100%;
+			z-index: 1500;
+		}
+		.wgtc-display,
+		.proper-ad-unit:not(#skin):not(#top-heroboard):not(.sticky-units) {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.proper-ad-unit:not(#skin):not(.sticky-units) {
+			min-height: 640px;
+
+		}
+		#side-display-2 {
+			margin: 0 0 1rem 0;
+		}
+		div.primis-player {
+			display: flex;
+			margin: 1rem auto 0;
+			padding-top: 56.30252101%;
+			position: relative;
+		}
+		div.primis-player.home {
+			padding-top: 74.7222222222%;
+		}
+		#main-content > div.primis-player {
+			padding-top: 72.9113924%; /* (288/395)*100 */
+		}
+		div.primis-player > div {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.HomePlacement .proper-ad-unit,
+		.entry-content .proper-ad-unit {
+			background-color: rgba(165, 165, 165, 0.15);
+			display: block !important;
+			margin: 2.5rem 0 1.5rem;
+			min-height: 700px !important;
+			width: 100%;
+		}
+		.HomePlacement .proper-ad-unit:before,
+		.entry-content .proper-ad-unit:before {
+			bottom: 25px;
+			color: #A5A5A5;
+			content: "Advertisment";
+			font-family: "Barlow";
+			font-size: 12px;
+			line-height: 16px;
+			position: relative;
+			opacity: 1;
+		}
+		.HomePlacement .proper-ad-unit > div:first-child,
+		.entry-content .proper-ad-unit > div:first-child {
+			margin-top: 0.5rem !important;
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: 55px;
+		}
+		.post-video-wrapper,
+		.wgtc-post-video {
+			padding-top: 56.25%;
+			position: relative;
+		}
+		.post-video-wrapper > iframe,
+		.wgtc-post-video > iframe {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+		@media (min-width: 37.5em) {
+			#sticky-bottom,
+			#sticky-top {
+				display: none;
+			}
+			#top-heroboard {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.wgtc-display,
+			.proper-ad-unit:not(#skin):not(.sticky-units) {
+				min-height: 290px;
+			}
+			.HomePlacement .proper-ad-unit,
+			.entry-content .proper-ad-unit {
+				min-height: 340px !important;
+				padding-bottom: 1rem;
+			}
+			.HomePlacement .proper-ad-unit > div:first-child,
+			.entry-content .proper-ad-unit > div:first-child {
+				top: 95px;
+				position:sticky !important;
+			}
+			div.primis-player {
+				padding-top: 74.7222222222%;
+			}
+			div.primis-player.home {
+				padding-top: 67.935946108%;
+			}
+		}
+		@media (min-width: 1100px) {
+			#skin {
+				display: block;
+			}
+		}
+		@media (max-width: 1920px) {
+			#skin #wegotthiscovered_skin {
+				height: 1080px;
+				max-width: 1920px !important;
+				width: 1920px;
+			}
+
+			#skin #proper-ad-wegotthiscovered_skin,
+			#skin #wegotthiscovered_skin {
+				margin-left: calc((100% - 1920px)/2) !important;
+			}
+		}
+	</style>
+<script>var special_ops=special_ops||{};</script>
+<script>special_ops.page_type = "home";</script>
+<script>special_ops.tags = ["home-page"];</script>
+<script type="text/javascript">
+	var propertag = propertag || {};
+	propertag.cmd = propertag.cmd || [];
+	(function() {
+	var pm = document.createElement('script');
+	pm.async = true; pm.type = 'text/javascript';
+	var is_ssl = 'https:' == document.location.protocol;
+	pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/wegotthiscovered.min.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(pm, node);
+	})();
+	</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-17178859-1"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+						gtag('config', 'UA-17178859-1');
+			</script>
+<script type="text/javascript" async>
+		;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://wegotthiscovered.com/plow.lite.js","snowplow"));
+	</script>
+<script>
+		window.snowplow('newTracker', 'sp1', 'https://spc.wegotthiscovered.com', { 
+			appId: 'wegotthiscovered-web',
+		});
+		snowplow('enableActivityTracking', { 
+			minimumVisitLength: 30, 
+			heartbeatDelay: 10 
+		});
+		window.snowplow('trackPageView');
+
+		window.top.addEventListener('primisPlayerInit', function (e) {
+			if (e.detail.playerApiId == 'primisPlayer') {
+				var player = e.detail;
+				player.addEventListener('adStarted', function (val) {
+					window.snowplow('trackSelfDescribingEvent', {
+						event: {
+							schema: 'iglu:group.gamurs/primis_ad_impression/jsonschema/1-0-0',
+							data: {
+								impressionValue: val.impValue,
+								servingFee: val.servingFee,
+							}
+						}
+					});
+				});
+			}
+		});
+	</script>
+<script>
+		(function() {
+			var processCWV = function(obj) {
+				window.snowplow('trackSelfDescribingEvent', {
+					event: {
+						schema: 'iglu:group.gamurs/core_web_vitals/jsonschema/1-0-0',
+						data: {
+							name: obj.name,
+							value: obj.value,
+							delta: obj.delta,
+						},
+					},
+				});
+			}
+			var script = document.createElement('script');
+			script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+			script.onload = function() {
+				webVitals.getCLS(processCWV);
+				webVitals.getFID(processCWV);
+				webVitals.getLCP(processCWV);
+			}
+			document.head.appendChild(script);
+		}())
+	</script>
+
+<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "36750692" });
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+		s.src = "https://sb.scorecardresearch.com/cs/36750692/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+	</script>
+<noscript>
+	<img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=36750692&amp;cv=3.6.0&amp;cj=1">
+	</noscript>
+
+
+<script type="text/javascript">
+	_atrk_opts = { atrk_acct:"FMu/w1hNdI20fn", domain:"wegotthiscovered.com",dynamic: true};
+	(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+	</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=FMu/w1hNdI20fn" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://superficialeyes.com/v2vrjgGqflcUvVGu3AjyLMOGAXT0bOhD9RGWW2u9n587yFk4ET7PnHt8X11-C5AsE",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o[n]=o[n]||t})(window,String.fromCharCode(97,100,109,105,114,97,108));!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-recovered","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");;;!(function(t,n,i,e,o){function a(){for(var t=[],i=0;i<arguments.length;i++)t.push(arguments[i]);if(!t.length)return o;"ping"===t[0]?t[2]({gdprAppliesGlobally:!!n.__cmpGdprAppliesGlobally,cmpLoaded:!1,cmpStatus:"stub"}):t.length>0&&o.push(t)}function c(t){if(t&&t.data&&t.source){var e,o=t.source,a="string"==typeof t.data&&t.data.indexOf("__tcfapiCall")>=0;(e=a?((function(t){try{return JSON.parse(t)}catch(n){}})(t.data)||{}).__tcfapiCall:(t.data||{}).__tcfapiCall)&&n[i](e.command,e.version,(function(t,n){var i={__tcfapiReturn:{returnValue:t,success:n,callId:e.callId}};o&&o.postMessage(a?JSON.stringify(i):i,"*")}),e.parameter)}}!(function f(){if(!window.frames[e]){var n=t.body;if(n){var i=t.createElement("iframe");i.style.display="none",i.name=e,n.appendChild(i)}else setTimeout(f,5)}})(),o=[],a.v=1,"function"!=typeof n[i]&&(n[i]=n[i]||a,n.addEventListener?n.addEventListener("message",c,!1):n.attachEvent&&n.attachEvent("onmessage",c))})(document,window,"__tcfapi","__tcfapiLocator");;!(function(n,t,i,u,e,o,r){function a(n){if(n){var u=(n.data||{}).__uspapiCall;u&&t[i](u.command,u.version,(function(t,i){n.source.postMessage({__uspapiReturn:{returnValue:t,success:i,callId:u.callId}},"*")}))}}!(function f(){if(!window.frames[u]){var t=n.body;if(t){var i=n.createElement("iframe");i.style.display="none",i.name=u,t.appendChild(i)}else setTimeout(f,5)}})();var s={getUSPData:function(n,t){return n!==1?t&&t(null,!1):t&&t({version:null,uspString:null},!1)}};function c(n,t,i){return s[n](t,i)}c.v=1,"function"!=typeof t[i]&&(t[i]=t[i]||c,t.addEventListener?t.addEventListener("message",a,!1):t.attachEvent&&t.attachEvent("onmessage",a)),o=n.createElement(e),r=n.getElementsByTagName(e)[0],o.src="https://terrifictooth.com/v2jltJrHqG_ZP_OW2oPEQQcRZfkj9fqNRmQkea3mD7AYbCHJcxNiuERHPUOQvux6fk4xk5IkOGcpr5tMUUA",r.parentNode.insertBefore(o,r)})(document,window,"__uspapi","__uspapiLocator","script");</script>
+<script type="text/javascript" src="https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/js/ads-prebid-banner-proper-outbrain.js"></script>
+<script>
+		window.snowplow('trackSelfDescribingEvent', {
+			event: {
+				schema: 'iglu:group.gamurs/ad_block_detection/jsonschema/1-0-0',
+				data: {
+					adsBlocked: window.haveWeGotAds === undefined,
+				}
+			}
+		});
+		gtag('event', window.haveWeGotAds === undefined ? "Blocked" : "Allowed", {
+			'event_category' : 'Ad Block',
+			'non_interaction': true,
+		});
+	</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356934496955375" crossorigin="anonymous"></script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>Movie News, Gaming News, Blu-Ray News, Music News, and TV News | We Got This Covered</title>
+<meta name="description" content="All the latest news, trailers &amp; reviews for movies, video games, music and TV." />
+<link rel="canonical" href="https://wegotthiscovered.com/" />
+<link rel="next" href="https://wegotthiscovered.com/page/2/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="We Got This Covered" />
+<meta property="og:description" content="All the latest news, trailers &amp; reviews for movies, video games, music and TV." />
+<meta property="og:url" content="https://wegotthiscovered.com/" />
+<meta property="og:site_name" content="We Got This Covered" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://wegotthiscovered.com/#website","url":"https://wegotthiscovered.com/","name":"We Got This Covered","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://wegotthiscovered.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"CollectionPage","@id":"https://wegotthiscovered.com/#webpage","url":"https://wegotthiscovered.com/","name":"Movie News, Gaming News, Blu-Ray News, Music News, and TV News | We Got This Covered","isPartOf":{"@id":"https://wegotthiscovered.com/#website"},"description":"All the latest news, trailers & reviews for movies, video games, music and TV.","breadcrumb":{"@id":"https://wegotthiscovered.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://wegotthiscovered.com/"]}]},{"@type":"BreadcrumbList","@id":"https://wegotthiscovered.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"We Got This Covered"}]}]}</script>
+
+<link rel='dns-prefetch' href='//wegotthiscovered.com' />
+<link rel='dns-prefetch' href='//unpkg.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="We Got This Covered &raquo; Feed" href="https://wegotthiscovered.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="We Got This Covered &raquo; Comments Feed" href="https://wegotthiscovered.com/comments/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wegotthiscovered.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://wegotthiscovered.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dotesports-blocks-css' href='https://wegotthiscovered.com/wp-content/plugins/dotesports-gutenberg-blocks/build/style-index.css?ver=1641880874' type='text/css' media='all' />
+<style id='create-block-wgtc-gallery-shortcode-block-style-inline-css' type='text/css'>
+
+
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='wgtc-swiper-css' href='https://unpkg.com/swiper@8/swiper-bundle.min.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wgtc-gallery-css-css' href='https://wegotthiscovered.com/wp-content/plugins/wegotthiscovered-gallery-plugin/frontend/css/styles.css?ver=2' type='text/css' media='all' />
+<link rel='stylesheet' id='wordpress-popular-posts-css-css' href='https://wegotthiscovered.com/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css?ver=5.4.2' type='text/css' media='all' />
+<style id="wgtc-google-fonts-css" media="all">@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs51op.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E30-8s51op.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3q-0s51op.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIQzD-0qpwxpaWvjeD0X88SAOeauXQ-pQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIXzD-0qpwxpaWvjeD0X88SAOeasasatSyqwQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIXzD-0qpwxpaWvjeD0X88SAOeasc8btSyqwQ.ttf) format('truetype');
+}
+</style>
+<link rel='stylesheet' id='wgtc-style-css' href='https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/style.css?ver=12' type='text/css' media='all' />
+<link rel='stylesheet' id='wgtc-icons-css' href='https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/icons/wgtc-icons.css?ver=1' type='text/css' media='all' />
+<script type='text/javascript' src='https://unpkg.com/swiper@8/swiper-bundle.min.js?ver=5.9.3' id='wgtc-swiper-js'></script>
+<script type='application/json' id='wpp-json'>
+{"sampling_active":1,"sampling_rate":100,"ajax_url":"https:\/\/wegotthiscovered.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/wegotthiscovered.com\/wp-json\/wordpress-popular-posts","ID":0,"token":"38ea1ae2e7","lang":0,"debug":0}
+</script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js?ver=5.4.2' id='wpp-js-js'></script>
+<link rel="https://api.w.org/" href="https://wegotthiscovered.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wegotthiscovered.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wegotthiscovered.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.9.3" />
+<style>
+            @-webkit-keyframes bgslide {
+                from {
+                    background-position-x: 0;
+                }
+                to {
+                    background-position-x: -200%;
+                }
+            }
+
+            @keyframes bgslide {
+                    from {
+                        background-position-x: 0;
+                    }
+                    to {
+                        background-position-x: -200%;
+                    }
+            }
+
+            .wpp-widget-placeholder {
+                margin: 0 auto;
+                width: 60px;
+                height: 3px;
+                background: #dd3737;
+                background: -webkit-gradient(linear, left top, right top, from(#dd3737), color-stop(10%, #571313), to(#dd3737));
+                background: linear-gradient(90deg, #dd3737 0%, #571313 10%, #dd3737 100%);
+                background-size: 200% auto;
+                border-radius: 3px;
+                -webkit-animation: bgslide 1s infinite linear;
+                animation: bgslide 1s infinite linear;
+            }
+        </style>
+<link rel="icon" href="https://wegotthiscovered.com/wp-content/uploads/2022/04/WGTC_Favicon2.png" sizes="32x32" />
+<link rel="icon" href="https://wegotthiscovered.com/wp-content/uploads/2022/04/WGTC_Favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://wegotthiscovered.com/wp-content/uploads/2022/04/WGTC_Favicon2.png" />
+<meta name="msapplication-TileImage" content="https://wegotthiscovered.com/wp-content/uploads/2022/04/WGTC_Favicon2.png" />
+
+</head>
+<body class="home blog hfeed">
+<div id="sticky-top">
+<div class="proper-ad-unit sticky-units"> <div id="proper-ad-wegotthiscovered_mobile_sticky_top"> <script> propertag.cmd.push(function() { proper_display('wegotthiscovered_mobile_sticky_top'); }); </script> </div> </div>
+</div>
+<div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<header id="masthead" class="site-header">
+<div class="container">
+<div class="site-branding">
+<a href="https://wegotthiscovered.com/">
+<img src="https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/img/logo.svg" alt="wgtc" />
+</a>
+</div>
+<form id="search-form" role="search" method="get" class="search-form popover form-container" action="/">
+<i id="search-btn" class="icon-search"></i>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search..." name="s">
+</form>
+<nav id="site-navigation" class="main-navigation">
+<ul id="menu-links" class="nav-menu top-header">
+<li>
+<a href="/movies/">Movies</a>
+</li>
+<li>
+<a href="/tv/">TV</a>
+</li>
+<li>
+<a href="/anime/">ANIME</a>
+</li>
+<li>
+<a href="/music/">MUSIC</a>
+</li>
+<li>
+<a href="/celebrities/">CELEBRITIES</a>
+</li>
+<li>
+<a href="/gaming/">GAMING</a>
+</li>
+<li>
+<a href="/reviews/">REVIEWS</a>
+</li>
+<li class="socials-menu">
+<a href="https://www.facebook.com/WeGotThisCovered" target="_blank"><i class="icon-facebook"></i></a>
+<a href="https://twitter.com/wgtc_site" target="_blank"><i class="icon-twitter"></i></a>
+<a href="https://www.youtube.com/user/wgtcsite" target="_blank"><i class="icon-youtube"></i></a>
+<a href="https://www.instagram.com/wgtcinsta" target="_blank"><i class="icon-instagram"></i></a>
+<a href="/cdn-cgi/l/email-protection#274e494148675042404853534f4e54444851425542430944484a" target="_blank"><i class="icon-email"></i></a>
+<a href="/feed/" target="_blank"><i class="icon-rss"></i></a>
+</li>
+<li class="mobile-newsletter">
+<div class="news-list-container">
+<div class="news-list-branding">WE GOT THIS COVERED</div>
+<div class="news-list-title">never miss out on the latest news</div>
+<div class="news-list-label">sign up to our newsletter</div>
+<form id="join-form" class="join-form-container" action="/">
+
+<input class="news-list-input" type="text" placeholder="Email" name="mail" required>
+<input id="news-list-join-btn" class="wgtc-btn join-btn" type="submit" value="join">
+</form>
+
+<span id="news-email-msg" class="news-list-msg"></span>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+//to be updated: this script should: prevent page refreshing when clicking the join newsletter button
+//                                   send the email from input field to the server to be added to the newsletter
+//                                   check server response and update span "news-email-msg" accordinly (error, success, etc)
+newsletterContainers = document.getElementsByClassName( "news-list-container" );
+newsletterContainers = Array.from( newsletterContainers );
+newsletterContainers.forEach( e => {
+	form = e.getElementsByClassName( "join-form-container")[0];
+	form.onsubmit = function( f ) {
+		f.preventDefault();
+		jsonbody = { email: f.target[0].value };
+		fetch( "/wp-json/wgtc/v1/newsletter-email", {
+			method: "PUT",
+			headers: { 'Content-Type': 'application/json' }, 
+			body: JSON.stringify( jsonbody )
+			} )
+		.then( res => {
+			if ( res.status === 200 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Successfully signed up!"
+			} else if ( res.status === 400 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Please enter a valid email"
+			} else if ( res.status === 500 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Something went wrong. Please try again later"
+			} else {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Error. Please try again later"
+			}
+		} );
+	}
+} )
+</script> </li>
+<ul class="legals-menu">
+<li>
+<a href="/aboutus/">ABOUT & ADVERTISING</a>
+</li>
+<li>
+<a href="/corrections-policy/">CORRECTIONS POLICY</a>
+</li>
+<li>
+<a href="/ethics-policy/">ETHICS POLICY</a>
+</li>
+<li>
+<a href="/fact-checking-policy/">FACT CHECKING POLICY</a>
+</li>
+<li>
+<a href="/ownership-policy/">OWNERSHIP POLICY</a>
+</li>
+<li>
+<a href="/privacy-policy/">PRIVACY POLICY</a>
+</li>
+</ul>
+</ul>
+<div id="extended-header" class="extended-desktop-header">
+<div class="container">
+<ul>
+<li>
+<a href="/movies/">MOVIES</a>
+</li>
+<li>
+<a href="/tag/mcu/">MCU</a>
+</li>
+<li>
+<a href="/tag/netflix/">NETFLIX</a>
+</li>
+<li>
+<a href="/tag/black-widow/">BLACK WIDOW</a>
+</li>
+<li>
+<a href="/tag/batman/">BATMAN</a>
+</li>
+<li>
+<a href="/tag/black-adam/">BLACK ADAM</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/gaming/">GAMING</a>
+</li>
+<li>
+<a href="/tag/resident-evil/">RESIDENT EVIL</a>
+</li>
+<li>
+<a href="/tag/minecraft/">MINECRAFT</a>
+</li>
+<li>
+<a href="/tag/nintendo/">NINTENDO</a>
+</li>
+<li>
+<a href="/tag/magic-the-gathering/">MAGIC THE GATHERING</a>
+</li>
+<li>
+<a href="/tag/board=games/">BOARD GAMES</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/tv/">TV</a>
+</li>
+<li>
+<a href="/tag/loki/">LOKI</a>
+</li>
+<li>
+<a href="/tag/netflix/">NETFLIX</a>
+</li>
+<li>
+<a href="/tag/disney/">DISNEY</a>
+</li>
+<li>
+<a href="/tag/anime/">ANIME</a>
+</li>
+<li>
+<a href="/tag/mcu/">MCU</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/videos/">VIDEOS</a>
+</li>
+<li>
+<a href="/tag/trailers/">TRAILERS</a>
+</li>
+<li>
+<a href="/tag/teasers/">TEASERS</a>
+</li>
+<li>
+<a href="/tag/mcu/">MCU</a>
+</li>
+<li>
+<a href="/tag/tiktok/">TIKTOK</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/comics/">COMICS</a>
+</li>
+<li>
+<a href="/tag/marvel/">MARVEL</a>
+</li>
+<li>
+<a href="/tag/dc/">DC</a>
+</li>
+<li>
+<a href="/tag/batman/">BATMAN</a>
+</li>
+<li>
+<a href="/tag/star-wars/">STAR WARS</a>
+</li>
+<li>
+<a href="/tag/walking-dead/">WALKING DEAD</a>
+</li>
+</ul>
+<ul class="legals-menu">
+<li>
+<a href="/aboutus/">ABOUT & ADVERTISING</a>
+</li>
+<li>
+<a href="/corrections-policy/">CORRECTIONS POLICY</a>
+</li>
+<li>
+<a href="/ethics-policy/">ETHICS POLICY</a>
+</li>
+<li>
+<a href="/fact-checking-policy/">FACT CHECKING POLICY</a>
+</li>
+<li>
+<a href="/ownership-policy/">OWNERSHIP POLICY</a>
+</li>
+<li>
+<a href="/privacy-policy/">PRIVACY POLICY</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="site-header-right">
+<div class="site-header-theme">
+<i class="theme-toggle icon-dark"></i>
+<script>
+    (function() {
+      document.querySelector('.theme-toggle').onclick = function() {
+        if (localStorage.getItem('theme') === 'theme-dark') {
+          setLightTheme();
+        } else {
+          setDarkTheme();
+        }
+      };
+
+      function setDarkTheme() {
+        document.body.classList.remove('theme-dark');
+        document.body.classList.add('theme-light');
+        document.querySelector('.theme-toggle').classList.add('icon-light');
+        document.querySelector('.theme-toggle').classList.remove('icon-dark');
+        setTheme('theme-dark');
+      }
+
+      function setLightTheme(){
+        document.body.classList.remove('theme-light');
+        document.body.classList.add('theme-dark');
+        document.querySelector('.theme-toggle').classList.add('icon-dark');
+        document.querySelector('.theme-toggle').classList.remove('icon-light');       
+        setTheme('theme-light');
+      }
+
+      // function to set a given theme/color-scheme
+      function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+      }
+      
+      // Immediately invoked function to set the theme on initial load
+      if (localStorage.getItem('theme') === 'theme-dark') {
+        setDarkTheme();
+      } else {
+        setLightTheme();
+      }
+    })();
+  </script>
+</div>
+<div class="site-header-search">
+
+
+<i id="search-toggle-btn" class="search-toggle icon-search"></i>
+<script>
+    (function() {
+
+      //add event handler to icon used to open and close search box
+      document.querySelector('.search-toggle').onclick = function() {
+
+        //Search bar was hidden and now activated by the click
+        //it was not toggled so search box needs to be displayed
+        if (!document.querySelector('.search-form').classList.contains('toggled')) {
+
+          //since there is one pop over now do we need to keep this code?
+          
+          //document.querySelectorAll('.popover').forEach(popover => popover.classList.remove('toggled'));
+          //document.querySelectorAll('.site-header i').forEach(icon => icon.classList.remove('toggled'));
+
+          document.querySelector('.search-toggle').classList.add('toggled');
+          document.querySelector('.search-toggle').classList.remove('icon-search');
+          document.querySelector('.search-toggle').classList.add('icon-cancel');
+          document.querySelector('.search-form').classList.add('toggled');
+          document.querySelector('.search-field').focus();
+        } else {
+          //the search form is toggled already, needs to be untoggled now
+          //search bar was active and now should be hidden
+          document.querySelector('.search-toggle').classList.remove('toggled');
+          document.querySelector('.search-toggle').classList.remove('icon-cancel');
+          document.querySelector('.search-toggle').classList.add('icon-search');
+          document.querySelector('.search-form').classList.remove('toggled');
+        }
+      };
+    })();
+  </script>
+</div>
+<i id="toggleBtn" class="menu-toggle icon-menu" aria-controls="primary-menu" aria-expanded="false" role="button"></i>
+</div>
+</div>
+</header>
+<div id="content" class="site-wrapper">
+<div class="proper-ad-unit" id="skin">
+<div id="proper-ad-wegotthiscovered_skin">
+<script>
+      window.propertag.cmd.push(function() {
+        proper_display('wegotthiscovered_skin');
+      })
+    </script>
+</div>
+</div>
+<div class="proper-ad-unit" id="top-heroboard">
+<div id="proper-ad-wegotthiscovered_main_1"> <script> propertag.cmd.push(function() { proper_display('wegotthiscovered_main_1'); }); </script> </div>
+</div>
+<div class="container">
+<div class="row site-content">
+<div id="primary" class="content-area col-lg-8">
+<main id="main" class="site-main">
+<div class="HomeFeaturedList">
+<div class="FeaturedContentItem">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/image-96.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="matt reeves the batman" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/image-96.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image-96-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image-96-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image-96-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> <a class="FeaturedContentItem__gradient" href="https://wegotthiscovered.com/movies/the-batman-fans-cant-get-enough-of-matt-reeves-commentary-track/"></a>
+<div class="FeaturedContentItem__text">
+<div class="FeaturedContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a> </div>
+<h2 class="FeaturedContentItem__title"><a href="https://wegotthiscovered.com/movies/the-batman-fans-cant-get-enough-of-matt-reeves-commentary-track/">&#8216;The Batman&#8217; fans can&#8217;t get enough of Matt Reeves&#8217; commentary track</a></h2>
+</div>
+</div>
+<div class="FeaturedContentItem">
+<img width="1280" height="720" src="https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-800x450.jpg 800w" sizes="(max-width: 1280px) 100vw, 1280px" /> <a class="FeaturedContentItem__gradient" href="https://wegotthiscovered.com/celebrities/ms-marvel-star-feels-weird-seeing-herself-as-part-of-the-mcu/"></a>
+<div class="FeaturedContentItem__text">
+<div class="FeaturedContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/celebrities/">Celebrities</a> </div>
+<h2 class="FeaturedContentItem__title"><a href="https://wegotthiscovered.com/celebrities/ms-marvel-star-feels-weird-seeing-herself-as-part-of-the-mcu/">&#8216;Ms. Marvel&#8217; star feels weird seeing herself as part of the MCU</a></h2>
+</div>
+</div>
+<div class="FeaturedContentItem">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="vin diesel justin lin" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> <a class="FeaturedContentItem__gradient" href="https://wegotthiscovered.com/movies/vin-diesel-and-justin-lin-say-fast-x-is-the-beginning-of-an-epic-ending/"></a>
+<div class="FeaturedContentItem__text">
+<div class="FeaturedContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a> </div>
+<h2 class="FeaturedContentItem__title"><a href="https://wegotthiscovered.com/movies/vin-diesel-and-justin-lin-say-fast-x-is-the-beginning-of-an-epic-ending/">Vin Diesel and Justin Lin say &#8216;Fast X&#8217; is &#8216;the beginning of an epic ending&#8217;</a></h2>
+</div>
+</div>
+</div>
+<div class="HomeTrendingList">
+<div class="HomeTrendingList__title t-header-2 Heading  _mt-4 _mb-2">Trending</div>
+<div class="HomeTrendingList__list _mb-2">
+<div class="HomeTrendingRow__item">
+<article id="post-1195997" class="ContentItem ContentItem--secondary ContentItem--desktop-tiny post-1195997 post type-post status-publish format-standard has-post-thumbnail hentry category-celebrities category-news tag-iman-vellani tag-marvel-cinematic-universe tag-ms-marvel tag-twitter article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/celebrities/ms-marvel-star-feels-weird-seeing-herself-as-part-of-the-mcu/">
+<img width="1280" height="720" src="https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/03/ms.-marvel1-800x450.jpg 800w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/celebrities/">Celebrities</a><span class="posted-on t-subtitle">2 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/celebrities/ms-marvel-star-feels-weird-seeing-herself-as-part-of-the-mcu/">&#8216;Ms. Marvel&#8217; star feels weird seeing herself as part of the MCU</a></h4> </div>
+</article> </div>
+<div class="HomeTrendingRow__item">
+<article id="post-1195931" class="ContentItem ContentItem--secondary ContentItem--desktop-tiny post-1195931 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-fast-furious-10 tag-fast-x tag-vin-diesel article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/vin-diesel-and-justin-lin-say-fast-x-is-the-beginning-of-an-epic-ending/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010.jpg" class="ContentItem__image wp-post-image" alt="vin diesel justin lin" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-475786010-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">2 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/vin-diesel-and-justin-lin-say-fast-x-is-the-beginning-of-an-epic-ending/">Vin Diesel and Justin Lin say &#8216;Fast X&#8217; is &#8216;the beginning of an epic ending&#8217;</a></h4> </div>
+</article> </div>
+<div class="HomeTrendingRow__item">
+<article id="post-1195919" class="ContentItem ContentItem--secondary ContentItem--desktop-tiny post-1195919 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-doctor-strange-in-the-multiverse-of-madness tag-marvel tag-mcu-fanatics tag-patrick-stewart tag-professor-x article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/watch-doctor-strange-2-screenx-preview-reveals-more-of-patrick-stewart/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-48.jpg" class="ContentItem__image wp-post-image" alt="patrick stewart x-men" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-48.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-48-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-48-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-48-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">2 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/watch-doctor-strange-2-screenx-preview-reveals-more-of-patrick-stewart/">Watch: &#8216;Doctor Strange 2&#8217; ScreenX preview reveals more of Patrick Stewart</a></h4> </div>
+</article> </div>
+</div>
+</div>
+<div class="primis-player home">
+<script type="text/javascript" language="javascript" src="https://live.primis.tech/live/liveView.php?s=108034&amp;playerApiId=primisPlayer"></script>
+</div>
+<div class="HomeCategoryList">
+<div class="HomeCategoryList__item HomeCategoryList__item--full-width">
+<div class="t-header-2  Heading Heading--primary">Latest Movies News and Reviews</div>
+<article id="post-1196461" class="ContentItem ContentItem--primary post-1196461 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-doctor-strange-2 tag-doctor-strange-in-the-multiverse-of-madness tag-marvel tag-mcu tag-mcu-fanatics tag-michael-waldron tag-sam-raimi article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/doctor-strange-in-the-multiverse-of-madness-writer-says-he-tailored-the-script-to-sam-raimis-style/">
+<img width="1200" height="682" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness-564x321.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness-633x360.jpg 633w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta _mt-1">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">6 seconds ago</span> </div>
+<h2 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/doctor-strange-in-the-multiverse-of-madness-writer-says-he-tailored-the-script-to-sam-raimis-style/">&#8216;Doctor Strange in the Multiverse of Madness&#8217; writer says he tailored the script to Sam Raimi&#8217;s style</a></h2> </div>
+</article>
+</div>
+<div class="HomeCategoryList__item ">
+<article id="post-1196417" class="ContentItem ContentItem--secondary  post-1196417 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-baker-mayfield tag-robert-patrick tag-t1000 tag-terminator tag-terminator-2-judgement-day article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/a-new-statue-draws-unwanted-comparisons-to-robert-patricks-terminator-2-villain/">
+<img width="1800" height="1012" src="https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2.jpg" class="ContentItem__image wp-post-image" alt="Terminator 2" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2.jpg 1800w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-1536x864.jpg 1536w" sizes="(max-width: 1800px) 100vw, 1800px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">14 mins ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/a-new-statue-draws-unwanted-comparisons-to-robert-patricks-terminator-2-villain/">A new statue draws unwanted comparisons to Robert Patrick&#8217;s &#8216;Terminator 2&#8217; villain</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1195711" class="ContentItem ContentItem--secondary  post-1195711 post type-post status-publish format-standard has-post-thumbnail hentry category-anime category-movies tag-gkids tag-pompo-the-cinephile article_type-feature">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/anime/the-path-that-you-chose-was-right/">
+<img width="1920" height="1042" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3.png" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3.png 1920w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-564x306.png 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-663x360.png 663w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-1536x834.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/anime/">Anime</a><span class="posted-on t-subtitle">60 mins ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/anime/the-path-that-you-chose-was-right/">‘The path that you chose was right’: An interview with ‘Pompo the Cinephile’ director Takayuki Hirao</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1196356" class="ContentItem ContentItem--secondary  post-1196356 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-john-wick-chapter-4 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/first-john-wick-chapter-4-promo-poster-revealed-at-cinemacon/">
+<img width="1920" height="1080" src="https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113.jpg" class="ContentItem__image wp-post-image" alt="john wick" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113.jpg 1920w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/first-john-wick-chapter-4-promo-poster-revealed-at-cinemacon/">First &#8216;John Wick: Chapter 4&#8217; promo poster revealed at CinemaCon</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1196360" class="ContentItem ContentItem--secondary  post-1196360 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-the-expendables-4 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/first-promo-banner-for-the-expendables-4-gets-the-band-back-together/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11.jpg" class="ContentItem__image wp-post-image" alt="expendables" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11-640x360.jpg 640w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/first-promo-banner-for-the-expendables-4-gets-the-band-back-together/">First promo banner for &#8216;The Expendables 4&#8217; gets the band back together</a></h4> </div>
+</article> </div>
+</div>
+<div class="HomePlacement proper-ad-insert"></div>
+<div class="HomeCategoryList">
+<div class="HomeCategoryList__item HomeCategoryList__item--full-width">
+<div class="t-header-2  Heading Heading--dark">Latest Videos</div>
+<article id="post-1192183" class="ContentItem ContentItem--primary post-1192183 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news category-social-media category-videos category-youtube tag-john-cena tag-ryan-reynolds tag-sofyan96 tag-the-adam-project article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/news/ryan-reynolds-congratulates-malaysian-fan-film-in-his-own-special-way/">
+<img width="1670" height="900" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM.png" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM.png 1670w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM-564x304.png 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM-668x360.png 668w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM-1536x828.png 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-18-at-3.54.27-PM-650x350.png 650w" sizes="(max-width: 1670px) 100vw, 1670px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta _mt-1">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">6 days ago</span> </div>
+<h2 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/news/ryan-reynolds-congratulates-malaysian-fan-film-in-his-own-special-way/">Ryan Reynolds congratulates Malaysian fan film in his own special way</a></h2> </div>
+</article>
+</div>
+<div class="HomeCategoryList__item ">
+<article id="post-1191827" class="ContentItem ContentItem--secondary  post-1191827 post type-post status-publish format-standard has-post-thumbnail hentry category-news category-social-media category-videos tag-tiktok tag-tiktok-trends article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/social-media/tiktok-users-video-fail-becomes-the-funniest-new-trend-on-the-app/">
+<img width="1280" height="785" src="https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-g7f6fa92d4_1280.jpg" class="ContentItem__image wp-post-image" alt="TikTok" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-g7f6fa92d4_1280.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-g7f6fa92d4_1280-564x346.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-g7f6fa92d4_1280-587x360.jpg 587w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/news/">News</a><span class="posted-on t-subtitle">7 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/social-media/tiktok-users-video-fail-becomes-the-funniest-new-trend-on-the-app/">TikTok user’s video fail Is becomes the funniest new trend on the app</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1190474" class="ContentItem ContentItem--secondary  post-1190474 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-news category-videos tag-cardi-b tag-dougie-b tag-kay-flock tag-offset tag-shake-it article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/music/cardi-b-bounces-back-to-twitter-to-announce-her-video-for-shake-it/">
+<img width="2560" height="1440" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-scaled.jpg" class="ContentItem__image wp-post-image" alt="Cardi B" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-scaled.jpg 2560w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-1536x864.jpg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-2048x1152.jpg 2048w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1203255321-800x450.jpg 800w" sizes="(max-width: 2560px) 100vw, 2560px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/music/">Music</a><span class="posted-on t-subtitle">2 weeks ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/music/cardi-b-bounces-back-to-twitter-to-announce-her-video-for-shake-it/">Cardi B bounces back to Twitter to announce her video for &#8216;Shake It&#8217;</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1183054" class="ContentItem ContentItem--secondary  post-1183054 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-news category-social-media category-videos tag-lil-shordie-scott tag-spotify tag-tiktok tag-tiktok-trends article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/news/a-rap-about-a-stylish-sweater-made-the-spotify-viral-50-thanks-to-tiktok/">
+<img width="1203" height="800" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-05-at-5.10.41-PM.png" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-05-at-5.10.41-PM.png 1203w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-05-at-5.10.41-PM-526x350.png 526w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-05-at-5.10.41-PM-541x360.png 541w" sizes="(max-width: 1203px) 100vw, 1203px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/music/">Music</a><span class="posted-on t-subtitle">3 weeks ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/news/a-rap-about-a-stylish-sweater-made-the-spotify-viral-50-thanks-to-tiktok/">A rap about a stylish sweater made the Spotify Viral 50 thanks to TikTok</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1180619" class="ContentItem ContentItem--secondary  post-1180619 post type-post status-publish format-standard has-post-thumbnail hentry category-news category-tech category-videos tag-giphy tag-library tag-tiktok article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/news/how-to-use-the-new-tiktok-library-feature/">
+<img width="1280" height="853" src="https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-5064078_1280.jpg" class="ContentItem__image wp-post-image" alt="TikTok" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-5064078_1280.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-5064078_1280-525x350.jpg 525w, https://wegotthiscovered.com/wp-content/uploads/2022/03/tiktok-5064078_1280-540x360.jpg 540w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/news/">News</a><span class="posted-on t-subtitle">3 weeks ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/news/how-to-use-the-new-tiktok-library-feature/">How to use the new TikTok Library feature</a></h4> </div>
+</article> </div>
+</div>
+<div class="HomePlacement proper-ad-insert"></div>
+<div class="HomeCategoryList">
+<div class="HomeCategoryList__item HomeCategoryList__item--full-width">
+<div class="t-header-2  Heading Heading--primary">Latest Gaming News and Reviews</div>
+<article id="post-1195706" class="ContentItem ContentItem--primary post-1195706 post type-post status-publish format-standard has-post-thumbnail hentry category-gaming category-news tag-gaming-previews tag-teenage-mutant-ninja-turtles-shredders-revenge article_type-feature">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/gaming/preview-teenage-mutant-ninja-turtles-shredders-revenge-is-a-love-letter-to-the-franchise/">
+<img width="1280" height="720" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/tmnt-shredders-revenge.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/tmnt-shredders-revenge.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/04/tmnt-shredders-revenge-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/tmnt-shredders-revenge-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/tmnt-shredders-revenge-800x450.jpg 800w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta _mt-1">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/gaming/">Gaming</a><span class="posted-on t-subtitle">3 days ago</span> </div>
+<h2 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/gaming/preview-teenage-mutant-ninja-turtles-shredders-revenge-is-a-love-letter-to-the-franchise/">Preview: &#8216;Teenage Mutant Ninja Turtles: Shredder’s Revenge&#8217; Is A Love Letter To The Franchise</a></h2> </div>
+</article>
+</div>
+<div class="HomeCategoryList__item ">
+<article id="post-1195403" class="ContentItem ContentItem--secondary  post-1195403 post type-post status-publish format-standard has-post-thumbnail hentry category-gaming category-news tag-nintendo tag-nintendo-switch tag-splatoon tag-splatoon-3 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/gaming/splatoon-3-gets-september-release-date-new-gameplay-footage/">
+<img width="1920" height="1080" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay.jpg" class="ContentItem__image wp-post-image" alt="Splatoon 3" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay.jpg 1920w, https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay-1536x864.jpg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/splatoon-3-gameplay-800x450.jpg 800w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/gaming/">Gaming</a><span class="posted-on t-subtitle">3 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/gaming/splatoon-3-gets-september-release-date-new-gameplay-footage/">&#8216;Splatoon 3&#8217; gets September release date, new gameplay footage</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1195135" class="ContentItem ContentItem--secondary  post-1195135 post type-post status-publish format-standard has-post-thumbnail hentry category-gaming category-news tag-borderlands tag-tales-from-the-borderlands article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/gaming/get-ready-for-more-tales-from-the-borderlands-this-year-finally/">
+<img width="1920" height="1080" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands.jpg 1920w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands-1536x864.jpg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Tales-from-the-Borderlands-800x450.jpg 800w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/gaming/">Gaming</a><span class="posted-on t-subtitle">3 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/gaming/get-ready-for-more-tales-from-the-borderlands-this-year-finally/">Get ready for more &#8216;Tales from the Borderlands&#8217; this year, finally</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1195094" class="ContentItem ContentItem--secondary  post-1195094 post type-post status-publish format-standard has-post-thumbnail hentry category-comicbooks category-gaming category-news tag-fortnite tag-marvel article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/comicbooks/marvel-meets-fortnite-once-again-in-this-zero-war-comic-cover/">
+<img width="1280" height="720" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/Fortnite-Marvel-Zero-War.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/Fortnite-Marvel-Zero-War.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Fortnite-Marvel-Zero-War-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Fortnite-Marvel-Zero-War-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Fortnite-Marvel-Zero-War-800x450.jpg 800w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/comicbooks/">Comic Books</a><span class="posted-on t-subtitle">3 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/comicbooks/marvel-meets-fortnite-once-again-in-this-zero-war-comic-cover/">Marvel meets &#8216;Fortnite&#8217; once again in this &#8216;Zero War&#8217; comic cover</a></h4> </div>
+</article> </div>
+<div class="HomeCategoryList__item ">
+<article id="post-1194856" class="ContentItem ContentItem--secondary  post-1194856 post type-post status-publish format-standard has-post-thumbnail hentry category-gaming category-news category-tv tag-nintendo-switch tag-sam-witwer tag-star-wars tag-star-wars-the-clone-wars tag-star-wars-the-force-unleashed-4 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/news/sam-witwer-explains-how-the-force-unleashed-led-him-to-voice-darth-maul-in-the-clone-wars/">
+<img width="1200" height="656" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/the-force-unleashed.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/the-force-unleashed.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/the-force-unleashed-564x308.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/the-force-unleashed-659x360.jpg 659w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/gaming/">Gaming</a><span class="posted-on t-subtitle">4 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/news/sam-witwer-explains-how-the-force-unleashed-led-him-to-voice-darth-maul-in-the-clone-wars/">Sam Witwer explains how &#8216;The Force Unleashed&#8217; led him to voice Darth Maul in &#8216;The Clone Wars&#8217;</a></h4> </div>
+</article> </div>
+</div>
+<div class="HomePlacement proper-ad-insert"></div>
+</main>
+</div>
+
+<aside id="secondary" class="widget-area d-none d-lg-flex flex-column col-lg-4">
+<style>
+    #secondary .units {
+        position: sticky;
+        top: 90px;
+    }
+    </style>
+
+<div id="nonsticky-sidebar">
+<div class="widget">
+<div class="WPPSidebarWidget">
+<article id="post-1194866" class="ContentItem ContentItem--secondary ContentItem--mobile post-1194866 post type-post status-publish format-standard has-post-thumbnail hentry category-celebrities category-movies category-news tag-amber-heard tag-depp-heard-defamation-trial tag-johnny-depp article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/news/message-and-audiotape-seem-to-show-depp-admit-to-chopping-off-his-own-digit/">
+<img width="2560" height="1440" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-scaled.jpeg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-scaled.jpeg 2560w, https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-564x317.jpeg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-640x360.jpeg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-1536x864.jpeg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-2048x1152.jpeg 2048w, https://wegotthiscovered.com/wp-content/uploads/2022/04/E099EF42-C756-45B3-9766-988033BA87E8-800x450.jpeg 800w" sizes="(max-width: 2560px) 100vw, 2560px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/celebrities/">Celebrities</a><span class="posted-on t-subtitle">4 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/news/message-and-audiotape-seem-to-show-depp-admit-to-chopping-off-his-own-digit/">Message and audiotape seem to show Depp admit to chopping off his own digit</a></h4> </div>
+</article><article id="post-1195205" class="ContentItem ContentItem--secondary ContentItem--mobile post-1195205 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-bright-2 tag-netflix tag-pole-to-pole tag-will-smith article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/more-bad-news-for-will-smith-as-another-2-projects-hit-the-skids/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1179480776.jpg" class="ContentItem__image wp-post-image" alt="will smith" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1179480776.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1179480776-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1179480776-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/GettyImages-1179480776-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">3 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/more-bad-news-for-will-smith-as-another-2-projects-hit-the-skids/">More bad news for Will Smith as another 2 projects hit the skids</a></h4> </div>
+</article><article id="post-1194272" class="ContentItem ContentItem--secondary ContentItem--mobile post-1194272 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-cloud-atlas tag-netflix article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/a-hugely-divisive-sci-fi-epic-ponders-the-meaning-of-existence-on-netflix/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/cloud-atlas.jpg" class="ContentItem__image wp-post-image" alt="cloud atlas" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/cloud-atlas.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/cloud-atlas-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/cloud-atlas-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/cloud-atlas-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">4 days ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/a-hugely-divisive-sci-fi-epic-ponders-the-meaning-of-existence-on-netflix/">A hugely divisive sci-fi epic ponders the meaning of existence on Netflix</a></h4> </div>
+</article> </div>
+</div>
+<div class="widget">
+<div class="news-list-container">
+<div class="news-list-branding">WE GOT THIS COVERED</div>
+<div class="news-list-title">never miss out on the latest news</div>
+<div class="news-list-label">sign up to our newsletter</div>
+<form id="join-form" class="join-form-container" action="/">
+
+<input class="news-list-input" type="text" placeholder="Email" name="mail" required>
+<input id="news-list-join-btn" class="wgtc-btn join-btn" type="submit" value="join">
+</form>
+
+<span id="news-email-msg" class="news-list-msg"></span>
+</div>
+<script>
+//to be updated: this script should: prevent page refreshing when clicking the join newsletter button
+//                                   send the email from input field to the server to be added to the newsletter
+//                                   check server response and update span "news-email-msg" accordinly (error, success, etc)
+newsletterContainers = document.getElementsByClassName( "news-list-container" );
+newsletterContainers = Array.from( newsletterContainers );
+newsletterContainers.forEach( e => {
+	form = e.getElementsByClassName( "join-form-container")[0];
+	form.onsubmit = function( f ) {
+		f.preventDefault();
+		jsonbody = { email: f.target[0].value };
+		fetch( "/wp-json/wgtc/v1/newsletter-email", {
+			method: "PUT",
+			headers: { 'Content-Type': 'application/json' }, 
+			body: JSON.stringify( jsonbody )
+			} )
+		.then( res => {
+			if ( res.status === 200 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Successfully signed up!"
+			} else if ( res.status === 400 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Please enter a valid email"
+			} else if ( res.status === 500 ) {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Something went wrong. Please try again later"
+			} else {
+				e.getElementsByClassName( "news-list-msg" )[0].innerText = "Error. Please try again later"
+			}
+		} );
+	}
+} )
+</script> </div>
+</div>
+<div class="sticky-sidebar-container" style="position:relative;margin-bottom:20px;">
+<div class="units">
+<div class="proper-ad-insert-side-2"></div>
+<div class="proper-ad-insert-side-3"></div>
+</div>
+</div>
+</aside>
+<script>
+var topStickySideContainer = document.querySelector('#top-sticky-sidebar-container');
+var stickySideContainer = document.querySelector('.sticky-sidebar-container');
+
+function resizeIntialSidebars () {
+  if (document.querySelector('body.single-post article')) {
+    topStickySideContainer.style.height = (document.querySelectorAll('body.single-post article')[0].clientHeight / 2) + 'px';
+    //set the height of third part to what's left from article height after deducting first and middle parts height and additional 20
+    stickySideContainer.style.height = (document.querySelectorAll('body.single-post article')[0].clientHeight - 
+        document.querySelector('#top-sticky-sidebar-container').clientHeight - 
+        document.querySelector('#nonsticky-sidebar').clientHeight) + 'px';
+  } else if (document.querySelector('body.home')) {
+    stickySideContainer.style.height = (document.querySelector('#main').clientHeight -
+        document.querySelector('#nonsticky-sidebar').clientHeight) + 'px';
+  }
+}
+
+resizeIntialSidebars(); // initial resize
+
+//handling scrolling 
+window.addEventListener('scroll', function() {
+    //for article page
+    if (document.querySelector('body.single-post article') || document.querySelector('body.home')) {
+        resizeIntialSidebars();
+    }
+});
+</script>
+<script type="application/javascript">
+//function to add stickysidebar to page
+window.addStickySidebar = function(postId) {
+    //if no post id was passed return
+    if (!postId) return;
+    (function() {
+        var newElement = document.createElement('div');
+        newElement.innerHTML =
+            '<div class="sticky-sidebar-container"><div class="units"><div class="proper-ad-insert-side-2"></div><div class="proper-ad-insert-side-2"></div></div></div>';
+
+        var newStickySidebar = newElement.firstChild;
+
+        newStickySidebar.style.position = 'relative';
+        newStickySidebar.style.marginBottom = '20px';
+        newStickySidebar.classList.add('post-' + postId);
+        newStickySidebar.style.height = (document.querySelector('.alm-single-post.post-' + postId)
+            .clientHeight - 20) + 'px';
+
+        document.querySelector('#secondary').appendChild(newStickySidebar);
+
+        var stickySideContainer = document.querySelector('.sticky-sidebar-container.post-' + postId);
+
+        var stickySideUnits = document.querySelector('.sticky-sidebar-container.post-' + postId + ' .units');
+
+        function resizeArticleSidebar(postId) {
+            stickySideContainer.style.height = (document.querySelector('.alm-single-post.post-' + postId).clientHeight - 20) + 'px';
+        }
+        
+        
+        resizeArticleSidebar(postId); // initial resize
+        window.addEventListener('scroll', function() {
+            resizeArticleSidebar(postId); // initial resize
+        });
+
+    })();
+}
+</script> <div class="HomeAllPosts col-12 ">
+<div class="t-header-2 Heading  _mb-2">All Posts</div>
+<div class="HomeAllPosts-posts">
+
+<article id="post-1196461" class="ContentItem ContentItem--secondary  post-1196461 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-doctor-strange-2 tag-doctor-strange-in-the-multiverse-of-madness tag-marvel tag-mcu tag-mcu-fanatics tag-michael-waldron tag-sam-raimi article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/doctor-strange-in-the-multiverse-of-madness-writer-says-he-tailored-the-script-to-sam-raimis-style/">
+<img width="1200" height="682" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness.jpg" class="ContentItem__image wp-post-image" alt="" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness-564x321.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/doctor-strange-in-the-multiverse-of-madness-633x360.jpg 633w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">6 seconds ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/doctor-strange-in-the-multiverse-of-madness-writer-says-he-tailored-the-script-to-sam-raimis-style/">&#8216;Doctor Strange in the Multiverse of Madness&#8217; writer says he tailored the script to Sam Raimi&#8217;s style</a></h4> </div>
+</article> 
+<article id="post-1196417" class="ContentItem ContentItem--secondary  post-1196417 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-baker-mayfield tag-robert-patrick tag-t1000 tag-terminator tag-terminator-2-judgement-day article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/a-new-statue-draws-unwanted-comparisons-to-robert-patricks-terminator-2-villain/">
+<img width="1800" height="1012" src="https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2.jpg" class="ContentItem__image wp-post-image" alt="Terminator 2" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2.jpg 1800w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2020/11/robert-patrick-terminator-2-1536x864.jpg 1536w" sizes="(max-width: 1800px) 100vw, 1800px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">14 mins ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/a-new-statue-draws-unwanted-comparisons-to-robert-patricks-terminator-2-villain/">A new statue draws unwanted comparisons to Robert Patrick&#8217;s &#8216;Terminator 2&#8217; villain</a></h4> </div>
+</article> 
+<article id="post-1195711" class="ContentItem ContentItem--secondary  post-1195711 post type-post status-publish format-standard has-post-thumbnail hentry category-anime category-movies tag-gkids tag-pompo-the-cinephile article_type-feature">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/anime/the-path-that-you-chose-was-right/">
+<img width="1920" height="1042" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3.png" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3.png 1920w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-564x306.png 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-663x360.png 663w, https://wegotthiscovered.com/wp-content/uploads/2022/04/POMPO_Image3-1536x834.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/anime/">Anime</a><span class="posted-on t-subtitle">60 mins ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/anime/the-path-that-you-chose-was-right/">‘The path that you chose was right’: An interview with ‘Pompo the Cinephile’ director Takayuki Hirao</a></h4> </div>
+</article> 
+<article id="post-1196395" class="ContentItem ContentItem--secondary  post-1196395 post type-post status-publish format-standard has-post-thumbnail hentry category-news category-tv tag-bbc tag-david-tennant tag-doctor-who article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/tv/david-tennant-addresses-constant-rumors-of-doctor-who-return/">
+<img width="1280" height="720" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/maxresdefault-5.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/maxresdefault-5.jpg 1280w, https://wegotthiscovered.com/wp-content/uploads/2022/04/maxresdefault-5-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/maxresdefault-5-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/maxresdefault-5-800x450.jpg 800w" sizes="(max-width: 1280px) 100vw, 1280px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/news/">News</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/tv/david-tennant-addresses-constant-rumors-of-doctor-who-return/">David Tennant addresses constant rumors of &#8216;Doctor Who&#8217; return</a></h4> </div>
+</article> 
+<article id="post-1196356" class="ContentItem ContentItem--secondary  post-1196356 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-john-wick-chapter-4 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/first-john-wick-chapter-4-promo-poster-revealed-at-cinemacon/">
+<img width="1920" height="1080" src="https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113.jpg" class="ContentItem__image wp-post-image" alt="john wick" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113.jpg 1920w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image-113-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/first-john-wick-chapter-4-promo-poster-revealed-at-cinemacon/">First &#8216;John Wick: Chapter 4&#8217; promo poster revealed at CinemaCon</a></h4> </div>
+</article> 
+<article id="post-1196360" class="ContentItem ContentItem--secondary  post-1196360 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-the-expendables-4 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/first-promo-banner-for-the-expendables-4-gets-the-band-back-together/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11.jpg" class="ContentItem__image wp-post-image" alt="expendables" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2021/10/image2-11-640x360.jpg 640w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/first-promo-banner-for-the-expendables-4-gets-the-band-back-together/">First promo banner for &#8216;The Expendables 4&#8217; gets the band back together</a></h4> </div>
+</article> 
+<article id="post-1196386" class="ContentItem ContentItem--secondary  post-1196386 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-the-last-witch-hunter article_type-review">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/streaming-viewers-waste-their-time-on-a-lifeless-fantasy-thats-been-threatened-as-a-franchise/">
+<img width="1920" height="1080" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55.jpg" class="ContentItem__image wp-post-image" alt="the last witch hunter" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55.jpg 1920w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55-1536x864.jpg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image1-55-800x450.jpg 800w" sizes="(max-width: 1920px) 100vw, 1920px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/streaming-viewers-waste-their-time-on-a-lifeless-fantasy-thats-been-threatened-as-a-franchise/">Streaming viewers waste their time on a lifeless fantasy that&#8217;s been threatened as a franchise</a></h4> </div>
+</article> 
+<article id="post-1196366" class="ContentItem ContentItem--secondary  post-1196366 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-batgirl tag-dc article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/batgirl-could-be-pulled-from-streaming-and-given-a-theatrical-release/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/01/image-52.jpg" class="ContentItem__image wp-post-image" alt="batgirl" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/01/image-52.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/01/image-52-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/01/image-52-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/01/image-52-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/batgirl-could-be-pulled-from-streaming-and-given-a-theatrical-release/">&#8216;Batgirl&#8217; could be pulled from streaming and given a theatrical release</a></h4> </div>
+</article> 
+<article id="post-1196364" class="ContentItem ContentItem--secondary  post-1196364 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-sonic-the-hedgehog-2 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/sonic-2-becomes-one-of-the-10-biggest-video-game-movies-ever-in-just-3-weeks/">
+<img width="1600" height="900" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs.jpg" class="ContentItem__image wp-post-image" alt="" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs.jpg 1600w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs-1536x864.jpg 1536w, https://wegotthiscovered.com/wp-content/uploads/2022/04/Sonic-2-Character-Thumbs-800x450.jpg 800w" sizes="(max-width: 1600px) 100vw, 1600px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/sonic-2-becomes-one-of-the-10-biggest-video-game-movies-ever-in-just-3-weeks/">&#8216;Sonic 2&#8217; becomes one of the 10 biggest video game movies ever in just 3 weeks</a></h4> </div>
+</article> 
+<article id="post-1196392" class="ContentItem ContentItem--secondary  post-1196392 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-horror tag-i-spit-on-your-grave-2 article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/a-horror-sequel-nobody-asked-for-and-less-people-watched-goes-dark-on-streaming/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/image2-19.jpg" class="ContentItem__image wp-post-image" alt="i spit on your grave 2" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/image2-19.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image2-19-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image2-19-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/image2-19-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/a-horror-sequel-nobody-asked-for-and-less-people-watched-goes-dark-on-streaming/">A horror sequel nobody asked for and less people watched goes dark on streaming</a></h4> </div>
+</article> 
+<article id="post-1196375" class="ContentItem ContentItem--secondary  post-1196375 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-fantastic-beasts tag-fantastic-beasts-the-secrets-of-dumbledore article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/overseas-audiences-might-just-be-able-to-save-the-fantastic-beasts-franchise/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/04/fantastic-beasts.jpg" class="ContentItem__image wp-post-image" alt="fantastic beasts" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/04/fantastic-beasts.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/04/fantastic-beasts-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/04/fantastic-beasts-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/04/fantastic-beasts-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/overseas-audiences-might-just-be-able-to-save-the-fantastic-beasts-franchise/">Overseas audiences might just be able to save the &#8216;Fantastic Beasts&#8217; franchise</a></h4> </div>
+</article> 
+<article id="post-1196372" class="ContentItem ContentItem--secondary  post-1196372 post type-post status-publish format-standard has-post-thumbnail hentry category-movies category-news tag-doctor-strange-in-the-multiverse-of-madness tag-marvel tag-mcu-fanatics article_type-news">
+<a class="ContentItem__image-link" href="https://wegotthiscovered.com/movies/doctor-strange-2-star-tease-more-complex-magic-in-the-mcu/">
+<img width="1200" height="675" src="https://wegotthiscovered.com/wp-content/uploads/2022/02/image-38.jpg" class="ContentItem__image wp-post-image" alt="doctor strange in the multiverse of madness" loading="lazy" srcset="https://wegotthiscovered.com/wp-content/uploads/2022/02/image-38.jpg 1200w, https://wegotthiscovered.com/wp-content/uploads/2022/02/image-38-564x317.jpg 564w, https://wegotthiscovered.com/wp-content/uploads/2022/02/image-38-640x360.jpg 640w, https://wegotthiscovered.com/wp-content/uploads/2022/02/image-38-800x450.jpg 800w" sizes="(max-width: 1200px) 100vw, 1200px" /> </a>
+<div class="ContentItem__text">
+<div class="ContentItem__meta">
+<a class="t-header-2 t-category-name _mr-1" href="https://wegotthiscovered.com/movies/">Movies</a><span class="posted-on t-subtitle">1 hour ago</span> </div>
+<h4 class="ContentItem__title _m-0 _p-0"><a href="https://wegotthiscovered.com/movies/doctor-strange-2-star-tease-more-complex-magic-in-the-mcu/">&#8216;Doctor Strange 2&#8217; star tease more complex magic in the MCU</a></h4> </div>
+</article>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+window.propertag.cmd.push(function() { properBuildSlots() });
+</script>
+</div>
+<footer id="colophon" class="site-footer">
+<div class="container top">
+<div class="upper">
+<div class="site-branding">
+<div class="logos">
+<a href="https://gamurs.group">
+<img id="gamursLogo" src="https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/img/gamurs-logo.png" alt="wgtc" />
+</a>
+<div class="separator"></div>
+<a href="https://wegotthiscovered.com/">
+<img id="wgtcLogo" src="https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/img/logo-white.png" alt="wgtc" />
+</a>
+</div>
+</div>
+<ul id="footer-menu" class="menu">
+<li><a class="t-header-2" href="/aboutus/">About Us</a></li>
+<li><a class="t-header-2" href="/corrections-policy">Corrections Policy</a></li>
+<li><a class="t-header-2" href="/ethics-policy/">Ethics Policy</a></li>
+<li><a class="t-header-2" href="/fact-checking-policy/">Fact Checking Policy</a></li>
+<li><a class="t-header-2" href="/ownership-policy">Ownership Policy</a></li>
+<li><a class="t-header-2" href="/privacy-policy/">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="lower">
+<div class="socials">
+<a href="https://www.facebook.com/WeGotThisCovered" target="_blank"><i class="icon-facebook"></i></a>
+<a href="https://twitter.com/wgtc_site" target="_blank"><i class="icon-twitter"></i></a>
+<a href="https://www.youtube.com/user/wgtcsite" target="_blank"><i class="icon-youtube"></i></a>
+<a href="https://www.instagram.com/wgtcinsta" target="_blank"><i class="icon-instagram"></i></a>
+<a href="/feed/" target="_blank"><i class="icon-rss"></i></a>
+</div>
+<div id="copyright" class="t-subtitle site-copyright">
+&copy; 2022 Gamurs Pty Ltd.
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div id="sticky-bottom">
+<div class="proper-ad-unit sticky-units">
+<div id="proper-ad-wegotthiscovered_main_3"> <script> propertag.cmd.push(function() { proper_display('wegotthiscovered_main_3'); }); </script> </div>
+</div>
+</div>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/plugins/face3-infinite-scroll-plugin/inc/libs/jquery-ias.js?ver=1.0.0' id='ias-js'></script>
+<script type='text/javascript' id='face3-infinite-scroll-function-js-extra'>
+/* <![CDATA[ */
+var infiniteScroll = {"url":"https:\/\/wegotthiscovered.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/plugins/face3-infinite-scroll-plugin/inc/js/face3-infinite-scroll.functions.js?ver=1.0.0' id='face3-infinite-scroll-function-js'></script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/plugins/wegotthiscovered-gallery-plugin/frontend/js/wgtc-gallery.js?ver=2' id='wgtc-gallery-js-js'></script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/js/navigation.js?ver=20210330' id='wgtc-navigation-js'></script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/js/skip-link-focus-fix.js?ver=20210330' id='wgtc-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='https://unpkg.com/css-element-queries@1.2.3/src/ResizeSensor.js' id='wgtc-resizesensorjs-js'></script>
+<script type='text/javascript' src='https://unpkg.com/sticky-sidebar@3.3.1/dist/sticky-sidebar.min.js' id='wgtc-stickysidebarjs-js'></script>
+<script type='text/javascript' src='https://wegotthiscovered.com/wp-content/themes/wegotthiscovered-wordpress-theme/js/sticky-sidebar.js?ver=3' id='wgtc-sticky-sidebar-js'></script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"701619b9faaa8801","token":"dd5062c4165a4bcc881005b6c000aad4","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

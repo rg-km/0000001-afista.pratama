@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DoodStream</title>
+    <link rel="preconnect" href="//i.doodcdn.co"><link rel="preconnect" href="//cdnjs.cloudflare.com"><link rel="preconnect" href="//www.googletagmanager.com"><link rel="preconnect" href="//www.google-analytics.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//i.doodcdn.co/theme_2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//i.doodcdn.co/theme_2/css/style.css?v=0.0012" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img style="width:120px" src="//i.doodcdn.co/img/logo-s.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fad fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="navbar-toggler d-block d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fad fa-times"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/earn-money">Earn Money</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/premium">Premium</a>
+                </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#login" href="#login">Sign in</a>
+                    </li>
+                
+            </ul>
+            <div class="form-inline ml-0 ml-sm-3">
+                
+                    <a href="#register" class="btn btn-primary" data-toggle="modal" data-target="#register">Sign up</a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Login -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="authLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fad fa-times"></i>
+            </button>
+            <div class="modal-body p-0 text-dark" id="auth-data">
+                <div class="auth-box d-flex flex-wrap">
+	<div class="bg-auth text-center">
+		<h4 class="title">Login to DoodStream</h4>
+		<img src="/theme_2/img/login.svg?v=1" alt="DoodStream Login">
+	</div>
+	<form method="POST" action="https://doodstream.com/" name="FL" class="js_auth">
+		<input type="hidden" name="op" value="login_ajax">
+
+		<div class="form-group">
+			<label>Email or Username</label>
+			<input type="text" name="login" id="email" placeholder="Email or Username" value="" class="form-control">
+			<i data-feather="user"></i>
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" placeholder="Password" id="password" name="password" class="form-control">
+			<i data-feather="lock"></i>
+		</div>
+		<div class="form-group mt-3 hasCaptcha" style="display:none">
+		    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+			<div class="g-recaptcha" id="captchaLogin" data-sitekey=""></div>
+		</div>
+		<div class="form-group w-50 reqOTP" style="display:none">
+			<label>Login OTP</label>
+			<input type="number" name="loginotp" id="loginotp" placeholder="Login OTP" autocomplete="off" class="form-control">
+			<i data-feather="more-horizontal"></i>
+		</div>
+		<div class="form-group mt-3 d-flex justify-content-between align-items-center">
+			<button type="submit" class="btn btn-primary">
+				Login
+				<i class="fad fa-arrow-right ml-2"></i>
+			</button>
+			<a href="#fpass" class="" data-dismiss="modal" data-toggle="modal" data-target="#fpass">Forgot password?</a>
+		</div>
+		<hr>
+		<div class="action">
+			<a href="#register" data-dismiss="modal" data-toggle="modal" data-target="#register" class="btn btn-default btn-block">
+				<i class="fad fa-user-plus mr-2"></i>
+				Join us now
+			</a>
+		</div>
+	</form>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="authLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fad fa-times"></i>
+            </button>
+            <div class="modal-body p-0 text-dark" id="auth-data">
+                <div class="auth-box d-flex flex-wrap">
+  <div class="bg-auth text-center">
+    <h4 class="title">Create an account for free!</h4>
+    <img src="/theme_2/img/reg.svg?v=1" alt="DoodStream Register">
+  </div>
+  <form method="POST" onSubmit="return CheckForm(this)" class="js_auth">
+    <input type="hidden" name="op" value="register_save">
+    <input type="hidden" name="rand" value="">
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="usr_login" value="" class="form-control">
+      <i data-feather="user"></i>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="text" name="usr_email" value="" class="form-control">
+      <i data-feather="mail"></i>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="usr_password" value="" class="form-control">
+      <i data-feather="lock"></i>
+    </div>
+    <div class="form-group">
+      <label>Retype Password</label>
+      <input type="password" name="usr_password2" value="" class="form-control">
+      <i data-feather="lock"></i>
+    </div>
+
+    
+    
+
+    <div class="form-group mt-3">
+      <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+      <div class="g-recaptcha" id="captchaRegister" data-sitekey=""></div>
+    </div>
+
+    <div class="form-group mt-3 d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary btn-go">
+        Sign up <i class="fad fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+    <hr>
+    <div class="action">
+      <a href="#login" data-dismiss="modal" data-toggle="modal" data-target="#login" class="btn btn-default btn-block">
+        Login
+        <i class="fad fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </form>
+</div>
+
+
+<script>
+  function  CheckForm(f)
+  {
+    var err=Array();
+    if(f.usr_login.value.length<4)err.push("* Username must be at least 4 letters long");
+    if(f.usr_login.value.length>32)err.push("* Username must be less than 32 letters long");
+    if(!f.usr_login.value.match(/^([a-zA-Z0-9_\-])+$/))err.push("* Invalid Username format");
+    if(f.usr_password.value.length<4)err.push("* Password should be at least 4 letters long");
+    if(f.usr_password.value.length>32)err.push("* Password should be less than 32 letters long");
+    if(!f.usr_email.value.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) )err.push("* Valid e-mail required");
+    if(f.usr_password.value.length!=f.usr_password2.value.length)err.push("* Passwords do not match");
+    if(err.length>0){alert( 'Please fix the errors below:\n\n'+err.join('\n') );return false;}
+  }
+  
+</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password -->
+<div class="modal fade" id="fpass" tabindex="-1" role="dialog" aria-labelledby="authLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fad fa-times"></i>
+            </button>
+            <div class="modal-body p-0 text-dark" id="auth-data">
+                <div class="auth-box d-flex flex-wrap">
+	<div class="bg-auth text-center">
+		<h4 class="title">Forgot password!</h4>
+		<img src="/theme_2/img/f-pass.svg?v=1" alt="DoodStream Forgot Password">
+	</div>
+	<form method="POST" class="js_auth">
+		<input type="hidden" name="op" value="forgot_pass">
+		<input type="hidden" name="rand" value="">
+
+		<div class="form-group">
+			<label>Email address or username</label>
+			<input type="text" name="usr_login" class="form-control">
+			<i data-feather="mail"></i>
+		</div>
+
+		<div class="form-group mt-3">
+			<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+			<div class="g-recaptcha" id="captchaFpass" data-sitekey=""></div>
+		</div>
+
+		<div class="form-group mt-3 d-flex justify-content-between align-items-center">
+			<button type="submit"  value=" Remind me my password " class="btn btn-primary btn-go">
+				Send me instructions <i class="fad fa-arrow-right ml-2"></i>
+			</button>
+		</div>
+		<hr>
+		<div class="action">
+			<a href="#login" data-dismiss="modal" data-toggle="modal" data-target="#login" class="btn btn-default btn-block">
+				Login here
+				<i class="fad fa-arrow-right ml-2"></i>
+			</a>
+		</div>
+	</form>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+	.main-menu {
+		background: transparent;
+	}
+
+	.features .fad{
+		font-size: 3rem;
+	}
+
+.features p {
+    max-width: 275px;
+}
+
+.banner {
+    padding: 200px 0 200px;
+}
+.pcolour{
+	color: #ff9900;
+}
+.hp-top{
+	margin-bottom:100px;
+}
+
+.faq {
+    margin-bottom: 50px;
+}
+
+.upload-content .browse svg {
+    width: 150px;
+    height: 150px;
+}
+
+.faq .accordion .card .card-header .btn {
+    padding: 1rem 1.5rem;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+    text-decoration: none !important;
+    background: rgba(67, 70, 69, 0.4);
+}
+</style>
+
+
+<div class="site_wrap">
+    <home-upload :upload="{
+					    utype: 'anon',
+					    sess_id: ''
+					}"></home-upload>
+</div>
+
+<div class="features">
+
+
+
+
+	<div class="container">
+		<h2 class="mb-5 title-box">Our <br>Features</h2>
+		<div class="row justify-content-center">
+
+
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-play"></i>
+            </div>
+            <h5>HLS Streaming</h5>
+            <p>Stream your videos without buffering with ultra fast HLS technology.</p>
+    </div>
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-hdd"></i>
+            </div>
+            <h5>Unlimited Storage</h5>
+            <p>Stream your videos without buffering with ultra fast HLS technology.</p>
+    </div>
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-rocket-launch"></i>
+            </div>
+            <h5>Faster Encoding</h5>
+            <p>Encoding will be much faster compared to other competitors in the market.</p>
+    </div>
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-closed-captioning"></i>
+            </div>
+            <h5>Subtitles Support</h5>
+            <p>You can upload your own subtitles in any language you want.</p>
+    </div>
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-star"></i>
+            </div>
+            <h5>Premium bandwidth</h5>
+            <p>You can purchase premium bandwidth from us to remove ads and logo from the video player.</p>
+    </div>
+
+
+	<div class="col-12 col-md-4 mb-5">
+            <div class="icon text-primary mb-3">
+					<i class="mr-3 fad fa-venus-mars"></i>
+            </div>
+            <h5>Adult Content</h5>
+            <p>All the legal adult contents are allowed without any restrictions.</p>
+    </div>
+
+
+		</div>
+	</div>
+</div>
+
+<div class="faq">
+		<div class="container">
+			<h2 class="mb-5 title-box">Frequently <br>Asked Questions</h2>
+			<div class="accordion" id="faqRowOne">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_01">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_01" aria-expanded="false" aria-controls="faq_01">
+										<strong>01</strong> What is DoodStream & its working?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_01" class="collapse" aria-labelledby="head_01" data-parent="#faqRowOne">
+								<div class="card-body">
+									DoodStream is a video hosting service were you can upload videos, share & make money.
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="head_02">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_02" aria-expanded="false" aria-controls="faq_02">
+										<strong>04</strong> How to upload videos on DoodStream?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_02" class="collapse" aria-labelledby="head_02" data-parent="#faqRowOne">
+								<div class="card-body">
+									You can upload videos via browser, FTP, Remote URL & API.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_03">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_03" aria-expanded="false" aria-controls="faq_03">
+										<strong>02</strong> Do you remove inactive videos?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_03" class="collapse" aria-labelledby="head_03" data-parent="#faqRowOne">
+								<div class="card-body">
+									Yes, for free users it will removed after 60 days and for premium users videos will never be removed.
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="head_04">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_04" aria-expanded="false" aria-controls="faq_04">
+										<strong>05</strong> What kind of files can be uploaded?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_04" class="collapse" aria-labelledby="head_04" data-parent="#faqRowOne">
+								<div class="card-body">
+									You can upload all popular video formats including mkv, mp4, wmv, avi, mpeg4, mpegps, flv, 3gp, webm, mov, mpg & m4v.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_05">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_05" aria-expanded="false" aria-controls="faq_05">
+										<strong>03</strong> Can i upload adult/porn videos?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_05" class="collapse" aria-labelledby="head_05" data-parent="#faqRowOne">
+								<div class="card-body">
+									Yes, you can upload adult/porn videos but make sure it is legal.
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="head_06">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_06" aria-expanded="false" aria-controls="faq_06">
+										<strong>06</strong> How to remove ads from the player?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_06" class="collapse" aria-labelledby="head_06" data-parent="#faqRowOne">
+								<div class="card-body">
+									You can purchase our premium bandwidth service to remove ads from the player.
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
+<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_07">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_07" aria-expanded="false" aria-controls="faq_07">
+										<strong>07</strong> Is any bandwidth limitations?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_07" class="collapse" aria-labelledby="head_07" data-parent="#faqRowOne">
+								<div class="card-body">
+									No, there is no bandwidth limitations.
+								</div>
+							</div>
+						</div>
+
+				</div>
+
+
+<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_09">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_09" aria-expanded="false" aria-controls="faq_09">
+										<strong>08</strong> How many views are counted per day?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_09" class="collapse" aria-labelledby="head_09" data-parent="#faqRowOne">
+								<div class="card-body">
+									Views are counted upto 3 within 24 hours per user/ip.
+								</div>
+							</div>
+						</div>
+
+
+
+
+		</div>
+
+
+<div class="col-md-4">
+						<div class="card">
+							<div class="card-header" id="head_11">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq_11" aria-expanded="false" aria-controls="faq_11">
+										<strong>09</strong> What are payout options available?
+									</button>
+								</h2>
+							</div>
+
+							<div id="faq_11" class="collapse" aria-labelledby="head_11" data-parent="#faqRowOne">
+								<div class="card-body">
+									We have 6+ payout options including PayPal, Webmoney, Payoneer, Skrill, Bitcoin, Bitcoin Cash, Ethereum & Tether.
+								</div>
+							</div>
+						</div>
+
+
+
+
+		</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer class="footer mt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<img class="logo" src="//i.doodcdn.co/img/logo-s.png">
+			</div>
+			<div class="col-md-10 text-right">
+				<ul class="menu m-0 p-0 d-flex align-items-center justify-content-center justify-content-sm-end flex-wrap">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/api-docs">API</a>
+					</li>
+					<li>
+						<a href="/copyright">Copyright policy</a>
+					</li>
+					<li>
+						<a href="/terms-and-conditions">Terms & conditions</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://help.doodstream.com/">Help center</a>
+					</li>
+					<li> 
+						<a href="/contact">Contact Us</a>
+					</li> 
+				</ul> 
+			</div>
+		</div> 
+	</div>
+</footer>
+
+ 
+	<script src="//i.doodcdn.co/theme_2/js/theme_panel.js?v=7.7" type="text/javascript"></script>
+	<script src="//i.doodcdn.co/theme_2/js/home_page.js?v=7.7" type="text/javascript"></script> 
+	<script src="//i.doodcdn.co/theme_2/js/main.js?v=7.7" type="text/javascript"></script>
+
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="a048e736-b92c-49a8-b2b2-970b429ff6d3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<script src="/js/dood_load.js" type="module" defer></script>
+</body>
+</html>
+
+

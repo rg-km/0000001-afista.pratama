@@ -1,0 +1,1821 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"54310406b6",applicationID:"199529534"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://clarivate.com/wp-content/themes/clarivate/src/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://clarivate.com/wp-content/themes/clarivate/src/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://clarivate.com/wp-content/themes/clarivate/src/img/favicon-16x16.png">
+  <link rel="manifest" href="https://clarivate.com/wp-content/themes/clarivate/src/img/site.webmanifest">
+  <link rel="mask-icon" href="https://clarivate.com/wp-content/themes/clarivate/src/img/safari-pinned-tab.svg" color="#00c2f2">
+  <meta name="msapplication-TileColor" content="#00c2f2">
+  <meta name="msapplication-config" content="https://clarivate.com/wp-content/themes/clarivate/src/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Clarivate - data, insights and analytics for the innovation lifecycle</title>
+	<meta name="description" content="Clarivate is a global leader in providing trusted insights and analytics. Our vision is to improve the way the world creates, protects, and advances innovation." />
+	<link rel="canonical" href="https://clarivate.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Clarivate - data, insights and analytics for the innovation lifecycle" />
+	<meta property="og:description" content="Clarivate is a global leader in providing trusted insights and analytics. Our vision is to improve the way the world creates, protects, and advances innovation." />
+	<meta property="og:url" content="https://clarivate.com/" />
+	<meta property="og:site_name" content="Clarivate" />
+	<meta property="article:publisher" content="https://www.facebook.com/clarivate?_ga=1.200028910.1115848109.1486741410" />
+	<meta property="article:modified_time" content="2022-04-04T15:31:00+00:00" />
+	<meta property="og:image" content="https://clarivate.com/wp-content/uploads/2020/09/infographic-contact-background-1.jpg" />
+	<meta property="og:image:width" content="1440" />
+	<meta property="og:image:height" content="600" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Clarivate - data, insights and analytics for the innovation lifecycle" />
+	<meta name="twitter:description" content="Clarivate is a global leader in providing trusted insights and analytics. Our vision is to improve the way the world creates, protects, and advances innovation." />
+	<meta name="twitter:image" content="https://clarivate.com/wp-content/uploads/2020/10/Clarivate_HeroGraphic_8_CompuMark_RGB.jpg" />
+	<meta name="twitter:site" content="@clarivate" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://clarivate.com/#organization","name":"Clarivate","url":"https://clarivate.com/","sameAs":["https://www.facebook.com/clarivate?_ga=1.200028910.1115848109.1486741410","https://www.instagram.com/clarivateanalytics/?hl=en","https://www.linkedin.com/company/clarivate-analytics?_ga=1.191386218.1115848109.1486741410","https://twitter.com/clarivate"],"logo":{"@type":"ImageObject","@id":"https://clarivate.com/#logo","inLanguage":"en-US","url":"https://clarivate.com/wp-content/uploads/2020/11/logo.png","contentUrl":"https://clarivate.com/wp-content/uploads/2020/11/logo.png","width":142,"height":24,"caption":"Clarivate"},"image":{"@id":"https://clarivate.com/#logo"}},{"@type":"WebSite","@id":"https://clarivate.com/#website","url":"https://clarivate.com/","name":"Clarivate","description":"Accelerating Innovation","publisher":{"@id":"https://clarivate.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://clarivate.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://clarivate.com/#primaryimage","inLanguage":"en-US","url":"https://clarivate.com/wp-content/uploads/2020/09/infographic-contact-background-1.jpg","contentUrl":"https://clarivate.com/wp-content/uploads/2020/09/infographic-contact-background-1.jpg","width":1440,"height":600},{"@type":"WebPage","@id":"https://clarivate.com/#webpage","url":"https://clarivate.com/","name":"Clarivate - data, insights and analytics for the innovation lifecycle","isPartOf":{"@id":"https://clarivate.com/#website"},"about":{"@id":"https://clarivate.com/#organization"},"datePublished":"2020-12-04T17:38:30+00:00","dateModified":"2022-04-04T15:31:00+00:00","description":"Clarivate is a global leader in providing trusted insights and analytics. Our vision is to improve the way the world creates, protects, and advances innovation.","breadcrumb":{"@id":"https://clarivate.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://clarivate.com/"]}]},{"@type":"BreadcrumbList","@id":"https://clarivate.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//clarivate.com' />
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Clarivate &raquo; Feed" href="https://clarivate.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Clarivate &raquo; Comments Feed" href="https://clarivate.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Clarivate &raquo; Home Comments Feed" href="https://clarivate.com/home/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/clarivate.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://clarivate.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css'  href='https://clarivate.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='https://clarivate.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='view_editor_gutenberg_frontend_assets-css'  href='https://clarivate.com/wp-content/plugins/wp-views/public/css/views-frontend.css?ver=3.6.2' type='text/css' media='all' />
+<style id='view_editor_gutenberg_frontend_assets-inline-css' type='text/css'>
+.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item a {color: #444;background-color: #fff;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:focus {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #eee;}
+.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item a {color: #444;background-color: #fff;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:focus {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item a {color: #444;background-color: #eeeeee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:focus {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #e5e5e5;}
+.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item a {color: #444;background-color: #fff;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:focus {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item a {color: #444;background-color: #eeeeee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:focus {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item {border-color: #0099cc;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item a {color: #444;background-color: #cbddeb;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:focus {color: #000;background-color: #95bedd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #95bedd;}
+</style>
+<link rel='stylesheet' id='bcct_style-css'  href='https://clarivate.com/wp-content/plugins/better-click-to-tweet/assets/css/styles.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ctf_styles-css'  href='https://clarivate.com/wp-content/plugins/custom-twitter-feeds-pro/css/ctf-styles.min.css?ver=1.14.1' type='text/css' media='all' />
+<link rel='stylesheet' id='clarivate-style-css'  href='https://clarivate.com/wp-content/themes/clarivate/style.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='clarivate-custom-style-css'  href='https://clarivate.com/wp-content/themes/clarivate/src/css/style.min.css?ver=2.4.83' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://clarivate.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<link rel='stylesheet' id='cp-module-main-style-css'  href='https://clarivate.com/wp-content/plugins/convertplug/modules/assets/css/cp-module-main.css?ver=3.5.20' type='text/css' media='all' />
+<link rel='stylesheet' id='smile-modal-style-css'  href='https://clarivate.com/wp-content/plugins/convertplug/modules/modal/assets/css/modal.min.css?ver=3.5.20' type='text/css' media='all' />
+<link rel='stylesheet' id='smile-slide-in-style-css'  href='https://clarivate.com/wp-content/plugins/convertplug/modules/slide_in/assets/css/slide_in.min.css?ver=3.5.20' type='text/css' media='all' />
+<link rel='stylesheet' id='smile-info-bar-style-css'  href='https://clarivate.com/wp-content/plugins/convertplug/modules/info_bar/assets/css/info_bar.min.css?ver=3.5.20' type='text/css' media='all' />
+<script type='text/javascript' src='https://clarivate.com/wp-content/plugins/wp-views/vendor/toolset/common-es/public/toolset-common-es-frontend.js?ver=162000' id='toolset-common-es-frontend-js'></script>
+<script type='text/javascript' id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+<script type='text/javascript' async src='https://static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script type='text/javascript' id='jquery-core-js-extra'>
+/* <![CDATA[ */
+var slide_in = {"demo_dir":"https:\/\/clarivate.com\/wp-content\/plugins\/convertplug\/modules\/slide_in\/assets\/demos"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' async src='https://clarivate.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-content/themes/clarivate/src/js/all-min.js?ver=2.4.83' id='clarivate-jquery-js-js'></script>
+<link rel="https://api.w.org/" href="https://clarivate.com/wp-json/" /><link rel="alternate" type="application/json" href="https://clarivate.com/wp-json/wp/v2/pages/55043" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://clarivate.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://clarivate.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.2" />
+<link rel='shortlink' href='https://clarivate.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://clarivate.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclarivate.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://clarivate.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclarivate.com%2F&#038;format=xml" />
+<link rel="alternate" hreflang="ar" href="https://clarivate.com/ar/" title="Arabic" />
+<link rel="alternate" hreflang="de" href="https://clarivate.com/de/" title="German" />
+<link rel="alternate" hreflang="en" href="https://clarivate.com/" title="English" />
+<link rel="alternate" hreflang="es" href="https://clarivate.com/es/" title="Spanish" />
+<link rel="alternate" hreflang="fr" href="https://clarivate.com/fr/" title="French" />
+<link rel="alternate" hreflang="ja" href="https://clarivate.com/ja/" title="Japanese" />
+<link rel="alternate" hreflang="ko" href="https://clarivate.com/ko/" title="Korean" />
+<link rel="alternate" hreflang="ru" href="https://clarivate.com/cis/" title="Russian" />
+<link rel="alternate" hreflang="zh-hans" href="https://clarivate.com/zh-hans/" title="Chinese Simplified" />
+<link rel="alternate" hreflang="zh-hant" href="https://clarivate.com/zh-hant/" title="Chinese Traditional" />
+<link rel="pingback" href="https://clarivate.com/xmlrpc.php"> <script> window.addEventListener("load",function(){ var c={script:false,link:false}; function ls(s) { if(!['script','link'].includes(s)||c[s]){return;}c[s]=true; var d=document,f=d.getElementsByTagName(s)[0],j=d.createElement(s); if(s==='script'){j.async=true;j.src='https://clarivate.com/wp-content/plugins/wp-views/vendor/toolset/blocks/public/js/frontend.js?v=1.6.0';}else{ j.rel='stylesheet';j.href='https://clarivate.com/wp-content/plugins/wp-views/vendor/toolset/blocks/public/css/style.css?v=1.6.0';} f.parentNode.insertBefore(j, f); }; function ex(){ls('script');ls('link')} window.addEventListener("scroll", ex, {once: true}); if (('IntersectionObserver' in window) && ('IntersectionObserverEntry' in window) && ('intersectionRatio' in window.IntersectionObserverEntry.prototype)) { var i = 0, fb = document.querySelectorAll("[class^='tb-']"), o = new IntersectionObserver(es => { es.forEach(e => { o.unobserve(e.target); if (e.intersectionRatio > 0) { ex();o.disconnect();}else{ i++;if(fb.length>i){o.observe(fb[i])}} }) }); if (fb.length) { o.observe(fb[i]) } } }) </script>
+	<noscript>
+		<link rel="stylesheet" href="https://clarivate.com/wp-content/plugins/wp-views/vendor/toolset/blocks/public/css/style.css">
+	</noscript><style type="text/css">
+.no-js .native-lazyload-js-fallback {
+	display: none;
+}
+</style>
+				<style type="text/css" id="wp-custom-css">
+			.page-id-52013 {
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover!important; 
+	-o-background-size: cover!important;
+	background-size: cover!important;
+}
+
+.page-id-52300 .wysiwyg-boxes .col-md-4{
+	margin-bottom: 1.5rem !important;
+}
+
+footer.site-footer {background: #ffffff;}		</style>
+		  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KSQJ2Z');
+  </script>
+  <!-- End Google Tag Manager -->
+
+      <!-- OneTrust Cookies Consent Notice start for clarivate.com -->
+    <script type="text/javascript" src="https://cdn.cookielaw.org/consent/739f3420-95a6-49ac-a806-35a4278b84cc-test/OtAutoBlock.js" ></script>
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="739f3420-95a6-49ac-a806-35a4278b84cc" ></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for clarivate.com -->
+    <!-- Start VWO Async Smartcode -->
+    <script type='text/javascript'>
+      window._vwo_code = window._vwo_code || (function() {
+        var account_id = 366687,
+          settings_tolerance = 2000,
+          library_tolerance = 2500,
+          use_existing_jquery = false,
+          is_spa = 1,
+          hide_element = 'body',
+
+          /* DO NOT EDIT BELOW THIS LINE */
+          f = false,
+          d = document,
+          code = {
+            use_existing_jquery: function() {
+              return use_existing_jquery;
+            },
+            library_tolerance: function() {
+              return library_tolerance;
+            },
+            finish: function() {
+              if (!f) {
+                f = true;
+                var a = d.getElementById('_vis_opt_path_hides');
+                if (a) a.parentNode.removeChild(a);
+              }
+            },
+            finished: function() {
+              return f;
+            },
+            load: function(a) {
+              var b = d.createElement('script');
+              b.src = a;
+              b.type = 'text/javascript';
+              b.innerText;
+              b.onerror = function() {
+                _vwo_code.finish();
+              };
+              d.getElementsByTagName('head')[0].appendChild(b);
+            },
+            init: function() {
+              settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance);
+              var a = d.createElement('style'),
+                b = hide_element ? hide_element + '{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}' : '',
+                h = d.getElementsByTagName('head')[0];
+              a.setAttribute('id', '_vis_opt_path_hides');
+              a.setAttribute('type', 'text/css');
+              if (a.styleSheet) a.styleSheet.cssText = b;
+              else a.appendChild(d.createTextNode(b));
+              h.appendChild(a);
+              this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&f=' + (+is_spa) + '&r=' + Math.random());
+              return settings_timer;
+            }
+          };
+        window._vwo_settings_timer = code.init();
+        return code;
+      }());
+    </script>
+    <!-- End VWO Async Smartcode -->
+    <!-- Start Gated Content Script -->
+    <script>
+      (function(g,a,t,e,d,c,o){
+      if (!g[d]) {g.GatedContentObject=d;
+      g[d]=g[d]||function(){(g[d].q=g[d].q||[]).push(arguments)};
+      c=a.createElement(t),o=a.getElementsByTagName(t)[0];
+      c.async=1;c.src=e;o.parentNode.insertBefore(c, o)}
+      })(window, document, 'script', 'https://app.gatedcontent.com/scripts/70406946/app.js', 'gcdc');
+      gcdc('loadGates');
+    </script>
+    <!-- End Gated Content Script -->
+  
+</head>
+
+<body class="home page-template-default page page-id-55043 clarivate" >
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSQJ2Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+  <header class="main smart-scroll fixed-top bg-white shadow-sm">
+
+    <nav class="secondary desktop navbar-expand-md navbar-light bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex">
+                          <ul id="menu-eyebrow-menu" class="eyebrow-nav navbar-nav ml-auto"><li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-673 nav-item dropdown"><a href="https://clarivate.com/about-us/" class="nav-link dropdown-toggle" data-toggle="dropdown">Company</a>
+<div class="dropdown-menu">
+<a href="https://clarivate.com/about-us/" class=" dropdown-item">About us</a><a href="https://clarivate.com/about-us/executive-leadership/" class=" dropdown-item">Executive Leadership</a><a href="https://clarivate.com/newsroom/" class=" dropdown-item">Newsroom</a><a href="https://clarivate.com/customer-delight/" class=" dropdown-item">Customer Delight</a><a href="https://clarivate.com/sustainability-at-clarivate/" class=" dropdown-item">Sustainability</a><a href="https://clarivate.com/support/" class=" dropdown-item">Support</a></div>
+</li>
+<li id="menu-item-99720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99720 nav-item"><a href="https://ir.clarivate.com/" class="nav-link">Investors</a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 nav-item"><a href="https://careers.clarivate.com" class="nav-link">Careers</a></li>
+<li id="menu-item-99721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99721 nav-item"><a href="https://clarivate.com/login/" class="nav-link">Login <i class="material-icons ml-2">exit_to_app</i></a></li>
+</ul>                                    <!-- Searchbar -->
+            <form method="get" action="/search" id="addsearch">
+              <input type="search" name="search" class="addsearch" />
+            </form>
+                      </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Primary Desktop Nav -->
+    <nav class="primary desktop navbar-expand-md navbar-light">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex align-items-center">
+                          <a href="https://clarivate.com/" class="navbar-brand" rel="home">
+                            <img src="https://clarivate.com/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.83" alt="Clarivate" class="img-fluid" width="169" height="32">              </a>
+            <!-- Customizable header area -->
+                                          <ul id="menu-main-menu" class="primary-nav navbar-nav flex-row ml-auto"><li id="menu-item-76731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-76731 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown" aria-expanded="false">Who we serve</a>
+<div class="dropdown-menu megamenu py-4">
+
+<div class="container-fluid">
+
+<div class="megamenu-row row">
+
+<div class="container">
+
+<div class="row justify-content-end">
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/industries/academia/">Academia<p class="subnav-desc pr-2">Advance research and accelerate real-world outcomes</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/industries/corporate/">Corporate<p class="subnav-desc pr-2">Drive innovation and build strong brands</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/industries/government/">Government<p class="subnav-desc pr-2">Maximize the impact of your country’s research and innovation</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/industries/legal-services/">Legal Services<p class="subnav-desc pr-2">Evolve your practice and maximize growth potential</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/industries/life-sciences-and-healthcare/">Life Sciences and Healthcare<p class="subnav-desc pr-2">Advance innovation and accelerate patient outcomes</p></a></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-7" class="expanded menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown" aria-expanded="false">Products &#038; Services</a>
+<div class="dropdown-menu megamenu py-4">
+
+<div class="container-fluid">
+
+<div class="megamenu-row row">
+
+<div class="container">
+
+<div class="row justify-content-end">
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/scientific-and-academic-research">Scientific &#038; Academic Research<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/scientific-and-academic-research/research-discovery-and-workflow-solutions/">Discovery &#038; Workflow</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/scientific-and-academic-research/research-analytics-evaluation-and-management-solutions/">Analytics, Evaluation &#038; Management</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/">Publishing</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/biopharma">Biopharma Intelligence<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/research-development/">Research &#038; Development</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/regulatory-compliance/">Regulatory &#038; Compliance</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/portfolio-strategy-business-development/">Portfolio Strategy &#038; Business Development</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/commercial-launch-strategy/">Commercial &#038; Launch Strategy</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/market-access/">Market Access</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/biopharma/customer-engagement/">Customer Engagement</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/medtech">Medtech Intelligence<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/medtech/strategic-portfolio-planning/">Strategic Portfolio Planning</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/medtech/launch-strategy/">Launch Strategy</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/medtech/commercial-effectiveness/">Commercial Effectiveness</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/medtech/market-access/">Market Access</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/medtech/product-lifecycle-management/">Product Lifecycle Management</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/ip-intelligence">IP Intelligence<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/ip-litigation-intelligence/">IP Litigation Intelligence Solutions</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/patent-intelligence-software/">Patent Intelligence Software</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/patent-search-and-analytics/">Patent Search &#038; Analytics</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/trademark-research-and-protection/">Trademark Research &#038; Protection</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/chemistry-and-life-science/">Chemistry &#038; Life Science</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-intelligence/ip-data-and-apis/">IP Data &#038; APIs</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/ip-lifecycle-management">IP Lifecycle Management<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-lifecycle-management/patent-and-trademark-management-software/">Patent &#038; Trademark Management Software</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-lifecycle-management/connect-network-collaboration/">Network Collaboration Tools</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-lifecycle-management/domain-management/">Domain Management</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/products/ip-services">IP Services<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-services/patent-and-trademark-maintenance-services/">Patent &#038; Trademark Maintenance</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-services/filing-and-prosecution-support-services/">Filing &#038; Prosecution Support</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-services/filing-and-prosecution-support-services/patent-translations/">Patent Translations Services</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/ip-services/domain-optimization-services/">Domain Optimization</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a>Consulting &#038; Data<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/clarivate-consulting-services/">Consulting Services</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/cortellis/solutions/data-driven-insights-powered-by-research-intelligence-cloud/">Research Intelligence Cloud</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/real-world-data/">Real World Data</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/products/research-reports/">Research Reports</a></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-8" class="expanded menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown" aria-expanded="false">Resources</a>
+<div class="dropdown-menu megamenu py-4">
+
+<div class="container-fluid">
+
+<div class="megamenu-row row">
+
+<div class="container">
+
+<div class="row justify-content-end">
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="/blog">Blog<p class="subnav-desc pr-2">Keep up with the latest news, insights and research from Clarivate.</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/innovation-exchange/">Clarivate Innovation Exchange<p class="subnav-desc pr-2">The Clarivate Innovation Exchange accelerates research, development and commercialization.</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="#">Partners<i class="material-icons ml-2">arrow_forward</i><p class="subnav-desc lead pr-2">Partner with us and help accelerate innovation.</p></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/cortellis/solutions/partner-with-us-to-accelerate-your-growth-and-increase-value-to-customers/">Cortellis Partner Program</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/webofsciencegroup/solutions/scholarone-partner-program/">ScholarOne Partner Program</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/researcher-recognition/">Researcher Recognition<p class="subnav-desc pr-2">World-changing research should be seen, shared and celebrated.</p></a></p></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="#">Webinars<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/webofsciencegroup/webinars/on-demand-webinars">Academic &#038; Government</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/cortellis/events-webinars">Life Sciences &#038; Healthcare</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/compumark/webinars/compumark-webinars/">Trademarks</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/derwent/ip-events-and-webinars/">Patents</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/darts-ip/webinars/on-demand-webinars/">IP Litigation</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/markmonitor/webinars/domain-webinars/">Domains</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/marketing-webinar-and-virtual-event-calendar/">Upcoming Webinars/Events</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="#">Reports &#038; Case Studies<i class="material-icons ml-2">arrow_forward</i></a></p><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/cortellis/case-studies/">Life Sciences &#038; Healthcare</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/compumark/resource-center/">Trademarks</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/resources/?clv-category=patents">Patents</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/darts-ip/reports">IP Litigation</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/markmonitor/domain-resources/">Domains</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/webofsciencegroup/solutions/isi-reports-and-publications/">ISI Publications</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-3"><a href="https://clarivate.com/webofsciencegroup/solutions/isi-reports/">ISI  Global Research Reports</a></p></div></div>
+<div class="subnav-col border-left"><p class="product-category-title mb-0 pr-2"><a href="https://clarivate.com/podcasts/">Podcasts<p class="subnav-desc pr-2">The Clarivate podcast series enables us to address issues in key business areas in new and interesting ways.</p></a></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-53635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53635 nav-item"><a class="nav-link" href="https://clarivate.com/contact-us/" class="nav-link">Contact us</a></li>
+</ul>                          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+    <!-- Primary mobile nav -->
+    <nav class="primary mobile navbar-light">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex align-items-center">
+            <a href="https://clarivate.com/" class="navbar-brand" rel="home">
+              <img src="https://clarivate.com/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.83" alt="Clarivate" class="img-fluid" width="169" height="32">            </a>
+            <ul class="bu-nav navbar-nav flex-row ml-auto">
+              <li class="nav-item dropdown megamenu-li">
+                <a class="nav-link d-flex align-items-center">
+                    <svg id="burger" width="30" class="openmenu button-launch-off-canvas-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                        <path class="top" d="M0 9h30v2H0z"/>
+                        <line class="mid" x1="0" y1="15" x2="30" y2="15" stroke="black" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                        <path class="bot" d="M0 19h30v2H0z"/>
+                    </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Primary off-canvas nav -->
+  <nav class="nav-off-canvas bg-primary-one">
+    <div class="off-canvas-content shadow">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 my-2">
+            <div class="d-flex justify-content-between align-content-center">
+              <a href="https://clarivate.com/" class="navbar-brand" rel="home">
+                <img src="https://clarivate.com/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.83" alt="Clarivate" class="img-fluid" width="169" height="32">              </a>
+              <div>
+                <a href="#" class="button-exit-off-canvas-menu"><i class="material-icons">close</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+                          <div id="mainNavMobile" class="accordion"><div class="card"><div class="card-header px-0" id="heading76731"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse76731" aria-expanded="false" aria-controls="collapse76731">Who we serve<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse76731" class="collapse" aria-labeledby="heading76731" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="76735" href="https://clarivate.com/industries/academia/" class=" dropdown-item">Academia</a></p></strong><p>Advance research and accelerate real-world outcomes</p><hr><strong><p><a id="76734" href="https://clarivate.com/industries/corporate/" class=" dropdown-item">Corporate</a></p></strong><p>Drive innovation and build strong brands</p><hr><strong><p><a id="95455" href="https://clarivate.com/industries/government/" class=" dropdown-item">Government</a></p></strong><p>Maximize the impact of your country’s research and innovation</p><hr><strong><p><a id="76733" href="https://clarivate.com/industries/legal-services/" class=" dropdown-item">Legal Services</a></p></strong><p>Evolve your practice and maximize growth potential</p><hr><strong><p><a id="76736" href="https://clarivate.com/industries/life-sciences-and-healthcare/" class=" dropdown-item">Life Sciences and Healthcare</a></p></strong><p>Advance innovation and accelerate patient outcomes</p><hr>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading7"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">Products &#038; Services<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse7" class="collapse" aria-labeledby="heading7" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="36394" href="https://clarivate.com/products/scientific-and-academic-research" class=" dropdown-item">Scientific &#038; Academic Research</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/scientific-and-academic-research/research-discovery-and-workflow-solutions/" class=" dropdown-item">Discovery &#038; Workflow</a></li><li><a  href="https://clarivate.com/products/scientific-and-academic-research/research-analytics-evaluation-and-management-solutions/" class=" dropdown-item">Analytics, Evaluation &#038; Management</a></li><li><a  href="https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/" class=" dropdown-item">Publishing</a></li>
+	</ul>
+<strong><p><a id="36393" href="https://clarivate.com/products/biopharma" class=" dropdown-item">Biopharma Intelligence</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/biopharma/research-development/" class=" dropdown-item">Research &#038; Development</a></li><li><a  href="https://clarivate.com/products/biopharma/regulatory-compliance/" class=" dropdown-item">Regulatory &#038; Compliance</a></li><li><a  href="https://clarivate.com/products/biopharma/portfolio-strategy-business-development/" class=" dropdown-item">Portfolio Strategy &#038; Business Development</a></li><li><a  href="https://clarivate.com/products/biopharma/commercial-launch-strategy/" class=" dropdown-item">Commercial &#038; Launch Strategy</a></li><li><a  href="https://clarivate.com/products/biopharma/market-access/" class=" dropdown-item">Market Access</a></li><li><a  href="https://clarivate.com/products/biopharma/customer-engagement/" class=" dropdown-item">Customer Engagement</a></li>
+	</ul>
+<strong><p><a id="53913" href="https://clarivate.com/products/medtech" class=" dropdown-item">Medtech Intelligence</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/medtech/strategic-portfolio-planning/" class=" dropdown-item">Strategic Portfolio Planning</a></li><li><a  href="https://clarivate.com/products/medtech/launch-strategy/" class=" dropdown-item">Launch Strategy</a></li><li><a  href="https://clarivate.com/products/medtech/commercial-effectiveness/" class=" dropdown-item">Commercial Effectiveness</a></li><li><a  href="https://clarivate.com/products/medtech/market-access/" class=" dropdown-item">Market Access</a></li><li><a  href="https://clarivate.com/products/medtech/product-lifecycle-management/" class=" dropdown-item">Product Lifecycle Management</a></li>
+	</ul>
+<strong><p><a id="36396" href="https://clarivate.com/products/ip-intelligence" class=" dropdown-item">IP Intelligence</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/ip-intelligence/ip-litigation-intelligence/" class=" dropdown-item">IP Litigation Intelligence Solutions</a></li><li><a  href="https://clarivate.com/products/ip-intelligence/patent-intelligence-software/" class=" dropdown-item">Patent Intelligence Software</a></li><li><a  href="https://clarivate.com/products/ip-intelligence/patent-search-and-analytics/" class=" dropdown-item">Patent Search &#038; Analytics</a></li><li><a  href="https://clarivate.com/products/ip-intelligence/trademark-research-and-protection/" class=" dropdown-item">Trademark Research &#038; Protection</a></li><li><a  href="https://clarivate.com/products/ip-intelligence/chemistry-and-life-science/" class=" dropdown-item">Chemistry &#038; Life Science</a></li><li><a  href="https://clarivate.com/products/ip-intelligence/ip-data-and-apis/" class=" dropdown-item">IP Data &#038; APIs</a></li>
+	</ul>
+<strong><p><a id="36398" href="https://clarivate.com/products/ip-lifecycle-management" class=" dropdown-item">IP Lifecycle Management</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/ip-lifecycle-management/patent-and-trademark-management-software/" class=" dropdown-item">Patent &#038; Trademark Management Software</a></li><li><a  href="https://clarivate.com/products/ip-lifecycle-management/connect-network-collaboration/" class=" dropdown-item">Network Collaboration Tools</a></li><li><a  href="https://clarivate.com/products/ip-lifecycle-management/domain-management/" class=" dropdown-item">Domain Management</a></li>
+	</ul>
+<strong><p><a id="66473" href="https://clarivate.com/products/ip-services" class=" dropdown-item">IP Services</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/ip-services/patent-and-trademark-maintenance-services/" class=" dropdown-item">Patent &#038; Trademark Maintenance</a></li><li><a  href="https://clarivate.com/products/ip-services/filing-and-prosecution-support-services/" class=" dropdown-item">Filing &#038; Prosecution Support</a></li><li><a  href="https://clarivate.com/products/ip-services/filing-and-prosecution-support-services/patent-translations/" class=" dropdown-item">Patent Translations Services</a></li><li><a  href="https://clarivate.com/products/ip-services/domain-optimization-services/" class=" dropdown-item">Domain Optimization</a></li>
+	</ul>
+<strong><p><a id="36395" class=" dropdown-item">Consulting &#038; Data</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/products/clarivate-consulting-services/" class=" dropdown-item">Consulting Services</a></li><li><a  href="https://clarivate.com/cortellis/solutions/data-driven-insights-powered-by-research-intelligence-cloud/" class=" dropdown-item">Research Intelligence Cloud</a></li><li><a  href="https://clarivate.com/products/real-world-data/" class=" dropdown-item">Real World Data</a></li><li><a  href="https://clarivate.com/products/research-reports/" class=" dropdown-item">Research Reports</a></li>
+	</ul>
+
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading8"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">Resources<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse8" class="collapse" aria-labeledby="heading8" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="675" href="/blog" class=" dropdown-item">Blog</a></p></strong><p>Keep up with the latest news, insights and research from Clarivate.</p><hr><strong><p><a id="99724" href="https://clarivate.com/innovation-exchange/" class=" dropdown-item">Clarivate Innovation Exchange</a></p></strong><p>The Clarivate Innovation Exchange accelerates research, development and commercialization.</p><hr><strong><p><a id="99725" href="#" class=" dropdown-item">Partners</a></p></strong><p>Partner with us and help accelerate innovation.</p><hr>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/cortellis/solutions/partner-with-us-to-accelerate-your-growth-and-increase-value-to-customers/" class=" dropdown-item">Cortellis Partner Program</a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/scholarone-partner-program/" class=" dropdown-item">ScholarOne Partner Program</a></li>
+	</ul>
+<strong><p><a id="99728" href="https://clarivate.com/webofsciencegroup/solutions/researcher-recognition/" class=" dropdown-item">Researcher Recognition</a></p></strong><p>World-changing research should be seen, shared and celebrated.</p><hr><strong><p><a id="99729" href="#" class=" dropdown-item">Webinars</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/webofsciencegroup/webinars/on-demand-webinars" class=" dropdown-item">Academic &#038; Government</a></li><li><a  href="https://clarivate.com/cortellis/events-webinars" class=" dropdown-item">Life Sciences &#038; Healthcare</a></li><li><a  href="https://clarivate.com/compumark/webinars/compumark-webinars/" class=" dropdown-item">Trademarks</a></li><li><a  href="https://clarivate.com/derwent/ip-events-and-webinars/" class=" dropdown-item">Patents</a></li><li><a  href="https://clarivate.com/darts-ip/webinars/on-demand-webinars/" class=" dropdown-item">IP Litigation</a></li><li><a  href="https://clarivate.com/markmonitor/webinars/domain-webinars/" class=" dropdown-item">Domains</a></li><li><a  href="https://clarivate.com/marketing-webinar-and-virtual-event-calendar/" class=" dropdown-item">Upcoming Webinars/Events</a></li>
+	</ul>
+<strong><p><a id="99737" href="#" class=" dropdown-item">Reports &#038; Case Studies</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/cortellis/case-studies/" class=" dropdown-item">Life Sciences &#038; Healthcare</a></li><li><a  href="https://clarivate.com/compumark/resource-center/" class=" dropdown-item">Trademarks</a></li><li><a  href="https://clarivate.com/resources/?clv-category=patents" class=" dropdown-item">Patents</a></li><li><a  href="https://clarivate.com/darts-ip/reports" class=" dropdown-item">IP Litigation</a></li><li><a  href="https://clarivate.com/markmonitor/domain-resources/" class=" dropdown-item">Domains</a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/isi-reports-and-publications/" class=" dropdown-item">ISI Publications</a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/isi-reports/" class=" dropdown-item">ISI  Global Research Reports</a></li>
+	</ul>
+<strong><p><a id="166937" href="https://clarivate.com/podcasts/" class=" dropdown-item">Podcasts</a></p></strong><p>The Clarivate podcast series enables us to address issues in key business areas in new and interesting ways.</p><hr>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading53635"><h2 class="mb-0"><a id="53635" href="https://clarivate.com/contact-us/" class="btn btn-link" class="btn btn-link collapsed">Contact us</a></h2></div></div>
+</div>                        <hr>
+                          <div id="topNavMobile" class="accordion"><div class="card"><div class="card-header px-0" id="heading673"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse673" aria-expanded="false" aria-controls="collapse673">Company<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse673" class="collapse" aria-labeledby="heading673" data-parent="#topNavMobile">
+
+<div class="card-body">
+<strong><p><a id="76730" href="https://clarivate.com/about-us/" class=" dropdown-item">About us</a></p></strong><strong><p><a id="36037" href="https://clarivate.com/about-us/executive-leadership/" class=" dropdown-item">Executive Leadership</a></p></strong><strong><p><a id="179817" href="https://clarivate.com/newsroom/" class=" dropdown-item">Newsroom</a></p></strong><strong><p><a id="44451" href="https://clarivate.com/customer-delight/" class=" dropdown-item">Customer Delight</a></p></strong><strong><p><a id="182086" href="https://clarivate.com/sustainability-at-clarivate/" class=" dropdown-item">Sustainability</a></p></strong><strong><p><a id="44439" href="https://clarivate.com/support/" class=" dropdown-item">Support</a></p></strong>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading99720"><h2 class="mb-0"><a id="99720" href="https://ir.clarivate.com/" class="btn btn-link" class="btn btn-link collapsed">Investors</a></h2></div></div>
+<div class="card"><div class="card-header px-0" id="heading13"><h2 class="mb-0"><a id="13" href="https://careers.clarivate.com" class="btn btn-link" class="btn btn-link collapsed">Careers</a></h2></div></div>
+<div class="card"><div class="card-header px-0" id="heading99721"><h2 class="mb-0"><a id="99721" href="https://clarivate.com/login/" class="btn btn-link" class="btn btn-link collapsed">Login <i class="material-icons ml-2">exit_to_app</i></a></h2></div></div>
+</div>                      </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+      
+        
+        </ul>
+      </nav>
+    
+</div>
+
+  
+<section id="heroCards" class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="main-card" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/featured-main-woman.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+          <div class="card h-100">
+            <div class="card-body text-black">
+              <h1 class="card-title">Insights so sharp<br>you’ll change<br>the future</h1>
+              <div class="card-text my-5 d-flex align-items-center">
+                <a href="#about" class="arrow-down d-flex align-items-center text-black">
+                  <span class="material-icons mr-2 text-primary">arrow_downward</span>
+                  <span>Read more</span>
+                </a>
+              </div>                               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="aside-cards">
+          <div class="aside-card-top" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-newsroom.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+            <div class="card h-100">                            
+              <div class="card-body d-flex flex-column justify-content-between text-white">
+                <div class="card-title">
+                  Explore news and expert insights                </div>
+                <div class="card-text">
+                  <a href="https://clarivate.com/newsroom/" class="arrow-forward d-flex align-items-center text-white">
+                    <span class="material-icons mr-2 text-white">arrow_forward</span>
+                    <span>See our newsroom</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="aside-card-bottom">
+            <div class="aside-card-bottom-top">
+              <div class="card h-100" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-top100.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">                            
+                <div class="card-body d-flex flex-column justify-content-between text-black">
+                  <div class="card-title">
+                    Top 100 Global Innovators                   </div>
+                  <div class="card-text">
+                    <a href="https://clarivate.com/top-100-innovators/" class="arrow-forward d-flex align-items-center text-black">
+                      <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                      <span>View the list</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="aside-card-bottom-bottom">   
+              <div class="card h-100" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-proquest.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">                            
+                <div class="card-body d-flex flex-column justify-content-between text-white">
+                  <div class="card-title">
+                    ProQuest: a global leader in EdTech                  </div>
+                  <div class="card-text">
+                    <a href="https://about.proquest.com/en/" class="arrow-forward d-flex align-items-center text-white">
+                      <span class="material-icons mr-2 text-white">arrow_forward</span>
+                      <span>ProQuest is now part of Clarivate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <div class="row">
+        <div class="col">
+          <div class="footer-cards">
+            <div id="moreArticles" class="collapse">
+              <div class="row">
+                                                    <div class="col-lg-4">
+                    <div class="card" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-dtw.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">                            
+                      <div class="card-body d-flex flex-column justify-content-between text-black">
+                        <div class="card-title">
+                          Drugs to Watch                         </div>
+                        <div class="card-text">
+                          <a href="https://clarivate.com/drugs-to-watch/" class="arrow-forward d-flex align-items-center text-black">
+                            <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                            <span>See tomorrow's blockbusters</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                                                    <div class="col-lg-4">
+                    <div class="card" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-hcr.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">                            
+                      <div class="card-body d-flex flex-column justify-content-between text-white">
+                        <div class="card-title">
+                          Celebrating world-<br>changing research                        </div>
+                        <div class="card-text">
+                          <a href="https://clarivate.com/webofsciencegroup/researcher-recognition/" class="arrow-forward d-flex align-items-center text-white">
+                            <span class="material-icons mr-2 text-white">arrow_forward</span>
+                            <span>Learn about our Researcher Recognition </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                                                    <div class="col-lg-4">
+                    <div class="card" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-card-careers.jpg') 0 0 no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">                            
+                      <div class="card-body d-flex flex-column justify-content-between text-black">
+                        <div class="card-title">
+                          Bring your future<br>into focus                        </div>
+                        <div class="card-text">
+                          <a href="https://careers.clarivate.com/" class="arrow-forward d-flex align-items-center text-black">
+                            <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                            <span>Explore career openings</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                              </div>  
+            </div>
+            <div class="more-articles-toggle d-flex justify-content-end">
+              <a 
+              class="arrow-forward d-flex align-items-center collapsed"
+              data-toggle="collapse" 
+              href="#moreArticles" 
+              role="button" 
+              aria-expanded="false" 
+              aria-controls="moreArticles">
+                  <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                        <span class="not-collapsed-message">See more</span>
+                      <span class="collapsed-message">See less</span>
+                                </a>
+            </div> 
+          </div>
+        </div>
+      </div>
+      </div>
+</section>
+
+<!-- Begin modules -->
+  
+  <!-- Begin WYSIWYG box module -->
+  
+  <section id="about" class="module wysiwyg-boxes   mt-md-5 mb-md-0 py-5" style="background-color: transparent;  ">
+    <div class="container">      
+                  
+      
+      <div class="row ">
+                                          
+          <div class="col-md-5 offset-md-1  mt-md-0 mb-md-0    " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                <h2 class="display-1 mb-4">We’ve got you</h2>
+<h2 class="clarivate-text-regular mb-4">Make better, quicker decisions and turn your big ideas into breakthroughs.</h2>
+<div class="lead mb-5">Think of us as your partner. Over 11,000 experienced experts around the world, working to delight more than 45,000 customers. All here to give you the industry’s best information, tools and advice, so you can do great things.</div>
+<div class="my-5 d-none"><a class="cta arrow-forward d-flex align-items-center text-black" href="https://clarivate.com/about-us/"><span class="material-icons mr-2 text-primary">arrow_forward</span><br />
+<strong>More about us</strong></a></div>
+
+                            </div>
+            </div>
+                            
+          <div class="col-md-5   mt-md-0 mb-md-0   d-none d-md-block " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                                                                                        <img src="https://clarivate.com/wp-content/uploads/2022/03/home-about-1.jpg" class=" ml-auto d-block img-fluid  " alt="">
+                                                                      
+                            </div>
+            </div>
+                  </div>
+      </div>
+  </section>
+  <!-- End WYSIWYG box module -->
+
+  <!-- Begin WYSIWYG box module -->
+  
+  <section  class="module wysiwyg-boxes     py-5" style="background-color: transparent;  ">
+    <div class="container">      
+                  
+      
+      <div class="row ">
+                                          
+          <div class="col-md-7 offset-md-1  mt-md-0 mb-md-0    " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                <h2 class="display-3">Whatever your world,<br />we&#8217;re here to help you succeed</h2>
+
+                            </div>
+            </div>
+                  </div>
+      </div>
+  </section>
+  <!-- End WYSIWYG box module -->
+
+<!-- Product verticals module -->
+<section id="clarivateProducts" class="module products my-5 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-lg-1 offset-lg-1">
+        <div class="row">
+          <div class="col-lg-8">
+                          <div class="product-sections--breadcrumb mb-3">
+                <strong>Academia</strong>
+              </div>
+                        <div class="product-sections--title display-3">
+              Insights that advance research            </div>
+            <div class="product-sections--description my-5">
+              <p>Dig deeper into your field. Collaborate with the right partners. Build a reputation for excellence.</p>
+<p>We’ll give you a single source of information to help your institution lead.</p>
+            </div>
+            <div class="product-sections--cta my-5">
+              <a href="https://clarivate.com/industries/academia/" class="arrow-forward d-flex align-items-center">
+                <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                <span class="text-black">Learn more</span>
+              </a>
+            </div>
+          </div>         
+        </div>
+      </div>
+      <div class="col-lg-5" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-vertical-academia.jpg') center center no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="product-sections--image">
+        </div>                 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="product-sections--featured">
+          <div class="product-sections--featured--title">
+            <div class="row">
+                            <div class="col-lg-6 offset-lg-6">
+                              <div class="product-sections--related mb-4 d-flex align-items-end justify-content-between">
+                  <div class="title">
+                    Featured solutions                  </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+                      <div class="product-sections--featured--tiles grid-view animate-right">
+              <div class="row">
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Scientific and academic research solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/scientific-and-academic-research/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Research discovery and workflow solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/scientific-and-academic-research/research-discovery-and-workflow-solutions/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Research analytics, evaluation and management solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/scientific-and-academic-research/research-analytics-evaluation-and-management-solutions/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Research publishing solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End product verticals module -->
+
+<!-- Product verticals module -->
+<section id="clarivateProducts" class="module products my-5 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6  offset-lg-1">
+        <div class="row">
+          <div class="col-lg-8">
+                          <div class="product-sections--breadcrumb mb-3">
+                <strong>Life Sciences & Healthcare</strong>
+              </div>
+                        <div class="product-sections--title display-3">
+              Insights that lead to healthier patients            </div>
+            <div class="product-sections--description my-5">
+              <p>Get right to real-life outcomes, with patients at the heart of everything you do.</p>
+<p>We’ll help you collect and analyze information for insights you can easily act on.</p>
+            </div>
+            <div class="product-sections--cta my-5">
+              <a href="https://clarivate.com/industries/life-sciences-and-healthcare/" class="arrow-forward d-flex align-items-center">
+                <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                <span class="text-black">Learn more</span>
+              </a>
+            </div>
+          </div>         
+        </div>
+      </div>
+      <div class="col-lg-5" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-vertical-life-sciences.jpg') center center no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="product-sections--image">
+        </div>                 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="product-sections--featured">
+          <div class="product-sections--featured--title">
+            <div class="row">
+                            <div class="col-lg-6 offset-lg-1">
+                              <div class="product-sections--related mb-4 d-flex align-items-end justify-content-between">
+                  <div class="title">
+                    Featured solutions                  </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+                      <div class="product-sections--featured--tiles grid-view animate-left">
+              <div class="row">
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Biopharma intelligence solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/biopharma" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Medtech intelligence solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/medtech" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Real World Data                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/real-world-data/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Healthcare Business Insights                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/healthcare-business-insights/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End product verticals module -->
+
+<!-- Product verticals module -->
+<section id="clarivateProducts" class="module products my-5 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-lg-1 offset-lg-1">
+        <div class="row">
+          <div class="col-lg-8">
+                          <div class="product-sections--breadcrumb mb-3">
+                <strong>Professional Services</strong>
+              </div>
+                        <div class="product-sections--title display-3">
+              Insights that transform practices            </div>
+            <div class="product-sections--description my-5">
+              <p>Go head-to-head with the competition, and win.</p>
+<p>We’ll help you stand out, build a reputation for unbeatable client service, and streamline your processes.</p>
+            </div>
+            <div class="product-sections--cta my-5">
+              <a href="https://clarivate.com/industries/legal-services/" class="arrow-forward d-flex align-items-center">
+                <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                <span class="text-black">Learn more</span>
+              </a>
+            </div>
+          </div>         
+        </div>
+      </div>
+      <div class="col-lg-5" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-vertical-legal.jpg') center center no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="product-sections--image">
+        </div>                 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="product-sections--featured">
+          <div class="product-sections--featured--title">
+            <div class="row">
+                            <div class="col-lg-6 offset-lg-6">
+                              <div class="product-sections--related mb-4 d-flex align-items-end justify-content-between">
+                  <div class="title">
+                    Featured solutions                  </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+                      <div class="product-sections--featured--tiles grid-view animate-right">
+              <div class="row">
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Trademark research and protection                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-intelligence/trademark-research-and-protection/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Intellectual Property services                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-services" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          IP litigation intelligence solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-intelligence/ip-litigation-intelligence/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Patent search and analytics                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-intelligence/patent-search-and-analytics/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End product verticals module -->
+
+<!-- Product verticals module -->
+<section id="clarivateProducts" class="module products my-5 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6  offset-lg-1">
+        <div class="row">
+          <div class="col-lg-8">
+                          <div class="product-sections--breadcrumb mb-3">
+                <strong>Consumer, Manufacturing & Technology</strong>
+              </div>
+                        <div class="product-sections--title display-3">
+              Insights that power innovation            </div>
+            <div class="product-sections--description my-5">
+              <p>Go to market faster. Protect and manage Intellectual Property. Free up your team to focus on strategic outcomes.</p>
+<p>We’ll give you the tools and services you need to make informed decisions at speed.</p>
+            </div>
+            <div class="product-sections--cta my-5">
+              <a href="https://clarivate.com/industries/corporate/" class="arrow-forward d-flex align-items-center">
+                <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                <span class="text-black">Learn more</span>
+              </a>
+            </div>
+          </div>         
+        </div>
+      </div>
+      <div class="col-lg-5" style="background: url('https://clarivate.com/wp-content/uploads/2022/03/home-vertical-cmt.jpg') center center no-repeat; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="product-sections--image">
+        </div>                 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="product-sections--featured">
+          <div class="product-sections--featured--title">
+            <div class="row">
+                            <div class="col-lg-6 offset-lg-1">
+                              <div class="product-sections--related mb-4 d-flex align-items-end justify-content-between">
+                  <div class="title">
+                    Featured solutions                  </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+                      <div class="product-sections--featured--tiles grid-view animate-left">
+              <div class="row">
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          IP lifecycle management solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-lifecycle-management" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          IP intelligence solutions                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-intelligence" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Patent and trademark maintenance services                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-services/patent-and-trademark-maintenance-services/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                                  <div class="grid-column col-6 col-lg-3">
+                    <div class="card d-flex flex-column justify-content-between">                            
+                      <div class="card-header">
+                        <div class="card-title mb-5">
+                          Domain management                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a href="https://clarivate.com/products/ip-lifecycle-management/domain-management/" class="arrow-forward d-flex align-items-center">
+                          <span class="material-icons mr-2 text-primary">arrow_forward</span>
+                                                    <span class="text-black">Learn more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End product verticals module -->
+
+  <!-- Begin WYSIWYG box module -->
+        
+  <section id="consulting" class="module wysiwyg-boxes  my-md-5   py-5" style="background-color: transparent; background: url('https://clarivate.com/wp-content/uploads/2022/03/home-consulting-bg.jpg') center center  no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; transparent; overflow: hidden;">
+    <div class="container">      
+                  
+      
+      <div class="row ">
+                                          
+          <div class="col-md-6 offset-md-1  mt-md-5 mb-md-5    " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                <div class="my-5">
+<h2 class="display-3">Information + technology + experience</h2>
+<p class="lead my-4">Our consultants combine all three.</p>
+<p>Expect first-hand experience of your daily challenges. A tailored plan. And all the support you need to hit your goals.</p>
+<div class="my-5"><a class="cta arrow-forward d-flex align-items-center text-black" href="https://clarivate.com/products/clarivate-consulting-services/"><br />
+<span class="material-icons mr-2 text-primary">arrow_forward</span><br />
+<strong>Learn more</strong><br />
+</a></div>
+</div>
+
+                            </div>
+            </div>
+                            
+          <div class="col-md-4 offset-md-1  mt-md-0 mb-md-0   d-none d-md-block " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                <div class="consulting-boxes">
+  <div class="consulting-boxes-column" style="margin-top: 150px;">
+    <div class="box shadow-sm">
+       <img src="https://clarivate.com/wp-content/uploads/2022/03/home-vertical-consulting-men.jpg" class="img-fluid" alt="Consulting">
+    </div>
+    <div class="box shadow-sm">
+       <img src="https://clarivate.com/wp-content/uploads/2022/03/home-vertical-consulting-laptop.jpg" class="img-fluid" alt="Consulting">
+    </div>
+  </div>
+  <div class="consulting-boxes-column">
+    <div class="box shadow-sm">
+       <img src="https://clarivate.com/wp-content/uploads/2022/03/home-vertical-consulting-graph.jpg" class="img-fluid" alt="Consulting">
+    </div>
+    <div class="box shadow-sm">
+       <img src="https://clarivate.com/wp-content/uploads/2022/03/home-vertical-consulting-it-tech.jpg" class="img-fluid" alt="Consulting">
+    </div>
+  </div>
+</div>
+                            </div>
+            </div>
+                  </div>
+      </div>
+  </section>
+  <!-- End WYSIWYG box module -->
+
+  <!-- Begin WYSIWYG box module -->
+  
+  <section  class="module wysiwyg-boxes  my-md-5   py-5" style="background-color: transparent;  ">
+    <div class="container">      
+            <!-- Section title -->
+      <div class="row mb-4 mb-md-5 align-items-end">
+        <div class="text-left col-6 col-lg-6 ">
+          <h2 class="section-title">
+            Featured news          </h2>
+                  </div>
+                <!-- Section title link -->
+        <div class="col-6 col-lg-6">
+          <div class="d-flex align-items-center justify-content-end text-uppercase">  
+            <a href="https://clarivate.com/newsroom" class="text-decoration-none">
+             <small><strong>View all news</strong></small>
+            </a>
+            <i class="material-icons ml-2 text-primary">arrow_forward</i>
+          </div>
+        </div>
+        <!-- End section title link -->
+              </div>
+      <!-- End section title -->
+                  
+      
+      <div class="row ">
+                                          
+          <div class="col-md-12   mt-md-0 mb-md-0    " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                  <form style="display:none;" autocomplete="off" name="wpv-filter-45000" action="/?wpv_view_count=45000" method="get" class="wpv-filter-form js-wpv-filter-form js-wpv-filter-form-45000 js-wpv-form-full js-wpv-dps-enabled js-wpv-ajax-results-enabled" data-viewnumber="45000" data-viewid="45000" data-viewhash="eyJuYW1lIjoibmV3cyIsInZpZXdfZGlzcGxheSI6ImxheW91dCIsImxpbWl0IjoiMyJ9" data-viewwidgetid="0" data-orderby="" data-order="" data-orderbyas="" data-orderbysecond="" data-ordersecond="" data-parametric="{&quot;query&quot;:&quot;normal&quot;,&quot;id&quot;:&quot;45000&quot;,&quot;view_id&quot;:&quot;45000&quot;,&quot;widget_id&quot;:0,&quot;view_hash&quot;:&quot;45000&quot;,&quot;action&quot;:&quot;\/?wpv_view_count=45000&quot;,&quot;sort&quot;:{&quot;orderby&quot;:&quot;&quot;,&quot;order&quot;:&quot;&quot;,&quot;orderby_as&quot;:&quot;&quot;,&quot;orderby_second&quot;:&quot;&quot;,&quot;order_second&quot;:&quot;&quot;},&quot;orderby&quot;:&quot;&quot;,&quot;order&quot;:&quot;&quot;,&quot;orderby_as&quot;:&quot;&quot;,&quot;orderby_second&quot;:&quot;&quot;,&quot;order_second&quot;:&quot;&quot;,&quot;ajax_form&quot;:&quot;&quot;,&quot;ajax_results&quot;:&quot;&quot;,&quot;effect&quot;:&quot;fade&quot;,&quot;prebefore&quot;:&quot;&quot;,&quot;before&quot;:&quot;&quot;,&quot;after&quot;:&quot;&quot;,&quot;attributes&quot;:{&quot;view_display&quot;:&quot;layout&quot;,&quot;limit&quot;:&quot;3&quot;},&quot;environment&quot;:{&quot;current_post_id&quot;:55043,&quot;parent_post_id&quot;:55043,&quot;parent_term_id&quot;:0,&quot;parent_user_id&quot;:0,&quot;archive&quot;:{&quot;type&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;data&quot;:[]}},&quot;loop&quot;:{&quot;type&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;id&quot;:0}}" data-attributes="{&quot;view_display&quot;:&quot;layout&quot;,&quot;limit&quot;:&quot;3&quot;}" data-environment="{&quot;current_post_id&quot;:55043,&quot;parent_post_id&quot;:55043,&quot;parent_term_id&quot;:0,&quot;parent_user_id&quot;:0,&quot;archive&quot;:{&quot;type&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;data&quot;:[]}}"><input type="hidden" class="js-wpv-dps-filter-data js-wpv-filter-data-for-this-form" data-action="/?wpv_view_count=45000" data-page="1" data-ajax="enable" data-effect="fade" data-maxpages="1" data-ajaxprebefore="" data-ajaxbefore="" data-ajaxafter="" /><input class="wpv_view_count wpv_view_count-45000" type="hidden" name="wpv_view_count" value="45000" />
+    
+	<div class="filters">
+      <div class="row my-4 align-items-center">
+        <div class="col-12 col-lg-4 order-12 order-lg-1 mt-4 mt-lg-0 d-flex align-items-center">
+          <div class="js-wpv-pagination-primary">
+            
+          </div>
+        </div>
+        <div class="col-12 col-lg-8 order-1 order-lg-12">
+          <div class="row align-items-center justify-content-lg-end">   
+            <div class="col text-right">
+              <span style="display:none" class="js-wpv-dps-spinner text-right"><img src="https://clarivate.com/wp-content/plugins/wp-views/embedded/res/img/ajax-loader2.svg" /></span>
+            </div> 
+            <div class="col-3">
+              
+<select  id="wpv_control_select_clv-year" name="clv-year[]" style="" class="js-wpv-filter-trigger form-control wpcf-form-select form-select select">
+<option value="" selected="selected" class="js-wpv-filter-trigger wpcf-form-option form-option option">Year</option>
+<option value="2022" class="js-wpv-filter-trigger wpcf-form-option form-option option">2022</option>
+<option value="2021" class="js-wpv-filter-trigger wpcf-form-option form-option option">2021</option>
+<option value="2020" class="js-wpv-filter-trigger wpcf-form-option form-option option">2020</option>
+<option value="2019" class="js-wpv-filter-trigger wpcf-form-option form-option option">2019</option>
+<option value="2018" class="js-wpv-filter-trigger wpcf-form-option form-option option">2018</option>
+<option value="2017" class="js-wpv-filter-trigger wpcf-form-option form-option option">2017</option>
+<option value="2016" class="js-wpv-filter-trigger wpcf-form-option form-option option">2016</option>
+</select>
+
+            </div>
+            <div class="col-4 col-lg-4">
+              <input type="text" name="wpv_post_search"  class="js-wpv-filter-trigger-delayed form-control" placeholder="Search news articles" />
+            </div>
+            <div class="col-4 col-lg-auto">
+              <input type="submit" class="btn btn-primary-accessible btn-block wpv-submit-trigger js-wpv-submit-trigger" name="wpv_filter_submit" value="Search" />
+            </div>
+          </div>          
+        </div>
+      </div>
+	</div>
+    
+  </form>
+<div id="wpv-view-layout-45000" class="js-wpv-view-layout js-wpv-layout-responsive js-wpv-view-layout-45000 wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-pages js-wpv-layout-preload-pages" data-viewnumber="45000" data-pagination="{&quot;id&quot;:&quot;45000&quot;,&quot;query&quot;:&quot;normal&quot;,&quot;type&quot;:&quot;ajaxed&quot;,&quot;effect&quot;:&quot;fade&quot;,&quot;duration&quot;:500,&quot;speed&quot;:5,&quot;pause_on_hover&quot;:&quot;disabled&quot;,&quot;stop_rollover&quot;:&quot;false&quot;,&quot;cache_pages&quot;:&quot;enabled&quot;,&quot;preload_images&quot;:&quot;disabled&quot;,&quot;preload_pages&quot;:&quot;enabled&quot;,&quot;preload_reach&quot;:1,&quot;spinner&quot;:&quot;builtin&quot;,&quot;spinner_image&quot;:&quot;https://clarivate.com/wp-content/plugins/wp-views/embedded/res/img/ajax-loader2.svg&quot;,&quot;callback_next&quot;:&quot;&quot;,&quot;manage_history&quot;:&quot;enabled&quot;,&quot;has_controls_in_form&quot;:&quot;enabled&quot;,&quot;infinite_tolerance&quot;:0,&quot;max_pages&quot;:1,&quot;page&quot;:1,&quot;base_permalink&quot;:&quot;/?wpv_view_count=45000&amp;wpv_paged=WPV_PAGE_NUM&quot;,&quot;loop&quot;:{&quot;type&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;id&quot;:0}}" data-permalink="/?wpv_view_count=45000">
+
+	
+	
+	<div class="grid-view">
+      <div class="row">
+          
+              <div class="grid-column col-12 col-md-6 col-lg-4">
+                  	  <div class="card h-100 my-2 border">      
+        <div class="card-header h-100">
+          <div class="row mb-3">
+            <div class="categories col-md-6 text-uppercase">
+              
+            </div>
+            <div class="date col-md-6 text-left text-md-right text-uppercase">
+              April 14, 2022
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            	<a href="https://clarivate.com/news/clarivate-to-report-first-quarter-2022-results-on-may-9-2022/">
+		        	<h2>Clarivate to Report First Quarter 2022 Results on May 9, 2022</h2>
+                  	
+                  	<p class="sub-title"></p>
+                  	
+		        </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body d-flex">
+          
+          <a href="https://clarivate.com/news/clarivate-to-report-first-quarter-2022-results-on-may-9-2022/" class="align-self-end">
+            <img width="800" height="600" src="https://clarivate.com/wp-content/plugins/native-lazyload/assets/images/placeholder.svg" class="attachment-featured-small size-featured-small img-fluid mx-auto wp-post-image native-lazyload-js-fallback" alt="" loading="lazy" data-src="https://clarivate.com/wp-content/uploads/2022/04/CL_photo_abstract_152-800x600.jpg" data-srcset="https://clarivate.com/wp-content/uploads/2022/04/CL_photo_abstract_152-800x600.jpg 800w, https://clarivate.com/wp-content/uploads/2022/04/CL_photo_abstract_152-1024x768.jpg 1024w, https://clarivate.com/wp-content/uploads/2022/04/CL_photo_abstract_152-246x185.jpg 246w" data-sizes="(max-width: 800px) 100vw, 800px" />
+          </a>
+          
+          
+        </div>
+      </div>
+              </div>
+          
+              <div class="grid-column col-12 col-md-6 col-lg-4">
+                  	  <div class="card h-100 my-2 border">      
+        <div class="card-header h-100">
+          <div class="row mb-3">
+            <div class="categories col-md-6 text-uppercase">
+              
+            </div>
+            <div class="date col-md-6 text-left text-md-right text-uppercase">
+              April 4, 2022
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            	<a href="https://clarivate.com/news/clarivate-healthcare-business-insights-announces-2021-revenue-cycle-awards-recipients/">
+		        	<h2>Clarivate Healthcare Business Insights Announces 2021 Revenue Cycle Awards Recipients</h2>
+                  	
+                  	<p class="sub-title"></p>
+                  	
+		        </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body d-flex">
+          
+          <a href="https://clarivate.com/news/clarivate-healthcare-business-insights-announces-2021-revenue-cycle-awards-recipients/" class="align-self-end">
+            <img width="800" height="600" src="https://clarivate.com/wp-content/plugins/native-lazyload/assets/images/placeholder.svg" class="attachment-featured-small size-featured-small img-fluid mx-auto wp-post-image native-lazyload-js-fallback" alt="" loading="lazy" data-src="https://clarivate.com/wp-content/uploads/2022/04/CL_healthcare_123-1.jpg-1-800x600.png" data-srcset="https://clarivate.com/wp-content/uploads/2022/04/CL_healthcare_123-1.jpg-1-800x600.png 800w, https://clarivate.com/wp-content/uploads/2022/04/CL_healthcare_123-1.jpg-1-1024x768.png 1024w, https://clarivate.com/wp-content/uploads/2022/04/CL_healthcare_123-1.jpg-1-246x185.png 246w" data-sizes="(max-width: 800px) 100vw, 800px" />
+          </a>
+          
+          
+        </div>
+      </div>
+              </div>
+          
+              <div class="grid-column col-12 col-md-6 col-lg-4">
+                  	  <div class="card h-100 my-2 border">      
+        <div class="card-header h-100">
+          <div class="row mb-3">
+            <div class="categories col-md-6 text-uppercase">
+              
+            </div>
+            <div class="date col-md-6 text-left text-md-right text-uppercase">
+              March 30, 2022
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            	<a href="https://clarivate.com/news/clarivate-launches-new-report-on-the-research-profile-of-central-europe/">
+		        	<h2>Clarivate Launches New Report on the Research Profile of Central Europe</h2>
+                  	
+                  	<p class="sub-title"></p>
+                  	
+		        </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body d-flex">
+          
+          <a href="https://clarivate.com/news/clarivate-launches-new-report-on-the-research-profile-of-central-europe/" class="align-self-end">
+            <img width="800" height="600" src="https://clarivate.com/wp-content/plugins/native-lazyload/assets/images/placeholder.svg" class="attachment-featured-small size-featured-small img-fluid mx-auto wp-post-image native-lazyload-js-fallback" alt="" loading="lazy" data-src="https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1-800x600.jpg" data-srcset="https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1-800x600.jpg 800w, https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1-300x225.jpg 300w, https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1-768x576.jpg 768w, https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1.jpg 1024w, https://clarivate.com/wp-content/uploads/2022/03/news-card-central_europe-1024x768-1-246x185.jpg 246w" data-sizes="(max-width: 800px) 100vw, 800px" />
+          </a>
+          
+          
+        </div>
+      </div>
+              </div>
+          
+       </div>
+     </div>
+	
+	
+	
+</div>
+<div class="js-wp-pagination-secondary my-4">
+  
+</div>
+
+                            </div>
+            </div>
+                  </div>
+      </div>
+  </section>
+  <!-- End WYSIWYG box module -->
+
+  <!-- Begin WYSIWYG box module -->
+        
+  <section id="homeFooter" class="module wysiwyg-boxes   mt-md-5  py-5" style="background-color: transparent; background: url('https://clarivate.com/wp-content/uploads/2022/03/home-footer-woman.jpg') right bottom  no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; transparent; ">
+    <div class="container">      
+                  
+      
+      <div class="row ">
+                                          
+          <div class="col-md-6   mt-md-5 mb-md-5    " >
+            <div class="p-0 " style="background: transparent; ">
+              
+              
+                <div class="my-5">
+<h2 class="display-2">Let&#8217;s talk</h2>
+<p class="lead">Ready to take the first<br />step into a brighter future?</p>
+<p><a class="btn btn-primary-accessible my-4" href="https://clarivate.com/contact-us/">Get in touch</a>
+</div>
+
+                            </div>
+            </div>
+                  </div>
+      </div>
+  </section>
+  <!-- End WYSIWYG box module -->
+<!-- End modules -->
+
+
+<footer id="colophon" class="site-footer">
+	<div class="container-fluid">
+		<div class="row bg-light-gray py-3 align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0 text-medium-gray d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="site-info">
+              <img src="https://clarivate.com/wp-content/themes/clarivate/src/img/clarivate-endorser-line-clvbu.svg" class="endorser-footer" alt="Clarivate" width="342" height="24">
+              <!--Clarivate Analytics-->
+            </div><!-- .site-info -->
+          </div>
+          <div class="social-icons col-md-6 d-flex align-items-center justify-content-center justify-content-md-end">     
+            <ul class="list-inline my-0">
+                              <li class="list-inline-item"><a href="https://twitter.com/clarivate?_ga=1.200028910.1115848109.1486741410" target="_blank"><img src="https://clarivate.com/wp-content/themes/clarivate/src/img/twitter-logo.svg" alt="Twitter" width="20" height="20"></a></li>
+                                            <li class="list-inline-item"><a href="https://www.linkedin.com/company/clarivate-analytics?_ga=1.191386218.1115848109.1486741410" target="_blank"><img src="https://clarivate.com/wp-content/themes/clarivate/src/img/linkedin-logo.svg" alt="LinkedIn" width="20" height="20"></a></li>
+                                            <li class="list-inline-item"><a href="https://www.facebook.com/clarivate?_ga=1.200028910.1115848109.1486741410" target="_blank"><img src="https://clarivate.com/wp-content/themes/clarivate/src/img/facebook-logo.svg" alt="Facebook" width="20" height="20"></a></li>
+                                            <li class="list-inline-item"><a href="https://www.instagram.com/clarivateofficial" target="_blank"><img src="https://clarivate.com/wp-content/themes/clarivate/src/img/instagram-logo.svg" alt="Instagram" width="20" height="20"></a></li>
+                                        </ul>
+                      </div>
+        </div>
+      </div>
+    </div>
+          <div class="sitemap row">
+        <div class="container">
+          <div class="row">
+            <div class="footer-sitemap-desktop col mb-5 py-5">
+              <div id="menu-footer-sitemap" class="footer-sitemap row"><div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Products & Services</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/products/scientific-and-academic-research/">Scientific and Academic Research</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/biopharma/">Biopharma Intelligence</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/medtech/">Medtech Intelligence</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/healthcare-business-insights/">Healthcare Business Insights</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/ip-intelligence/">IP Intelligence</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/ip-lifecycle-management/">IP Lifecycle Management</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/ip-services/">IP Services</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/clarivate-consulting-services/">Consulting Services</a></div>
+<div class='mb-3'><a href="https://clarivate.com/cortellis/solutions/data-driven-insights-powered-by-research-intelligence-cloud/">Research Intelligence Cloud</a></div>
+<div class='mb-3'><a href="https://clarivate.com/products/research-reports/">Research Reports</a></div>
+</div>
+</div>
+<div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Resources</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/blog/">Blog</a></div>
+<div class='mb-3'><a href="https://clarivate.com/innovation-exchange/">Clarivate Innovation Exchange</a></div>
+<div class='mb-3'><a href="https://clarivate.com/cortellis/solutions/partner-with-us-to-accelerate-your-growth-and-increase-value-to-customers/">Cortellis Partner Program</a></div>
+<div class='mb-3'><a href="https://clarivate.com/webofsciencegroup/solutions/scholarone-partner-program/">ScholarOne Partner Program</a></div>
+<div class='mb-3'><a href="https://clarivate.com/on-demand/webinars/">Webinars</a></div>
+</div>
+</div>
+<div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Company</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/about-us/">About us</a></div>
+<div class='mb-3'><a href="https://clarivate.com/about-us/executive-leadership/">Executive Leadership</a></div>
+<div class='mb-3'><a href="https://clarivate.com/newsroom/">Newsroom</a></div>
+<div class='mb-3'><a href="https://clarivate.com/customer-delight/">Customer Delight</a></div>
+<div class='mb-3'><a href="https://clarivate.com/sustainability-at-clarivate-2021/">Sustainability</a></div>
+<div class='mb-3'><a href="https://ir.clarivate.com/">Investors</a></div>
+<div class='mb-3'><a href="https://careers.clarivate.com/">Careers</a></div>
+<div class='mb-3'><a href="https://clarivate.com/login/">Logins</a></div>
+</div>
+</div>
+<div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Product Families</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/compumark">CompuMark</a></div>
+<div class='mb-3'><a href="https://clarivate.com/cortellis">Cortellis</a></div>
+<div class='mb-3'><a href="https://clarivate.com/darts-ip">Darts-ip</a></div>
+<div class='mb-3'><a href="https://clarivate.com/derwent">Derwent</a></div>
+<div class='mb-3'><a href="https://clarivate.com/markmonitor">MarkMonitor</a></div>
+<div class='mb-3'><a href="https://clarivate.com/webofsciencegroup">Web of Science</a></div>
+</div>
+</div>
+<div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Support & Training</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/webofsciencegroup/support/home/">Web of Science</a></div>
+<div class='mb-3'><a href="https://clarivate.com/cortellis/learning/cortellis-training/">Cortellis</a></div>
+<div class='mb-3'><a href="https://clarivate.com/derwent/learning/home/">Derwent</a></div>
+<div class='mb-3'><a href="https://clarivate.com/compumark/learning/home/">CompuMark</a></div>
+<div class='mb-3'><a href="https://markmonitor.com/support/">MarkMonitor</a></div>
+</div>
+</div>
+<div class='col-md-2 col-sm-3 border-left'><div class="mb-5"><strong>Contact</strong></div>
+<div class="sub-menu">
+<div class='mb-3'><a href="https://clarivate.com/contact-us/sales-enquiries/">Sales Enquiries</a></div>
+<div class='mb-3'><a href="https://support.clarivate.com/s/">Customer Service</a></div>
+</div>
+</div>
+</div>            </div>
+          </div>
+          <div class="row">
+            <div class="footer-sitemap-mobile col">
+              <div id="accordion" class="footer-sitemap"><div class='card border-bottom'><div id="heading146831" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146831" aria-expanded="false" aria-controls="collapse146831">Products & Services<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146831" class="collapse" aria-labelledby="heading146831" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/products/scientific-and-academic-research/">Scientific and Academic Research</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/biopharma/">Biopharma Intelligence</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/medtech/">Medtech Intelligence</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/healthcare-business-insights/">Healthcare Business Insights</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/ip-intelligence/">IP Intelligence</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/ip-lifecycle-management/">IP Lifecycle Management</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/ip-services/">IP Services</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/clarivate-consulting-services/">Consulting Services</a></div>
+<div class='mb-2'><a href="https://clarivate.com/cortellis/solutions/data-driven-insights-powered-by-research-intelligence-cloud/">Research Intelligence Cloud</a></div>
+<div class='mb-2'><a href="https://clarivate.com/products/research-reports/">Research Reports</a></div>
+</div></div>
+</div>
+<div class='card border-bottom'><div id="heading146836" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146836" aria-expanded="false" aria-controls="collapse146836">Resources<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146836" class="collapse" aria-labelledby="heading146836" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/blog/">Blog</a></div>
+<div class='mb-2'><a href="https://clarivate.com/innovation-exchange/">Clarivate Innovation Exchange</a></div>
+<div class='mb-2'><a href="https://clarivate.com/cortellis/solutions/partner-with-us-to-accelerate-your-growth-and-increase-value-to-customers/">Cortellis Partner Program</a></div>
+<div class='mb-2'><a href="https://clarivate.com/webofsciencegroup/solutions/scholarone-partner-program/">ScholarOne Partner Program</a></div>
+<div class='mb-2'><a href="https://clarivate.com/on-demand/webinars/">Webinars</a></div>
+</div></div>
+</div>
+<div class='card border-bottom'><div id="heading146842" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146842" aria-expanded="false" aria-controls="collapse146842">Company<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146842" class="collapse" aria-labelledby="heading146842" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/about-us/">About us</a></div>
+<div class='mb-2'><a href="https://clarivate.com/about-us/executive-leadership/">Executive Leadership</a></div>
+<div class='mb-2'><a href="https://clarivate.com/newsroom/">Newsroom</a></div>
+<div class='mb-2'><a href="https://clarivate.com/customer-delight/">Customer Delight</a></div>
+<div class='mb-2'><a href="https://clarivate.com/sustainability-at-clarivate-2021/">Sustainability</a></div>
+<div class='mb-2'><a href="https://ir.clarivate.com/">Investors</a></div>
+<div class='mb-2'><a href="https://careers.clarivate.com/">Careers</a></div>
+<div class='mb-2'><a href="https://clarivate.com/login/">Logins</a></div>
+</div></div>
+</div>
+<div class='card border-bottom'><div id="heading146851" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146851" aria-expanded="false" aria-controls="collapse146851">Product Families<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146851" class="collapse" aria-labelledby="heading146851" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/compumark">CompuMark</a></div>
+<div class='mb-2'><a href="https://clarivate.com/cortellis">Cortellis</a></div>
+<div class='mb-2'><a href="https://clarivate.com/darts-ip">Darts-ip</a></div>
+<div class='mb-2'><a href="https://clarivate.com/derwent">Derwent</a></div>
+<div class='mb-2'><a href="https://clarivate.com/markmonitor">MarkMonitor</a></div>
+<div class='mb-2'><a href="https://clarivate.com/webofsciencegroup">Web of Science</a></div>
+</div></div>
+</div>
+<div class='card border-bottom'><div id="heading146861" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146861" aria-expanded="false" aria-controls="collapse146861">Support & Training<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146861" class="collapse" aria-labelledby="heading146861" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/webofsciencegroup/support/home/">Web of Science</a></div>
+<div class='mb-2'><a href="https://clarivate.com/cortellis/learning/cortellis-training/">Cortellis</a></div>
+<div class='mb-2'><a href="https://clarivate.com/derwent/learning/home/">Derwent</a></div>
+<div class='mb-2'><a href="https://clarivate.com/compumark/learning/home/">CompuMark</a></div>
+<div class='mb-2'><a href="https://markmonitor.com/support/">MarkMonitor</a></div>
+</div></div>
+</div>
+<div class='card border-bottom'><div id="heading146858" class="card-header bg-white px-0"><button class="btn btn-link w-100 h-100 pl-0 d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" data-target="#collapse146858" aria-expanded="false" aria-controls="collapse146858">Contact<span class="material-icons">arrow_drop_up</span></button></div>
+<div id="collapse146858" class="collapse" aria-labelledby="heading146858" data-parent="#accordion"><div class="card-body px-0">
+<div class='mb-2'><a href="https://clarivate.com/contact-us/sales-enquiries/">Sales Enquiries</a></div>
+<div class='mb-2'><a href="https://support.clarivate.com/s/">Customer Service</a></div>
+</div></div>
+</div>
+</div>            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row bg-light-gray">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="privacy col-12 col-lg-9 py-0 py-lg-3 d-flex flex-column flex-lg-row align-items-start">
+            <ul class="mb-0 px-0 d-flex flex-column d-md-block">
+              <li><span class="text-black mr-4"><strong>&copy; 2022 Clarivate</strong></span></li>
+            </ul>
+            <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="mb-0 px-0 d-flex flex-column d-md-block align-items-start"><li id="menu-item-76872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76872"><a href="https://clarivate.com/legal-center/">Legal</a></li>
+<li id="menu-item-153409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153409"><a href="https://clarivate.com/information-security/">Information security</a></li>
+<li id="menu-item-153410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153410"><a href="https://clarivate.com/quality-standards/">Standards</a></li>
+<li id="menu-item-153408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153408"><a href="https://clarivate.com/legal-center/imprint/">Imprint</a></li>
+<li id="menu-item-50091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50091"><a href="https://clarivate.com/privacy-center/">Privacy center</a></li>
+<li id="menu-item-469" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-469"><a href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/">Privacy notice (updated)</a></li>
+<li id="menu-item-36021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36021"><a href="https://clarivate.com/privacy-center/notices-policies/cookie-notice/">Cookie notice</a></li>
+</ul></div>            <div class="menu-footer-menu-container">
+              <ul id="menu-footer-menu" class="mx-0 mx-sm-1 mb-0 px-0 d-flex flex-column d-md-block align-items-start">
+                <li id="menu-item-36021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36021">
+                  <button id="ot-sdk-btn" class="ot-sdk-show-settings mx-0 mx-sm-2" style="border: none; background: none; font-size: .9rem; color:#000; padding:0; margin:0;">Manage cookie preferences</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-start justify-content-md-end">
+                          <ul class="nav regional-menu">
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle d-flex justify-content-between align-items-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span><span class="language-globe material-icons mr-2">language</span> Regional sites</span> <span class="language-arrow material-icons">arrow_drop_down</span>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://clarivate.com/regional-pages/australasia-southeast-asia/">Australasia and Southeast Asia</a>
+                    <a class="dropdown-item" href="https://clarivate.com/zh-hans/">简体中文 (Chinese)</a>
+                                          <a class="dropdown-item" href="https://clarivate.com/ja/">日本語 (Japanese)</a>
+                                        <a class="dropdown-item" href="https://clarivate.com/ko/">한국어 (Korean)</a>
+                    <a class="dropdown-item" href="https://clarivate.com/menat/">Middle East, North Africa & Turkey</a>
+                    <a class="dropdown-item" href="https://www.clarivate.com/cis/">СНГ (CIS)</a>
+                    <a class="dropdown-item" href="https://www.clarivate.com/zh-hant/">繁体中文 (Traditional Chinese)</a>
+                  </div>
+                </li>
+              </ul>
+                      </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</footer>
+
+<script type="text/javascript">
+const wpvViewHead = document.getElementsByTagName( "head" )[ 0 ];
+const wpvViewExtraCss = document.createElement( "style" );
+wpvViewExtraCss.textContent = '<!--[if IE 7]><style>.wpv-pagination { *zoom: 1; }</style><![endif]-->';
+wpvViewHead.appendChild( wpvViewExtraCss );
+</script>
+			<script type="text/javascript" id="modal">
+				document.addEventListener("DOMContentLoaded", function(){
+					startclock();
+				});
+				function stopclock (){
+					if(timerRunning) clearTimeout(timerID);
+					timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1650878659 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+								<script type="text/javascript" id="info-bar">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1650878659 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+				<link rel='stylesheet' type='text/css' id='cp-google-fonts' href='https://fonts.googleapis.com/css?family=http://Bitter|Lato|Libre+Baskerville|Montserrat|Neuton|Open+Sans|Pacifico|Raleway|Roboto|Sacramento|Varela+Round|Lato|Open%20Sans|Libre%20Baskerville|Montserrat|Neuton|Raleway|Roboto|Sacramento|Varela%20Round|Pacifico|Bitter' media='none' onload = 'if(media!=&quot;all&quot;)media=&quot;all&quot;'><style type="text/css">.cp-blank-info-bar .cp-content-container { padding: 3px !important; }.cp-info-bar.content-626668c3b7926 .cp-ifb-toggle-btn {
+			font-family: sans-serif
+		}.cp-info-bar.content-626668c3b7926 .cp-info-bar-body-overlay {
+				background: #5e33bf;
+			}.cp-info-bar.content-626668c3b7926 .cp-info-bar-body {
+				background: #5e33bf;
+			}.cp-info-bar.content-626668c3b7926 .cp-ib-container {
+			width: 1000px;
+		}</style><style class="cp-toggle-btn" type="text/css">.cp-info-bar.content-626668c3b7926 .cp-btn-flat.cp-ifb-toggle-btn{
+			font-size: 12px;
+			border-radius:0px;
+			border-width:0px;
+			border-color:rgb(0, 0, 0);
+			padding-left:15px;
+			padding-right:15px;
+			padding-top:10px;
+			padding-bottom:10px;
+			border-color:rgb(0, 0, 0);
+		} .cp-info-bar.content-626668c3b7926 .cp-btn-flat.cp-ifb-toggle-btn{ background: rgb(0, 0, 0)!important; color:rgb(255, 255, 255); } .cp-info-bar.content-626668c3b7926  .cp-btn-flat.cp-ifb-toggle-btn:hover { background: rgb(0, 0, 0)!important; } </style><style class="cp-ifb-second_submit" type="text/css"></style>
+		<input type="hidden" id="cp-push-down-support" value="">
+		<input type="hidden" id="cp-top-offset-container" value="">
+
+		<div data-module-type="info-bar" data-toggle = "" data-tz-offset = "1" data-dev-mode = "disabled"  data-exit-intent = "disabled" data-add-to-cart = "0"data-onscroll-value = "" data-onload-delay = "1" data-timezonename = "wordpress" data-timezone = "Europe/London" data-load-on-count = ""data-load-on-refresh = "enabled" data-push-down = "0" data-animate-push-page = "1" data-class = "content-626668c3b7926 " data-closed-cookie-time="15" data-conversion-cookie-time="90" data-info_bar-id="cp_id_8cc14" data-info_bar-style="cp_id_8cc14" data-entry-animation="smile-slideInDown" data-exit-animation="smile-slideOutUp" data-option="smile_info_bar_styles"    data-scheduled=false            data-custom-class=" cp-cp_id_8cc14" data-referrer-domain="" data-referrer-check="hide"  data-after-content-value="50"  id = "cp-cp_id_8cc14 " data-custom-selector = "" class="
+			cp-module cp-info-bar-container cp-clear  cp-info-bar  cp-blank-info-bar  cp-ib-onload cp-global-load cp-pos-top  global_info_bar_container ib-fixed  smile-animated smile-slideInDown      content-626668c3b7926 cp_id_8cc14  cp-cp_id_8cc14 		" style="min-height:30px;" data-style-id ="cp_id_8cc14" data-module-name ="infobar" data-close-gravity = &quot;1&quot;>
+			<div class="cp-info-bar-wrapper cp-clear">
+				<div class="cp-info-bar-body-overlay"></div>
+				<div class="cp-flex cp-info-bar-body ib-close-outside" style="min-height:30px;" data-height=''>
+					<div class="cp-flex cp-ib-container">
+												<input type="hidden" class="cp-impress-nonce" name="cp-impress-nonce" value="5e0028a97a">
+
+						
+		<div class="cp-content-container">
+			Clarivate to cease all commercial activity in Russia - <span style="text-decoration:underline;"><a href="https://clarivate.com/ukraine-resources/">Read more</a></span>.		</div>
+			</div><!-- cp-ib-container -->
+			</div><!-- cp-info-bar-body -->
+
+		
+</div>
+<!--toggle button-->
+					<div class="ib-close  ib-img-close  cp-adjacent-right" style=" width:22px;"><img src="https://clarivate.com/wp-content/plugins/convertplug/modules/assets/images/default.png" class="" close-link width ="22" height ="22" ></div>
+		
+		</div>
+						<script type="text/javascript" id="slidein">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1650878659 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+				<script type="text/javascript">
+( function() {
+	var nativeLazyloadInitialize = function() {
+		var lazyElements, script;
+		if ( 'loading' in HTMLImageElement.prototype ) {
+			lazyElements = [].slice.call( document.querySelectorAll( '.native-lazyload-js-fallback' ) );
+			lazyElements.forEach( function( element ) {
+				if ( ! element.dataset.src ) {
+					return;
+				}
+				element.src = element.dataset.src;
+				delete element.dataset.src;
+				if ( element.dataset.srcset ) {
+					element.srcset = element.dataset.srcset;
+					delete element.dataset.srcset;
+				}
+				if ( element.dataset.sizes ) {
+					element.sizes = element.dataset.sizes;
+					delete element.dataset.sizes;
+				}
+				element.classList.remove( 'native-lazyload-js-fallback' );
+			} );
+		} else if ( ! document.querySelector( 'script#native-lazyload-fallback' ) ) {
+			script = document.createElement( 'script' );
+			script.id = 'native-lazyload-fallback';
+			script.type = 'text/javascript';
+			script.src = 'https://clarivate.com/wp-content/plugins/native-lazyload/assets/js/lazyload.js';
+			script.defer = true;
+			document.body.appendChild( script );
+		}
+	};
+	if ( document.readyState === 'complete' || document.readyState === 'interactive' ) {
+		nativeLazyloadInitialize();
+	} else {
+		window.addEventListener( 'DOMContentLoaded', nativeLazyloadInitialize );
+	}
+}() );
+</script>
+		<link rel='stylesheet' id='blank-cp_id_8cc14-css'  href='https://clarivate.com/wp-content/plugins/convertplug/modules/info_bar/assets/demos/blank/blank.min.css?ver=3.5.20' type='text/css' media='all' />
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+<script type='text/javascript' defer="defer" src='https://clarivate.com/wp-content/plugins/convertplug/modules/assets/js/cp-module-main.js?ver=3.5.20' id='cp-module-main-js-js'></script>
+<script type='text/javascript' id='smile-info-bar-script-js-extra'>
+/* <![CDATA[ */
+var smile_ajax = {"url":"https:\/\/clarivate.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://clarivate.com/wp-content/plugins/convertplug/modules/info_bar/assets/js/info_bar.min.js?ver=3.5.20' id='smile-info-bar-script-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.12.1' id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.12.1' id='jquery-ui-slider-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/jquery/jquery.ui.touch-punch.js?ver=0.2.2' id='jquery-touch-punch-js'></script>
+<script type='text/javascript' id='mediaelement-core-js-before'>
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16' id='mediaelement-core-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=5.7.2' id='mediaelement-migrate-js'></script>
+<script type='text/javascript' id='mediaelement-js-extra'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=5.7.2' id='wp-mediaelement-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/wp-util.min.js?ver=5.7.2' id='wp-util-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/backbone.min.js?ver=1.4.0' id='backbone-js'></script>
+<script type='text/javascript' src='https://clarivate.com/wp-includes/js/mediaelement/wp-playlist.min.js?ver=5.7.2' id='wp-playlist-js'></script>
+<script type='text/javascript' id='views-blocks-frontend-js-extra'>
+/* <![CDATA[ */
+var wpv_pagination_local = {"front_ajaxurl":"https:\/\/clarivate.com\/wp-admin\/admin-ajax.php","calendar_image":"https:\/\/clarivate.com\/wp-content\/plugins\/wp-views\/embedded\/res\/img\/calendar.gif","calendar_text":"Select date","datepicker_min_date":null,"datepicker_max_date":null,"datepicker_min_year":"1582","datepicker_max_year":"3000","resize_debounce_tolerance":"100","datepicker_style_url":"https:\/\/clarivate.com\/wp-content\/plugins\/wp-views\/vendor\/toolset\/toolset-common\/toolset-forms\/css\/wpt-jquery-ui\/jquery-ui-1.11.4.custom.css","wpmlLang":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/wp-content/plugins/wp-views/public/js/views-frontend.js?ver=3.6.2' id='views-blocks-frontend-js'></script>
+
+<script type="text/javascript">
+//-----------------------------------------
+// View slug: news - start
+//-----------------------------------------
+jQuery( document ).on( 'js_event_wpv_pagination_completed', function( event, data ) {
+function custom_sync_pagination_elements() {
+  var pag_contents = jQuery('.js-wpv-pagination-primary').html();
+  jQuery('.js-wpv-pagination-secondary').html(pag_contents);
+}
+});
+//-----------------------------------------
+// View slug: news - end
+//-----------------------------------------
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"54310406b6","applicationID":"199529534","transactionName":"NVNWZBEAWUpVUkcKDAwZdVMXCFhXG1dBDA0WG0RRBAQ=","queueTime":0,"applicationTime":1420,"atts":"GRRVElkaSkQ=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

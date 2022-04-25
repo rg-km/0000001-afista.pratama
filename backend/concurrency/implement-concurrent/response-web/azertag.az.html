@@ -1,0 +1,3431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/WebSite">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<meta name='yandex-verification' content='701d6ef31a358522' />
+<meta property="fb:pages" content="384238411593446" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="AZERTAC - Azerbaijan State News Agency" href="https://azertag.az/en/rss" />
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="refresh" content="600" />
+<meta name="description" content="AZERTAC - News from Azerbaijan and around the world. A reliable news source: news, video, photo, infographics" />
+<meta property="og:url" content="https://azertag.az/en" />
+<meta property="og:title" content="AZERTAC - Azerbaijan State News Agency" />
+<meta property="og:description" content="AZERTAC - News from Azerbaijan and around the world. A reliable news source: news, video, photo, infographics" />
+<meta property="og:image" content="https://azertag.az/website-media/images/facebook_loqo_new.jpg" />
+<meta property="og:image:width" content="534" />
+<meta property="og:image:height" content="257" />
+<meta name="keywords" content="Azerbaijan, Official news, Azerbaijani President, Ilham Aliyev, First vice-president, Mehriban Aliyeva, weather forecast, currency rate, Nagorno-Karabakh, Baku, Azerbaijani army, Khojaly genocide" />
+<title itemprop="name">AZERTAC - Azerbaijan State News Agency</title>
+<link rel="canonical" href="https://azertag.az/" itemprop="url">
+<!--[if lt IE 8]>
+			<link href="/css/lteie8.css" rel="stylesheet">
+		<![endif]-->
+<link href="/css/jquery.reject.css" rel="stylesheet" />
+<script src="/js/jquery.min.js?v=16062018"></script>
+<script src="/js/jquery.reject.js?v=16062018"></script>
+<script src="/app.js?v=10"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-T25T5QT');</script>
+
+<script>    
+			$(document).ready(function(){
+				$.reject({
+				  display: ["msie", "firefox", "safari", "opera", "chrome", "gcf"],
+					reject: {  
+						msie5: true, msie6: true, msie7: true, firefox2: true, firefox3: true, firefox4: true, firefox5: true, firefox6: true, firefox7: true, firefox8: true, firefox9: true, chrome2: true, chrome3: true, chrome4: true, chrome5: true, chrome6: true, chrome7: true, chrome8: true, chrome9: true, chrome10: true, chrome11: true, chrome12: true, chrome13: true, chrome14: true, chrome15: true, safari1: true, safari2: true, safari3: true, opera1: true, opera2: true, opera3: true, opera4: true, opera5: true, opera6: true, opera7: true, opera8: true, opera9: true
+					},
+					imagePath: '/img/',
+					enable: true, header: "Did you know that your Internet Browser is out of date?", paragraph1: "Your browser is out of date, and may not be compatible with our website. A list of the most popular web browsers can be found below.", paragraph2: "Just click on the icons to get to the download page:", closeMessage: "", closeLink: "", closeURL: "#", close: false, closeESC: false, closeCookie: false, overlayBgColor: "#000", overlayOpacity: 0.9, fadeInTime: "fast", fadeOutTime: "fast"
+				  });
+				  $('#top-mainmenu').stickyScroll({ container: '#main' });
+				  
+				  
+				local_param = window.location.search;
+				if(local_param.indexOf('device=') != -1){
+					  param = local_param.split('=');
+					  device =  param[1];
+					  if(device == 'Mobile'){
+						  $.cookie('device', 'mobile', { path: '/' });
+					  }
+					  if(device == 'Desktop'){
+						  $.cookie('device', 'desktop', { path: '/' });
+					  }
+				}
+				
+				return false;
+			});
+			
+			var oldNews = '0';
+			function updateLastNews(){
+				$.post( "/en/ajax/lastnews", function( data ) {
+					data = JSON.parse(data);
+					if(data.status == 'ok'){
+						if(oldNews == '0') oldNews = data.id;
+						if(data.id != oldNews){
+							oldNews = data.id;
+							htmlList = $('.son-xeberler .newslist-content').html();
+							htmlList = data.html+htmlList;
+							$('.son-xeberler .newslist-content').html(htmlList);
+						}
+					}
+				});
+			}
+			var jLanguage = 'en';
+			isLoadNews = true;
+		</script>
+<link href="/css/normalize.css" rel="stylesheet">
+<link href="/css/maincss.css?v=130421" rel="stylesheet">
+<link href="/css/blitzer/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" media="all">
+<script src="/js/jquery-ui-1.10.4.custom.min.js?v=16062018"></script>
+<script src="/js/modern-ticker.js"></script>
+<script src="/js/jquery.slimscroll.min.js?v=02042019"></script>
+<script src="/js/jquery.ui.datepicker-en.js?v=280221"></script>
+<script src="/js/jquery.cookie.js?v=16062018"></script>
+<script src="/js/jquery.stickyscroll.js?v=3"></script>
+<script>
+			$(document).ready(function() {
+				$( "#datepicker" ).datepicker({
+				  changeMonth: true,
+				  changeYear: true,
+				  maxDate: 0,
+				  yearRange: "1993:2025",
+				  dateFormat: 'yy/mm/dd',
+				  onSelect: function(dateText, inst) {
+					  arxivurl = (revertArabicNum('https://azertag.az'+'/en/arxiv/'+ $(".ui-datepicker-year option:selected").val() + '/' + ($(".ui-datepicker-month option:selected").val()*1+1) + '/' + inst.selectedDay + '/official_chronicle'));
+					  window.location = arxivurl;
+				  },
+				  afterShow:function(){
+					  changeArabicCal();
+				  }
+				});
+				
+								changeArabicCal();
+				
+				$.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+				$.datepicker._updateDatepicker = function(inst) {
+					$.datepicker._updateDatepicker_original(inst);
+					var afterShow = this._get(inst, 'afterShow');
+					if (afterShow)
+						afterShow.apply((inst.input ? inst.input[0] : null));
+				}
+			});
+			
+			function revertArabicNum(str) {
+				return str.replace("٠", "0").replace("١", "1").replace("٢", "2").replace("٣", "3").replace("٤", "4").replace("٥", "5").replace("٦", "6").replace("٧", "7").replace("٨", "8").replace("٩", "9");
+			}
+			
+			function changeArabicCal() {
+							}
+		</script>
+<script>
+			$(document).ready(function() {
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 100) {
+						$('.scrollToTop').fadeIn();
+					} else {
+						$('.scrollToTop').fadeOut();
+					}
+				});
+				
+				$('.scrollToTop').click(function() {
+					$('html, body').animate({scrollTop : 0}, 500);
+					return false;
+				});
+			});
+		</script>
+<style>
+			blitzer {
+				height: 275px;
+				display: block;
+				margin-bottom: 20px;
+				font-size: 13px;
+			}
+			.left-content br {
+				display: block;
+				margin-bottom: 15px;
+				content: "";
+			}
+			.scrollToTop {
+				position: fixed;
+				bottom: 30px;
+				right: 90px;
+				display: none;
+				z-index: 999;
+			}
+			.for-me-info {
+				width: 1300px;
+				margin: 0 auto;
+			}
+			.for-me-info p {
+				margin-right: 20px;
+			}
+			.for-me-info span {
+				font-weight: bold;
+			}
+			.notification-container {
+				position: fixed;
+				background: #E1D0D0;
+				border: 1px solid #B0ACAC;
+				padding: 5px;
+				bottom: 25px;
+				z-index: 999;
+				right: 35px;
+			}
+			.notification-icon {
+				float: left;
+			}
+			.notification-icon img {
+				width: 100px;
+			}
+			.notification-title-second {
+				float: left;
+				margin-left: 10px;
+				font-size: 16px;
+				color: #000;
+			}
+			.notification-close {
+				position: absolute;
+				right: 5px;
+				top: 0px;
+				color: #3E76D2;
+			}
+			.notification-close:hover {
+				cursor: pointer;
+			}
+			#site-bottom-menu .about-dropdown {
+				display: none;
+			}
+		</style>
+</head>
+<body class=" bodyconten_en">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T25T5QT"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<a href="#" class="scrollToTop"><img src="/website-media/images/totop.png" /></a>
+<div id="site-global">
+<div class="notification-container" style="display: none;">
+<div class="notification-close">
+<span>x</span>
+</div>
+<a href="/subscribe">
+<div class="notification-icon">
+<img src="/img/site-logo.png?v=102" />
+</div>
+<div class="notification-title-second">
+<p>AZƏRTAC-dan bildirişlər alın</p>
+</div>
+<div style="clear: both;"></div>
+</a>
+</div>
+<header id="header">
+<div id="site-header">
+<div id="site-header-top" class="has-padding-35">
+<div class="float-left">
+<div id="site-name">
+<span class="big-letter">A</span>ZERBAIJAN <span class="big-letter">S</span>TATE <span class="big-letter">N</span>EWS <span class="big-letter">A</span>GENCY </div>
+</div>
+<div class="float-right">
+<div id="site-language" class="float-left">
+<ul class="language clear has-no-style"><li class="item  first "><a href="/">AZ</a></li>
+<li class="item _ru  "><a href="/ru/">RU</a></li>
+<li class="item _en  active"><a href="/en/">EN</a></li>
+<li class="item _de  "><a href="/de/">DE</a></li>
+<li class="item _fr  "><a href="/fr/">FR</a></li>
+<li class="item _es  "><a href="/es/">ES</a></li>
+<li class="item _ar  "><a href="/ar/">عربي</a></li>
+<li class="item _chn last "><a href="/chn/">中文</a></li></ul> </div>
+<div id="site-search" class="float-left">
+<div class="clear">
+<form action="/en/axtarish" method="get" id="search-form" accept-charset="UTF-8" class="clear">
+<input placeholder="Search the site" title="" type="text" name="search" size="" maxlength="" class="search-text border-box" />
+<input type="submit" id="search-submit" value="Search" class="search-submit border-box" />
+</form>
+</div>
+</div>
+</div>
+</div>
+<div id="site-header-bottom" class="clear has-padding-35">
+<div class="float-left">
+<div id="site-logo">
+<a href="/en/">
+<img title="AZERTAC - Azerbaijan State News Agency" src="/img/site-logo-en.png?v=102" alt="Son xəbərlər,Siyasət,İqtisadiyyat,Fərman,Qanun,Sərəncam,Müsahibə,Xəbərlərə Abunə,Azərbaycan Prezidenti,Azərbaycan xəbərləri,Valyuta,Hava haqqında,Video xəbərlər,İnfoqrafika,Foto,Heydər Əliyev Fondu,Dağlıq Qarabaq münaqişəsi,Səfər,Qəbul,Bakı - AZERTAC - Azerbaijan State News Agency" />
+</a>
+</div>
+</div>
+<div class="float-right">
+<div id="shb-top">
+<span itemscope itemtype="http://schema.org/Organization">
+<div id="site-follow-links" class="float-right">
+<link itemprop="url" href="https://azertag.az/">
+<ul class="menu clear has-no-style">
+<li class="leaf first">
+<a href="https://special.azertag.az/en" target="_blank">
+<img src="/img/special.png" style="width: 22px;" />
+</a>
+</li>
+<li class="leaf facebook-fb">
+<a href="https://facebook.com/AzertAcNewsAgencyEn" target="_blank" itemprop="sameAs">FB</a>
+</li>
+<li class="leaf twitter-fb">
+<a href="https://twitter.com/AzerTAc" target="_blank" itemprop="sameAs">TT</a>
+</li>
+<li class="leaf google-fb">
+<a href="https://linkedin.com/company/azertac-news-agency" target="_blank" itemprop="sameAs">IN</a>
+</li>
+<li class="leaf youtube-fb">
+<a href="https://youtube.com/azertagenglish" target="_blank" itemprop="sameAs">YT</a>
+</li>
+<li class="leaf instagram-fb">
+<a href="https://instagram.com/azertac/" target="_blank" style="background: url('/img/instagram.png?v=new');" itemprop="sameAs">IN</a>
+</li>
+<li class="leaf tm-fb">
+<a href="https://t.me/azertacnews" target="_blank" style="background: url('/img/telegram.png');" itemprop="sameAs">TM</a>
+</li>
+<li class="leaf vk-fb">
+<a href="https://vk.com/azertac" target="_blank" style="background: url('/img/vk.png');" itemprop="sameAs">VK</a>
+</li>
+<li class="leaf rss-fb">
+<a href="https://azertag.az/en/rss" target="_blank">RSS</a>
+</li>
+</ul>
+</div>
+</span>
+<div id="site-top-menu" class="float-right">
+<ul class="menu has-no-style clear">
+<li class="leaf first">
+<a href="/en" alt="HOMEPAGE">
+HOMEPAGE </a>
+</li>
+<li class="about-dropdown">
+<a href="#">
+ABOUT US </a>
+<div class="about-dropdown-content">
+<a href="https://azertag.az/en/about" target="_blank">General information</a>
+<a href="https://azertag.az/en/international-relations" target="_blank">Foreign relations</a>
+<a href="https://azertag.az/en/manual" target="_blank">Statutes</a>
+</div>
+</li>
+<li class="leaf">
+<a href="https://azertag.az/en/partners" alt="PARTNERS" target="_blank">
+PARTNERS </a>
+</li>
+<li class="leaf">
+<a href="https://azertag.az/en/our-services" alt="Our Services" target="_blank">
+Our Services </a>
+</li>
+<li class="leaf last">
+<a href="https://azertag.az/en/elaqe" alt="SUBSCRIBE" target="_blank">
+SUBSCRIBE </a>
+</li>
+</ul>
+<style>
+	.about-dropdown {
+		display: inline-block;
+	}
+	.about-dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.about-dropdown-content a {
+		display: block;
+		text-align: left;
+		margin: 7px 0px 7px 7px !important;
+	}
+	.about-dropdown:hover .about-dropdown-content {
+		display: block;
+	}
+</style> </div>
+</div>
+<div id="shb-bottom" class="clear">
+<div id="site-weather" class="float-right">
+<div id="weather-block" class="clear">
+<div class="float-left astitle clear">
+<div class="title"><a href="https://azertag.az/en/hava-melumati" target="_blank">Weather</a></div>
+<div class="date">25.04.2022</div>
+</div>
+<div class="float-right asitem">
+<div class="item first clear">
+<div class="symbol float-left">
+<div class="name">Baku</div>
+<div class="temp">+19+21°C</div>
+</div>
+<div class="status float-left"><div class="cloudly-icon"><img width="70px" src="/img/weather/4.png"></div></div>
+</div>
+</div>
+</div> </div>
+<div id="site-valute" class="float-right">
+<div id="valute-block" class="clear">
+<div class="float-left astitle">
+<div class="title">
+<a href="https://azertag.az/en/valute" target="_blank">
+Currency Rate </a>
+</div>
+<div class="date">
+25.04.2022 </div>
+</div>
+<div class="float-right asitem">
+<div class="item first clear">
+<div class="symbol">$</div>
+<div class="name">USD</div>
+<div class="buy"><img src="/img/no.png"></div>
+<div class="cell">1.7</div>
+</div>
+<div class="item last clear">
+<div class="symbol">€</div>
+<div class="name">EUR</div>
+<div class="buy"><img src="/img/down.png"></div>
+<div class="cell">1.8315</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+<div id="top-mainmenu">
+<div id="site-top-mainmenu" class="has-padding-35">
+<nav id="stm-nav" style="">
+
+<div class="menu-left-bg"></div>
+<ul class="menu clear has-no-style">
+<li class="leaf first">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</li>
+<li class="expanded">
+<a href="/en/bolme/official_documents">
+OFFICIAL DOCUMENTS </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/official_documents_orders">ORDERS</a></li>
+<li class="leaf last"><a href="/en/bolme/mektublar">LETTERS</a></li>
+</ul>
+</li>
+<li class="leaf">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</li>
+<li class="expanded">
+<a href="/en/bolme/economy">
+ECONOMY </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/oil_gas">OIL & GAS</a></li>
+<li class="leaf"><a href="/en/bolme/ikt">ICT </a></li>
+<li class="leaf last"><a href="/en/bolme/transport_construction">TRANSPORT</a></li>
+</ul>
+</li>
+<li class="leaf">
+<a href="/en/bolme/regionlar">
+REGIONS </a>
+</li>
+<li class="expanded">
+<a href="/en/bolme/society">
+SOCIETY </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/healthcare">HEALTHCARE</a></li>
+<li class="leaf last"><a href="/en/bolme/environment">ENVIRONMENT</a></li>
+</ul>
+</li>
+<li class="leaf">
+<a href="/en/bolme/culture">
+CULTURE </a>
+</li>
+<li class="leaf">
+<a href="/en/bolme/science_and_education">
+SCIENCE AND EDUCATION </a>
+</li>
+<li class="leaf">
+<a href="/en/bolme/tourism">
+TOURISM </a>
+</li>
+<li class="expanded">
+<a href="/en/bolme/sports">
+SPORTS </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/2016_formula_1">FORMULA-1</a></li>
+<li class="leaf last"><a href="/en/bolme/tokyo_2020">TOKYO-2020</a></li>
+</ul>
+</li>
+<li class="leaf">
+<a href="/en/bolme/world">
+WORLD </a>
+</li>
+<li class="expanded">
+<a href="/en/bolme/bloody_memory">
+DAYS OF SORROW </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/bloody_memory_20_january">20 JANUARY</a></li>
+<li class="leaf"><a href="/en/bolme/bloody_memory_khodjali_tragedy">KHOJALY TRAGEDY</a></li>
+<li class="leaf last"><a href="/en/bolme/bloody_memory_31_march">31 MARCH</a></li>
+</ul>
+</li>
+<li class="expanded">
+<a>
+MULTIMEDIA </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="https://video.azertag.az/en" target="_blank">VIDEO</a></li>
+<li class="leaf"><a href="https://video.azertag.az/en/bolme/slaydshou" target="_blank">SLIDESHOW</a></li>
+<li class="leaf last"><a href="/en/infografika">INFOGRAPHICS</a></li>
+</ul>
+</li>
+<li class="leaf">
+<a href="https://photo.azertag.az/en" target="_blank">
+PHOTO </a>
+</li>
+<li class="leaf"><a href="/en/bolme/shusha_year">THE YEAR OF SHUSHA</a></li>
+<li class="leaf last"><a href="http://tkaweb.org/?page_id=643&lang=en" target="_blank">THE TURKIC WORLD</a></li>
+</ul> </nav>
+</div>
+</div> </header>
+<div id="main" class="clear has-padding-35">
+<div id="content-out" class="float-left">
+<div id="content">
+<script src="/js/blokfront.js"></script>
+<div class="clear bottom-margin-25">
+<div class="hotline">
+<div id="hotline">
+<div class="modern-ticker mt-square">
+<div class="mt-body">
+<div class="mt-label">
+HEADLINES </div>
+<div class="mt-news">
+<ul>
+<li>
+<a href="/en/xeber/Gabriel_ZHezus_otkazyvaetsya_govorit_o_svoem_budushchem_v_Manchester_Siti-2108981" target="_blank">
+Габриэль Жезус отказывается говорить о своем будущем в «Манчестер Сити» </a>
+</li>
+<li>
+<a href="/en/xeber/Fatalities_from_missing_boat_in_Japan_rise_to_11_after_girl_confirmed_dead-2108972" target="_blank">
+Fatalities from missing boat in Japan rise to 11 after girl confirmed dead </a>
+</li>
+<li>
+<a href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876" target="_blank">
+President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations </a>
+</li>
+<li>
+<a href="/en/xeber/Azerbaijan_among_worlds_top_five_countries_by_military_spending_as_share_of_GDP-2108921" target="_blank">
+Azerbaijan among world`s top five countries by military spending as share of GDP </a>
+</li>
+<li>
+<a href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696" target="_blank">
+President Ilham Aliyev received Minister of Finance of Israel </a>
+</li>
+<li>
+<a href="/en/xeber/Azerbaijani_judokas_bring_home_nine_medals_from_Strasbourg_Cadet_European_Cup_2022-2108825" target="_blank">
+Azerbaijani judokas bring home nine medals from Strasbourg Cadet European Cup 2022 </a>
+</li>
+<li>
+<a href="/en/xeber/Baroque_Days_International_Music_Festival_kicks_off_in_Baku-2108765" target="_blank">
+Baroque Days International Music Festival kicks off in Baku </a>
+</li>
+<li>
+<a href="/en/xeber/Azerbaijani_judokas_claim_five_medals_at_Poznan_Junior_European_Cup_2022-2108699" target="_blank">
+Azerbaijani judokas claim five medals at Poznan Junior European Cup 2022 </a>
+</li>
+<li>
+<a href="/en/xeber/Military_unit_of_Azerbaijans_Land_Forces_holds_meeting_on_results_of_first_quarter_of_training_year-2108675" target="_blank">
+Military unit of Azerbaijan’s Land Forces holds meeting on results of first quarter of training year </a>
+</li>
+<li>
+<a href="/en/xeber/Man_United_039s_Cristiano_Ronaldo_scores_100th_Premier_League_goal-2108657" target="_blank">
+Man United's Cristiano Ronaldo scores 100th Premier League goal </a>
+</li>
+</ul>
+</div>
+<div class="mt-controls">
+<div class="mt-prev"></div>
+<div class="mt-play"></div>
+<div class="mt-next"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear bottom-margin-40">
+<div class="mainnews">
+<div class="mainnews-inner clear">
+<div class="mainnews-left float-left">
+<div class="mainnews-slide jcarousel-wrapper">
+<div class="jcarousel-pagination clear"></div>
+<div class="jcarousel">
+<ul>
+<li>
+<div class="slidernews-item  hasimage">
+<div class="item-top">
+<div class="news-image news-mainimg">
+<a href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876">
+<img src="/files/2022/1/462x336/16508761596021427979_462x336.jpg" width="462" alt="President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations" />
+</a>
+</div>
+</div>
+<div class="item-bottom">
+<div class="item-bottom-top">
+<div class="news-info">
+<div class="news-date">
+25.04.2022 [12:33] </div>
+<div class="news-flags">
+<div class="flag-photo"></div>
+<div class="flag-video"></div>
+<div class="flag-audio"></div>
+</div>
+</div>
+</div>
+<div class="item-bottom-bottom">
+<div class="news-teaser">
+<a class="blackcolor" href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876">
+President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="slidernews-item  hasimage">
+<div class="item-top">
+<div class="news-image news-mainimg">
+<a href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696">
+<img src="/files/2022/1/462x336/16508716133753411336_462x336.jpg" width="462" alt="President Ilham Aliyev received Minister of Finance of Israel" />
+</a>
+</div>
+</div>
+<div class="item-bottom">
+<div class="item-bottom-top">
+<div class="news-info">
+<div class="news-date">
+25.04.2022 [12:17] </div>
+<div class="news-flags">
+<div class="flag-photo"></div>
+<div class="flag-video"></div>
+<div class="flag-audio"></div>
+</div>
+</div>
+</div>
+<div class="item-bottom-bottom">
+<div class="news-teaser">
+<a class="blackcolor" href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696">
+President Ilham Aliyev received Minister of Finance of Israel
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="slidernews-item  hasimage">
+<div class="item-top">
+<div class="news-image news-mainimg">
+<a href="/en/xeber/First_Vice_President_Mehriban_Aliyeva_made_Instagram_post_on_occasion_of_Easter-2108228">
+<img src="/files/2022/1/462x336/1650797489262624569_462x336.jpg" width="462" alt="First Vice-President Mehriban Aliyeva made Instagram post on occasion of Easter" />
+</a>
+</div>
+</div>
+<div class="item-bottom">
+<div class="item-bottom-top">
+<div class="news-info">
+<div class="news-date">
+24.04.2022 [14:50] </div>
+<div class="news-flags">
+<div class="flag-photo"></div>
+<div class="flag-video"></div>
+<div class="flag-audio"></div>
+</div>
+</div>
+</div>
+<div class="item-bottom-bottom">
+<div class="news-teaser">
+<a class="blackcolor" href="/en/xeber/First_Vice_President_Mehriban_Aliyeva_made_Instagram_post_on_occasion_of_Easter-2108228">
+First Vice-President Mehriban Aliyeva made Instagram post on occasion of Easter </a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="slidernews-item  hasimage">
+<div class="item-top">
+<div class="news-image news-mainimg">
+<a href="/en/xeber/Release_of_the_Press_Service_of_the_President-2107889">
+<img src="/files/2022/1/462x336/16507267634689565195_462x336.jpg" width="462" alt="Release of the Press Service of the President" />
+</a>
+</div>
+</div>
+<div class="item-bottom">
+<div class="item-bottom-top">
+<div class="news-info">
+<div class="news-date">
+23.04.2022 [19:13] </div>
+<div class="news-flags">
+<div class="flag-photo"></div>
+<div class="flag-video"></div>
+<div class="flag-audio"></div>
+</div>
+</div>
+</div>
+<div class="item-bottom-bottom">
+<div class="news-teaser">
+<a class="blackcolor" href="/en/xeber/Release_of_the_Press_Service_of_the_President-2107889">
+Release of the Press Service of the President </a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="slidernews-item  hasimage">
+<div class="item-top">
+<div class="news-image news-mainimg">
+<a href="/en/xeber/President_Ilham_Aliyev_The_congress_being_held_in_Shusha_has_a_tremendous_historic_significance-2106332">
+<img src="/files/2022/1/462x336/16506373765502463443_462x336.jpg" width="462" alt="President Ilham Aliyev: The congress being held in Shusha has a tremendous historic significance" />
+</a>
+</div>
+</div>
+<div class="item-bottom">
+<div class="item-bottom-top">
+<div class="news-info">
+<div class="news-date">
+22.04.2022 [18:24] </div>
+<div class="news-flags">
+<div class="flag-photo"></div>
+<div class="flag-video"></div>
+<div class="flag-audio"></div>
+</div>
+</div>
+</div>
+<div class="item-bottom-bottom">
+<div class="news-teaser">
+<a class="redcolor" href="/en/xeber/President_Ilham_Aliyev_The_congress_being_held_in_Shusha_has_a_tremendous_historic_significance-2106332">
+President Ilham Aliyev: The congress being held in Shusha has a tremendous historic significance
+</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mainnews-right float-left">
+<div class="mainnews-right-inner clear">
+<div class="news-item float-left">
+<div class="item-image">
+<a href="/en/xeber/Fifth_Congress_of_World_Azerbaijanis_gets_underway_in_Shusha_city__President_Ilham_Aliyev_made_a_speech_at_the_Congress_VIDEO-2104988">
+<img src="/files/2022/1/228x166/16506089492371823991_228x166.jpg" width="228" height="166" alt="Fifth Congress of World Azerbaijanis gets underway in Shusha city  President Ilham Aliyev made a speech at the Congress VIDEO" />
+</a>
+</div>
+<div class="item-title">
+<div class="item-title-inner">
+<a class="blackcolor" href="/en/xeber/Fifth_Congress_of_World_Azerbaijanis_gets_underway_in_Shusha_city__President_Ilham_Aliyev_made_a_speech_at_the_Congress_VIDEO-2104988">
+Fifth Congress of World Azerbaijanis gets underway in Shusha city <BR> President Ilham Aliyev made a speech at the Congress <span style="color:#ff0000">VIDEO</span>
+</a>
+</div>
+</div>
+</div>
+<div class="news-item float-left">
+<div class="item-image">
+<a href="/en/xeber/Azerbaijani_Kyrgyz_presidents_made_press_statements_VIDEO-2102009">
+<img src="/files/2022/1/228x166/16504537914368460543_228x166.jpg" width="228" height="166" alt="Azerbaijani, Kyrgyz presidents made press statements VIDEO" />
+</a>
+</div>
+<div class="item-title">
+<div class="item-title-inner">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_Kyrgyz_presidents_made_press_statements_VIDEO-2102009">
+Azerbaijani, Kyrgyz presidents made press statements <span style="color:#ff0000">VIDEO</span>
+</a>
+</div>
+</div>
+</div>
+<div class="news-item float-left">
+<div class="item-image">
+<a href="/en/xeber/Azerbaijani_Kyrgyz_presidents_held_expanded_meeting_VIDEO-2101751">
+<img src="/files/2022/1/228x166/1650440591331529266_228x166.jpg" width="228" height="166" alt="Azerbaijani, Kyrgyz presidents held expanded meeting VIDEO" />
+</a>
+</div>
+<div class="item-title">
+<div class="item-title-inner">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_Kyrgyz_presidents_held_expanded_meeting_VIDEO-2101751">
+Azerbaijani, Kyrgyz presidents held expanded meeting <span style="color:#ff0000">VIDEO</span> </a>
+</div>
+</div>
+</div>
+<div class="news-item float-left">
+<div class="item-image">
+<a href="/en/xeber/President_Ilham_Aliyev_chaired_meeting_on_results_of_first_quarter_of_2022_VIDEO-2089997">
+<img src="/files/2022/1/228x166/16497776405810844979_228x166.jpg" width="228" height="166" alt="President Ilham Aliyev chaired meeting on results of first quarter of 2022 VIDEO" />
+</a>
+</div>
+<div class="item-title">
+<div class="item-title-inner">
+<a class="blackcolor" href="/en/xeber/President_Ilham_Aliyev_chaired_meeting_on_results_of_first_quarter_of_2022_VIDEO-2089997">
+President Ilham Aliyev chaired meeting on results of first quarter of 2022
+<span style="color:#ff0000">VIDEO</span> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="clear bottom-margin-25">
+<div class="tabnews tabnews-1 float-left official_chronicle">
+<div class="tabnews-inner">
+<div class="header clear">
+<div class="title float-left">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="content">
+<div class="content-inner clear">
+<div class="first-news">
+<div class="news-item clear hasaudio hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image">
+<a href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876">
+<img src="/files/2022/1/228x166/16508761596021427979_228x166.jpg" width="228" height="166" alt="President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations" />
+</a>
+</div>
+</div>
+<div class="news-right float-left">
+<div class="news-title">
+<a href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876">
+President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations
+</a>
+</div>
+<div class="news-info">
+<div class="news-date">25.04.2022 [12:33]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-teaser">
+<p>President of the Republic of Azerbaijan Ilham Aliyev has received the Special Representative of the Ministry of Foreign Affairs of the Russian Federation for normalization of Azerbaijan-Armenia relations, Igor Khovaev.
+The sides discussed ...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="other-four">
+<div class="other-four-inner">
+<div class="news-row clear news-row-1">
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696"><img src="/files/2022/1/112x182/16508716133753411336_112x182.jpg" width="112" height="82" alt="President Ilham Aliyev received Minister of Finance of Israel" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [12:17]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696">President Ilham Aliyev received Minister of Finance of Israel
+</a></div>
+</div>
+</div>
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/First_Vice_President_Mehriban_Aliyeva_made_Instagram_post_on_occasion_of_Easter-2108228"><img src="/files/2022/1/112x182/1650797489262624569_112x182.jpg" width="112" height="82" alt="First Vice-President Mehriban Aliyeva made Instagram post on occasion of Easter" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">24.04.2022 [14:50]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/First_Vice_President_Mehriban_Aliyeva_made_Instagram_post_on_occasion_of_Easter-2108228">First Vice-President Mehriban Aliyeva made Instagram post on occasion of Easter</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-2">
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Release_of_the_Press_Service_of_the_President-2107889"><img src="/files/2022/1/112x182/16507267634689565195_112x182.jpg" width="112" height="82" alt="Release of the Press Service of the President" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">23.04.2022 [19:13]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Release_of_the_Press_Service_of_the_President-2107889">Release of the Press Service of the President</a></div>
+</div>
+</div>
+<div class="news-item float-left  hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Fifth_Congress_of_World_Azerbaijanis_gets_underway_in_Shusha_city__President_Ilham_Aliyev_made_a_speech_at_the_Congress_VIDEO-2104988"><img src="/files/2022/1/112x182/16506089492371823991_112x182.jpg" width="112" height="82" alt="Fifth Congress of World Azerbaijanis gets underway in Shusha city  President Ilham Aliyev made a speech at the Congress VIDEO" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">22.04.2022 [18:35]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> <div class="flag-video"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Fifth_Congress_of_World_Azerbaijanis_gets_underway_in_Shusha_city__President_Ilham_Aliyev_made_a_speech_at_the_Congress_VIDEO-2104988">Fifth Congress of World Azerbaijanis gets underway in Shusha city <BR> President Ilham Aliyev made a speech at the Congress <span style="color:#ff0000">VIDEO</span>
+</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-3">
+<div class="news-item float-left  hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/President_Ilham_Aliyev_viewed_restoration_work_to_be_carried_out_at_Kondalanchay_reservoirs_and_construction_of_Ahmadbayli_Fuzuli_Shusha_highway_and_tunnels_on_the_road_major_overhaul_of_administrative_building_and_construction_of_conference_hall_in_Shusha_VIDEO-2103830"><img src="/files/2022/1/112x182/16505369935253928787_112x182.jpg" width="112" height="82" alt="President Ilham Aliyev viewed restoration work to be carried out at Kondalanchay reservoirs and construction of Ahmadbayli-Fuzuli-Shusha highway and tunnels on the road, major overhaul of administrative building and construction of conference hall in Shusha VIDEO" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">21.04.2022 [14:14]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> <div class="flag-video"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/President_Ilham_Aliyev_viewed_restoration_work_to_be_carried_out_at_Kondalanchay_reservoirs_and_construction_of_Ahmadbayli_Fuzuli_Shusha_highway_and_tunnels_on_the_road_major_overhaul_of_administrative_building_and_construction_of_conference_hall_in_Shusha_VIDEO-2103830">President Ilham Aliyev viewed restoration work to be carried out at Kondalanchay reservoirs and construction of Ahmadbayli-Fuzuli-Shusha highway and tunnels on the road, major overhaul of administrative building and construction of conference hall in Shusha <span style="color:#ff0000">VIDEO</span> </a></div>
+</div>
+</div>
+<div class="news-item float-left  hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Official_dinner_was_hosted_on_behalf_of_President_Ilham_Aliyev_and_his_wife_Mehriban_Aliyeva_in_honor_of_President_Sadyr_Japarov_and_his_wife_Aigul_Japarova_VIDEO-2102171"><img src="/files/2022/1/112x182/1650453301475612729_112x182.jpg" width="112" height="82" alt="Official dinner was hosted on behalf of President Ilham Aliyev and his wife Mehriban Aliyeva in honor of President Sadyr Japarov and his wife Aigul Japarova VIDEO" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">20.04.2022 [14:18]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> <div class="flag-video"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Official_dinner_was_hosted_on_behalf_of_President_Ilham_Aliyev_and_his_wife_Mehriban_Aliyeva_in_honor_of_President_Sadyr_Japarov_and_his_wife_Aigul_Japarova_VIDEO-2102171">Official dinner was hosted on behalf of President Ilham Aliyev and his wife Mehriban Aliyeva in honor of President Sadyr Japarov and his wife Aigul Japarova <span style="color:#ff0000">VIDEO</span>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="littlenews littlenews-15 float-left left-margin-8 slimscroll official_documents">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/official_documents">
+OFFICIAL DOCUMENTS </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-date">
+22.04.2022 [15:53] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_Orthodox_Christian_Community_of_Azerbaijan-2105873">
+To Orthodox Christian Community of Azerbaijan </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+14.04.2022 [17:55] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_His_Excellency_Mr_Shehbaz_Sharif_Prime_Minister_of_the_Islamic_Republic_of_Pakistan-2094020">
+To His Excellency Mr. Shehbaz Sharif, Prime Minister of the Islamic Republic of Pakistan </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+08.04.2022 [17:59] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Order_of_President_of_the_Republic_of_Azerbaijan_on_approving_the_2022_2026_National_Action_Plan_to_Strengthen_the_Fight_Against_Corruption-2085422">
+Order of President of the Republic of Azerbaijan on approving the “2022-2026 National Action Plan to Strengthen the Fight Against Corruption” </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+08.04.2022 [17:49] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/2022_2026_National_Action_Plan_to_Strengthen_the_Fight_Against_Corruption-2085404">
+2022-2026 National Action Plan to Strengthen the Fight Against Corruption </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-5">
+<div class="item-date">
+08.04.2022 [16:59] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_His_Excellency_Mr_Isaac_Herzog_President_of_the_State_of_Israel-2085146">
+To His Excellency Mr. Isaac Herzog, President of the State of Israel </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-6">
+<div class="item-date">
+08.04.2022 [16:57] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/From_Isaac_Herzog_President_of_the_State_of_Israel-2085173">
+From Isaac Herzog, President of the State of Israel </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-7">
+<div class="item-date">
+07.04.2022 [15:25] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Plan_of_measures_on__quot2022_2026_National_Action_Plan_to_Strengthen_the_Fight_Against_Corruption_quot-2083292">
+Plan of measures on "2022-2026 National Action Plan to Strengthen the Fight Against Corruption" </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-8">
+<div class="item-date">
+05.04.2022 [16:21] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_His_Excellency_Mr_Viktor_Orban_Prime_Minister_of_Hungary-2080046">
+To His Excellency Mr. Viktor Orban, Prime Minister of Hungary
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-9">
+<div class="item-date">
+05.04.2022 [16:02] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_His_Excellency_Mr_Aleksandar_Vuic_President_of_the_Republic_of_Serbia-2079968">
+To His Excellency Mr. Aleksandar Vučić, President of the Republic of Serbia </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-10">
+<div class="item-date">
+04.04.2022 [13:19] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/To_His_Excellency_Mr_Vladimir_Putin_President_of_the_Russian_Federation-2077847">
+To His Excellency Mr. Vladimir Putin, President of the Russian Federation
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear bottom-margin-30" style="">
+<div class="multimedia">
+<div class="multimedia-inner">
+<div class="header">
+MULTIMEDIA	</div>
+<div class="content">
+<div id="multimedia">
+<ul>
+<li>
+<a href="#tabs-1">
+VIDEO </a>
+</li>
+<li>
+<a href="#tabs-2">
+INFOGRAPHICS </a>
+</li>
+</ul>
+<div id="tabs-1">
+<div class="tabs-inner clear">
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="https://video.azertag.az/en/site/video/140327" target="_blank">
+<div style="position: absolute; left: 80px; top: 50px; margin: 0;">
+<span><img src="/website-media/images/play-button.png?v=new" style="background: #fff; border-radius: 50%;" /></span>
+</div>
+<img src="/files/video_photo/2022/1/200x146/1650792686644495877_200x146.jpg" width="200" height="146" alt="35th International Kite Festival kicks off in Berck, France" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+24.04.2022 [13:36] </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="https://video.azertag.az/en/site/video/140327" target="_blank">
+35th International Kite Festival kicks off in Berck, France </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="https://video.azertag.az/en/site/video/140318" target="_blank">
+<div style="position: absolute; left: 80px; top: 50px; margin: 0;">
+<span><img src="/website-media/images/play-button.png?v=new" style="background: #fff; border-radius: 50%;" /></span>
+</div>
+<img src="/files/video_photo/2022/1/200x146/16507910545341363711_200x146.jpg" width="200" height="146" alt="Nine people found from tour boat that went missing in rough waters off Japan" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+24.04.2022 [13:03] </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="https://video.azertag.az/en/site/video/140318" target="_blank">
+Nine people found from tour boat that went missing in rough waters off Japan </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left news-item-last">
+<div class="news-image">
+<a href="https://video.azertag.az/en/site/video/140231" target="_blank">
+<div style="position: absolute; left: 80px; top: 50px; margin: 0;">
+<span><img src="/website-media/images/play-button.png?v=new" style="background: #fff; border-radius: 50%;" /></span>
+</div>
+<img src="/files/video_photo/2022/1/200x146/16506385951628354191_200x146.jpg" width="200" height="146" alt="Chinese performance artist Kong Ning presents latest Earth Day work in Beijing" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+22.04.2022 [18:42] </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="https://video.azertag.az/en/site/video/140231" target="_blank">
+Chinese performance artist Kong Ning presents latest Earth Day work in Beijing </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="https://video.azertag.az/en/site/video/140168" target="_blank">
+<div style="position: absolute; left: 80px; top: 50px; margin: 0;">
+<span><img src="/website-media/images/play-button.png?v=new" style="background: #fff; border-radius: 50%;" /></span>
+</div>
+<img src="/files/video_photo/2022/1/200x146/16506275785822334347_200x146.jpg" width="200" height="146" alt="Fifth Congress of World Azerbaijanis gets underway in Shusha city  President Ilham Aliyev made a speech at the Congress" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+22.04.2022 [15:39] </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="https://video.azertag.az/en/site/video/140168" target="_blank">
+Fifth Congress of World Azerbaijanis gets underway in Shusha city <BR>
+President Ilham Aliyev made a speech at the Congress </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="navigation clear">
+<div class="next float-right">
+<a href="https://video.azertag.az/en" target="_blank">
+All videos </a>
+</div>
+</div>
+</div>
+<div id="tabs-2">
+<div class="tabs-inner clear">
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="/en/infografika/4112">
+<img src="/files/info_photo/2022/1/200x146/1650697888449258761_200x146.jpg" width="200" height="146" alt="Azerbaıjanı Presıdent: The mother tongue ıs a key factor that brıngs all azerbaıjanı cıtızens closer together" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+23.04.2022 </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="/en/infografika/4112" target="_blank">
+Azerbaıjanı Presıdent: The mother tongue ıs a key factor that brıngs all azerbaıjanı cıtızens closer together </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="/en/infografika/4118">
+<img src="/files/info_photo/2022/1/200x146/16506987563086742070_200x146.jpg" width="200" height="146" alt="Presıdent Ilham Alıyev: We have proved to the whole world that the we are great nation" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+23.04.2022 </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="/en/infografika/4118" target="_blank">
+Presıdent Ilham Alıyev: We have proved to the whole world that the we are great nation </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left news-item-last">
+<div class="news-image">
+<a href="/en/infografika/4097">
+<img src="/files/info_photo/2022/1/200x146/16506953112168034476_200x146.jpg" width="200" height="146" alt="Presıdent Ilham Alıyev: The name of this congress is Victory Congress, and this is natural" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+23.04.2022 </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="/en/infografika/4097" target="_blank">
+Presıdent Ilham Alıyev: The name of this congress is Victory Congress, and this is natural </a>
+</div>
+</div>
+</div>
+</div>
+<div class="news-item float-left ">
+<div class="news-image">
+<a href="/en/infografika/4073">
+<img src="/files/info_photo/2022/1/200x146/16505438423788220091_200x146.jpg" width="200" height="146" alt="Presıdent Ilham Alıyev: Relations between Azerbaijan and Kyrgyzstan have a solid foundation" />
+</a>
+</div>
+<div class="news-title-date">
+<div class="news-date">
+21.04.2022 </div>
+<div class="news-title">
+<div class="news-title-inner">
+<a href="/en/infografika/4073" target="_blank">
+Presıdent Ilham Alıyev: Relations between Azerbaijan and Kyrgyzstan have a solid foundation </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="navigation clear">
+<div class="next float-right">
+<a href="/en/infografika" target="_blank">
+INFOGRAPHICS </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="clear bottom-margin-25">
+<div class="tabnews tabnews-1 float-left politics">
+<div class="tabnews-inner">
+<div class="header clear">
+<div class="title float-left">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="content">
+<div class="content-inner clear">
+<div class="first-news">
+<div class="news-item clear hasaudio hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image">
+<a href="/en/xeber/Azerbaijan_among_worlds_top_five_countries_by_military_spending_as_share_of_GDP-2108921">
+<img src="/files/2022/1/228x166/16508773303355514858_228x166.png" width="228" height="166" alt="Azerbaijan among world`s top five countries by military spending as share of GDP" />
+</a>
+</div>
+</div>
+<div class="news-right float-left">
+<div class="news-title">
+<a href="/en/xeber/Azerbaijan_among_worlds_top_five_countries_by_military_spending_as_share_of_GDP-2108921">
+Azerbaijan among world`s top five countries by military spending as share of GDP
+</a>
+</div>
+<div class="news-info">
+<div class="news-date">25.04.2022 [12:17]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-teaser">
+<p>Azerbaijan has been ranked among the world`s top five countries with military expenditure as a share of gross domestic product (GDP), according to the report “Trends in world military expenditure" of the Stockholm International Peace Research Institute ...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="other-four">
+<div class="other-four-inner">
+<div class="news-row clear news-row-1">
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Military_unit_of_Azerbaijans_Land_Forces_holds_meeting_on_results_of_first_quarter_of_training_year-2108675"><img src="/files/2022/1/112x182/16508711404381360768_112x182.jpg" width="112" height="82" alt="Military unit of Azerbaijan’s Land Forces holds meeting on results of first quarter of training year" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [11:20]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Military_unit_of_Azerbaijans_Land_Forces_holds_meeting_on_results_of_first_quarter_of_training_year-2108675">Military unit of Azerbaijan’s Land Forces holds meeting on results of first quarter of training year
+</a></div>
+ </div>
+</div>
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Azerbaijani_Armenian_FMs_have_phone_talk-2108534"><img src="/files/2022/1/112x182/16508680825237215263_112x182.png" width="112" height="82" alt="Azerbaijani, Armenian FMs have phone talk" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [10:24]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Azerbaijani_Armenian_FMs_have_phone_talk-2108534">Azerbaijani, Armenian FMs have phone talk
+</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-2">
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Azerbaijans_Foreign_Ministry_It_is_unfortunate_that_statement_by_US_President_on_Armenian_Remembrance_Day_once_again_distorted_historical_facts_about_events_of_1915-2108426"><img src="/files/2022/1/112x182/16508291484119327533_112x182.jpg" width="112" height="82" alt="Azerbaijan`s Foreign Ministry: It is unfortunate that statement by US President on Armenian Remembrance Day, once again distorted historical facts about events of 1915" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">24.04.2022 [23:39]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Azerbaijans_Foreign_Ministry_It_is_unfortunate_that_statement_by_US_President_on_Armenian_Remembrance_Day_once_again_distorted_historical_facts_about_events_of_1915-2108426">Azerbaijan`s Foreign Ministry: It is unfortunate that statement by US President on Armenian Remembrance Day, once again distorted historical facts about events of 1915</a></div>
+</div>
+</div>
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/President_Ilham_Aliyev_Azerbaijan_is_ready_for_negotiations_in_the_Baku_Yerevan_format-2107949"><img src="/files/2022/1/112x182/1650733680128556964_112x182.jpg" width="112" height="82" alt="President Ilham Aliyev: Azerbaijan is ready for negotiations in the “Baku-Yerevan” format" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">23.04.2022 [20:57]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/President_Ilham_Aliyev_Azerbaijan_is_ready_for_negotiations_in_the_Baku_Yerevan_format-2107949">President Ilham Aliyev: Azerbaijan is ready for negotiations in the “Baku-Yerevan” format</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-3">
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/President_Ilham_Aliyev_039s_speech_at_Victory_Congress_in_spotlight_of_Moldovan_media-2107679"><img src="/files/2022/1/112x182/16507200821588830464_112x182.jpg" width="112" height="82" alt="President Ilham Aliyev&#039;s speech at Victory Congress in spotlight of Moldovan media" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">23.04.2022 [17:22]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/President_Ilham_Aliyev_039s_speech_at_Victory_Congress_in_spotlight_of_Moldovan_media-2107679">President Ilham Aliyev's speech at Victory Congress in spotlight of Moldovan media
+</a></div>
+</div>
+</div>
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Congress_of_World_Azerbaijanis_Victory_Congress_wraps_up_in_Shusha-2107409"><img src="/files/2022/1/112x182/16507138275827260678_112x182.jpg" width="112" height="82" alt="Congress of World Azerbaijanis-Victory Congress wraps up in Shusha" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">23.04.2022 [15:34]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Congress_of_World_Azerbaijanis_Victory_Congress_wraps_up_in_Shusha-2107409">Congress of World Azerbaijanis-Victory Congress wraps up in Shusha
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <div class="littlenews littlenews-1 float-left left-margin-8 economy hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/economy">
+ECONOMY </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Oil_price_drop_on_world_markets-2108531"><img src="/files/2022/1/228x166/16508680481130732058_228x166.jpg" width="228" height="166" alt="Oil price drop on world markets" /></a></div>
+<div class="item-date">
+25.04.2022 [10:26] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Oil_price_drop_on_world_markets-2108531">
+Oil price drop on world markets
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+23.04.2022 [19:08] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Baku_to_host__quotSME_Fest_quot-2107883">
+Baku to host "SME Fest"
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+23.04.2022 [18:25] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/SOCAR_first_vice_president_401_billion_cubic_meters_of_Azerbaijani_gas_transported_to_Turkish_and_European_markets_in_Q1_2022-2107814">
+SOCAR first vice-president: 4.01 billion cubic meters of Azerbaijani gas transported to Turkish and European markets in Q1 2022
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+23.04.2022 [16:57] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Overhaul_of_Nasimi_tanker_completed-2107625">
+Overhaul of “Nasimi” tanker completed
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-5">
+<div class="item-date">
+23.04.2022 [11:03] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijani_oil_sells_for_10967-2106782">
+Azerbaijani oil sells for $109.67
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="clear bottom-margin-30 for-front-page">
+<div class="littlenews littlenews-2 float-left society hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/society">
+SOCIETY </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Alchemilla_flower-2107904"><img src="/files/2022/1/228x166/16507270843096032063_228x166.jpg" width="228" height="166" alt="Alchemilla flower" /></a></div>
+<div class="item-date">
+23.04.2022 [19:17] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Alchemilla_flower-2107904">
+Alchemilla flower
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+23.04.2022 [17:53] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Eurasian_lynx_one_of_the_widest_ranging_of_all_cat_species-2107745">
+Eurasian lynx, one of the widest ranging of all cat species </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+23.04.2022 [16:56] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Wonderful_corpse_lily-2107619">
+Wonderful corpse lily </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+22.04.2022 [18:27] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Kazakhstan_to_host_10th_meeting_of_TURKPA_Commission_on_Social_Cultural_and_Humanitarian_Affairs-2106350">
+Kazakhstan to host 10th meeting of TURKPA Commission on Social, Cultural and Humanitarian Affairs
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-4 float-left left-margin-7 science_and_education hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/science_and_education">
+SCIENCE AND EDUCATION </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Neolithic_Site_of_CHatalhoyuk___one_of_oldest_settlements_in_human_history_recognized_as_UNESCO_World_Heritage_site_in_Turkiye-2099846"><img src="/files/2022/1/228x166/165035390158889133_228x166.jpg" width="228" height="166" alt="Neolithic Site of Çatalhöyük – one of oldest settlements in human history recognized as UNESCO World Heritage site in Turkiye" /></a></div>
+<div class="item-date">
+19.04.2022 [11:36] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Neolithic_Site_of_CHatalhoyuk___one_of_oldest_settlements_in_human_history_recognized_as_UNESCO_World_Heritage_site_in_Turkiye-2099846">
+Neolithic Site of Çatalhöyük – one of oldest settlements in human history recognized as UNESCO World Heritage site in Turkiye
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+18.04.2022 [21:18] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/EU_and_UNDP_supports_modernization_of_vocational_education_content_in_Azerbaijan-2099522">
+EU and UNDP supports modernization of vocational education content in Azerbaijan </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+18.04.2022 [19:03] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Turkish_researcher_visits_House_Museum_of_prominent_Azerbaijani_poet_and_playwright_Huseyn_Javid-2099402">
+Turkish researcher visits House-Museum of prominent Azerbaijani poet and playwright Huseyn Javid </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+18.04.2022 [18:48] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijans_Ministry_of_Education_Karabakh_Revival_Fund_sign_Memorandum_of_Understanding_on_cooperation-2099333">
+Azerbaijan’s Ministry of Education, Karabakh Revival Fund sign Memorandum of Understanding on cooperation
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-5 float-left left-margin-8 culture hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/culture">
+CULTURE </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Baroque_Days_International_Music_Festival_kicks_off_in_Baku-2108765"><img src="/files/2022/1/228x166/16508737701106664127_228x166.jpg" width="228" height="166" alt="Baroque Days International Music Festival kicks off in Baku" /></a></div>
+<div class="item-date">
+25.04.2022 [11:37] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Baroque_Days_International_Music_Festival_kicks_off_in_Baku-2108765">
+Baroque Days International Music Festival kicks off in Baku
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+24.04.2022 [14:01] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/President_of_International_Turkic_Culture_and_Heritage_Foundation_meets_with_deputies_of_TURKPA_Commission_on_Social_Cultural_and_Humanitarian_Issues-2108195">
+President of International Turkic Culture and Heritage Foundation meets with deputies of TURKPA Commission on Social, Cultural and Humanitarian Issues </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+23.04.2022 [18:31] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_State_Theatre_Museum_named_after_prominent_playwright_Jafar_Jabbarli-2107829">
+Azerbaijan State Theatre Museum named after prominent playwright Jafar Jabbarli
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+23.04.2022 [17:33] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Shusha_Music_School-2107736">
+Shusha Music School </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-6 float-left left-margin-8 tourism hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/tourism">
+TOURISM </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/RIA_Novosti_news_agency_posts_article_about_Baku-2106137"><img src="/files/2022/1/228x166/16506324695551948199_228x166.jpg" width="228" height="166" alt="RIA-Novosti news agency posts article about Baku" /></a></div>
+<div class="item-date">
+22.04.2022 [17:02] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/RIA_Novosti_news_agency_posts_article_about_Baku-2106137">
+RIA-Novosti news agency posts article about Baku
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+21.04.2022 [19:00] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijani_Georgian_tourism_representatives_discuss_organization_of_joint_tours-2104661">
+Azerbaijani, Georgian tourism representatives discuss organization of joint tours
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+21.04.2022 [15:40] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_Tourism_Board_launches_online_campaign_on_Wego_platform-2104061">
+Azerbaijan Tourism Board launches online campaign on Wego platform
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+09.03.2022 [19:44] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Flame_Towers__one_of_the_world_039s_tallest_hotels-2045288">
+Flame Towers- one of the world's tallest hotels </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="clear bottom-margin-30">
+<div class="tabnews tabnews-2 float-left sports">
+<div class="tabnews-inner">
+<div class="header clear">
+<div class="title float-left">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="content">
+<div class="content-inner clear">
+<div class="first-news">
+<div class="news-item clear hasaudio hasvideo hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image">
+<a href="/en/xeber/Gabriel_ZHezus_otkazyvaetsya_govorit_o_svoem_budushchem_v_Manchester_Siti-2108981">
+<img src="/files/2022/1/228x166/1650878800733764320_228x166.jpg" width="228" height="166" alt="Габриэль Жезус отказывается говорить о своем будущем в «Манчестер Сити»" />
+</a>
+ </div>
+</div>
+<div class="news-right float-left">
+<div class="news-title">
+<a href="/en/xeber/Gabriel_ZHezus_otkazyvaetsya_govorit_o_svoem_budushchem_v_Manchester_Siti-2108981">
+Габриэль Жезус отказывается говорить о своем будущем в «Манчестер Сити»
+</a>
+</div>
+<div class="news-info">
+<div class="news-date">25.04.2022 [13:26]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-teaser">
+<p>Нападающий «Манчестер Сити» Габриэль Жезус отказывается говорить о своем будущем.
+«Сейчас не время думать об этом, правда. Я хочу наслаждаться игрой, оставаться сосредоточенным на своей команде, на своих товарищах, на борьбе за титул АПЛ» ...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="other-four">
+<div class="other-four-inner">
+<div class="news-row clear news-row-1">
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Azerbaijani_judokas_bring_home_nine_medals_from_Strasbourg_Cadet_European_Cup_2022-2108825"><img src="/files/2022/1/112x182/16508753505279021627_112x182.jpg" width="112" height="82" alt="Azerbaijani judokas bring home nine medals from Strasbourg Cadet European Cup 2022" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [11:49]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Azerbaijani_judokas_bring_home_nine_medals_from_Strasbourg_Cadet_European_Cup_2022-2108825">Azerbaijani judokas bring home nine medals from Strasbourg Cadet European Cup 2022
+</a></div>
+</div>
+</div>
+<div class="news-item float-left  hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Azerbaijani_judokas_claim_five_medals_at_Poznan_Junior_European_Cup_2022-2108699"><img src="/files/2022/1/112x182/1650871657196919877_112x182.jpg" width="112" height="82" alt="Azerbaijani judokas claim five medals at Poznan Junior European Cup 2022" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [11:20]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Azerbaijani_judokas_claim_five_medals_at_Poznan_Junior_European_Cup_2022-2108699">Azerbaijani judokas claim five medals at Poznan Junior European Cup 2022
+</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-2">
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Man_United_039s_Cristiano_Ronaldo_scores_100th_Premier_League_goal-2108657"><img src="/files/2022/1/112x182/16508708283591718320_112x182.jpg" width="112" height="82" alt="Man United&#039;s Cristiano Ronaldo scores 100th Premier League goal" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [11:02]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Man_United_039s_Cristiano_Ronaldo_scores_100th_Premier_League_goal-2108657">Man United's Cristiano Ronaldo scores 100th Premier League goal
+</a></div>
+</div>
+</div>
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Liverpool_topple_Everton_2_0_in_derby_to_pursue_leaders_Man_City-2108627"><img src="/files/2022/1/112x182/16508704973249854856_112x182.jpg" width="112" height="82" alt="Liverpool topple Everton 2-0 in derby to pursue leaders Man City" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [11:00]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Liverpool_topple_Everton_2_0_in_derby_to_pursue_leaders_Man_City-2108627">Liverpool topple Everton 2-0 in derby to pursue leaders Man City
+</a></div>
+</div>
+</div>
+</div>
+<div class="news-row clear news-row-3">
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Azerbaijani_Para_judokas_take_two_silvers_at_2022_IBSA_Judo_World_Grand_Prix_in_Antalya-2108546"><img src="/files/2022/1/112x182/16508682072683126666_112x182.jpg" width="112" height="82" alt="Azerbaijani Para judokas take two silvers at 2022 IBSA Judo World Grand Prix in Antalya" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [10:31]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Azerbaijani_Para_judokas_take_two_silvers_at_2022_IBSA_Judo_World_Grand_Prix_in_Antalya-2108546">Azerbaijani Para judokas take two silvers at 2022 IBSA Judo World Grand Prix in Antalya
+</a></div>
+</div>
+</div>
+<div class="news-item float-left   hasimage withimage">
+<div class="news-left float-left">
+<div class="news-image"><a href="/en/xeber/Barcelona_loses_again_at_home_Madrid_1_point_from_title-2108519"><img src="/files/2022/1/112x182/165086729811459321_112x182.jpg" width="112" height="82" alt="Barcelona loses again at home, Madrid 1 point from title" /></a></div>
+</div>
+<div class="news-right float-left">
+<div class="news-info">
+<div class="news-date">25.04.2022 [10:16]</div>
+<div class="news-flags">
+<div class="flag-photo"></div> </div>
+</div>
+<div class="news-title"><a href="/en/xeber/Barcelona_loses_again_at_home_Madrid_1_point_from_title-2108519">Barcelona loses again at home, Madrid 1 point from title
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-7 float-left left-margin-8 tehsil hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/tehsil">
+TECHNOLOGY </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Lev_Landau___Nobel_Prize_Winner_in_Physics-1970178"><img src="/files/2022/1/228x166/16416333704580715485_228x166.jpg" width="228" height="166" alt="Lev Landau – Nobel Prize Winner in Physics" /></a></div>
+<div class="item-date">
+08.01.2022 [13:13] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Lev_Landau___Nobel_Prize_Winner_in_Physics-1970178">
+Lev Landau – Nobel Prize Winner in Physics
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+18.10.2019 [08:51] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Iranian_ambassador_stresses_importance_of_scientific_cooperation_with_Azerbaijan-1344092">
+Iranian ambassador stresses importance of scientific cooperation with Azerbaijan
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+08.07.2019 [15:56] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Ai_Da_humanoid_robot_artist_gears_up_for_first_solo_exhibition-1303740">
+Ai-Da, humanoid robot artist, gears up for first solo exhibition </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+24.04.2019 [20:54] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Mars_2020_Rover_assembled_and_tested_ahead_of_launch_next_year-1274297">
+Mars 2020 Rover assembled and tested ahead of launch next year </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-5">
+<div class="item-date">
+15.02.2019 [10:45] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Japanese_scientists_found_black_hole_at_center_of_Milky_Way-1246379">
+Japanese scientists found black hole at center of Milky Way </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="clear bottom-margin-25 for-front-page">
+<div class="littlenews littlenews-9 float-left environment hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/environment">
+ENVIRONMENT </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Magnitude_35_quake_jolts_Azerbaijani_sector_of_Caspian_Sea-2107259"><img src="/files/2022/1/228x166/16507102464446645663_228x166.jpg" width="228" height="166" alt="Magnitude 3,5 quake jolts Azerbaijani sector of Caspian Sea" /></a></div>
+<div class="item-date">
+23.04.2022 [14:31] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Magnitude_35_quake_jolts_Azerbaijani_sector_of_Caspian_Sea-2107259">
+Magnitude 3,5 quake jolts Azerbaijani sector of Caspian Sea
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+22.04.2022 [14:01] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/UN_chief_calls_for_ambitious_action_on_climate_disruption_nature_loss_pollution-2105597">
+UN chief calls for ambitious action on climate disruption, nature loss, pollution
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+22.04.2022 [13:58] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/22_April__International_Mother_Earth_Day-2105588">
+22 April- International Mother Earth Day
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+19.04.2022 [18:55] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Head_of_National_Hydrometeorological_Service_In_the_near_future_the_water_quality_control_of_Okhchuchay_river_will_be_carried_out_remotely_without_any_interruption-2101064">
+Head of National Hydrometeorological Service: In the near future, the water quality control of Okhchuchay river will be carried out remotely without any interruption
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-8 float-left left-margin-7 healthcare hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/healthcare">
+HEALTHCARE </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Azerbaijan_detects_20_daily_COVID_19_cases-2108324"><img src="/files/2022/1/228x166/16508097822755021408_228x166.jpg" width="228" height="166" alt="Azerbaijan detects 20 daily COVID-19 cases" /></a></div>
+<div class="item-date">
+24.04.2022 [18:13] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_detects_20_daily_COVID_19_cases-2108324">
+Azerbaijan detects 20 daily COVID-19 cases </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+23.04.2022 [17:54] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_administers_over_4000_COVID_19_vaccine_shots_in_24_hours-2107739">
+Azerbaijan administers over 4,000 COVID-19 vaccine shots in 24 hours
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+23.04.2022 [17:37] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_logs_19_new_COVID_19_cases-2107712">
+Azerbaijan logs 19 new COVID-19 cases
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+22.04.2022 [17:14] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Azerbaijan_reports_zero_daily_coronavirus_related_deaths-2106167">
+Azerbaijan reports zero daily coronavirus-related deaths
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-3 float-left left-margin-8 world hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/world">
+WORLD </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Fatalities_from_missing_boat_in_Japan_rise_to_11_after_girl_confirmed_dead-2108972"><img src="/files/2022/1/228x166/16508785925293446753_228x166.jpg" width="228" height="166" alt="Fatalities from missing boat in Japan rise to 11 after girl confirmed dead" /></a></div>
+<div class="item-date">
+25.04.2022 [12:38] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Fatalities_from_missing_boat_in_Japan_rise_to_11_after_girl_confirmed_dead-2108972">
+Fatalities from missing boat in Japan rise to 11 after girl confirmed dead
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+25.04.2022 [10:04] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Slovenias_opposition_liberal_movement_declares_victory_in_general_election-2108501">
+Slovenia’s opposition liberal movement declares victory in general election
+</a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+24.04.2022 [23:23] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Turkiye__039rejects_039_US_President_Biden_039s_remarks_on_events_of_1915-2108420">
+Turkiye 'rejects' US President Biden's remarks on events of 1915 </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+24.04.2022 [18:21] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Magnitude_48_quake_jolts_Bosnia_and_Herzegovina-2108327">
+Magnitude 4.8 quake jolts Bosnia and Herzegovina </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="littlenews littlenews-14 float-left left-margin-8 regionlar hasimage">
+<div class="littlenews-inner">
+<div class="title">
+<a href="/en/bolme/regionlar">
+REGIONS </a>
+</div>
+<div class="content">
+<div class="news-item news-item-1">
+<div class="item-image"><a href="/en/xeber/Garakollu_village_of_Fuzuli_district-2107466"><img src="/files/2022/1/228x166/1650715324442256249_228x166.jpg" width="228" height="166" alt="Garakollu village of Fuzuli district" /></a></div>
+<div class="item-date">
+25.04.2022 [10:00] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Garakollu_village_of_Fuzuli_district-2107466">
+Garakollu village of Fuzuli district </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-2">
+<div class="item-date">
+24.04.2022 [10:00] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Fughanli_village_of_Jabrayil_district-2107460">
+Fughanli village of Jabrayil district </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-3">
+<div class="item-date">
+23.04.2022 [10:00] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Shikhbabali_village_of_Aghdam_district-2106728">
+Shikhbabali village of Aghdam district </a>
+</div>
+</div>
+</div>
+<div class="news-item news-item-4">
+<div class="item-date">
+22.04.2022 [10:00] </div>
+<div class="item-title">
+<div class="item-title-inner">
+<a href="/en/xeber/Babayli_village_of_Zangilan_district-2104937">
+Babayli village of Zangilan district </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="footer-widgets-container">
+<div class="footer-widgets-block" id="footer-block-1">
+<div class="newslist redstyle">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a>MOST READ - LAST DAY</a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first"><div class="item-date">24.04.2022 [23:39]</div><div class="item-title"><a href="/en/xeber/2108426">Azerbaijan`s Foreign Ministry: It is unfortunate that statement by US President on Armenian Remembrance Day, once again distorted historical facts about events of 1915</a></div></div><div class="item item-2 "><div class="item-date">24.04.2022 [23:23]</div><div class="item-title"><a href="/en/xeber/2108420">Turkiye 'rejects' US President Biden's remarks on events of 1915</a></div></div><div class="item item-3 "><div class="item-date">24.04.2022 [18:13]</div><div class="item-title"><a href="/en/xeber/2108324">Azerbaijan detects 20 daily COVID-19 cases</a></div></div><div class="item item-4 "><div class="item-date">24.04.2022 [18:21]</div><div class="item-title"><a href="/en/xeber/2108327">Magnitude 4.8 quake jolts Bosnia and Herzegovina</a></div></div><div class="item item-5 last"><div class="item-date">25.04.2022 [10:04]</div><div class="item-title"><a href="/en/xeber/2108501">Slovenia’s opposition liberal movement declares victory in general election
+</a></div></div> </div>
+</div>
+</div> </div>
+<div class="footer-widgets-block" id="footer-block-2">
+<div class="newslist redstyle">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a>MOST READ - LAST WEEK</a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first"><div class="item-date">23.04.2022 [20:57]</div><div class="item-title"><a href="/en/xeber/2107949">President Ilham Aliyev: Azerbaijan is ready for negotiations in the “Baku-Yerevan” format</a></div></div><div class="item item-2 "><div class="item-date">22.04.2022 [18:35]</div><div class="item-title"><a href="/en/xeber/2104988">Fifth Congress of World Azerbaijanis gets underway in Shusha city <BR> President Ilham Aliyev made a speech at the Congress <span style="color:#ff0000">VIDEO</span>
+</a></div></div><div class="item item-3 "><div class="item-date">22.04.2022 [13:25]</div><div class="item-title"><a href="/en/xeber/2105513">Azerbaijan’s Defense Ministry: Competitions for the title of best grenade launcher personnel were held <span style="color:#ff0000">VIDEO</span>
+</a></div></div><div class="item item-4 "><div class="item-date">22.04.2022 [23:03]</div><div class="item-title"><a href="/en/xeber/2106572">Azerbaijan, Latvia discuss issues of expanding cooperation</a></div></div><div class="item item-5 last"><div class="item-date">23.04.2022 [19:08]</div><div class="item-title"><a href="/en/xeber/2107883">Baku to host "SME Fest"
+</a></div></div> </div>
+</div>
+</div> </div>
+<div class="footer-widgets-block" style="margin-right: 0px !important;" id="footer-block-3">
+<div class="newslist redstyle">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a>MOST READ - LAST MONTH</a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first"><div class="item-date">23.04.2022 [20:57]</div><div class="item-title"><a href="/en/xeber/2107949">President Ilham Aliyev: Azerbaijan is ready for negotiations in the “Baku-Yerevan” format</a></div></div><div class="item item-2 "><div class="item-date">22.04.2022 [18:35]</div><div class="item-title"><a href="/en/xeber/2104988">Fifth Congress of World Azerbaijanis gets underway in Shusha city <BR> President Ilham Aliyev made a speech at the Congress <span style="color:#ff0000">VIDEO</span>
+</a></div></div><div class="item item-3 "><div class="item-date">22.04.2022 [13:25]</div><div class="item-title"><a href="/en/xeber/2105513">Azerbaijan’s Defense Ministry: Competitions for the title of best grenade launcher personnel were held <span style="color:#ff0000">VIDEO</span>
+</a></div></div><div class="item item-4 "><div class="item-date">21.04.2022 [14:14]</div><div class="item-title"><a href="/en/xeber/2103830">President Ilham Aliyev viewed restoration work to be carried out at Kondalanchay reservoirs and construction of Ahmadbayli-Fuzuli-Shusha highway and tunnels on the road, major overhaul of administrative building and construction of conference hall in Shusha <span style="color:#ff0000">VIDEO</span> </a></div></div><div class="item item-5 last"><div class="item-date">20.04.2022 [19:27]</div><div class="item-title"><a href="/en/xeber/2102957">Baku Energy Week to start in June</a></div></div> </div>
+</div>
+</div> </div>
+<div class="clear"></div>
+</div>
+<div class="footer-widgets-container">
+<div class="footer-widgets-block" id="footer-block2-1">
+<div class="newslist redstyle interview">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a href="/en/bolme/interview">
+INTERVIEW </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first">
+<div class="item-date">
+04.03.2022 [19:20] </div>
+<div class="item-title">
+<a href="/en/xeber/ILO_Director_General_Azerbaijan_is_a_great_place_for_dialogue_between_government_workers_and_employers-2040242">
+ILO Director General: Azerbaijan is a great place for dialogue between government, workers and employers </a>
+</div>
+</div>
+<div class="item item-2 ">
+<div class="item-date">
+20.01.2022 [17:29] </div>
+<div class="item-title">
+<a href="/en/xeber/World_famous_photographer_speaks_about_20_January_filming_in_Baku-1981080">
+World-famous photographer speaks about 20 January filming in Baku
+</a>
+</div>
+</div>
+<div class="item item-3 ">
+<div class="item-date">
+30.12.2021 [14:30] </div>
+<div class="item-title">
+<a href="/en/xeber/UK_Ambassador_This_year_will_be_a_great_opportunity_for_us_to_highlight_this_growing_strength_of_the_relationship-1965510">
+UK Ambassador: This year will be a great opportunity for us to highlight this growing strength of the relationship
+</a>
+</div>
+</div>
+<div class="item item-4 ">
+<div class="item-date">
+27.01.2021 [19:31] </div>
+<div class="item-title">
+<a href="/en/xeber/PACE_President_I_congratulate_Azerbaijan_on_the_20th_anniversary_of_its_accession_to_the_Council_of_Europe-1698449">
+PACE President: I congratulate Azerbaijan on the 20th anniversary of its accession to the Council of Europe </a>
+</div>
+</div>
+<div class="item item-5 last">
+<div class="item-date">
+13.11.2020 [11:08] </div>
+<div class="item-title">
+<a href="/en/xeber/Vusal_Gasimli_Armenia_will_be_held_responsible_under_international_law-1640871">
+Vusal Gasimli: Armenia will be held responsible under international law
+</a>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="footer-widgets-block" id="footer-block2-2">
+<div class="newslist redstyle analysis">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a href="/en/bolme/analysis">
+ANALYSIS </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first">
+<div class="item-date">
+11.04.2022 [18:09] </div>
+<div class="item-title">
+<a href="/en/xeber/Charismatic_leader_having_clear_vision_plans_and_programs_about_his_countrys_future-2088734">
+Charismatic leader having clear vision, plans and programs about his country’s future </a>
+</div>
+</div>
+<div class="item item-2 ">
+<div class="item-date">
+05.04.2022 [20:29] </div>
+<div class="item-title">
+<a href="/en/xeber/UN_Secretary_General_warns_of_climate_emergency_calling_intergovernmental_panels_report_a_file_of_shame-2079359">
+UN Secretary-General warns of climate emergency, calling intergovernmental panel’s report ‘a file of shame’
+</a>
+</div>
+</div>
+<div class="item item-3 ">
+<div class="item-date">
+13.08.2021 [14:49] </div>
+<div class="item-title">
+<a href="/en/xeber/Climate_crisis_calls_for_enhanced_international_cooperation_Are_we_up_for_this_challenge-1851899">
+Climate crisis calls for enhanced international cooperation. Are we up for this challenge?
+</a>
+</div>
+</div>
+<div class="item item-4 ">
+<div class="item-date">
+20.05.2021 [21:08] </div>
+<div class="item-title">
+<a href="/en/xeber/Return_of_Kharibulbul_and_messages_to_world_from_Shusha-1785587">
+Return of “Kharibulbul” and messages to world from Shusha </a>
+</div>
+</div>
+<div class="item item-5 last">
+<div class="item-date">
+15.01.2021 [12:42] </div>
+<div class="item-title">
+<a href="/en/xeber/WHO_2020___the_year_we_understood_the_true_value_of_health-1688601">
+WHO: 2020 - the year we understood the true value of health </a>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="footer-widgets-block" style="margin-right: 0px !important;" id="footer-block2-3">
+<div class="newslist redstyle oddly_enough">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a href="/en/bolme/oddly_enough">
+ODDLY ENOUGH </a>
+</div>
+<div class="others"></div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first">
+<div class="item-date">
+21.04.2022 [18:48] </div>
+<div class="item-title">
+<a href="/en/xeber/Scientists_find_evidence_for_biggest_earthquake_in_human_history-2104610">
+Scientists find evidence for biggest earthquake in human history
+</a>
+</div>
+</div>
+<div class="item item-2 ">
+<div class="item-date">
+11.04.2022 [19:18] </div>
+<div class="item-title">
+<a href="/en/xeber/Scientists_develop_a_recyclable_pollen_based_paper_for_repeated_printing_and_unprinting-2088965">
+Scientists develop a recyclable pollen-based paper for repeated printing and ‘unprinting’
+</a>
+</div>
+</div>
+<div class="item item-3 ">
+<div class="item-date">
+11.04.2022 [14:13] </div>
+<div class="item-title">
+<a href="/en/xeber/Ramadan_will_be_observed_twice_in_the_year_2030_Saudi_astronomer-2088110">
+Ramadan will be observed twice in the year 2030: Saudi astronomer
+</a>
+</div>
+</div>
+<div class="item item-4 ">
+<div class="item-date">
+11.04.2022 [12:25] </div>
+<div class="item-title">
+<a href="/en/xeber/Thousands_of_new_viruses_discovered_in_the_ocean-2087879">
+Thousands of new viruses discovered in the ocean
+</a>
+</div>
+</div>
+<div class="item item-5 last">
+<div class="item-date">
+05.04.2022 [18:04] </div>
+<div class="item-title">
+<a href="/en/xeber/Crazy_House_in_Vietnam-2080337">
+Crazy House in Vietnam
+</a>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="clear"></div>
+</div>
+<script>
+	$(function() {
+		/* 1st block */
+		var fMaxHeight = $("#footer-block-1").height();
+		
+		for (var i = 2; i <= 3; i++) {
+			if (($("#footer-block-"+i).height()) > fMaxHeight) {
+				fMaxHeight = $("#footer-block-"+i).height();
+			}
+		}
+		
+		for (var i = 1; i <= 3; i++) {
+			$("#footer-block-"+i+" .newslist-content").height(fMaxHeight-50);
+		}
+		
+		/* 2nd block */
+		var fMaxHeight = $("#footer-block2-1").height();
+		
+		for (var i = 2; i <= 3; i++) {
+			if (($("#footer-block2-"+i).height()) > fMaxHeight) {
+				fMaxHeight = $("#footer-block2-"+i).height();
+			}
+		}
+		
+		for (var i = 1; i <= 3; i++) {
+			$("#footer-block2-"+i+" .newslist-content").height(fMaxHeight-50);
+		}
+	});
+</script>
+<style>
+	.footer-widgets-block {
+		float: left;
+		width: 308px;
+		margin-right: 5px;
+	}
+</style>
+<div>
+<div style="margin-left: 5px;">
+<div style="float: left; margin-top: 10px; margin-right: 30px;" class="bottombannervandalizm">
+<a href="https://azertag.az/en/bolme/frontline_news" target="_blank">
+<img src="/website-media/images/cebhe-en.jpg" width="100%" />
+</a>
+</div>
+<div style="float: left; margin-top: 10px; margin-right: 30px;" class="bottombannervandalizm">
+<a href="https://azertag.az/en/xeber/1622297" target="_blank">
+<img src="/website-media/images/ishgal-en.jpg" />
+</a>
+</div>
+<div style="float: left; margin-top: 10px; margin-right: 30px;" class="bottombannervandalizm">
+<a href="https://azertag.az/en/xeber/1626867" target="_blank">
+<img src="/website-media/images/kurekchay-en.jpg" />
+</a>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div style="margin-left: 5px;">
+<div style="float: left; margin-top: 10px; margin-right: 30px;" class="bottombannervandalizm">
+<a href="/files/khojaly.pdf" target="_blank">
+<img src="/website-media/banners/genocide/khojaly-az.jpg?v=khojalynew" />
+</a>
+</div>
+<div style="float: left; margin-top: 10px; margin-right: 30px;" class="bottombannervandalizm">
+<a href="/files/sumqait-book.pdf" target="_blank">
+<img src="/website-media/banners/genocide/sumgait-az.jpg?v=sumgaitnew" />
+</a>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div style="margin-left: 5px;">
+<div style="float: left; margin-top: 10px;" class="bottombannervandalizm">
+<a href="/en/bolme/armenian_fascism">
+<img src="/website-media/banners/fascism-en.jpg" width="100%" />
+</a>
+</div>
+<div style="clear: both;"></div>
+</div>
+</div>
+<div class="bolmelerlist">
+<ul>
+<li>
+<a href="https://azertag.az/en/avtovogzal">
+<img src="/website-media/images/enavtovogzal.png" width="100%" />
+</a>
+</li>
+<li>
+<a href="https://www.airport.az/en/flights/departures/" target="_blank">
+<img src="/website-media/images/enaviareys.png" width="100%" />
+</a>
+</li>
+</ul>
+</div>
+<style>
+	.bottombannervandalizm {
+		transition: all .5s linear;
+		opacity: .9;
+	}
+	.bottombannervandalizm:hover {
+		box-shadow: 4px 4px 10px rgba(0, 0, 0, .5);
+		opacity: 1;
+		transition: all .5s linear;
+	}
+	.bottombannervandalizm img {
+		vertical-align: bottom;
+	}
+</style>
+<div id="persons" class="margin-bottom-3">
+<div class="block-list block">
+<div class="block-content">
+<div class="block-content-inner">
+<div class="jcarousel carousel-persons">
+<ul>
+<li class="persons-item" style="margin-top: 3px;">
+<a class="item-image" href="http://www.taxes.gov.az/" target="_blank">
+<img src="/website-media/images/vergiler_loqo.jpg" height="103px" style="border:1px solid #a9a9a9;" />
+</a>
+</li>
+<li class="persons-item">
+<a class="item-image" href="http://www.ikisahil.az/" target="_blank">
+<img src="/img/banner5.jpg" width="210px" />
+</a>
+</li>
+<li class="persons-item">
+<a class="item-image" href="http://www.azerbaijan.az/" target="_blank">
+<img src="/img/banner6.gif" width="210px" />
+</a>
+</li>
+<li class="persons-item">
+<a class="item-image" href="http://karabagh.lu/" target="_blank">
+<img src="/website-media/banners/bayraq-vasiqa.jpg" style="border:1px solid #a9a9a9;" width="164" />
+</a>
+</li>
+</ul>
+</div>
+</div>
+<a href="#" class="carousel-persons-prev"></a>
+<a href="#" class="carousel-persons-next"></a>
+</div>
+</div>
+</div> </div>
+</div>
+ <div id="sidebars" class="float-left">
+<div id="sidebar-right">
+<div class="sidebar-inner">
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="http://azertag.tilda.ws/en" target="_blank">
+<img src="https://azertag.az/website-media/images/241221-en.jpg" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="/en/bolme/armenian_vandalism" target="_blank">
+<img src="https://azertag.az/website-media/banners/genocide/vandalizm-en.jpg?v=280222" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="http://tkaweb.org/?page_id=643&lang=en" target="_blank">
+<img style="border: 1px solid grey;" src="/website-media/banners/tka_en.jpg" width="260px" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="https://azertag.az/en/bolme/anniversary_greetings" target="_blank">
+<img src="/website-media/images/04_100-en.jpg?v=last" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="https://azertag.az/en/xeber/1965116" target="_blank">
+<img src="/website-media/images/2021-il-en.jpg?v=301221" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="https://www.google.com/maps/place/AZ%C6%8FRTAC+-+Az%C9%99rbaycan+D%C3%B6vl%C9%99t+%C4%B0nformasiya+Agentliyi/@40.4183696,49.8466495,311m/data=!3m1!1e3!4m12!1m6!3m5!1s0x0:0xb48edabdb595c822!2zQVrGj1JUQUMgLSBBesmZcmJheWNhbiBEw7Z2bMmZdCDEsG5mb3JtYXNpeWEgQWdlbnRsaXlp!8m2!3d40.4187172!4d49.8475276!3m4!1s0x0:0xb48edabdb595c822!8m2!3d40.4187172!4d49.8475276?hl=en" target="_blank">
+<img src="/website-media/images/azertac-unvan-en.jpg" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div style="margin-bottom: 10px;">
+<ins><script type="text/javascript">(function () {var rand = Math.floor(Math.random() * 1e9);var adv_1273_iad_div = document.createElement("div");adv_1273_iad_div.setAttribute("id", "adviad-zoneid-1273" +rand);adv_1273_iad_div.style.cssText = "display: flex !important; justify-content: center !important;";document.currentScript.parentElement.appendChild(adv_1273_iad_div);var adv_1273_iad = document.createElement("script");adv_1273_iad.setAttribute("zoneid", 1273);adv_1273_iad.src = "https://adviad.com/nativebanner/get_ads.js?v=" + new Date().toJSON().slice(0,10).replace(/-/g,'.');adv_1273_iad.async = true;document.currentScript.parentNode.appendChild(adv_1273_iad);})();</script></ins>
+</div>
+<div class="newslist redstyle slimscroll son-xeberler scrollto1">
+<div class="newslist-inner">
+<div class="newslist-title clear">
+<div class="title">
+<a href="/en/son-xeberler">
+LATEST NEWS </a>
+</div>
+<div class="change-sections">
+<div class="change-sections-icon"></div>
+<div class="change-sections-main">
+<form onsubmit="filterLastNews(); return false;">
+<div class="change-sections-item clear science_and_education">
+<input type="checkbox" id="section1" name="section1" value="a1">
+<label for="section1" id="sectionn1"><div class="check-icon"><div></div></div>All sections</label>
+</div>
+<div class="change-sections-item clear official_chronicle">
+<input type="checkbox" id="section2" name="section2" value="a2">
+<label for="section2" id="sectionn2"><div class="check-icon"><div></div></div>OFFICIAL NEWS</label>
+</div>
+<div class="change-sections-item clear official_documents">
+<input type="checkbox" id="section3" name="section3" value="a3">
+<label for="section3" id="sectionn3"><div class="check-icon"><div></div></div>OFFICIAL DOCUMENTS </label>
+</div>
+<div class="change-sections-item clear politics">
+<input type="checkbox" id="section4" name="section4" value="a4">
+<label for="section4" id="sectionn4"><div class="check-icon"><div></div></div>POLITICS </label>
+</div>
+<div class="change-sections-item clear economy">
+<input type="checkbox" id="section5" name="section5" value="a5">
+<label for="section5" id="sectionn5"><div class="check-icon"><div></div></div>ECONOMY</label>
+</div>
+<div class="change-sections-item clear regionlar">
+<input type="checkbox" id="section6" name="section6" value="a6">
+<label for="section6" id="sectionn6"><div class="check-icon"><div></div></div>REGIONS</label>
+</div>
+<div class="change-sections-item clear society">
+<input type="checkbox" id="section7" name="section7" value="a7">
+<label for="section7" id="sectionn7"><div class="check-icon"><div></div></div>SOCIETY</label>
+</div>
+<div class="change-sections-item clear culture">
+<input type="checkbox" id="section8" name="section8" value="a8">
+<label for="section8" id="sectionn8"><div class="check-icon"><div></div></div>CULTURE</label>
+</div>
+<div class="change-sections-item clear science_and_education">
+<input type="checkbox" id="section9" name="section9" value="a9">
+<label for="section9" id="sectionn9"><div class="check-icon"><div></div></div>SCIENCE AND EDUCATION</label>
+</div>
+<div class="change-sections-item clear sports">
+<input type="checkbox" id="section10" name="section10" value="a10">
+<label for="section10" id="sectionn10"><div class="check-icon"><div></div></div>SPORTS </label>
+</div>
+<div class="change-sections-item clear world">
+<input type="checkbox" id="section11" name="section11" value="a11">
+<label for="section11" id="sectionn11"><div class="check-icon"><div></div></div>WORLD </label>
+</div>
+<div class="change-sections-item clear bloody_memory">
+<input type="checkbox" id="section12" name="section12" value="a12">
+<label for="section12" id="sectionn12"><div class="check-icon"><div></div></div>DAYS OF SORROW</label>
+</div>
+<div class="change-sections-send">
+<input type="submit" value="FILTER">
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="newslist-content">
+<div class="item item-1 first">
+<div class="item-date">
+[12:38]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Fatalities_from_missing_boat_in_Japan_rise_to_11_after_girl_confirmed_dead-2108972">
+<span>Fatalities from missing boat in Japan rise to 11 after girl confirmed dead </span>
+</a>
+</div>
+</div>
+<div class="item item-2 ">
+<div class="item-date">
+[12:33]&nbsp;&nbsp;
+<span class="lastnewslist official_chronicle 1">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/President_Ilham_Aliyev_received_Special_Representative_of_Russias_Foreign_Ministry_for_normalization_of_Azerbaijan_Armenia_relations-2108876">
+<span>President Ilham Aliyev received Special Representative of Russia’s Foreign Ministry for normalization of Azerbaijan-Armenia relations </span>
+</a>
+</div>
+</div>
+<div class="item item-3 ">
+<div class="item-date">
+[12:17]&nbsp;&nbsp;
+<span class="lastnewslist official_chronicle 1">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/President_Ilham_Aliyev_received_Minister_of_Finance_of_Israel-2108696">
+<span>President Ilham Aliyev received Minister of Finance of Israel </span>
+</a>
+</div>
+</div>
+<div class="item item-4 ">
+<div class="item-date">
+[12:17]&nbsp;&nbsp;
+<span class="lastnewslist politics 1">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijan_among_worlds_top_five_countries_by_military_spending_as_share_of_GDP-2108921">
+<span>Azerbaijan among world`s top five countries by military spending as share of GDP </span>
+</a>
+</div>
+</div>
+<div class="item item-5 ">
+<div class="item-date">
+[11:49]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_judokas_bring_home_nine_medals_from_Strasbourg_Cadet_European_Cup_2022-2108825">
+<span>Azerbaijani judokas bring home nine medals from Strasbourg Cadet European Cup 2022 </span>
+</a>
+</div>
+</div>
+<div class="item item-6 ">
+<div class="item-date">
+[11:37]&nbsp;&nbsp;
+<span class="lastnewslist culture 1">
+<a href="/en/bolme/culture">
+CULTURE </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Baroque_Days_International_Music_Festival_kicks_off_in_Baku-2108765">
+<span>Baroque Days International Music Festival kicks off in Baku </span>
+</a>
+</div>
+</div>
+<div class="item item-7 ">
+<div class="item-date">
+[11:20]&nbsp;&nbsp;
+<span class="lastnewslist politics 1">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Military_unit_of_Azerbaijans_Land_Forces_holds_meeting_on_results_of_first_quarter_of_training_year-2108675">
+<span>Military unit of Azerbaijan’s Land Forces holds meeting on results of first quarter of training year </span>
+</a>
+</div>
+</div>
+<div class="item item-8 ">
+<div class="item-date">
+[11:20]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_judokas_claim_five_medals_at_Poznan_Junior_European_Cup_2022-2108699">
+<span>Azerbaijani judokas claim five medals at Poznan Junior European Cup 2022 </span>
+</a>
+</div>
+</div>
+<div class="item item-9 ">
+<div class="item-date">
+[11:00]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Liverpool_topple_Everton_2_0_in_derby_to_pursue_leaders_Man_City-2108627">
+<span>Liverpool topple Everton 2-0 in derby to pursue leaders Man City </span>
+</a>
+</div>
+</div>
+<div class="item item-10 ">
+<div class="item-date">
+[10:31]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_Para_judokas_take_two_silvers_at_2022_IBSA_Judo_World_Grand_Prix_in_Antalya-2108546">
+<span>Azerbaijani Para judokas take two silvers at 2022 IBSA Judo World Grand Prix in Antalya </span>
+</a>
+</div>
+</div>
+<div class="item item-11 ">
+<div class="item-date">
+[10:26]&nbsp;&nbsp;
+<span class="lastnewslist economy 1">
+<a href="/en/bolme/economy">
+ECONOMY </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Oil_price_drop_on_world_markets-2108531">
+<span>Oil price drop on world markets </span>
+</a>
+</div>
+</div>
+<div class="item item-12 ">
+<div class="item-date">
+[10:24]&nbsp;&nbsp;
+<span class="lastnewslist politics 1">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_Armenian_FMs_have_phone_talk-2108534">
+<span>Azerbaijani, Armenian FMs have phone talk </span>
+</a>
+</div>
+</div>
+<div class="item item-13 ">
+<div class="item-date">
+[10:16]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Barcelona_loses_again_at_home_Madrid_1_point_from_title-2108519">
+<span>Barcelona loses again at home, Madrid 1 point from title </span>
+</a>
+</div>
+</div>
+<div class="item item-14 ">
+<div class="item-date">
+[10:04]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Slovenias_opposition_liberal_movement_declares_victory_in_general_election-2108501">
+<span>Slovenia’s opposition liberal movement declares victory in general election </span>
+</a>
+</div>
+</div>
+<div class="item item-15 ">
+<div class="item-date">
+[10:03]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/AC_Milan_stage_comeback_against_Lazio_with_Tonali_scoring_injury_time_winner-2108498">
+<span>AC Milan stage comeback against Lazio with Tonali scoring injury time winner </span>
+</a>
+</div>
+</div>
+<div class="item item-16 ">
+<div class="item-date">
+[10:00]&nbsp;&nbsp;
+<span class="lastnewslist regionlar 1">
+<a href="/en/bolme/regionlar">
+REGIONS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Garakollu_village_of_Fuzuli_district-2107466">
+<span>Garakollu village of Fuzuli district</span>
+</a>
+</div>
+</div>
+<div class="item item-17 ">
+<div class="item-date">
+24.04.2022 [23:39]&nbsp;&nbsp;
+<span class="lastnewslist politics 1">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijans_Foreign_Ministry_It_is_unfortunate_that_statement_by_US_President_on_Armenian_Remembrance_Day_once_again_distorted_historical_facts_about_events_of_1915-2108426">
+<span>Azerbaijan`s Foreign Ministry: It is unfortunate that statement by US President on Armenian Remembrance Day, once again distorted historical facts about events of 1915</span>
+</a>
+</div>
+</div>
+<div class="item item-18 ">
+<div class="item-date">
+24.04.2022 [23:23]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Turkiye__039rejects_039_US_President_Biden_039s_remarks_on_events_of_1915-2108420">
+<span>Turkiye 'rejects' US President Biden's remarks on events of 1915</span>
+</a>
+</div>
+</div>
+<div class="item item-19 ">
+<div class="item-date">
+24.04.2022 [18:21]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+ <a class="blackcolor" href="/en/xeber/Magnitude_48_quake_jolts_Bosnia_and_Herzegovina-2108327">
+<span>Magnitude 4.8 quake jolts Bosnia and Herzegovina</span>
+</a>
+</div>
+</div>
+<div class="item item-20 ">
+<div class="item-date">
+24.04.2022 [18:13]&nbsp;&nbsp;
+<span class="lastnewslist society 1">
+<a href="/en/bolme/society">
+SOCIETY </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijan_detects_20_daily_COVID_19_cases-2108324">
+<span>Azerbaijan detects 20 daily COVID-19 cases</span>
+</a>
+</div>
+</div>
+<div class="item item-21 ">
+<div class="item-date">
+24.04.2022 [15:15]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Voting_starts_in_2nd_round_of_French_presidential_election-2108234">
+<span>Voting starts in 2nd round of French presidential election</span>
+</a>
+</div>
+</div>
+<div class="item item-22 ">
+<div class="item-date">
+24.04.2022 [14:50]&nbsp;&nbsp;
+<span class="lastnewslist official_chronicle 1">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/First_Vice_President_Mehriban_Aliyeva_made_Instagram_post_on_occasion_of_Easter-2108228">
+<span>First Vice-President Mehriban Aliyeva made Instagram post on occasion of Easter</span>
+</a>
+</div>
+</div>
+<div class="item item-23 ">
+<div class="item-date">
+24.04.2022 [14:24]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Azerbaijani_judokas_take_three_medals_on_Day_1_of_Dubrovnik_Senior_European_Cup-2108210">
+<span>Azerbaijani judokas take three medals on Day 1 of Dubrovnik Senior European Cup</span>
+</a>
+</div>
+</div>
+<div class="item item-24 ">
+<div class="item-date">
+24.04.2022 [14:01]&nbsp;&nbsp;
+<span class="lastnewslist culture 1">
+<a href="/en/bolme/culture">
+CULTURE </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/President_of_International_Turkic_Culture_and_Heritage_Foundation_meets_with_deputies_of_TURKPA_Commission_on_Social_Cultural_and_Humanitarian_Issues-2108195">
+<span>President of International Turkic Culture and Heritage Foundation meets with deputies of TURKPA Commission on Social, Cultural and Humanitarian Issues</span>
+</a>
+</div>
+</div>
+<div class="item item-25 ">
+<div class="item-date">
+24.04.2022 [11:54]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Paris_Saint_Germain_crowned_French_champions_despite_home_draw-2108114">
+<span>Paris Saint-Germain crowned French champions despite home draw</span>
+</a>
+</div>
+</div>
+<div class="item item-26 ">
+<div class="item-date">
+24.04.2022 [11:46]&nbsp;&nbsp;
+<span class="lastnewslist world 1">
+<a href="/en/bolme/world">
+WORLD </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/UN_chief_to_travel_Monday_to_Turkiye-2108108">
+<span>UN chief to travel Monday to Turkiye</span>
+</a>
+</div>
+</div>
+<div class="item item-27 ">
+<div class="item-date">
+24.04.2022 [10:00]&nbsp;&nbsp;
+<span class="lastnewslist regionlar 1">
+<a href="/en/bolme/regionlar">
+REGIONS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Fughanli_village_of_Jabrayil_district-2107460">
+<span>Fughanli village of Jabrayil district</span>
+</a>
+</div>
+</div>
+<div class="item item-28 ">
+<div class="item-date">
+23.04.2022 [20:57]&nbsp;&nbsp;
+<span class="lastnewslist politics 2">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="redcolor" href="/en/xeber/President_Ilham_Aliyev_Azerbaijan_is_ready_for_negotiations_in_the_Baku_Yerevan_format-2107949">
+<span>President Ilham Aliyev: Azerbaijan is ready for negotiations in the “Baku-Yerevan” format</span>
+</a>
+</div>
+</div>
+<div class="item item-29 ">
+<div class="item-date">
+23.04.2022 [19:17]&nbsp;&nbsp;
+<span class="lastnewslist society 1">
+<a href="/en/bolme/society">
+SOCIETY </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Alchemilla_flower-2107904">
+<span>Alchemilla flower </span>
+</a>
+</div>
+</div>
+<div class="item item-30 ">
+<div class="item-date">
+23.04.2022 [19:13]&nbsp;&nbsp;
+<span class="lastnewslist official_chronicle 1">
+<a href="/en/bolme/official_chronicle">
+OFFICIAL NEWS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Release_of_the_Press_Service_of_the_President-2107889">
+<span>Release of the Press Service of the President</span>
+</a>
+</div>
+</div>
+<div class="item item-31 ">
+<div class="item-date">
+23.04.2022 [19:08]&nbsp;&nbsp;
+<span class="lastnewslist economy 1">
+<a href="/en/bolme/economy">
+ECONOMY </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Baku_to_host__quotSME_Fest_quot-2107883">
+<span>Baku to host "SME Fest" </span>
+</a>
+</div>
+</div>
+
+<div class="item item-32 last">
+<div class="item-date">
+23.04.2022 [18:54]&nbsp;&nbsp;
+<span class="lastnewslist sports 1">
+<a href="/en/bolme/sports">
+SPORTS </a>
+</span>
+</div>
+<div class="item-title">
+<a class="blackcolor" href="/en/xeber/Russian_Belarusian_tennis_players_barred_from_Wimbledon-2107853">
+<span>Russian, Belarusian tennis players barred from Wimbledon </span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script language="javascript">
+	var lastnewsid = 2107853;
+	var lastvideoid = 0;
+</script>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="/en/bolme/chronicle_of_the_patriotic_war" target="_blank">
+<img src="https://azertag.az/website-media/images/092921-en.jpg" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="/en/bolme/martyred_journalists" target="_blank">
+<img src="https://azertag.az/website-media/banners/shehid-en.jpg?v=170621" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner clear">
+<div class="banner-item float-left">
+<a href="http://www.heydaraliyevcenter.az/" target="_blank"><img src="/img/banner3.jpg" /></a>
+</div>
+<div class="banner-item float-left">
+<a href="http://www.president.az/" target="_blank"><img src="/img/banner4.gif" /></a>
+</div>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner clear">
+<div class="banner-item float-left">
+<a href="https://mehriban-aliyeva.az/" target="_blank">
+<img style="border: 1px solid grey;" src="/website-media/banners/fl.jpg" width="100%" />
+</a>
+</div>
+<div class="banner-item float-left">
+<a href="https://heydar-aliyev-foundation.org/" target="_blank">
+<img style="border: 1px solid grey;" src="/website-media/banners/haf.jpg" width="100%" />
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="http://www.justiceforkhojaly.org/" target="_blank">
+<img style="border: 1px solid grey;" src="/website-media/banners/sidebar/jfk-en.jpg" width="260px" />
+</a>
+</div>
+</div>
+</div>
+<div>
+<div style="margin-bottom: 15px; text-align: center;">
+<a href="http://oananews.org/" target="_blank">
+<img style="border: 1px solid grey;" src="/website-media/banners/oana.jpg?v=1" width="260px" />
+</a>
+</div>
+</div>
+
+<blitzer>
+<div id="datepicker"></div>
+</blitzer>
+<div class="banners">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="http://portal.azertag.az/" target="_blank">
+<img src="/img/ubp.png" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+<div class="banners" style="margin-top: 40px;">
+<div class="banners-inner">
+<div class="banner banner-only">
+<a href="https://interagencystandingcommittee.org/system/files/2020-04/My%20Hero%20is%20You%2C%20Storybook%20for%20Children%20on%20COVID-19.pdf" target="_blank">
+<img src="/website-media/images/covid-en.jpg?v=new" style="width: 100%;" />
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+	.admin-short-links {
+		background: #d5d5d5;
+	}
+	.admin-short-links ul {
+		padding: 0px;
+	}
+	.admin-short-links ul li {
+		list-style: none;
+		background: #bdb8b8;
+		margin-bottom: 5px;
+		text-align: center;
+		padding: 3px 0px;
+	}
+	.admin-short-links ul li a {
+		color: #900;
+		text-decoration: none;
+		font-size: 17px;
+		line-height: 25px;
+	}
+</style> </div>
+</div>
+<footer id="footer">
+<div id="site-footer">
+<div id="site-footer-top" class="clear has-padding-35">
+<div class="float-left">
+<div id="site-bottom-mainmenu">
+<nav id="sbm-nav">
+
+<div class="bmm-top clear">
+<div class="bmm-items first">
+<ul class="menu has-no-style">
+<li class="expanded">
+<a href="/en/bolme/official_documents">
+OFFICIAL DOCUMENTS </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/official_documents_laws">LAWS</a></li>
+<li class="leaf first"><a href="/en/bolme/official_documents_decrees">DECREES</a></li>
+<li class="leaf"><a href="/en/bolme/official_documents_orders">ORDERS</a></li>
+<li class="leaf"><a href="/en/bolme/qerarlar">RESOLUTIONS</a></li>
+<li class="leaf last"><a href="/en/bolme/mektublar">LETTERS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="bmm-items">
+<ul class="menu has-no-style">
+<li class="leaf">
+<a href="/en/bolme/politics">
+POLITICS </a>
+</li>
+</ul>
+</div>
+<div class="bmm-items">
+<ul class="menu has-no-style">
+<li class="expanded">
+<a href="/en/bolme/economy">
+ECONOMY </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/oil_gas">OIL & GAS</a></li>
+<li class="leaf"><a href="/en/bolme/ikt">ICT </a></li>
+<li class="leaf last"><a href="/en/bolme/transport_construction">TRANSPORT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="bmm-items">
+<ul class="menu has-no-style">
+<li class="expanded">
+<a href="/en/bolme/society">
+SOCIETY </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/healthcare">HEALTHCARE</a></li>
+<li class="leaf last"><a href="/en/bolme/environment">ENVIRONMENT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="bmm-bottom clear">
+<div class="bmm-items">
+<ul class="menu has-no-style">
+<li class="expanded">
+<a href="/en/bolme/bloody_memory">
+DAYS OF SORROW </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/bloody_memory_20_january">20 JANUARY</a></li>
+<li class="leaf"><a href="/en/bolme/bloody_memory_khodjali_tragedy">KHOJALY TRAGEDY</a></li>
+<li class="leaf last"><a href="/en/bolme/bloody_memory_31_march">31 MARCH</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="bmm-items">
+<ul class="menu has-no-style">
+<li class="expanded">
+<a href="/en/bolme/sports">
+SPORTS </a>
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/eyof_baku_2019">EYOF BAKU 2019</a></li>
+<li class="leaf last"><a href="/en/bolme/2016_formula_1">FORMULA-1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="bmm-items">
+<ul class="menu has-no-style">
+ <li class="leaf">
+<a href="/en/bolme/world">
+WORLD </a>
+</li>
+</ul>
+</div>
+<div class="bmm-items last">
+<ul class="menu has-no-style">
+<li class="leaf first"><a href="/en/bolme/regionlar">REGIONS</a></li>
+<li class="leaf"><a href="/en/bolme/science_and_education">SCIENCE AND EDUCATION</a></li>
+<li class="leaf last"><a href="/en/bolme/culture">CULTURE</a></li>
+</ul>
+</div>
+</div> </nav>
+</div>
+</div>
+<div class="float-right">
+<div id="site-notify">
+<div class="title">
+SUBSCRIBE </div>
+<div class="content">
+<div class="top">
+Enter your email address<br /> to subscribe </div>
+<div class="bottom">
+<form action="/en/abune" method="post" id="notify-form" accept-charset="UTF-8" class="clear">
+<input placeholder="example@email.com" title="" type="text" name="mail" size="" value="" maxlength="" class="notify-text border-box float-left" />
+<input type="submit" id="notify-submit" value="SEND" class="notify-submit border-box float-left" />
+</form>
+</div>
+</div>
+</div>
+<div id="bottom-follow-links">
+<div class="title">
+FOLLOW US </div>
+<div class="content">
+<ul class="menu clear has-no-style">
+<li class="leaf first facebook-fb">
+<a href="https://facebook.com/AzertAcNewsAgencyEn" target="_blank">FB</a>
+</li>
+<li class="leaf twitter-fb">
+<a href="https://twitter.com/AzerTAc" target="_blank">TT</a>
+</li>
+<li class="leaf google-fb">
+<a href="https://linkedin.com/company/azertac-news-agency" target="_blank">IN</a>
+</li>
+<li class="leaf youtube-fb">
+<a href="https://youtube.com/azertagenglish" target="_blank">YT</a>
+</li>
+<li class="leaf instagram-fb">
+<a href="https://instagram.com/azertac/" target="_blank" style="background: url('/img/instagram.png?v=new');">IN</a>
+</li>
+<li class="leaf tm-fb">
+<a href="https://t.me/azertacnews" target="_blank" style="background: url('/img/telegram.png');" itemprop="sameAs">TM</a>
+</li>
+<li class="leaf vk-fb">
+<a href="https://vk.com/azertac" target="_blank" style="background: url('/img/vk.png');" itemprop="sameAs">VK</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="bottom-follow-links">
+<div class="title" style="margin-bottom: 8px;">
+<a href="https://azertag.az/en/allrss" style="color: #900; font-size: 16px; text-decoration: none;">
+RSS
+</a>
+</div>
+</div>
+<div id="site-apps" class="float-left">
+<div class="title">
+AZERTAC APP </div>
+<div class="content">
+<a href="https://itunes.apple.com/us/app/azertag/id1451299670" class="ios" target="_blank"></a>
+<a href="https://play.google.com/store/apps/details?id=com.azertag" class="android" target="_blank"></a>
+<a href="https://microsoft.com/store/p/azertag/9nthfn0plw2v" class="wphone" target="_blank"></a>
+</div>
+</div>
+<div id="site-barcode" class="float-right">
+<img src="/img/barcode/en-qr-code.gif" width="100" height="100" />
+<div class="info-line" style="">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td valign="top" align="right"><strong>e-Mail:</strong>&nbsp;&nbsp;&nbsp;</td><td align="left"><a href="/cdn-cgi/l/email-protection#b0d1cad5c2c4d1d3f0d1cad4d1c4d19eded5c4"><span class="__cf_email__" data-cfemail="7c1d06190e081d1f3c1d06181d081d52121908">[email&#160;protected]</span></a><br><a href="/cdn-cgi/l/email-protection#8feef5eafdfbeeeccfeef5eafdfbeee8a1ece0e2"><span class="__cf_email__" data-cfemail="0a6b706f787e6b694a6b706f787e6b6d24696567">[email&#160;protected]</span></a></td>
+</tr>
+<tr>
+<td valign="top" align="right"><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;</td><td align="left">(+994 12) 498-60-17<br>(+994 12) 498-60-07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="site-footer-bottom" class="clear has-padding-35" style="">
+<div class="float-left">
+<div id="site-copyright">
+2022 © AZERTAC. All rights reserved. Content from this site must be hyperlinked when used. </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript"><!--
+			document.write("<a href='//www.liveinternet.ru/click' "+
+			"target=_blank class=liveinternetclass><img src='//counter.yadro.ru/hit?t44.1;r"+
+			escape(document.referrer)+((typeof(screen)=="undefined")?"":
+			";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+			screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+			";"+Math.random()+
+			"' alt='' title='LiveInternet' "+
+			"border='0' width='31' height='31'><\/a>")
+			//--></script>
+</div>
+<div class="float-right">
+<div id="site-bottom-menu">
+<ul class="menu has-no-style clear">
+<li class="leaf first">
+<a href="/en" alt="HOMEPAGE">
+HOMEPAGE </a>
+</li>
+<li class="about-dropdown">
+<a href="#">
+ABOUT US </a>
+<div class="about-dropdown-content">
+<a href="https://azertag.az/en/about" target="_blank">General information</a>
+<a href="https://azertag.az/en/international-relations" target="_blank">Foreign relations</a>
+<a href="https://azertag.az/en/manual" target="_blank">Statutes</a>
+</div>
+</li>
+<li class="leaf">
+<a href="https://azertag.az/en/partners" alt="PARTNERS" target="_blank">
+PARTNERS </a>
+</li>
+<li class="leaf">
+<a href="https://azertag.az/en/our-services" alt="Our Services" target="_blank">
+Our Services </a>
+</li>
+<li class="leaf last">
+<a href="https://azertag.az/en/elaqe" alt="SUBSCRIBE" target="_blank">
+SUBSCRIBE </a>
+</li>
+</ul>
+<style>
+	.about-dropdown {
+		display: inline-block;
+	}
+	.about-dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.about-dropdown-content a {
+		display: block;
+		text-align: left;
+		margin: 7px 0px 7px 7px !important;
+	}
+	.about-dropdown:hover .about-dropdown-content {
+		display: block;
+	}
+</style> </div>
+</div>
+</div>
+</div> </footer>
+</div>
+<link href="/css/space.css" rel="stylesheet">
+<link href="/css/media.css" rel="stylesheet">
+<script src="/js/jquery.jcarousel.min.js?v=16062018"></script>
+<script src="/js/main.js?v=02042019"></script>
+
+
+
+<!--[if lt IE 9]>
+		  <script src="/js/html5shiv.js"></script>
+		  <script src="/js/respond.min.js"></script>
+		<![endif]-->
+<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f1e8d090656d806"></script>
+
+<script type="text/javascript">
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter25871804 = new Ya.Metrika({id:25871804,
+								webvisor:true,
+								clickmap:true,
+								trackLinks:true,
+								accurateTrackBounce:true});
+					} catch(e) { }
+				});
+			 
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+			 
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+			</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25871804" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-26624560-2"></script>
+<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-26624560-2');
+			</script>
+
+
+<script type="text/javascript">
+				(function (d, w, c) {
+					(w[c] = w[c] || []).push(function() {
+						try {
+							w.yaCounter33380133 = new Ya.Metrika({
+								id:33380133,
+								clickmap:true,
+								trackLinks:true,
+								accurateTrackBounce:true
+							});
+						} catch(e) { }
+					});
+
+					var n = d.getElementsByTagName("script")[0],
+						s = d.createElement("script"),
+						f = function () { n.parentNode.insertBefore(s, n); };
+					s.type = "text/javascript";
+					s.async = true;
+					s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+					if (w.opera == "[object Opera]") {
+						d.addEventListener("DOMContentLoaded", f, false);
+					} else { f(); }
+				})(document, window, "yandex_metrika_callbacks");
+			</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33380133" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<script>
+			if (Notification.permission === 'granted') {
+				$('#notification-settings').show();
+			}
+		</script>
+</body>
+</html>

@@ -1,0 +1,5633 @@
+<!DOCTYPE html>
+
+
+<html lang="en" class="no-js" prefix="lc: http://loc.gov/#">
+<head>
+
+<meta name="description"
+      content="The Library of Congress is the nation's oldest federal cultural institution, and it serves as the research arm of Congress. It is also the largest library in the world, with more than 162 million items. The collections include books, sound recordings, motion pictures, photographs, maps, and manuscripts." />
+
+<meta name="dc.identifier"
+      content="http://www.loc.gov/" />
+
+<meta rel="canonical"
+      href="http://loc.gov/" />
+
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="version" content="$Revision$"/>
+<meta name="msvalidate.01" content="5C89FB9D99590AB2F55BD95C3A59BD81"/>
+<link title="schema(DC)" rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/>
+<meta name="dc.language" content="eng" />
+<meta name="dc.source" content="Library of Congress, Washington, D.C. 20540 USA" />
+
+
+
+<meta property="fb:admins" content="libraryofcongress"/>
+<meta property="og:site_name" content="The Library of Congress"/>
+<meta property="og:type" content="article" />
+
+
+<meta property="twitter:site" content="librarycongress"/>
+
+
+
+ 
+
+
+    <title>
+    
+        Home | Library of Congress 
+    
+    </title>
+    <meta name="dc.title"
+          content='Home | Library of Congress ' />
+    <meta property="og:title"
+          content='Home | Library of Congress ' />
+
+    
+        <meta name='description' content='The world’s largest library. View historic photos, maps, books and more. Contact experts for help with research. Plan a visit. Home of U.S. Copyright Office.'/>
+        <meta property="og:description" content="The world’s largest library. View historic photos, maps, books and more. Contact experts for help with research. Plan a visit. Home of U.S. Copyright Office." />
+    
+
+    <meta name="dc.rights" content="Text is U.S. Government Work" />
+    <link rel="dc.rights" title="Rights Restriction" href="http://www.loc.gov/text-us-government-work" />
+
+    
+        <meta name='dc.type' content='web page'/>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <meta property="og:image" content='http://www.loc.gov/static/images/favicons/open-graph-logo.png' />
+        <meta property="og:image:secure_url" content='https://www.loc.gov/static/images/favicons/open-graph-logo.png' />
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<link href='/static/stylesheets/base.css'
+    type='text/css'
+    rel='stylesheet' />
+<link href="/static/fonts/OpenSans-Regular.woff2"
+    rel='preload'
+    as='font'
+    type='font/woff2'
+    crossorigin />
+<link href="/static/fonts/OpenSans-Bold.woff2"
+    rel='preload'
+    as='font'
+    type='font/woff2'
+    crossorigin />
+<link href="/static/css/fa/fonts/fontawesome-webfont.woff2?v=4.6.3"
+    rel='preload'
+    as='font'
+    type='font/woff2'
+    crossorigin />
+
+<link href="/static/fonts/RobotoSlab-Bold.woff2"
+    rel='preload'
+    as='font'
+    type='font/woff2'
+    crossorigin />
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://assets.adobedtm.com/dac62e20b491e735c6b56e64c39134d8ee93f9cf/satelliteLib-6b47f831c184878d7338d4683ecf773a17973bb9.js"></script>
+
+
+
+<script type="text/javascript"
+    src='/static/js/lib/jquery-1.8.2.js'></script>
+
+
+
+
+    
+
+<script type="text/javascript">
+/**
+ * Timing.js 1.0.4
+ * Copyright 2015 Addy Osmani
+ */
+(function(window) {
+    'use strict';
+
+    /**
+     * Navigation Timing API helpers
+     * timing.getTimes();
+     **/
+    window.timing = window.timing || {
+        /**
+         * Outputs extended measurements using Navigation Timing API
+         * @param  Object opts Options (simple (bool) - opts out of full data view)
+         * @return Object      measurements
+         */
+        getTimes: function(opts) {
+            var performance = window.performance || window.webkitPerformance || window.msPerformance || window.mozPerformance;
+
+            if (performance === undefined) {
+                return false;
+            }
+
+            var timing = performance.timing;
+            var api = {};
+            opts = opts || {};
+
+            if (timing) {
+                if(opts && !opts.simple) {
+                    for (var k in timing) {
+                        // hasOwnProperty does not work because properties are
+                        // added by modifying the object prototype
+                        if(isNumeric(timing[k])) {
+                            api[k] = parseFloat(timing[k]);
+                        }
+                    }
+                }
+
+
+                // Time to first paint
+                if (api.firstPaint === undefined) {
+                    // All times are relative times to the start time within the
+                    // same objects
+                    var firstPaint = 0;
+
+                    // Chrome
+                    if (window.chrome && window.chrome.loadTimes) {
+                        // Convert to ms
+                        firstPaint = window.chrome.loadTimes().firstPaintTime * 1000;
+                        api.firstPaintTime = firstPaint - (window.chrome.loadTimes().startLoadTime*1000);
+                    }
+                    // IE
+                    else if (typeof window.performance.timing.msFirstPaint === 'number') {
+                        firstPaint = window.performance.timing.msFirstPaint;
+                        api.firstPaintTime = firstPaint - window.performance.timing.navigationStart;
+                    }
+                    // Firefox
+                    // This will use the first times after MozAfterPaint fires
+                    //else if (window.performance.timing.navigationStart && typeof InstallTrigger !== 'undefined') {
+                    //    api.firstPaint = window.performance.timing.navigationStart;
+                    //    api.firstPaintTime = mozFirstPaintTime - window.performance.timing.navigationStart;
+                    //}
+                    if (opts && !opts.simple) {
+                        api.firstPaint = firstPaint;
+                    }
+                }
+
+                // Total time from start to load
+                api.loadTime = timing.loadEventEnd - timing.fetchStart;
+                // Time spent constructing the DOM tree
+                api.domReadyTime = timing.domComplete - timing.domInteractive;
+                // Time consumed preparing the new page
+                api.readyStart = timing.fetchStart - timing.navigationStart;
+                // Time spent during redirection
+                api.redirectTime = timing.redirectEnd - timing.redirectStart;
+                // AppCache
+                api.appcacheTime = timing.domainLookupStart - timing.fetchStart;
+                // Time spent unloading documents
+                api.unloadEventTime = timing.unloadEventEnd - timing.unloadEventStart;
+                // DNS query time
+                api.lookupDomainTime = timing.domainLookupEnd - timing.domainLookupStart;
+                // TCP connection time
+                api.connectTime = timing.connectEnd - timing.connectStart;
+                // Time spent during the request
+                api.requestTime = timing.responseEnd - timing.requestStart;
+                // Request to completion of the DOM loading
+                api.initDomTreeTime = timing.domInteractive - timing.responseEnd;
+                // Load event time
+                api.loadEventTime = timing.loadEventEnd - timing.loadEventStart;
+            }
+
+            return api;
+        },
+        /**
+         * Uses console.table() to print a complete table of timing information
+         * @param  Object opts Options (simple (bool) - opts out of full data view)
+         */
+        printTable: function(opts) {
+            var table = {};
+            var data  = this.getTimes(opts) || {};
+            Object.keys(data).sort().forEach(function(k) {
+                table[k] = {
+                    ms: data[k],
+                    s: +((data[k] / 1000).toFixed(2))
+                };
+            });
+            console.table(table);
+        },
+        /**
+         * Uses console.table() to print a summary table of timing information
+         */
+        printSimpleTable: function() {
+            this.printTable({simple: true});
+        }
+    };
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    // Expose as a commonjs module
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = window.timing;
+    }
+
+})(typeof window !== 'undefined' ? window : {});
+;;
+</script>
+<script type="text/javascript">
+// Stub window.loc_ux_tracking so we dont have to riddle the pages
+// with if(window.loc_ux_tracking) everywhere.  Also create an alias
+// `UX`
+jQuery(function($){
+    if(!window.loc_ux_tracking){
+        window.loc_ux_tracking = {
+            trackFileDownloadEvent: function(){},
+            trackUserInteractionEvent: function(){},
+            trackUserInterfaceAction: function(){},
+        }
+    }
+    window.UX = window.loc_ux_tracking;
+    UX.download = UX.trackFileDownloadEvent;
+    UX.interaction = UX.trackUserInteractionEvent;
+    UX.interface = UX.trackUserInterfaceAction;
+
+    function getMediaPosition(player) {
+        /*
+         * To support the two media players (JW Player and mediaElement) a facade function
+         * wwas created in order to get the current position in a video.
+         *
+         * getMediaPosition() returns the current position in the video.
+         * @param {playerObject} player
+         * @return {currentPosition} number
+         */
+        switch(player.type) {
+            case 'jwPlayer': {
+                return player.getPosition();
+            }
+            case 'mediaElement': {
+                return player.getCurrentTime();
+            }
+        }
+        return null;
+    }
+
+
+    function getMediaDuration(player) {
+        /*
+         * To support the two media players (JW Player and mediaElement) a facade function
+         * wwas created in order to get the length of a video.
+         *
+         * getMediaPosition() returns the length of the video.
+         * @param {playerObject} player
+         * @return {currentPosition} number
+         */
+        switch(player.type) {
+            case 'jwPlayer': {
+                return player.getDuration();
+            }
+            case 'mediaElement': {
+                return player.duration;
+            }
+        }
+        return null;
+    }
+
+    /*
+    function mediaPlayerInterface(player, playerType) {
+        // given the media player type, this function will modify the objects such that the methods
+        // called in track_player are the same for both jwPlayer and mediaElement
+        switch(playerType) {
+            case 'jwPlayer': {
+                // Want to mimic the jwPlayers functions so if jwPlayer do nothing
+                break;
+            }
+            case 'mediaElement': {
+                player.getPosition = function() {
+                    return player.getCurrentTime();
+                }
+
+                player.getDuration = function() {
+                    return player.duration;
+                }
+                break;
+            }
+        }
+        return player;
+    }
+    */
+
+    // Register calls to Adobe for metrics tracking
+    $.omniture = UX.track_player = function(player, playerType, shortName, isVideo) {
+
+        player.type = playerType;
+        var eventData = {
+            player: player,
+            shortName: shortName
+        };
+        eventData.mediaType = isVideo ? 'video' : 'audio';
+
+
+        switch(playerType) {
+            case 'jwPlayer': {
+                player.on('pause', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('buffer', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('idle', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('complete', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('play', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('seeked', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.on('seeking', function(event) {handleMediaEvent(event, eventData)}, this);
+                break;
+            }
+            case 'mediaElement': {
+                player.addEventListener('pause', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('buffer', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('idle', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('ended', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('play', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('seeked', function(event) {handleMediaEvent(event, eventData)}, this);
+                player.addEventListener('seeking', function(event) {handleMediaEvent(event, eventData)}, this);
+                break;
+            }
+            default:
+                break;
+        }
+
+    };
+
+    //Handle various media events and send data to Adobe. This also sends data to the legacy locjukebox reporting suite
+    function handleMediaEvent(event, eventData) {
+        if (typeof s != "undefined") {
+            var player = eventData.player;
+            var mediaName = eventData.shortName;
+            var mediaType = eventData.mediaType;
+            var mediaPlayerName = "LOC JW Player";
+            var mediaOffset = 0;
+            var legacyTracking = s_gi('locjukebox');
+
+            legacyTracking.trackingServer = s.trackingServerSecure;
+            legacyTracking.prop4 = mediaName;
+
+            if (getMediaPosition(player) > 0) {
+                mediaOffset = Math.floor(getMediaPosition(player));
+            }
+
+            switch (event.type) {
+                case 'play':
+                    if (mediaOffset == 0) {
+                        setTimeout(function() {
+                            // s.Media.open(mediaName, getMediaDuration(player), mediaPlayerName);
+                            // s.Media.play(mediaName, mediaOffset);
+                            legacyTracking.prop8 = "[Button Click] - Start " + mediaType;
+                            legacyTracking.tl();
+                            // console.log('play event fired off');
+                        }, 500);
+                    }
+                    else {
+                        // s.Media.play(mediaName, mediaOffset);
+                        legacyTracking.prop8 = "[Button Click] - Resume " + mediaType;
+                        legacyTracking.tl();
+                    }
+                    break;
+
+                case 'seeked':
+                    // s.Media.stop(mediaName, mediaOffset);
+                    // s.Media.play(mediaName, mediaOffset);
+                    legacyTracking.prop8 = "[Scrub] - Specific Point in " + mediaType + " Clip";
+                    legacyTracking.tl();
+                    // console.log('seek event fired off');
+                    break;
+
+                case 'pause':
+                    // s.Media.stop(mediaName, mediaOffset);
+                    legacyTracking.prop8 = "[Button Click] - Pause " + mediaType;
+                    legacyTracking.tl();
+                    // console.log('pause event fired off');
+                    break;
+
+                case 'seeking':
+                    // s.Media.stop(mediaName, mediaOffset);
+                    // console.log('seeking event fired off');
+                    break;
+
+                case 'buffer':
+                case 'idle':
+                    break;
+
+                case 'ended':
+                case 'complete':
+                    // s.Media.stop(mediaName, mediaOffset);
+                    // s.Media.close(mediaName);
+                    mediaOffset = 0;
+                    legacyTracking.prop8 = "[End Clip] - " + mediaType;
+                    legacyTracking.tl();
+                    break;
+            }
+        }
+    }
+});
+
+// General analytics properties.  Adobe will inspect the global scope
+// and execute this function if it finds it.
+var doPageMetricsPlugin = function(s){
+
+    // window.UX = window.loc_ux_tracking;  // This resets the UX object removing track_player causing a bug for the video player
+    UX.download = UX.trackFileDownloadEvent;
+    UX.interaction = UX.trackUserInteractionEvent;
+    UX.interface = UX.trackUserInterfaceAction;
+
+    /* application title: prop10 */
+    s.prop10 = "Project One";
+
+    /* error page report */
+    
+
+    s.prop15 = "";
+    s.prop16 = "";
+    s.prop18 = ""; // Start Date
+    s.prop19 = ""; // End Date
+    s.prop20 = false; // Front page only
+    /* page title: prop21 */
+    
+    //Meta is deprecated, but for old portals still exists, so use it first
+        s.prop21 = 'Home';
+    
+    // Basic or Advanced
+    
+        s.prop15 = 'basic';
+    
+    //Start date
+    
+    //End Date
+    
+    //Front page only
+    
+        s.prop20 = false;
+    
+    /* system identifier: prop20 */
+    /*
+    
+    */
+    /* page identifier: prop11 */
+    // metrics item page identifier is unique id plus readable title.  This
+    // needs help getting cleaned up using site_type/site_id/resource/title?
+    // - from item/metrics.html
+    // - from managed_content/metrics.html
+    
+        s.prop11 = '/ - Home';
+    
+
+    //Set title, same across supporting material like about-this-thing, search
+    //results within the set as the content, articles and essays etc.
+    
+
+    s.prop22 = 0.00073504447937;//backend duration
+
+
+    // Assigning specific search options for selected search facets
+    s.prop23 = "";// suggested
+    s.prop24 = "";// digitized
+    s.prop25 = "";// original format
+    s.prop26 = "";// online format
+    s.prop27 = "";// date
+    s.prop28 = "";// part of
+    s.prop29 = "";// contributor
+    s.prop30 = "";// subject
+    s.prop31 = "";// site_id -> picked up by prop62
+    s.prop32 = "";// location
+    s.prop33 = "";// site_type -> picked up by prop61
+    s.prop34 = "";// site_path (options.resource) can be longer than 2 segments
+    s.prop35 = "";// language
+    s.prop36 = "";// results view type
+    
+    s.prop37 = '';// searchIn
+    s.prop38 = "/";// path_info
+    s.prop39 = "";//truncated query string
+    s.prop40 = '';// count
+    s.prop41 = "";// sort
+    s.prop42 = "";//ethnicity
+    s.prop44 = "";// searchTerms
+    s.prop45 = "";
+    s.prop46 = "";// qs-adv-search-kw
+    s.prop47 = '';// startPage
+    s.prop67 = "";// access condition
+
+    /* original format: prop49 */
+    
+    s.prop50 = "";
+    s.prop53 = "";// facetPrefix
+    s.prop54 = "";// fullText
+    s.prop55 = "";// download
+    s.prop56 = ""; // partof_collection
+    s.prop57 = ""; // number_page
+    s.prop59 = ""; // city
+    s.prop60 = 123456789;//release_id
+    s.prop69 = ""; // location_state
+    s.prop70 = ""; //location_county
+    s.prop71 = ""; //language
+    // Combined Facets - yuck, should be deprecated soon
+    // TODO: This means we need a s.prop for "digitized"
+    //       aka "available online".
+    s.prop48 = "Facet[Digitized]-(false) ";
+    /*
+    /* Advanced Search display level */
+    
+        s.prop16 = "None";
+    
+
+    /* Advanced Search Parameter */
+    
+    /* Query String */
+    
+
+    /* Partof Title */
+    
+
+    /* Partof_Division */
+    
+    /* Partof_Collection */
+    
+    /* number_page */
+    
+
+    /* Location country */
+    
+
+    /* Location state */
+    
+
+    /* Language */
+    
+
+    
+
+    return s;
+};
+</script>
+
+
+
+
+    
+<meta name="msapplication-TileColor"
+      content="#ffffff" />
+<meta name="msapplication-TileImage"
+      content='ms-icon-144x144.png' />
+
+
+
+<link title="Library of Congress Search"
+      href='https://www.loc.gov/search/opensearch.xml'
+        rel="search"
+        type="application/opensearchdescription+xml" />
+
+
+</head>
+<body>
+<p id="top" class="screen-readers-only" tabindex="-1" style="outline: none;">Top of page</p>
+<div id='body' class='
+    
+    '>
+
+
+
+
+
+
+
+
+<style>.header-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 998;
+  background-color: #000000;
+  /* fallback */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header {
+  background-color: #fff;
+  border-top: 4px solid #F05129;
+  border-bottom: 1px solid #BFBFBF;
+  position: relative;
+  z-index: 999;
+}
+.header-container {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+}
+@media (min-width: 993px) {
+  .header-row {
+    align-items: flex-end;
+  }
+}
+</style>
+
+
+<header class="header" role="banner">
+    <a class="skip-nav" href="#skip-to-content">Skip to main content</a>
+    <div class="header-container">
+        <div class="header-row">
+            
+            
+
+
+<style>.header-logo {
+  width: 161px;
+}
+@media (min-width: 993px) {
+  .header-logo {
+    width: 363px;
+    padding: 25px 0;
+  }
+}
+.header-logo > a {
+  display: block;
+  width: 363px;
+  height: 90px;
+}
+.header-logo > a > img {
+  width: 100%;
+  height: auto;
+}
+.header-logo > a > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (max-width: 992px) {
+  .header-logo > a {
+    width: 161px;
+    height: 40px;
+  }
+}
+@media print {
+  .header-logo > a {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .header-logo {
+    padding: 0;
+  }
+}
+@media print {
+  .header-logo {
+    padding: 1rem 0;
+    height: 68px;
+    display: block;
+  }
+  .header-logo:after {
+    content: url("/static/images/logo-loc-new-branding.svg?$Revision$");
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>
+<script>jQuery(function($) {
+    // UX Interaction Tracking - Logo, Menu, Search, Breadcrumbs
+    $('.header-logo a').live('click', function() {
+        UX.interaction($(this), 'LC Logo', 'Click', '');
+    });
+
+});
+</script>
+
+
+<div class="header-logo">
+    <a href="/">
+        <img src="/static/images/logo-loc-new-branding.svg" width="363" height="90" alt="" />
+        <span>Library of Congress</span>
+    </a>
+</div>
+
+            
+            
+            
+
+
+<style>.header-search {
+  flex: 1 1 0%;
+  padding-left: 30px;
+}
+@media (min-width: 993px) {
+  .header-search {
+    padding: 25px 0 25px 210px;
+  }
+}
+.header-search > form {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #000;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 768px) {
+  .header-search > form {
+    flex: 1 0 100%;
+  }
+}
+.header-search > form .header-search-formats {
+  position: relative;
+  color: #000;
+  border-bottom: 1px solid #000;
+  flex: 0 0 100%;
+  display: flex;
+}
+@media (min-width: 481px) {
+  .header-search > form .header-search-formats {
+    flex: none;
+    border: none;
+  }
+}
+.header-search > form .header-search-formats .header-search-format-select {
+  border: none;
+  width: 100%;
+  font-size: 12px;
+  /*
+                &:hover,
+                &:focus {
+                    box-shadow: inset 0 0 3px #000 !important;
+                }*/
+}
+@media (max-width: 480px) {
+}
+.header-search > form .header-search-formats .header-search-format-select::-ms-expand {
+  display: none;
+}
+.header-search > form .header-search-input-wrapper {
+  flex: 1 1 1%;
+  position: relative;
+}
+.header-search > form .header-search-input-wrapper .header-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-left: 1px solid #000;
+  /*
+                &:focus {
+                    box-shadow: inset 0 0 3px @gray-dark !important;
+                }*/
+}
+@media (max-width: 480px) {
+  .header-search > form .header-search-input-wrapper .header-search-input {
+    border: none;
+  }
+}
+.header-search > form .header-search-button {
+  font-size: 18px;
+  padding: 0 10px;
+  /*
+            .icon {
+                line-height: inherit;
+            }
+
+            &:hover,
+            &:focus {
+                color: #000;
+                background-color: @gray-light;
+                border-color: @gray-light;
+            }*/
+}
+.header-search > form .header-search-button > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (max-width: 768px) {
+  .header-search > form {
+    display: none;
+  }
+  .header-search > form.header-search-form-active {
+    display: flex;
+  }
+}
+.header-search .header-search-toggle {
+  display: none;
+  height: 32px;
+  font-size: 1.25rem;
+  padding: 0 10px;
+  background-color: #000;
+  border-color: #000;
+}
+.header-search .header-search-toggle span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (max-width: 768px) {
+  .header-search .header-search-toggle {
+    display: inline-block;
+    float: right;
+  }
+  .header-search .header-search-toggle.header-search-toggle-close {
+    background-color: transparent;
+    border-color: transparent;
+    color: #0076AD;
+    font-size: 36px;
+    color: #F05129;
+    height: auto;
+    flex: none;
+  }
+  .header-search .header-search-toggle.header-search-toggle-close:hover,
+  .header-search .header-search-toggle.header-search-toggle-close:focus {
+    background-color: transparent;
+    border-color: transparent;
+    color: #002347;
+  }
+}
+.header-search select:focus,
+.header-search input:focus,
+.header-search button:focus {
+  z-index: 2;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .header-search {
+    min-height: 32px;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+  .header-search.header-search-close {
+    padding: 0 55px 0 1rem !important;
+    z-index: 2;
+    background: #fff;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+@media print {
+  .header-search {
+    display: none;
+  }
+}
+/* autocomplete */
+.autocomplete-w1 {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  margin: 0;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.autocomplete {
+  box-sizing: border-box;
+  border: 1px solid #808080;
+  border-top-color: transparent;
+  background-color: #fff;
+  cursor: default;
+  text-align: left;
+  max-height: 350px;
+  overflow: auto;
+  margin: 0;
+}
+.autocomplete .selected {
+  background: #F6F6F6;
+}
+.autocomplete div {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+.autocomplete strong {
+  font-weight: normal;
+  color: #0076AD;
+}
+.autocomplete-status {
+  font-weight: normal;
+  font-size: 10px;
+  float: right;
+  text-align: right;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+</style>
+<script>jQuery(function($) {
+    // UX Interaction Tracking - Logo, Menu, Search, Breadcrumbs
+    $('.header-search-format-select').change(function() {
+        var label;
+        $('.header-search-format-select option:selected').each(function() {
+            label = $(this).text().trim();
+        });
+        UX.interaction($(this), 'Search', 'Select Format', label);
+    });
+    // search toggle
+    function searchActive() {
+        $('.header-search > form').addClass('header-search-form-active');
+        $('.header-search .header-search-format-select').focus();
+        $('.header-search-toggle i').switchClass('icon-search', 'icon-times', 50);
+        $('.header-search-toggle').addClass('header-search-toggle-close');
+        $('.header-search').addClass('header-search-close');
+    };
+    function searchInactive() {
+        $('.header-search > form').removeClass('header-search-form-active');
+        $('.header-search-toggle i').switchClass('icon-times', 'icon-search', 50);
+        $('.header-search-toggle').removeClass('header-search-toggle-close');
+        $('.header-search').removeClass('header-search-close');
+    };
+
+    $('.header-search-toggle').live('click', function() {
+        if ($('.header-search > form').hasClass('header-search-form-active')) {
+            searchInactive();
+            //UX Interaction Tracking
+            UX.interaction($(this), 'Search', 'Hide', '');
+        } else {
+            searchActive();
+            //UX Interaction Tracking
+            UX.interaction($(this), 'Search', 'Show', '');
+        }
+    });
+
+    $(window).on("load resize",function(e){
+        $('.autocomplete-w1').parent().css('width', '100%');
+    });
+
+});
+</script>
+
+
+<div class="header-search">
+    <label for="search" class="test screen-readers-only">Search</label>
+    
+    
+<form role="search" method="get" action="/search/" aria-label="Global">
+    <div class="header-search-formats">
+        <select name="in"
+                id="searchFormat"
+                aria-label="Filter search by"
+                class="header-search-format-select select">
+            <option value="">Everything</option>
+
+            
+            <option value="original-format:sound recording"
+                
+                    >Audio Recordings</option>
+            
+            <option value="original-format:book"
+                
+                    >Books/Printed Material</option>
+            
+            <option value="original-format:film, video"
+                
+                    >Films, Videos</option>
+            
+            <option value="original-format:legislation"
+                
+                    >Legislation</option>
+            
+            <option value="original-format:manuscript/mixed material"
+                
+                    >Manuscripts/Mixed Material</option>
+            
+            <option value="original-format:map"
+                
+                    >Maps</option>
+            
+            <option value="original-format:notated music"
+                
+                    >Notated Music</option>
+            
+            <option value="original-format:newspaper"
+                
+                    >Newspapers</option>
+            
+            <option value="original-format:periodical"
+                
+                    >Periodicals</option>
+            
+            <option value="original-format:personal narrative"
+                
+                    >Personal Narratives</option>
+            
+            <option value="original-format:photo, print, drawing"
+                
+                    >Photos, Prints, Drawings</option>
+            
+            <option value="original-format:software, e-resource"
+                
+                    >Software, E-Resources</option>
+            
+            <option value="original-format:web archive"
+                
+                    >Web Archives</option>
+            
+            <option value="original-format:web page"
+                
+                    >Web Pages</option>
+            
+            <option value="original-format:3d object"
+                
+                    >3D Objects</option>
+            
+            
+        </select>
+    </div>
+    <div class='header-search-input-wrapper'>
+        <input  type="search"
+                title="Search the Library of Congress"
+                name="q"
+                id="search"
+                class='locsuggest header-search-input'
+                maxlength="250"
+                value=''
+                onFocus="this.select();" />
+        <div class='searchtarget'>
+            <input id='search_within_default'
+                type="hidden"
+                name="new"
+                value="true" />
+        </div>
+    </div>
+    <button class="header-search-button button-accent"
+            type="submit"
+            value="submit"><span>Search</span><i
+            class="icon icon-search"></i></button>
+
+    
+    <input type='hidden'
+        name='st'
+        value=''/>
+    
+    
+</form>
+
+    
+    <button class="header-search-toggle"><span>Search toggle</span><i class="icon icon-search"></i></button>
+</div>
+
+            
+            
+            
+
+
+<style>.header-menu {
+  position: relative;
+}
+@media (min-width: 769px) {
+  .header-menu {
+    padding-left: 15px;
+  }
+}
+.header-menu .header-menu-button {
+  color: #000;
+  border: 0;
+  background: none;
+  font-size: 36px;
+  width: 31px;
+  height: 70px;
+  line-height: 1;
+  padding: 0 15px;
+  margin-right: -14px;
+  box-sizing: content-box;
+}
+.header-menu .header-menu-button > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (min-width: 993px) {
+  .header-menu .header-menu-button {
+    height: auto;
+    line-height: normal;
+    padding: 9px 15px 18px;
+  }
+}
+.header-menu.header-menu-active .header-menu-button {
+  background: #F6F6F6;
+}
+.header-menu .header-menu-container {
+  display: none;
+  background: #F6F6F6;
+  position: absolute;
+  top: auto;
+  right: -14px;
+  z-index: 999;
+}
+@media (min-width: 993px) {
+  .header-menu .header-menu-container {
+    top: auto;
+  }
+}
+.header-menu .header-menu-container.header-menu-container-active {
+  display: block;
+  height: auto;
+  overflow: auto;
+  opacity: 1;
+}
+.header-menu .header-menu-container > ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 53px 0 2rem;
+}
+ul .header-menu .header-menu-container > ul {
+  padding-left: 40px;
+}
+@media (min-width: 481px) {
+  .header-menu .header-menu-container > ul {
+    padding: 0 153px 0 2rem;
+  }
+}
+.header-menu .header-menu-container > ul a {
+  color: #242424;
+}
+.header-menu .header-menu-container > ul > li {
+  padding: 0.5rem 50px 0.5rem 0;
+  white-space: nowrap;
+}
+.header-menu .header-menu-container > ul > li:first-child {
+  padding-top: 1rem;
+}
+.header-menu .header-menu-container > ul > li:last-child {
+  padding-bottom: 1rem;
+}
+.header-menu .header-menu-container > ul.header-menu-tertiary > li:first-child,
+.header-menu .header-menu-container > ul.header-menu-external > li:first-child {
+  border-top: 1px solid #808080;
+}
+@media print {
+  .header-menu {
+    display: none;
+  }
+}
+</style>
+<script>jQuery(function($) {
+    $('.header-menu-link a.menu-link').live('click', function () {
+        $('.header-submenu, .header-menu, .header-menu-link').toggleClass('on-off');
+    });
+    var delay = 800,
+        global_nav_header_timeout;
+    $('.header-menu li').live('hover', function(event) {
+        $('.header-dropdown img').each(function(index, image){
+            var data_source = $(image).attr('data-src');
+            if(data_source){
+                $(image).attr({src: data_source, 'data-src': null});
+            }
+        });
+
+        if( $(event.target).parents('.hover').length ){
+            return;
+        }
+
+        $('.header-menu li.hover').removeClass('hover');
+        $(event.target).closest('li').addClass('hover');
+        global_nav_header_timeout = setTimeout(function(){
+            $('.header-dropdown').hide();
+            $('.header-dropdown', $(event.target).closest('li')).show();
+        }, delay);
+    }, function(event){
+        clearTimeout( global_nav_header_timeout );
+        $(event.target).closest('li').removeClass('hover');
+        $('.header-dropdown', $(event.target).closest('li')).hide();
+    });
+
+    $('.header-menu').live('hover',  function(event) {/*
+        do nothing on hover over, only on hover out
+    */}, function(event){
+        $('.header-menu li.hover').removeClass('hover');
+        $(event.target).parents('.header-dropdown').hide();
+    });
+
+    //Metrics tracking how users are using the new header
+    $('.header-menu a, .intersite-navigation a, .locfoot a').live('click', function(event){
+        s.linkTrackVars = s.linkTrackVar + ",prop57";
+        var label = $(this).attr('name');
+        if ( !label ){
+            label = $(this).text().trim();
+        }
+        s.prop57 = label;
+        s.tl(this,'o',label);
+    });
+
+    function headerMenuActive() {
+        $('.header-menu-container').removeClass('header-menu-container-active').attr('aria-hidden', 'true');
+        $('.header-menu').removeClass('header-menu-active');
+        $('.header-menu-button').attr('aria-expanded', 'false');
+        $('.header-menu-button i').switchClass('icon-times', 'icon-bars', 50);
+        //$('.header-overlay').hide();
+    };
+    function headerMenuInactive() {
+        $('.header-menu-container').addClass('header-menu-container-active').attr('aria-hidden', 'false');
+        $('.header-menu').addClass('header-menu-active');
+        $('.header-menu-button').attr('aria-expanded', 'true');
+        $('.header-menu-button i').switchClass('icon-bars', 'icon-times', 50);
+        //$('.header-overlay').show();
+    };
+    $('.header-menu-button').live('click', function() {
+        if ($('.header-menu-container').hasClass('header-menu-container-active')) {
+            headerMenuActive();
+            //UX Interaction Tracking
+            UX.interaction($(this), 'Hamburger Menu', 'Close', '');
+        } else {
+            headerMenuInactive();
+            //UX Interaction Tracking
+            UX.interaction($(this), 'Hamburger Menu', 'Open', '');
+        }
+    });
+    $("html").live("click touchstart keydown",function(event) {
+        headerMenuActive();
+    });
+    $(".header-menu").live("click touchstart keydown",function(event) {
+        event.stopPropagation();
+        // allow escape key to close for accessibility
+        if (event.which == 27) {
+            headerMenuActive();
+        }
+    });
+    // menu position and height
+    $(window).live("load resize scroll",function(e){
+        var headerHeight = $('.header-menu').outerHeight();
+        $('.header-menu-container').css({"top": headerHeight});
+    });
+
+    // UX Interaction Tracking - Logo, Menu, Search, Breadcrumbs
+    $('.header-menu-container ul li').live('click', function() {
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Hamburger Menu', 'Click', label);
+    });
+});
+</script>
+
+
+<nav class="header-menu" aria-labelledby="header-menu-button">
+    <button class="header-menu-button" id="header-menu-button" aria-controls="header-menu-container">
+        <span>menu </span><i class="icon icon-bars"></i>
+    </button>
+    <div class="header-menu-container" id="header-menu-container">
+        <ul class="">
+            <li class=""><a href="/discover/">Discover</a></li>
+            <li class=""><a href="/services-and-programs/">Services</a></li>
+            <li class=""><a href="/visit/">Visit</a></li>
+            <li class=""><a href="/education/">Education</a></li>
+            <li class=""><a href="/connect/">Connect</a></li>
+            <li class=""><a href="/about/">About</a></li>
+        </ul>
+        <ul class="header-menu-tertiary">
+            <li class=""><a href="https://ask.loc.gov/">Ask a Librarian</a></li>
+            <li class=""><a href="/help/">Help</a></li>
+            <li class=""><a href="/contact/">Contact</a></li>
+        </ul>
+        <ul class="header-menu-external">
+            <li class=""><a href="https://catalog.loc.gov/">Search Online Catalog</a></li>
+            <li class=""><a href="http://copyright.gov/">Copyright.gov</a></li>
+            <li class=""><a href="https://www.congress.gov/">Congress.gov</a></li>
+        </ul>
+    </div>
+</nav>
+
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<style>.breadcrumbs-wrapper {
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.breadcrumbs-container {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .breadcrumbs-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.breadcrumbs-row {
+  display: flex;
+  justify-content: flex-end;
+}
+.header-breadcrumbs {
+  flex: 1 1 0%;
+  margin-right: 2rem;
+}
+@media (max-width: 768px) {
+  .header-breadcrumbs > a::before {
+    content: "\000AB \0000a0";
+  }
+  .header-breadcrumbs > a:not(:last-of-type) {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .header-breadcrumbs > a::after {
+    content: "\0000a0 \000BB";
+    color: #242424;
+  }
+}
+@media (max-width: 768px) {
+  .header-breadcrumbs > .active {
+    display: none;
+  }
+}
+</style>
+<script>
+
+jQuery(function($) {
+    $(".header-breadcrumbs a:contains('at the Library of Congress'), .header-breadcrumbs span:contains('at the Library of Congress')").html(function(_, html) {
+        return html.split('at the Library of Congress').join("<span class='screen-readers-only'>at the Library of Congress</span>");
+    });
+    // UX Interaction Tracking - Logo, Menu, Search, Breadcrumbs
+    $('.header-breadcrumbs a').live('click', function(event){
+        var label = $(this).attr('name');
+        if ( !label ){
+            label = $(this).text().trim();
+        }
+        UX.interaction($(this), 'Breadcrumbs', 'click', label);
+    });
+});
+</script>
+
+
+
+
+
+
+<div class="content without-padding
+    
+    ">
+    <a name="skip-to-content"
+       id="skip-to-content"></a>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
+<style>.homepage-section-heading {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 2.125rem;
+  text-align: center;
+}
+.homepage-section-heading small,
+.homepage-section-heading .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.homepage-section-heading small.block,
+.homepage-section-heading .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .homepage-section-heading {
+  color: inherit !important;
+}
+.homepage-section-heading small,
+.homepage-section-heading .small {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.homepage-section-heading small.match-header,
+.homepage-section-heading .small.match-header {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+.homepage-section-heading .subheading {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+.video-player-home {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.video-player-home > .video-player-home-inner,
+.video-player-home > .jwplayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-text-home {
+  padding: 10px;
+}
+.video-text-home .trending-item-title {
+  font-size: 1.125rem;
+}
+.video-text-home a .trending-item-title {
+  color: #242424;
+}
+@media (max-width: 768px) {
+  .video-text-home {
+    padding-bottom: 2rem;
+  }
+}
+</style>
+
+<main class="home-container">
+    <h1 class="screen-readers-only">The Library of Congress Homepage</h1>
+    
+
+    
+
+<style>.featured {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: #fff;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .featured {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .featured {
+    padding: 0;
+  }
+}
+.featured .play-pause-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  z-index: 2;
+}
+.featured > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.featured video {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+.featured .featured-slider {
+  padding: 0;
+  max-height: 560px;
+  overflow: hidden;
+}
+.featured .featured-slider.slick-initialized {
+  max-height: none;
+  overflow: visible;
+}
+.featured .featured-slider .featured-slider-slide {
+  padding: 0;
+  position: relative;
+}
+.featured .featured-slider .featured-slider-slide img {
+  margin: 0;
+}
+.featured .featured-slider .slick-prev {
+  box-sizing: border-box;
+  padding: 0;
+  /* inherited from button */
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  z-index: 100;
+  font-family: FontAwesome;
+  font-size: 0 !important;
+  line-height: 0;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  left: 0;
+  right: auto;
+  /* from fontAwesome core.less */
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: auto !important;
+  height: auto !important;
+}
+.featured .featured-slider .slick-prev:before {
+  font-size: 96px !important;
+  line-height: 60px !important;
+}
+.featured .featured-slider .slick-prev.slick-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media (max-width: 992px) {
+  .featured .featured-slider .slick-prev {
+    width: 60px;
+    height: 60px;
+  }
+  .featured .featured-slider .slick-prev:before {
+    font-size: 96px !important;
+    line-height: 60px !important;
+  }
+}
+@media (max-width: 768px) {
+  .featured .featured-slider .slick-prev {
+    width: 50px;
+    height: 50px;
+  }
+  .featured .featured-slider .slick-prev:before {
+    font-size: 48px !important;
+    line-height: 50px !important;
+  }
+}
+.featured .featured-slider .slick-prev:before {
+  content: "\f104";
+}
+@media (max-width: 768px) {
+  .featured .featured-slider .slick-prev {
+    left: 13px;
+    margin-top: 46.66666667%;
+    /* 1200 x 560 */
+    top: 10px !important;
+  }
+}
+@media (max-width: 480px) {
+  .featured .featured-slider .slick-prev {
+    top: 20px !important;
+  }
+}
+@media (min-width: 769px) {
+  .featured .featured-slider .slick-prev {
+    left: 20px;
+    background-image: url("/static/images/slick-left-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 40px !important;
+    height: 66px !important;
+  }
+  .featured .featured-slider .slick-prev::before {
+    content: "" !important;
+  }
+}
+.featured .featured-slider .slick-next {
+  box-sizing: border-box;
+  padding: 0;
+  /* inherited from button */
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  z-index: 100;
+  font-family: FontAwesome;
+  font-size: 0 !important;
+  line-height: 0;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  left: auto;
+  right: 0;
+  /* from fontAwesome core.less */
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: auto !important;
+  height: auto !important;
+}
+.featured .featured-slider .slick-next:before {
+  font-size: 96px !important;
+  line-height: 60px !important;
+}
+.featured .featured-slider .slick-next.slick-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media (max-width: 992px) {
+  .featured .featured-slider .slick-next {
+    width: 60px;
+    height: 60px;
+  }
+  .featured .featured-slider .slick-next:before {
+    font-size: 96px !important;
+    line-height: 60px !important;
+  }
+}
+@media (max-width: 768px) {
+  .featured .featured-slider .slick-next {
+    width: 50px;
+    height: 50px;
+  }
+  .featured .featured-slider .slick-next:before {
+    font-size: 48px !important;
+    line-height: 50px !important;
+  }
+}
+.featured .featured-slider .slick-next:before {
+  content: "\f105";
+}
+@media (max-width: 768px) {
+  .featured .featured-slider .slick-next {
+    right: 13px;
+    margin-top: 46.66666667%;
+    /* 1200 x 560 */
+    top: 10px !important;
+  }
+}
+@media (max-width: 480px) {
+  .featured .featured-slider .slick-next {
+    top: 20px !important;
+  }
+}
+@media (min-width: 769px) {
+  .featured .featured-slider .slick-next {
+    right: 20px;
+    background-image: url("/static/images/slick-right-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 40px !important;
+    height: 66px !important;
+  }
+  .featured .featured-slider .slick-next::before {
+    content: "" !important;
+  }
+}
+.featured .text-box-wrapper {
+  padding: 15px 50px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+@media (min-width: 769px) {
+  .featured .text-box-wrapper {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 60px 14px 16px;
+  }
+}
+@media (min-width: 993px) {
+  .featured .text-box-wrapper {
+    width: calc(100% - 240px);
+    bottom: 32px;
+  }
+}
+@media (min-width: 769px) {
+  .featured .text-box-wrapper * {
+    color: #fff !important;
+  }
+}
+.featured .text-box-wrapper .title {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  margin: 0 0 6px;
+  line-height: 1.1;
+}
+.featured .text-box-wrapper .title small,
+.featured .text-box-wrapper .title .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.featured .text-box-wrapper .title small.block,
+.featured .text-box-wrapper .title .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .featured .text-box-wrapper .title {
+  color: inherit !important;
+}
+.featured .text-box-wrapper .title small,
+.featured .text-box-wrapper .title .small {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.featured .text-box-wrapper .title small.match-header,
+.featured .text-box-wrapper .title .small.match-header {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+.featured .text-box-wrapper .title .subheading {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+@media (max-width: 992px) {
+  .featured .text-box-wrapper .title {
+    font-size: 24px;
+  }
+}
+.featured .text-box-wrapper .description {
+  margin: 0;
+}
+.featured .text-box-wrapper .paging-info {
+  position: absolute;
+  right: 15px;
+  bottom: 14px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .featured .text-box-wrapper .paging-info {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+.featured .featured-slider-link {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.featured .featured-slider-link:hover::after,
+.featured .featured-slider-link:focus::after {
+  content: "";
+  color: #0076AD;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 4px solid #0076AD;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+}
+@media (min-width: 993px) {
+  .featured .featured-slider-link {
+    position: absolute;
+    display: block;
+  }
+}
+</style>
+<script>
+jQuery(function($){
+    // video fix
+    $('.featured-slider').on('init', function(){
+        $('video').each(function () {
+            var promise = this.play();
+
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                }).catch(error => {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                });
+            }
+        });
+    });
+
+    // custom paging
+    var $status = $('.paging-info');
+    var $slickElement = $('.featured-slider');
+    $slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $status.text(i + '/' + slick.slideCount);
+    });
+
+    // configuration
+    $('.featured-slider').slick({
+        infinite: true,
+        rows: 0, // a fix for extra divs issue
+        
+            
+            // AB Testing
+            autoplay: true,
+            autoplaySpeed: 7000,
+            
+        
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                adaptiveHeight: true
+            }
+        }]
+    });
+
+    // play/pause button
+    $('#play-pause-button').click(function(){
+        if ($(this).hasClass("paused")){
+            $('.featured-slider').slick('slickPlay').slick('slickSetOption', 'pauseOnDotsHover', true);
+            $(this).children("span").html("Pause");
+            $(this).children(".icon").removeClass("icon-play").addClass("icon-pause");
+            $(this).removeClass("paused").attr({
+                "aria-pressed": "true",
+                "aria-label": "Pause"
+            });;
+        } else {
+            $('.featured-slider').slick('slickPause').slick('slickSetOption', 'pauseOnDotsHover', false);
+            $(this).children("span").html("Play");
+            $(this).children(".icon").removeClass("icon-pause").addClass("icon-play");
+            $(this).addClass("paused").attr({
+                "aria-pressed": "false",
+                "aria-label": "Play"
+            });
+        }
+    });
+
+    // UX Interaction Tracking - Carousel
+    $('.featured-slider').on('swipe', function(event, slick, direction) {
+        // track only if slide change triggered by the user
+        var label = 'left' == direction ? 'next' : 'prev';
+        UX.interaction($(this), 'Homepage Carousel', 'Rotate', label);
+    });
+
+    $('.featured-slider .slick-prev').on('click', function() {
+        // track only if slide change triggered by the user
+        UX.interaction($(this), 'Homepage Carousel', 'Rotate',  'prev');
+    });
+
+    $('.featured-slider .slick-next').on('click', function() {
+        // track only if slide change triggered by the user
+        UX.interaction($(this), 'Homepage Carousel', 'Rotate',  'next');
+    });
+
+    $('.featured-slider .featured-slider-dots li').on('click', function(event){
+        var position = Number($(event.target).text()),
+            item = $('.featured-slider .slick-slide').get(position),
+            title = $('.title', item).text(),
+            label = 'Thumbnail[' + position + ']:' + title;
+        UX.interaction($(this), 'Homepage Carousel', 'Select', label);
+    });
+
+    $('.featured-slider a').on('click', function(event){
+        var target = $(event.currentTarget),
+            title = target.attr('data-title'),
+            position = target.parents('.slick-slide').attr('data-slick-index'),
+            label = '[' + position + ']:' + title;
+        UX.interaction($(this), 'Homepage Carousel', 'Clickthrough', label);
+    });
+});
+</script>
+
+<section class="featured">
+    <h2>Featured Items</h2>
+    <button id="play-pause-button" class="play-pause-button" type="button" aria-pressed="true" aria-label="pause">
+        <i class="icon icon-pause"></i>
+        <span class="screen-readers-only">Pause</span>
+    </button>
+    <div id="featured-slider" class="featured-slider">
+        
+        <div class="featured-slider-slide">
+            
+            <img class="" src="/static/home/images/featured/programs/simon-broderick-parker_1200x560.jpg" alt="Matthew Broderick, John Benjamin Hickey and Sara Jessica Parker sit together in a theater" />
+            
+            <a href="https://newsroom.loc.gov/news/library-of-congress-to-host-matthew-broderick-and-sarah-jessica-parker-for-special-event-on-neil-sim/s/a3c46445-e632-4c44-8e45-ee83a7d6b863"
+                class="featured-slider-link"
+                data-title="April 25: Matthew Broderick and Sara Jessica Parker"
+                data-link="https://newsroom.loc.gov/news/library-of-congress-to-host-matthew-broderick-and-sarah-jessica-parker-for-special-event-on-neil-sim/s/a3c46445-e632-4c44-8e45-ee83a7d6b863">
+            <div class="text-box-wrapper ">
+                <h3 class="title">April 25: Matthew Broderick and Sara Jessica Parker</h3>
+                <p class="description">Watch Broadway stars of &quot;Plaza Suite&quot; discuss Neil Simon&#39;s legacy.</p>
+                <div class="paging-info"></div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="featured-slider-slide">
+            
+            <img class="" src="/static/home/images/featured/nrr/nrr2022_1200x560.jpg" alt="Collage image of Hank Aaron swinging a baseball bat, the rock group Queen and Alicia Keys with record albums in the background" />
+            
+            <a href="https://newsroom.loc.gov/news/national-recording-registry-inducts-music-from-alicia-keys--ricky-martin--journey-and-more-in-2022/s/fee30140-0454-401c-a2a2-205298e32fb1"
+                class="featured-slider-link"
+                data-title="National Recording Registry"
+                data-link="https://newsroom.loc.gov/news/national-recording-registry-inducts-music-from-alicia-keys--ricky-martin--journey-and-more-in-2022/s/fee30140-0454-401c-a2a2-205298e32fb1">
+            <div class="text-box-wrapper ">
+                <h3 class="title">National Recording Registry</h3>
+                <p class="description">Alicia Keys, Queen, Ricky Martin, Journey, Linda Ronstadt and more in this year&#39;s class.</p>
+                <div class="paging-info"></div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="featured-slider-slide">
+            
+            <img class="" src="/static/home/images/featured/programs/2022concerts-apr_1200x560.jpg" alt="Three middle-aged men facing the camera, one holding an accordian and another holding a guitar" />
+            
+            <a href="/concerts/"
+                class="featured-slider-link"
+                data-title="Concerts from the Library"
+                data-link="/concerts/">
+            <div class="text-box-wrapper ">
+                <h3 class="title">Concerts from the Library</h3>
+                <p class="description">Our virtual offerings continue -- check out these great musical performances &amp; more.</p>
+                <div class="paging-info"></div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="featured-slider-slide">
+            
+            <img class="" src="/static/home/images/featured/heritage/lyric-poetry_1200x560.jpg" alt="Painting of &quot;Lyric Poetry&quot; from the Thomas Jefferson Building at the Library of Congress, depicting a woman in flowing gowns playing upon a lyre" />
+            
+            <a href="/poetry/"
+                class="featured-slider-link"
+                data-title="April Is Poetry Month"
+                data-link="/poetry/">
+            <div class="text-box-wrapper ">
+                <h3 class="title">April Is Poetry Month</h3>
+                <p class="description">Celebrate poetry with collections, readings &amp; the U.S. Poet Laureate.</p>
+                <div class="paging-info"></div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="featured-slider-slide">
+            
+            <img class="" src="/static/home/images/featured/evergreen/congress_A-L.jpg" alt="Exterior view of the U.S. Capitol with blue sky and green lawn" />
+            
+            <a href="https://www.congress.gov/"
+                class="featured-slider-link"
+                data-title="Congress.gov"
+                data-link="https://www.congress.gov/">
+            <div class="text-box-wrapper ">
+                <h3 class="title">Congress.gov</h3>
+                <p class="description">Track bills on the official site for U.S. federal legislative information.</p>
+                <div class="paging-info"></div>
+            </div>
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+
+    
+
+
+    
+
+<nav class="horizontal-scrolling-navigation-wrapper">
+    <div id="horizontalScrollingNavigation" class="horizontal-scrolling-navigation dragscroll" aria-label="Programs, services">
+        <button id="horizontalScrollingNavigationAdvancerLeft" class="horizontal-scrolling-navigation-advancer horizontal-scrolling-navigation-advancer-left" type="button" aria-hidden="true"><span class="screen-readers-only">previous</span><i class="icon icon-angle-left"></i></button>
+        <ul id="horizontalScrollingNavigationItems" class="horizontal-scrolling-navigation-items">
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="https://catalog.loc.gov/">
+                    Library Catalog
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="/collections/">
+                    Digital Collections
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="https://research-appointments.loc.gov/">
+                    Researchers
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="/visit/">
+                    Visitors
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="/teachers/">
+                    Teachers
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="https://blogs.loc.gov/">
+                    Blogs
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="https://copyright.gov/">
+                    U.S. Copyright Office
+                </a>
+            </li>
+            
+            <li class="horizontal-scrolling-navigation-item">
+                <a href="/services-and-programs/">
+                    More...
+                </a>
+            </li>
+            
+        </ul>
+        <button id="horizontalScrollingNavigationAdvancerRight" class="horizontal-scrolling-navigation-advancer horizontal-scrolling-navigation-advancer-right" type="button" aria-hidden="true"><span class="screen-readers-only">next</span><i class="icon icon-angle-right"></i></button>
+    </div>
+</nav>
+
+
+<style>.horizontal-scrolling-navigation-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 44px;
+  box-sizing: border-box;
+  border: 1px solid #BFBFBF;
+}
+.horizontal-scrolling-navigation {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  text-align: center;
+  scrollbar-width: none;
+}
+.horizontal-scrolling-navigation::-webkit-scrollbar {
+  display: none;
+}
+.horizontal-scrolling-navigation-items {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  transition: transform 0.2s ease-in-out;
+  width: min-content;
+}
+/* Don't even bother IE 10+ and Edge 16+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .horizontal-scrolling-navigation-items {
+    display: inline-flex;
+    width: auto;
+  }
+}
+@supports (-ms-ime-align:auto) {
+  .horizontal-scrolling-navigation-items {
+    display: inline-flex;
+    width: auto;
+  }
+}
+.horizontal-scrolling-navigation-items-no-transition {
+  transition: none;
+}
+.horizontal-scrolling-navigation-item {
+  margin: 0;
+  font-size: 18px;
+}
+.horizontal-scrolling-navigation-item > a {
+  padding: 0 18px;
+  color: #242424;
+}
+.horizontal-scrolling-navigation-item:first-child > a {
+  padding-left: 0;
+}
+.horizontal-scrolling-navigation-advancer {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+  padding: 0 5px;
+  height: auto;
+}
+.horizontal-scrolling-navigation-advancer .icon {
+  font-size: 2rem !important;
+  line-height: 1;
+}
+.horizontal-scrolling-navigation-advancer:hover,
+.horizontal-scrolling-navigation-advancer:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+}
+[data-overflowing="none"] .horizontal-scrolling-navigation-advancer {
+  display: none;
+}
+/* Don't even bother IE 10+ and Edge 16+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .horizontal-scrolling-navigation-advancer {
+    display: none;
+  }
+}
+@supports (-ms-ime-align:auto) {
+  .horizontal-scrolling-navigation-advancer {
+    display: none;
+  }
+}
+.horizontal-scrolling-navigation-advancer-right {
+  left: auto;
+  right: 0;
+  padding-right: 13px;
+}
+.horizontal-scrolling-navigation-advancer-left {
+  padding-left: 13px;
+}
+[data-overflowing="both"] .horizontal-scrolling-navigation-advancer-left,
+[data-overflowing="left"] .horizontal-scrolling-navigation-advancer-left {
+  opacity: 1;
+}
+[data-overflowing="both"] .horizontal-scrolling-navigation-advancer-right,
+[data-overflowing="right"] .horizontal-scrolling-navigation-advancer-right {
+  opacity: 1;
+}
+</style>
+<script>
+/*
+ben frain
+https://benfrain.com/a-horizontal-scrolling-navigation-pattern-for-touch-and-mouse-with-moving-current-indicator/
+example
+https://benfrain.com/playground/scroller.html
+*/
+
+var SETTINGS = {
+    navBarTravelling: false,
+    navBarTravelDirection: "",
+	navBarTravelDistance: 150
+}
+
+// Out advancer buttons
+var horizontalScrollingNavigationAdvancerLeft = document.getElementById("horizontalScrollingNavigationAdvancerLeft");
+var horizontalScrollingNavigationAdvancerRight = document.getElementById("horizontalScrollingNavigationAdvancerRight");
+
+var horizontalScrollingNavigation = document.getElementById("horizontalScrollingNavigation");
+var horizontalScrollingNavigationItems = document.getElementById("horizontalScrollingNavigationItems");
+
+horizontalScrollingNavigation.setAttribute("data-overflowing", determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation));
+
+// Handle the scroll of the horizontal container
+var last_known_scroll_position = 0;
+var ticking = false;
+
+function doSomething(scroll_pos) {
+    horizontalScrollingNavigation.setAttribute("data-overflowing", determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation));
+}
+
+horizontalScrollingNavigation.addEventListener("scroll", function() {
+    last_known_scroll_position = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            doSomething(last_known_scroll_position);
+            ticking = false;
+        });
+    }
+    ticking = true;
+});
+
+horizontalScrollingNavigationAdvancerLeft.addEventListener("click", function() {
+	// If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the left
+    if (determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation) === "left" || determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation) === "both") {
+        // Find how far this panel has been scrolled
+        var availableScrollLeft = horizontalScrollingNavigation.scrollLeft;
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollLeft < SETTINGS.navBarTravelDistance * 2) {
+            horizontalScrollingNavigationItems.style.transform = "translateX(" + availableScrollLeft + "px)";
+        } else {
+            horizontalScrollingNavigationItems.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        horizontalScrollingNavigationItems.classList.remove("horizontal-scrolling-navigation-items-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "left";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    horizontalScrollingNavigation.setAttribute("data-overflowing", determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation));
+});
+
+horizontalScrollingNavigationAdvancerRight.addEventListener("click", function() {
+    // If in the middle of a move return
+    if (SETTINGS.navBarTravelling === true) {
+        return;
+    }
+    // If we have content overflowing both sides or on the right
+    if (determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation) === "right" || determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation) === "both") {
+        // Get the right edge of the container and content
+        var navBarRightEdge = horizontalScrollingNavigationItems.getBoundingClientRect().right;
+        var navBarScrollerRightEdge = horizontalScrollingNavigation.getBoundingClientRect().right;
+        // Now we know how much space we have available to scroll
+        var availableScrollRight = Math.floor(navBarRightEdge - navBarScrollerRightEdge);
+        // If the space available is less than two lots of our desired distance, just move the whole amount
+        // otherwise, move by the amount in the settings
+        if (availableScrollRight < SETTINGS.navBarTravelDistance * 2) {
+            horizontalScrollingNavigationItems.style.transform = "translateX(-" + availableScrollRight + "px)";
+        } else {
+            horizontalScrollingNavigationItems.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
+        }
+        // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+        horizontalScrollingNavigationItems.classList.remove("horizontal-scrolling-navigation-items-no-transition");
+        // Update our settings
+        SETTINGS.navBarTravelDirection = "right";
+        SETTINGS.navBarTravelling = true;
+    }
+    // Now update the attribute in the DOM
+    horizontalScrollingNavigation.setAttribute("data-overflowing", determineOverflow(horizontalScrollingNavigationItems, horizontalScrollingNavigation));
+});
+
+horizontalScrollingNavigationItems.addEventListener(
+    "transitionend",
+    function() {
+        // get the value of the transform, apply that to the current scroll position (so get the scroll pos first) and then remove the transform
+        var styleOfTransform = window.getComputedStyle(horizontalScrollingNavigationItems, null);
+        var tr = styleOfTransform.getPropertyValue("-webkit-transform") || styleOfTransform.getPropertyValue("transform");
+        // If there is no transition we want to default to 0 and not null
+        var amount = Math.abs(parseInt(tr.split(",")[4]) || 0);
+        horizontalScrollingNavigationItems.style.transform = "none";
+        horizontalScrollingNavigationItems.classList.add("horizontal-scrolling-navigation-items-no-transition");
+        // Now lets set the scroll position
+        if (SETTINGS.navBarTravelDirection === "left") {
+            horizontalScrollingNavigation.scrollLeft = horizontalScrollingNavigation.scrollLeft - amount;
+        } else {
+            horizontalScrollingNavigation.scrollLeft = horizontalScrollingNavigation.scrollLeft + amount;
+        }
+        SETTINGS.navBarTravelling = false;
+    },
+    false
+);
+
+function determineOverflow(content, container) {
+    var containerMetrics = container.getBoundingClientRect();
+    var containerMetricsRight = Math.floor(containerMetrics.right);
+    var containerMetricsLeft = Math.floor(containerMetrics.left);
+    var contentMetrics = content.getBoundingClientRect();
+    var contentMetricsRight = Math.floor(contentMetrics.right);
+    var contentMetricsLeft = Math.floor(contentMetrics.left);
+	 if (containerMetricsLeft > contentMetricsLeft && containerMetricsRight < contentMetricsRight) {
+        return "both";
+    } else if (contentMetricsLeft < containerMetricsLeft) {
+        return "left";
+    } else if (contentMetricsRight > containerMetricsRight) {
+        return "right";
+    } else {
+        return "none";
+    }
+}
+</script>
+<script>/**
+ * @fileoverview dragscroll - scroll area by dragging
+ * @version 0.0.8
+ * @license MIT, see http://github.com/asvd/dragscroll
+ * @copyright 2015 asvd <heliosframework@gmail.com>
+ */
+
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['exports'], factory);
+    } else if (typeof exports !== 'undefined') {
+        factory(exports);
+    } else {
+        factory((root.dragscroll = {}));
+    }
+}(this, function (exports) {
+    var _window = window;
+    var _document = document;
+    var mousemove = 'mousemove';
+    var mouseup = 'mouseup';
+    var mousedown = 'mousedown';
+    var EventListener = 'EventListener';
+    var addEventListener = 'add'+EventListener;
+    var removeEventListener = 'remove'+EventListener;
+    var newScrollX, newScrollY;
+
+    var dragged = [];
+    var reset = function(i, el) {
+        for (i = 0; i < dragged.length;) {
+            el = dragged[i++];
+            el = el.container || el;
+            el[removeEventListener](mousedown, el.md, 0);
+            _window[removeEventListener](mouseup, el.mu, 0);
+            _window[removeEventListener](mousemove, el.mm, 0);
+        }
+
+        // cloning into array since HTMLCollection is updated dynamically
+        dragged = [].slice.call(_document.getElementsByClassName('dragscroll'));
+        for (i = 0; i < dragged.length;) {
+            (function(el, lastClientX, lastClientY, pushed, scroller, cont){
+                (cont = el.container || el)[addEventListener](
+                    mousedown,
+                    cont.md = function(e) {
+                        if (!el.hasAttribute('nochilddrag') ||
+                            _document.elementFromPoint(
+                                e.pageX, e.pageY
+                            ) == cont
+                        ) {
+                            pushed = 1;
+                            lastClientX = e.clientX;
+                            lastClientY = e.clientY;
+
+                            e.preventDefault();
+                        }
+                    }, 0
+                );
+
+                _window[addEventListener](
+                    mouseup, cont.mu = function() {pushed = 0;}, 0
+                );
+
+                _window[addEventListener](
+                    mousemove,
+                    cont.mm = function(e) {
+                        if (pushed) {
+                            (scroller = el.scroller||el).scrollLeft -=
+                                newScrollX = (- lastClientX + (lastClientX=e.clientX));
+                            scroller.scrollTop -=
+                                newScrollY = (- lastClientY + (lastClientY=e.clientY));
+                            if (el == _document.body) {
+                                (scroller = _document.documentElement).scrollLeft -= newScrollX;
+                                scroller.scrollTop -= newScrollY;
+                            }
+                        }
+                    }, 0
+                );
+             })(dragged[i++]);
+        }
+    }
+
+
+    if (_document.readyState == 'complete') {
+        reset();
+    } else {
+        _window[addEventListener]('load', reset, 0);
+    }
+
+    exports.reset = reset;
+}));
+</script>
+
+
+
+<script>
+jQuery(function($){
+    $('#horizontalScrollingNavigationItems li a').click(function() {
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Programs and Services', 'Click', label);
+    });
+});
+</script>
+
+
+    
+
+    
+
+<style>.trending {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  background-color: #F6F6F6;
+}
+@media (max-width: 768px) {
+  .trending {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .trending {
+    padding-top: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .trending {
+    padding: 2rem 0 0;
+  }
+}
+.trending h2 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 2.125rem;
+  text-align: center;
+}
+.trending h2 small,
+.trending h2 .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.trending h2 small.block,
+.trending h2 .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .trending h2 {
+  color: inherit !important;
+}
+.trending h2 small,
+.trending h2 .small {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.trending h2 small.match-header,
+.trending h2 .small.match-header {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+.trending h2 .subheading {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+.trending-top-searches {
+  padding: 0 1rem 1rem;
+  text-align: center;
+}
+.trending-top-searches h3 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  font-weight: normal;
+  display: inline-block;
+  margin: 0 0.7rem 0 0;
+}
+.trending-top-searches h3 small,
+.trending-top-searches h3 .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.trending-top-searches h3 small.block,
+.trending-top-searches h3 .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .trending-top-searches h3 {
+  color: inherit !important;
+}
+.trending-top-searches ul {
+  display: inline-block;
+  padding-left: 0;
+  list-style: none;
+  margin: 0 -1rem;
+  margin: 0;
+}
+ul .trending-top-searches ul {
+  padding-left: 40px;
+}
+.trending-top-searches ul > li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+.trending-top-searches ul li {
+  margin: 0;
+}
+.trending-top-searches ul li:after {
+  content: "/";
+  padding: 0 0.7rem 0 1rem;
+  color: #242424;
+}
+.trending-top-searches ul li:last-child:after {
+  content: "";
+}
+.trending-items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.trending-item-sizer {
+  width: 25%;
+}
+.trending-item {
+  box-sizing: border-box;
+  width: 25%;
+  padding: 1rem;
+  float: left;
+  /* fix for isotope initial loading delay */
+  /* item block */
+}
+.trending-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+.trending-item > a {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #242424;
+  display: block;
+  position: relative;
+  height: 244px;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .trending-item > a {
+    height: 235px;
+  }
+}
+@media (max-width: 768px) {
+  .trending-item > a {
+    height: 290px;
+  }
+}
+@media (max-width: 624px) {
+  .trending-item > a {
+    height: 260px;
+  }
+}
+@media (max-width: 480px) {
+  .trending-item > a {
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .trending-item {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .trending-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+.trending-item-image {
+  display: block;
+  position: relative;
+}
+.trending-item-image:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  position: absolute;
+  margin-left: -8px;
+  bottom: 0;
+  left: 50%;
+  z-index: 999;
+}
+.trending-item-text {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 10px 0;
+  line-height: 1.3;
+  height: 64px;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .trending-item-text {
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .trending-item-text {
+    padding-bottom: 3rem;
+  }
+}
+.trending-item-format {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0076AD;
+  margin-bottom: 2px;
+}
+.trending-item-title {
+  display: block;
+  font-weight: bold;
+}
+.trending-item-description {
+  display: block;
+}
+/* featured static image */
+.trending-item-featured {
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .trending-item-featured {
+    width: 100%;
+  }
+  .trending-item-featured a {
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .trending-item-featured {
+    background-color: #242424;
+  }
+}
+.trending-item-featured a {
+  background-color: #242424;
+}
+@media (max-width: 480px) {
+  .trending-item-featured img.tablet {
+    display: none;
+  }
+}
+.trending-item-featured img.mobile {
+  display: none;
+}
+@media (max-width: 480px) {
+  .trending-item-featured img.mobile {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  .trending-item-featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .trending-item-featured img {
+    width: auto;
+    height: auto;
+    object-fit: fill;
+  }
+}
+.trending-item-featured .trending-item-image-featured {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+@media (max-width: 480px) {
+  .trending-item-featured .trending-item-image-featured:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #242424;
+    position: absolute;
+    margin-left: -8px;
+    bottom: 0;
+    left: 50%;
+    z-index: 999;
+  }
+}
+.trending-item-featured .trending-item-text {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: transparent;
+  position: absolute;
+  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin-top: 30.645%;
+  /* image / container */
+  color: #fff;
+  width: calc(50% - 1rem);
+}
+.trending-item-featured .trending-item-text .trending-item-format {
+  color: orange;
+}
+@media (max-width: 768px) {
+  .trending-item-featured .trending-item-text {
+    width: 100% !important;
+    margin-top: auto;
+    top: auto;
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .trending-item-featured .trending-item-text {
+    background-color: #242424;
+    position: static;
+  }
+}
+/* audio featured */
+.trending-item-audio {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .trending-item-audio {
+    width: 50%;
+  }
+}
+.trending-item-audio .trending-item-audio-wrapper {
+  box-sizing: border-box;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "audio-image audio-text" "audio-player audio-player";
+}
+@media (min-width: 481px) {
+  .trending-item-audio .trending-item-audio-wrapper {
+    grid-template-columns: 25% 1fr;
+  }
+}
+@media (min-width: 769px) {
+  .trending-item-audio .trending-item-audio-wrapper {
+    grid-template-columns: 41% 1fr;
+  }
+}
+@media (min-width: 1201px) {
+  .trending-item-audio .trending-item-audio-wrapper {
+    grid-template-areas: "audio-image audio-text" "audio-image audio-player";
+    height: 244px;
+    overflow: hidden;
+    padding: 13px;
+  }
+}
+.trending-item-audio .audio-image {
+  grid-area: audio-image;
+}
+@media (max-width: 1200px) {
+  .trending-item-audio .audio-image {
+    padding: 13px;
+  }
+}
+.trending-item-audio .audio-image .audio-image-holder {
+  border: 1px solid #BFBFBF;
+  position: relative;
+}
+.trending-item-audio .audio-image .audio-image-holder:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.trending-item-audio .audio-image .audio-image-holder-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.trending-item-audio .audio-text {
+  grid-area: audio-text;
+}
+@media (max-width: 1200px) {
+  .trending-item-audio .audio-text {
+    padding: 13px 13px 13px 0;
+  }
+}
+.trending-item-audio .audio-text a .trending-item-title {
+  color: #242424;
+}
+@media (min-width: 1201px) {
+  .trending-item-audio .audio-text {
+    padding-left: 13px;
+  }
+}
+.trending-item-audio .audio-player {
+  grid-area: audio-player;
+}
+@media (min-width: 1201px) {
+  .trending-item-audio .audio-player {
+    padding-left: 13px;
+  }
+}
+/* video featured */
+.trending-item-video {
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .trending-item-video {
+    width: 100%;
+  }
+}
+.trending-item-video .trending-item-video-wrapper {
+  box-sizing: border-box;
+  background-color: #fff;
+}
+</style>
+<script>
+jQuery(function($){
+    // trending
+    var trending_items = $('.trending-items').isotope({
+        itemSelector: '.trending-item',
+        percentPosition: true,
+        masonry: {
+            columnWidth: '.trending-item-sizer'
+        }
+    });
+    trending_items.imagesLoaded().progress( function() {
+        trending_items.isotope('layout');
+    });
+
+    $('.trending-top-searches ul li a').click(function() {
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Top Searches', 'Click', label);
+    });
+    $('.trending-items a').click(function() {
+        var listItem = $(this).closest('li'),
+            index = $(listItem).parent().children().index(listItem) + 1,
+            label = $(this).text().trim();
+        // If we have a spacer element for isotope layouts, dont include it
+        if($('.trending-items li.trending-item-sizer').length){
+            index = index - 1;
+        }
+        label = '[' + index + ']:' + label;
+        UX.interaction($(this), 'Trending', 'Click', label);
+    });
+    // featured audio and video
+    
+    var featured_video = $('#featured-video').mediaelementplayer({
+        pluginPath: '/static/js/lib/mediaelement-4.2.8/',
+        audioVolume: 'vertical',
+        features: [
+            'playpause',
+            'current',
+            'progress',
+            'duration',
+            'volume',
+            'fullscreen'
+        ],
+        success: function(media, node){
+            // Bind all of our metrics tracking handlers
+            var title = $(media).attr('data-title');
+            UX.track_player(media, title, false);
+            media.addEventListener('play', function() {
+                UX.interaction(
+                    $(this),
+                    'Homepage Featured Video',
+                    'play',
+                    title
+                );
+            }, true);
+        }
+    });
+    
+});
+</script>
+
+<section class="trending">
+    <h2>Trending</h2>
+    <div class="trending-top-searches">
+        <h3>Top Searches:</h3>
+        <ul>
+            
+            <li><a href="/search/?q=Civil War"
+                   id="top_searches_1"
+                >Civil War</a></li>
+            
+            <li><a href="/search/?q=wpa"
+                   id="top_searches_2"
+                >WPA</a></li>
+            
+            <li><a href="/search/?q=National Parks"
+                   id="top_searches_3"
+                >National Parks</a></li>
+            
+            <li><a href="/search/?q=Dust Bowl"
+                   id="top_searches_4"
+                >Dust Bowl</a></li>
+            
+            <li><a href="/search/?q=Maps"
+                   id="top_searches_5"
+                >Maps</a></li>
+            
+            <li><a href="/search/?q=Ukraine"
+                   id="top_searches_6"
+                >Ukraine</a></li>
+            
+        </ul>
+    </div>
+    <ul class="trending-items">
+        
+        <li class="trending-item-sizer"><!-- this empty sizer is required for isotope js to support responsive grid --></li>
+        
+        <li class="trending-item trending-item-video">
+            <div class="trending-item-video-wrapper">
+                <div class="video-player-home">
+                    <div class="video-player-home-inner">
+                        <video
+                            id="featured-video"
+                            controls
+                            preload="none"
+                            style="max-width: 100%;"
+                            width="100%"
+                            height="100%"
+                            poster="/static/home/images/trending/programs/nrr-video_640x360.jpg"
+                            data-title="2022 National Recording Registry Announcement"
+                            >
+                            <source src="https://stream-media.loc.gov/webcasts/2022/220413com0000_OC/data/220413com0000_OC-1920x1080_6000.mp4"
+                                    type="video/mp4"
+                                    >
+                        </video>
+                    </div>
+                </div>
+                <div class="video-text-home">
+                    
+                    <a href="https://newsroom.loc.gov/news/national-recording-registry-inducts-music-from-alicia-keys--ricky-martin--journey-and-more-in-2022/s/fee30140-0454-401c-a2a2-205298e32fb1">
+                    <span class="trending-item-format">Watch</span>
+                    <strong class="trending-item-title">2022 National Recording Registry Announcement</strong>
+                    </a>
+                    
+
+                </div>
+            </div>
+        </li>
+        
+        
+        
+        <li class="trending-item">
+            <a href="https://newsroom.loc.gov"
+               id="trending_content_1">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/evergreen/tj-lights-48079402371.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">News</span>
+                Get the Most Current News from the Library of Congress
+                
+            </span></a>
+        </li>
+        
+        <li class="trending-item">
+            <a href="https://newsroom.loc.gov/news/library-to-celebrate-joy-harjo-s-three-terms-as-u.s.-poet-laureate-with-reading--dance-party-and-ret/s/4a194a02-8f1f-469c-b940-419a86c1f6d9"
+               id="trending_content_2">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/programs/2022harjo_480x309.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">Special Events</span>
+                Celebrate Poet Laureate Joy Harjo: Reading, Retreat, Dance Party
+                
+            </span></a>
+        </li>
+        
+        <li class="trending-item">
+            <a href="https://blogs.loc.gov/preservation/2022/04/preservation-week/"
+               id="trending_content_3">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/blogs/2022pres-week_480x309.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">Blog</span>
+                Join Us for Preservation Week, April 24-30
+                
+            </span></a>
+        </li>
+        
+        <li class="trending-item">
+            <a href="/lcm/pdf/LCM_2022_0304.pdf"
+               id="trending_content_4">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/lcm/2022_LCM_0304_480x309.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">Magazine</span>
+                &quot;Not an Ostrich&quot; Photo Exhibit Full of Surprises
+                
+            </span></a>
+        </li>
+        
+        <li class="trending-item">
+            <a href="/events/"
+               id="trending_content_5">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/evergreen/virtualevents_480x309.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">Events</span>
+                View a Calendar of Upcoming Programs from the Library
+                
+            </span></a>
+        </li>
+        
+        <li class="trending-item">
+            <a href="/exhibits/"
+               id="trending_content_6">
+            <span class="trending-item-image"><img
+                  src="/static/home/images/trending/exhibits/exhibitions-evergreen-suffrage-48079406641_69c1146579_k.jpg"
+                  alt=""/></span>
+            <span class="trending-item-text">
+                <span class="trending-item-format">Exhibitions</span>
+                Library Exhibitions Reopened to the Public
+                
+            </span></a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    
+
+<style>.your-library {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #F6F6F6;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .your-library {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.your-library::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #808080;
+}
+@media (min-width: 481px) {
+  .your-library::before {
+    width: calc(100% - 4rem);
+    left: 2rem;
+  }
+}
+.your-library h2 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 2.125rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.your-library h2 small,
+.your-library h2 .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.your-library h2 small.block,
+.your-library h2 .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .your-library h2 {
+  color: inherit !important;
+}
+.your-library h2 small,
+.your-library h2 .small {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.your-library h2 small.match-header,
+.your-library h2 .small.match-header {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+.your-library h2 .subheading {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+.your-library .your-library-abstract {
+  text-align: center;
+}
+.your-library .your-library-links-container {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .your-library .your-library-links-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.your-library .your-library-links-container .your-library-links {
+  padding-left: 0;
+  list-style: none;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: -moz-box;
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-flex-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0 -1rem;
+}
+ul .your-library .your-library-links-container .your-library-links {
+  padding-left: 40px;
+}
+.your-library .your-library-links-container .your-library-links > li {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 1;
+  /* Safari 6.1+. iOS 7.1+, BB10 */
+  -ms-flex: 1;
+  /* IE 10 */
+  -moz-box-flex: 1;
+  flex: 1;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  min-width: 0;
+  /* firefox fix */
+  margin: 0 1rem;
+  box-sizing: border-box;
+  -webkit-box-flex: 0 0 calc(33.33333333% - 2rem) !important;
+  -webkit-flex: 0 0 calc(33.33333333% - 2rem) !important;
+  flex: 0 0 calc(33.33333333% - 2rem) !important;
+  -ms-flex: 0 1 auto;
+  /* ie fix */
+  width: calc(33.33333333% - 2rem);
+  /* ie fix */
+  max-width: calc(33.33333333% - 2rem);
+  /* moz fix */
+  text-align: center;
+  font-weight: bold;
+}
+.your-library .your-library-links-container .your-library-links > li a {
+  color: #242424;
+}
+.your-library .your-library-links-container .your-library-links > li a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+@media (max-width: 480px) {
+  .your-library .your-library-links-container .your-library-links > li {
+    -webkit-box-flex: 0 0 calc(100% - 2rem) !important;
+    -webkit-flex: 0 0 calc(100% - 2rem) !important;
+    flex: 0 0 calc(100% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(100% - 2rem);
+    /* ie fix */
+    max-width: calc(100% - 2rem);
+    /* moz fix */
+    margin-bottom: 1rem;
+  }
+}
+.your-library .your-library-exhibitions-container {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .your-library .your-library-exhibitions-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: -moz-box;
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-flex-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0 -1rem;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 1;
+  /* Safari 6.1+. iOS 7.1+, BB10 */
+  -ms-flex: 1;
+  /* IE 10 */
+  -moz-box-flex: 1;
+  flex: 1;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  min-width: 0;
+  /* firefox fix */
+  margin: 0 1rem;
+  box-sizing: border-box;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 small,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 small.block,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition > h3 {
+  color: inherit !important;
+}
+@media (max-width: 992px) {
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.news {
+    -webkit-box-flex: 0 0 calc(100% - 2rem) !important;
+    -webkit-flex: 0 0 calc(100% - 2rem) !important;
+    flex: 0 0 calc(100% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(100% - 2rem);
+    /* ie fix */
+    max-width: calc(100% - 2rem);
+    /* moz fix */
+    -webkit-order: 1;
+    -moz-order: 1;
+    order: 1;
+    margin-bottom: 1rem;
+  }
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.exhibitions {
+    -webkit-order: 2;
+    -moz-order: 2;
+    order: 2;
+  }
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.events {
+    -webkit-order: 3;
+    -moz-order: 3;
+    order: 3;
+  }
+}
+@media (max-width: 768px) {
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition {
+    -webkit-box-flex: 0 0 calc(100% - 2rem) !important;
+    -webkit-flex: 0 0 calc(100% - 2rem) !important;
+    flex: 0 0 calc(100% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(100% - 2rem);
+    /* ie fix */
+    max-width: calc(100% - 2rem);
+    /* moz fix */
+    margin-bottom: 2rem;
+  }
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul {
+  padding-left: 0;
+  list-style: none;
+}
+ul .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul {
+  padding-left: 40px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li {
+  margin-bottom: 1rem;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a {
+  color: #242424;
+  display: block;
+  position: relative;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-exhibition-item {
+  padding-left: 145px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-exhibition-item .your-library-exhibition-image {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 130px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-exhibition-item .your-library-exhibition-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 992px) {
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-exhibition-item {
+    /* padding-left: 105px; */
+  }
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-exhibition-item .your-library-exhibition-image {
+    /* width: 90px; */
+  }
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a .your-library-exhibition-date,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a .your-library-news-date {
+  display: block;
+  color: #0076AD;
+  font-size: 12px;
+  font-weight: bold;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-events-item {
+  padding-left: 60px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-events-item .your-library-events-date {
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 45px;
+  border-top: 3px solid #242424;
+  padding-top: 3px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-events-item .your-library-events-date .month {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a.your-library-events-item .your-library-events-date .date {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a .your-library-events-type {
+  display: block;
+  color: #0076AD;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition ul > li > a .your-library-events-time {
+  display: block;
+  font-size: 12px;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.exhibitions ul > li,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.events ul > li {
+  min-height: 92px;
+}
+@media (max-width: 992px) {
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.exhibitions ul > li,
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition.events ul > li {
+    /* min-height: 60px; */
+  }
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-exhibition-more,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-events-more,
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-news-more {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-exhibition-more {
+  padding-left: 145px;
+}
+@media (max-width: 992px) {
+  .your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-exhibition-more {
+    /* padding-left: 105px; */
+  }
+}
+.your-library .your-library-exhibitions-container .your-library-exhibitions .your-library-exhibition .your-library-events-more {
+  padding-left: 60px;
+}
+</style>
+
+<section class="your-library">
+    <h2>Your Library</h2>
+    <p class="your-library-abstract"
+        >Use the largest library in the world online or in person! <a
+       href="/about/">More about the Library</a>.
+    </p>
+    <div class="your-library-links-container">
+        <ul class="your-library-links">
+            <li><a href="/visit/"><img
+                   src="/static/home/images/your-library/01-PlanYourVisit.jpg"
+                   alt=""
+                />Plan Your Visit</a></li>
+            <li><a href="http://www.loc.gov/rr/"><img
+                   src="/static/home/images/your-library/02-ResearchCenter.jpg"
+                   alt=""
+                />Research Centers</a></li>
+            <li><a href="https://ask.loc.gov/"><img
+                   src="/static/home/images/your-library/03-AskLibrarian.jpg"
+                   alt=""
+                />Ask a Librarian</a></li>
+        </ul>
+    </div>
+</section>
+<script>
+jQuery(function($){
+
+    $('.your-library-links li a').click(function() {
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Your Library', 'Click', label);
+    });
+
+});
+</script>
+
+
+    
+
+<style>
+.public-domain {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #26333B;
+}
+@media (max-width: 768px) {
+  .public-domain {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.public-domain h2 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #242424;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 2.125rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+.public-domain h2 small,
+.public-domain h2 .small {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #242424;
+}
+.public-domain h2 small.block,
+.public-domain h2 .small.block {
+  display: block;
+  margin-bottom: 2px;
+}
+a .public-domain h2 {
+  color: inherit !important;
+}
+.public-domain h2 small,
+.public-domain h2 .small {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.public-domain h2 small.match-header,
+.public-domain h2 .small.match-header {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+.public-domain h2 .subheading {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+.public-domain .public-domain-abstract {
+  text-align: center;
+  color: #fff;
+}
+.public-domain .public-domain-abstract a:link,
+.public-domain .public-domain-abstract a:visited,
+.public-domain .public-domain-abstract a:hover,
+.public-domain .public-domain-abstract a:focus,
+.public-domain .public-domain-abstract a:active {
+  color: #fff;
+}
+.public-domain .grid-view {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  /* search results */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: -moz-box;
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-flex-align: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0 -1rem;
+}
+.public-domain .grid-view > li {
+  -webkit-box-flex: ;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: ;
+  /* Safari 6.1+. iOS 7.1+, BB10 */
+  -ms-flex: ;
+  /* IE 10 */
+  -moz-box-flex: ;
+  flex: ;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  min-width: 0;
+  /* firefox fix */
+  margin: 0 0.99950025rem;
+  box-sizing: border-box;
+  -webkit-box-flex: 0 0 calc(25% - 2rem) !important;
+  -webkit-flex: 0 0 calc(25% - 2rem) !important;
+  flex: 0 0 calc(25% - 2rem) !important;
+  -ms-flex: 0 1 auto;
+  /* ie fix */
+  width: calc(25% - 2rem);
+  /* ie fix */
+  max-width: calc(25% - 2rem);
+  /* moz fix */
+  margin-bottom: 2rem;
+  background-color: transparent;
+}
+.public-domain .grid-view > li figure img,
+.public-domain .grid-view > li .figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+@media (max-width: 992px) {
+  .public-domain .grid-view > li {
+    -webkit-box-flex: 0 0 calc(33.33333333% - 2rem) !important;
+    -webkit-flex: 0 0 calc(33.33333333% - 2rem) !important;
+    flex: 0 0 calc(33.33333333% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(33.33333333% - 2rem);
+    /* ie fix */
+    max-width: calc(33.33333333% - 2rem);
+    /* moz fix */
+  }
+}
+@media (max-width: 768px) {
+  .public-domain .grid-view > li {
+    -webkit-box-flex: 0 0 calc(50% - 2rem) !important;
+    -webkit-flex: 0 0 calc(50% - 2rem) !important;
+    flex: 0 0 calc(50% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(50% - 2rem);
+    /* ie fix */
+    max-width: calc(50% - 2rem);
+    /* moz fix */
+  }
+}
+@media (max-width: 480px) {
+  .public-domain .grid-view > li {
+    -webkit-box-flex: 0 0 calc(50% - 2rem) !important;
+    -webkit-flex: 0 0 calc(50% - 2rem) !important;
+    flex: 0 0 calc(50% - 2rem) !important;
+    -ms-flex: 0 1 auto;
+    /* ie fix */
+    width: calc(50% - 2rem);
+    /* ie fix */
+    max-width: calc(50% - 2rem);
+    /* moz fix */
+  }
+}
+.public-domain .grid-view > li.merge-cells {
+  -webkit-box-flex: 0 0 calc(100% - 2rem) !important;
+  -webkit-flex: 0 0 calc(100% - 2rem) !important;
+  flex: 0 0 calc(100% - 2rem) !important;
+  -ms-flex: 0 1 auto;
+  /* ie fix */
+  width: calc(100% - 2rem);
+  /* ie fix */
+  max-width: calc(100% - 2rem);
+  /* moz fix */
+}
+.public-domain .grid-view.gallery-view > li {
+  border: 1px solid #EFEFEF;
+  padding: 1rem;
+}
+.public-domain .grid-view.gallery-view > li figure,
+.public-domain .grid-view.gallery-view > li .figure {
+  margin-bottom: 1rem;
+}
+.public-domain .grid-view.list-view {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: -moz-box;
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-flex-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin: 0 0;
+}
+.public-domain .grid-view.list-view > li {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 1;
+  /* Safari 6.1+. iOS 7.1+, BB10 */
+  -ms-flex: 1;
+  /* IE 10 */
+  -moz-box-flex: 1;
+  flex: 1;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  min-width: 0;
+  /* firefox fix */
+  margin: 0 0;
+  box-sizing: border-box;
+  -webkit-box-flex: 0 0 calc(100% - 0rem) !important;
+  -webkit-flex: 0 0 calc(100% - 0rem) !important;
+  flex: 0 0 calc(100% - 0rem) !important;
+  -ms-flex: 0 1 auto;
+  /* ie fix */
+  width: calc(100% - 0rem);
+  /* ie fix */
+  max-width: calc(100% - 0rem);
+  /* moz fix */
+}
+.public-domain .grid-view > li {
+  padding: 10px;
+  background-color: #fff;
+}
+.public-domain .grid-view > li figure {
+  margin: 0;
+}
+.public-domain .grid-view > li .description {
+  /* display: none; */
+}
+.public-domain .grid-view > li.show-more {
+  display: none;
+}
+.public-domain .public-domain-button-wrapper {
+  text-align: center;
+}
+.public-domain .public-domain-button-wrapper .public-domain-button {
+  margin: 1rem 0 0;
+  padding: 0 15px;
+  border-radius: 30px;
+  border: 1px solid #0076AD;
+  color: #0076AD;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+</style>
+
+<section class="public-domain"><a id="reuse" name="reuse"></a>
+   <h2>Free to Use and Reuse: Farm Life</h2>
+   <p class="public-domain-abstract">
+       <p style="color: #fff">This selection of images from the 19th and 20th centuries display aspects of life on American farms: landscapes, work, play, and everyday moments from dinner to doctor visits. All pictures are from the Prints & Photographs Division unless otherwise credited. Browse more <a href="/free-to-use/" style="color: #fff; text-decoration: underline">content that is free to use and reuse <i class="icon icon-angle-double-right"></i></a></p>
+
+   </p>
+   <ul class="search-results grid-view public-domain-results">
+       
+       <li 
+           id="featured_public_domain_1">
+           <figure>
+               <a href="/resource/ds.00876/" tabindex="-1">
+               <img alt="A barefoot boy in ragged clothes is facing the camera and smiling as he sits in a tire swing and holds the halter of a cow standing next to him."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-1.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/ds.00876/"><span>Boy in tire swing holds a cow on a tether. Photo from U.S. Extension Service,  1925-1930</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_2">
+           <figure>
+               <a href="/resource/fsa.8a03169/" tabindex="-1">
+               <img alt="African American woman fills a glass at an outdoor water well pump."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-2.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8a03169/"><span>Wife of resettled farmer, Roanoke Farms, North Carolina. Photo by John Vachon, 1938</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_3">
+           <figure>
+               <a href="/resource/cph.3b48137/" tabindex="-1">
+               <img alt="Colorful poster, with the title across the top, features a horse race underway in its center with vignettes at each corner, including people looking at cattle and other exhibits."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-3.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b48137/"><span>Maine State Agricultural Society. Poster, 1894</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_4">
+           <figure>
+               <a href="/resource/fsa.8b23028/" tabindex="-1">
+               <img alt="A one-story house with plain sides and a flat roof has a door and three windows on the front and one window on the left side. Low bushes sit in front of the house on the right, and a partial picket fence tips over in the front left corner"
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-6.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b23028/"><span>Home of Spanish-American farm family. Taos County, New Mexico. Photo by Russell Lee, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_5">
+           <figure>
+               <a href="/resource/fsac.1a34309/" tabindex="-1">
+               <img alt="Two men on a mule-drawn wagon are fertilizing a plowed field"
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-5.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsac.1a34309/"><span>Spreading fertilizer from 4-mule team wagon, Georgia. Photo by Marion Post Wolcott, around 1940</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_6">
+           <figure>
+               <a href="/resource/cph.3c13454/" tabindex="-1">
+               <img alt="A farmer and children, with their backs to the camera, walk along a wooden fence on the left and trees and bushes on the right."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-4.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3c13454/"><span>The day's end. Photograph, 1905</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_7">
+           <figure>
+               <a href="/resource/cph.3b48715/" tabindex="-1">
+               <img alt="The left half of the poster shows a red-roof barn next to fields separated by rows of green trees. The right half shows a dust-filled  landscape and almost buried building."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-7.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b48715/"><span>Plains farms need trees. Poster by Joseph Dusek, 1936-1940</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_8">
+           <figure>
+               <a href="/resource/cph.3b02010/" tabindex="-1">
+               <img alt="An older man and woman sit in rocking chairs on either side of a fireplace, in a room with a wooden floor, two oval rugs, sheer curtained windows and a desk on the left."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-8.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b02010/"><span>Man and woman in rockers by fireplace. Photo from USDA Extension Service, 1925-1930</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_9">
+           <figure>
+               <a href="/resource/fsa.8a22637/" tabindex="-1">
+               <img alt="An African American woman sits on the den front porch with a small child in her lap. Three other children, two wearing hats, stand on the stair.  All are facing toward the camera and are surrounded by pieces of furniture."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-9.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8a22637/"><span>Southeast Missouri Farms. Family of FSA (Farm Security Administration) client before moving from old house. Photo by Russell Lee, 1938</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_10">
+           <figure>
+               <a href="/resource/fsac.1a34025/" tabindex="-1">
+               <img alt="A young boy, wearing a hat leans against the end of a wooden cart.  He holds the handle of a white canister, painted with red flowers, resting on his knee."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-10.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsac.1a34025/"><span>Son of one of the FSA farmers on the Rio Piedras project who brought lunch to his father, working in the sugar cane field. Photo by Jack Delano, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_11">
+           <figure>
+               <a href="/resource/cph.3b43254/" tabindex="-1">
+               <img alt="A woman wearing a checked apron, facing left, stands outside an open doorway with a feed pan in her right hand. Many chickens around her feet peck at the ground. A black dog stands to the left of the chickens, and a white cat sits in the doorway behind."
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-11.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b43254/"><span>Barnyard. Lithograph by Mabel Dwight, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li 
+           id="featured_public_domain_12">
+           <figure>
+               <a href="https://chroniclingamerica.loc.gov/lccn/sn86075096/1948-04-01/ed-1/seq-1/" tabindex="-1">
+               <img alt="The April 1, 1948, issue of the Montana Farmer-Stockman, has the headline, &quot;Spring Mechanization.&quot; The left and center columns contain text. Four pictures of tractors and farm machinery are in the right-hand column.
+"
+                   
+                   src="/static/portals/free-to-use/public-domain/farm-life/farm-life-12.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="https://chroniclingamerica.loc.gov/lccn/sn86075096/1948-04-01/ed-1/seq-1/"><span>The Montana Farmer-Stockman, newspaper</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_13">
+           <figure>
+               <a href="/resource/afc2012033.afc2012033_00505_ph/?sp=1" tabindex="-1">
+               <img alt="The end of a red barn with a smaller, windowed addition jutting from the end dominates the picture.  Three round gray silos and another barn stand further back on the right side. A blue pickup truck is parked in front of the van with a jeep to the left."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-13.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/afc2012033.afc2012033_00505_ph/?sp=1"><span>Schultz Family dairy barn with the cheese room addition, early morning. Photo by Martha Cooper, 2013. American Folklife Center.</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_14">
+           <figure>
+               <a href="/resource/cph.3b03797/" tabindex="-1">
+               <img alt="On the left, a woman wearing a head scarf and apron sits on a stool facing a counter and cabinets. In the back center, two windows shine light on a floor with a geometric design, and an iron stove is on the right in shadow."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-14.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b03797/"><span>Woman peeling potatoes in modern farm kitchen. Photo by Photo from USDA Extension Service, 1920s</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_15">
+           <figure>
+               <a href="/resource/cph.3b19178/" tabindex="-1">
+               <img alt="A tilted stand holds melons and baskets. Two women and a man face each other in front of the platform, another man and a boy are in the background. Melons are lined up on the ground across the picture and a T-shaped utility pole stands on the left."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-15.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b19178/"><span>Roadside melon and vegetable stand with cornfield in background. Photo from USDA Extension Service, about 1930</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_16">
+           <figure>
+               <a href="/resource/highsm.39522/" tabindex="-1">
+               <img alt="A child wearing black pants, a gold-embroidered black jacket, and a wide-brimmed hat tied under his chin with a gold ribbon, stands facing the camera, and holds a coil of red rope in his left hand."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-16.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.39522/"><span>Marco Pena is about to delight the passing crowd with his lasso wizardry at the annual Iowa State Fair in the capital city of Des Moines, color photo, 2016</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_17">
+           <figure>
+               <a href="/resource/fsa.8b23005/" tabindex="-1">
+               <img alt="Two men, a woman, a boy, and a young girl sit around a table with a plaid tablecloth and dishes of food. All are focused on the food, except the girl, who looks at the camera.  On the wall at the back, there is a door on the left with a window looking outside, two calendars showing October hang on the wall in the center, and lace-trimmed cloths hang on the right."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-17.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b23005/"><span>Farm family eating dinner. Photo by Russell Lee, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_18">
+           <figure>
+               <a href="/resource/fsac.1a34430/" tabindex="-1">
+               <img alt="A young girl with a bow in her hair, a white apron over a dark dress, and brown tights stands outside, facing the camera, next to an open wooden door. A white chicken stands in the doorway, with its tail still in shadow."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-18.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsac.1a34430/"><span>Girl next to barn with chicken, possibly holding eggs in her folded apron. Unidentified photographer, 1941 or 1942.</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_19">
+           <figure>
+               <a href="/resource/highsm.39598/" tabindex="-1">
+               <img alt="A green landscape stretches across the picture, a farm field in the center with rows curving slightly along the hills.  Trees surround the field, and a red barn stand on the right side with two other buildings near the barn. More trees and fields stretch in the background, with another set of buildings on the far left."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-19.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.39598/"><span>View from the bluffs of Sherrill, Iowa, of the rich agricultural valley, near the Mississippi River, far below, color photo, 2016</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_20">
+           <figure>
+               <a href="/resource/highsm.39467/" tabindex="-1">
+               <img alt="A boy wearing a white t-shirt, black and red shorts, and dark gray cowboy boots bends over a white sheep with a black face and feet. The sheep is tethered to a ring in a brick wall; a red bucket containing a plastic bottle sits on the ground nearby."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-20.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.39467/"><span>Already carefully groomed, a sheep gets a good washing prior to its appearance in the show ring at the annual Iowa State Fair in the capital city of Des Moines. Photo by Carol M. Highsmith, 2016</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_21">
+           <figure>
+               <a href="/resource/cph.3b12705/" tabindex="-1">
+               <img alt="A group of women holding plates stand around a cylindrical ice cream freezer, four women on the left and six on the right.  Three of the women in the foreground and two in the background are wearing white smocks."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-21.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b12705/"><span>Group of farm women holding plates of cake and ice cream and spooning homemade ice cream out of freezers. Photo by USDA, early 1930s</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_22">
+           <figure>
+               <a href="/resource/fsa.8b37746/" tabindex="-1">
+               <img alt="A man wearing a hat and suspenders over a long-sleeved shirt, stands on the right, his back to the camera, and holds a pitchfork across a log-beam on the left.  A second man wearing a hat and long-sleeved shirt stands behind the pile of hay on the left side of the beam and appears to be moving some of the hay."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-22.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b37746/"><span>Threshing. Caledonia County, Vermont. Photo by Arthur Rothstein, 1937</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_23">
+           <figure>
+               <a href="/resource/fsa.8b29263/" tabindex="-1">
+               <img alt="Farmer sits astride a roll of wire, with a sack of cotton seed and fence posts, on a wagon ready to be pulled by a horse or mule."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-23.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b29263/"><span>Farmer with cotton seed, fence posts and wire ... Roanoke Farms, North Carolina. Photo by John Vachon, 1938</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_24">
+           <figure>
+               <a href="/resource/fsa.8a03096/" tabindex="-1">
+               <img alt="Young boy facing the camera and holding the halter of a mule in a field."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-24.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8a03096/"><span>Farm boy, Guilford County, North Carolina. Photo by John Vachon, 1938</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_25">
+           <figure>
+               <a href="/resource/fsa.8b29289/" tabindex="-1">
+               <img alt="Posed in a plowed field are a young man sitting on the seat of a disc harrow with two mules ready to pull it."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-25.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b29289/"><span>Son of farmsteader at Roanoke Farms, North Carolina.  Photo by John Vachon, 1938</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_26">
+           <figure>
+               <a href="/resource/highsm.12441/" tabindex="-1">
+               <img alt="Reproduction of the Mona Lisa is painted on the side of a barn, with two silos to the left. Mona Lisa wears a t-shirt with the words &quot;the big cheesy Super Bowl.&quot;
+"
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-26.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.12441/"><span>Mona Lisa barn art, Wisconsin. Phone by Carol Highsmith, 1990</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_27">
+           <figure>
+               <a href="/resource/fsa.8c18248/" tabindex="-1">
+               <img alt="A man, wearing overalls and reading a newspaper, and a woman, wearing a light, print dress, sit on stools facing each other. The woman watches a toddler walking toward the camera. A baby sits in a highchair, next to the man, on the left.  A curtained window and cabinet with a radio are in the background."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-27.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8c18248/"><span>Owner of 120-acre farm with family. Meeker County, Minnesota. Photo by John Vachon, 1940</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_28">
+           <figure>
+               <a href="/resource/fsac.1a34055/" tabindex="-1">
+               <img alt="A man wearing light clothing stands in the right foreground. He looks at a stack of cut sugar cane, almost as tall as he is, on the left, with the cut ends facing the camera. A V-shaped metal scaffold, with several cables hanging from it rises from behind the sugar cane beyond the top of the picture."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-28.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsac.1a34055/"><span>Crane at a "central" sugar cane gathering place, San Sebastian vicinity, Puerto Rico. Photo by Jack Delano, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_29">
+           <figure>
+               <a href="/resource/highsm.63277/" tabindex="-1">
+               <img alt="A mural painted on a three story brick wall with glass block windows shows a woman with a yellow dress and blue jacket, wearing a hat and holding a long red tool handle standing over two-stories tall, with a taller drawing of a corn stalk on the left.  The faded remains of a painted ad is partially obscured by the mural on the right."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-29.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.63277/"><span>Farmer Annie Glidden, detail from historical mural in DeKalb, Illinois, that recalls the area's agricultural roots, color photo, 2020</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_30">
+           <figure>
+               <a href="/resource/fsa.8c01503/" tabindex="-1">
+               <img alt="A white sign, with whispy clouds in the sky behind it, reads &quot;U.S.D.A FARM FAMILY LABOR CAMP AT CALDWELL.&quot; In the bottom left corner of the sign is an arrow pointing left, with the notation &quot;1 1/4 MI.&quot;
+"
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-30.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8c01503/"><span>Sign of FSA (Farm Security Administration) labor camp, Caldwell, Idaho. Photo by Russell Lee, 1941</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_31">
+           <figure>
+               <a href="/resource/afc1982009.afc1982009_le_077/?sp=14" tabindex="-1">
+               <img alt="A table with a white table cloth sits under a sheer-curtained window, in an otherwise dark room. Three framed photos, a glass bottle, and a white planter with daffodils stand on the table."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-31.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/afc1982009.afc1982009_le_077/?sp=14"><span>Image 14 of Jarvis farm, Ennice, Alleghany County, North Carolina. Photo by Lyntha Scott Eiler, 1978. American Folklife Center</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_32">
+           <figure>
+               <a href="/resource/cph.3b08594/" tabindex="-1">
+               <img alt="A large white house, in the left middle ground dominates the picture, with trees beyond it. A man with a wheelbarrow and a number of farm animals including a cow, pig, and chickens, stand in the foreground."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-32.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3b08594/"><span>Farm scene showing house, animals, people working. Woodcut by John Aiken,  1818</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_33">
+           <figure>
+               <a href="/resource/pga.05818/" tabindex="-1">
+               <img alt="Print shows a bird&#39;s-eye view of fairgrounds with a steamboat &quot;Osceola&quot; on the river in the foreground. Includes seven vignettes showing livestock, agricultural machinery, and, at top center, two female figures representing &quot;Liberty and Prosperity.&quot; Also shown on the sides are examples of agricultural produce. Text at the top includes the title of the image, along with blank lines on which to write the name of the awardee and the date, and signatures.
+"
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-33.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/pga.05818/"><span>Diploma awarded by the People's Agricultural Society of West Jersey. Lithograph by P.S. Duval, around 1862</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_34">
+           <figure>
+               <a href="/resource/ppmsca.45904/" tabindex="-1">
+               <img alt="A landscape shows a woman and child walking away from the viewer on a wide dirt road toward a large white house and red barn surrounded by trees. A pond on the right side of the road has two people in boats in the background."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-34.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/ppmsca.45904/"><span>Farmstead scene with woman and child on the road and men fishing in boats nearby. Chromolithograph by Paul R. Koehler, 1905</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_35">
+           <figure>
+               <a href="/resource/cph.3c18574/" tabindex="-1">
+               <img alt="Two women sit, facing the camera, on a wooden bench, holding a round rug with a pattern of concentric circles.  Other rugs lie at their feet, with a potted plant on a pedestal on the right next to a window into the house."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-35.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3c18574/"><span>Two women making braided rugs on porch. Photo from U.S. Department of Agriculture, Extension Service,1925-1930</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_36">
+           <figure>
+               <a href="/resource/cph.3g14730/" tabindex="-1">
+               <img alt="Poster shows a woman sitting in a rocking chair while sewing by hand near a table with a lamp. A red stripe across a yellow background at the top reads &quot;Now I&#39;m Satisfied.&quot;  Red letters across the bottom read, &quot;RURAL ELECTRIFICATION ADMINISTRATION, U.S. DEPARTMENT OF AGRICULTURE&quot;
+"
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-36.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/cph.3g14730/"><span>Now I'm satisfied. Rural Electrification Administration, U.S. Department of Agriculture. Poster by Lester Beall, 1930s</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_37">
+           <figure>
+               <a href="/resource/fsa.8b18448/" tabindex="-1">
+               <img alt="A crowd of people, most wearing hats, sit on tiered seating, facing left, under a canvas roof. A wooden plank barricade stands at the bottom of the tiers."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-37.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b18448/"><span>Farm people at livestock auction. Central Iowa Fair, Marshalltown, Iowa. Photo by Arthur Rothstein, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_38">
+           <figure>
+               <a href="/resource/fsa.8a25826/" tabindex="-1">
+               <img alt="Two men wearing hats stand behind a square wooden structure over a well.  A pully hangs from the top, wrapped with a chain connected to a small bucket."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-38.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8a25826/"><span>Negro farm owner and brother leaning on well top on their farm, near Jefferson, Texas. Photo by Russell Lee, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_39">
+           <figure>
+               <a href="/resource/fsa.8b34470/" tabindex="-1">
+               <img alt="Bean plants frame the left and right sides of the picture. Two people stand in between the rows and pick beans. The person on the right, wears a hat; the person on the left, their back to the camera, is partially bent over."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-39.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b34470/"><span>Migrant pickers harvesting beans. Farm people came from South Dakota. Photo by Dorothea Lange, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_40">
+           <figure>
+               <a href="/resource/fsa.8b37193/" tabindex="-1">
+               <img alt="A woman holding a small black dog sits in front of a wooden wall, with a sheer curtain on the right. Two oval framed photographs of men hang on the wall above her, with a small calendar and other items directly behind her."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-40.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b37193/"><span>Daughter of Mexican farm family at home. Photo by Russell Lee, 1939</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_41">
+           <figure>
+               <a href="/resource/fsac.1a34052/" tabindex="-1">
+               <img alt="Two women stand behind wooden bins with wrapped green tomatoes. More bins with tomatoes stand behind them."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-41.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsac.1a34052/"><span>Sorting and packing tomatoes at the Yauco Cooperative Tomato Growers Association, Puerto Rico. Photo by Jack Delano, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_42">
+           <figure>
+               <a href="/resource/fsa.8c20646/" tabindex="-1">
+               <img alt="A man and woman sit on a bench with five small children. A man in a suit sits in a chair facing them, with a black case on the floor by his feet."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-42.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8c20646/"><span>Country doctor visiting farm family. Photo by John Vachon, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_43">
+           <figure>
+               <a href="/resource/fsa.8b07419/" tabindex="-1">
+               <img alt="A woman sits on the ground, with a young girl on each side of her. The woman and girl on the right look at something off camera toward the left, while the girl on the left looks at the woman. Plants obscure them from the waist down. Farm buildings stand in the background."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-43.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8b07419/"><span>Agriculture. Women on farms. Like many another U.S. farmer's wife, Mrs. Harold Sontag of Maple Park, Illinois, takes an active part in the management of her farm but at the end of a long and active day, she still finds time to entertain her tow-headed youngsters with tales of farm life "when I was a little girl." Photo, by Ann Rosener, 1942
+</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_44">
+           <figure>
+               <a href="/resource/fsa.8d07220/" tabindex="-1">
+               <img alt="A woman faces the camera while bending over and holding the oven door partially open with her right hand. She holds a pie in her left hand."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-44.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8d07220/"><span>Vernon County, Wisconsin. Mrs. Saugstad about to bake a pie in her electric oven. Photo by Arthur Rothstein, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_45">
+           <figure>
+               <a href="/resource/fsa.8d07366/" tabindex="-1">
+               <img alt="A man wearing a hat, glasses, and overalls, talks to a man on the right, wearing a tie. The man on the right holds a small metal box connected to an apparatus on the left by a cord. The apparatus is labeled, &quot;CO-OP Electric Fence Controllers.&quot; 
+"
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-45.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8d07366/"><span>Westby, Vernon County, Wisconsin. Saugstad discussing an electric fence with the manager of the consumer's cooperative. Photo by Arthur Rothstein, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_46">
+           <figure>
+               <a href="/resource/fsa.8d07229/" tabindex="-1">
+               <img alt="Two boys watch a man who is squatting down and pointing to a calf in a stall. Two other boys watch from over the stall wall on the left."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-46.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8d07229/"><span>Vernon County, Wisconsin. Robert Saugstad and other boys in a Future Farmers of America (FFA) group examining a calf in the Saugstad farm. Photo by Arthur Rothstein, 1942</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_47">
+           <figure>
+               <a href="/resource/fsa.8d12435/" tabindex="-1">
+               <img alt="A young boy wearing overalls stands next to a table, facing the camera with his hands in front of him. The table holds two buckets, a towel, and several jars. A picture tacked to the wall behind him shows a drawing of a farm yard with many animals."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-47.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/fsa.8d12435/"><span>Penasco, New Mexico. A boy standing in front of a picture representing "balanced" farm life, such as does not exist in this part of the country. Photo by John Collier, Jr., 1943</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_48">
+           <figure>
+               <a href="/resource/hhh.in0230.sheet/?sp=5" tabindex="-1">
+               <img alt="Cross section drawing of a three story round barn with a cupola."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-48.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/hhh.in0230.sheet/?sp=5"><span>Hofherr Round Barn, County Road 650 West, Yorktown, Delaware County, Indiana. Historic American Buildings Survey</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_49">
+           <figure>
+               <a href="/resource/hhh.pa1595.photos/" tabindex="-1">
+               <img alt="A four-story stone and wood barn with hex sign decorations."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-49.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/hhh.pa1595.photos/"><span>Decorated Red Barn, Between Limeport & Steinberg, Limeport, Lehigh County, Pennsylvania. Historic American Buildings Survey, 1941</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_50">
+           <figure>
+               <a href="/resource/highsm.33304/" tabindex="-1">
+               <img alt="A green harvester rolls along the edge of a field of golden grain, under a cloudy sky. A dirt road runs along the edge of the field."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-50.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.33304/"><span>A harvesting combine kicks up dust during its work in a field near the tiny town of Carpenter in southeast Wyoming's Laramie County. Photo by Carol Highsmith, 2015</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+       <li class="show-more"
+           id="featured_public_domain_51">
+           <figure>
+               <a href="/resource/highsm.32921/" tabindex="-1">
+               <img alt="Dark clouds, with shafts of light shining through, hover over a road lined by utility poles with grain elevators in the background."
+                   
+                   data-src="/static/portals/free-to-use/public-domain/farm-life/farm-life-51.jpg"
+                   
+                    />
+               </a>
+           </figure>
+           <div class="description">
+           <div class="item-description">
+           <h2><a href="/resource/highsm.32921/"><span>Ominous clouds above Pine Bluffs, a small farming community on the Nebraska border in Laramie County, Wyoming. Photo by Carol M. Highsmith, 2015</span></a></h2>
+           </div>
+           </div>
+       </li>
+       
+   </ul>
+   <div class="public-domain-button-wrapper">
+       <button class="button button-tertiary button-round">Show More Images</button>
+   </div>
+</section>
+<script>
+jQuery(function($){
+    // public domain
+    var public_domain = $('.public-domain .grid-view').isotope({
+        
+        itemSelector: '.public-domain .grid-view > li',
+        percentPosition: true
+    });
+    public_domain.imagesLoaded().progress( function() {
+        public_domain.isotope('layout');
+    });
+
+    $('.public-domain-button').click(function() {
+        $('.public-domain-results .show-more img').each(function(i, img){
+            $(img).attr('src', $(img).attr('data-src'));
+        });
+        public_domain.imagesLoaded().progress( function() {
+            $('.public-domain-results .show-more').removeClass('show-more');
+            $('.public-domain-button').hide();
+            public_domain.isotope('layout');
+            // focus on first show-more item
+            $('#featured_public_domain_13 .description a').focus();
+        });
+    });
+    $('.public-domain-results.search-results a').click(function(event) {
+        var item = $(this).closest('li'),
+            index = $(item).parent().children().index(item) + 1,
+            label = '[' + index + ']:' + item.text().trim();
+        UX.interaction($(this), 'Public Domain', 'Click', label);
+    });
+});
+</script>
+
+
+</main>
+
+</div>
+
+
+    
+
+
+<style>.footer {
+  background-color: #F6F6F6;
+  border-top: 1px solid #808080;
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+.footer a {
+  color: #242424;
+}
+@media print {
+  .footer {
+    display: none;
+  }
+}
+.footer-container {
+  max-width: 85.71428571rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.footer-social-links-wrapper {
+  border-bottom: 1px solid #808080;
+  padding-bottom: 21px;
+  margin-bottom: 21px;
+  text-align: center;
+}
+@media (min-width: 993px) {
+  .footer-social-links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.footer-social-title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #242424;
+  margin: 0 25px 0 0;
+}
+@media (max-width: 992px) {
+  .footer-social-title {
+    display: block;
+    margin: 0 0 7px;
+  }
+}
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-social-links > li {
+  padding: 3px;
+}
+.footer-social-links > li i {
+  font-size: 17.5px;
+}
+.footer-social-links > li span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.footer-social-links > li a .icon-external-link {
+  font-size: inherit;
+}
+.footer-social-links > li.footer-social-link-rss a {
+  color: #F05129;
+}
+.footer-social-links > li.footer-social-link-e-mail a {
+  color: #0076AD;
+}
+.footer-social-links > li.footer-social-link-email a {
+  color: #0076AD;
+}
+.footer-social-links > li.footer-social-link-email i {
+  font-size: 36px;
+}
+.footer-social-links > li.footer-social-link-survey {
+  border-left: 1px solid #808080;
+  padding-left: 18px;
+  margin-left: 14px;
+  font-size: 13px;
+}
+.footer-social-links > li.footer-social-link-survey a {
+  color: #0076AD;
+}
+@media (max-width: 992px) {
+  .footer-social-links > li.footer-social-link-survey {
+    flex-basis: 100%;
+    border: none;
+    padding: 0;
+    margin: 7px 0 0;
+  }
+}
+.footer-social-links > li:not(.footer-social-link-survey) a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 993px) {
+  .footer-row {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: -moz-box;
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-flex-align: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    margin: 0 -1rem;
+  }
+}
+.footer-links-wrapper .footer-links {
+  padding-left: 0;
+  list-style: none;
+  margin: 0 -8.75px;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+ul .footer-links-wrapper .footer-links {
+  padding-left: 40px;
+}
+.footer-links-wrapper .footer-links > li {
+  display: inline-block;
+  margin: 0 8.75px;
+}
+.footer-links-wrapper .footer-links > li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+@media (max-width: 992px) {
+  .footer-links-wrapper {
+    text-align: center;
+    margin-bottom: 21px;
+  }
+}
+@media (min-width: 993px) {
+  .footer-links-wrapper {
+    -webkit-box-flex: 1;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;
+    /* Safari 6.1+. iOS 7.1+, BB10 */
+    -ms-flex: 1;
+    /* IE 10 */
+    -moz-box-flex: 1;
+    flex: 1;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    min-width: 0;
+    /* firefox fix */
+    margin: 0 1rem;
+    box-sizing: border-box;
+  }
+}
+.intersites-links-wrapper {
+  margin: 0 14px;
+}
+@media (max-width: 992px) {
+  .intersites-links-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0 28px;
+  }
+}
+.intersites-links {
+  padding-left: 0;
+  list-style: none;
+  margin: 0 -1rem;
+}
+ul .intersites-links {
+  padding-left: 40px;
+}
+.intersites-links > li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+.intersites-links > li > a {
+  display: block;
+}
+.intersites-links > li > a span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (max-width: 992px) {
+  .intersites-links > li > a {
+    margin: 5px 0;
+  }
+}
+.intersites-links > li.intersites-link-congress > a {
+  width: 125px;
+  height: 30px;
+  background-size: 125px 30px;
+  background: url("/static/images/congress-gov.svg?$Revision$") no-repeat;
+}
+.intersites-links > li.intersites-link-copyright > a {
+  width: 175px;
+  height: 30px;
+  background-size: 175px 30px;
+  background: url("/static/images/copyright-gov.svg?$Revision$") no-repeat;
+}
+@media (max-width: 992px) {
+  .intersites-links {
+    text-align: center;
+  }
+}
+</style>
+<script>//UX Interaction Tracking
+jQuery(function($){
+    $('.footer-social-links li a').click(function(e){
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Follow', 'Click', label);
+    });
+    $('.footer-links li a').click(function(e){
+        var label = $(this).text().trim();
+        UX.interaction($(this), 'Footer', 'Click', label);
+    });
+});
+</script>
+
+
+<footer class="footer" role="contentinfo">
+    
+
+<style>.back-to-top a {
+  position: fixed;
+  z-index: 999;
+  bottom: 10px;
+  right: 10px;
+}
+</style>
+<script>jQuery(function ($) {
+    var scroll_timer,
+        displayed = false,
+        $message = $('.back-to-top a').hide(),
+        $window = $(window),
+        top = $(document.body).children(0).position().top;
+
+    $("#back-to-top").click(function(event){
+        $("#top").focus();
+        $window.scrollTop(0);
+        event.preventDefault();
+        return false;
+    });
+
+    $window.scroll(function () {
+        window.clearTimeout(scroll_timer);
+        scroll_timer = window.setTimeout(function () {
+            if($window.scrollTop() <= top){
+                displayed = false;
+                $message.fadeOut(800);
+            }else if(!displayed){
+                displayed = true;
+                $message.stop(true, true).show().click(function(){
+                    $message.fadeOut(800);
+                });
+            }
+        }, 100);
+    });
+
+    $("#back-to-top").click(function(e){
+        UX.interaction($(this), 'Footer', 'click', 'Back to top');
+    });
+});
+</script>
+
+
+<div class="back-to-top">
+    <a class="button button-small" id='back-to-top' href='#top' role="button"><i class="icon icon-arrow-up"></i> <span>Back to top</span></a>
+</div>
+
+    <div class="footer-container">
+        <div class="footer-social-links-wrapper">
+            <span class="footer-social-title"><a href="/connect/">Follow Us</a></span>
+            <ul class="footer-social-links">
+                <li class="footer-social-link-email">
+                    <a href="https://loc.gov/subscribe/" title="Email">
+                        <img src="/static/images/share/email.svg" width="32" height="32" alt="Email" />
+                    </a>
+                </li>
+                <li class="footer-social-link-facebook">
+                    <a href="https://www.facebook.com/libraryofcongress/" title="Library of Congress Facebook">
+                        <img src="/static/images/social-media/facebook.svg" width="32" height="32" alt="Library of Congress Facebook" />
+                    </a>
+                </li>
+                <li class="footer-social-link-twitter">
+                    <a href="https://www.twitter.com/librarycongress" title="Library of Congress Twitter">
+                        <img src="/static/images/social-media/twitter.svg" width="32" height="32" alt="Library of Congress Twitter" />
+                    </a>
+                </li>
+                <li class="footer-social-link-youtube">
+                    <a href="https://www.youtube.com/libraryofcongress/" title="Library of Congress Youtube">
+                        <img src="/static/images/social-media/youtube.svg" width="32" height="32" alt="Library of Congress Youtube" />
+                    </a>
+                </li>
+                <li class="footer-social-link-pinterest">
+                    <a href="https://www.pinterest.com/LibraryCongress/" title="Library of Congress Pinterest">
+                        <img src="/static/images/social-media/pinterest.svg" width="32" height="32" alt="Library of Congress Pinterest" />
+                    </a>
+                </li>
+                <li class="footer-social-link-flickr">
+                    <a href="https://www.flickr.com/photos/library_of_congress/" title="Library of Congress Flickr">
+                        <img src="/static/images/social-media/flickr.svg" width="32" height="32" alt="Library of Congress Flickr" />
+                    </a>
+                </li>
+                <li class="footer-social-link-instagram">
+                    <a href="https://instagram.com/librarycongress/" title="Library of Congress Instagram">
+                        <img src="/static/images/social-media/instagram.svg" width="32" height="32" alt="Library of Congress Instagram" />
+                    </a>
+                </li>
+                <li class="footer-social-link-itunes">
+                    <a href="https://itunes.apple.com/us/artist/library-of-congress/id1280713133?mt=2" title="Library of Congress iTunesU">
+                        <img src="/static/images/social-media/itunesU.svg" width="32" height="32" alt="Library of Congress iTunesU" />
+                    </a>
+                </li>
+                <li class="footer-social-link-survey"><a
+                    
+                    href="https://www.research.net/r/libraryofcongress?site=homepage"
+                    
+                    title="Take our survey">Take our survey <i class="icon icon-external-link"><span>External</span></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-row">
+            <div class="footer-links-wrapper">
+                <ul class="footer-links">
+                    <li><a href="/accessibility/">Accessibility</a></li>
+                    <li><a href="/legal/">Legal</a></li>
+                    <li><a href="/about/office-of-the-inspector-general/">Inspector General</a></li>
+                    <li><a href="/legal/standard-disclaimer-for-external-links/">External Link Disclaimer</a></li>
+                    <li><a href="https:////www.usa.gov/">USA.gov</a></li>
+                    <li><a href="/careers/">Careers</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="https://newsroom.loc.gov">Media</a></li>
+                    <li><a href="/programs/support-the-library-of-congress/">Donate</a></li>
+                    <li><a href="https://library-of-congress-shop.myshopify.com/">Shop</a></li>
+                </ul>
+            </div>
+            <div class="intersites-links-wrapper">
+                <ul class="intersites-links">
+                    <li class="intersites-link-congress"><a href="https://www.congress.gov/"><span>Congress.gov</span></a></li>
+                    <li class="intersites-link-copyright"><a href="https://copyright.gov"><span>United States Copyright Office</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    
+
+
+<script>(function(){
+
+var data_listeners = {};
+
+
+window.addDataListener = function(channel, callback){
+    if(!data_listeners[channel]){
+        data_listeners[channel] = [];
+    }
+    data_listeners[channel].push(callback);
+    load_data(channel, callback);
+};
+
+
+/* 
+Uses local storage for messaging. Set message in local storage and
+clear it right away. This is a safe way how to communicate with other
+tabs while not leaving any traces. */
+window.broadcastData = function(channel, data, replay){
+    message_broadcast(channel, data, replay);
+};
+
+
+function message_broadcast(channel, data, replay){
+    var message = {
+        channel: channel,
+        data: data
+    }
+    localStorage.setItem('message', JSON.stringify(message));
+    localStorage.removeItem('message');
+
+    if(replay){
+        save_data(channel, data);
+    }
+};
+
+
+function message_receive(event){
+    var i,
+        channel,
+        data,
+        listeners,
+        listener,
+        message;
+
+    if(!event || event.key != 'message' || !event.newValue){ return; }
+
+    message = JSON.parse(event.newValue);
+    if(!message){ return; }
+
+    channel = message.channel
+    if(!channel){ return; }
+
+    listeners = data_listeners[channel];
+    if(!listeners){ return; }
+
+    data = message.data;
+    for(i = 0; i < listeners.length; i++){
+        listener = listeners[i];
+        listener(data);
+    }
+};
+
+
+function save_data(channel, data){
+    var saved_data = localStorage.getItem(channel),
+        keys,
+        i;
+
+    if(saved_data){
+        try {
+            saved_data = JSON.parse(saved_data);
+        } catch (error) {
+            // We loose the stored state, but dont end up in a vicous cycle
+            // never being able to save it again.
+            saved_data = {};
+        }
+    } else {
+        saved_data = {};
+    }
+    keys = Object.keys(data);
+    for(i = 0; i < keys.length; i++){
+        saved_data[keys[i]] = data[keys[i]];
+    }
+    localStorage.setItem(channel, JSON.stringify(saved_data));
+};
+
+
+function load_data(channel, callback){
+    var data = localStorage.getItem(channel);
+    if(data){
+        data = JSON.parse(data);
+        callback(data);
+    }
+};
+
+window.addEventListener('storage', message_receive);
+
+})();</script>
+
+
+
+
+<script defer='defer'>
+LOCSuggest = {
+	serviceUrl: 'https://www.loc.gov/search/suggest/'
+};
+MEDIA_URL = 'https://media.loc.gov';
+</script>
+
+<script defer='defer'
+    type="text/javascript"
+    src='/static/javascript/base.js'></script>
+
+<!--[if lt IE 9]>
+    <script src='/static/js/lib/html5shiv.js'></script>
+    <script src='/static/js/lib/selectivizr.js'></script>
+<![endif]-->
+
+
+
+<script defer='defer'>
+PORTAL_FORM_KEY = 'd1cf95e3d95dbab15cc193d6aa573382';
+</script>
+
+
+
+
+
+    <script defer='defer'>
+
+jQuery(function($) {
+    /*
+        Grid layout
+     */
+
+    var isotope_options = {
+        itemSelector: '.item'
+    };
+    // If in the grid style then make sure the
+    // pages are in order and there are no blank spaces
+
+    
+
+    
+    $('.search-results.grid-view').isotope(isotope_options);
+    imagesLoaded( $('#results'), function() {
+        $('.search-results.grid-view').isotope(isotope_options);
+    });
+    
+
+    var $iconic = $(".iconic");
+    if ($iconic.length > 0) {
+        var loaded_count = 0;
+        $iconic.on("load", function() {
+            loaded_count++;
+            // trigger isotope every once in a while as the images are loading:
+            if (loaded_count % 5 === 0) {
+                $('.search-results.grid-view').isotope(isotope_options);
+            }
+        });
+    }
+
+    // escape key to close focus and hover text
+    $('.search-results.grid-view .description a').on('keyup',function(e) {
+        if(e.keyCode == 27){
+            $(this).blur();
+        }
+    });
+    $('.search-results.grid-view .description a').hover(
+       function(){ $(this).addClass('hovered') },
+       function(){ $(this).removeAttr('class') }
+    )
+    $(document).on('keyup',function(e) {
+       if (e.which == 27) {
+          $('.hovered').addClass('close');
+       }
+    });
+});
+
+jQuery(function($) {
+    
+
+    var slider;
+    function create_slideshow($selector) {
+        slider = $selector.royalSlider({
+            fullscreen: {
+                enabled: true,
+                nativeFS: true
+            },
+            controlNavigation: 'thumbnails',
+            imageAlignCenter: true,
+            autoScaleSlider: false,
+            //autoScaleSliderHeight: 800,
+            loop: false,
+            navigateByClick: false,
+            numImagesToPreload: 2,
+            arrowsNav: true,
+            arrowsNavAutoHide: true,
+            arrowsNavHideOnTouch: true,
+            keyboardNavEnabled: true,
+            fadeinLoadedSlide: true,
+            //globalCaption: false,
+            //globalCaptionInside: true,
+            thumbs: {
+                appendSpan: true,
+                firstMargin: true,
+                spacing: 10
+            },
+            deeplinking: {
+                // deep linking options go here
+                enabled: true,
+                change: true,
+                prefix: 'slide-'
+            }
+        }).data("royalSlider");
+
+        $('.royalSlider').royalSlider("updateSliderSize", true);
+
+        
+        
+        if(slider){
+            slider.ev.on('rsAfterContentSet', function (e, slideObject) {
+                var img = slideObject.holder.find('img').eq(0);
+                if (img && img.length && slideObject.caption) {
+                    img.attr('alt', slideObject.caption.text());
+                }
+            });
+        }
+        return slider;
+    }
+
+    function create_overlay(highlight_id, left, top, width, height) {
+        return $('<div id="' + highlight_id + '" class="hit-highlight image-highlight" />')
+        .css({
+            'left': left + '%',
+            'top': top + '%',
+            'width': width + '%',
+            'height': height + '%',
+            'position': 'absolute',
+            'z-index': 10
+        });
+    }
+
+    function position_overlays(page_id, page_width, page_height, coords_list,
+            $image, $container, fudge) {
+        if (!($container.length)) {
+            // no actual search result for this page -- exit this function
+            return true;
+        }
+        $container.find('div.image-highlight').remove();
+        if (!coords_list) {
+            // coords data doesn't exist -- exit this function
+            return true;
+        }
+        var container_width = $container.width();
+        var container_height = $container.height();
+        
+        var image_marginLeft = $image[0].offsetLeft;
+        var image_marginTop = $image[0].offsetTop;
+        var image_width = $image.width();
+        var image_height = $image.height();
+
+        // The overlays are positioned relative to their parent, the
+        // $container, but they need to show up in the right place relative
+        // to the image.
+        // The $container can be larger than the image,
+        // so we take the ratio of the sizes and use it to scale the
+        // positions, widths, and heights of the highlight overlays.
+        // We also make the overlays a little larger so they're more visible
+        // and we shift them a little using the "fudge" numbers.
+        var marginLeft = image_marginLeft / container_width;
+        var marginTop = image_marginTop / container_height;
+        var scaleWidth = image_width / container_width;
+        var scaleHeight = image_height / container_height;
+
+        $.each(coords_list, function (index, coords) {
+            // word coordinates: [left, top, width, height]
+            var highlight_id = "highlight-" + page_id + '-' + index;
+
+            var overlay_left = 100 * (marginLeft + scaleWidth * coords[0] / page_width) + fudge.left;
+            var overlay_top = 100 * (marginTop + scaleHeight * coords[1] / page_height) + fudge.top;
+            var overlay_width = 100 * coords[2] / page_width * scaleWidth + fudge.width;
+            var overlay_height = 100 * coords[3] / page_height * scaleHeight + fudge.height;
+
+            var $highlight_overlay = create_overlay(highlight_id,
+                overlay_left, overlay_top, overlay_width, overlay_height);
+
+            $container.append($highlight_overlay);
+        });
+    }
+
+    var word_coordinates_pages;
+    
+    word_coordinates_pages = {};
+    
+
+    var get_$container;
+    var get_$image;
+    var fudge_numbers;
+
+    
+    
+    get_$container = function(page_id) {
+        return $("#highlights-container-" + page_id);
+    };
+    get_$image = function(page_id) {
+        return $("#iconic-segment-image-" + page_id);
+    };
+    fudge_numbers = {
+        left: -1.3,
+        top: -0.5,
+        width: 2.5,
+        height: 1.3
+    };
+
+    
+        if (!$.isEmptyObject(word_coordinates_pages)) {
+            var $iconic = $(".iconic");
+            var loaded = 0;
+            var loaded_total = $iconic.length;
+            // make sure we wait til all the images are loaded before we try to position the highlights on them:
+            $iconic.one("load", function() {
+                loaded++;
+                if (loaded === loaded_total) {
+                    $.each(word_coordinates_pages, function(page_id, page) {
+                        var $image = get_$image(page_id);
+                        var $container = get_$container(page_id);
+                        position_overlays(page_id, page.width, page.height, page.coords_list,
+                            $image, $container, fudge_numbers);
+                    });
+                }
+            }).each(function() {
+                // to make sure the "on load" event occurs even if the
+                // images are already cached:
+                if (this.complete) {
+                    $(this).load();
+                }
+            });
+        }
+        
+     
+
+
+    
+    $(window).resize(function() {
+        setTimeout(function() {
+            $.each(word_coordinates_pages, function(page_id, page) {
+                var $container = get_$container(page_id);
+                var $image = get_$image(page_id, $container);
+                position_overlays(page_id, page.width, page.height, page.coords_list,
+                    $image, $container, fudge_numbers);
+            });
+        }, 300);
+    });
+});
+</script>
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window['_satellite']){
+    _satellite.pageBottom();
+}
+</script>
+</body>
+</html>

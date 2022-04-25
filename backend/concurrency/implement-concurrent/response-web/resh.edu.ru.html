@@ -1,0 +1,824 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>
+                        Российская электронная школа      	</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" href="/assets/css/main.css?">
+   	   <link rel="stylesheet" href="/custom/css/vendor/sumoselect.min.css?">
+   	<script src="/bundles/fosjsrouting/js/router.min.js?"></script>
+	<script src="/js/routing?callback=fos.Router.setData"></script>
+</head>
+	<body>
+	<!--[if lte IE 8]>
+	<style>
+		.browserupgrade {
+			text-align: center;
+			border: 2px solid #b4b472;
+			font-size: 20px;
+			padding: 20px;
+			position: fixed;
+			background: #333;
+			color: #c1bea2;
+			width: 400px;
+			left: 50%;
+			margin-left: -200px;
+			z-index: 999999;
+		}
+
+		.browserupgrade a {
+			color: #fff;
+		}
+
+		.browserupgrade a:hover {
+			color: #e0c1ff;
+			text-decoration: none;
+		}
+	</style>
+	<p class="browserupgrade">Вы используете <strong>устаревший</strong> браузер. Пожалуйста<br/> <a
+			href="http://browsehappy.com/">обновите ваш браузер или установите альтернативный</a><br/> для корректного
+		отображения содержимого сайта.</p>
+	<![endif]-->
+
+
+	<div class="outer-sf">
+		<div class="wrapper-sf">
+         				<header class="header">
+					<div class="wrapper-main">
+						<div class="header__top d-t">
+							<div class="d-tc header-top__logo-cell">
+								<a href="/" class="logo">
+									<img src="/img/svg/logo.svg?" alt="Логотип РЭШ">
+
+									<p class="logo__name">Российская электронная школа</p>
+								</a>
+							</div>
+
+                         <div class="d-tc header-top__search-cell">
+
+        <form name="resh_search_widget" method="get" class="collection-search" action="/search/">
+            <span class="collection-search-close search-close_hide">✕</span>
+            <div class="themes-search__themes-box">
+                <span class="collection-search-title">Область поиска:</span>
+                                <select id="resh_search_widget_type" name="resh_search_widget[type]" class="chosen-select form-control"><option value="lesson">темы уроков</option></select>
+    
+            </div>
+                <div class="collection-search__input">
+        <span class="search-input__clear-btn"><i class="icon icon_delete-cross"></i></span>
+        <input type="text" value="" name="resh_search_widget[search]" id="search" required  placeholder="Поиск" class="menu-slide__input-text ">
+        <button type="submit">
+            <i class="icon icon_search-glass"></i>
+        </button>
+    </div>
+
+
+        
+
+        <input type="hidden" id="resh_search_widget__token" name="resh_search_widget[_token]" class="form-control" value="FyI_UFrlu5cmTKlwIr4wnEnFD0QcJxVxabjBqo6OeFs" /></form>
+
+    </div>
+
+                     
+
+    <div class="d-tc header-top__login-cell">
+        <div class="header__login">
+            <a class="" href="/login">вход</a>
+            <span>/</span>
+            <a class="" href="/register/">регистрация</a>
+        </div>
+    </div>
+
+
+						</div>
+					</div>
+
+               <nav class="header__menu ">
+
+    <div class="wrapper-main">
+
+        <div class="d-t header__menu__wrapper">
+            <div class="d-tc header__submenu__cell">
+                <div class="header__submenu _clickable d-tc" data-target="hmbrg-menu" data-timer="700">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <a href="/subject/" class="header__menu-link d-tc">Предметы</a>
+            <a href="/class/1/" class="header__menu-link d-tc">Классы</a>
+            <a href="/for-pupil" class="header__menu-link d-tc">Ученику</a>
+            <a href="/for-teacher" class="header__menu-link d-tc">Учителю</a>
+            <a href="/for-parent" class="header__menu-link d-tc">Родителю</a>
+            <a href="/for-school" class="header__menu-link d-tc">Школе</a>
+            <div class="d-tc nav-icon-cell">
+                <a class="nav-mail" href="/feedback" style="top: -5px;">
+                    <img src="/img/mail.png" alt="">
+                    <span style="font: 17px robotoregular, sans-serif; line-height: 17px; display: inline-block; position: relative; top: 4px; text-align: left; text-transform: none; padding-left: 8px;">написать<br>в техподдержку</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+				</header>
+         
+			<main class="main ">
+
+               <div class="_owl main-carousel owl-carousel">
+      <div class="item main-carousel-01 owl-lazy" data-src="/img/main-slider-01.jpg?">
+         <div class="wrapper-content">
+            <div class="carousel-text__wrapper">
+               <p class="carousel-text__line-01">154210</p>
+               <p class="carousel-text__line-02">УНИКАЛЬНЫХ ЗАДАЧ</p>
+               <p class="carousel-text__line-03">ОДОБРЕНЫ ПРОФЕССИОНАЛАМИ</p>
+            </div>
+         </div>
+      </div>
+      <div class="item main-carousel-02 owl-lazy" data-src="/img/main-slider-02.jpg?">
+         <div class="wrapper-content">
+            <div class="carousel-text__wrapper">
+               <p class="carousel-text__line-01">517</p>
+               <p class="carousel-text__line-02">ПОБЕДИТЕЛЕЙ</p>
+               <p class="carousel-text__line-03 line-col-red">ВСЕРОССИЙСКИХ ПРОФЕССИОНАЛЬНЫХ КОНКУРСОВ</p>
+            </div>
+         </div>
+      </div>
+      <div class="item main-carousel-03 owl-lazy" data-src="/img/main-slider-03.jpg?">
+         <div class="wrapper-content">
+            <div class="carousel-text__wrapper">
+               <p class="carousel-text__line-01">ИНТЕРАКТИВНЫЕ</p>
+               <p class="carousel-text__line-02">УРОКИ</p>
+               <p class="carousel-text__line-03 line-col-blue">ОТ ЛУЧШИХ УЧИТЕЛЕЙ РОССИИ</p>
+            </div>
+         </div>
+      </div>
+      <div class="item main-carousel-04 owl-lazy" data-src="/img/main-slider-04.jpg?">
+         <div class="wrapper-content">
+            <div class="carousel-text__wrapper">
+               <p class="carousel-text__line-01">ФГОС</p>
+               <p class="carousel-text__line-02">ОБЩЕГО ОБРАЗОВАНИЯ</p>
+               <p class="carousel-text__line-03 line-col-4">СООТВЕТСТВИЕ ОБЯЗАТЕЛЬНЫМ ТРЕБОВАНИЯМ</p>
+            </div>
+         </div>
+      </div>
+      <div class="item main-carousel-05 owl-lazy" data-src="/img/main-slider-05.jpg?">
+         <div class="wrapper-content">
+            <div class="carousel-text__wrapper">
+               <p class="carousel-text__line-01">ПОДГОТОВКА</p>
+               <p class="carousel-text__line-02">к ОГЭ и ЕГЭ</p>
+               <p class="carousel-text__line-03 line-col-4">ПОДГОТОВКА К ПРОМЕЖУТОЧНОЙ И ИТОГОВОЙ АТТЕСТАЦИИ</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="wrapper-content blocks-container block-shadow clearfix">
+      <div class="blocks-outer-grid">
+         <div class="blocks-outer-grid__left">
+            <div class="m-block m-block-wide m-block-wide--about">
+               <a href="/about">
+                  <h1>ЧТО ТАКОЕ «РОССИЙСКАЯ ЭЛЕКТРОННАЯ ШКОЛА»</h1>
+               </a>
+               <p class="block-text-dark">
+                  «Российская электронная школа» – это полный школьный курс уроков; это информационно-образовательная среда, объединяющая ученика, учителя, родителя.
+               </p>
+                           </div>
+            <a href="/page/cyber-project" class="m-block m-block-small bg-cyber fl-l">
+               <h2 class="block-text-light" style="font-size: 19px; line-height: 26px;">КИБЕРБЕЗОПАСНОСТЬ ДЛЯ ДЕТЕЙ И ВЗРОСЛЫХ</h2>
+               <p class="block-text-light">
+                  Фильмы социального проекта
+               </p>
+            </a>
+            <a href="/summer-education" class="m-block m-block-small m-block-small--orange bg-tv-summer fl-l">
+               <h2 class="block-text-light">ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ ДЕТЕЙ</h2>
+               <p class="block-text-light">
+                  Перечень ресурсов, доступных детям
+               </p>
+            </a>
+            <a href="/collection/" class="m-block m-block-small m-block-small--yellow bg-book fl-l">
+               <h2 class="block-text-light">КОЛЛЕКЦИЯ</h2>
+               <p class="block-text-light">
+                  Перейти в каталог методических материалов
+               </p>
+            </a>
+
+            <a href="/special-course/1" class="m-block m-block-small m-block-small--d-blue bg-birdy fl-l">
+               <h2 class="block-text-light">ТЕМАТИЧЕСКИЙ КУРС</h2>
+               <p class="block-text-light">Основы<br>духовно-нравственной<br>культуры народов России</p>
+            </a>
+
+            <a class="m-block m-block-small m-block-small--orange  bg-class-hour fl-l" href="/calendar">
+               <h2 class="block-text-light">КАЛЕНДАРЬ<br>СОБЫТИЙ</h2>
+            </a>
+
+            <a href="/material-partners" class="m-block m-block-small m-block-small--d-blue white-blue ta-c fl-l">
+               <h2 class="block-text-light">ПРОЕКТЫ РОССИЙСКОГО ОБРАЗОВАНИЯ</h2>
+               <p class="block-text-light">Материалы <br>
+                  из различных
+                  источников</p>
+               <i class="icon icon_arrow-right"></i>
+            </a>
+
+         </div>
+         <div class="blocks-outer-grid__right lenta">
+
+            <a href="/theatre/" class="m-block m-block-small m-block-small--d-blue bg-faces fl-r">
+               <h2 class="block-text-light">ТЕАТРАЛЬНЫЕ ПОСТАНОВКИ</h2>
+            </a>
+
+            <a href="/guide" id="play-js" class="m-block m-block-small m-block-small--green bg-tv-program fl-l">
+               <h2 class="block-text-light">ГИД<br>ПО «РОССИЙСКОЙ ЭЛЕКТРОННОЙ ШКОЛЕ»</h2>
+            </a>
+            <a href="https://fg.resh.edu.ru/" class="m-block m-block-small m-block-small--orange bg-people fl-l" style="background-image: url(/img/svg/distance.png?v=2) !important;">
+               <h2 class="block-text-light">ФУНКЦИОНАЛЬНАЯ ГРАМОТНОСТЬ</h2>
+               <p class="block-text-light">Электронный банк заданий для оценки функциональной грамотности</p>
+            </a>
+
+            <a href="/promo-video" class="m-block m-block-xtra-large fl-l">
+               <i class="icon icon_play-btn"></i>
+               <h1>Видеосюжет о «Российской электронной школе»</h1>
+            </a>
+
+            
+            <a href="/museum/" class="m-block m-block-small m-block-small--grey  bg-museum fl-r">
+               <h2 class="block-text-light one-string">КАТАЛОГ <br> МУЗЕЕВ</h2>
+            </a>
+
+            <a href="/movie/" class="m-block m-block-small m-block-small--green  bg-camera fl-r">
+               <h2 class="block-text-light one-string">ФИЛЬМОТЕКА</h2>
+            </a>
+
+            <a href="/concert/" class="m-block m-block-small m-block-small--orange  bg-guitar fl-r">
+               <h2 class="block-text-light one-string">МУЗЫКА КОНЦЕРТЫ
+               </h2>
+            </a>
+
+            <div class="float-container">
+               <div class="m-block m-block-wide m-block-wide--news">
+                   <h2 class="block-text-dark">
+                       <a href="/news/">НОВОСТИ ПРОЕКТА</a>
+                   </h2>
+
+                  <div class="m-block-news__outer">
+                     <div class="m-block-news__inner">
+                                                                                 <a class="m-block-news__item d-t" href="/news/2022-04-06_v-shkolah-rossii-prohodyat-uroki-informatiki-po-gosudarstvennym-cifrovym-servisam/">
+                                                            <div class="d-tc m-block-news__left-cell">
+                                    <div class="m-block-news__date">06</div>
+                                    <div class="m-block-news__month">апр.</div>
+                                 </div>
+                                 <div class="d-tc m-block-news__right-cell">
+                                    <div class="dotdotdot m-block-news__text-wrapper">
+                                       В школах России проходят уроки информатики по государственным цифровым сервисам
+                                    </div>
+                                 </div>
+                              </a>
+                                                                                 <a class="m-block-news__item d-t" href="/news/2021-11-12_konsultacionnaya-podderzhka-roditelej-detej/">
+                                                            <div class="d-tc m-block-news__left-cell">
+                                    <div class="m-block-news__date">12</div>
+                                    <div class="m-block-news__month">нояб.</div>
+                                 </div>
+                                 <div class="d-tc m-block-news__right-cell">
+                                    <div class="dotdotdot m-block-news__text-wrapper">
+                                       Консультационная поддержка родителей детей
+                                    </div>
+                                 </div>
+                              </a>
+                                             </div>
+                  </div>
+                  <a class="rss-icon-link" href="/news/rss">
+                     <i class="icon icon_wifi"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="banner-contain block-shadow wrapper-content">
+</div>
+   
+   
+                     
+			</main>
+
+		</div>
+               <footer class="footer _hideable">
+
+    <div class="partners">
+        <div class="wrapper-content">
+            <h1>НАШИ ПАРТНЁРЫ</h1>
+            <div class="partners__wrap">
+                    <a class="partners__link" target="_blank" href="https://edu.gov.ru/">
+        <img src="/uploads/partner/60d04e5927df4.png" alt="Минпросвещения России">
+    </a>
+    <a class="partners__link" target="_blank" href="http://edu.ru">
+        <img src="/uploads/partner/57c4385d27ab7.jpg" alt="Российское образование">
+    </a>
+    <a class="partners__link" target="_blank" href="http://obrnadzor.gov.ru">
+        <img src="/uploads/partner/57f02217139a4.png" alt="Рособрнадзор">
+    </a>
+    <a class="partners__link" target="_blank" href="https://www.rgo.ru/">
+        <img src="/uploads/partner/585b7c0268b15.jpg" alt="Русское географическое общество">
+    </a>
+    <a class="partners__link" target="_blank" href="http://histrf.ru/rvio">
+        <img src="/uploads/partner/57f0225b5205b.png" alt="Российское военно-историческое общество">
+    </a>
+    <a class="partners__link" target="_blank" href="http://www.prlib.ru">
+        <img src="/uploads/partner/580e011b1018a.png" alt="Президентская бибилиотека">
+    </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-content">
+        <nav class="footer__menu">
+            <ul class="footer__menu-list">
+                <li class="footer__menu-item">
+                    <a href="/subject/" class="footer__menu-link">Предметы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/class/1/" class="footer__menu-link">Классы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/for-pupil" class="footer__menu-link">Ученику</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/for-teacher" class="footer__menu-link">Учителю</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/for-parent" class="footer__menu-link">Родителю</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/for-school" class="footer__menu-link">Школе</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/for-partner" class="footer__menu-link">Партнёрам</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="/feedback" class="footer__menu-link">Техническая поддержка</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer__row">
+            <div class="footer__social">
+                <a class="soc-links soc-links_grey"
+                   target="_blank"
+                   href="https://vk.com/resh_edu">
+                    <i class="icon icon_soc-vk"></i>
+                </a>
+                            </div>
+            <div class="footer__download">
+                <div class="mobile-item">
+                                        <span class="fs-menu-app-store fs-mobile-links__logo"></span>
+                    <div class="mobile-item__pending">в разработке</div>
+                </div>
+                <div class="mobile-item">
+                                        <span class="fs-menu-gp fs-mobile-links__logo"></span>
+                    <div class="mobile-item__pending">в разработке</div>
+                </div>
+
+                           </div>
+        </div>
+        <p class="footer__copyright">
+            © Государственная образовательная платформа «Российская электронная школа»
+        </p>
+        <span style="float: right;">7</span>
+    </div>
+</footer>      
+	</div>
+
+	<div class="mask invis"></div>
+
+	
+	<div class="fs-menu hmbrg-menu">
+    <div class="bg-color-wrapper">
+        <div class="fs-wrapper">
+
+            <section class="fs-sujects _tabs">
+                <div class="fs-title-row">
+                    <h2 class="fs-section-title">Предметы</h2>
+                    <span class="fs-sort _tabs__tab">По алфавиту</span>
+                    <span class="fs-sort _tabs__tab _tab-active">По предметным областям</span>
+                </div>
+                <div class="fs-subj _tabs__content">
+
+                    <div class="fs-subjects-abc__box">
+                        <ul class="fs-subjects-abc__list">
+                                                                                                <li>
+                                        <a href="/subject/16/">АЛГЕБРА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/51/">АЛГЕБРА И НАЧАЛА МАТЕМАТИЧЕСКОГО АНАЛИЗА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/11/">АНГЛИЙСКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/5/">БИОЛОГИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/54/">ВСЕРОССИЙСКИЙ ОТКРЫТЫЙ УРОК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/4/">ГЕОГРАФИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/17/">ГЕОМЕТРИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/33/">ЕСТЕСТВОЗНАНИЕ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/7/">ИЗОБРАЗИТЕЛЬНОЕ ИСКУССТВО</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/19/">ИНФОРМАТИКА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/2/">ИСПАНСКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/3/">ИСТОРИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/55/">КИТАЙСКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/14/">ЛИТЕРАТУРА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/32/">ЛИТЕРАТУРНОЕ ЧТЕНИЕ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/12/">МАТЕМАТИКА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/6/">МУЗЫКА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/10/">НЕМЕЦКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/24/">ОБЩЕСТВОЗНАНИЕ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/43/">ОКРУЖАЮЩИЙ МИР</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/23/">ОСНОВЫ БЕЗОПАСНОСТИ ЖИЗНЕДЕЯТЕЛЬНОСТИ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/41/">ПРАВО</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/42/">РОССИЯ В МИРЕ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/13/">РУССКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/8/">ТЕХНОЛОГИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/50/">ТЕХНОЛОГИЯ (ДЕВОЧКИ)</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/48/">ТЕХНОЛОГИЯ (МАЛЬЧИКИ)</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/28/">ФИЗИКА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/9/">ФИЗИЧЕСКАЯ КУЛЬТУРА</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/1/">ФРАНЦУЗСКИЙ ЯЗЫК</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/29/">ХИМИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/40/">ЭКОЛОГИЯ</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="/subject/38/">ЭКОНОМИКА</a>
+                                    </li>
+                                                                                    </ul>
+                    </div>
+
+                </div>
+                <div class="fs-subj _tabs__content _tab-cont-visible">
+                    <div class="fs-subj__row">
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__technology"></i>
+                                                                        <h3 class="fs-subtitle">Технология</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/54/">Всероссийский открытый урок</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/48/">Технология (мальчики)</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/8/">Технология</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/50/">Технология (девочки)</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__art"></i>
+                                                                        <h3 class="fs-subtitle">Искусство</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/7/">Изобразительное искусство</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/6/">Музыка</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__math-Informatics"></i>
+                                                                        <h3 class="fs-subtitle">Математика и информатика</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/19/">Информатика</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/12/">Математика</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/17/">Геометрия</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/51/">Алгебра и начала математического анализа</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/16/">Алгебра</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__philology"></i>
+                                                                        <h3 class="fs-subtitle">Иностранный язык</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/2/">Испанский язык</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/11/">Английский язык</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/10/">Немецкий язык</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/1/">Французский язык</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/55/">Китайский язык</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__physical-culture"></i>
+                                                                        <h3 class="fs-subtitle">Физическая культура и основы безопасности жизнедеятельности</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/23/">Основы безопасности жизнедеятельности</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/9/">Физическая культура</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__philology"></i>
+                                                                        <h3 class="fs-subtitle">Русский язык и литература</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/13/">Русский язык</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/14/">Литература</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/32/">Литературное чтение</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__social-science"></i>
+                                                                        <h3 class="fs-subtitle">Общественно-научные предметы</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/3/">История</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/4/">География</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/24/">Обществознание</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/40/">Экология</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/42/">Россия в мире</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/41/">Право</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/43/">Окружающий мир</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/38/">Экономика</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="fs-subj__grid">
+                                <div class="fs-subj__title-link">
+                                                                            <i class="icon icon icon_b-menu__natural-science"></i>
+                                                                        <h3 class="fs-subtitle">Естественнонаучные предметы</h3>
+                                </div>
+                                <ul class="fs-subj__list">
+                                                                                                                        <li>
+                                                <a href="/subject/28/">Физика</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/29/">Химия</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/5/">Биология</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a href="/subject/33/">Естествознание</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                                            </div>
+                </div>
+            </section>
+            <section class="fs-classes">
+                <div class="fs-title-row">
+                    <h2 class="fs-section-title">Классы</h2>
+                </div>
+                <div class="fs-classes__list">
+                                            <a href="/class/1/" class="fs-classes__link">1</a>
+                                            <a href="/class/2/" class="fs-classes__link">2</a>
+                                            <a href="/class/3/" class="fs-classes__link">3</a>
+                                            <a href="/class/4/" class="fs-classes__link">4</a>
+                                            <a href="/class/5/" class="fs-classes__link">5</a>
+                                            <a href="/class/6/" class="fs-classes__link">6</a>
+                                            <a href="/class/7/" class="fs-classes__link">7</a>
+                                            <a href="/class/8/" class="fs-classes__link">8</a>
+                                            <a href="/class/9/" class="fs-classes__link">9</a>
+                                            <a href="/class/10/" class="fs-classes__link">10</a>
+                                            <a href="/class/11/" class="fs-classes__link">11</a>
+                                    </div>
+            </section>
+
+            <footer class="fs-footer">
+                <div class="fs-footer__grid fs-footer__grid-1">
+
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item-large" href="/about">О проекте</a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item" href="/guide">Гид по «Российской Электронной
+                            Школе»
+                        </a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item" href="/news/">Новости проекта</a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item" href="/for-school">Школе</a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item" href="/feedback">Задать вопрос</a>
+                    </div>
+
+                </div>
+                <div class="fs-footer__grid fs-footer__grid-2">
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item-large" href="/for-parent">Родителям</a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item-large" href="/for-teacher">Учителям</a>
+                    </div>
+                    <div class="fs-footer__item-row">
+                        <a class="fs-footer__item-large" href="/for-partner">Партнерам</a>
+                    </div>
+                </div>
+
+                <div class="fs-footer__grid fs-footer__grid-3">
+                    <div class="fs-footer__item-row">
+                        <span class="fs-footer__item-large">Мы в социальных сетях</span>
+                    </div>
+                    <div class="footer__social">
+                        <a class="soc-links" href="https://vk.com/club127531332">
+                            <i class="icon icon_soc-vk"></i>
+                        </a>
+                                            </div>
+                    <div class="fs-footer__item-row">
+                        <br>
+
+                    </div>
+                    <div class="fs-footer__item-row fs-mobile-links">
+                        <div class="fs-mobile-links__wrapper">
+                            <span class="fs-menu-gp fs-mobile-links__logo"></span>
+                            <div class="mobile-item__pending">в разработке</div>
+                        </div>
+                        <div class="fs-mobile-links__wrapper">
+                            <span class="fs-menu-app-store fs-mobile-links__logo"></span>
+                            <div class="mobile-item__pending">в разработке</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </footer>
+
+            <div class="fs-menu-close _win-close">✕</div>
+        </div>
+    </div>
+</div>
+
+    
+            		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.0.min.js"><\/script>');</script>
+		<script src="/js/vendor/jquery.iframetracker.min1.1.0.js?"></script>
+        		<script src="/custom/js/geoip.js?"></script>
+        
+		<script src="/custom/js/vendor/jquery.sumoselect.js?"></script>
+
+		<script src="/assets/js/bundle.js?"></script>
+		<script src="/custom/js/scripts/login_popup.js?"></script>
+		<script src="/js/vendor/sweetalert.js?"></script>
+		<script src="/custom/js/func.js?"></script>
+
+		
+
+		<!-- Yandex.Metrika counter -->
+		<script>
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter39997495 = new Ya.Metrika({
+                            id: 39997495,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true,
+                            webvisor: true
+                        });
+                        w.yaCounter43464019 = new Ya.Metrika({
+                            id: 43464019,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true,
+                            webvisor: true
+                        });
+                    } catch (e) {
+                    }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () {
+                        n.parentNode.insertBefore(s, n);
+                    };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript>
+			<div><img src="https://mc.yandex.ru/watch/39997495" style="position:absolute; left:-9999px;" alt=""/></div>
+		</noscript>
+		<!-- /Yandex.Metrika counter -->
+    	</body>
+</html>
+

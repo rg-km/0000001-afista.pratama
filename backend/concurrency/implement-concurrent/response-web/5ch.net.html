@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>５ちゃんねる</title>
+<link rel="stylesheet" href="//5ch.net/css/css/font-awesome.min.css">
+<link href="//5ch.net/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//5ch.net/css/5ch.css" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<script type=text/javascript src='//i2ad.jp/i/iVCCp0kwKCl4/sync'></script>
+</head>
+<body class="ch5-body ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+<div class="container">
+<a class="navbar-brand" href="/"><img id="rabbit-img1" src="//5ch.net/images/rabbit.png"><img id="ch_logo" src="//5ch.net/images/5ch_logo.png" alt="５ちゃんねる" align="middle" border="0"></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<div class="form-group has-search">
+<span class="fa fa-search form-control-feedback"></span>
+<input id="search_input" type="text" class="form-control" placeholder="スレッドタイトル検索">
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" href="/_login" title="" data-toggle="popover" data-placement="bottom" data-content="ここからBEアカウントでログインすると、フロントページのすべての機能を楽しめます! 詳細については<a href='https://5ch.net/faq.html'>FAQ</a>をご覧ください。"><i class="fa fa-sign-in"></i> ログイン</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="//www2.5ch.net/5ch.html">掲示板</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="//itest.5ch.net/">スマホ版</a>
+</li>
+<li>
+<a href="https://5ch.net/susu/susucoin_ja.html"><img id="susu_logo" src="//5ch.net/images/bitcoin16-30x30.png"></a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div id="sub-nav">
+<div class="container">
+<div id="under_header">
+<span class="public_nav">
+<span class="menu_item"><a href="/" title="ホーム">[ホーム]</a></span>
+<span class="menu_item"><a href="/faq.html" title="新フロントページについてのよくある質問">[FAQ]</a></span>
+<span class="menu_item"><a href="https://bintan.me/">[びんたん]</a></span>
+<span class="menu_item"><a href="javascript:void(0)" id="clear_hide_posts" title="Clear hidden posts">[クリア]</a></span>
+<span class="menu_item"><a href="javascript:void(0)" id="filter_posts" title="Filter posts">[フィルタ]</a></span>
+</span>
+<div class="btn-group sortby-dropdown">
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div id="myModal" class="modal">
+<div class="modal-content">
+<p>
+<span class="close">&times;</span>
+キーワードを入れる: <input type="text" id="filter_keyword" name="fkeyword" minlength="3" maxlength="32" class="form-control" placeholder="キーワード"></p>
+<input class="btn btn-lg btn-primary btn-block" id="filter_add" type="button" value="追加">
+<div align="center" class="filter_keywords_list_box">
+<span class="filter_keywords_item">
+<a href="javascript:void(0)" class="filter_keywords_list_button">[リスト表示]</a>
+<a href="javascript:void(0)" class="filter_keywords_clear_all_button">[フィルタをクリア]</a>
+<a href="javascript:void(0)" class="filter_keywords_refresh_page_button">[ページの更新]</a>
+</span>
+<span class="filter_keywords_item" id="filter_keywords_list"></span>
+</div>
+</div>
+</div>
+</div>
+<div id="main-content-box">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="leader hidden" id="js-to-itest">
+<div class="post-item-box text-center">
+<a href="https://itest.5ch.net/">[5ちゃんねる スマートフォン版はこちら]</a>
+</div>
+</div>
+<div class="post-item-box">
+<div class="thread-main-box">
+<ul class="threadlist" id="thread_list_posts">
+<li class="newsplus-2022042518010395239 thread " data-board="newsplus" data-board-threadid="newsplus-2022042518010395239">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650877263" rel="nofollow noopener" target="_blank">【社会】高級ウイスキー84本の代金払わずだまし取った疑い　25歳の男を逮捕　「挟まれ屋」と呼ばれる男 [朝一から閉店までφ★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> 04月25日 15:28 <br> <br> 代金を支払うとウソをつき、ウイスキー84本をだまし取った疑いで25歳の男が逮捕されました。 <br> <br> 松尾将吾容疑者（25）はおととし9月、大阪市の会社役員の男（34）に対して高級ウイスキー84本を注文し、代金を支払わずだまし取った疑いが持たれています。 <br> <br> 警察の調べに対し、松尾容疑者は黙秘しています。 <br> <br> 高級ウイスキーなどを販売するとウソをつかれ現金がだまし取られる被害が全国で相次いでいて、警察は松尾容疑者に余罪があるとみて調べています。 <br> <br> また、松尾容疑者は「挟まれ屋」と呼ばれ、去年、福岡市などでタクシーのドアの開け閉めで言いがかりをつけ、運転手に現金を要求する事案が相次いでいたということです。 <br> <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://www.ktv.jp/news/articles/afb97b17_7aad_45f4_a69b_acea763df909.html" target="_blank">https://www.ktv.jp/news/articles/afb97b17_7aad_45f4_a69b_acea763df909.html</a> </p></div>
+<div class="poster_info">
+<span class="name">朝一から閉店までφ ★</span> <span class="date">2022/04/25(月) 18:01:03.95 ID:U2L3xqgs9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650877263"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">12</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">3214</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class='ads_conten_main' style="padding-top:15px"><li><li class="newsplus-202204251731354499 thread " data-board="newsplus" data-board-threadid="newsplus-202204251731354499">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650875495" rel="nofollow noopener" target="_blank">【千葉】有料道路で“横向き停車”　進路妨害「すごいあおり運転」…“偽造ナンバー”不正車か　動画あり★2 [孤高の旅人★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> 有料道路で“横向き停車”　進路妨害「すごいあおり運転」…“偽造ナンバー”不正車か <br> 4/25(月) 12:53配信 <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://news.yahoo.co.jp/articles/ecff62299ce91f8d7b844b323f339ffef4b9f2e0　　　　動画あり" target="_blank">https://news.yahoo.co.jp/articles/ecff62299ce91f8d7b844b323f339ffef4b9f2e0　　　　動画あり</a> <br> <br> 　有料道路上で、2車線にまたがって進路を塞ぐ、“妨害運転”の瞬間の様子です。危険な行為の黄色い車は、偽造ナンバーを付けていた疑いがあるということです。 <br> <br> ■「すごいあおり運転」で“強制停車” <br> <br> 　今月16日、千葉市内の有料道路です。 <br> <br> 　黄色い車が、後方から猛スピードで迫ってきます。あっという間に追い付かれると、ここから執拗（しつよう）に幅寄せされる”あおり運転”が始まりました。 <br> <br> 　幅寄せされた男性は、恐怖から警察に通報します。 <br> <br> 　男性：「事件です。東金有料道路で、あおり運転に遭ってます」 <br> 　警察：「車のナンバーを教えて下さい」 <br> <br> 　黄色い車は、スピードを緩めたり、蛇行運転したりして進路を妨げます。 <br> <br> 　男性：「もう半分停車させられてます。すごいあおり運転です」 <br> 　警察：「どこか寄って下さい。車を先に行かせちゃうのが、一番良いので」 <br> 　男性：「前に行って、止められます」 <br> 　警察：「止められるんですか？」 <br> 　男性：「停車させられちゃった」 <br> 　警察「先に行かせて下さい」 <br> 　男性：「いやいや、私の前に割り込んできてる。今、すごい状態ですよ」 <br> 　警察：「どこかで降りられないですか？」 <br> <br> 　黄色い車は2車線にまたがり、完全に停車。そして、運転していた男性が窓を開け、何かを叫びます。 <br> <br> 　男性：「聞こえますか？」 <br> 　警察：「もしもし」 <br> <br> 　警察に必死に状況を訴えますが、電波状況が悪くうまく伝わりません。 <br> <br> 　黄色い車の男性は、手振りで別の車を行かすも、また妨害。続けて、ゆっくりと蛇行運転・停車を繰り返し、車の進路を阻みます。 <br> <br> 　被害を受けた男性は、当時を振り返ります。 <br> <br> 以下はソース元 <br> <br> ★1：2022/04/25(月) 14:38:45.62 <br> 前スレ <br> 【千葉】有料道路で“横向き停車”　進路妨害「すごいあおり運転」…“偽造ナンバー”不正車か　動画あり [孤高の旅人★] <br> <a rel="nofollow noopener" href="https://asahi.5ch.net/test/read.cgi/newsplus/1650865125/" target="_blank">https://asahi.5ch.net/test/read.cgi/newsplus/1650865125/</a> </p></div>
+<div class="poster_info">
+<span class="name">孤高の旅人 ★</span> <span class="date">2022/04/25(月) 17:31:35.44 ID:u9bTXOqT9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650875495"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">12</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">2835</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-20220425172835339 thread " data-board="newsplus" data-board-threadid="newsplus-20220425172835339">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650875315" rel="nofollow noopener" target="_blank">「指輪も買って、船上でプロポーズ」22歳の息子の父親、悲痛な思い…　交際中の女性と行方不明 ★6 [デデンネ★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> 北海道の知床半島の沖合で観光船が消息を絶ち、26人が行方不明になってから３日目… <br> 捜索に向かう漁船を見守った行方不明の乗客の家族が、悲痛な思いを話しました。　 <br> <br> 漁船の出港を見守った鈴木剛さん51歳…22歳の息子の智也さんが、交際中の女性と乗船していて、行方がわからなくなったといいます。 <br> <br> 斜里町のウトロ漁港の駐車場には、智也さんの車が残されたままになっています。 <br> <br> ◆鈴木さん…「何とか早く見つけて話して欲しい。本当に…きょう（25日）で３日目なんですよ。沈んだまま帰ってこないんですよ」 <br> 「きのうも（24日）も（遺体を）見たけど、やっぱりいなかったっていう辛さですよね。遺体あがったって確認してきたけど、全部、自分の息子ではなかったので…」 <br> 「一日も早く、捜索して見つけて、温かい布団をかけてあげたい、ただ、それだけですね、本当に悔しいです」 <br> <br> ◆息子さんは…「（息子は仕事の）休みをとって、誕生日なので、サプライズで休みをとって（交際中の女性と）２人で旅行に来た」 <br> 「ここから乗ってって、一瞬の動画だったけど、これから行きますって、クルーズ船に乗って出ていったのが最後です」 <br> 「彼女の表情が、こういう状況で喜んでいましたと、一瞬だったけど、10秒くらいの動画、それが最後です」 <br> 「彼女の親御さんも来ているけど、ショックを隠しきれない、辛いです本当に」 <br> 「船でサプライズで、僕ら知らなくて、息子は僕らにも黙っていたけど、指輪も買って、そこでプロポーズを決めていたらしいんですよ」 <br> 「本当に彼女の親御さんとも夕べ、泣きながら話したけど、バラバラじゃなくて、せめてどんな形であれ一緒に出てきて欲しいと。それをせつに願っています」 <br> 「もう、ダメなのは覚悟しているけど、２人一緒に見つかって欲しい、それだけです」 <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://www.hbc.co.jp/news/e6baefc290a8b1ba808886f900fad056.html" target="_blank">https://www.hbc.co.jp/news/e6baefc290a8b1ba808886f900fad056.html</a> <br> <br> 前スレ <br> <a rel="nofollow noopener" href="https://asahi.5ch.net/test/read.cgi/newsplus/1650862182/" target="_blank">https://asahi.5ch.net/test/read.cgi/newsplus/1650862182/</a> <br> 「指輪も買って、船上でプロポーズ」22歳の息子の父親、悲痛な思い…　交際中の女性と行方不明 ★5 [デデンネ★] <br> <a rel="nofollow noopener" href="https://asahi.5ch.net/test/read.cgi/newsplus/1650867834/" target="_blank">https://asahi.5ch.net/test/read.cgi/newsplus/1650867834/</a> </p></div>
+<div class="poster_info">
+<span class="name">デデンネ ★</span> <span class="date">2022/04/25(月) 17:28:35.33 ID:EgDhXxcZ9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650875315"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">35</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">7605</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-202204251708509319 thread " data-board="newsplus" data-board-threadid="newsplus-202204251708509319">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650874130" rel="nofollow noopener" target="_blank">【ワクチン４回おじさん】５回目熱望 「最近も仕事先で何人か陽性者が出たけど、私は陰性だった」 [影のたけし軍団★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> 日本ではワクチンの3回目接種をした人がおよそ5割に達しているが、昨年7月時点ですでに4回接種した人がいた。 <br> <br> 北海道・弟子屈町に住む80代の男性A氏だ。医療機関に出入りする仕事をしているため、医療従事者枠で昨年4、5月に接種した後、 <br> 病院から接種券を破棄するよう言われたが、無視して自治体の高齢者枠で6、7月に打ったという。 <br> <br> 毎月1回、4か月連続で接種したことになる。 <br> <br> この不正接種は全国紙にも報じられたが、昨年7月、A氏は『週刊ポスト』の取材に対し、「副反応は一切なかった。 <br> 腕の痛みも発熱もない。早く5回目が打ちたい」と反省する素振りは見せなかった。その後、体調に変化はないのか。 <br> <br> 「まったく問題ないですね。風邪もひかないし、もちろんコロナにもかかってない。最近も仕事先の医療機関で何人か陽性者が出たけど、私は陰性だった。 <br> まだワクチンの効果が残っていると感じますね」（A氏） <br> <br> 5回目は打ったのかと訊くと、こんな答えが。 <br> <br> 「町のブラックリストに載ったのか、世間でいうところの3回目の接種券が届いていないんですよ。 <br> 昨年11月に医療従事者向けの抗体検査を受けたら、他の人より10倍くらい抗体があったので、それも町は把握しているのかもしれません」 <br> <br> 弟子屈町に聞いてみた。 <br> <br> 「（北海）道と協議した結果、お送りしていません。接種は公費で賄っているため、 <br> 既定の回数より多く接種したとなればそれだけ公費を余分に使っていることになります」（健康こども課） <br> <br> 政府は4回目接種への検討に入り、5月下旬の接種開始を目指しているという。 <br> <br> A氏は「もちろん打ちたいです。新しい変異株も出てきていて怖いですから。最後に打ってから1年経っている時期なので、抗体も減ってきているだろうし」 <br> と、“次こそは”と期待を込めるが、自治体は厳しい判断を検討している。 <br> <br> 「まだ決定していませんが、同様の理由で4回目に関しても接種券を送らない可能性があります」（前出・健康こども課） <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://www.news-postseven.com/archives/20220425_1748101.html?DETAIL#:‾:text=%E3%83%AF%E3%82%AF%E3%83%81%E3%83%B3" target="_blank">https://www.news-postseven.com/archives/20220425_1748101.html?DETAIL#:‾:text=%E3%83%AF%E3%82%AF%E3%83%81%E3%83%B3</a> <br> <br> A氏の4回目接種後の左腕。腫れなどもなかったという <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://www.news-postseven.com/uploads/2022/04/22/vaccination_injection_image.jpg" target="_blank">https://www.news-postseven.com/uploads/2022/04/22/vaccination_injection_image.jpg</a> </p></div>
+<div class="poster_info">
+<span class="name">影のたけし軍団 ★</span> <span class="date">2022/04/25(月) 17:08:50.93 ID:+pkJJ+1S9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650874130"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">18</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">1900</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-20220425165537549 thread " data-board="newsplus" data-board-threadid="newsplus-20220425165537549">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650873337" rel="nofollow noopener" target="_blank">【新潟】トラクターに乗って外出した男性（８４）　トラクターの下敷きになり死亡しているのを発見 [ぐれ★]</a>
+</div>
+<div class="thread-content "><p title="クリックして展開する" class="full-content"> ※2022/04/25 13:57TeNYテレビ新潟ニュース <br> <br> 新潟県岩船郡関川村の農道で２４日午後７時過ぎ、８４歳の男性がトラクターの下敷きになっているのが見つかり、死亡が確認されました。 <br> <br> 死亡したのは、関川村の無職、加藤賢太郎さん（８４）です。警察によりますと、加藤さんは２４日午前８時頃にトラクターに乗って外出しましたが、正午を過ぎても帰ってこないことから家族が探していたところ、自宅近くの農道で加藤さんがトラクターの下敷きになり死亡しているのを見つけました。 <br> <br> 続きは↓ <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://topics.smt.docomo.ne.jp/article/teny/region/teny-news114a1l7zxsi1bdpd91s" target="_blank">https://topics.smt.docomo.ne.jp/article/teny/region/teny-news114a1l7zxsi1bdpd91s</a> </p></div>
+<div class="poster_info">
+<span class="name">ぐれ ★</span> <span class="date">2022/04/25(月) 16:55:37.54 ID:xJfZlllb9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650873337"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">17</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">7062</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-20220425165100529 thread " data-board="newsplus" data-board-threadid="newsplus-20220425165100529">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650873060" rel="nofollow noopener" target="_blank">【知床観光船事故】死者11人に　捜索拡大「ロシアと調整必要の可能性」　ロシアが実効支配する海域に捜索が及ぶ可能性も ★２ [ぐれ★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> ※2022/04/25 12:17毎日新聞 <br> <br> 　北海道・知床半島沖で乗客乗員計２６人が乗った観光船「ＫＡＺＵ　Ⅰ（カズ　ワン）」が浸水した事故で第１管区海上保安本部は２５日未明、夜を徹した救助作業を進める中で新たに子ども１人を意識不明の状態で救助し、病院に搬送したと発表した。しかし、その後に死亡が確認され、死者は計１１人となった。事故から３日目となった２５日も、行方不明者の発見に向け懸命の捜索が続いた。 <br> <br> 　海保などによると、見つかった子どもは３歳の女児。知床岬灯台から東に１４・５キロの海上で道の漁業取締船が２４日午後９時前に発見し、巡視船が救助した。乗客乗員２６人のうち、乗客は東京や大阪、福岡など９都道府県に住む２４人。うち子どもは２人で、もう１人はまだ見つかっていない。既に見つかっていた大人１０人（男性７人、女性３人）は知床岬の海上や岩場で救助され、いずれも死亡が確認されている。 <br> <br> 　１管は２５日午前８時から記者団に捜索の状況や今後の見通しを説明。潮流の状況などから捜索範囲を広げているとし、今後のさらなる拡大も示唆した。また、行方不明の船体を発見するため２４日から「ソナー」（水中音波探知機）を使い始めたことも明らかにした。ロシアが実効支配する海域に捜索が及ぶ可能性もあるといい、「国際的な捜索協定の枠組みでどのようにしていくか、調整が必要な可能性がある」としている。 <br> <br> 続きは↓ <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://topics.smt.docomo.ne.jp/article/mainichi/nation/mainichi-20220425k0000m040069000c" target="_blank">https://topics.smt.docomo.ne.jp/article/mainichi/nation/mainichi-20220425k0000m040069000c</a> <br> ※前スレ <br> 【知床観光船事故】死者１１人に　捜索拡大「ロシアと調整必要の可能性」　ロシアが実効支配する海域に捜索が及ぶ可能性も [ぐれ★] <br> <a rel="nofollow noopener" href="https://asahi.5ch.net/test/read.cgi/newsplus/1650862895/" target="_blank">https://asahi.5ch.net/test/read.cgi/newsplus/1650862895/</a> <br> <br> ★１ 2022/04/25(月) 14:01:35.54 </p></div>
+<div class="poster_info">
+<span class="name">ぐれ ★</span> <span class="date">2022/04/25(月) 16:51:00.52 ID:xJfZlllb9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650873060"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">17</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">4685</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-20220425164426569 thread " data-board="newsplus" data-board-threadid="newsplus-20220425164426569">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650872666" rel="nofollow noopener" target="_blank">【日テレ】昭和天皇動画、日本政府の抗議で削除　在日ウクライナ大使館は前政権のアカウントだと主張★2 [みの★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> ツイッターでウクライナ政府の公式なものとされるアカウントが昭和天皇をヒトラーとムッソリーニと同列に扱う動画を投稿し、日本政府の抗議を受けて削除したことがわかりました。 <br> <br> 磯崎官房副長官は、会見で、ツイッターでウクライナ政府の公式なものとされるアカウントが昭和天皇をヒトラーとムッソリーニと同列に扱う動画を投稿したことを認めました。 <br> <br> 磯崎官房副長官「ヒトラーとムッソリーニと昭和天皇、同列に扱うということは全く不適切であり、極めて遺憾というふうに考えております。（ウクライナ政府に）当該写真が不適切であり、直ちに削除するように申し入れを行ったところでございます」 <br> <br> …続きはソースで（動画あり）。 <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://news.yahoo.co.jp/articles/36405174157c2df62474337953a0064ab5449ed9" target="_blank">https://news.yahoo.co.jp/articles/36405174157c2df62474337953a0064ab5449ed9</a> <br> 2022年4月25日　15時01分 <br> <br> 前スレ <br> <a rel="nofollow noopener" href="https://asahi.5ch.net/test/read.cgi/newsplus/1650869037/" target="_blank">https://asahi.5ch.net/test/read.cgi/newsplus/1650869037/</a> <br> ★1が立った日時：2022/04/25(月) 15:43:57.15 </p></div>
+<div class="poster_info">
+<span class="name">みの ★</span> <span class="date">2022/04/25(月) 16:44:26.56 ID:DtGTUsfE9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650872666"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">49</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">16962</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class="newsplus-2022042515465907669 thread " data-board="newsplus" data-board-threadid="newsplus-2022042515465907669">
+<div class="thread_link">
+<div class="thread_box thread_box-left text-center">
+</div>
+<div class="thread_box thread_box-right">
+<div class="public_nav" align="right">
+<div class="post_nav_buttons">
+<a title="隠す" class="hide_post" href="javascript:void(0)">[隠す]</a>
+</div>
+</div>
+<div class="thread_box_wrap">
+<img class="thread_box_wrap_thumbnail" src="./images/boards/newsplus.jpg">
+</div>
+<div class="thread_title">
+<a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650869219" rel="nofollow noopener" target="_blank">“16TB”だけど本当は512GB？　外付けSSDの商品ページが話題に　「実際のメモリは具体に実際に準じており」 [神★]</a>
+</div>
+<div class="thread-content fade-buttom-thread-content"><p title="クリックして展開する" class="full-content"> “16TB”だけど本当は512GB？　外付けSSDの商品ページが話題に　楽天「規約違反の疑いで一時閉店」 <br> 2022年04月22日 20時52分 公開 <br> [松浦立樹，ITmedia] <br> <br> 　商品画像には「16TB　SSD」と記載しているにもかかわらず、実際の容量は512GB──そんな外付けSSDが各インターネット通販サイトで販売されているとTwitter上で話題になっている。ユーザーからは「景品表示法に違反するのではないか」と疑問の声が上がっている。 <br> <br> (中略) <br> <br> 　商品情報に、メーカーなどの情報は見当たらず、代わりに「材質は金属」と記載。注意事項として、「500Gや1Tなどは型番です」とし、「実際のメモリは500G＝64GB、1T＝90GB、16TB＝512GB」などと記載。続けて「実際のメモリは具体に実際に準じており、誤差がある可能性がある。お客さんに理解してもらう」（原文ママ）と、たどたどしい日本語での説明もあった。 <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://www.itmedia.co.jp/news/articles/2204/22/news188.html" target="_blank">https://www.itmedia.co.jp/news/articles/2204/22/news188.html</a> <br> <br> <a rel="nofollow noopener" href="https://jump.5ch.net/?https://image.itmedia.co.jp/news/articles/2204/22/cover_news188.jpg" target="_blank">https://image.itmedia.co.jp/news/articles/2204/22/cover_news188.jpg</a> </p></div>
+<div class="poster_info">
+<span class="name">神 ★</span> <span class="date">2022/04/25(月) 15:46:59.07 ID:q6IC6HSS9</span>
+</div>
+<div class="thread_detail text-right">
+<span class="thread_detail_child" title="Comment"><a href="https://asahi.5ch.net/test/read.cgi/newsplus/1650869219"><span class="fa fa-comment"></span> <span class="thread_detail_child_value">11</span></a></span>
+<span class="thread_detail_child"><span class="thread_detail_child_value"><a href="https://asahi.5ch.net/newsplus/">ニュース速報+</a></span></span>
+<span class="thread_detail_child" title="パワ"><span class="fa fa-flash"></span> <span class="thread_detail_child_value">3371</span></span>
+<span class="thread_detail_child" title="板をフォローする"><button data-boardid="newsplus" type="button" class="btn btn-info btn-sm follow-button">フォローする</button></span>
+<span class="thread_detail_child" title="ban be user"></span>
+</div>
+</div>
+</div>
+</li>
+<li class='ads_conten_main' style="padding-top:15px"><li> </ul>
+</div>
+</div>
+<center>
+<div class="more-posts">
+<a href="javascript:void(0)" id="more_news_index"><h3>もっと見る <span class="glyphicon glyphicon-arrow-down"></span></h3></a>
+<input type="hidden" value="0" id="recent_page">
+<input type="hidden" value="0" id="additional_articles_loaded">
+</div>
+</center>
+</div>
+<div id="content-widget" class="col-md-4">
+<div class="card my-4">
+<div class="card-body">
+<div class="content">
+<div>
+<div class="center-object">
+<a class="navbar-brand" href="/"><img width="150px" src="//5ch.net/images/5ch_mascot_normal.png"></a>
+</div>
+「ハッキング」から「今晩のおかず」までを手広くカバーする巨大掲示板群『５ちゃんねる』へようこそ！ </div>
+</div>
+</div>
+</div>
+<div class="card my-4">
+<div class="card-body">
+<span class="title-widget">インフォメーション</span>
+<hr class="widget-hr">
+<div class="content">
+<ul class="circle-style">
+<li><a href="https://info.5ch.net/">使い方＆注意 </a></li>
+<li><a href="https://premium.5ch.net/">プレミアム浪人 </a></li>
+<li><a href="https://headline.5ch.net/bbynews/">ヘッドライン </a></li>
+<li><a href="https://newsnavi.5ch.net/">ニュース </a></li>
+<li><a href="https://headline.5ch.net/bbynamazu/">地震速報 </a></li>
+<li><a href="https://stat.5ch.net/">投稿数 </a></li>
+<li><a href="https://www.5ch.net/kakolog.html">過去ログ倉庫 </a></li>
+<li><a href="https://qb5.5ch.net/saku2ch/">削除ガイドライン </a></li>
+<li><a href="https://www.5ch.net/matome.html">5chまとめブログ・アプリ運営者の皆さまへ</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sticky_side_point">
+<div class="card my-4">
+<div class="card-body">
+<hr class="widget-hr">
+<div class="content">
+<div class="ads-item">
+</div>
+</div>
+</div>
+</div>
+<div class="card my-4">
+<div class="card-body">
+<div class="content">
+<center>
+Loki Technology, Inc.
+<br>
+29F Joy Nostalg Center
+<br>
+17 ADB Avenue, Ortigas Center
+<br>
+PASIG 1600
+</center>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="py-5 bg-light">
+<div class="container">
+<p class="m-0 text-center text-dark content">
+５ちゃんねるのご利用は利用者各位のご判断にお任せしています｜<br>
+5ch.netにおけるコンテンツの権利はLoki Technology, Inc. に帰属します。<br><br>
+コンテンツの無断複写、転載を禁じます。
+</p>
+</div>
+</footer>
+<script src="//5ch.net/vendor/jquery/jquery.min.js"></script>
+<script src="//5ch.net/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="//5ch.net/js/frontpage-min.js"></script>
+<script src="//5ch.net/js/filter-min.js"></script>
+<script src="./js/ads.js"></script>
+</body>
+</html>

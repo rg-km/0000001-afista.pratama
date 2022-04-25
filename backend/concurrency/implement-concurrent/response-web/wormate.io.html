@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, maximum-scale=1, minimal-ui, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-itunes-app" content="app-id=1135523852" />
+<meta property="fb:app_id" content="861926850619051" />
+<title>Wormate.io Adventures Non-Stop</title>
+<meta name="description" content="Drive your worm in massively multiplayer online game! Eat sweets, donuts and cakes to grow faster. Play with others all over the world." />
+<meta name="keywords" content="wormateio, wormate, io, worm, worms, snake, snakes, game, online, games, web, html5, fun, mmo" />
+<script>window.aiptag=window.aiptag||{cmd:[]};aiptag.cmd.display=aiptag.cmd.display||[];aiptag.cmd.player=aiptag.cmd.player||[];</script>
+<script async="async" src="//api.adinplay.com/libs/aiptag/pub/WRM/wormate.io/tag.min.js"></script>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="icon" href="/images/favicon.ico" />
+<link href="/css/style.css?v=1a2d722" rel="stylesheet" />
+<meta property="og:title" content="Wormate.io Adventures Non-Stop" />
+<meta property="og:description" content="Drive your worm in massively multiplayer online game! Eat sweets, donuts and cakes to grow faster. Play with others all over the world." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="wormate.io" />
+<meta property="og:url" content="https://wormate.io/" />
+<meta property="og:image" content="https://wormate.io/images/og-share-img-3.png" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="350" />
+<link rel="image_src" href="https://wormate.io/images/og-share-img-3.png" />
+<link rel="canonical" href="https://wormate.io/" />
+<link rel="alternate" hreflang="en" href="https://wormate.io/" />
+<link rel="alternate" hreflang="uk" href="https://wormate.io/uk/" />
+<link rel="alternate" hreflang="de" href="https://wormate.io/de/" />
+<link rel="alternate" hreflang="fr" href="https://wormate.io/fr/" />
+<link rel="alternate" hreflang="ru" href="https://wormate.io/ru/" />
+<link rel="alternate" hreflang="es" href="https://wormate.io/es/" />
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"VideoGame","name":"wormate.io","description":[{"@language":"en","@value":"Drive your worm in massively multiplayer online game! Eat sweets, donuts and cakes to grow faster. Play with others all over the world."},{"@language":"de","@value":"Fahr deinen Wurm in Massively Multiplayer Online-Spiel! Iss Süßigkeiten, Donuts und Kuchen, schneller zu wachsen. Spiel mit anderen auf der ganzen Welt."},{"@language":"fr","@value":"Pilotez un ver dans un jeu en ligne massivement multijoueur! Mangez des bonbons, des donuts et des gâteaux pour grandir plus vite. Jouez avec les autres dans le monde entier."},{"@language":"es","@value":"¡Dirige tu gusano en este juego multijugador en línea! Come dulces, donas y pasteles para que el gusano siga creciendo. Juega con otra gente de todo el mundo."},{"@language":"uk","@value":"Керуй черв'ячком в багатокористувацької онлайн-грі! Їж солодощі, пончики та тістечка щоб черв'ячок ріс. Грайте з іншими гравцями зі всього світу."},{"@language":"ru","@value":"Управляй червячком в многопользовательской онлайн-игре! Ешь сладости, пончики и пирожные чтобы червячок рос. Играйте с другими игроками со всего мира."}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","reviewCount":"79000"},"applicationCategory":["Browser Game","Mobile Game"],"operatingSystem":["iOS 7.0+","Android 4.0.3+","Windows 7","OSX 10.6"],"genre":["Action Game","Survival Game","IO"],"url":"https://wormate.io/","image":"https://wormate.io/images/youtube/poster.jpg","screenshot":"https://wormate.io/images/youtube/backgroundart.jpg","sameAs":["https://www.facebook.com/wormate.io","https://www.youtube.com/c/wormateio","https://plus.google.com/104922600711910140216","https://twitter.com/wormate_io","https://www.instagram.com/wormate_io/","https://vk.com/wormate_io"],"offers":[]}
+    </script>
+</head>
+<body>
+<div id="game-wrap">
+<div id="game-cont">
+<canvas id="background-canvas"></canvas>
+
+<div id="social-buttons">
+<div class="pad">
+<div class="fb-like" data-href="https://wormate.io/" data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+</div>
+<div class="pad">
+<div class="fb-follow" data-href="https://www.facebook.com/wormate.io" data-layout="button" data-size="small" data-show-faces="true"></div>
+<div class="fb-like" data-href="https://www.facebook.com/wormate.io" data-layout="button" data-size="small" data-show-faces="true" data-action="like"></div>
+</div>
+<div class="pad"><a class="twitter-follow-button" href="https://twitter.com/wormate_io" data-show-screen-name="false" data-show-count="false">Follow</a></div>
+<div class="pad"><div class="g-ytsubscribe" data-channelid="UCP5lq-4vNBw9vtBmvyQxY5Q" data-layout="default" data-count="default"></div></div>
+</div>
+
+<div id="game-view" class="view">
+<canvas id="game-canvas"></canvas>
+</div>
+<div id="results-view" class="view">
+<div id="congrats-bg">
+<div id="congrats-wrap">
+<div id="congrats">
+<div id="final-caption"></div>
+<div id="final-message"></div>
+<div id="final-score"></div>
+<div id="final-place"></div>
+<div id="final-board"></div>
+<div class="controls">
+<div id="final-continue"></div>
+<div id="final-share-fb"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="unl6wj4czdl84o9b">
+<div class="label">Advertisement:</div>
+<div id="ltmolilci1iurq1i"></div>
+</div>
+</div>
+<div id="stretch-box">
+<div id="main-menu-view" class="stretch-view">
+<div class="line-top">
+<div id="mm-player-info">
+<img id="mm-player-avatar" src="/images/guest-avatar-saveukraine2022.png" alt="Wormate Guest Avatar" />
+<div id="mm-player-username" data-guest="Guest">Username</div>
+<div class="mm-player-exp">
+<div id="mm-player-exp-bar"></div>
+<div id="mm-player-exp-val">...</div>
+</div>
+<div id="mm-player-level">1</div>
+</div><div id="mm-coins-box" style="display: none"><img class="mm-coins-img" src="/images/coin.png" alt="Wormate Coin" /><span id="mm-coins-val">10</span><div id="mm-coins-buy"><span>Buy</span></div>
+</div>
+</div>
+<div class="line-center"><div class="column-left">
+<div class="description-text">
+<h1>Wormate.io Adventures Non-Stop</h1>
+<p>Wormate.io is a smash-hit online game with dynamic storyline and amusing graphics. The game is free to play, start growing your pets today – cute colorful worms. Aiming to become a real anaconda, the little worm never sits on one place – he’s ready to have a bite, though he is in danger of becoming a dinner for more luckier fellow.</p>
+<p>Try to raise your own snake in the game using a browser or application on the tablet or smartphone. Wormate.io team have done everything to provide stable work of Wormate game on any iOS or Android gadget.</p>
+<h2>Treat the worm with Sweets</h2>
+<p>The worms are real gourmets. They like to taste cakes, chocolate biscuits, candies and other sweet-stuff.</p>
+<p>There are so much sweets around the worm that it seems he lives in the candy box. Thus the agile worm grows significantly faster than in other similar games. It means that the top of the leader board is easy to be reached even at the 1st minute of the game.</p>
+<h2>Amazing skins for the Worm</h2>
+<p>In our browser game even the gamers, playing without being registered, can use skins limitlessly for free. To get the opportunity of changing three-colored skin for pet to cuter and funnier variant, we kindly ask you to share game with your friends. There are more than 30 different outfits for worms.</p>
+<h2>Magic Potions for Power-ups</h2>
+<p>Do you want to take part in the battle for survival as an equal rival of giant worms? Then get your worm to the bottles with magic liquids. The worm can’t come across toxic food – all the bonuses are pleasant. It’s easy to learn about potion’s properties from the color of the bottle:</p>
+<ul>
+<li>the green one makes the pet 50% faster;</li>
+<li>the blue liquid helps to move nimbly;</li>
+<li>the red-blue potion allows to attract sweets at the distance;</li>
+<li>the orange bottle contains growth hormone: the light one allow the pet to grow twice faster (x2), the orange potion – up to 5 times quicker, the dark liquid – up to 10 times.</li>
+</ul>
+<p>Remember: the expiration term is limited (from 10 to 40 seconds), that’s why use the obtained bonuses without hesitation, and the worm will certainly get to the top place of the leader board.</p>
+<h2>Compete with Friends</h2>
+<p>Do you spend great time playing? Have you managed to get the record score? Share your results with your buddies at social networks. After finishing the game you can click «Share» button for Facebook, Twitter, or VK, or just go on playing the game for free.</p>
+<p>Cute worms won’t let you get bored, they’ll raise the mood in a journey, during the break at work or the long evening. At Wormate.io you’ll enjoy colorful design, plenties of sweets and a serious struggle for the first place with the best gamblers from around the world.</p>
+<p>Start Wormate browser game online and make your pet the longest, strongest and fastest. It’s absolutely free and very funny.</p>
+</div>
+</div><div class="column-middle">
+<img class="mm-logo" src="/images/linelogo.png" alt="Wormate.io logo" />
+<div class="mm-event-cont"><span id="mm-event-text">#RussiaInvadedUkraine #SaveUkraine #StopTheWar</span></div>
+<div class="mm-skin">
+<canvas id="mm-skin-canv"></canvas>
+<div id="mm-skin-prev"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+<div id="mm-skin-next"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+<div id="mm-skin-over">
+<div id="mm-skin-over-label">Share with friends to unlock skins</div>
+<div id="mm-skin-over-button-list"></div>
+</div>
+</div>
+<div class="mm-params">
+<input id="mm-params-nickname" type="text" placeholder="your nickname" />
+<select id="mm-params-game-mode">
+<option value="ARENA">Arena</option>
+<option value="TEAM2">2 Teams</option>
+</select>
+</div>
+<div class="mm-actions">
+<div id="mm-action-buttons">
+<div id="mm-action-play" style="display: none"><span>Play</span></div>
+<div id="mm-action-guest" style="display: none"><span>Play as guest</span></div>
+<div id="mm-action-login" style="display: none"><span>Login</span></div>
+</div>
+</div>
+<div id="mm-advice-cont">
+<div class="mm-advice"><span>Catch up candies, cookies and cakes!</span></div>
+<div class="mm-advice"><span>Move your mouse to control your worm</span></div>
+<div class="mm-advice"><span>Press your mouse for acceleration</span></div>
+<div class="mm-advice"><span>Cut off others and eat their sweets to grow faster</span></div>
+</div>
+</div><div class="column-right">
+<div id="loa831pibur0w4gv">
+<div class="label">Advertisement:</div>
+<div id="aqnvgcpz05orkobh" style="width:300px; height:250px;"></div>
+ </div>
+</div>
+</div>
+<div class="line-bottom"><div id="mm-settings">Settings</div><div id="mm-leaders" style="display: none">Leaders</div><a class="mm-merchant" href="https://itunes.apple.com/us/app/wormate.io/id1135523852?mt=8">
+<img src="/images/store-badge-apple.svg" alt="Get the iOS App!" /></a><a class="mm-merchant" href="https://play.google.com/store/apps/details?id=io.wormate">
+<img src="/images/store-badge-google.svg" alt="Get the Android App!" /></a><div id="mm-store" style="display: none">Store</div>
+</div>
+</div>
+<div id="popup-view" class="stretch-view">
+<div class="stretch-container">
+<div class="popup-view-head">
+<button id="popup-menu-back"></button>
+<span id="popup-menu-label">Leaders</span>
+<div id="popup-menu-coins-box">
+<img class="coin-img" src="/images/coin.png" alt="Wormate coin" />
+<span id="popup-menu-coins-val">423</span>
+<button class="popup-menu-coins-buy">+</button>
+</div>
+</div>
+<div class="popup-view-list">
+<div id="profile-view" class="base-popup-view">
+<div class="profile-user">
+<img id="profile-avatar" src="/images/guest-avatar-saveukraine2022.png" alt="Wormate Guest Avatar" />
+<div id="profile-username"></div>
+<div class="exp-cont">
+<div id="profile-experience-bar"></div>
+<div id="profile-experience-val"></div>
+</div>
+<div id="profile-level">1</div>
+</div>
+<div class="profile-stats">
+<div class="stat"><span class="label">High Score</span> <span id="profile-stat-highScore" class="value">1435235</span></div>
+<div class="stat"><span class="label">Best Survival Time</span> <span id="profile-stat-bestSurvivalTime" class="value">1 min 37 sec</span></div>
+<div class="stat"><span class="label">Kills</span> <span id="profile-stat-kills" class="value">423</span></div>
+<div class="stat"><span class="label">Headshots</span> <span id="profile-stat-headshots" class="value">46</span></div>
+<div class="stat"><span class="label">Games Played</span> <span id="profile-stat-gamesPlayed" class="value">34</span></div>
+<div class="stat"><span class="label">Total Play Time</span> <span id="profile-stat-totalTimeSpent" class="value">4 hours 24 min</span></div>
+<div class="stat"><span class="label">Registration Date</span> <span id="profile-stat-registrationDate" class="value">1 Oct 2016</span></div>
+</div>
+</div>
+<div id="leaders-view" class="base-popup-view">
+<div class="buttons">
+<div class="popup-button" id="leaders-button-level">Level</div>
+<div class="popup-button" id="leaders-button-highscore">High Score</div>
+<div class="popup-button" id="leaders-button-kills">Headshots / Kills</div>
+</div>
+<div class="table-header"><span>Place</span><span></span><span>Name</span><span>Level</span><span>High Score</span><span>Headshots / Kills</span>
+</div>
+<div id="highscore-table">
+ 
+</div>
+</div>
+<div id="store-view" class="base-popup-view">
+<div id="store-go-coins-button" class="store-go-base-button">
+<img class="store-go-image" src="/images/store-coins-button.jpg" alt="Coins store" />
+<span class="store-go-text">Coins</span>
+</div>
+<div id="store-go-wear-button" class="store-go-base-button">
+<img class="store-go-image" src="/images/store-wear-button.jpg" alt="Wear store" />
+<span class="store-go-text">Clothing</span>
+</div>
+<div id="store-go-skins-button" class="store-go-base-button">
+<img class="store-go-image" src="/images/store-skins-button.jpg" alt="Skins store" />
+<span class="store-go-text">Skins</span>
+</div>
+</div>
+<div id="skins-view" class="base-popup-view">
+<div class="store-left">
+<div class="store-view-cont">
+<div id="skin-group-description-cont"><span id="skin-group-description-text"></span></div>
+<div id="skin-description-cont"><span id="skin-description-text"></span></div>
+<canvas id="store-view-canv"></canvas>
+<div id="store-view-prev"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+<div id="store-view-next"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+</div>
+<div id="store-buy-button">
+<span>Buy for</span>
+<img class="coin-img" src="/images/coin.png" alt="Wormate Coin" />
+<span id="store-item-price">5600123</span>
+</div>
+<div id="store-locked-bar"><span id="store-locked-bar-text"></span></div>
+</div>
+<div class="store-right">
+<ul id="store-groups"></ul>
+</div>
+</div>
+<div id="wear-view" class="base-popup-view">
+<ul class="wear-types">
+<li id="wear-eyes-button"></li>
+<li id="wear-mouths-button"></li>
+<li id="wear-glasses-button"></li>
+<li id="wear-hats-button"></li>
+</ul>
+<div class="wear-view-cont">
+<canvas id="wear-view-canv"></canvas>
+<div id="wear-view-prev"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+<div id="wear-view-next"><svg><path d="M28.37 2L48 20.24 28 38V22.28" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;"></path><circle cx="14.73" cy="19.95" style="fill:none;stroke-width:2px;" r="4.8"></circle><circle cx="3.45" cy="20.42" r="2.4" style="fill:none;stroke-width:1px;"></circle></svg></div>
+</div>
+<div id="wear-description-cont"><span id="wear-description-text"></span></div>
+<div id="wear-tint-chooser"></div>
+<div class="wear-state">
+<div id="wear-buy-button">
+<span>Buy for</span>
+<img class="coin-img" src="/images/coin.png" alt="Wormate Coin" />
+<span id="wear-item-price">5600123</span>
+</div>
+<div id="wear-locked-bar"><span id="wear-locked-bar-text"></span></div>
+</div>
+</div>
+<div id="coins-view" class="base-popup-view">
+<div class="store-coins-free-column">
+<span class="store-coins-free-label">Free!</span>
+</div>
+<div class="store-coins-table">
+<div class="store-coins-row" id="store-buy-coins_125000">
+<div>Best Deal</div><div>70000</div><div>+</div><div>80%</div><div>=</div><div>125000</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$99.99</span></div><div>Buy</div>
+</div>
+<div class="store-coins-row" id="store-buy-coins_50000">
+<div>Popular</div><div>30000</div><div>+</div><div>65%</div><div>=</div><div>50000</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$49.99</span></div><div>Buy</div>
+</div>
+<div class="store-coins-row" id="store-buy-coins_16000">
+<div></div><div>10000</div><div>+</div><div>60%</div><div>=</div><div>16000</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$19.99</span></div><div>Buy</div>
+</div>
+<div class="store-coins-row" id="store-buy-coins_7000">
+<div></div><div>5000</div><div>+</div><div>40%</div><div>=</div><div>7000</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$9.99</span></div><div>Buy</div>
+</div>
+<div class="store-coins-row" id="store-buy-coins_3250">
+<div></div><div>2500</div><div>+</div><div>30%</div><div>=</div><div>3250</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$4.99</span></div><div>Buy</div>
+</div>
+<div class="store-coins-row" id="store-buy-coins_1250">
+<div></div><div>1000</div><div>+</div><div>25%</div><div>=</div><div>1250</div><img src="/images/coin.png" alt="Wormate Coin" /><div><span>$1.99</span></div><div>Buy</div>
+</div>
+</div>
+<div class="store-coins-unavailable">
+<div class="sorry">Sorry, online payments are currently unavailable</div>
+<div class="use-mobile">
+<span>Consider switching to our mobile app:</span>
+<br /><br />
+<a class="merchant-button" href="https://itunes.apple.com/us/app/wormate.io/id1135523852?mt=8">
+ <img src="/images/store-badge-apple.svg" alt="Get the iOS App!" />
+</a>
+<a class="merchant-button" href="https://play.google.com/store/apps/details?id=io.wormate">
+<img src="/images/store-badge-google.svg" alt="Get the Android App!" />
+</a>
+</div>
+</div>
+</div>
+<div id="settings-view" class="base-popup-view">
+<div class="settings-line">
+wormate.io web client (1a2d722)
+</div>
+<div class="settings-line" id="settings-music-enabled-line">
+<span class="settings-label">Music enabled</span><input class="settings-switch" id="settings-music-enabled-switch" type="checkbox" /><label for="settings-music-enabled-switch"></label>
+</div>
+<div class="settings-line" id="settings-sfx-enabled-line">
+<span class="settings-label">SFX enabled</span><input class="settings-switch" id="settings-sfx-enabled-switch" type="checkbox" /><label for="settings-sfx-enabled-switch"></label>
+</div>
+<div class="popup-sep"></div>
+<div class="settings-line">
+<span class="settings-label">Show player names</span><input class="settings-switch" id="settings-show-names-switch" type="checkbox" /><label for="settings-show-names-switch"></label>
+</div>
+<div class="popup-sep"></div>
+<div id="popup-logout-container">
+<div class="settings-line" id="popup-logout">Logout</div>
+</div>
+<div id="popup-delete-account-container">
+<div class="settings-line" id="popup-delete-account">Delete my account</div>
+</div>
+<div id="popup-withdraw-give-wrapper">
+<div class="settings-line" id="popup-withdraw-consent">Withdraw consent</div>
+</div>
+</div>
+<div id="login-view" class="base-popup-view">
+<div class="settings-line" id="popup-login-gg">Login via Google</div>
+<div class="settings-line" id="popup-login-fb">Login via Facebook</div>
+</div>
+<div id="withdraw-consent-view" class="base-popup-view">
+<span class="withdraw-consent-question">Withdraw consent?</span>
+
+<div class="withdraw-consent-text">You have currently giving your consent to wormate.io's disclosure of the advertising identificator of your device to advertising network companies for the purpose of serving personalized advertisement experience in this game based on your personal preferences.<br /><br />Are your sure you want to withdraw your consent?<br /><br />(Please note that if you withdraw your consent, your user license to use this game will be terminated)</div>
+<div class="withdraw-consent-options">
+<div id="withdraw-consent-yes">Yes</div>
+<div id="withdraw-consent-no">No</div>
+</div>
+</div>
+<div id="delete-account-view" class="base-popup-view">
+ <div class="delete-account-text">You are about to delete your wormate.io account.<br /><br />Currently we are securely storing your data on our servers. Such data as:<br />- your username;<br />- game level and experience points;<br />- coins amount;<br />- bought and/or achieved skins and wear.<br /><br />Warning! In case you request to delete your account, all your gaming data and properties will be completely erased from our servers!<br /><br />After the deletion, you are free to create a new account again. Please note: your new account will not contain any of your previous achievements.</div>
+<span class="delete-account-question">Are you sure want to delete your account?<br />(WARNING: This action cannot be undone)</span>
+<div class="delete-account-options">
+<div id="delete-account-timer"></div>
+<div id="delete-account-yes">Delete my account</div>
+<div id="delete-account-no">Keep my account</div>
+</div>
+</div>
+<div id="please-wait-view"><span>Please wait...</span></div>
+</div>
+</div>
+</div>
+<div id="loading-view" class="stretch-view">
+<div class="container">
+<img class="loading-logo" src="/images/linelogo.png" alt="Wormate.io logo" />
+<div class="loading-worm" id="loading-worm-a"></div>
+<div class="loading-worm" id="loading-worm-b"></div>
+<div class="loading-worm" id="loading-worm-c"></div>
+<span class="loading-label">loading...</span>
+</div>
+</div>
+<div id="restricted-view" class="stretch-view">
+<span class="restricted-title">Russia Invaded Ukraine</span>
+<span class="restricted-description">On February 24, 2022, at 4:00 am, the troops of the Russian Federation treacherously invaded the territory of sovereign independent Ukraine.<br /><br />We, Ukrainians, woke up from gunshots and explosions. Russia has declared war on us. The Russians are invading our country. They are already shelling our cities. They are already killing our citizens.<br /><br />Russians, stop your schizophrenic. Take to the streets of cities for anti-war rallies. This war must stop immediately. Russian neo-Nazis are obliged to leave the territory of Ukraine. #RussiaInvadedUkraine #SaveUkraine #StopTheWar<br /><br />Glory to Ukraine!</span>
+</div>
+<div id="toaster-view" class="stretch-view">
+<div id="toaster-stack"></div>
+</div>
+</div>
+<div id="error-view" class="view">We are sorry, but your browser is not supported.&lt;br/&gt;Please update to a more recent one.&lt;br/&gt;wormate.io team &amp;copy; 2016</div>
+</div>
+</div>
+<div id="1eaom01c3pxu9wd3"></div>
+<div id="JDHnkHtYwyXyVgG9" style="display: none"><div>
+<img id="adbl-logo" src="/images/linelogo.png" alt="Wormate.io logo" />
+<span id="adbl-1"></span>
+<span id="adbl-2"></span>
+<span id="adbl-3"></span>
+<span id="adbl-4"></span>
+<div id="adbl-continue-container">
+<div id="adbl-continue" style="display: none"><span>Play</span></div>
+</div>
+</div></div>
+<div id="markup-wrap">
+<header id="markup-header"></header>
+<footer id="markup-footer">
+<div class="lang-menu">
+<button class="lang-button">Language ▴</button>
+<div class="lang-list">
+<a hreflang="en" href="/">English</a>
+<a hreflang="uk" href="/uk/">Українська</a>
+<a hreflang="de" href="/de/">Deutsch</a>
+<a hreflang="fr" href="/fr/">Français</a>
+<a hreflang="ru" href="/ru/">Русский</a>
+<a hreflang="es" href="/es/">Español</a>
+</div>
+</div>
+<a class="link" hreflang="en" href="/">Home</a>
+<a class="link" hreflang="en" href="/privacy-policy">Privacy policy</a>
+<a class="link" hreflang="en" href="/contact">Wormate.io team © 2022</a>
+</footer>
+</div>
+<script type="text/javascript">/*<![CDATA[*/(function () {
+    window.ENV = "main";
+    var _1 = (Math.random() > 0.5);
+    window.isIPInEEA = false;
+    var _2 = Math.floor(100 + 899 * Math.random());
+    window.runtimeHash = '1a2d722';
+})();/*]]>*/</script>
+<script async="async" type="text/javascript" src="/i18n/messages_en.js?v=1a2d722"></script>
+<script type="text/javascript" src="/js/vendor.js?v=1a2d722"></script>
+<script async="async" type="text/javascript" src="/js/game.js?v=1a2d722"></script>
+<div>
+<script type="text/javascript">
+        /*<![CDATA[*/
+        window.addEventListener("load",function(){
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-80432167-1', 'auto');
+            ga('send', 'pageview');
+        });
+        /*]]>*/
+    </script>
+<script type="text/javascript">
+        /*<![CDATA[*/
+        window.addEventListener("load",function(){
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '564585964028735');
+            fbq('track', 'PageView');
+        });
+        /*]]>*/
+    </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=564585964028735&amp;ev=PageView&amp;noscript=1" /></noscript>
+<script type="text/javascript">
+        window.addEventListener("load",function(){
+            _atrk_opts = {atrk_acct: "0acto1IWNa10i+", domain: "wormate.io", dynamic: true};
+            var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true;
+            as.src = "https://certify-js.alexametrics.com/atrk.js";
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(as, s);
+        });
+    </script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=0acto1IWNa10i+" style="display:none" height="1" width="1" alt="" /></noscript>
+</div>
+</body>
+</html>

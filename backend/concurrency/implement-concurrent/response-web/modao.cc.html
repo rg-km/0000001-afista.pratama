@@ -1,0 +1,2125 @@
+<!doctype html>
+<!-- lang, default en, ep. /de/it/fr/es/pt-br -->
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WPNBJKV');</script>
+<!-- End Google Tag Manager -->
+<title>墨刀-在线产品设计协作一体化平台</title>
+<!-- basic meta start -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, shrink-to-fit=no" />
+<meta name="keywords" content="" />
+<meta name="description" content="墨刀是产品设计一体化在线协同办公平台,集原型设计,线上版sketch设计师工具、流程图、思维导图为一体，支持团队项目实时协作和管理，金融级数据安全保障，还支持私有化部署，是设计师、产品经理和技术开发团队必备工具。" />
+<!-- basic meta end -->
+<!-- og start -->
+<meta property="og:url" content="{}" />
+<meta property="og:title" content="墨刀-在线产品设计协作一体化平台" />
+<meta property="og:description" content="墨刀是产品设计一体化在线协同办公平台,集原型设计,线上版sketch设计师工具、流程图、思维导图为一体，支持团队项目实时协作和管理，金融级数据安全保障，还支持私有化部署，是设计师、产品经理和技术开发团队必备工具。" />
+<meta property="og:image" content="" />
+<!-- og end -->
+
+<!-- IE compatible script start -->
+<!--[if lte IE 9]>
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/legacy/wsc-legacy.js"></script>
+<![endif]-->
+<!-- IE compatible script end -->
+<!-- UIprogressview start -->
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/vendor/pace.min.js"></script>
+<!-- UIprogressview end -->
+<!-- browser tab icon start -->
+<link rel="shortcut icon" type="image/x-icon" href="https://images.modao.cc/images/favicon.ico">
+<!-- browser tab icon end -->
+<!-- codex stylesheet start -->
+<link rel="stylesheet" href="https://allstatics.wondershare.cn/neveragain/2019/assets/style/bootstrap-wondershare.min.css" title="wondershare">
+<!-- codex stylesheet end -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.loli.net/css?family=Noto+Sans+SC:400,500,700,900&amp;subset=chinese-simplified" rel="stylesheet">
+<link rel="stylesheet" href="https://modao.cc/assets/css/common.css">
+<style>
+/* common */
+.banner-text-1 {font-size: 14px; line-height: 1.7;}
+.h1-title {font-size: 55px;line-height: 1;}
+.h2-title {font-size: 38px;line-height: 1;}
+.h3-title {font-size: 24px; line-height: 1;}
+.h4-title {font-size: 16px; line-height: 1;}
+.btn-banner {font-size: 14px;line-height: 1;border-radius: 40px;border: none;margin: 0;font-weight:500;width: 152px;height: 44px; display: inline-flex; justify-content: center; align-items: center; transition: 0.3s;}
+
+.btn-hover {transition: 0.3s;}
+.btn-hover:hover,  .btn-hover:focus{
+    text-decoration: none;
+    transform: perspective(1px) scale(1.05, 1.05);
+    transition: all .2s ease-in;
+    position: relative;
+    z-index: 1;
+    color: inherit !important;
+}
+.bottom-section-title {font-size: 30px;line-height: 1.33;}
+@media (min-width: 768px) {
+    .banner-text-1 {font-size: 18px; line-height: 1.45;}
+    .h1-title {font-size: 65px;}
+    .h2-title {font-size: 55px;}
+    .h3-title {font-size: 32px; line-height: 1.1;}
+    .h4-title {font-size: 20px; line-height: 1;}
+    .btn-banner {font-size: 16px;border-radius: 50px;width: 185px;height: 54px;}
+    .bottom-section-title {font-size: 45px;}
+}
+@media (min-width: 1280px) {
+    .banner-text-1 {font-size: 24px; line-height: 1;}
+    .h1-title {font-size: 76px;}
+    .h2-title {font-size: 76px;}
+    .h3-title {font-size: 42px; line-height: 1.1;}
+    .h4-title {font-size: 24px; line-height: 1;}
+    .btn-banner {font-size: 20px;border-radius: 60px; width: 220px;height: 64px;}
+    .bottom-section-title {font-size: 60px;}
+}
+/* common */
+
+/* banner背景图（默认为原型页面的背景图，需自行覆盖） */
+.banner-bg {
+    background-color: #fefcf7;
+    background-image: url('../images/prototype/banner-bg-mobile.png');
+    background-repeat:  no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    padding-bottom: 185px;
+    padding-top: 30px;
+}
+@media (min-width: 375px) {
+    .banner-bg { padding-bottom: 225px;}
+}
+@media (min-width: 768px) {
+    .banner-bg { padding-bottom: 400px;}
+}
+@media (min-width: 992px) {
+    .banner-bg {
+        padding-bottom: 0;
+        padding-top: 60px;
+        background-image: url('../images/prototype/banner-bg.jpg');
+        background-position: center bottom;
+        background-size: auto 100%;
+        background-repeat:  no-repeat;
+    }
+}
+@media (min-width: 1280px) {
+    .banner-bg {
+        background-size: auto;
+    }
+}
+/* banner背景图 */
+
+/* bottom-section背景图（默认为原型页面的背景图，需自行覆盖） */
+.bottom-section {
+    background-image: url('../images/prototype/bottom-section-bg-mobile-1.svg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: repeat;
+}
+@media (min-width: 768px) {
+    .bottom-section {
+        background-image: url('../images/prototype/bottom-section-bg-1.svg');
+    }
+}
+/* bottom-section背景图 */
+
+</style>
+
+<link rel="stylesheet" as="style"  href="https://allstatics.wondershare.cn/neveragain/2019/assets/vendor/swiper.min.css">
+<style>
+    /* banner样式 */
+    .font-size-68 { font-size: 4.25rem; line-height: 1; }
+    .banner { background: url(https://images.modao.cc/images/images-2021/website-construction/homepage/banner-bg.png) no-repeat; background-size: cover; background-position: center; }
+    .banner-img { object-fit: cover; -o-object-fit: cover; object-position: center; -o-object-position: center; height: 55.625rem; filter: none; }
+    .banner .container { top: 50%; left: 50%; transform: translate(-50%, -55%); }
+    .linear-gradient-text {display: inline-block;color: #1584FC;background-image: -webkit-linear-gradient(200.41deg, #32E2E2 0.84%, #0094FF 24.8%, #1B5BFF 51.37%, #EE43BE 74.81%, #FF6543 100.85%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    .square { background: linear-gradient(0deg, #54EAEA, #4EB4FF, #8E84FF, #FF69CC, #FF9365); width: 0.75rem; height: 0.75rem; border-radius: 0.125rem; padding: 1px; }
+    @media(max-width: 1536px) {
+        .banner-img { height: calc(100vh - 60px); }
+        .font-size-68 { font-size: 3rem; line-height: 1; }
+    }
+    @media(max-width: 1366px) {
+        .font-size-68 { font-size: 2.5rem; line-height: 1; }
+    }
+    @media (max-width: 1024px) {
+        .banner-img {height: 42.5rem;}
+    }
+    @media(max-width: 768px) {
+        .font-size-68 { font-size: 2rem; line-height: 1; }
+    }
+    @media(max-width: 576px) {
+        .font-size-68 { font-size: 39px; line-height: 1; }
+        .banner .container { transform: translate(-50%, -50%); }
+    }
+    .guide-icon {
+        -webkit-animation: bounce 1.75s infinite;
+        animation: bounce 1.75s infinite;
+        -webkit-transition: border 150ms ease-in-out, -webkit-transform 300ms ease-in;
+        transition: border 150ms ease-in-out, -webkit-transform 300ms ease-in;
+        transition: border 150ms ease-in-out, transform 300ms ease-in;
+        transition: border 150ms ease-in-out, transform 300ms ease-in, -webkit-transform 300ms ease-in;
+    }
+    @-webkit-keyframes bounce {
+        0% {-webkit-transform: translateY(0);transform: translateY(0);}
+        10% {-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+        20% {-webkit-transform: translateY(0);transform: translateY(0);}
+        30% {-webkit-transform: translateY(-25%);transform: translateY(-25%);}
+        40% {-webkit-transform: translateY(0);transform: translateY(0);}
+        50% {-webkit-transform: translateY(-10%);transform: translateY(-10%);}
+        60% {-webkit-transform: translateY(0);transform: translateY(0);}
+        70% {-webkit-transform: translateY(0);transform: translateY(0);}
+        80% {-webkit-transform: translateY(0);transform: translateY(0);}
+        100% {-webkit-transform: translateY(0);transform: translateY(0);}
+    }
+    @keyframes bounce {
+        0% {-webkit-transform: translateY(0);transform: translateY(0);}
+        10% {-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+        20% {-webkit-transform: translateY(0);transform: translateY(0);}
+        30% {-webkit-transform: translateY(-25%);transform: translateY(-25%);}
+        40% {-webkit-transform: translateY(0);transform: translateY(0);}
+        50% {-webkit-transform: translateY(-10%);transform: translateY(-10%);}
+        60% {-webkit-transform: translateY(0);transform: translateY(0);}
+        70% {-webkit-transform: translateY(0);transform: translateY(0);}
+        80% {-webkit-transform: translateY(0);transform: translateY(0);}
+        100% {-webkit-transform: translateY(0);transform: translateY(0);}
+    }
+
+    /* 垂直轮播样式 */
+    .carousel-controls .carousel-controls-item {width: 10px;height: 10px;border-radius: 50%; background: #dedede;margin: 10px 0;}
+    .carousel-controls .item-1.control-item-active {background: linear-gradient(223.92deg, #32E2E2 8.23%, #0C99FF 25.48%, #007BFF 66.04%, #916DDC 82.01%, #FF867B 91.07%), #DEDEDE;}
+    .carousel-controls .item-2.control-item-active {background: linear-gradient(233.37deg, #FFBF1C 6.4%, #FF3A3A 31.27%, #FF123D 79.58%, #FF27C3 98.24%), #DEDEDE;}
+    .carousel-controls .item-3.control-item-active {background: linear-gradient(218.81deg, #FFB648 9.46%, #D049FF 36.19%, #6D48FF 73.62%, #2036FF 102.78%), #DEDEDE;}
+    .carousel-controls .item-4.control-item-active {background: linear-gradient(265.88deg, #32E2E2 0.95%, #0C99FF 21.2%, #007BFF 69.07%, #916DDC 85.25%, #FF867B 98.15%), #DEDEDE;}
+    .carousel-controls .item-5.control-item-active {background: linear-gradient(255.72deg, #FAFF00 -14.05%, #34E3AF 20.83%, #00B3BE 64.89%, #615EFF 103.44%), #DEDEDE;}
+    .carousel-text .item-1,
+    .carousel-text .item-2,
+    .carousel-text .item-3,
+    .carousel-text .item-4,
+    .carousel-text .item-5 {
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .carousel-text .control-item-active {
+        opacity: 1;
+    }
+
+    /* 渐变文字 */
+    .linear-gradient-text-1 {display: inline-block;color: #1584FC;background-image: -webkit-linear-gradient(238deg, rgba(50, 226, 226, 1),rgba(12, 153, 255, 1),rgba(0, 123, 255, 1),rgba(145, 109, 220, 1),rgba(255, 134, 123, 1));-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    .linear-gradient-text-2 {display: inline-block;color: #FF2B3C;background-image:-webkit-linear-gradient(240.47deg, #FFBF1C 5%, #FF3A3A 25.89%, #FF123D 77.87%, #FF27C3 97.94%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    .linear-gradient-text-3 {display: inline-block;color: #7635FF;background: -webkit-linear-gradient(230deg, rgba(255, 182, 72, 1),rgba(208, 73, 255, 1),rgba(109, 72, 255, 1),rgba(32, 54, 255, 1));-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    .linear-gradient-text-4 {display: inline-block;color: #13CFBB;background-image: -webkit-linear-gradient(220.72deg, #FAFF00 -14.05%, #34E3AF 20.83%, #00B3BE 64.89%, #615EFF 103.44%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+
+    /* swiper1 */
+    .swiper2 .swiper-pagination-bullet{width: 10px;height: 10px;background: #C4C4C4; border-radius:50%;}
+    .swiper2 .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active{background: linear-gradient(223.92deg, #32E2E2 8.23%, #0C99FF 25.48%, #007BFF 66.04%, #916DDC 82.01%, #FF867B 91.07%), #DEDEDE;}
+    .swiper2 .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active {background: linear-gradient(233.37deg, #FFBF1C 6.4%, #FF3A3A 31.27%, #FF123D 79.58%, #FF27C3 98.24%), #DEDEDE;}
+    .swiper2 .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active {background: linear-gradient(218.81deg, #FFB648 9.46%, #D049FF 36.19%, #6D48FF 73.62%, #2036FF 102.78%), #DEDEDE;}
+    .swiper2 .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet-active {background: linear-gradient(265.88deg, #32E2E2 0.95%, #0C99FF 21.2%, #007BFF 69.07%, #916DDC 85.25%, #FF867B 98.15%), #DEDEDE;}
+    .swiper2 .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet-active {background: linear-gradient(255.72deg, #FAFF00 -14.05%, #34E3AF 20.83%, #00B3BE 64.89%, #615EFF 103.44%), #DEDEDE;}
+    .swiper2 .swiper-slide {background-size: 100% 100%;}
+    .swiper2 .swiper-slide.slide-1 {background-image: url('https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-1-mobile.png')}
+    .swiper2 .swiper-slide.slide-2 {background-image: url('https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-2-mobile.png');}
+    .swiper2 .swiper-slide.slide-3 {background-image: url('https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-3-mobile.png');}
+    .swiper2 .swiper-slide.slide-4 {background-image: url('https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-4-mobile.png');}
+
+    /* 1>4 */
+    .btn-look {max-height: 3rem; width: 168px;}
+    .card-custom-1 {border-radius: 30px}
+    
+    @media(max-width: 768px) {
+        .btn-look {width: 100px;height: 30px;font-size: 12px;}
+        .line-custom {height: 85px;}
+        .logo-custom-1 {width: 40px;margin-bottom: 10px;}
+        .h2-custom-1 {font-size: 16px;margin-bottom: 10px;}
+        .p-custom-1 {font-size: 12px;margin-bottom: 10px;}
+        .title-1-4 {height: 38px;}
+        .card-custom-1 {border-radius: 15px}
+    }
+
+    /* swiper1 */
+    .swiper-button-next, .swiper-button-prev {
+        width: 90px;height: 90px;
+        background-size: 90px 90px;
+        transform: translateY(-40%);
+    }
+    
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/next-icon.svg);
+        left: calc(100% + 60px);
+        right: auto;
+
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/prev-icon.svg);
+        left: -150px;
+
+    }
+    @media (max-width: 768px) {
+        .swiper-button-next, .swiper-button-prev {
+            width: 37.5px;height: 37.5px;
+            background-size: 37.5px 37.5px;
+            transform: translateY(-40%);
+        }
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/next-icon.svg);
+            left: 100%;
+            right: auto;
+
+        }
+        .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+            background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/prev-icon.svg);
+            right: 100%;
+            left: auto;
+
+        }
+    }
+
+    /* bottom-section背景图 */
+    .bottom-section {background-image: url('https://images.modao.cc/images/images-2021/website-construction/flowchart/bottom-section-bg-mobile-1.svg');}
+    @media (min-width: 768px) {
+        .bottom-section {
+            background-image: url('https://images.modao.cc/images/images-2021/website-construction/flowchart/bottom-section-bg-1.svg');
+        }
+    }
+
+    /* logo轮播 */
+    @-webkit-keyframes scrollToRight {
+        from { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0);}
+        to {-webkit-transform: translate3d(0%, 0, 0);transform: translate3d(0%, 0, 0);}
+    }
+    @keyframes scrollToRight {
+        from {-webkit-transform: translate3d(-50%, 0, 0);transform: translate3d(-50%, 0, 0);}
+        to {-webkit-transform: translate3d(0%, 0, 0);transform: translate3d(0%, 0, 0);}
+    }
+    .logo_wrap, .logo_wrap-mobile {
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 48px;
+        font-size: 0;
+    }
+
+    .logo_wrap .line_odd {
+        width: 7832px;
+        -webkit-animation: scrollToRight 36s linear infinite;
+        animation: scrollToRight 36s linear infinite;
+    }
+    .logo_wrap .line_even {
+        width: 7832px;
+        -webkit-animation: scrollToRight 30s linear infinite;
+        animation: scrollToRight 30s linear infinite;
+    }
+    .logo_wrap .logo_img, .logo_wrap-mobile .logo_img {
+        width: 25%;
+        display: inline-block;
+    }
+    .logo_wrap .logo_img {padding: 15px;}
+    .logo_wrap-mobile .logo_img {padding: 12px;}
+    .logo_wrap-mobile .line_odd {
+        width: 2176px;
+        -webkit-animation: scrollToRight 36s linear infinite;
+        animation: scrollToRight 36s linear infinite;
+    }
+    .logo_wrap-mobile .line_even {
+        width: 2176px;
+        -webkit-animation: scrollToRight 30s linear infinite;
+        animation: scrollToRight 30s linear infinite;
+    }
+    @media (max-width: 1440px) {
+      .btn-look { width: auto; }
+    }
+</style>
+
+</head>
+<body data-pro="modao" data-cat="template" data-nav="basic" data-sys="auto" data-dev="auto" data-lan="cn" data-spy="scroll" data-offset="64" data-target="#sticky-navbar">
+<!-- Google Tag Manager (script) -->
+<script>
+(function(){
+  var $noscript = document.createElement('noscript')
+  var $iframe = document.createElement('iframe')
+  var $firstNode= document.body.firstElementChild
+  document.body.insertBefore($noscript,$firstNode)
+  $noscript.appendChild($iframe)
+  $iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WPNBJKV'
+  $iframe.height ="0"
+  $iframe.width = "0"
+  $iframe.style = "display:none;visibility:hidden"
+})()
+</script>
+<!-- End Google Tag Manager (script) -->
+<link rel="stylesheet" href="https://www.wondershare.com/assets/header-footer-2021.css" />
+<!-- 头部样式 -->
+<style>
+  .wsc-header2020-modao { font-family: "Noto Sans SC", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; position: sticky; top: 0; z-index: 50; }
+  .wsc-header2020-modao .wsc-header2020-container { max-width: 1440px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-master, .wsc-header2020 .wsc-header2020-navbar-collapse { color: #000000; background-color: #FFFFFF;box-shadow: inset 0px -1px 0px rgba(221, 221, 221, 0.5); }
+  .wsc-header2020-modao .wsc-header202004-navbar-wondershare .wsc-header2020-navbar-collapse { top: 56px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-master .wsc-header2020-navbar-brand { display: flex; align-items: center; height: 56px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-master .wsc-header2020-navbar-brand a { background-image: none; display: flex; align-items: center; }
+  .wsc-header2020-modao .wsc-header2020-navbar-master.wsc-header202004-navbar-wondershare a.wsc-header2020-navbar-link { font-weight: 500; }
+  .wsc-header2020 .wsc-header2020-navbar-master .wsc-header2020-navbar-brand.brand-modao a { width: auto; }
+  .wsc-header2020 .wsc-header2020-navbar-master .wsc-header2020-navbar-brand.brand-modao img { width: 148px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-brand img { height: auto; width: 195px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-item.active { background-color: #F5F7F9; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle img { width: 48px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle a { font-size: 12px; }
+
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .template-style { display: block; background-color: #F9F9F9; border-radius: 8px; text-align: center; font-size: 12px; color: rgba(102, 102, 102, 0.85); padding: 24px 0 16px 0; border: 1px solid transparent; text-decoration: none; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .template-style strong { color: #000000; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .row .col-md-3:nth-of-type(1) .template-style:hover { border-color: #7635FF; background: #FEF9FF; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .row .col-md-3:nth-of-type(2) .template-style:hover { border-color: #13CFBB; background: #F1FFFA; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .row .col-md-3:nth-of-type(3) .template-style:hover { border-color: #FF1D47; background: #FFF7F7; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .row .col-md-3:nth-of-type(4) .template-style:hover { border-color: #1584FC; background: #F1F8FF; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style { background-color: #F9F9F9; border-radius: 8px; border: 1px solid #F9F9F9; position: relative; display: flex; padding: 12px; text-decoration: none; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .col-lg-4 {width: 50%;}
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .wsc-header2020-navbar-speciality-text { color: #666666 !important; line-height: 1.5; margin-bottom: 12px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .wsc-header2020-navbar-speciality-text:hover { color: #000000 !important; text-decoration: underline !important; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .template-list { padding: 12px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template .template-list a:hover { color: #007BFF !important; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download .download-list { padding: 12px 16px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download .download-list a { display: block; padding: 12px 16px; color: #000000 !important; border-radius: 8px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download .download-list a:hover { color: #DE0606 !important; background: #F9F9F9; text-decoration: none; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.resources .row { padding: 12px 16px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.resources a { display: block; color: #000000 !important; font-size: 14px; line-height: 1; padding: 16px 18px; border-radius: 8px; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.resources a:hover { color: #DE0606 !important; background: #F9F9F9; text-decoration: none; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle strong { font-size: 16px; position: relative; color: #000000; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style::after {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 2px 4px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border-radius: 0 8px;
+  }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.design-canvas::after { content: 'New'; color: #FF762F; border: 1px solid #FF762F; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.design::after { content: 'Beta'; color: #7635FF; border: 1px solid #7635FF; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.flowsheet::after { content: 'Beta'; color: #FF1D47; border: 1px solid #FF1D47; }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.mind::after { content: 'Beta'; color: #13CFBB; border: 1px solid #13CFBB; }
+  .wsc-header2020-modao .btn {border-radius: 40px; line-height: 1;font-weight: normal;padding: 0.5rem 1rem;  font-size: 0.875rem;}
+  .wsc-header2020-modao .bg-linear-gradient-1 {background: linear-gradient(230.47deg, #FFBF1C -0.87%, #FF3A3A 25.89%, #FF123D 77.87%, #FF27C3 97.94%), #E73828;}
+  .wsc-header2020-modao .btn-outline-gray {color: #666666;border: 1px solid #D2D2D2;}
+  .wsc-header2020-modao .btn-outline-gray:hover {border: 1px solid #FC3F55;color: #FC3F55;background-color: #FFFFFF;}
+  .wsc-header2020 .wsc-header2020-navbar-master .wsc-header2020-navbar-brand>div { padding-left: 0; margin-left: 0; position: relative; }
+  .wsc-header2020-navbar-popover-content-material, .wsc-header2020-navbar-popover-content-download, .wsc-header2020-navbar-popover-content-support,.wsc-header2020-navbar-popover-content-account {box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);transform: translateX(-25%);}
+  .wsc-header2020-navbar-title-text-1 {margin-bottom: 10px;line-height: 1;}
+  .wsc-header2020-navbar-title-text-2 {mix-blend-mode: normal;opacity: 0.85;line-height: 1;display: block;text-decoration: none;color: #000000; font-size: 0.875rem; padding: 1rem; margin-bottom: 0;}
+  .wsc-header2020-navbar-title-text-2:hover {text-decoration: none; opacity: 1;background: #F8F8F8}
+  .wsc-header2020-navbar-desc-text {color: #666666; line-height: 1;opacity: 0.85;}
+  .wsc-header2020-navbar-speciality-text { color: #666666; line-height: 1.5; }
+  .wsc-header2020-navbar-speciality-text:hover {text-decoration: none;opacity: 1;}
+  .wsc-header2020-navbar-popover-content-account .account-container {position: relative;z-index: 3; }
+  .wsc-header2020-navbar-popover-content-account .account-container::after {
+    content: '';
+    width: 6px;
+    height: 11px;
+    background-image: url('https://images.modao.cc/images/images-2021/website-construction/nav-bar/arrow-right-1.svg');
+    background-size: 100% 100%;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .wsc-header2020-navbar-popover-content-account .account:hover {text-decoration: none;}
+  .wsc-header2020-navbar-popover-content-account {top: 98%;right: 0%;transform: translateX(0) scale(0.9);border-radius: 0 0 12px 12px;position: absolute;background-color: #FFFFFF; opacity: 0; transition: 0.2s; display: none;}
+  .wsc-header2020-navbar-popover-content-account::before {position: absolute;bottom: calc(100% - 1px); right: 10%; display: inline-block;content: '';z-index: 1;width: 14px;height: 10px;background-image: url('https://images.modao.cc/images/images-2021/website-construction/nav-bar/logged-img-2.png');background-size: 100% 100%;}
+  .wsc-header2020-navbar-popover-container.open .wsc-header2020-navbar-popover-content-account { opacity: 1; transform: translateX(0) scale(1); }
+  .wsc-header2020 .wsc-header2020-navbar-collapse-toggle[aria-expanded="true"]::before { top: 126px; }
+  .with-red-point::after {
+    content: '';
+    background: rgb(228, 33, 33);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 18px;
+    right: 18px;
+    border-radius: 50%;
+  }
+  .coupons-numbers {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #EC4954;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 17px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: 7px;
+  }
+  .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download a { font-size: 14px; line-height: 1; }
+  @media (min-width: 768px) {
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style { padding: 24px; font-size: 12px; color: #666666 !important; text-decoration: none; text-align: center; display: block; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product > .row .col-lg-auto:first-child .row .col-product:not(:last-child) { padding-right: 10px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product > .row .col-lg-auto:first-child { margin-bottom: 10px; }
+  }
+  @media(min-width: 1280px) {
+    .wsc-header2020 .wsc-header2020-navbar-master .wsc-header2020-navbar-brand.brand-modao img { width: 180px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-master.wsc-header202004-navbar-wondershare .wsc-header2020-navbar-link { padding: 0 14px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-master.wsc-header202004-navbar-wondershare .wsc-header2020-navbar-link svg { vertical-align: initial; }
+    .wsc-header2020-modao .wsc-header2020-navbar-master .wsc-header2020-navbar-brand { height: 72px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle { background-color: #FFFFFF; filter:none; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); }
+    .wsc-header2020-modao  .wsc-header202004-navbar-wondershare .wsc-header2020-navbar-item { padding: 0; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product { width: 862px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.template { width: 896px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download { width: 160px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.resources { width: 225px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product > .row .col-lg-auto:first-child { margin-bottom: 0; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product > .row .col-lg-auto:first-child .row .col-product .product-style { max-width: 120px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product > .row .col-lg-auto:first-child .row .col-product { padding-right: 10px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.prototype:hover { border: 1px solid #1584FC; background: #F1F8FF; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.design-canvas:hover { border: 1px solid #FF762F; background: #FFF4EE; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.design:hover { border: 1px solid #7635FF; background: #FEF9FF; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.flowsheet:hover { border: 1px solid #FF1D47; background: #FFF7F7; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.mind:hover { border: 1px solid #13CFBB; background: #F1FFFA; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .product-style.features:hover { border: 1px solid #E73828; background: #FFF8F6; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download .download-list { text-align: center; padding: 16px 6px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.download .download-list a { padding: 16px; }
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.resources .row { padding: 14px 6px; }
+  }
+  @media (max-width: 576px) {
+    .wsc-header2020-modao .wsc-header2020-navbar-nav-toggle.product .row .col-product { margin-bottom: 10px; }
+  }
+</style>
+<!-- 头部内容 -->
+<header class="wsc-header2020 wsc-header2020-modao">
+  <!-- 顶部banner -->
+  <div class="header-banner">
+    <style>
+      /* 有头部banner */
+      header .header-banner a {
+        display: block;
+        width: 100%;
+        height: 60px;
+        background: #FF4315;
+        background-image: url(https://cdn.modao.cc/%E8%AE%BE%E8%AE%A1%E7%94%BB%E5%B8%83376x96.png);
+        background-position: center 15%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @media (min-width: 992px) {
+        header .header-banner a {
+          height: 70px;
+          background-image: url(https://cdn.modao.cc/%E8%AE%BE%E8%AE%A1%E7%94%BB%E5%B8%83%202880x70%20%281%29.png);
+          background-size: auto 100%;
+        }
+      }
+      /* 有头部banner end */
+
+      /* 无头部banner */
+      /*main {margin-top: 60px !important;}
+      @media(min-width: 1280px) {main {margin-top: 60px !important;}}*/
+      /* 无头部banner end */
+    </style>
+    <a href="https://modao.cc/usergrowth/design-canvas-a.html"></a>
+  </div> 
+  <nav class="wsc-header2020-navbar-master wsc-header202004-navbar-wondershare">
+    <div class="wsc-header2020-container">
+      <div class="wsc-header2020-navbar-content">
+        <div class="wsc-header2020-navbar-brand brand-modao p-0">
+          <a rel="nofollow" href="/brand">
+            <img src="https://allstatics.wondershare.cn/neveragain/2019/assets/icon/logo/modao-group-zh-horizontal.svg" alt="modao-logo" class="img-fluid">
+          </a>
+          <!-- <div class="d-flex">
+            <div class="wsc-header2020-navbar-brand">
+              <a rel="nofollow" href="/brand"></a>
+            </div>
+            <div style="width: 1px; margin: 10px 12px 7px 8px; background-color: #d1d1d1"></div>
+            <div class="wsc-header2020-navbar-brand brand-modao">
+              <a rel="nofollow" href="/brand"></a>
+            </div>
+          </div> -->
+        </div>
+        <button class="wsc-header2020-navbar-collapse-toggle" type="button" aria-expanded="false">
+          <svg class="wsc-header2020-navbar-collapse-toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6H20M20 12L4 12M20 18H4" stroke="black" stroke-width="1.5"></path>
+          </svg>
+          <svg class="wsc-header2020-navbar-collapse-toggle-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 18L12 12M6 6L12 12M18 6L12 12M6 18L12 12" stroke="black" stroke-width="1.5"></path>
+          </svg>
+        </button>
+        <div class="wsc-header2020-navbar-collapse">
+          <ul class="wsc-header2020-navbar-nav active_menu">
+            <li class="wsc-header2020-navbar-item">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="https://modao.cc/feature/v6.5/" target="_blank">发现墨刀 6.5</a>
+            </li>
+            <li class="wsc-header2020-navbar-item with-toggle">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="javascript:">
+                产品
+                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 7.05713L5 11.0571L9 7.05713" stroke="#07273D" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <div class="wsc-header2020-navbar-nav-toggle product">
+                <div class="row no-gutters p-4">
+                  <div class="col-lg-auto flex-fill">
+                    <div class="row row-cols-md-5 row-cols-1 no-gutters">
+                      <div class="col col-product">
+                        <a href="https://modao.cc/feature/prototype/" target="_blank" class="h-100 product-style prototype">
+                          <svg class="d-sm-inline-block d-none" width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.330566" width="48" height="48" rx="12" fill="url(#paint0_linear_1)" />
+                            <mask id="mask0_1" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="49">
+                              <rect y="0.330566" width="48" height="48" rx="12" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0_1)">
+                              <g filter="url(#filter0_d_1)">
+                                <rect x="9.59912" y="14.7305" width="14.4" height="24" rx="2.4" fill="white" />
+                              </g>
+                              <g filter="url(#filter1_d_1)">
+                                <mask id="path-4-inside-1_1" fill="white">
+                                  <rect x="28" y="22.3306" width="11" height="16" rx="2.4" />
+                                </mask>
+                                <rect x="28" y="22.3306" width="11" height="16" rx="2.4" stroke="white" stroke-width="5" mask="url(#path-4-inside-1_1)" />
+                              </g>
+                              <g opacity="0.9" filter="url(#filter2_bi_1)">
+                                <rect x="7.19873" y="9.93066" width="33.6" height="9.6" rx="2.4" fill="white" fill-opacity="0.5" />
+                              </g>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_1" x="6.59912" y="14.7305" width="20.4" height="30" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="1.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.2665 0 0 0 0 0.5125 0 0 0 0.2 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                              </filter>
+                              <filter id="filter1_d_1" x="25" y="22.3306" width="17" height="22" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="1.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.2665 0 0 0 0 0.5125 0 0 0 0.2 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                              </filter>
+                              <filter id="filter2_bi_1" x="4.69873" y="7.43066" width="38.6" height="14.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="1.25" />
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="1.2" />
+                                <feGaussianBlur stdDeviation="3.6" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
+                              </filter>
+                              <linearGradient id="paint0_linear_1" x1="48" y1="3.83057" x2="-3.50001" y2="42.3306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#32E2E2" />
+                                <stop offset="0.208333" stop-color="#0C99FF" />
+                                <stop offset="0.71875" stop-color="#007BFF" />
+                                <stop offset="1" stop-color="#9847FF" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/prototype-logo.png" alt="" class="d-sm-none d-block" height="48" width="48">
+                          <div class="pt-md-3 pl-3 pl-md-0">
+                            <strong>原型</strong>
+                            <div class="pt-1">原型交互图 <br class="d-md-block d-none" />PRD文档</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col col-product">
+                        <a href="https://modao.cc/feature/aboard/" target="_blank" class="h-100 product-style design-canvas">
+                          <svg class="d-sm-inline-block d-none" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="12" fill="url(#paint0_linear_34_3801)"/>
+                            <rect x="8.00006" y="22" width="8" height="2" fill="white" fill-opacity="0.65"/>
+                            <rect x="6.10352e-05" y="22" width="5" height="2" fill="white" fill-opacity="0.65"/>
+                            <rect x="19.0001" y="22" width="8" height="2" fill="white" fill-opacity="0.65"/>
+                            <rect x="30.0001" y="22" width="8" height="2" fill="white" fill-opacity="0.65"/>
+                            <rect x="24.0001" y="9" width="7" height="2" transform="rotate(90 24.0001 9)" fill="white" fill-opacity="0.65"/>
+                            <rect x="24.0001" width="5" height="2" transform="rotate(90 24.0001 0)" fill="white" fill-opacity="0.65"/>
+                            <rect x="24.0001" y="19" width="8" height="2" transform="rotate(90 24.0001 19)" fill="white" fill-opacity="0.65"/>
+                            <rect x="24.0001" y="30.6451" width="7.35484" height="2" transform="rotate(90 24.0001 30.6451)" fill="white" fill-opacity="0.65"/>
+                            <g filter="url(#filter0_d_34_3801)">
+                            <g filter="url(#filter1_bi_34_3801)">
+                            <path d="M22.0001 22H38.0001V38H22.0001V22Z" fill="white" fill-opacity="0.6"/>
+                            </g>
+                            <rect x="9.25006" y="9.25" width="29.5" height="29.5" rx="4.75" stroke="white" stroke-width="2.5"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_34_3801" x="5.00006" y="8" width="37.9999" height="38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="3"/>
+                            <feGaussianBlur stdDeviation="1.5"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.5125 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_34_3801"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_34_3801" result="shape"/>
+                            </filter>
+                            <filter id="filter1_bi_34_3801" x="17.5001" y="17.5" width="24.9999" height="25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feGaussianBlur in="BackgroundImage" stdDeviation="2.25"/>
+                            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_34_3801"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_34_3801" result="shape"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="1.2"/>
+                            <feGaussianBlur stdDeviation="3.6"/>
+                            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+                            <feBlend mode="normal" in2="shape" result="effect2_innerShadow_34_3801"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_34_3801" x1="48" y1="3.49995" x2="0.631575" y2="44.2105" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFC120"/>
+                            <stop offset="0.432292" stop-color="#FF7A2F"/>
+                            <stop offset="1" stop-color="#FF6C20"/>
+                            </linearGradient>
+                            </defs>
+                          </svg>
+                          <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/design-canvas-logo.png" alt="" class="d-sm-none d-block" height="48" width="48">
+                          <div class="pt-md-3 pl-3 pl-md-0">
+                            <strong>设计画布</strong>
+                            <div class="pt-1">标注切图 <br class="d-md-block d-none" />快速交付</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col col-product">
+                        <a href="https://modao.cc/feature/design/" target="_blank" class="h-100 product-style design">
+                          <svg class="d-sm-inline-block d-none" width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.330566" width="48" height="48" rx="12" fill="url(#paint0_linear_2)" />
+                            <mask id="mask0_2" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="49">
+                              <rect y="0.330566" width="48" height="48" rx="12" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0)_2">
+                              <g filter="url(#filter0_d_2)">
+                                <path
+                                  d="M16.673 19.0941C16.8289 18.5874 17.2199 18.1872 17.7228 18.0196L25.7606 15.3403L33.1534 22.7331L30.4741 30.7708C30.3065 31.2738 29.9063 31.6648 29.3996 31.8207L11.4681 37.338C11.2763 37.3971 11.0966 37.2174 11.1557 37.0256L16.673 19.0941Z"
+                                  stroke="white"
+                                  stroke-width="2.5"
+                                />
+                              </g>
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M20.5452 29.4133C20.8532 29.1052 21.3226 29.047 21.7433 29.1602C22.8865 29.4678 24.1582 29.173 25.0555 28.2757C26.3918 26.9394 26.3918 24.7727 25.0555 23.4363C23.7191 22.0999 21.5524 22.0999 20.216 23.4363C19.3183 24.334 19.0237 25.6064 19.332 26.75C19.4455 27.1709 19.3873 27.6405 19.0791 27.9487L11.4183 35.6096C11.3085 35.7194 11.2258 35.8532 11.1767 36.0005L11.1512 36.0771C10.8906 36.8588 11.6343 37.6026 12.4161 37.342L12.4927 37.3164C12.64 37.2673 12.7738 37.1846 12.8836 37.0749L20.5452 29.4133Z"
+                                fill="white"
+                              />
+                              <g opacity="0.9" filter="url(#filter1_bi_2)">
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M30.5012 8.7992L40.1179 18.4158C40.7427 19.0407 40.7427 20.0538 40.1179 20.6786C39.3697 21.4267 38.4931 22.0342 37.5299 22.472L34.2781 23.9501C33.3673 24.3641 32.2953 24.1697 31.5879 23.4623L25.4547 17.3292C24.7473 16.6218 24.5529 15.5497 24.9669 14.639L26.445 11.3872C26.8828 10.4239 27.4903 9.54734 28.2385 8.7992C28.8633 8.17436 29.8764 8.17436 30.5012 8.7992Z"
+                                  fill="white"
+                                  fill-opacity="0.5"
+                                />
+                              </g>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_2" x="6.89233" y="13.9102" width="30.6911" height="30.6911" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="1.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.25625 0 0 0 0 0 0 0 0 0 0.5125 0 0 0 0.2 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                              </filter>
+                              <filter id="filter1_bi_2" x="21.7517" y="5.33057" width="21.8348" height="21.8348" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="1.5" />
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="1.2" />
+                                <feGaussianBlur stdDeviation="3.6" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
+                              </filter>
+                              <linearGradient id="paint0_linear_2" x1="54" y1="-1.66943" x2="-3.5" y2="42.3306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFEA2E" />
+                                <stop offset="0.317708" stop-color="#B02FFF" />
+                                <stop offset="0.620229" stop-color="#6C4BD5" />
+                                <stop offset="0.877597" stop-color="#5B33FD" />
+                                <stop offset="1" stop-color="#1254FF" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/design-logo.png" alt="" class="d-sm-none d-block" height="48" width="48">
+                          <div class="pt-md-3 pl-3 pl-md-0">
+                            <strong class="design-title">设计</strong>
+                            <div class="pt-1">布尔运算 <br class="d-md-block d-none" />钢笔工具</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col col-product">
+                        <a href="https://modao.cc/feature/flowchart/" target="_blank" class="h-100 product-style flowsheet">
+                          <svg class="d-sm-inline-block d-none" width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.330566" width="48" height="48" rx="12" fill="#FF1D47" />
+                            <rect y="0.330566" width="48" height="48" rx="12" fill="url(#paint0_linear_3)" />
+                            <mask id="mask0_3" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="49">
+                              <rect y="0.330566" width="48" height="48" rx="12" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0_3)">
+                              <g filter="url(#filter0_d_3)">
+                                <path
+                                  d="M19 27.8306L16.5218 29.8485C14.6113 31.4559 14.4822 34.1804 16.2335 35.9339C17.1224 36.8239 18.3774 37.3306 19.6929 37.3306H29"
+                                  stroke="white"
+                                  stroke-width="2.5"
+                                  stroke-linecap="round"
+                                />
+                                <path
+                                  d="M29 20.8306L31.4782 18.8126C33.3887 17.2053 33.5178 14.4807 31.7665 12.7272C30.8776 11.8373 29.6226 11.3306 28.3071 11.3306L19 11.3306"
+                                  stroke="white"
+                                  stroke-width="2.5"
+                                  stroke-linecap="round"
+                                />
+
+                                <path
+                                  d="M23.4957 18.918C23.8107 18.7492 24.1893 18.7492 24.5043 18.918L32.7849 23.354C33.5364 23.7566 33.5364 24.8341 32.7849 25.2366L24.5043 29.6727C24.1893 29.8415 23.8107 29.8415 23.4957 29.6727L15.2151 25.2366C14.4636 24.8341 14.4636 23.7566 15.2151 23.354L23.4957 18.918Z"
+                                  stroke="white"
+                                  stroke-width="2.32143"
+                                />
+                              </g>
+                              <g filter="url(#filter1_bi_3)">
+                                <rect x="29" y="31.3306" width="12" height="12" rx="6" fill="white" fill-opacity="0.4" />
+                              </g>
+                              <g filter="url(#filter2_bi_3)">
+                                <rect x="8" y="6.33057" width="11" height="10" rx="2.5" fill="white" fill-opacity="0.4" />
+                              </g>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_3" x="10.4907" y="10.0806" width="27.0185" height="34.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="1.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.5125 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                              </filter>
+                              <filter id="filter1_bi_3" x="24.5" y="26.8306" width="21" height="21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="2.25" />
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="1.2" />
+                                <feGaussianBlur stdDeviation="3.6" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
+                              </filter>
+                              <filter id="filter2_bi_3" x="3.5" y="1.83057" width="20" height="19" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="2.25" />
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="1.2" />
+                                <feGaussianBlur stdDeviation="3.6" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
+                              </filter>
+                              <linearGradient id="paint0_linear_3" x1="50" y1="1.83057" x2="-1.5" y2="44.3306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFBF1C" />
+                                <stop offset="0.203125" stop-color="#FF3A3A" />
+                                <stop offset="0.796875" stop-color="#FF123D" />
+                                <stop offset="1" stop-color="#FF27C3" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/flowchart-logo.png" alt="" class="d-sm-none d-block" height="48" width="48">
+                          <div class="pt-md-3 pl-3 pl-md-0">
+                            <strong class="flowchart-title">流程图</strong>
+                            <div class="pt-1">流程管理 <br class="d-md-block d-none" />原型嵌入</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col col-product">
+                        <a href="https://modao.cc/feature/mind-map/" target="_blank" class="h-100 product-style mind">
+                          <svg class="d-sm-inline-block d-none" width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.330566" width="48" height="48" rx="12" fill="url(#paint0_linear_4)" />
+                            <mask id="mask0_4" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="49">
+                              <rect y="0.330566" width="48" height="48" rx="12" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0_4)">
+                              <g filter="url(#filter0_d_4)">
+                                <rect x="22.8499" y="32.5815" width="14.3" height="7.1" rx="3.55" stroke="white" stroke-width="2.5" />
+                                <rect x="22.8499" y="8.58154" width="14.3" height="7.1" rx="3.55" stroke="white" stroke-width="2.5" />
+                                <path d="M16 31.3315V17.0815V17.0815C16 14.4582 18.1266 12.3315 20.75 12.3315H24" stroke="white" stroke-width="2.5" />
+                                <path d="M16 31.3315V31.5315C16 34.1825 18.149 36.3315 20.8 36.3315H24" stroke="white" stroke-width="2.4" />
+                              </g>
+                              <g filter="url(#filter1_bi_4)">
+                                <rect x="7" y="19.3306" width="18" height="10" rx="2.4" fill="white" fill-opacity="0.5" />
+                              </g>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_4" x="11.75" y="7.33154" width="29.6499" height="39.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="1.5" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.5125 0 0 0 0 0.48175 0 0 0 0.2 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                              </filter>
+                              <filter id="filter1_bi_4" x="4" y="16.3306" width="24" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="1.5" />
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="1.2" />
+                                <feGaussianBlur stdDeviation="3.6" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
+                              </filter>
+                              <linearGradient id="paint0_linear_4" x1="48" y1="0.330568" x2="-2.5" y2="42.8306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#CAFF5A" />
+                                <stop offset="0.212713" stop-color="#34EBD5" />
+                                <stop offset="0.71875" stop-color="#27CCB8" />
+                                <stop offset="1" stop-color="#00A5C9" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/mindmap-logo.png" alt="" class="d-sm-none d-block" height="48" width="48">
+                          <div class="pt-md-3 pl-3 pl-md-0">
+                            <strong class="mind-map-title">思维导图</strong>
+                            <div class="pt-1">记录思维 <br class="d-md-block d-none" />进入原型</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="/feature/character/index.html" class="h-100 product-style features d-flex align-items-center justify-content-lg-center">
+                      <div>
+                        <strong>特性</strong>
+                        <div class="d-flex pt-4" style="margin: 0 -10px">
+                          <div style="margin: 0 10px">
+                            <object><a class="wsc-header2020-navbar-speciality-text font-size-tiny d-block" href="/feature/character/index.html#nav-1-tab">多人协作</a></object>
+                            <object><a class="wsc-header2020-navbar-speciality-text font-size-tiny d-block" href="/feature/character/index.html#nav-3-tab">素材广场</a></object>
+                            <object><a class="wsc-header2020-navbar-speciality-text mb-0 font-size-tiny d-block" href="/feature/character/index.html#nav-5-tab">安全服务</a></object>
+                          </div>
+                          <div style="margin: 0 10px">
+                            <object><a class="wsc-header2020-navbar-speciality-text font-size-tiny d-block" href="/feature/character/index.html#nav-2-tab">企业管理</a></object>
+                            <object><a class="wsc-header2020-navbar-speciality-text font-size-tiny d-block" href="/feature/character/index.html#nav-4-tab">云端在线</a></object>
+                            <object><a class="wsc-header2020-navbar-speciality-text mb-0 font-size-tiny d-block" href="/feature/axure-import/index.html">Axure导入</a></object>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item with-toggle">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="javascript:">
+                解决方案
+                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 7.05713L5 11.0571L9 7.05713" stroke="#07273D" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <div class="wsc-header2020-navbar-nav-toggle template">
+                <div class="row no-gutters p-3">
+                  <div class="col-md-3 col-6 p-2">
+                    <a href="https://modao.cc/enterprise_solution?to=sec-industry" class="template-style h-100">
+                      <div class="mb-3">
+                        <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M13.8672 17.6433C13.8672 12.1133 18.5583 7.50928 24.4981 7.50928C30.4379 7.50928 35.1291 12.1133 35.1291 17.6433C35.1291 19.6166 34.1022 21.6011 32.5051 23.3836C30.8917 25.1845 29.5365 27.5731 29.5365 30.3308C29.5365 31.2973 30.32 32.0808 31.2865 32.0808C32.253 32.0808 33.0365 31.2973 33.0365 30.3308C33.0365 28.7446 33.8267 27.1537 35.1119 25.7192C37.0032 23.6082 38.6291 20.8228 38.6291 17.6433C38.6291 10.0466 32.2345 4.00928 24.4981 4.00928C16.7618 4.00928 10.3672 10.0466 10.3672 17.6433C10.3672 20.8695 12.0343 23.6917 13.9688 25.8193C15.2401 27.2175 16.0176 28.7776 16.0176 30.3308C16.0176 31.2973 16.8011 32.0808 17.7676 32.0808C18.7341 32.0808 19.5176 31.2973 19.5176 30.3308C19.5176 27.5996 18.1694 25.2365 16.5584 23.4648C14.923 21.6661 13.8672 19.6502 13.8672 17.6433ZM18.3315 33.5331C17.0888 33.5331 16.0815 34.5404 16.0815 35.7831V36.8152C16.0815 41.1434 19.5902 44.6521 23.9184 44.6521H25.0778C29.4061 44.6521 32.9148 41.1434 32.9148 36.8152V35.7831C32.9148 34.5404 31.9074 33.5331 30.6648 33.5331H18.3315ZM23.9184 41.1521C21.5963 41.1521 19.7004 39.3271 19.5869 37.0331H29.4094C29.2959 39.3271 27.4 41.1521 25.0778 41.1521H23.9184Z"
+                            fill="#C4C4C4"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M13.8672 17.6433C13.8672 12.1133 18.5583 7.50928 24.4981 7.50928C30.4379 7.50928 35.1291 12.1133 35.1291 17.6433C35.1291 19.6166 34.1022 21.6011 32.5051 23.3836C30.8917 25.1845 29.5365 27.5731 29.5365 30.3308C29.5365 31.2973 30.32 32.0808 31.2865 32.0808C32.253 32.0808 33.0365 31.2973 33.0365 30.3308C33.0365 28.7446 33.8267 27.1537 35.1119 25.7192C37.0032 23.6082 38.6291 20.8228 38.6291 17.6433C38.6291 10.0466 32.2345 4.00928 24.4981 4.00928C16.7618 4.00928 10.3672 10.0466 10.3672 17.6433C10.3672 20.8695 12.0343 23.6917 13.9688 25.8193C15.2401 27.2175 16.0176 28.7776 16.0176 30.3308C16.0176 31.2973 16.8011 32.0808 17.7676 32.0808C18.7341 32.0808 19.5176 31.2973 19.5176 30.3308C19.5176 27.5996 18.1694 25.2365 16.5584 23.4648C14.923 21.6661 13.8672 19.6502 13.8672 17.6433ZM18.3315 33.5331C17.0888 33.5331 16.0815 34.5404 16.0815 35.7831V36.8152C16.0815 41.1434 19.5902 44.6521 23.9184 44.6521H25.0778C29.4061 44.6521 32.9148 41.1434 32.9148 36.8152V35.7831C32.9148 34.5404 31.9074 33.5331 30.6648 33.5331H18.3315ZM23.9184 41.1521C21.5963 41.1521 19.7004 39.3271 19.5869 37.0331H29.4094C29.2959 39.3271 27.4 41.1521 25.0778 41.1521H23.9184Z"
+                            fill="url(#paint0_linear_5)"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.7134 18.1401C26.7134 19.363 25.722 20.3544 24.4991 20.3544C23.2762 20.3544 22.2848 19.363 22.2848 18.1401C22.2848 16.9172 23.2762 15.9258 24.4991 15.9258C25.722 15.9258 26.7134 16.9172 26.7134 18.1401ZM26.2496 23.5812C28.5492 22.842 30.2134 20.6854 30.2134 18.1401C30.2134 14.9842 27.655 12.4258 24.4991 12.4258C21.3432 12.4258 18.7848 14.9842 18.7848 18.1401C18.7848 20.6858 20.4495 22.8427 22.7496 23.5816L22.7496 31.8306H26.2496L26.2496 23.5812Z"
+                            fill="url(#paint1_linear_5)"
+                          />
+                          <defs>
+                            <linearGradient id="paint0_linear_5" x1="42.1618" y1="2.31583" x2="0.327253" y2="24.5765" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#FFEA2E" />
+                              <stop offset="0.317708" stop-color="#B02FFF" />
+                              <stop offset="0.620229" stop-color="#6C4BD5" />
+                              <stop offset="0.877597" stop-color="#5B33FD" />
+                              <stop offset="1" stop-color="#1254FF" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_5" x1="30.6896" y1="13.0322" x2="14.0158" y2="21.1362" gradientUnits="userSpaceOnUse">
+                              <stop offset="0.0572917" stop-color="#FFBF1C" />
+                              <stop offset="0.28125" stop-color="#FF993A" />
+                              <stop offset="0.796875" stop-color="#FF5912" />
+                              <stop offset="1" stop-color="#FF27C3" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                      <strong>行业解决方案</strong>
+                      <div class="pt-2">用墨刀推动行业变革</div>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-6 p-2">
+                    <a href="https://modao.cc/enterprise_solution?to=sec-team" class="template-style h-100">
+                      <div class="mb-3">
+                        <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M38.2691 41.3097C37.3238 41.3097 36.5933 40.7472 36.4214 39.8722C35.0464 34.2264 29.8041 30.1014 24.0033 30.1014C18.1809 30.1014 12.9601 34.2056 11.5851 39.8722C11.4132 40.7264 10.6827 41.3097 9.73741 41.3097H9.37217C8.36238 41.1222 7.84675 40.0181 8.04011 39.1639C9.09286 34.3931 12.5089 30.3097 17.2571 28.1222C15.0012 26.6222 13.3683 24.4347 12.6164 21.8722L12.5734 21.7472C12.5519 21.6639 12.5304 21.6014 12.5089 21.5181C12.2726 20.6431 12.1652 19.7264 12.1652 18.8097C12.1652 12.4764 17.4719 7.33057 24.0033 7.33057C30.5346 7.33057 35.8413 12.4764 35.8413 18.8097C35.8413 19.7264 35.7339 20.6431 35.4976 21.5181C35.4761 21.6014 35.4546 21.6639 35.4331 21.7472C35.4116 21.7889 35.4116 21.8514 35.3902 21.8931C34.6382 24.4556 33.0054 26.6431 30.7495 28.1431C35.4976 30.3514 38.9137 34.4347 39.9664 39.1847C40.1383 40.0597 39.6441 41.1431 38.6344 41.3306H38.2691V41.3097ZM24.0033 10.8514C19.513 10.8514 15.8606 14.3931 15.8606 18.7472C15.8606 23.1014 19.513 26.6431 24.0033 26.6431C28.4936 26.6431 32.146 23.1014 32.146 18.7472C32.146 14.3931 28.4936 10.8514 24.0033 10.8514Z"
+                            fill="url(#paint0_linear_6)"
+                          />
+                          <path
+                            d="M2.40265 20.9834C2.40265 16.45 5.96669 12.7239 10.3342 12.3306C11.1582 12.3306 11.6939 12.8688 11.8381 13.5726C11.8381 14.4006 11.3025 14.9388 10.602 15.0838C7.5942 15.3322 5.14264 17.9404 5.14264 20.9834C5.12203 24.1506 7.5942 26.7589 10.7462 26.8831C11.5703 26.8831 12.1059 27.5662 11.9823 28.3943C11.9823 29.0774 11.3025 29.6363 10.6226 29.6363H10.4784C5.94609 29.3672 2.40265 25.5169 2.40265 20.9834ZM2.02236 36.6745C2.43439 34.8943 3.79408 32.7 5.44219 31.5822C6.12203 31.1681 6.94609 31.4373 7.35812 31.9962C7.77015 32.6793 7.50233 33.5073 6.94609 33.9213C5.97782 34.4595 5.03016 36.1156 4.76234 37.2334C4.61813 37.9166 4.0825 38.3306 3.40265 38.3306H3.13483C2.29018 38.1857 1.89875 37.4818 2.02236 36.6745Z"
+                            fill="url(#paint1_linear_6)"
+                          />
+                          <path
+                            d="M45.5973 20.9834C45.5973 16.45 42.0333 12.7239 37.6658 12.3306C36.8418 12.3306 36.3061 12.8688 36.1619 13.5726C36.1619 14.4006 36.6975 14.9388 37.398 15.0838C40.4058 15.3322 42.8574 17.9404 42.8574 20.9834C42.878 24.1506 40.4058 26.7589 37.2538 26.8831C36.4297 26.8831 35.8941 27.5662 36.0177 28.3943C36.0177 29.0774 36.6975 29.6363 37.3774 29.6363H37.5216C42.0539 29.3672 45.5973 25.5169 45.5973 20.9834ZM45.9776 36.6745C45.5656 34.8943 44.2059 32.7 42.5578 31.5822C41.878 31.1681 41.0539 31.4373 40.6419 31.9962C40.2299 32.6793 40.4977 33.5073 41.0539 33.9213C42.0222 34.4595 42.9698 36.1156 43.2377 37.2334C43.3819 37.9166 43.9175 38.3306 44.5973 38.3306H44.8652C45.7098 38.1857 46.1013 37.4818 45.9776 36.6745Z"
+                            fill="url(#paint2_linear_6)"
+                          />
+                          <defs>
+                            <linearGradient id="paint0_linear_6" x1="34.5" y1="10.3306" x2="5" y2="36.0181" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#32E2E2" />
+                              <stop offset="0.208333" stop-color="#0C99FF" />
+                              <stop offset="0.71875" stop-color="#0066FF" />
+                              <stop offset="1" stop-color="#895EE3" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_6" x1="4" y1="11.3306" x2="9.5" y2="39.8306" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#DEFF10" />
+                              <stop offset="0.212713" stop-color="#34EBD5" />
+                              <stop offset="0.71875" stop-color="#27CCB8" />
+                              <stop offset="1" stop-color="#00A5C9" />
+                            </linearGradient>
+                            <linearGradient id="paint2_linear_6" x1="44" y1="11.3306" x2="38.5" y2="39.8306" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#DEFF10" />
+                              <stop offset="0.212713" stop-color="#34EBD5" />
+                              <stop offset="0.71875" stop-color="#27CCB8" />
+                              <stop offset="1" stop-color="#00A5C9" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                      <strong>团队解决方案</strong>
+                      <div class="pt-2">用墨刀提升团队工作效率</div>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-6 p-2">
+                    <a href="https://modao.cc/enterprise_case" class="template-style h-100">
+                      <div class="mb-3">
+                        <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M41 28.3306V35.3306C41 37.5397 39.2091 39.3306 37 39.3306H10C7.79086 39.3306 6 37.5397 6 35.3306V19.3306C6 17.1214 7.79086 15.3306 10 15.3306H37C39.2091 15.3306 41 17.1214 41 19.3306V20.0776C41 21.7355 39.9772 23.2216 38.4286 23.8138L25.4923 28.76C24.5342 29.1263 23.4721 29.1106 22.5253 28.7161L12 24.3306"
+                            stroke="url(#paint0_linear_7)"
+                            stroke-width="3.5"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M14.5 14.3306V12.3306C14.5 10.1214 16.2909 8.33057 18.5 8.33057H28.5C30.7091 8.33057 32.5 10.1214 32.5 12.3306V14.3306"
+                            stroke="url(#paint1_linear_7)"
+                            stroke-width="3.5"
+                          />
+                          <defs>
+                            <linearGradient id="paint0_linear_7" x1="42.4583" y1="16.0806" x2="16.6754" y2="47.1098" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#FFB21C" />
+                              <stop offset="0.203125" stop-color="#FF3A3A" />
+                              <stop offset="0.71875" stop-color="#FF123D" />
+                              <stop offset="1" stop-color="#FF27C3" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_7" x1="33.25" y1="8.51807" x2="28.6962" y2="19.7919" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#FFB21C" />
+                              <stop offset="0.203125" stop-color="#FF3A3A" />
+                              <stop offset="0.71875" stop-color="#FF123D" />
+                              <stop offset="1" stop-color="#FF27C3" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                      <strong>客户案例</strong>
+                      <div class="pt-2">听听他们使用墨刀的故事</div>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-6 p-2">
+                    <a href="https://modao.cc/privatize" class="template-style h-100">
+                      <div class="mb-3">
+                        <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M38.537 10.6003C38.4873 10.4604 38.4077 10.3331 38.3036 10.2272C38.1995 10.1213 38.0736 10.0395 37.9345 9.9874C35.004 7.13928 31.2713 5.25738 27.239 4.59501C23.2067 3.93265 19.0682 4.5216 15.3807 6.28261C11.6932 8.04362 8.63362 10.8922 6.61379 14.4448C4.59395 17.9974 3.71081 22.0836 4.08325 26.1534C4.45569 30.2232 6.06582 34.0812 8.69693 37.2081C11.328 40.335 14.8538 42.5808 18.7997 43.6431C22.7456 44.7054 26.9222 44.5332 30.7673 43.1498C34.6124 41.7664 37.9414 39.2382 40.3063 35.9053C40.4781 35.6637 40.5468 35.3638 40.4975 35.0716C40.4481 34.7793 40.2846 34.5186 40.0431 34.3469C39.8016 34.1751 39.5017 34.1064 39.2095 34.1558C38.9172 34.2051 38.6566 34.3686 38.4848 34.6102C38.2339 34.9632 37.968 35.3013 37.6947 35.632C36.7278 34.86 35.6863 34.1864 34.5857 33.6211C35.3722 30.962 35.798 28.2093 35.8516 25.4369H41.7294C41.7071 25.7906 41.6758 26.1436 41.6334 26.4929C41.5975 26.7871 41.68 27.0834 41.8626 27.3167C42.0452 27.55 42.313 27.7012 42.6071 27.7371C42.9011 27.7729 43.1974 27.6905 43.4307 27.5079C43.664 27.3252 43.8152 27.0574 43.8511 26.7633C43.9499 25.9525 43.9996 25.1365 44 24.3197C44.0021 19.2158 42.0468 14.3055 38.537 10.6003ZM23.9888 42.0958C20.8454 42.0958 17.997 39.1912 16.2247 34.8098C18.6515 33.81 21.2532 33.3037 23.8778 33.3202C26.5746 33.3081 29.2489 33.8116 31.7566 34.8038C29.9842 39.186 27.1343 42.0958 23.9888 42.0958ZM17.0282 40.6748C15.1514 39.8714 13.4267 38.7513 11.9293 37.3636C12.6309 36.787 13.3808 36.272 14.1708 35.8241C14.8666 37.5791 15.8305 39.2155 17.0282 40.6748ZM10.3804 35.7392C7.93468 32.8364 6.48725 29.224 6.25181 25.4354H12.1266C12.1799 28.2242 12.61 30.993 13.4053 33.6665C12.3276 34.2503 11.3138 34.945 10.3804 35.7392ZM6.25181 23.2011C6.49245 19.3424 7.98986 15.6688 10.5151 12.7416C11.4956 13.4971 12.5477 14.1548 13.6562 14.7055C12.7484 17.4504 12.2391 20.3114 12.1438 23.2011H6.25181ZM12.0887 11.1247C13.7453 9.62831 15.6685 8.4568 17.758 7.67117C16.3821 9.10702 15.2726 10.7762 14.4813 12.6008C13.6456 12.1749 12.8455 11.6825 12.0887 11.1284V11.1247ZM23.9888 7.05376C26.9318 7.05376 29.6171 9.59863 31.4021 13.5176C29.0751 14.4262 26.5971 14.8861 24.099 14.8731C21.5289 14.8838 18.9783 14.4281 16.5709 13.528C18.356 9.6031 21.0435 7.05376 23.9888 7.05376ZM30.2196 7.67117C32.2665 8.44191 34.154 9.58306 35.7876 11.0375C35.0607 11.6085 34.2867 12.1168 33.4738 12.5568C32.6855 10.7492 31.5838 9.09518 30.2196 7.67117ZM37.373 12.6395C39.9512 15.5822 41.4818 19.2962 41.7257 23.2011H35.833C35.7376 20.2954 35.2232 17.4187 34.3057 14.6601C35.3933 14.0911 36.4209 13.4142 37.373 12.6395ZM36.1547 37.2697C34.6352 38.6949 32.8777 39.8429 30.962 40.6614C32.1662 39.1896 33.1339 37.5393 33.8305 35.7698C34.6449 36.2055 35.4222 36.7071 36.1547 37.2697ZM32.4968 32.6723C29.7489 31.6069 26.825 31.0682 23.8778 31.0844C21.0024 31.0652 18.1509 31.6082 15.4837 32.6827C14.799 30.3261 14.4214 27.8909 14.36 25.4376H18.6211C18.4682 24.7007 18.4682 23.9402 18.6211 23.2033H14.3816C14.4857 20.6255 14.9463 18.0745 15.7503 15.6231C18.4199 16.6215 21.2488 17.1262 24.099 17.1126C26.8774 17.1294 29.634 16.6217 32.2243 15.6164C33.0299 18.0708 33.4913 20.6251 33.5952 23.2063H29.3557C29.5097 23.9431 29.5097 24.7038 29.3557 25.4406H33.6168C33.555 27.8885 33.1786 30.3182 32.4968 32.67V32.6723Z"
+                            fill="url(#paint0_linear_8)"
+                          />
+                          <path
+                            d="M24.0007 29.3306C25.0333 29.3304 26.0404 29.0106 26.8839 28.415C27.7274 27.8195 28.3658 26.9774 28.7115 26.0044C29.0572 25.0314 29.0931 23.9753 28.8144 22.9811C28.5358 21.9868 27.9561 21.1033 27.1551 20.4517C26.354 19.8002 25.3709 19.4126 24.3408 19.3422C23.3106 19.2718 22.284 19.5221 21.4018 20.0587C20.5196 20.5952 19.8251 21.3918 19.4138 22.3388C19.0025 23.2859 18.8945 24.3371 19.1046 25.3481C19.3401 26.4728 19.9551 27.4824 20.8465 28.2074C21.738 28.9325 22.8516 29.3291 24.0007 29.3306ZM24.0007 21.3663C24.5867 21.3663 25.1596 21.5401 25.6468 21.8656C26.1341 22.1912 26.5138 22.654 26.7381 23.1954C26.9623 23.7368 27.021 24.3325 26.9067 24.9072C26.7924 25.482 26.5102 26.0099 26.0958 26.4243C25.6814 26.8387 25.1535 27.1209 24.5787 27.2352C24.004 27.3495 23.4082 27.2908 22.8668 27.0666C22.3254 26.8423 21.8627 26.4626 21.5371 25.9753C21.2116 25.4881 21.0378 24.9152 21.0378 24.3292C21.0387 23.5437 21.3511 22.7906 21.9066 22.2351C22.4621 21.6796 23.2152 21.3672 24.0007 21.3663Z"
+                            fill="url(#paint1_linear_8)"
+                          />
+                          <path
+                            d="M41.9362 28.967C41.8615 28.9817 41.7886 29.0043 41.7187 29.0345C41.6527 29.0596 41.5897 29.0923 41.5312 29.132C41.4693 29.1739 41.4115 29.2216 41.3587 29.2745C41.3038 29.3254 41.2559 29.3834 41.2162 29.447C41.1771 29.5097 41.142 29.5748 41.1112 29.642C41.0874 29.7108 41.0676 29.7809 41.052 29.852C41.0365 29.9235 41.0287 29.9964 41.0287 30.0695C41.0287 30.3679 41.1473 30.654 41.3583 30.865C41.5692 31.076 41.8554 31.1945 42.1537 31.1945C42.4521 31.1945 42.7383 31.076 42.9492 30.865C43.1602 30.654 43.2788 30.3679 43.2788 30.0695C43.2786 29.9035 43.2416 29.7395 43.1705 29.5894C43.0995 29.4393 42.9961 29.3068 42.8677 29.2014C42.7394 29.096 42.5893 29.0203 42.4283 28.9798C42.2672 28.9393 42.0992 28.9349 41.9362 28.967Z"
+                            fill="#666666"
+                          />
+                          <path
+                            d="M41.9362 28.967C41.8615 28.9817 41.7886 29.0043 41.7187 29.0345C41.6527 29.0596 41.5897 29.0923 41.5312 29.132C41.4693 29.1739 41.4115 29.2216 41.3587 29.2745C41.3038 29.3254 41.2559 29.3834 41.2162 29.447C41.1771 29.5097 41.142 29.5748 41.1112 29.642C41.0874 29.7108 41.0676 29.7809 41.052 29.852C41.0365 29.9235 41.0287 29.9964 41.0287 30.0695C41.0287 30.3679 41.1473 30.654 41.3583 30.865C41.5692 31.076 41.8554 31.1945 42.1537 31.1945C42.4521 31.1945 42.7383 31.076 42.9492 30.865C43.1602 30.654 43.2788 30.3679 43.2788 30.0695C43.2786 29.9035 43.2416 29.7395 43.1705 29.5894C43.0995 29.4393 42.9961 29.3068 42.8677 29.2014C42.7394 29.096 42.5893 29.0203 42.4283 28.9798C42.2672 28.9393 42.0992 28.9349 41.9362 28.967Z"
+                            fill="url(#paint2_linear_8)"
+                          />
+                          <path
+                            d="M41.9368 28.967C41.8621 28.9817 41.7892 29.0043 41.7193 29.0345C41.6532 29.0596 41.5903 29.0923 41.5318 29.132C41.4699 29.1739 41.4121 29.2216 41.3593 29.2745C41.3043 29.3254 41.2564 29.3834 41.2168 29.447C41.1777 29.5097 41.1426 29.5748 41.1118 29.642C41.088 29.7108 41.0682 29.7809 41.0525 29.852C41.037 29.9235 41.0292 29.9964 41.0293 30.0695C41.0293 30.3679 41.1478 30.654 41.3588 30.865C41.5698 31.076 41.8559 31.1945 42.1543 31.1945C42.4527 31.1945 42.7388 31.076 42.9498 30.865C43.1608 30.654 43.2793 30.3679 43.2793 30.0695C43.2791 29.9035 43.2422 29.7395 43.1711 29.5894C43.1 29.4393 42.9966 29.3068 42.8683 29.2014C42.7399 29.096 42.5899 29.0203 42.4288 28.9798C42.2678 28.9393 42.0997 28.9349 41.9368 28.967Z"
+                            fill="url(#paint3_linear_8)"
+                          />
+                          <defs>
+                            <linearGradient id="paint0_linear_8" x1="45.6667" y1="5.58057" x2="2.75" y2="40.9972" gradientUnits="userSpaceOnUse">
+                              <stop offset="0.0572917" stop-color="#1CFFFF" />
+                              <stop offset="0.28125" stop-color="#3A89FF" />
+                              <stop offset="0.796875" stop-color="#2512FF" />
+                              <stop offset="1" stop-color="#FF27C3" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_8" x1="30.25" y1="18.9139" x2="18.2708" y2="28.0806" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#FFEA2E" />
+                              <stop offset="0.890625" stop-color="#FF2FF7" />
+                            </linearGradient>
+                            <linearGradient id="paint2_linear_8" x1="41.4378" y1="28.8593" x2="41.6451" y2="31.3992" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#DEFF10" />
+                              <stop offset="0.212713" stop-color="#34EBD5" />
+                              <stop offset="0.71875" stop-color="#27CCB8" />
+                              <stop offset="1" stop-color="#00A5C9" />
+                            </linearGradient>
+                            <linearGradient id="paint3_linear_8" x1="43.5606" y1="28.8521" x2="40.8664" y2="30.9149" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#FFEA2E" />
+                              <stop offset="0.890625" stop-color="#FF2FF7" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                      <strong>私有化部署</strong>
+                      <div class="pt-2">独享云资源，速度更快</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="https://modao.cc/privatize">私有化部署</a>
+            </li>
+            <li class="wsc-header2020-navbar-item">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="https://modao.cc/community?source=nav&page=1">素材广场</a>
+            </li>
+            <li class="wsc-header2020-navbar-item">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="https://modao.cc/pricing">定价</a>
+            </li>
+            <li class="wsc-header2020-navbar-item with-toggle">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="javascript:">
+                下载
+                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 7.05713L5 11.0571L9 7.05713" stroke="#07273D" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <div class="wsc-header2020-navbar-nav-toggle download">
+                <div class="download-list">
+                  <a href="https://modao.cc/downloads/#sec-desktop">客户端下载</a>
+                  <a href="https://modao.cc/downloads/#sec-mobile">移动端下载</a>
+                  <a href="https://modao.cc/inspect">Sketch插件下载</a>
+                </div>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item with-toggle">
+              <a class="wsc-header2020-navbar-link active_menu_a" href="javascript:">
+                资源与支持
+                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 7.05713L5 11.0571L9 7.05713" stroke="#07273D" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <div class="wsc-header2020-navbar-nav-toggle resources">
+                <div class="row no-gutters">
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/activities/collection.html">活动集锦</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/hc">帮助中心</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/knowledge-community/">知识社区</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/changelog">最新更新</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/prototyping/">原型博客</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/design/">设计博客</a>
+                  </div>
+                  <div class="col-lg-auto">
+                    <a href="https://modao.cc/brand/education">公益教育支持</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item wondershare-user-panel text-center log-out">
+              <div class="pl-lg-3">
+                <a class="btn btn-outline-gray font-weight-small sign-in mx-1" href="/embed/auth_box?type=signin">登录</a>
+                <a class="btn font-weight-small border-0 text-white bg-linear-gradient-1 sign-up mx-1" href="/embed/auth_box?type=signup">免费使用</a>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item wondershare-user-panel text-center h-100 log-in">
+              <div class="h-100 d-flex align-items-center justify-content-center">
+                <a class="btn font-weight-small border-0 text-white bg-linear-gradient-1 mx-1" href="/dashboard">进入工作区</a>
+                <div class="d-none d-xl-inline-flex h-100 px-3 align-items-center position-relative wsc-header2020-navbar-popover-container">
+                  <img
+                    class="avatar wsc-header2020-navbar-popover-nav ml-0"
+                    src="https://images.wondershare.com/images2020/avatar-default.png"
+                    width="32"
+                    height="32"
+                    alt="avatar"
+                    gaevent="eventInt"
+                    ga360name="avatar"
+                  />
+                  <div class="wsc-header2020-navbar-popover-content wsc-header2020-navbar-popover-content-account" style="width: 210px">
+                    <div class="text-left">
+                      <a class="account d-block" href="/me">
+                        <div
+                          class="account-container text-white d-block"
+                          style="
+                            background-color: #e73828;
+                            padding: 20px;
+                            background-image: url('https://images.modao.cc/images/images-2021/website-construction/nav-bar/logged-img-1.png');
+                            background-size: 100% 100%;
+                          "
+                        >
+                          <p class="name font-size-small" style="margin-bottom: 10px">xxx</p>
+                          <p class="uid font-size-tiny mb-0">xxxxxxxx</p>
+                        </div>
+                      </a>
+                      <div style="padding: 6px; border-bottom: 1px solid #c5c5c5">
+                        <a class="wsc-header2020-navbar-title-text-2" href="/author/me">我的主页</a>
+                        <a class="wsc-header2020-navbar-title-text-2" href="/me">账号管理</a>
+                        <a class="wsc-header2020-navbar-title-text-2" href="/bonus">福利中心</a>
+                        <a class="wsc-header2020-navbar-title-text-2" href="/me/coupons">我的优惠券 <span class="coupons-numbers" style="display: none;"></span></a>
+                      </div>
+                      <div style="padding: 6px">
+                        <a class="wsc-header2020-navbar-title-text-2" href="/signout?next=/brand">退出登录</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="wsc-header2020-navbar-item">
+              <span style="color: #888888; font-size: 14px; height: 72px; line-height: 72px; padding-left: 16px">万兴科技（300624.SZ）集团成员</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  var el = document.querySelector('.wsc-header2020-navbar-popover-container'),
+    childEl = document.querySelector('.wsc-header2020-navbar-popover-content-account')
+  window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('wsc-header2020-navbar-popover-nav') && !el.classList.contains('open')) {
+      childEl.style.display = 'block'
+      setTimeout(function () {
+        el.classList.add('open')
+      }, 0)
+    } else {
+      el.classList.remove('open')
+      setTimeout(function () {
+        childEl.style.display = 'none'
+      }, 200)
+    }
+  })
+  el.addEventListener('click', function () {
+    el.classList.contains('with-red-point') && el.classList.remove('with-red-point')
+  })
+</script>
+<main style="overflow-x: hidden">
+  <section class="banner position-relative">
+    <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/banner-img.png" alt="" class="w-100 banner-img d-sm-block d-none" />
+    <img src="https://images.modao.cc/images/images-2021/website-construction/homepage/banner-img-mobile.png" alt="" class="img-fluid d-block d-sm-none" />
+    <div class="container text-center position-absolute">
+      <div class="d-sm-block d-none">
+        <h1 class="font-size-68 font-weight-bold text-nowrap mb-3 pb-xl-1">
+          <div class="mb-3 linear-gradient-text line-height-100 mb-3 pb-1">在线一体化</div>
+          <div>产品设计协作平台</div>
+        </h1>
+        <p class="text-gray-1 mb-4 pb-xl-3 d-md-block d-lg-none">
+          原型、设计、流程图、思维导图聚合一起，
+          <br />
+          让团队和个人都能达成高效工作成就
+        </p>
+        <p class="text-gray-1 line-height-100 mb-4 pb-xxl-3 d-none d-lg-block">原型、设计、流程图、思维导图聚合一起，让团队和个人都能达成高效工作成就</p>
+        <div class="text-white">
+          <a
+            href="/embed/auth_box?type=signup"
+            class="btn-login btn btn-hover m-0 font-size-large font-weight-bold px-5 border-0"
+            style="color: white; background: linear-gradient(230.47deg, #ffbf1c -0.87%, #ff3a3a 25.89%, #ff123d 77.87%, #ff27c3 97.94%), #e73828"
+          >
+            免费使用
+          </a>
+        </div>
+      </div>
+      <div class="d-sm-none d-block">
+        <h1 class="font-size-68 font-weight-bold mb-3 pb-1">
+          <div class="mb-3 linear-gradient-text">在线一体化</div>
+          <div>产品设计</div>
+          <div>协作平台</div>
+        </h1>
+        <p class="text-gray-1 line-height-175" style="font-size: 12px">
+          聚合原型、设计、流程图、思维导图
+          <br />
+          让团队和个人都能达成高效工作成就
+        </p>
+        <div class="text-white">
+          <a href="/embed/auth_box?type=signup" class="btn-login btn btn-hover m-0 font-weight-bold px-5" style="color: white; background: linear-gradient(230.47deg, #ffbf1c -0.87%, #ff3a3a 25.89%, #ff123d 77.87%, #ff27c3 97.94%), #e73828">
+            免费使用
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute d-none d-xl-inline-block" style="bottom: 0; left: 50%; transform: translateX(-50%) translateY(-150%)">
+      <img class="img-fluid guide-icon" src="https://images.modao.cc/images/images-2021/website-construction/homepage/guide-icon.png" alt="" />
+    </div>
+  </section>
+  <section>
+    <div class="d-xl-none">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters justify-content-center">
+          <div class="col-md-12">
+            <div class="swiper2 swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slide-1 h-auto">
+                  <div class="text-center py-5 h-100 d-flex flex-column justify-content-start">
+                    <h2 class="h2-title mb-4 pb-lg-3">
+                      <div class="linear-gradient-text-1 mb-3 pb-lg-1 line-height-100">轻松上手</div>
+                      <div class="line-height-100">快速设计</div>
+                    </h2>
+                    <p class="pills-text mb-5 text-gray-1 line-height-175 mx-auto" style="max-width: 75%">
+                      简洁易懂的界面，丰富的素材，
+                      <br />
+                      人人可上手，助力快速完成产品设计
+                    </p>
+                    <div class="flex-grow-1 d-flex flex-column justify-content-cente align-items-center">
+                      <img class="img-fluid mb-4 ml-3" style="width: 95%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-1-new.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide slide-2 h-auto">
+                  <div class="text-center py-5 h-100 d-flex flex-column justify-content-start">
+                    <h2 class="h2-title mb-4 pb-lg-3">
+                      <div class="linear-gradient-text-2 mb-3 pb-lg-1 line-height-100">便捷协作</div>
+                      <div class="line-height-100">一键交付</div>
+                    </h2>
+                    <p class="pills-text mb-5 text-gray-1 line-height-175 mx-auto" style="max-width: 75%">云端编辑、实时协作、分享交付，一站完成工作与沟通，让人、事、物在企业中流畅运作</p>
+                    <div class="flex-grow-1 d-flex flex-column justify-content-cente align-items-center">
+                      <img class="img-fluid mb-4 ml-3" style="width: 95%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-2.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide slide-3 h-auto">
+                  <div class="text-center py-5 h-100 d-flex flex-column justify-content-start">
+                    <h2 class="h2-title mb-4 pb-lg-3">
+                      <div class="linear-gradient-text-3 mb-3 pb-lg-1 line-height-100">设计规范</div>
+                      <div class="line-height-100">轻松管理</div>
+                    </h2>
+                    <p class="pills-text mb-3 text-gray-1 line-height-175 mx-auto" style="max-width: 90%">整合设计素材资料，形成素材设计框架，促进标准化，形成产品设计规范，壮大企业知识库，利于企业资产的积累与传承</p>
+                    <div class="flex-grow-1 d-flex flex-column justify-content-cente align-items-center">
+                      <img class="img-fluid mb-2 px-md-5" width="80%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-3.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide slide-1 h-auto">
+                  <div class="text-center py-5 h-100 d-flex flex-column justify-content-start">
+                    <h2 class="h2-title mb-4 pb-lg-3">
+                      <div class="linear-gradient-text-1 mb-3 pb-lg-1 line-height-100">随时随地</div>
+                      <div class="line-height-100">让创作发生</div>
+                    </h2>
+                    <p class="pills-text mb-5 text-gray-1 line-height-175 mx-auto" style="max-width: 75%">不受场地限制，不管在家还是在公司，或者咖啡店、车站，只要有网，就能开启创作，不受设备系统限制</p>
+                    <div class="flex-grow-1 d-flex flex-column justify-content-cente align-items-center">
+                      <img class="img-fluid mb-4 ml-3" style="width: 95%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-4-new.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide slide-4 h-auto">
+                  <div class="text-center py-5 h-100 d-flex flex-column justify-content-start">
+                    <h2 class="h2-title mb-4 pb-lg-3">
+                      <div class="line-height-100 mb-3 pb-lg-1">金融级</div>
+                      <div class="linear-gradient-text-4 line-height-100">安全服务</div>
+                    </h2>
+                    <p class="pills-text mb-2 text-gray-1 line-height-175 mx-auto" style="max-width: 75%">
+                      128位 SSL 协议为数据传输加密，AWS 及多级容灾备份，保障数据安全、服务可用性，不再担心数据丢失 我们还支持私有化部署，专属服务器、数据加密， 更安全；独享云资源，速度快又稳
+                    </p>
+                    <div class="flex-grow-1 d-flex flex-column justify-content-cente align-items-center">
+                      <img class="img-fluid ml-3" style="width: 95%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-5.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination swiper-control-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-xl-block position-relative" style="background-color: #fcfcfc">
+      <div
+        class="fixed-slide position-absolute w-100"
+        style="
+          transition: background-image 0.5s ease-in-out;
+          height: calc(100vh - 60px);
+          background-image: url('https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-1.png');
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+          background-origin: content-box;
+          background-position: right top;
+        "
+      >
+        <div class="container h-100">
+          <div class="row h-100 align-items-lg-center">
+            <div class="col-1">
+              <ul class="carousel-controls list-unstyled mb-0">
+                <li class="carousel-controls-item item-1 control-item-active"></li>
+                <li class="carousel-controls-item item-2"></li>
+                <li class="carousel-controls-item item-3"></li>
+                <li class="carousel-controls-item item-4"></li>
+                <li class="carousel-controls-item item-5"></li>
+              </ul>
+            </div>
+            <div class="col-lg-5 position-relative">
+              <ul class="carousel-text list-unstyled mb-0">
+                <li class="carousel-text-item item-1 control-item-active">
+                  <h2 class="h2-title mb-4 pb-lg-3">
+                    <div class="linear-gradient-text-1 mb-3 pb-lg-1 line-height-100">轻松上手</div>
+                    <div class="line-height-100">快速设计</div>
+                  </h2>
+                  <p class="font-size-super text-gray-1 line-height-175" style="max-width: 448px">
+                    简洁易懂的界面，丰富的素材，
+                    <br />
+                    人人可上手，助力快速完成产品设计
+                  </p>
+                </li>
+                <li class="carousel-text-item item-2">
+                  <h2 class="h2-title mb-4 pb-lg-3">
+                    <div class="linear-gradient-text-2 mb-3 pb-lg-1 line-height-100">便捷协作</div>
+                    <div class="line-height-100">一键交付</div>
+                  </h2>
+                  <p class="font-size-super text-gray-1 line-height-175" style="max-width: 448px">云端编辑、实时协作、分享交付，一站完成工作与沟通，让人、事、物在企业中流畅运作</p>
+                </li>
+                <li class="carousel-text-item item-3">
+                  <h2 class="h2-title mb-4 pb-lg-3">
+                    <div class="linear-gradient-text-3 mb-3 pb-lg-1 line-height-100">设计规范</div>
+                    <div class="line-height-100">轻松管理</div>
+                  </h2>
+                  <p class="font-size-super text-gray-1 line-height-175" style="max-width: 448px">整合设计素材资料，形成素材设计框架，促进标准化，形成产品设计规范，壮大企业知识库，利于企业资产的积累与传承</p>
+                </li>
+                <li class="carousel-text-item item-4">
+                  <h2 class="h2-title mb-4 pb-lg-3">
+                    <div class="linear-gradient-text-1 mb-3 pb-lg-1 line-height-100">随时随地</div>
+                    <div class="line-height-100">让创作发生</div>
+                  </h2>
+                  <p class="font-size-super text-gray-1 line-height-175" style="max-width: 448px">不受场地限制，不管在家还是在公司，或者咖啡店、车站，只要有网，就能开启创作，不受设备系统限制</p>
+                </li>
+                <li class="carousel-text-item item-5">
+                  <h2 class="h2-title mb-4 pb-lg-3">
+                    <div class="line-height-100 mb-3 pb-lg-1">金融级</div>
+                    <div class="linear-gradient-text-4 line-height-100">安全服务</div>
+                  </h2>
+                  <p class="font-size-super text-gray-1 line-height-175" style="max-width: 448px">
+                    128位 SSL 协议为数据传输加密，AWS 及多级容灾备份，保障数据安全、服务可用性，不再担心数据丢失 我们还支持私有化部署，专属服务器、数据加密， 更安全；独享云资源，速度快又稳
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-slide position-relative">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-lg-6">
+              <div class="position-positive">
+                <ul class="scroll-controls list-unstyled mb-0">
+                  <li class="scroll-item d-flex align-items-center" style="height: calc(100vh - 60px)">
+                    <img class="d-block img-fluid img-xxl-auto" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-1-new.png" style="display: block" />
+                  </li>
+                  <li class="scroll-item d-flex align-items-center" style="height: calc(100vh - 60px)">
+                    <img class="d-block img-fluid img-xxl-auto" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-2.png" style="display: block" />
+                  </li>
+                  <li class="scroll-item d-flex align-items-center" style="height: calc(100vh - 60px)">
+                    <img class="d-block img-fluid img-xxl-auto" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-3.png" style="display: block" />
+                  </li>
+                  <li class="scroll-item d-flex align-items-center" style="height: calc(100vh - 60px)">
+                    <img class="d-block img-fluid img-xxl-auto" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-4-new.png" style="display: block" />
+                  </li>
+                  <li class="scroll-item d-flex align-items-center" style="height: calc(100vh - 60px)">
+                    <img class="d-block img-fluid img-xxl-auto" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-5.png" style="display: block" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-lg-5">
+      <h2 class="h2-title d-flex justify-content-center align-items-center mb-4 pb-lg-2 line-height-100" title="在墨刀，1>5">
+        在墨刀，
+        <img class="title-1-4" src="https://images.modao.cc/images/images-2021/website-construction/homepage/1&5.png" alt="" />
+      </h2>
+      <p class="font-size-super line-height-175 text-gray-1 text-center mb-4 mb-lg-5">
+        一个产品体系，解决五大类工作问题，实现
+        <br class="d-md-none" />
+        在线一体化产品设计协作
+      </p>
+      <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-5 p-2">
+        <div class="col my-2 px-2 my-md-3 px-md-3">
+          <div class="p-4 p-xxl-5 text-center position-relative card-custom-1 h-100" style="background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/gradient-bg-1.png); background-size: 100% 100%">
+            <img class="pt-2 mb-3 pb-lg-1 logo-custom-1" src="https://images.modao.cc/images/images-2021/website-construction/homepage/prototype-logo.png" alt="" />
+            <h2 class="mb-3 pb-lg-1 h2-custom-1">原型</h2>
+            <p class="mb-4 pb-lg-2 text-gray-1 p-custom-1">产品设计 不止于快</p>
+            <div class="pb-2 text-white text-center">
+              <a class="btn btn-blue btn-md btn-hover font-size-large font-weight-bold my-0 line-height-100 btn-look d-inline-flex align-items-center justify-content-center" href="/feature/prototype/">点击查看</a>
+            </div>
+            <img class="position-absolute line-custom d-none d-xl-inline-block" style="z-index: 1; top: 100%; left: 50%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/line-1.svg" alt="" />
+          </div>
+        </div>
+        <div class="col my-2 px-2 my-md-3 px-md-3">
+          <div class="p-4 p-xxl-5 text-center position-relative card-custom-1 h-100" style="background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/gradient-bg-5.png); background-size: 100% 100%">
+            <img class="pt-2 mb-3 pb-lg-1 logo-custom-1" src="https://images.modao.cc/images/images-2021/website-construction/homepage/design-canvas-logo.png" alt="" />
+            <h2 class="mb-3 pb-lg-1 h2-custom-1">设计画布</h2>
+            <p class="mb-4 pb-lg-2 text-gray-1 p-custom-1">标注切图 快速交付</p>
+            <div class="pb-2 text-white text-center">
+              <a class="btn btn-orange btn-md btn-hover font-size-large font-weight-bold my-0 line-height-100 btn-look d-inline-flex align-items-center justify-content-center" href="/feature/aboard/">点击查看</a>
+            </div>
+            <img class="position-absolute line-custom d-none d-xl-inline-block" style="z-index: 1; top: 100%; left: 50%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/line-5.svg" alt="" />
+          </div>
+        </div>
+        <div class="col my-2 px-2 my-md-3 px-md-3">
+          <div class="p-4 p-xxl-5 text-center position-relative card-custom-1 h-100" style="background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/gradient-bg-2.png); background-size: 100% 100%">
+            <img class="pt-2 mb-3 pb-lg-1 logo-custom-1" src="https://images.modao.cc/images/images-2021/website-construction/homepage/design-logo.png" alt="" />
+            <h2 class="mb-3 pb-lg-1 h2-custom-1">设计</h2>
+            <p class="mb-4 pb-lg-2 text-gray-1 p-custom-1">无束创作 妙趣协作</p>
+            <div class="pb-2 text-white text-center">
+              <a class="btn btn-purple btn-md btn-hover font-size-large font-weight-bold my-0 line-height-100 btn-look d-inline-flex align-items-center justify-content-center" href="/feature/design/">点击查看</a>
+            </div>
+            <img class="position-absolute line-custom d-none d-xl-inline-block" style="z-index: 1; top: 100%; left: 50%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/line-2.svg" alt="" />
+          </div>
+        </div>
+        <div class="col my-2 px-2 my-md-3 px-md-3">
+          <div class="p-4 p-xxl-5 text-center position-relative card-custom-1 h-100" style="background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/gradient-bg-3.png); background-size: 100% 100%">
+            <img class="pt-2 mb-3 pb-lg-1 logo-custom-1" src="https://images.modao.cc/images/images-2021/website-construction/homepage/flowchart-logo.png" alt="" />
+            <h2 class="mb-3 pb-lg-1 h2-custom-1">流程图</h2>
+            <p class="mb-4 pb-lg-2 text-gray-1 p-custom-1">流程管理 一图赢万语</p>
+            <div class="pb-2 text-white text-center">
+              <a class="btn btn-red btn-md btn-hover font-size-large font-weight-bold my-0 line-height-100 btn-look d-inline-flex align-items-center justify-content-center" href="/feature/flowchart/">点击查看</a>
+            </div>
+            <img class="position-absolute line-custom d-none d-xl-inline-block" style="z-index: 1; top: 100%; right: 50%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/line-3.svg" alt="" />
+          </div>
+        </div>
+        <div class="col my-2 px-2 my-md-3 px-md-3">
+          <div class="p-4 p-xxl-5 text-center position-relative card-custom-1 h-100" style="background-image: url(https://images.modao.cc/images/images-2021/website-construction/homepage/gradient-bg-4.png); background-size: 100% 100%">
+            <img class="pt-2 mb-3 pb-lg-1 logo-custom-1" src="https://images.modao.cc/images/images-2021/website-construction/homepage/mindmap-logo.png" alt="" />
+            <h2 class="mb-3 pb-lg-1 h2-custom-1">思维导图</h2>
+            <p class="mb-4 pb-lg-2 text-gray-1 p-custom-1">天生的思维管家</p>
+            <div class="pb-2 text-white text-center">
+              <a class="btn btn-green btn-md btn-hover font-size-large font-weight-bold my-0 line-height-100 btn-look d-inline-flex align-items-center justify-content-center" href="/feature/mind-map/">点击查看</a>
+            </div>
+            <img class="position-absolute line-custom d-none d-xl-inline-block" style="z-index: 1; top: 100%; right: 50%" src="https://images.modao.cc/images/images-2021/website-construction/homepage/line-4.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="position-relative mt-4 text-center" style="z-index: 2">
+        <img class="img-fluid" src="https://images.modao.cc/images/images-2021/website-construction/homepage/img-6.png" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background: linear-gradient(168.75deg, #ffffff 16.75%, rgba(255, 255, 255, 0) 94.93%), linear-gradient(270deg, rgba(255, 230, 98, 0.1) 0%, rgba(255, 96, 191, 0.1) 53.12%, rgba(255, 92, 0, 0.1) 100%), #ffffff">
+    <div class="py-lg-5 mx-auto">
+      <h2 class="text-center h2-title mb-5 pb-lg-5">
+        与百万同行
+        <span class="linear-gradient-text">见证改变</span>
+      </h2>
+      <div class="logo_wrap-mobile d-lg-none">
+        <div class="line_odd">
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1-mobile.png" alt="" />
+        </div>
+        <div class="line_even">
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2-mobile.png" alt="" />
+        </div>
+        <div class="line_odd">
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-3-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-3-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-3-mobile.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-3-mobile.png" alt="" />
+        </div>
+      </div>
+      <div class="logo_wrap d-none d-lg-block">
+        <div class="line_odd">
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-1.png" alt="" />
+        </div>
+        <div class="line_even">
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2.png" alt="" />
+          <img class="logo_img" src="https://images.modao.cc/images/images-2021/website-construction/homepage/logo-2.png" alt="" />
+        </div>
+      </div>
+      <div class="container py-4">
+        <div class="row justify-content-center position-relative">
+          <div class="col-9 col-lg-8">
+            <div class="swiper1 swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                  <div class="p-5 bg-white text-center h-100" style="border: 1px solid #d8d8d8; border-radius: 30px">
+                    <h4 class="line-height-100 mb-3 mt-lg-2">大乐哥</h4>
+                    <p class="text-gray-1 mb-3 pb-lg-8 line-height-125">微博动漫产品总监</p>
+                    <p class="mb-2 line-height-175" style="max-width: 750px">
+                      用墨刀工作协同以后，无论是我们的产品迭代时间，周期还有收益，全部都有提升。效率变得比较高的同时，确实也做了几波非常复杂但是对数据有明显提升的功能，我认为墨刀最大的功效在于化繁为简，例如20行的交互文档，可以用一个点击动作完整的把需求转述，这个是最重要的！
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide h-auto">
+                  <div class="p-5 bg-white text-center h-100" style="border: 1px solid #d8d8d8; border-radius: 30px">
+                    <h4 class="line-height-100 mb-3 mt-lg-2">王瑞年</h4>
+                    <p class="text-gray-1 mb-3 pb-lg-8 line-height-125">微猪科技合伙人</p>
+                    <p class="mb-2 line-height-175" style="max-width: 750px">
+                      我认为墨刀是一个满足90%的用户需求的设计工具。虽然经历过几次改版，对于项目修改成本较大，不过从最终的结果来看，目前墨刀中的文本组件我觉得很符合我的使用习惯；我一路见证着墨刀迭代升级、团队壮大，越来越满足我的设计交互需求。
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide h-auto">
+                  <div class="p-5 bg-white text-center h-100" style="border: 1px solid #d8d8d8; border-radius: 30px">
+                    <h4 class="line-height-100 mb-3 mt-lg-2">Tac Tan</h4>
+                    <p class="text-gray-1 mb-3 pb-lg-8 line-height-125">珠宝产品创业者</p>
+                    <p class="mb-2 line-height-175" style="max-width: 750px">
+                      基本上现在有人问我原型工具我都会推荐墨刀，发过去一些Demo，懂的人基本就不需要过多的解释了。同时也感慨，它能做的真的很多，唯一受限制的只是你的想法和愿不愿意立即去做，这样的产品有什么理由不让更多的人知道。
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide h-auto">
+                  <div class="p-5 bg-white text-center h-100" style="border: 1px solid #d8d8d8; border-radius: 30px">
+                    <h4 class="line-height-100 mb-3 mt-lg-2">栗子不二枣</h4>
+                    <p class="text-gray-1 mb-3 pb-lg-8 line-height-125">墨刀产品素材设计大赛「最具潜力产品设计奖」获奖者</p>
+                    <p class="mb-2 line-height-175" style="max-width: 750px">
+                      墨刀整体的功能很明确，都是围绕『搭建』构建的，所以操作十分容易上手，用户只需将墨刀提供『零件』（图标、组件、模板）一个个摞在画布上，无需过多操作，就能够搭建出『房子』（原型），所以区别于Sketch、Adobe
+                      XD这种图形设计软件，对于非设计师来说也是0成本上手。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bottom-section py-5">
+    <div class="py-lg-5 container text-center">
+      <h2 class="bottom-section-title font-weight-bold text-center text-white line-height-125 mb-4 pb-lg-3">
+        现在使用墨刀
+        <br class="d-md-none" />
+        开始无忧创作
+      </h2>
+      <div class="text-red">
+        <a href="/embed/auth_box?type=signup" class="btn-login btn-banner btn bottom-section-btn btn-hover btn-white text-red" ga360location="content_6_buttonLink_1">免费使用</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .wsc-footer2020 {font-family: "Noto Sans SC", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown {margin: 0 8px;}
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-nav { padding: 48px 0; }
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-nav .wsc-footer2020-nav-logo {width: 155px;}
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(4) {width: auto;display: block;padding: 0 0;}
+  .wsc-footer2020-archival-info { margin: 24px 0; color: #A8A8A8; font-size: 12px; line-height: 1; text-align: center;}
+  .wsc-footer2020-social .wsc-footer2020-social-media-container {display: flex; align-items: center;padding: 8px 0;}
+  .wsc-footer2020-social .wsc-footer2020-social-media {display: flex; width: 46px; height: 46px;border: 0.675px solid #8b8b8b;box-sizing: border-box;border-radius: 50%; justify-content: center; align-items: center;margin-right: 3.5px;}
+  .wsc-footer2020-social .wsc-footer2020-social-contact {color: #ffffff;margin-bottom: 32px;font-size: 20px;line-height: 1;}
+  .wsc-footer2020-social .wsc-footer2020-social-contact-method {color: #A8A8A8; display: flex;font-size: 14px;line-height: 22px; padding: 10px 0;}
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-subnav-iconlink { padding: 0 !important;}
+  .wsc-footer2020-social .wsc-footer2020-social-contact-method .online-service {color: #A8A8A8;}
+  .wsc-footer2020-social .wsc-footer2020-social-contact-method .online-service:hover {color: #fff;text-decoration: none;}
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-top-content { flex-direction: column; }
+  .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:last-of-type .wsc-footer2020-dropdown-menu { text-align: center; }
+  @media (min-width: 1280px) {
+    .wsc-footer2020 .wsc-footer2020-container {max-width: 1410px;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-top-content { flex-direction: row; }
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-container {max-width: 1410px}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-nav {text-align: left; align-items: flex-start; padding: 64px 0; }
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown-toggle .wsc-footer2020-dropdown-title {font-size: 16px;line-height: 28px;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-subnav-link {font-size: 14px; line-height: 22px;display: inline-block;color: #A8A8A8;opacity: 1;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-subnav {padding: 64px 0 64px 72px; }
+    .wsc-footer2020 .wsc-footer2020-subnav-item {padding: 8px 0;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(4) .wsc-footer2020-dropdown-toggle {margin-bottom: 16px}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(4) .wsc-footer2020-subnav-item {padding: 8px 0;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(4) ul {display: block;}
+    .wsc-footer2020-social .wsc-footer2020-social-media-container {display: flex; align-items: center;padding: 8px 0;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown {padding: 0 0;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown-toggle {padding: 0 0; margin-bottom: 16px;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(5) {position: relative; top: auto; right: auto;}
+    .wsc-footer2020 .wsc-footer202004-top .wsc-footer2020-dropdown:nth-child(5) .wsc-footer2020-dropdown-toggle {margin-bottom: 16px;}
+  }
+  .icon-weixin {line-height: 1;position: relative;}
+  .icon-weixin .icon-weixin-box {
+    display: none;
+    position: absolute;
+    bottom: 200%;
+    left: 70%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    background-color: #fff;
+    width: 200%;
+    min-width: 13rem;
+    z-index: 1;
+  }
+
+  .icon-weixin .icon-weixin-box:after {
+    display: block;
+    content: "";
+    position: absolute
+  }
+
+  .icon-weixin .icon-weixin-box[position-absolute=right] {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0)
+  }
+
+  .icon-weixin .icon-weixin-box[position-absolute=left] {
+    left: 0;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0)
+  }
+  @media (max-width:991.99px) {
+    .icon-weixin .icon-weixin-box[position-absolute=mobile-left] {
+      left: 0;
+      right: auto;
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0)
+    }
+    .icon-weixin .icon-weixin-box[position-absolute=mobile-right] {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0)
+    }
+  }
+
+  .icon-weixin:hover .icon-weixin-box {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  }
+</style>
+<footer class="wsc-footer2020">
+  <div class="wsc-footer2020-top wsc-footer202004-top">
+    <div class="wsc-footer2020-container">
+      <div class="wsc-footer2020-top-content">
+        <div class="wsc-footer2020-nav">
+          <a href="/">
+            <img class="wsc-footer2020-nav-logo" src="https://allstatics.wondershare.cn/neveragain/2019/assets/icon/logo/modao-zh-horizontal-text-white.svg" alt="modao-logo-footer" />
+          </a>
+        </div>
+        <div class="wsc-footer2020-subnav">
+          <div class="wsc-footer2020-subnav-content">
+            <div class="wsc-footer2020-dropdown">
+              <nav class="wsc-footer2020-dropdown-toggle" aria-expanded="false">
+                <h5 class="wsc-footer2020-dropdown-title">产品</h5>
+                <div class="wsc-footer2020-dropdown-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </nav>
+              <div class="wsc-footer2020-dropdown-menu">
+                <ul>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/prototype/index.html">原型</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/aboard/index.html">设计画布（New)</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/design/index.html">设计(Beta)</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/flowchart/index.html">流程图(Beta)</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/mind-map/index.html">思维导图(Beta)</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/feature/axure-import/index.html">Axure导入(Beta)</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/privatize">私有化部署</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="https://modao.cc/changelog">最新更新</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/downloads">下载</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="wsc-footer2020-dropdown">
+              <nav class="wsc-footer2020-dropdown-toggle" aria-expanded="false">
+                <h5 class="wsc-footer2020-dropdown-title">资源</h5>
+                <div class="wsc-footer2020-dropdown-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </nav>
+              <div class="wsc-footer2020-dropdown-menu">
+                <ul>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/brand/education">教育支持</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="https://modao.cc/hc">帮助中心</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/bonus">福利中心</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/purchase">购买攻略</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/map">网址导航</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="wsc-footer2020-dropdown">
+              <nav class="wsc-footer2020-dropdown-toggle" aria-expanded="false">
+                <h5 class="wsc-footer2020-dropdown-title">关于</h5>
+                <div class="wsc-footer2020-dropdown-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </nav>
+              <div class="wsc-footer2020-dropdown-menu">
+                <ul>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/common-page/about-us.html">关于我们</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/common-page/about-us.html#nav-join-us">加入我们</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/tos">使用条款</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/privacy">隐私协议</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="wsc-footer2020-dropdown">
+              <nav class="wsc-footer2020-dropdown-toggle" aria-expanded="false">
+                <h5 class="wsc-footer2020-dropdown-title">更多</h5>
+                <div class="wsc-footer2020-dropdown-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </nav>
+              <div class="wsc-footer2020-dropdown-menu">
+                <ul>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/knowledge-community/index.html">知识社区</a></li>
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/activities/collection.html">活动集锦</a></li>
+
+                  <li class="wsc-footer2020-subnav-item"><a class="wsc-footer2020-subnav-link" href="/activities/partnerplan.html">合伙人计划</a></li>
+                  <li class="wsc-footer2020-subnav-item d-none"><a class="wsc-footer2020-subnav-link" href="">开发者计划</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="wsc-footer2020-dropdown">
+              <nav class="wsc-footer2020-dropdown-toggle" aria-expanded="false">
+                <h5 class="wsc-footer2020-dropdown-title">联系我们</h5>
+              </nav>
+              <div class="wsc-footer2020-social">
+                <div class="wsc-footer2020-social-media-container">
+                  <a href="https://weibo.com/mockingbot" class="wsc-footer2020-subnav-iconlink" style="line-height: 1">
+                    <img src="https://images.modao.cc/images/images-2021/website-construction/nav-bar/blog.png" style="line-height: 1" alt="blog" />
+                  </a>
+                  <a rel="nofollow" href="javascript:;" class="wsc-footer2020-subnav-iconlink with-hand icon-weixin" style="margin-left: 16px">
+                    <span class="icon-weixin">
+                      <img class="" src="https://images.modao.cc/images/images-2021/website-construction/nav-bar/wechart.png" alt="wechart" />
+                      <div class="icon-weixin-box font-size-small text-center">
+                        <div class="">
+                          <img alt="墨刀" src="https://images.modao.cc/images/images-2021/website-construction/nav-bar/wechat-qrcode.png" class="img-fluid" />
+                        </div>
+                      </div>
+                    </span>
+                  </a>
+                </div>
+                <div class="wsc-footer2020-social-contact-method">
+                  <div>使用咨询：</div>
+                  <div><a id="mdOnlineSupport" class="online-service" href="#" target="_blank">在线客服</a></div>
+                </div>
+                <div class="wsc-footer2020-social-contact-method">
+                  <div>销售热线：</div>
+                  <div>400-659-9879</div>
+                </div>
+                <div class="wsc-footer2020-social-contact-method">
+                  <div>帮助支持：</div>
+                  <div>support@modao.cc</div>
+                </div>
+                <div class="wsc-footer2020-social-contact-method">
+                  <div>商务合作：</div>
+                  <div>bd@modao.cc</div>
+                </div>
+              </div>
+            </div>
+            <div class="wsc-footer2020-dropdown">
+              <div class="wsc-footer2020-dropdown-menu">
+                <img src="https://neveragain.allstatics.com/2019/assets/icon/logo/wondershare-zh-slogan-vertical-white.svg" alt="slogan" class="img-fluid" width="180" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wsc-footer2020-bottom wsc-footer202004-bottom">
+    <div class="wsc-footer2020-container">
+      <div class="wsc-footer2020-bottom-content py-0" style="border-bottom: none">
+        <div class="wsc-footer2020-archival-info">
+          <div>
+            <span>
+              © 2012-
+              <span id="copyright-year"></span>
+              <script>
+                document.querySelector('#copyright-year').outerHTML = new Date().getFullYear()
+              </script>
+              墨刀 - 强大易用的原型设计与协同工具
+            </span>
+            <span style="padding-left: 24px"><a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow" style="color: #a8a8a8">京ICP备14055711号-2</a></span>
+            <span style="padding-left: 24px"><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502045884" target="_blank" rel="nofollow" style="color: #a8a8a8">京公网安备11010502045884号</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://modao.cc/assets/js/header-footer-2021.js"></script>
+<!-- codex script -->
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/vendor/wsc-vendor.js"></script>
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/script/wsc-override-zh.js"></script>
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/script/wsc-common.js"></script>
+<script>$(function () { wsc.common.init() })</script>
+<script src="/assets/js/login.js"></script>
+<!-- codex script -->
+
+<!-- sensor track -->
+<script src='/js/sensors-sdk.min.js'></script>
+<script src='/js/sensors-abtesting-sdk.min.js'></script>
+<script src='/js/mb-track-v4.js'></script>
+<!-- sensor track -->
+
+<!-- ip判断用户地区后弹出提示弹窗 -->
+<div id="nlj2-modal" class="nlj2-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="nlj2-modal-label">
+  <div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 640px;">
+    <div class="modal-content" style="box-shadow: none;border: none;">
+      <div class="modal-header border-0 py-0">
+        <button type="button" class="close text-black" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="display-4">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center" style="padding-left: 2rem;padding-right: 2rem;">
+        <img src="https://allstatics.wondershare.cn/neveragain/2019/assets/icon/extra/globe-americas.svg" class="pb-5" width="48" alt="globe americas">
+        <p class="des">Are you visiting modao.cc from outside China?  Visit your regional site for more relevant pricing, promotions and events.</p>
+        <p>您是从中国以外的地区访问modao.cc吗？请访问您地区的网站了解更多有关定价、促销、和活动的资讯。</p>
+        <p><a href="https://mockitt.wondershare.com/?f=md" class="text-action d-block regional-site">Go to English Website</a></p>
+        <p><a href="#" class="text-action d-block" data-dismiss="modal">继续访问中文网站</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  (function(){
+    !localStorage.getItem('mockitt-nlj2-count')&& $.getJSON('https://i.wondershare.com/api/v1/geoip/country', function (res) {
+      if (res && (res.code === 200)) {
+        localStorage.setItem('mockitt-nlj2-count', 1);
+        var geoip = res.data.country;
+
+        (['CN','HK','TW']).indexOf(geoip) === -1 && $('#nlj2-modal').modal('show')
+      }
+    })
+
+    $('#nlj2-modal').on('hidden.bs.modal', function () {
+      localStorage.setItem('mockitt-nlj2-count', 1)
+    })
+  })()
+</script>
+<!-- ip判断用户地区后弹出提示弹窗 -->
+
+<!-- WPA start -->
+<script>
+  var wpaShowItemId = '123'
+  var qidian_ex1 = "12"
+</script>
+<script id="qd300907440129217b43492df1157945f52a80582eaf" src="https://wp.qiye.qq.com/qidian/3009074401/29217b43492df1157945f52a80582eaf" charset="utf-8" async defer></script>
+<!-- WPA end -->
+
+
+
+<script src="https://www.wondershare.com/ga360/js/ga360-add.js"></script>
+<aside>
+  <style>
+    .close:hover svg path {fill: #FF6161;}
+  </style>
+  <div class="modal fade p-0" id="ws_login_modal" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mx-auto" style="max-width: 24rem;">
+      <div class="modal-content border-0 rounded-0 overflow-hidden" style="box-shadow: none;border-radius: .625rem;">
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close shadow-none font-size-normal position-absolute d-inline-flex align-items-center" style="z-index: 1;top: 1.5rem;right: 1.5rem;outline: none;color: #415058;opacity: 1;">
+          <span class="wsc-icon wsc-icon-loaded d-inline-flex align-items-center" aria-hidden="true" style="height: .75rem;">
+            <svg xmlns="https://www.w3.org/2000/svg" class="svg-icon icon close-btn" viewBox="0 0 14 14" aria-hidden="true" width="14" height="14"><path d="M7 5.336L11.992.345a1.177 1.177 0 011.663 1.663L8.664 7l4.991 4.992a1.177 1.177 0 11-1.663 1.663L7 8.664l-4.992 4.991a1.177 1.177 0 11-1.663-1.663L5.336 7 .345 2.008A1.177 1.177 0 112.008.345L7 5.336z" fill="#8D9EA7" fill-rule="evenodd"></path></svg>
+          </span>
+        </button>
+        <div id="login_frame_container" class="modal-body p-0" style="max-height: 560px;">
+          <iframe src="" height="560" width="100%"  frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+<script>
+// 非移动端使用iframe弹窗进行登录
+if (!navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i)) var isUseIframeLogin = true;
+</script>
+<script src="https://allstatics.wondershare.cn/neveragain/2019/assets/vendor/swiper.min.js"></script>
+<script language="javascript"> 
+	new Swiper(".swiper-container.swiper1", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        watchSlidesProgress:true,
+        autoplay:true,
+        pagination: {
+            el: '.swiper-pagination'
+        },
+        paginationClickable: true,
+        loop:true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    new Swiper('.swiper-container.swiper2', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-control-pagination'
+        },
+        on: {
+            slideChange: function () {
+                // swiperAnimation(this.activeIndex)
+            }
+        }
+    });
+
+    function throttle(fn, delay) {
+        var run = true
+        return function() {
+            if (!run) return
+            run = false
+            setTimeout(function() {
+                fn.apply()
+                run = true
+            }, delay || 100)
+        }
+    }
+    var fixedSlideTop =  $('.fixed-slide').offset().top;    // 该section距离文档流的顶部（减去导航条的高度）
+    var scrollSlideHeight = $('.scroll-slide').height();    // 滚动区域的高度
+    
+    var lastActive = 0;
+    function setPosition(scrollTop) {
+        // 当滚动到当前section时，fixedSlideTop设置成悬浮定位状态；当滚出时，设置成绝对定位状态
+        if((scrollTop + 60) > fixedSlideTop && ((scrollTop + window.innerHeight) < (fixedSlideTop + scrollSlideHeight))) {
+            $('.fixed-slide').removeClass('position-absolute').addClass('position-fixed').css('top', '60px').css('bottom', 'auto');
+
+            var activeIndex = getActiveIndex(scrollTop);
+            if(activeIndex !== false) {
+                setActiveStatus(activeIndex);
+            }
+        } else {
+            $('.fixed-slide').removeClass('position-fixed').addClass('position-absolute');
+            // 滚动的位置在当前部分的上面
+            if(scrollTop <= fixedSlideTop) {
+                setActiveStatus(0);
+
+                $('.fixed-slide').css('top', 'auto').css('bottom', 'auto');
+            } else {
+                setActiveStatus(4);
+                // 滚动的位置在当前部分的下面
+                $('.fixed-slide').css('top', 'auto').css('bottom', '0');
+            }
+        }
+    }
+
+    // 设置选中状态
+    function setActiveStatus(index) {
+        $('.carousel-controls .carousel-controls-item').removeClass('control-item-active')
+        $('.carousel-controls .carousel-controls-item').eq(index).addClass('control-item-active');
+        $('.carousel-text .carousel-text-item').removeClass('control-item-active');
+        $('.carousel-text .carousel-text-item').eq(index).addClass('control-item-active');
+        index = index + 1;
+        var url = "url(https://images.modao.cc/images/images-2021/website-construction/homepage/section-bg-" + index + ".png)";
+
+        $('.fixed-slide').css('background-image', url)
+    }
+
+    // 获取选中下标
+    function getActiveIndex(scrollTop) {
+        var imgItemLength = $('.scroll-controls .scroll-item').length;
+        var imgParentHeight = $('.scroll-controls').height();
+        var imgItemHeight = imgParentHeight / imgItemLength;
+        var scrollSlideScrollHeight = scrollTop - fixedSlideTop
+        var activeIndex = Math.floor((scrollSlideScrollHeight + Math.floor(imgItemHeight / 2)) / imgItemHeight);
+        if(activeIndex !== lastActive) {
+            lastActive = activeIndex;
+            return activeIndex;
+        }
+        return false;
+    }
+    function scrollEvent() {
+        var scrollTop = $(window).scrollTop();
+        setPosition(scrollTop);
+    }
+    function setBgPosition() {
+        var listLeft =  $(".scroll-controls").offset().left;
+        var bgLeft = listLeft + 150 + 'px';
+        $('.fixed-slide').css('background-position', bgLeft + ' top')
+    }
+    $(function() {
+        setBgPosition();
+        scrollEvent();
+    })
+    $(window).on('resize', function() {
+        scrollSlideHeight = $('.scroll-slide').height()
+        setBgPosition();
+        scrollEvent();
+    })
+    $(window).on('scroll', function() {
+        scrollEvent();
+    });
+
+    function setButton(isSignIn) {
+        // 已登录
+        if(isSignIn) {
+            $('.btn-login').attr('href', '/dashboard/me')
+        } else {
+            $('.btn-login').attr('href', '/embed/auth_box?type=signup')
+        }
+    }
+
+    // 判断是否登录后的回调函数（不可以函数名和参数值）
+    function loginCallback(config) {
+        setButton(config.isSignIn)
+    }
+</script>
+</body>
+</html>

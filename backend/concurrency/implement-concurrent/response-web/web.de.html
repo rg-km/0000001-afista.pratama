@@ -1,0 +1,2974 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml" style="--col-count:4;" data-content-login="">
+  <head>
+    
+  
+  <script>
+/*<![CDATA[*/
+
+	window.startupTS = new Date().getTime();
+	document.querySelector('html').classList.add('withjs');
+
+	document.addEventListener('pageStartup', () => {
+		// IntersectionObserver check to only support new-ish browsers (we had some probs with older iOS browsers and animations)
+		if (('IntersectionObserver' in window) || ('IntersectionObserverEntry' in window) || ('intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
+			document.querySelector('html').classList.add('ce-available');
+		}
+	});
+
+	const event = new CustomEvent('pageStartup', { bubbles: true, cancelable: true, detail: { source: 'index.html' } });
+	document.dispatchEvent(event);
+  
+/*]]>*/
+</script>
+  <meta charset="utf-8" />
+  <title>WEB.DE - E-Mail-Adresse kostenlos, FreeMail, De-Mail & Nachrichten</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://img.ui-portal.de/webde/favicon.ico"/>
+  <meta name="description" content="Das beliebteste Internetportal Deutschlands mit Angeboten rund um Suche, Kommunikation, Information und Services."/>
+  <meta name="robots" content="index, follow" />
+  <meta name="applicationVersion" content="11.58.1"/>
+  <link rel="canonical" href="https://web.de/"/>
+  <link rel="search" type="application/opensearchdescription+xml" href="https://img.ui-portal.de/search-int/osd/web/ff_webde_opensearch.xml" title="WEB.DE Suche"/>
+  
+  
+    
+    <link rel="preload" as="style" href="https://js.ui-portal.de/homepage/res/live/1.39/webde/homepage.css">
+    <link rel="stylesheet" href="https://js.ui-portal.de/homepage/res/live/1.39/webde/homepage.css">
+
+
+  
+  
+    <script>
+window.PageConfig = {
+  "adConnectorUrl" : "https://dl.web.de/uim/connector/live/v2",
+  "box1Enabled" : true,
+  "brain" : {
+    "prio" : "undefined"
+  },
+  "cont_tcflayer" : "0",
+  "country" : "de",
+  "pageidentifier" : "homepage",
+  "reco" : "optout",
+  "shopping" : false,
+  "site" : "hp",
+  "stage" : "live",
+  "tcf" : false,
+  "unitedFallback" : 100,
+  "vorteilswelt" : true
+};
+</script>
+
+  <script>/*<![CDATA[*/
+window.initialData = {
+  "serviceResponse" : {
+    "response" : {
+      "ad" : "<HTML><HEAD><TITLE><\/TITLE><\/HEAD><BODY topmargin=\"0\" leftmargin=\"0\" style=\"background-color:transparent;overflow:hidden;margin:0;padding:0;\"><\/BODY><\/HTML>",
+      "requestHeaders" : {
+        "User-Agent" : "Go-http-client/2.0",
+        "X-Forwarded-For" : "110.137.102.250"
+      },
+      "requestUrl" : "https://united.uimserv.net/lt?wpt=h&nw=42&ac=1&lt=portal(webde)category(homepage)section(homepage)tagid(initial)layoutclass(b)&wi=501178073&ref=https://web.de&browser=&iframe=0&os=&uid_stable=0&external_uid=&optout=1&userid=&prf%5Bportal%5D=webde&prf%5Bcategory%5D=homepage&prf%5Bsection%5D=homepage&prf%5Btagid%5D=initial&prf%5Blayoutclass%5D=b&prf%5Bdeviceclass%5D=&prf%5Bdeviceclient%5D=browser&prf%5Bcategorytype%5D=&prf%5Bos%5D=&prf%5Bbrowser%5D=&prf%5Biframe%5D=0&prf%5Bsys%5D=&prf%5Bsysv%5D=&prf%5Bcl%5D=&prf%5Bclv%5D=&prf%5Bvpw%5D=&prf%5Bnet%5D=&prf%5Bexternal_uid%5D=&prf%5Bhid%5D=&prf%5Bnguserid%5D=&prf%5Bpagev%5D=2&prf%5Buids%5D=0&prf%5Boptout%5D=1&prf%5Bclktype%5D=&prf%5Bwi%5D=501178073&prf%5Bbrandedbrowser%5D=&prf%5Bdnt%5D=0&prf%5Bpos%5D=1&prf%5Bspecial%5D=&prf%5Btcf_version%5D=1.1&prf%5Bweather_condition%5D=&prf%5Bweather_temp%5D=&prf%5Bbusterid%5D=5202508&prf%5Btcf_pub%5D=,,&prf%5Btcf_pur%5D=,,&prf%5Btcf_spe%5D=,,"
+    },
+    "agent" : {
+      "os" : "",
+      "osVersion" : "",
+      "browser" : "",
+      "browserVersion" : ""
+    },
+    "_params" : {
+      "ac" : "1",
+      "browser" : "",
+      "category" : "homepage",
+      "external_uid" : "",
+      "iframe" : "0",
+      "layoutclass" : "b",
+      "lt" : "portal(webde)category(homepage)section(homepage)tagid(initial)layoutclass(b)",
+      "nguserid" : "",
+      "nw" : "42",
+      "optout" : "1",
+      "os" : "",
+      "portal" : "webde",
+      "prf[brandedbrowser]" : "",
+      "prf[browser]" : "",
+      "prf[busterid]" : "5202508",
+      "prf[category]" : "homepage",
+      "prf[categorytype]" : "",
+      "prf[cl]" : "",
+      "prf[clktype]" : "",
+      "prf[clv]" : "",
+      "prf[deviceclass]" : "",
+      "prf[deviceclient]" : "browser",
+      "prf[dnt]" : "0",
+      "prf[external_uid]" : "",
+      "prf[hid]" : "",
+      "prf[iframe]" : "0",
+      "prf[layoutclass]" : "b",
+      "prf[net]" : "",
+      "prf[nguserid]" : "",
+      "prf[optout]" : "1",
+      "prf[os]" : "",
+      "prf[pagev]" : "2",
+      "prf[portal]" : "webde",
+      "prf[pos]" : "1",
+      "prf[section]" : "homepage",
+      "prf[special]" : "",
+      "prf[sys]" : "",
+      "prf[sysv]" : "",
+      "prf[tagid]" : "initial",
+      "prf[tcf_pub]" : ",,",
+      "prf[tcf_pur]" : ",,",
+      "prf[tcf_spe]" : ",,",
+      "prf[tcf_version]" : "1.1",
+      "prf[uids]" : "0",
+      "prf[vpw]" : "",
+      "prf[weather_condition]" : "",
+      "prf[weather_temp]" : "",
+      "prf[wi]" : "501178073",
+      "ref" : "https://web.de",
+      "section" : "homepage",
+      "uid_stable" : "0",
+      "userid" : "",
+      "wi" : "501178073",
+      "wpt" : "h"
+    }
+  },
+  "logins" : [ {
+    "icon" : "email",
+    "text" : "E-Mail",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "server" : "https://freemail.web.de",
+      "service" : "freemail",
+      "loginErrorURL" : "https://navigator.web.de/loginerror",
+      "successURL" : "https://navigator.web.de/login",
+      "statistics" : "kR8BWaubR5/vA1KhqEY3LOBuNIy/0UiyKfW8gXUbkE9ajaE5dqAorbuXCwUU2zxykOEv9JD/9AWh+zAJ//a2WMHWIInMjKb8hXoy+K0iQyeWYypnCpnWoUOpQvJbItZGvle7mgDbprFKgW+XoPP4IpcUuEqAWHDTB1pM3aH/wNA=",
+      "loginFailedURL" : "https://web.de/logoutlounge/?status=login-failed"
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  }, {
+    "icon" : "cloud",
+    "text" : "Online-Speicher",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "successURL" : "https://navigator.web.de/login",
+      "loginErrorURL" : "https://status.web.de",
+      "loginFailedURL" : "https://web.de/online-speicher/login/?error=true",
+      "service" : "freemail",
+      "goto" : "nl_smartdrive",
+      "statistics" : "mW7nxYShT5atP3HYXD1C0zWJ0if2bwIc_nCCdjXc1XvdkO5tPAlgI5aBhSVyxQdqq5o6uiVb2VRf8nUZzqO7MZSFHroM7-zUwivwtVFHKXrkbDte4tCFL5Dud44dACPUH1a3sgCmUGH2otLSN0cUDJVik2rH1IZHAN7w6xNd1pQVAE8kRAe3EopfDTq4Y3hJ"
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  }, {
+    "icon" : "demail",
+    "text" : "De-Mail",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "service" : "freemail",
+      "server" : "https://freemail.web.de",
+      "successURL" : "https://navigator.web.de/login",
+      "loginErrorURL" : "https://navigator.web.de/loginerror",
+      "loginFailedURL" : "https://produkte.web.de/de-mail/login/error",
+      "goto" : "demail",
+      "mc" : "__mc__",
+      "uinguserid" : "__uinguserid__",
+      "statistics" : "GHUy3ftnPpY1cshcS++OYJM3l/RsTJTkljiN8pZcscliQFgvYFSam/khGfguJe6mSm1T7G3XfpF78yGUHn0JF+v6TZnuIR6ZPZU5/q5+gBwkdFUziP/LSZtzZqQ694XVQcT5+FzsdYfUTlgaU7t0f+azg4C2XyIEjwLBsFmYFxA="
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  }, {
+    "icon" : "domain",
+    "text" : "Domain",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "successURL" : "https://navigator.web.de/login",
+      "loginErrorURL" : "https://navigator.web.de/loginerror",
+      "goto" : "mdh",
+      "service" : "freemail",
+      "loginFailedURL" : "https://web.de/logoutlounge/?status=login-failed",
+      "statistics" : "xNGbf2F5E-0aNjuYuM4HvHFcMs1cm219fuHLACxwXwIMsSvXYwcS5sQIXgWBQKldu1vW9LqQuCWFyUPnoZTJiFTVYYtq5P7lnuF5wHZSljDqeBEbsMlY_EWAyOq_0ksO_6W1_tHxVd8VbB-NV8imqXLXpgfPVN9icqCSRfWOKAQ="
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  }, {
+    "icon" : "webcent",
+    "text" : "WEB.Cent",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "service" : "cbkwebde",
+      "statistics" : "SD7VNiwmYEo762DeZQs2mzIcOW6-qGafDQ5ZfcUR43mehdbFCNcgRQI0kqiS8VDKpAe3Xe-jiapq8qDaL0j72ZJK8esuCPEPP49U2Sp86Od2ZbcpT5YpqCNvkhppdnm9sG0RRqT_VsLRPMdXgX-uy3Adk_m984-Yz7x-Y9bbvHFE83wmGJBtslOxYJRkIKFe",
+      "successURL" : "https://vorteile.web.de/webcent/halogin/success?goto=sammeln&isInterstitialLoginAndProcess=false&isStaticPageLogin=true",
+      "loginErrorURL" : "https://vorteile.web.de/webcent/halogin/failure?goto=sammeln&isInterstitialLoginAndProcess=false&isStaticPageLogin=true",
+      "loginFailedURL" : "https://vorteile.web.de/webcent/halogin/bad_password?goto=sammeln&isInterstitialLoginAndProcess=false&isStaticPageLogin=true",
+      "partnerdata" : "goto=sammeln&isInterstitialLoginAndProcess=false&isStaticPageLogin=true"
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  }, {
+    "icon" : "customer-center",
+    "text" : "Kundencenter",
+    "loginUrl" : "https://login.web.de/login",
+    "formHiddenParams" : {
+      "service" : "freemail",
+      "server" : "https://produkte.web.de",
+      "successURL" : "https://navigator.web.de/login",
+      "goto" : "csc_ha",
+      "loginErrorURL" : "https://mein.web.de/?errorCodes=7100",
+      "loginFailedURL" : "https://mein.web.de/?errorCodes=7002",
+      "statistics" : "MHp-fN8RYftCpmxpMkV0TQA0VsMKPnsFRsDPgYq1JaLZb07lK71HrOtvNrlsAZrJpoNlz9w7kaQ7EvT_CHIFZ_KIFgFVkvPa0sOx_AiK-03G07jvOZVFWiOXVfC85vXK5SmLyyIewiG_0wNoqqNVob8DuP8oaEh6gjUV79MG1LvdvTibl6FdIY0ifJqPKyyu"
+    },
+    "credentials" : [ {
+      "input" : {
+        "name" : "username",
+        "placeholder" : "E-Mail-Adresse"
+      },
+      "link" : {
+        "href" : "https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich",
+        "text" : "Kostenlos registrieren!"
+      }
+    }, {
+      "input" : {
+        "name" : "password",
+        "placeholder" : "Passwort"
+      },
+      "link" : {
+        "href" : "https://passwort.web.de/",
+        "text" : "Passwort vergessen?"
+      }
+    } ]
+  } ],
+  "bentoFooter" : [ {
+    "href" : "https://passwort.web.de/",
+    "text" : "Passwort vergessen"
+  }, {
+    "href" : "https://web.de/datenschutz/",
+    "text" : "Datenschutz"
+  }, {
+    "href" : "https://hilfe.web.de/",
+    "text" : "Hilfe"
+  }, {
+    "href" : "https://web.de/netid/",
+    "text" : "netID mit WEB.DE"
+  } ],
+  "searchbar" : {
+    "suggestContainerId" : "suggestions",
+    "trackParams" : {
+      "default" : "HP",
+      "suggest" : "HP_sg",
+      "layer" : "wbl_mono_sf"
+    },
+    "suggestAPI" : "https://web.de/msuggest/v1?brand=webde&count=10&device=tablet&q=",
+    "searchURL" : "https://suche.web.de/web"
+  }
+};
+/*]]>*/
+</script>
+  
+    <script src="https://dl.web.de/tcf/live/v1/js/tcf-api.js"></script>
+
+  <script src="https://img.ui-portal.de/pos-cdn/tracklib/4.5.0/tracklib.min.js"></script>
+  
+    
+    <script src="https://js.ui-portal.de/homepage/res/live/1.39/webde/js/piNctTracking.js"></script>
+
+
+  <script>/*<![CDATA[*/
+if (!window.AdService) {
+    window.AdService = []
+}
+const paramsObject = {
+    'wi': window.initialData.serviceResponse?._params?.wi,
+    'section': window.initialData.serviceResponse?._params?.section,
+    'portal': window.initialData.serviceResponse?._params?.portal,
+    'category': window.initialData.serviceResponse?._params?.category,
+    'layoutclass': window.initialData.serviceResponse?._params?.layoutclass,
+    'consentlevel': window.initialData.serviceResponse?._params?.['prf[consentlevel]'],
+    'weather_condition': window.initialData.serviceResponse?._params?.['prf[weather_condition]'],
+    'weather_temp': window.initialData.serviceResponse?._params?.['prf[weather_temp]'],
+    'hpeventid': window.initialData.serviceResponse?._params?.['prf[busterid]'],
+    'addefend': window.initialData.serviceResponse?._params?.['prf[addefend]'],
+    'special': window.PageConfig?.sitespect?.special
+}
+window.AdService.push(() => {
+    window.AdService.setParam(paramsObject);
+});
+/*]]>*/</script>
+  
+    
+    <link rel="preload" as="script" href="https://js.ui-portal.de/homepage/res/live/1.39/webde/chunk-vendors.js">
+
+    <link rel="preload" as="script" href="https://js.ui-portal.de/homepage/res/live/1.39/webde/chunk-common.js">
+
+    <link rel="preload" as="script" href="https://js.ui-portal.de/homepage/res/live/1.39/webde/homepage.bundle.js">
+
+
+
+  </head>
+  <body>
+    <div data-available></div>
+    <div id="app" tabindex="0">
+      <hp-app inline-template>
+        <Page inline-template>
+          <div class="main" :data-fallback="adHandler.fallback">
+            
+            <div class="main-content">
+              <div data-service-slot="notification"></div>
+              
+              
+              
+              
+              
+    <hp-header inline-template>
+        <header data-component="header">
+            
+            <div data-wrapper>
+                
+    <a data-part="logo" href="https://web.de/">
+        <h1 aria-label="WEB.DE - E-Mail-Adresse kostenlos, FreeMail, De-Mail &amp; Nachrichten">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+                <path fill="#FFD800" d="M49 56H7c-3.85 0-7-3.15-7-7V7c0-3.85 3.15-7 7-7h42c3.85 0 7 3.15 7 7v42c0 3.85-3.15 7-7 7z"></path>
+                <path fill="#333333" d="M12.628 17.196c.45.166 1.048-.134 1.481-.211.43-.075 2.19-.47 1.857-.069-.187.226-.67.227-1.1.353-.597.176-1.555.275-1.592 1.043-.085 1.827 2.755.612 3.587.315 2.255-.785 4.84-.92 7.122-1.301 2.532-.421 5.135-.46 7.691-.558 2.69-.103 5.584-.216 8.227.157.704.099 1.37.177 2.086.252.62.064 1.928.633 2.48.372.501-.237.274-.83.533-1.133.373-.435 1.108-.36.597-1.29-.389-.708-1.808-.938-2.542-.794-.073-.447.269-.249.359-.481.13-.335.13-.852-.088-1.224-.394-.677-2.266-.917-2.267-.916-4.491-.723-12.572-1.503-21.173-.5-1.427.167-3.931.345-5.393.937-.647.262-.637.268-.717.692-.077.603.213 1.306.938 1.156 1.389-.286 3.843-.683 4.546-.862 3.469-.883 15.015-.711 16.502-.358.919.196 5.968.362 6.089 1.286-11.782-.488-16.28-.483-26.859.774-.884.146-1.415.339-2.112.575-.859.289-1.44 1.346-.252 1.785z"></path>
+                <path fill="#333333" d="M28.208 9.892c.412.036 3.667.133 3.854-1.14.106-.722-.608-1.894-.813-2.106-.27-.223-.865 1.722-1.015-.191-.024-.312-.104-.795-.251-1.09-.074-.148-.165-.256-.275-.256a.388.388 0 0 0-.18.062c-.094.061-.228.259-.295.425-.184.454-.265 2.209-.72 2.238-.495.032-.48-1.124-.414-1.46.011-.055-.001-.068-.023-.063-.047.013-.062.022-.1.035-.297.114-.636.459-.661.484-.466.478-1.096 1.725-.778 2.299.331.593 1.323.732 1.671.763zM50.887 34.98c-.035-.249-.108-.402-.277-.631-.613-.839-3.495-1.401-3.496-1.391-1.447-.316-3.114-.588-4.975-.815.265-1.258-.012-3.579-.019-4.386.037-1.441.007-5.166-.102-6.108-.083-.885-.201-1.272-.686-2.004-.348-.523-.455-1.034-1.257-.953-.73.073-.999 1.086-.874 1.702l.314 1.253c.131.259.485 8.386.405 9.094.007.343-.025.785-.035 1.159-1.897-.18-3.96-.319-6.169-.416l.087-.069c1.057-.822.691-1.914.514-3.104-.241-1.905-.057-7.311-.284-7.962-.154-.51-.588-.804-.966-1.193-.466-.48-1.051-.627-1.588-.076-.527.478.132 7.304.169 10.302.048.628-.092 1.415.158 2.022-.204-.008-5.628-.121-6.084-.113.006-.106-.065-.241-.116-.344-.136-.275-.328-.917-.383-1.217a12.788 12.788 0 0 1-.187-1.729c-.041-1.24.074-5.076.212-6.08.155-1.11.746-3.068-1.179-2.637-.208.047-1.228.173-1.501.388-.317.249-.286.873-.298 1.218-.045 1.31-.19 5.438-.182 6.43.01.833.159 1.905.464 2.718.186.494.737.986 1.313 1.297-1.059.029-2.079.063-2.441.083-1.788.1-3.159.199-4.495.33l-.017-.064c-.224-.69.098-3.538.718-8.879.15-1.288-.077-1.339-.861-2.065-.45-.417-.831-.698-1.613-.071-.496.398-.367.909-.452 1.483-.297 2.003-.73 5.149-.914 7.188-.052.563.027 1.851.171 2.632.013.037.008.078.026.118-.776.104-1.557.218-2.438.353-2.146.333-4.043.415-5.332.993-.792.357-.837.475-1.024.764a.752.752 0 0 0-.099.341c-.002.022.016.307.038.391a1.056 1.056 0 0 0 .715.76c.098.031.695.081.758.087 1.44.145 2.233-.205 3.641-.76 6.975-2.783 26.934-1.94 31.33-1.109 1.909.38 4.856.778 6.683 1.825.298.163.577.282.832.359.128.039.251.058.364.085.28.066.578.006.628-.004.1-.019.197-.048.285-.086.177-.075.32-.184.388-.316.049-.095.11-.278.139-.429a1.518 1.518 0 0 0-.008-.364z"></path>
+                <path fill="#333333" d="M9.143 40.979H7.29l1.632 8.332h2.144l1.247-5.64 1.259 5.64h2.144l1.713-8.332h-1.736l-1.049 6.375-1.364-6.375h-1.806l-1.387 6.351-.944-6.351zm14.609 0h-5.209v8.332h5.326v-1.399h-3.566v-2.074h3.042V44.44h-3.042v-2.063h3.45v-1.398h-.001zm1.485 0v8.332h3.1c1.958 0 2.89-.932 2.89-2.331 0-1.783-1.573-1.981-1.573-1.981s1.119-.478 1.119-1.865c0-1.399-.897-2.156-2.75-2.156h-2.786v.001zm1.76 3.508v-2.203h.583c1.037 0 1.457.349 1.457 1.084 0 .746-.42 1.119-1.282 1.119h-.758zm0 3.52v-2.249h1.072c.897 0 1.387.35 1.387 1.095 0 .746-.454 1.154-1.492 1.154h-.967zm6.258 1.421c.536 0 .909-.373.909-.897 0-.536-.373-.862-.886-.862-.536 0-.921.338-.921.886.001.489.304.873.898.873zm2.419-8.449v8.332h2.074c2.867 0 4.335-1.631 4.335-4.242 0-2.552-1.294-4.091-4.16-4.091h-2.249v.001zm1.76 6.934v-5.536h.478c1.608 0 2.389.956 2.389 2.808 0 1.841-.757 2.727-2.377 2.727h-.49v.001zm11.18-6.934h-5.209v8.332h5.326v-1.399h-3.566v-2.074h3.042V44.44h-3.042v-2.063h3.449v-1.398z"></path>
+            </svg>
+        </h1>
+    </a>
+
+                
+    <hp-searchbar inline-template>
+        <div data-component="searchbar">
+            <form method="get" novalidate="novalidate" action="https://suche.web.de/web" autocomplete="off">
+                <input type="hidden" name="origin" value="HP"/>
+                <label data-accessibility :for="searchbarInput.htmlId">
+                    <span></span>
+                </label>
+                <hp-input v-model="searchbarInput" @formsubmit="searchSubmit" @formreset="searchReset" @input="getSuggestIndex"></hp-input>
+            </form>
+        </div>
+    </hp-searchbar>
+
+                
+    <div data-grid-row="" data-login-area="">
+
+        
+
+        
+        <hp-button data-hidden-in="1col" inline-template="">
+            <a data-component="button" data-importance="ghost" href="https://web.de/email/tarifvergleich/#.pc_page.homepage.index.header.tarifvergleich" @click="clicked">
+                <slot>Registrieren</slot>
+            </a>
+        </hp-button>
+
+    </div>
+
+            </div>
+            <hp-navigation data-hidden-in="1col" inline-template>
+                <div data-component="navigation" data-hidden-in="1col">
+                    
+    <hp-burger inline-template="">
+        <div data-component="burger">
+            <input type="checkbox" data-hidden="" id="burgerMenuPanelBottom"/>
+            <label @mouseenter="hover = true" @mouseleave="hover = false" for="burgerMenuPanelBottom">
+                <span></span>
+                <span><div></div></span>
+                <span></span>
+            </label>
+            <div data-layer>
+                <div data-part="scrollable-container">
+                    <div data-part="logo">
+                        
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+        <path fill=#FFD800 d="M49 56H7c-3.85 0-7-3.15-7-7V7c0-3.85 3.15-7 7-7h42c3.85 0 7 3.15 7 7v42c0 3.85-3.15 7-7 7z"/>
+        <path fill=#333333 d="M12.628 17.196c.45.166 1.048-.134 1.481-.211.43-.075 2.19-.47 1.857-.069-.187.226-.67.227-1.1.353-.597.176-1.555.275-1.592 1.043-.085 1.827 2.755.612 3.587.315 2.255-.785 4.84-.92 7.122-1.301 2.532-.421 5.135-.46 7.691-.558 2.69-.103 5.584-.216 8.227.157.704.099 1.37.177 2.086.252.62.064 1.928.633 2.48.372.501-.237.274-.83.533-1.133.373-.435 1.108-.36.597-1.29-.389-.708-1.808-.938-2.542-.794-.073-.447.269-.249.359-.481.13-.335.13-.852-.088-1.224-.394-.677-2.266-.917-2.267-.916-4.491-.723-12.572-1.503-21.173-.5-1.427.167-3.931.345-5.393.937-.647.262-.637.268-.717.692-.077.603.213 1.306.938 1.156 1.389-.286 3.843-.683 4.546-.862 3.469-.883 15.015-.711 16.502-.358.919.196 5.968.362 6.089 1.286-11.782-.488-16.28-.483-26.859.774-.884.146-1.415.339-2.112.575-.859.289-1.44 1.346-.252 1.785z"/>
+        <path fill=#333333 d="M28.208 9.892c.412.036 3.667.133 3.854-1.14.106-.722-.608-1.894-.813-2.106-.27-.223-.865 1.722-1.015-.191-.024-.312-.104-.795-.251-1.09-.074-.148-.165-.256-.275-.256a.388.388 0 0 0-.18.062c-.094.061-.228.259-.295.425-.184.454-.265 2.209-.72 2.238-.495.032-.48-1.124-.414-1.46.011-.055-.001-.068-.023-.063-.047.013-.062.022-.1.035-.297.114-.636.459-.661.484-.466.478-1.096 1.725-.778 2.299.331.593 1.323.732 1.671.763zM50.887 34.98c-.035-.249-.108-.402-.277-.631-.613-.839-3.495-1.401-3.496-1.391-1.447-.316-3.114-.588-4.975-.815.265-1.258-.012-3.579-.019-4.386.037-1.441.007-5.166-.102-6.108-.083-.885-.201-1.272-.686-2.004-.348-.523-.455-1.034-1.257-.953-.73.073-.999 1.086-.874 1.702l.314 1.253c.131.259.485 8.386.405 9.094.007.343-.025.785-.035 1.159-1.897-.18-3.96-.319-6.169-.416l.087-.069c1.057-.822.691-1.914.514-3.104-.241-1.905-.057-7.311-.284-7.962-.154-.51-.588-.804-.966-1.193-.466-.48-1.051-.627-1.588-.076-.527.478.132 7.304.169 10.302.048.628-.092 1.415.158 2.022-.204-.008-5.628-.121-6.084-.113.006-.106-.065-.241-.116-.344-.136-.275-.328-.917-.383-1.217a12.788 12.788 0 0 1-.187-1.729c-.041-1.24.074-5.076.212-6.08.155-1.11.746-3.068-1.179-2.637-.208.047-1.228.173-1.501.388-.317.249-.286.873-.298 1.218-.045 1.31-.19 5.438-.182 6.43.01.833.159 1.905.464 2.718.186.494.737.986 1.313 1.297-1.059.029-2.079.063-2.441.083-1.788.1-3.159.199-4.495.33l-.017-.064c-.224-.69.098-3.538.718-8.879.15-1.288-.077-1.339-.861-2.065-.45-.417-.831-.698-1.613-.071-.496.398-.367.909-.452 1.483-.297 2.003-.73 5.149-.914 7.188-.052.563.027 1.851.171 2.632.013.037.008.078.026.118-.776.104-1.557.218-2.438.353-2.146.333-4.043.415-5.332.993-.792.357-.837.475-1.024.764a.752.752 0 0 0-.099.341c-.002.022.016.307.038.391a1.056 1.056 0 0 0 .715.76c.098.031.695.081.758.087 1.44.145 2.233-.205 3.641-.76 6.975-2.783 26.934-1.94 31.33-1.109 1.909.38 4.856.778 6.683 1.825.298.163.577.282.832.359.128.039.251.058.364.085.28.066.578.006.628-.004.1-.019.197-.048.285-.086.177-.075.32-.184.388-.316.049-.095.11-.278.139-.429a1.518 1.518 0 0 0-.008-.364z"/>
+        <path fill=#333333 d="M9.143 40.979H7.29l1.632 8.332h2.144l1.247-5.64 1.259 5.64h2.144l1.713-8.332h-1.736l-1.049 6.375-1.364-6.375h-1.806l-1.387 6.351-.944-6.351zm14.609 0h-5.209v8.332h5.326v-1.399h-3.566v-2.074h3.042V44.44h-3.042v-2.063h3.45v-1.398h-.001zm1.485 0v8.332h3.1c1.958 0 2.89-.932 2.89-2.331 0-1.783-1.573-1.981-1.573-1.981s1.119-.478 1.119-1.865c0-1.399-.897-2.156-2.75-2.156h-2.786v.001zm1.76 3.508v-2.203h.583c1.037 0 1.457.349 1.457 1.084 0 .746-.42 1.119-1.282 1.119h-.758zm0 3.52v-2.249h1.072c.897 0 1.387.35 1.387 1.095 0 .746-.454 1.154-1.492 1.154h-.967zm6.258 1.421c.536 0 .909-.373.909-.897 0-.536-.373-.862-.886-.862-.536 0-.921.338-.921.886.001.489.304.873.898.873zm2.419-8.449v8.332h2.074c2.867 0 4.335-1.631 4.335-4.242 0-2.552-1.294-4.091-4.16-4.091h-2.249v.001zm1.76 6.934v-5.536h.478c1.608 0 2.389.956 2.389 2.808 0 1.841-.757 2.727-2.377 2.727h-.49v.001zm11.18-6.934h-5.209v8.332h5.326v-1.399h-3.566v-2.074h3.042V44.44h-3.042v-2.063h3.449v-1.398z"/>
+    </svg>
+
+                    </div>
+                    <div data-part="close-button">
+                        <label data-close-button="" for="burgerMenuPanelBottom">
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div data-part="content">
+                        <header>Alle Inhalte</header>
+                        <nav>
+                            <ul>
+                                
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://registrierung.web.de/#.pc_page.homepage.mobil.nav.registrierung">
+                <p>Kostenlos registrieren</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/email/#.pc_page.homepage.mobil.nav.email">
+                <p>E-Mail</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/email/#.pc_page.homepage.mobil.nav.freemail">
+                <p>FreeMail</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/email/neue-email-adresse/#.pc_page.homepage.mobil.nav.freemail_neue-email-adresse">
+                <p>E-Mail-Adresse erstellen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/premium/?mc=03961172">
+                <p>WEB.DE Club</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/apps/mail/#.hp_mobile.int.nav.apps">
+                <p>Mail App</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/homepage-mail/persoenliche-domains/e-mail-adressen-anlegen/?mc=01993544">
+                <p>Personalisierte E-Mail Adresse</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/netid/#.pc_page.homepage.mobil.nav.netid">
+                <p>netID</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/de-mail/#.hp_mobile.int.nav.demail ">
+                <p>De-Mail</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/online-speicher/#.pc_page.homepage.mobil.nav.online-speicher" rel="follow">
+                <p>Cloud</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/onlinespeicher_erweitern/?mc=03961165" rel="follow">
+                <p>Cloud-Speicher erweitern</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/apps/cloud/#.hp_mobile.int.nav.apps" rel="follow">
+                <p>Cloud App</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/online-speicher/windows/#.pc_page.homepage.mobil.nav.online-speicher" rel="follow">
+                <p>Cloud für PC</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/handy/?mc=05503703">
+                <p>Mobilfunk &amp; DSL</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/allnet/tarife/handy/?mc=05503748">
+                <p>All-Net-Tarife mit Smartphone</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/allnet/ratgeber/#mc=05503749">
+                <p>All-Net Ratgeber</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/handy/?mc=05503703">
+                <p>Handytarif-Vergleich</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/dsl/?mc=06000000">
+                <p>DSL Vergleich</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/?mc=05570055">
+                <p>Energie</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/strom/?mc=05574994">
+                <p>Strom</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/strom/strom-kombi/" target="_blank">
+                <p>Strom mit Prämie</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/gas/?mc=05574996">
+                <p>Gas</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/ratgeber/">
+                <p>Energie-Ratgeber</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/ratgeber/wechseln/strom-an-ummelden/" target="_blank">
+                <p>Strom anmelden</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/ratgeber/wechseln/" target="_blank">
+                <p>Stromanbieter wechseln</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.energie.web.de/ratgeber/wechseln/stromanbieter-kuendigen/" target="_blank">
+                <p>Stromanbieter kündigen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/">
+                <p>News</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/thema/">
+                <p>Alle Themen von A-Z</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/news/coronavirus/">
+                <p>Coronavirus</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/">
+                <p>Regionales</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/baden-wuerttemberg/">
+                <p>Baden-Württemberg</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/bayern/">
+                <p>Bayern</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/berlin/">
+                <p>Berlin</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/brandenburg/">
+                <p>Brandenburg</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/bremen/">
+                <p>Bremen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/hamburg/">
+                <p>Hamburg</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/hessen/">
+                <p>Hessen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/mecklenburg-vorpommern/">
+                <p>Mecklenburg-Vorpommern</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/niedersachsen/">
+                <p>Niedersachsen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/nordrhein-westfalen/">
+                <p>Nordrhein-Westfalen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/rheinland-pfalz/">
+                <p>Rheinland-Pfalz</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/saarland/">
+                <p>Saarland</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/sachsen/">
+                <p>Sachsen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/sachsen-anhalt/">
+                <p>Sachsen-Anhalt</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/schleswig-holstein/">
+                <p>Schleswig-Holstein</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/regio/thueringen/">
+                <p>Thüringen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/">
+                <p>Politik</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/politische-talkshows/">
+                <p>Politische Talkshows</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/russland-krieg-ukraine/">
+                <p>Putins Krieg gegen die Ukraine</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/wahlen/">
+                <p>Wahlen 2022</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/us-politik/">
+                <p>US-Politik</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/politik/grossbritannien-brexit/">
+                <p>Brexit</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wirtschaft/">
+                <p>Wirtschaft</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/panorama/">
+                <p>Panorama</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/panorama/thema/">
+                <p>Panorama von A-Z</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000LOTTOSERVI0007700mobilehome" rel="follow">
+                <p>Lotto</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/">
+                <p>Bestenlisten</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/mode/">
+                <p>Mode</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/haushalt-deko/">
+                <p>Haushalt</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/kosmetik-hygiene/">
+                <p>Kosmetik</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/finanzen-versicherungen/">
+                <p>Finanzen &amp; Versicherungen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/multimedia/">
+                <p>Multimedia</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/urlaub/">
+                <p>Urlaub</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/nachhaltigkeit/">
+                <p>Nachhaltigkeit</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/auto-motorrad/">
+                <p>Auto &amp; Motorrad</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/geschenkideen/">
+                <p>Geschenkideen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/bestenliste/spiele-spielzeug/">
+                <p>Spiele &amp; Spielzeug</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/">
+                <p>Unterhaltung</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/stars/">
+                <p>Stars</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/adel/">
+                <p>Adel</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/">
+                <p>TV &amp; Streaming</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/bares-fuer-rares/">
+                <p>Bares für Rares im ZDF</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/lets-dance/">
+                <p>Let&#039;s Dance 2022</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/germanys-next-topmodel/">
+                <p>GNTM 2022</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/hoehle-loewen/">
+                <p>Die Höhle der Löwen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/the-masked-singer/">
+                <p>The Masked Singer</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/tv-film/dsds/">
+                <p>DSDS 2022</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/kino/">
+                <p>Kino</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/comic/">
+                <p>Comics</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/musik/">
+                <p>Musik</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/musik/schlager/">
+                <p>Schlager</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/musik/esc/">
+                <p>ESC 2022</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/lifestyle/">
+                <p>Lifestyle</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/gaming/">
+                <p>Gaming</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/internet/">
+                <p>Internet</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/kultur/">
+                <p>Kultur</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/thema/quiz">
+                <p>Quiz </p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/services/singletreff/">
+                <p>Singletreff</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/services/partnersuche/">
+                <p>Partnersuche</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/">
+                <p>Sport</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/fussball/">
+                <p>Fußball</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/fussball/bundesliga/">
+                <p>Bundesliga</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/fussball/2-liga/">
+                <p>2. Bundesliga</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/formel-1/">
+                <p>Formel 1</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/tennis/">
+                <p>Tennis</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/fussball/dfb-pokal/">
+                <p>DFB-Pokal</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/sport/fussball/champions-league/">
+                <p>Champions League</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/">
+                <p>Ratgeber</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/">
+                <p>Gesundheit</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/essen-trinken/">
+                <p>Essen &amp; Trinken</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/auto/">
+                <p>Auto &amp; Mobilität</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/digital/">
+                <p>Digital</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/reise/">
+                <p>Reise</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/beauty-lifestyle/">
+                <p>Beauty &amp; Lifestyle</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/kind-familie/">
+                <p>Kind &amp; Familie</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/liebe-partnerschaft/">
+                <p>Liebe &amp; Partnerschaft</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/job-gehalt/">
+                <p>Job &amp; Gehalt</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/finanzen-verbraucher/">
+                <p>Finanzen &amp; Verbraucher</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/haus-garten/">
+                <p>Haus &amp; Garten</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/ratgeber/haustiere/">
+                <p>Haustiere</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/electra/">
+                <p>Coole E-Bikes von Electra</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/smartphones/">
+                <p>Smartphones</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/webcent/">
+                <p>Bonusprogramm</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/haftpflichtversicherung/">
+                <p>Haftpflichtversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/">
+                <p>Wissen</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/klima/">
+                <p>Klima - News und Hintergründe</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/geschichte/">
+                <p>Geschichte</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/natur-umwelt/">
+                <p>Natur &amp; Umwelt</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/wissenschaft-technik/">
+                <p>Wissenschaft &amp; Technik</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/weltraum/">
+                <p>Weltraum</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/wissen/mystery/">
+                <p>Mystery</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/">
+                <p>Gesundheit</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/abnehmen/">
+                <p>Abnehmen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/hausmittel/">
+                <p>Hausmittel</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/bmi-rechner/">
+                <p>BMI-Rechner</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/thema/">
+                <p>Gesundheit von A-Z</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/kolumnen/">
+                <p>Kolumnen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/storys/">
+                <p>Webstorys</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/infografiken/">
+                <p>Infografiken</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/services/">
+                <p>Service</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/wetter/">
+                <p>Wetter</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unterhaltung/lifestyle/horoskop/">
+                <p>Horoskop</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://route.web.de/">
+                <p>Routenplaner</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/gesundheit/bmi-rechner/">
+                <p>BMI-Rechner</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/reise/ferientermine/">
+                <p>Ferientermine</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/reise/feiertage/">
+                <p>Feiertage</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/curabox/">
+                <p>Pflegehilfsmittel</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/deutscheteilkauf_v2/">
+                <p>Immobilien-Teilverkauf</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/partner/immobilienboerse/">
+                <p>Immobilienbörse</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/in-eigener-sache/">
+                <p>In eigener Sache</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/in-eigener-sache/progressive-web-app/einstellungen-benachrichtigungen-33900878">
+                <p>Benachrichtigungen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/in-eigener-sache/externe-inhalte/">
+                <p>Zustimmungen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/in-eigener-sache/jugendschutz/">
+                <p>Jugendschutz</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/unicef/">
+                <p>United Internet for UNICEF</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://t.uimserv.net/drp_r/?md=uid&amp;et=WR&amp;evtid=864&amp;mediaID=929&amp;mpID=4&amp;site=webde&amp;region=de&amp;sc=vw_uebersichtsseite/vw_startseite&amp;lpos=text_link&amp;att1=webde_hp&amp;durl=https%3A%2F%2Fvorteile.web.de%2F" rel="follow">
+                <p>Shop</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://vorteile.web.de/software-mobile/#.hp_mobile.int.nav.vorteilswelt">
+                <p>Software &amp; Mobile</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://vorteile.web.de/finanzen/#.hp_mobile.int.nav.vorteilswelt">
+                <p>Finanzen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://vorteile.web.de/unterhaltung/#.hp_mobile.int.nav.vorteilswelt">
+                <p>Unterhaltung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://vorteile.web.de/webcent/#.hp_mobile.int.nav.webcent  ">
+                <p>WEB.Cent Bonusprogramm</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/homepage-mail/?mc=01993406">
+                <p>Eigene Homepage</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/musik-flatrate/?mc=03960650">
+                <p>Musik-Streaming</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/zattoo/?mc=03960653">
+                <p>TV-Streaming</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/gymondo/?mc=05577154">
+                <p>Gymondo</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/sprachen-lernen/?mc=03961835">
+                <p>Online-Sprachkurse</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/readly/?mc=05577156">
+                <p>Readly</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://shopping.web.de/?origin=magazine_nav">
+                <p>Shopping</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/apps/#.hp_mobile.int.nav.apps" rel="follow">
+                <p>Apps</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/browser/chrome/#.hp_mobile.int.nav.browser">
+                <p>Chrome Browser</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/browser/firefox/#.hp_mobile.int.nav.browser">
+                <p>Firefox Browser</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/browser/opera/#.hp_mobile.int.nav.browser">
+                <p>Opera Browser</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/apps/mail/#.hp_mobile.int.nav.mailapp" rel="follow">
+                <p>Mail App</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/apps/suche/#.hp_mobile.int.nav.sucheapp" rel="follow">
+                <p>Suche App</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/mailcheck/#.hp_mobile.int.nav.mailcheck">
+                <p>MailCheck</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/tarifvergleiche?mc=01881490&amp;campaign_code=01881490" rel="follow">
+                <p>Versicherung</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/tarifvergleiche/?mc=01881837&amp;campaign_code=01881837" rel="nofollow">
+                <p>Versicherungsvergleich</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/kfz-versicherung/?mc=01881837" rel="follow">
+                <p>Kfz-Versicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/zahnzusatz/?mc=01881469" rel="follow">
+                <p>Zahnzusatzversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/haftpflicht/?mc=01881467" rel="follow">
+                <p>Haftpflichtversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/hausrat/?mc=01881468" rel="follow">
+                <p>Hausratversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/risiko-leben/?campaign_code=01881596" rel="nofollow">
+                <p>Risikolebensversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/versicherung/berufsunfaehigkeit/?campaign_code=01881597" rel="nofollow">
+                <p>Berufsunfähigkeitsversicherung</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://produkte.web.de/cyberschutz/?mc=05577155" rel="follow">
+                <p>Cyberschutz</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000LOTTOSERVI0007700mobilehome" rel="follow">
+                <p>Lotto</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/lotto-6-aus-49?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000LOTTO6AU490001000mobilehome">
+                <p>6aus49</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/eurojackpot?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000EUROJACKPO0002000mobilehome">
+                <p>Eurojackpot</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/spielgemeinschaft/uebersicht?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000SPIELGEMEI0005500mobilehome">
+                <p>Spielgemeinschaften</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/gluecksspirale?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGA000000000GLUSPIRALE0003000mobilehome">
+                <p>Glücksspirale</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/freiheitplus?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGL000000000FREIHEITPL0006900mobilehome" target="_blank">
+                <p>Freiheit Plus</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://lotto.web.de/traumhauslotterie?partnerId=1WEMOBHNAV&amp;advertisementId=0NAVIGL000000000TRAUMHAUSL0002400mobilehome" target="_blank">
+                <p>Traumhauslotterie</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de" target="_blank">
+                <p>Games</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/jackpot-spiele?mc=05577160" rel="follow">
+                <p>Jackpot-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/pausen-spiele?mc=05577161" rel="follow">
+                <p>Pausen-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/simulation?mc=05577162" rel="follow">
+                <p>Simulations-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/strategie?mc=05577163" rel="follow">
+                <p>Strategie-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/abenteuer?mc=05577164" rel="follow">
+                <p>Abenteuer-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/rollenspiele?mc=05577165" rel="follow">
+                <p>Rollenspiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://games.web.de/action?mc=05577166" rel="follow">
+                <p>Action-Spiele</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://millionenklick.web.de/#C0101110b01010101   " rel="follow">
+                <p>MillionenKlick</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://gewinnspiel.web.de/" rel="follow">
+                <p>Gewinnspiel</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/vergleichswelt/?mc=80000080 " target="_blank">
+                <p>Vergleichswelt</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/vergleichswelt/finanzen/?mc=80000081">
+                <p>Finanzen</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/impressum/">
+                <p>Impressum</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://www.mail-and-media.com/jobs.html" target="_blank" rel="nofollow">
+                <p>Jobs</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/magazine/so-arbeitet-die-redaktion/">
+                <p>So arbeitet die Redaktion</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://web.de/sitemap/" rel="follow">
+                <p>WEB.DE im Überblick</p>
+                <span data-arrow-down="" @click="toggleChildren">
+                    <hp-icon type=arrow></hp-icon>
+                </span>
+            </a>
+            <ul>
+                
+        
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://hilfe.web.de/index.html">
+                <p>WEB.DE Hilfe</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+    <hp-tree-list inline-template>
+        <li data-component="TreeList" >
+            <a href="https://newsroom.web.de/">
+                <p>WEB.DE Presse</p>
+                
+            </a>
+            
+        </li>
+    </hp-tree-list>
+
+
+            </ul>
+        </li>
+    </hp-tree-list>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div data-burger-layer @click="close"></div>
+        </div>
+    </hp-burger>
+
+                    
+    <ul>
+        <li>
+    <a href="https://web.de/email/#.pc_page.homepage.index.nav.mail">E-Mail &amp; Cloud</a>
+    
+</li><li>
+    <a href="https://web.de/handy/?mc=05504539">Mobilfunk &amp; DSL</a>
+    
+</li><li>
+    <a href="https://www.energie.web.de/strom/?mc=05576077">Strom &amp; Gas</a>
+    
+</li><li>
+    <a href="https://t.uimserv.net/drp_r/?md=uid&amp;et=WR&amp;evtid=864&amp;mediaID=929&amp;mpID=4&amp;site=webde&amp;region=de&amp;sc=vw_uebersichtsseite/vw_startseite&amp;lpos=text_link&amp;att1=webde_nhp&amp;durl=https%3A%2F%2Fvorteile.web.de%2F">Shop</a>
+    
+</li><li>
+    <a href="https://lotto.web.de?partnerId=1WEHOMHNAV&amp;advertisementId=0REITER000000000TEXTLINKXX00000001234567891">Lotto</a>
+    
+</li><li>
+    <a href="https://web.de/versicherung/?mc=01881318">Versicherung</a>
+    
+</li><li>
+    <a href="https://vorteile.web.de/webcent/#.hp.int.navi">WEB.Cent</a>
+    
+</li>
+    </ul>
+
+                    
+    <div class="partner-links">
+        <div data-service-slot="promo_1"></div>
+        <div data-service-slot="promo_2"></div>
+        <div data-service-slot="promo_3"></div>
+    </div>
+
+                </div>
+            </hp-navigation>
+        </header>
+    </hp-header>
+
+              
+              
+              
+    <div data-content>
+        
+        
+    <section data-layout-columns="4col" data-layout-name="viewport" data-name="viewport" data-tracking-name="viewport">
+        
+    <hp-slider inline-template="" :indicator-position="&#039;right&#039;" :interval="5000" :animation-type="&#039;fade&#039;">
+        <div data-component="slider" data-slide-indicator-position="left" data-animation-type="fade">
+            <div data-part="indicators">
+                <ul>
+                    <li @click="goTo" data-indicator="0">
+    <a href="https://web.de/magazine/politik/russland-krieg-ukraine/ukraine-krieg-news-ticker-us-verteidigungsminister-austin-richtigen-militaerausruestung-ukraine-krieg-gewinnen-36757878" @mouseenter="goTo">
+        <figure>
+            <img alt="" src="https://i0.web.de/image/940/36806940,pd=3,h=56,w=95.jpg" width="95" height="56"/>
+            <figcaption>Krieg in der Ukraine </figcaption>
+        </figure>
+    </a>
+    
+</li><li @click="goTo" data-indicator="1">
+    <a href="https://web.de/magazine/politik/russland-krieg-ukraine/glashaus-russland-politik-parteien-russland-freundlich-36804498" @mouseenter="goTo">
+        <figure>
+            <img alt="Sigmar Gabriel, Wladimir Putin" src="https://i0.web.de/image/532/36804532,pd=2,h=56,w=95/sigmar-gabriel-wladimir-putin.jpg" width="95" height="56"/>
+            <figcaption>Krieg in der Ukraine</figcaption>
+        </figure>
+    </a>
+    
+</li><li @click="goTo" data-indicator="2">
+    <a href="https://web.de/magazine/politik/wahlen/macron-regiert-elyseepalast-wiederwahl-laesst-aufatmen-36805968" @mouseenter="goTo">
+        <figure>
+            <img alt="" src="https://i0.web.de/image/690/36806690,pd=1,h=56,w=95.jpg" width="95" height="56"/>
+            <figcaption>Frankreich</figcaption>
+        </figure>
+    </a>
+    
+</li><li @click="goTo" data-indicator="3">
+    <a href="https://web.de/magazine/sport/fussball/bundesliga/kritik-topspiel-raeumt-schiedsrichter-siebert-fehler-36806688" @mouseenter="goTo">
+        <figure>
+            <img alt="" src="https://i0.web.de/image/628/36806628,pd=2,h=56,w=95.jpg" width="95" height="56"/>
+            <figcaption>Bundesliga</figcaption>
+        </figure>
+    </a>
+    
+</li><li @click="goTo" data-indicator="4">
+    <a href="https://web.de/magazine/politik/feiertage-nachholen-debatte-taucht-vorm-tag-arbeit-36806408" @mouseenter="goTo">
+        <figure>
+            <img alt="" src="https://i0.web.de/image/410/36806410,pd=5,h=56,w=95.jpg" width="95" height="56"/>
+            <figcaption>1. Mai</figcaption>
+        </figure>
+    </a>
+    
+</li>
+                </ul>
+            </div>
+            
+            <div data-wrapper>
+                <div>
+                    
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/politik/russland-krieg-ukraine/ukraine-krieg-news-ticker-us-verteidigungsminister-austin-richtigen-militaerausruestung-ukraine-krieg-gewinnen-36757878" data-headline="Pentagon-Chef: Ukraine kann Krieg gewinnen - mit der richtigen Militärausrüstung" data-teaser-id="36757878" data-article-overlay="bottomfull" data-current="">
+        
+        <figure>
+            <img alt="" src="https://i0.web.de/image/940/36806940,pd=3,h=300,w=530.jpg" width="530" height="300">
+            
+        </figure>
+        
+        <article>
+            <header>
+                <span>
+                    <label data-color="error">Live-Ticker</label>
+                    
+                    Krieg in der Ukraine 
+                </span>
+                <h3>Pentagon-Chef: Ukraine kann Krieg gewinnen - mit der richtigen Militärausrüstung</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/politik/russland-krieg-ukraine/glashaus-russland-politik-parteien-russland-freundlich-36804498" data-headline="Russland-Politik: Verfehlungen nur bei der SPD? Das ist zu einfach" data-teaser-id="36804498" data-article-overlay="bottomfull">
+        
+        <figure>
+            <img alt="Sigmar Gabriel, Wladimir Putin" src="https://i0.web.de/image/532/36804532,pd=2,h=300,w=530/sigmar-gabriel-wladimir-putin.jpg" width="530" height="300">
+            
+        </figure>
+        
+        <article>
+            <header>
+                <span>
+                    <label>Analyse</label>
+                    
+                    Krieg in der Ukraine
+                </span>
+                <h3>Russland-Politik: Verfehlungen nur bei der SPD? Das ist zu einfach</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/politik/wahlen/macron-regiert-elyseepalast-wiederwahl-laesst-aufatmen-36805968" data-headline="Macron regiert weiter im Élyséepalast - Wiederwahl mit Beigeschmack" data-teaser-id="36805968" data-article-overlay="bottomfull">
+        
+        <figure>
+            <img alt="" src="https://i0.web.de/image/690/36806690,pd=1,h=300,w=530.jpg" width="530" height="300">
+            
+        </figure>
+        
+        <article>
+            <header>
+                <span>
+                    
+                    
+                    Frankreich
+                </span>
+                <h3>Macron regiert weiter im Élyséepalast - Wiederwahl mit Beigeschmack</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/sport/fussball/bundesliga/kritik-topspiel-raeumt-schiedsrichter-siebert-fehler-36806688" data-headline="Nach Kritik im Topspiel: Jetzt äußert sich Schiedsrichter Siebert" data-teaser-id="36806688" data-article-overlay="bottomfull">
+        
+        <figure>
+            <img alt="" src="https://i0.web.de/image/628/36806628,pd=2,h=300,w=530.jpg" width="530" height="300">
+            
+        </figure>
+        
+        <article>
+            <header>
+                <span>
+                    
+                    
+                    Bundesliga
+                </span>
+                <h3>Nach Kritik im Topspiel: Jetzt äußert sich Schiedsrichter Siebert</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/politik/feiertage-nachholen-debatte-taucht-vorm-tag-arbeit-36806408" data-headline="Feiertage nachholen? Debatte taucht vorm Tag der Arbeit wieder auf" data-teaser-id="36806408" data-article-overlay="bottomfull">
+        
+        <figure>
+            <img alt="" src="https://i0.web.de/image/410/36806410,pd=5,h=300,w=530.jpg" width="530" height="300">
+            
+        </figure>
+        
+        <article>
+            <header>
+                <span>
+                    
+                    <label data-color="grey">Video</label>
+                    1. Mai
+                </span>
+                <h3>Feiertage nachholen? Debatte taucht vorm Tag der Arbeit wieder auf</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+                </div>
+            </div>
+        </div>
+    </hp-slider>
+
+    <div data-component="list">
+        
+        
+        <ul>
+            <li>
+    
+    
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/unterhaltung/tv-film/germanys-next-topmodel/sah-gntm-siegerin-alex-mariah-peter-transition-36806610" data-separator="top" data-headline="So sah GNTM-Siegerin Alex Mariah Peter vor ihrer Transition aus" data-teaser-id="36806610">
+        
+        
+        
+        <article>
+            <header>
+                <span>
+                    
+                    
+                    Stars
+                </span>
+                <h3>So sah GNTM-Siegerin Alex Mariah Peter vor ihrer Transition aus</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+</li><li>
+    
+    
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/unterhaltung/prinz-harry-plaudert-interview-private-details-queen-36805912" data-separator="top" data-headline="Prinz Harry plaudert in neuem Interview private Details über die Queen aus" data-teaser-id="36805912">
+        
+        
+        
+        <article>
+            <header>
+                <span>
+                    
+                    <label data-color="grey">Video</label>
+                    Royals
+                </span>
+                <h3>Prinz Harry plaudert in neuem Interview private Details über die Queen aus</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+</li><li>
+    
+    
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/unterhaltung/stars/falsche-behauptung-amber-heard-johnny-depp-make-up-hersteller-schaltet-36806430" data-separator="top" data-headline="Falsche Behauptung von Amber Heard? Make-up-Hersteller schaltet sich ein" data-teaser-id="36806430">
+        
+        
+        
+        <article>
+            <header>
+                <span>
+                    
+                    
+                    Stars
+                </span>
+                <h3>Falsche Behauptung von Amber Heard? Make-up-Hersteller schaltet sich ein</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+</li><li>
+    
+    
+    <a data-component="teaser" type="hp-teaser" href="https://web.de/magazine/unterhaltung/stars/victoria-swarovski-wuerde-schwangerschaft-verheimlichen-36806296" data-separator="top" data-headline="Victoria Swarovski würde eine Schwangerschaft &quot;nicht verheimlichen&quot;" data-teaser-id="36806296">
+        
+        
+        
+        <article>
+            <header>
+                <span>
+                    
+                    
+                    Stars
+                </span>
+                <h3>Victoria Swarovski würde eine Schwangerschaft &quot;nicht verheimlichen&quot;</h3>
+                
+            </header>
+            
+            
+            
+        </article>
+    </a>
+
+</li>
+        </ul>
+    </div>
+
+    <div data-service-slot="box_1" data-visible-in="3,4"></div>
+
+    </section>
+
+    <div data-login-sticky-indicator></div>
+    <section data-layout="1col" data-content-login="" data-sticky="">
+        
+    <input type="checkbox" id="loginlayerbutton" data-hidden />
+    <hp-login inline-template>
+        <div data-component="login" data-grid-row>
+            <div data-grid-row>
+                <hp-icon :type="currentLogin.icon" data-login-icon>
+                    <div data-component="icon" data-login-icon>
+                        <svg viewBox="0 2 40 40">
+                            <path d="M40 32V9.9v-.08L28.92 20.9zM11.1 20.92L0 9.82V32zM21.37 25.17L38.94 7.59a3.05 3.05 0 0 0-2-.78H3.09a3.05 3.05 0 0 0-2 .78l17.54 17.58a2 2 0 0 0 2.74 0z"></path>
+                            <path d="M27.27 22.54L23 26.81a4.27 4.27 0 0 1-6 0l-4.25-4.25L.3 35a3.1 3.1 0 0 0 2.79 1.8h33.82a3.11 3.11 0 0 0 2.81-1.8z"></path>
+                        </svg>
+                    </div>
+                </hp-icon>
+                <span data-login-text data-visible-from-up="3col" v-text="currentLogin.text">E-Mail</span>
+            </div>
+
+            <hp-bento :elements="bentoData.elements" :footer="bentoData.footer" @change="onBentoChange"></hp-bento>
+
+            <form data-form-login="" data-grid-row="" method="post" accept-charset="UTF-8" novalidate="novalidate" action="https://login.web.de/login" id="freemailLoginForm" name="fm" :action="currentLogin.loginUrl">
+                <div v-if="currentLogin.formHiddenParams" data-hidden-values>
+                    <input v-if="currentLogin === null" type="hidden" name="server" value="https://freemail.web.de"/><input v-if="currentLogin === null" type="hidden" name="service" value="freemail"/><input v-if="currentLogin === null" type="hidden" name="loginErrorURL" value="https://navigator.web.de/loginerror"/><input v-if="currentLogin === null" type="hidden" name="successURL" value="https://navigator.web.de/login"/><input v-if="currentLogin === null" type="hidden" name="statistics" value="kR8BWaubR5/vA1KhqEY3LOBuNIy/0UiyKfW8gXUbkE9ajaE5dqAorbuXCwUU2zxykOEv9JD/9AWh+zAJ//a2WMHWIInMjKb8hXoy+K0iQyeWYypnCpnWoUOpQvJbItZGvle7mgDbprFKgW+XoPP4IpcUuEqAWHDTB1pM3aH/wNA="/><input v-if="currentLogin === null" type="hidden" name="loginFailedURL" value="https://web.de/logoutlounge/?status=login-failed"/>
+                    <input type="hidden" :name="index" :value="param" v-for="(param, index) in currentLogin.formHiddenParams" />
+                </div>
+                <input type="hidden" name="ibaInfo" :value="ibaInfo" data-formcheck-nocheck="nocheck">
+                <input type="hidden" name="uinguserid" :value="ngUserId" />
+                <input type="hidden" name="tpidHash" :value="tpidHash" />
+                <input type="hidden" name="salt" :value="salt" />
+                <div data-grid-column>
+                    <hp-input v-model="emailInput" inline-template="" :has-ifta="true">
+                        <div data-component="input" :data-ifta="hasIfta" data-ifta="">
+                            <input type="email" v-model="value.inputvalue" required="required" id="freemailLoginUsername" :name="value.name" :placeholder="value.placeholder" placeholder="E-Mail-Adresse" name="username"/>
+                            <label v-if="hasIfta" v-text="value.placeholder" data-aria-placeholder="" for="freemailLoginUsername">E-Mail-Adresse</label>
+                        </div>
+                    </hp-input>
+                    <p v-if="emailLink.text" aria-label="reg"><a v-text="emailLink.text" tabindex="-1" href="https://web.de/email/tarifvergleich/#.pc_page.homepage.index.loginbox.tarifvergleich" :href="emailLink.href">Kostenlos registrieren!</a></p>
+                </div>
+                <div data-grid-column>
+                    <hp-input v-model="passwordInput" inline-template="" :has-ifta="true">
+                        <div data-component="input" :data-ifta="hasIfta" data-ifta="" :data-with-button="withButton">
+                            <input :id="value.htmlId" type="password" data-type="password" v-model="value.inputvalue" id="freemailLoginPassword" :name="value.name" :placeholder="value.placeholder" placeholder="Passwort" name="password">
+                            <label v-if="hasIfta" v-text="value.placeholder" data-aria-placeholder="" for="freemailLoginPassword">Passwort</label>
+                            <hp-button :data-importance="buttonImportance" data-type="icon" @click="togglePasswordVisibility" data-size="l" :data-active="buttonActive">
+                                <svg xmlns="http://www.w3.org/

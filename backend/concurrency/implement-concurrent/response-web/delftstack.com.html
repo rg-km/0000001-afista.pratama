@@ -1,0 +1,1246 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-2&cb=1', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=195-2&cb=14', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolisz.js', '/detroitchicago/minneapolisz.js?gcb=195-2&cb=3', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=195-2&cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolisz.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>!function(){function e(i){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(i)}__ez.pel=function(){var i=[];function t(t,o,_,d,n,r,a,s){if(__ez.dot.isDefined(t)&&0!=__ez.dot.isAnyDefined(t.getSlotElementId,t.ElementId)){void 0===s&&(s=!1);var p=parseInt(__ez.dot.getTargeting(t,"ap")),f=__ez.dot.getSlotIID(t),u=__ez.dot.getAdUnit(t,s),g=parseInt(__ez.dot.getTargeting(t,"compid")),c=0,l=0,z=function(i){if("undefined"==typeof _ezim_d)return!1;var t=__ez.dot.getAdUnitPath(i).split("/").pop();if("object"===("undefined"==typeof _ezim_d?"undefined":e(_ezim_d))&&_ezim_d.hasOwnProperty(t))return _ezim_d[t];for(var o in _ezim_d)if(o.split("/").pop()===t)return _ezim_d[o];return!1}(t);"object"==e(z)&&(void 0!==z.creative_id&&(l=z.creative_id),void 0!==z.line_item_id&&(c=z.line_item_id)),__ez.dot.isDefined(f,u)&&__ez.dot.isValid(o)&&("0"===f&&!0!==s||""===u||i.push({type:"impression",impression_id:f,domain_id:__ez.dot.getDID(),unit:u,t_epoch:__ez.dot.getEpoch(0),revenue:_,est_revenue:d,ad_position:p,ad_size:"",bid_floor_filled:n,bid_floor_prev:r,stat_source_id:a,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:g,line_item_id:c,creative_id:l,data:__ez.dot.dataToStr(o),is_orig:s||__ez.template.isOrig}))}}function o(){void 0!==document.visibilityState&&"prerender"===document.visibilityState||(__ez.dot.isDefined(i)&&i.length>0&&[i.filter((function(e){return e.is_orig})),i.filter((function(e){return!e.is_orig}))].forEach((function(e){for(;e.length>0;){var i=e[0].is_orig||!1,t=5;t>e.length&&(t=e.length);var o=e.splice(0,t),_=__ez.dot.getURL("/porpoiseant/army.gif")+"?orig="+(!0===i?1:0)+"&sts="+btoa(JSON.stringify(o));void 0!==window.isAmp&&isAmp&&void 0!==window._ezaq&&_ezaq.hasOwnProperty("domain_id")&&(_+="&visit_uuid="+_ezaq.visit_uuid),__ez.dot.Fire(_)}})),i=[])}return{Add:t,AddAndFire:function(e,i){t(e,i,0,0,0,0,0),o()},AddAndFireOrig:function(e,i){t(e,i,0,0,0,0,0,!0),o()},AddById:function(e,t,o,_){var d=e.split("/");if(__ez.dot.isDefined(e)&&3===d.length&&__ez.dot.isValid(t)){var n=d[0],r={type:"impression",impression_id:d[2],domain_id:__ez.dot.getDID(),unit:n,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(t),is_orig:o||__ez.template.isOrig};void 0!==_&&(r.revenue=_),i.push(r)}},Fire:o,GetPixels:function(){return i}}}()}();__ez.queue.addFile('/detroitchicago/raleighz.js', '/detroitchicago/raleighz.js?gcb=195-2&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-2&cb=4', false, [], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-2&cb=5', false, [], true, false, true, false);</script>
+    <title>Best Tutorial About Python, Javascript, C++, GIT, and more – Delft Stack</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="Free but high-quality portal to learn about languages like Python, Javascript, C++, GIT, and more. Delf Stack is a learning website of different programming languages."/>
+	<meta name="keywords" content=""/><meta name="naver-site-verification" content="00716c27b7baec5926e00f8df8f7723fd09a1ef3"/>
+
+		
+	<link href="/assets/css/theDocs.all.min.css" rel="stylesheet"/>
+	<link href="/assets/css/custom.min.css" rel="stylesheet"/>
+
+	
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400" as="style" type="text/css" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"/>
+	<noscript><link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'></noscript>
+	<script src="/assets/js/loadCSS.min.js" async=""></script>
+
+	
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+	<link rel="icon" href="/assets/img/favicon.png"/>
+	
+	<link rel="alternate" hreflang="en" href="https://www.delftstack.com/"/>
+    <link rel="alternate" hreflang="de" href="https://www.delftstack.com/de/"/>
+    <link rel="alternate" hreflang="es" href="https://www.delftstack.com/es/"/>
+    <link rel="alternate" hreflang="fr" href="https://www.delftstack.com/fr/"/>
+    <link rel="alternate" hreflang="it" href="https://www.delftstack.com/it/"/>
+    <link rel="alternate" hreflang="ja" href="https://www.delftstack.com/ja/"/>
+    <link rel="alternate" hreflang="ko" href="https://www.delftstack.com/ko/"/>
+    <link rel="alternate" hreflang="nl" href="https://www.delftstack.com/nl/"/>
+    <link rel="alternate" hreflang="pt" href="https://www.delftstack.com/pt/"/>
+    <link rel="alternate" hreflang="ru" href="https://www.delftstack.com/ru/"/>
+    <link rel="alternate" hreflang="zh" href="https://www.delftstack.com/zh/"/>
+    <link rel="alternate" hreflang="zh-tw" href="https://www.delftstack.com/zh-tw/"/>
+	
+	<meta property="og:locale" content="en"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Delft Stack"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="https://www.delftstack.com/"/>
+<meta property="og:site_name" content="Delft Stack"/>
+<meta property="og:image" content="https://www.delftstack.com/assets/img/logo_rect.png"/>
+<meta property="og:image:secure_url" content="https://www.delftstack.com/assets/img/logo_rect.png"/>
+<meta property="og:image:width" content="2418"/>
+<meta property="og:image:height" content="1798"/>
+<meta property="og:image:type" content="image/png"/>
+	<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": [
+                "Person",
+                "Organization"
+            ],
+            "@id": "https://www.delftstack.com/#person",
+            "name": "Delft Stack",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://www.delftstack.com/assets/img/logo.png" 
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.delftstack.com/#website",
+            "url": "https://www.delftstack.com/",
+            "name": "Delft Stack",
+            "publisher": {
+                "@id": "https://www.delftstack.com/#person"
+            },
+            "inLanguage": "en"
+        },
+        {
+            "@type": "CollectionPage",
+            "@id": "https://www.delftstack.com/#webpage",
+            "url": "https://www.delftstack.com/",
+            "name": "Delft Stack",
+            "about": {
+                "@id": "https://www.delftstack.com/#person"
+            },
+            "isPartOf": {
+                "@id": "https://www.delftstack.com/#website"
+            },
+            "inLanguage": "en"
+        }
+    ]
+}</script>
+
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script> (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-5144792930493150", enable_page_level_ads: true }); </script>
+  <link rel='canonical' href='https://www.delftstack.com/' />
+<script type="text/javascript">var ezouid = "1";</script><base href="https://www.delftstack.com/"><script type='text/javascript'>
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 96282;
+var ezdomain = 'delftstack.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Probolinggo","country":"ID","days_since_last_visit":-1,"domain_id":96282,"domain_test_group":20210306,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"03fc3fce-57bc-409d-5ee0-ff06f9da7619","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":44697,"response_time_orig":2,"serverid":"13.229.85.79:19759","state":"JI","t_epoch":1650879462,"template_id":126,"time_on_site_visit":0,"url":"https://www.delftstack.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":1581,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_96282=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["03fc3fce-57bc-409d-5ee0-ff06f9da7619", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+
+  <body>
+		  <header class="site-header sticky">
+
+      
+      <nav class="navbar navbar-default">
+        <div class="container">
+
+          
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/"><img src="https://d33wubrfki0l68.cloudfront.net/7748c5aa61aa13fd4c346e3cbfebe49f2dd4d580/2738b/assets/img/logo.png" alt="logo"/></a>
+          </div>
+          
+
+          
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+			  
+			  <li><a href="/tutorial/">Tutorials</a></li>
+			  
+			  <li><a href="/howto/">HowTos</a></li>
+			  
+              
+            </ul>
+          </div>
+          
+
+        </div>
+      </nav>
+      
+      
+    </header>
+	
+    <main class="container">
+      <div class="row">
+      
+		
+		
+        <aside class="col-md-3 col-sm-3 sidebar">
+			
+    
+    <!-- Ezoic - sidebar-top - sidebar -->
+    <div id="ezoic-pub-ad-placeholder-101">
+    </div>
+    <!-- End Ezoic - sidebar-top - sidebar -->
+    
+
+			
+<section>
+    
+	<a href="https://www.facebook.com/delftstack"><i class="fa fa-3x fa-facebook-square"></i></a>
+	
+	
+	<a href="https://www.twitter.com/delft_stack"><i class="fa fa-3x fa-twitter-square"></i></a>
+	
+	
+	
+	<a href="https://github.com/DelftStack"><i class="fa fa-3x fa-github-square"></i></a>
+	
+	
+</section>
+			
+			
+			
+<div class="ad-container">
+    
+<!-- Ezoic - sidebar-bottom - sidebar_bottom -->
+<div id="ezoic-pub-ad-placeholder-102">
+
+	<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	<ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-5144792930493150" data-ad-slot="6758976827"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+</div>
+<!-- End Ezoic - sidebar-bottom - sidebar_bottom -->
+
+</div>
+
+			
+        </aside>
+        
+
+        
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+		
+<section>
+                <ul class="categorized-view">
+				  
+				  		  
+				  
+				  <li>			
+				    <h5><a href="/tutorial/python-3-basic-tutorial/">Python 3 Basic Tutorial</a></h5>
+					
+					<a href="/tutorial/python-3-basic-tutorial/python-introduction/">Python Tutorial - Introduction</a>
+					
+					<a href="/tutorial/python-3-basic-tutorial/installation/">Python Tutorial - Installation</a>
+					
+					<a href="/tutorial/python-3-basic-tutorial/hello-world/">Python Tutorial - Hello World</a>
+					
+					<a href="/tutorial/python-3-basic-tutorial/keywords-and-identifiers/">Python Tutorial - Keywords and Identifiers</a>
+					
+					<a href="/tutorial/python-3-basic-tutorial/statement-indentation-and-comment/">Python Tutorial - Statement and Comment</a>
+					
+					
+					
+					<a href="/tutorial/python-3-basic-tutorial/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/tkinter-tutorial/">Tkinter Tutorial</a></h5>
+					
+					<a href="/tutorial/tkinter-tutorial/tkinter-introduction/">Tkinter Tutorial - Introduction</a>
+					
+					<a href="/tutorial/tkinter-tutorial/hello-world/">Tkinter Tutorial - Hello World</a>
+					
+					<a href="/tutorial/tkinter-tutorial/tkinter-label/">Tkinter Tutorial - Label Widget</a>
+					
+					<a href="/tutorial/tkinter-tutorial/tkinter-button/">Tkinter Tutorial - Button</a>
+					
+					<a href="/tutorial/tkinter-tutorial/tkinter-checkbutton/">Tkinter Tutorial - Checkbutton</a>
+					
+					
+					
+					<a href="/tutorial/tkinter-tutorial/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/python-modules-tutorial/">Python Module Tutorials</a></h5>
+					
+					<a href="/tutorial/python-modules-tutorial/python-regular-expression/">Python Regular Expression Tutorial</a>
+					
+					
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/javascript/">JavaScript Tutorial</a></h5>
+					
+					<a href="/tutorial/javascript/introduction-to-javascript/">JavaScript Tutorial - Introduction</a>
+					
+					<a href="/tutorial/javascript/javascript-hello-world/">JavaScript Tutorial - Hello World</a>
+					
+					<a href="/tutorial/javascript/javascript-statements-and-comments/">JavaScript Tutorial - Statements and Comments</a>
+					
+					<a href="/tutorial/javascript/javascript-variables/">JavaScript Tutorial - Variables</a>
+					
+					<a href="/tutorial/javascript/javascript-strings/">JavaScript Tutorial - Strings</a>
+					
+					
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/python-numpy/">Python NumPy Tutorial</a></h5>
+					
+					<a href="/tutorial/python-numpy/numpy-introduction/">Numpy Tutorial - Introduction and Installation</a>
+					
+					<a href="/tutorial/python-numpy/numpy-ndarray/">Numpy Tutorial - NumPy Multidimensional Array-Ndarray</a>
+					
+					<a href="/tutorial/python-numpy/numpy-datatype-and-conversion/">Numpy Tutorial - NumPy Data Type and Conversion</a>
+					
+					<a href="/tutorial/python-numpy/numpy-array-creation/">Numpy Tutorial - NumPy Array Creation</a>
+					
+					<a href="/tutorial/python-numpy/numpy-math-operation-and-broadcasting/">Numpy Tutorial - NumPy Math Operation and Broadcasting</a>
+					
+					
+					
+					<a href="/tutorial/python-numpy/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/git/">Git Tutorial</a></h5>
+					
+					<a href="/tutorial/git/install-git/">Git Tutorial - Installation</a>
+					
+					<a href="/tutorial/git/initialize-the-repository/">Git Tutorial - Repository Initialization</a>
+					
+					<a href="/tutorial/git/git-workflow/">Git Tutorial - Git Workflow</a>
+					
+					<a href="/tutorial/git/git-diff-to-compare-differences/">Git Tutorial - Diff to Compare Differences</a>
+					
+					<a href="/tutorial/git/git-file-operation/">Git Tutorial - File Operation</a>
+					
+					
+					
+					<a href="/tutorial/git/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/matplotlib/">Matplotlib Tutorial</a></h5>
+					
+					<a href="/tutorial/matplotlib/introduction-and-installation/">Matplotlib Tutorial - Introduction and Installation</a>
+					
+					<a href="/tutorial/matplotlib/line-chart/">Matplotlib Tutorial - Line Chart</a>
+					
+					<a href="/tutorial/matplotlib/axis-label/">Matplotlib Tutorial - Axis Label</a>
+					
+					<a href="/tutorial/matplotlib/axes-title/">Matplotlib Tutorial - Axes Title</a>
+					
+					<a href="/tutorial/matplotlib/pie-chart/">Matplotlib Tutorial - Pie Chart</a>
+					
+					
+					
+					<a href="/tutorial/matplotlib/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/pyqt5/">PyQt5 Tutorial</a></h5>
+					
+					<a href="/tutorial/pyqt5/pyqt5-basic-window/">PyQt5 Tutorial - Basic Window</a>
+					
+					<a href="/tutorial/pyqt5/pyqt5-label/">PyQt5 Tutorial - Label</a>
+					
+					<a href="/tutorial/pyqt5/pyqt5-push-button/">PyQt5 Tutorial - Push Button</a>
+					
+					<a href="/tutorial/pyqt5/pyqt5-box-layout/">PyQt5 Tutorial - BoxLayout</a>
+					
+					<a href="/tutorial/pyqt5/pyqt-grid-layout/">PyQt5 Tutorial - Grid Layout</a>
+					
+					
+					
+					<a href="/tutorial/pyqt5/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/data-structure/">Data Structure</a></h5>
+					
+					<a href="/tutorial/data-structure/doubly-circular/">Circular Doubly Linked List</a>
+					
+					<a href="/tutorial/data-structure/circular-linked-list/">Circular Linked List</a>
+					
+					<a href="/tutorial/data-structure/doubly-linked-list/">Doubly Linked List</a>
+					
+					<a href="/tutorial/data-structure/linked-list-removal/">Linked List Deletion</a>
+					
+					<a href="/tutorial/data-structure/linked-list-insertion/">Linked List Insertion</a>
+					
+					
+					
+					<a href="/tutorial/data-structure/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/tutorial/algorithm/">Algorithm</a></h5>
+					
+					<a href="/tutorial/algorithm/exponential-search/">Exponential Search</a>
+					
+					<a href="/tutorial/algorithm/fibonacci-search/">Fibonacci Search</a>
+					
+					<a href="/tutorial/algorithm/binary-search/">Binary Search</a>
+					
+					<a href="/tutorial/algorithm/interpolation-search/">Interpolation Search</a>
+					
+					<a href="/tutorial/algorithm/jump-search/">Jump Search</a>
+					
+					
+					
+					<a href="/tutorial/algorithm/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+                  </li>
+				  
+				  		  
+				  
+				  <li>			
+				    <h5><a href="/howto/python/">Python How-To&#39;s</a></h5>
+					
+					<a href="/howto/python/python-detect-os/">Check Operating System Using Python</a>
+					
+					<a href="/howto/python/python-conditional-assignment-operator/">Conditional Assignment Operator in Python</a>
+					
+					<a href="/howto/python/python-play-mp3/">Play Mp3 File Using Python</a>
+					
+					<a href="/howto/python/remove-commas-from-string-in-python/">Remove Commas From String in Python</a>
+					
+					<a href="/howto/python/how-to-convert-bytes-to-integers/">Convert Bytes to Int in Python 2.7 and 3.x</a>
+					
+					
+					
+					<a href="/howto/python/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/python-tkinter/">Python Tkinter Howtos</a></h5>
+					
+					<a href="/howto/python-tkinter/how-to-pass-arguments-to-tkinter-button-command/">Pass Arguments to Tkinter Button Command</a>
+					
+					<a href="/howto/python-tkinter/how-to-set-tkinter-backgroud-color/">Set Tkinter Background Color</a>
+					
+					<a href="/howto/python-tkinter/how-to-freeze-the-tkinter-window-frame-size/">Freeze the Tkinter Window Frame Size</a>
+					
+					<a href="/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/">Close a Tkinter Window With a Button</a>
+					
+					<a href="/howto/python-tkinter/how-to-use-a-timer-in-tkinter/">Use a Timer in Tkinter</a>
+					
+					
+					
+					<a href="/howto/python-tkinter/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/batch/">Batch Howtos</a></h5>
+					
+					<a href="/howto/batch/how-to-shutdown-restart-and-or-log-off-in-a-bat-file/">Shutdown Restart and or Log Off in a Bat File</a>
+					
+					<a href="/howto/batch/how-to-sleep-or-wait-x-seconds-in-a-bat-file/">Sleep or Wait X Seconds in a Bat File</a>
+					
+					
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/powershell/">PowerShell Howtos</a></h5>
+					
+					<a href="/howto/powershell/moving-files-and-folders-using-powershell/">Moving Files and Folders Using PowerShell</a>
+					
+					<a href="/howto/powershell/powershell-store-entire-text-file-contents-in-variable/">Store Text File Contents in Variable Using PowerShell</a>
+					
+					<a href="/howto/powershell/count-length-of-array-in-powershell/">Count the Length of Array in PowerShell</a>
+					
+					<a href="/howto/powershell/query-active-directory-users-in-powershell/">Query Active Directory Users in PowerShell</a>
+					
+					<a href="/howto/powershell/run-commands-in-parallel-in-powershell/">Run Commands in Parallel in PowerShell</a>
+					
+					
+					
+					<a href="/howto/powershell/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/python-pandas/">Python Pandas Howtos</a></h5>
+					
+					<a href="/howto/python-pandas/how-to-get-pandas-dataframe-column-headers-as-a-list/">Get Pandas DataFrame Column Headers as a List</a>
+					
+					<a href="/howto/python-pandas/how-to-delete-pandas-dataframe-column/">Delete Pandas DataFrame Column</a>
+					
+					<a href="/howto/python-pandas/how-to-convert-dataframe-column-to-datetime-in-pandas/">Convert Pandas Column to Datetime</a>
+					
+					<a href="/howto/python-pandas/how-to-convert-float-to-int-in-pandas-dataframe/">Convert a Float to an Integer in Pandas DataFrame</a>
+					
+					<a href="/howto/python-pandas/how-to-sort-pandas-dataframe-by-one-column/">Sort Pandas DataFrame by One Column&#39;s Values</a>
+					
+					
+					
+					<a href="/howto/python-pandas/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/numpy/">Python NumPy Howtos</a></h5>
+					
+					<a href="/howto/numpy/numpy-runtimewarning-overflow-encountered-in-exp/">Overflow Encountered in numpy.exp() Function in Python</a>
+					
+					<a href="/howto/numpy/python-numpy-intersection/">NumPy Intersection of Two Arrays</a>
+					
+					<a href="/howto/numpy/python-numpy-matrix-indexing/">NumPy Matrix Indexing</a>
+					
+					<a href="/howto/numpy/python-numpy-matrix-subtraction/">NumPy Matrix Subtraction</a>
+					
+					<a href="/howto/numpy/python-numpy-matrix-vector-multiplication/">NumPy Matrix Vector Multiplication</a>
+					
+					
+					
+					<a href="/howto/numpy/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/django/">Django Howto&#39;s</a></h5>
+					
+					<a href="/howto/django/django-allowed_hosts/">Django ALLOWED_HOSTS</a>
+					
+					<a href="/howto/django/filter-items-from-query-set-in-django/">Filter Items From Query Set in Descending Order in Django</a>
+					
+					<a href="/howto/django/django-slug/">Slug in Django</a>
+					
+					<a href="/howto/django/django-ajax/">Integrate Ajax With Django in Python</a>
+					
+					<a href="/howto/django/django-bulk-update/">Bulk Update in Django</a>
+					
+					
+					
+					<a href="/howto/django/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/matplotlib/">Python Matplotlib Howto&#39;s</a></h5>
+					
+					<a href="/howto/matplotlib/how-to-plot-horizontal-and-vertical-line-in-matplotlib/">Plot Horizontal and Vertical Line in Matplotlib</a>
+					
+					<a href="/howto/matplotlib/how-to-change-the-figure-size-in-matplotlib/">Change the Figure Size in Matplotlib</a>
+					
+					<a href="/howto/matplotlib/how-to-rotate-x-axis-tick-label-text-in-matplotlib/">Rotate X-Axis Tick Label Text in Matplotlib</a>
+					
+					<a href="/howto/matplotlib/how-to-set-tick-labels-font-size-in-matplotlib/">Set Tick Labels Font Size in Matplotlib</a>
+					
+					<a href="/howto/matplotlib/how-to-place-legend-outside-of-the-plot-in-matplotlib/">Place Legend Outside the Plot in Matplotlib</a>
+					
+					
+					
+					<a href="/howto/matplotlib/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/docker/">Docker Howto&#39;s</a></h5>
+					
+					<a href="/howto/docker/host-docker-internal/">Host Docker Internal in Linux</a>
+					
+					<a href="/howto/docker/brew-docker/">Install Docker Using Homebrew</a>
+					
+					<a href="/howto/docker/docker-run-bash/">Launch Bash Terminal in New Docker Container</a>
+					
+					<a href="/howto/docker/the-docker-build-command-and-multiple-arguments/">Docker Build Command With Multiple Arguments</a>
+					
+					<a href="/howto/docker/run-docker-instance-from-dockerfile/">Run Docker Instance From Dockerfile</a>
+					
+					
+					
+					<a href="/howto/docker/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/plotly/">Plotly Howto&#39;s</a></h5>
+					
+					<a href="/howto/plotly/plotly-violin-plot/">Plotly Violin Plot</a>
+					
+					<a href="/howto/plotly/plotly-3d-scatter-plot/">Plotly 3D Scatter Plot</a>
+					
+					<a href="/howto/plotly/plotly-choropleth-map/">Plotly Choropleth Map</a>
+					
+					<a href="/howto/plotly/plotly-gantt-chart/">Plotly Gantt Chart</a>
+					
+					<a href="/howto/plotly/plotly-heatmap/">Plotly Heatmap</a>
+					
+					
+					
+					<a href="/howto/plotly/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/seaborn/">Seaborn Howto&#39;s</a></h5>
+					
+					<a href="/howto/seaborn/seaborn-jointplot/">Seaborn Joint Plot</a>
+					
+					<a href="/howto/seaborn/multiple-line-plot-seaborn/">Multiple Line Plot Seaborn</a>
+					
+					<a href="/howto/seaborn/seaborn-confusion-matrix/">Seaborn Confusion Matrix Plot</a>
+					
+					<a href="/howto/seaborn/seaborn-horizontal-bar-plot/">Seaborn Horizontal Bar Plot</a>
+					
+					<a href="/howto/seaborn/seaborn-pie-chart/">Seaborn Pie Chart</a>
+					
+					
+					
+					<a href="/howto/seaborn/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/matlab/">Matlab Howtos</a></h5>
+					
+					<a href="/howto/matlab/determine-an-array-or-matrix-is-empty-or-not-in-matlab/">Check Whether an Array or Matrix Is Empty or Not in MATLAB</a>
+					
+					<a href="/howto/matlab/print-output-in-command-window-in-matlab/">Print Output in Command Window in Matlab</a>
+					
+					<a href="/howto/matlab/run-matlab-scripts-from-command-line/">Run MATLAB Script From Command Line</a>
+					
+					<a href="/howto/matlab/solve-quadratic-equations-in-matlab/">Solve Quadratic Equations in MATLAB</a>
+					
+					<a href="/howto/matlab/use-kronecker-delta-in-matlab/">Use Kronecker Delta in MATLAB</a>
+					
+					
+					
+					<a href="/howto/matlab/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/linux/">Linux Howtos</a></h5>
+					
+					<a href="/howto/linux/bash-mkvirtualenv-command-not-found/">Fix the Mkvirtualenv Command Not Found Error in Bash</a>
+					
+					<a href="/howto/linux/bash-syntax-error-near-unexpected-token-done/">Syntax Error Near Unexpected Token in Bash</a>
+					
+					<a href="/howto/linux/difference-between-asterisk-and-at-sign-in-bash-scripting/">Difference Between $@ and $* in Bash Scripting</a>
+					
+					<a href="/howto/linux/solve-gcc-command-not-found-error-in-bash/">Solve GCC Command Not Found Error in Bash</a>
+					
+					<a href="/howto/linux/solve-unary-operator-expected-error-in-bash/">Solve Unary Operator Expected Error in Bash</a>
+					
+					
+					
+					<a href="/howto/linux/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/git/">Git Howtos</a></h5>
+					
+					<a href="/howto/git/undo-git-stash-pop/">Undo Git Stash Pop Conflicts</a>
+					
+					<a href="/howto/git/copy-file-from-another-branch-in-git/">Copy File From Another Branch in Git</a>
+					
+					<a href="/howto/git/copy-remote-branch-to-local-branch-in-git/">Copy Remote Branch to Local Branch in Git</a>
+					
+					<a href="/howto/git/recover-stash-in-git/">Recover Stash in Git</a>
+					
+					<a href="/howto/git/git-restore-deleted-file-before-commit/">Restore Deleted Files Before Commit in Git</a>
+					
+					
+					
+					<a href="/howto/git/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/c/">C Howtos</a></h5>
+					
+					<a href="/howto/c/pointer-to-pointer-in-c/">** in C</a>
+					
+					<a href="/howto/c/scalar-initialization/">Excess Elements in Scalar Initializer Warning in C</a>
+					
+					<a href="/howto/c/p-in-c/">%p Format Specifier in C</a>
+					
+					<a href="/howto/c/compare-bits-in-c/">Compare Bits in C</a>
+					
+					<a href="/howto/c/ac-daemon-in-c/">Control Daemon Process From Another Process in C</a>
+					
+					
+					
+					<a href="/howto/c/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/cpp/">C++ Howtos</a></h5>
+					
+					<a href="/howto/cpp/difference-between-struct-and-class-cpp/">Difference Between Structure and Class in C++</a>
+					
+					<a href="/howto/cpp/compile-cpp-codes-in-macos/">Compile C++ Codes in macOS</a>
+					
+					<a href="/howto/cpp/compile-and-run-cpp-11-codes-in-dev-cpp/">Compile and Run C++ 11 Codes in Dev C++</a>
+					
+					<a href="/howto/cpp/dereference-pointers-in-cpp/">Dereference Pointers in C++</a>
+					
+					<a href="/howto/cpp/cpp-assert-with-message/">Add Message to Assert in C++</a>
+					
+					
+					
+					<a href="/howto/cpp/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/html/">HTML Howtos</a></h5>
+					
+					<a href="/howto/html/redirect-to-a-webpage-in-html/">Redirect to a Webpage in HTML</a>
+					
+					<a href="/howto/html/html-table-image/">Add Image Inside Table Cell in HTML</a>
+					
+					<a href="/howto/html/html-space-between-buttons/">Add Space Between Buttons in HTML</a>
+					
+					<a href="/howto/html/html-print-page/">Print Page in HTML</a>
+					
+					<a href="/howto/html/center-video-in-html/">Center a Video in HTML</a>
+					
+					
+					
+					<a href="/howto/html/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/javascript/">JavaScript Howtos</a></h5>
+					
+					<a href="/howto/javascript/javascript-append-html/">Append HTML Content to the Existing HTML Element Using JavaScript</a>
+					
+					<a href="/howto/javascript/get-last-character-of-a-string-in-javascript/">Get Last Character of a String in JavaScript</a>
+					
+					<a href="/howto/javascript/get-month-name-in-javascript/">Get Name of Month in JavaScript</a>
+					
+					<a href="/howto/javascript/javascript-array-contains/">Check if Array Contains Value in JavaScript</a>
+					
+					<a href="/howto/javascript/ascii-to-hex-using-javascript/">Convert ASCII to Hexadecimal in JavaScript</a>
+					
+					
+					
+					<a href="/howto/javascript/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/jquery/">jQuery Howtos</a></h5>
+					
+					<a href="/howto/jquery/how-to-check-radio-button-using-javascript-or-jquery/">Check a Radio Button Using JavaScript or jQuery</a>
+					
+					<a href="/howto/jquery/how-to-add-table-row-injquery/">Add Table Row in jQuery</a>
+					
+					<a href="/howto/jquery/how-to-get-current-url-in-jquery/">Get Current URL in jQuery</a>
+					
+					<a href="/howto/jquery/jquery-datepicker/">Datepicker in jQuery</a>
+					
+					<a href="/howto/jquery/how-to-check-if-an-element-is-hidden-in-jquery/">Check if an Element Is Hidden in jQuery</a>
+					
+					
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/typescript/">TypeScript Howtos</a></h5>
+					
+					<a href="/howto/typescript/map-or-list-type-in-typescript/">Declare Map or List Type in TypeScript</a>
+					
+					<a href="/howto/typescript/class-constructor-type-in-typescript/">Class Constructor Type in TypeScript</a>
+					
+					<a href="/howto/typescript/cast-a-json-object-to-a-class-in-typescript/">Cast a JSON Object to a Class in TypeScript</a>
+					
+					<a href="/howto/typescript/typescript-default-parameter/">Default Value for Object Parameters in TypeScript</a>
+					
+					<a href="/howto/typescript/typescript-add-property-to-object/">Dynamically Assign Properties to an Object in TypeScript</a>
+					
+					
+					
+					<a href="/howto/typescript/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/angular/">Angular Howtos</a></h5>
+					
+					<a href="/howto/angular/angular-typings-json/">Angular 2 Typings JSON</a>
+					
+					<a href="/howto/angular/angular-2-disabled/">Concept of Angular 2 ng-disabled</a>
+					
+					<a href="/howto/angular/angular-ng-style/">Concept of AngularJS ng-style</a>
+					
+					<a href="/howto/angular/get-current-date-in-angular/">Get Current Date in Angular</a>
+					
+					<a href="/howto/angular/broadcast-in-angularjs/">Use $broadcast() in AngularJS</a>
+					
+					
+					
+					<a href="/howto/angular/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/react/">React Howtos</a></h5>
+					
+					<a href="/howto/react/react-conditional-classname/">Conditionally Set className Values in React</a>
+					
+					<a href="/howto/react/react-dynamic-class/">Dynamically Apply className Values in React</a>
+					
+					<a href="/howto/react/get-window-width-react/">Get Window Width in React</a>
+					
+					<a href="/howto/react/react-sticky-navbar/">Implement Sticky Navbar in React</a>
+					
+					<a href="/howto/react/react-read-json-file/">Read JSON Data From External Files in React</a>
+					
+					
+					
+					<a href="/howto/react/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/css/">CSS Howtos</a></h5>
+					
+					<a href="/howto/css/change-a-html5-inputs-placeholder-color-with-css/">Change an HTML5 Input Placeholder Color With CSS</a>
+					
+					<a href="/howto/css/rotate-animation-in-css/">Rotate Animation in CSS</a>
+					
+					<a href="/howto/css/shift-text-using-css/">Shift Text Using CSS</a>
+					
+					<a href="/howto/css/slide-in-from-left-transition-in-css/">Slide in From Left Transition in CSS</a>
+					
+					<a href="/howto/css/transparent-background-color-in-css/">Transparent Background Color in CSS</a>
+					
+					
+					
+					<a href="/howto/css/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/php/">PHP Howtos</a></h5>
+					
+					<a href="/howto/php/how-to-get-the-last-day-of-the-month-with-php-functions/">Get the Last Day of the Month With PHP Functions</a>
+					
+					<a href="/howto/php/how-to-add-days-to-date-in-php/">Add Days to Date in PHP</a>
+					
+					<a href="/howto/php/how-to-strip-all-spaces-out-of-a-string-in-php/">Remove All Spaces Out of a String in PHP</a>
+					
+					<a href="/howto/php/how-to-return-more-values-from-a-php-function/">Create a PHP Function With Multiple Returns</a>
+					
+					<a href="/howto/php/how-to-properly-format-a-number-with-leading-zeros-in-php/">Properly Format a Number With Leading Zeros in PHP</a>
+					
+					
+					
+					<a href="/howto/php/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/java/">Java Howtos</a></h5>
+					
+					<a href="/howto/java/how-to-perform-string-to-string-array-conversion-in-java/">Perform String to String Array Conversion in Java</a>
+					
+					<a href="/howto/java/how-to-remove-a-substring-from-string-in-java/">Remove Substring From String in Java</a>
+					
+					<a href="/howto/java/how-to-sort-objects-in-arraylist-by-date-in-java/">Sort Objects in ArrayList by Date in Java</a>
+					
+					<a href="/howto/java/how-to-concatenate-two-arrays-in-java/">Concatenate Two Arrays in Java</a>
+					
+					<a href="/howto/java/how-to-convert-byte-array-in-hex-string-in-java/">Convert Byte Array in Hex String in Java</a>
+					
+					
+					
+					<a href="/howto/java/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/go/">Go Howtos</a></h5>
+					
+					<a href="/howto/go/how-to-convert-string-to-integer-type-in-go/">Convert String to Integer Type in Go</a>
+					
+					<a href="/howto/go/how-to-convert-go-struct-to-json/">Convert Go Struct to JSON</a>
+					
+					<a href="/howto/go/how-to-find-a-type-of-an-object-in-go/">Find a Type of an Object in Go</a>
+					
+					<a href="/howto/go/how-to-print-struct-variables-in-console/">Print Struct Variables in Console in Go</a>
+					
+					<a href="/howto/go/how-to-convert-an-int-value-to-string-in-go/">Convert an Int Value to String in Go</a>
+					
+					
+					
+					<a href="/howto/go/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/kotlin/">Kotlin Howtos</a></h5>
+					
+					<a href="/howto/kotlin/kotlin-add-to-list/">Add Items to a List in Kotlin</a>
+					
+					<a href="/howto/kotlin/convert-java-to-kotlin/">Convert a Java File Code to Kotlin</a>
+					
+					<a href="/howto/kotlin/difference-between-and-operators-in-kotlin/">Difference Between !! And ? Operators in Kotlin</a>
+					
+					<a href="/howto/kotlin/kotlin-string-array/">Equivalent of Java String[] in Kotlin</a>
+					
+					<a href="/howto/kotlin/kotlin-foreach/">Use forEach in Kotlin</a>
+					
+					
+					
+					<a href="/howto/kotlin/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/node.js/">Node.js Howtos</a></h5>
+					
+					<a href="/howto/node.js/formatting-dates-in-nodejs/">Formatting Dates in NodeJS</a>
+					
+					<a href="/howto/node.js/rendering-html-files-in-node-js/">Rendering HTML Files in Node.js</a>
+					
+					<a href="/howto/node.js/done-callback-method-in-mochajs/">Done Callback in MochaJS</a>
+					
+					<a href="/howto/node.js/node-js-http-proxy-server/">HTTP Proxy Server in NodeJS</a>
+					
+					<a href="/howto/node.js/heap-out-of-memory/">Node.js Heap Out of Memory</a>
+					
+					
+					
+					<a href="/howto/node.js/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/csharp/">C# Howtos</a></h5>
+					
+					<a href="/howto/csharp/how-to-convert-string-to-enum-in-csharp/">C# Convert String to Enum</a>
+					
+					<a href="/howto/csharp/how-to-convert-int-to-string-in-csharp/">C# Convert Int to String</a>
+					
+					<a href="/howto/csharp/csharp-int-to-enum/">Convert Int to Enum in C#</a>
+					
+					<a href="/howto/csharp/csharp-double-question-mark/">Double Question Mark in C#</a>
+					
+					<a href="/howto/csharp/csharp-exponent/">Exponent in C#</a>
+					
+					
+					
+					<a href="/howto/csharp/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/ruby/">Ruby Howtos</a></h5>
+					
+					<a href="/howto/ruby/ruby-each-with-index/">Difference Between Each_with_index and each.with_index in Ruby</a>
+					
+					<a href="/howto/ruby/ruby-capitalize-string/">Capitalize String in Ruby</a>
+					
+					<a href="/howto/ruby/ruby-generate-random-number/">Generate Random Number in Ruby</a>
+					
+					<a href="/howto/ruby/ruby-class-variables/">Ruby Class Variables</a>
+					
+					<a href="/howto/ruby/ruby-send-method/">The send Method in Ruby</a>
+					
+					
+					
+					<a href="/howto/ruby/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/arduino/">Arduino Howtos</a></h5>
+					
+					<a href="/howto/arduino/arduino-nested-if-statement/">Arduino Nested if Statement</a>
+					
+					<a href="/howto/arduino/arduino-delay-microseconds/">Add Delay in Microseconds in Arduino</a>
+					
+					<a href="/howto/arduino/arduino-byte-to-int/">Arduino Byte to Integer Conversion</a>
+					
+					<a href="/howto/arduino/arduino-memset-function/">Arduino memset() Function</a>
+					
+					<a href="/howto/arduino/generate-random-numbers-in-arduino/">Generate Random Numbers in Arduino</a>
+					
+					
+					
+					<a href="/howto/arduino/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/mysql/">MySQL Howtos</a></h5>
+					
+					<a href="/howto/mysql/mysql-copy-table-structure/">Copy Table Structures Without Copying Data in MySQL</a>
+					
+					<a href="/howto/mysql/mysql-change-primary-key/">Update Primary Key in MySQL Tables</a>
+					
+					<a href="/howto/mysql/restart-mysql-ubuntu/">Different Ways to Connect a Remote MySQL Server Using Ubuntu</a>
+					
+					<a href="/howto/mysql/use-mysqldump-to-backup-data/">Use Mysqldump to Backup Data in MySQL</a>
+					
+					<a href="/howto/mysql/mysql-skip-grant-tables/">Skip Grant Tables in MySQL</a>
+					
+					
+					
+					<a href="/howto/mysql/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/postgres/">PostgreSQL Howtos</a></h5>
+					
+					<a href="/howto/postgres/run-postgresql-queries-in-psql/">Run PostgreSQL Queries in PSQL</a>
+					
+					<a href="/howto/postgres/psql-csv-output/">Save PL/pgSQL Output From PostgreSQL to CSV</a>
+					
+					<a href="/howto/postgres/terminate-a-postgresql-connection/">Terminate a PostgreSQL Connection</a>
+					
+					<a href="/howto/postgres/exit-from-the-postgresql-command-line-utility/">Exit From the Command Line Utility in PostgreSQL</a>
+					
+					<a href="/howto/postgres/postgresql-round-an-average-to-2-decimal-places/">Round an Average to 2 Decimal Places in PostgreSQL</a>
+					
+					
+					
+					<a href="/howto/postgres/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/r/">R Howtos</a></h5>
+					
+					<a href="/howto/rust/rust-print/">Compile Error When Printing an Integer in Rust</a>
+					
+					<a href="/howto/rust/rust-concatenate-strings/">Concatenate Strings in Rust</a>
+					
+					<a href="/howto/rust/convert-string-to-int-in-rust/">Convert String to Int in Rust</a>
+					
+					<a href="/howto/rust/rust-arrays/">Get Size of an Array Passed as an Argument</a>
+					
+					<a href="/howto/rust/split-string-in-rust/">Split String in Rust</a>
+					
+					
+					
+					<a href="/howto/r/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/vba/">VBA Howtos</a></h5>
+					
+					<a href="/howto/vba/check-if-a-file-exists-in-vba/">Check if a File Exists Using VBA</a>
+					
+					<a href="/howto/vba/use-excel-vba-to-run-sql-script/">Use Excel VBA to Run SQL Query</a>
+					
+					<a href="/howto/vba/try-catch-in-vba/">Use Try-Catch in VBA</a>
+					
+					<a href="/howto/vba/print-in-the-immediate-window-in-vba/">Print Output in the Immediate Window in VBA</a>
+					
+					<a href="/howto/vba/get-the-length-of-an-array-in-vba/">Get the Array Length in VBA</a>
+					
+					
+					
+					<a href="/howto/vba/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/scala/">Scala Howto&#39;s</a></h5>
+					
+					<a href="/howto/scala/add-element-in-map-in-scala/">Add Elements to a Map in Scala</a>
+					
+					<a href="/howto/scala/companion-objects-in-scala/">Companion Objects in Scala</a>
+					
+					<a href="/howto/scala/get-current-timestamp-in-scala/">Get the Current Timestamp in Scala</a>
+					
+					<a href="/howto/scala/sealed-traits-in-scala/">Sealed Traits in Scala</a>
+					
+					<a href="/howto/scala/getting-list-elements-in-scala/">Getting List Elements in Scala</a>
+					
+					
+					
+					<a href="/howto/scala/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/howto/raspberry-pi/">Raspberry Pi Howtos</a></h5>
+					
+					<a href="/howto/raspberry-pi/virtual-raspberry-pi/">Run Raspberry Pi OS on Virtual Machine</a>
+					
+					<a href="/howto/raspberry-pi/raspberry-pi-mac-address/">Retrieve the MAC Address of Your Raspberry Pi</a>
+					
+					<a href="/howto/raspberry-pi/raspberry-pi-autostart/">Auto-Start Programs and Schedule Commands on Raspberry Pi OS</a>
+					
+					<a href="/howto/raspberry-pi/raspberry-pi-bluetooth/">Use Bluetooth on Raspberry Pi OS</a>
+					
+					<a href="/howto/raspberry-pi/raspberry-pi-cron/">Cron Jobs and Task Scheduling on Raspberry Pi OS</a>
+					
+					
+					
+					<a href="/howto/raspberry-pi/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+                  </li>
+				  
+				  		  
+				  
+				  <li>			
+				    <h5><a href="/api/python-pandas/">Python Pandas Functions</a></h5>
+					
+					<a href="/api/python-pandas/pandas-dataframe-isin-function/">Pandas DataFrame isin Function</a>
+					
+					<a href="/api/python-pandas/pandas-dataframe-query-function/">Pandas DataFrame query Function</a>
+					
+					<a href="/api/python-pandas/pandas-dataframe-sort_index-function/">Pandas DataFrame sort_index() Function</a>
+					
+					<a href="/api/python-pandas/pandas-concat-function/">Pandas concat Function</a>
+					
+					<a href="/api/python-pandas/pandas-cut-function/">Pandas cut Function</a>
+					
+					
+					
+					<a href="/api/python-pandas/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/api/numpy/">Python Numpy Functions</a></h5>
+					
+					<a href="/api/numpy/python-numpy-pad/">Python Numpy.pad Function</a>
+					
+					<a href="/api/numpy/python-numpy-meshgrid-function/">Numpy numpy.meshgrid Function</a>
+					
+					<a href="/api/numpy/python-numpy-random.rand-function/">Numpy numpy.random.rand() Function</a>
+					
+					<a href="/api/numpy/python-numpy-median-function/">Numpy numpy.median Function</a>
+					
+					<a href="/api/numpy/python-numpy-dot-function/">Numpy numpy.dot Function</a>
+					
+					
+					
+					<a href="/api/numpy/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+				  </li><li>			
+				    <h5><a href="/api/scipy/">Python Scipy Functions</a></h5>
+					
+					<a href="/api/scipy/2d-interpolation-python/">2D Interpolation in Python</a>
+					
+					<a href="/api/scipy/scipy-scipy.stats.linregress-method/">SciPy scipy.stats.linregress Method</a>
+					
+					<a href="/api/scipy/scipy-scipy.stats.poisson-method/">SciPy scipy.stats.poisson</a>
+					
+					<a href="/api/scipy/scipy-scipy.stats.multivariate_normal-method/">SciPy scipy.stats.multivariate_normal </a>
+					
+					<a href="/api/scipy/scipy-scipy.optimize.curve_fit-method/">Scipy scipy.optimize.curve_fit Method</a>
+					
+					
+					
+					<a href="/api/scipy/">Read More <span class="glyphicon glyphicon-share-alt"></span></a>
+					
+					
+                  </li>
+				  
+				  <li>
+					<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5144792930493150" data-ad-slot="9469589314"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				  </li>
+				  <li>
+					<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5144792930493150" data-ad-slot="9469589314"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				  </li>
+                </ul>
+
+              </section>
+
+
+		
+		
+        
+        
+        </article>        
+		
+        
+      
+      </div>
+    </main>
+	
+	    
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <p>Copyright © 2020. All right reserved</p>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <ul class="footer-menu">
+			  
+			  <li><a href="/about-us/">About US</a></li>
+			  
+			  <li><a href="/write-for-us/">Write For Us</a></li>
+			  
+			  <li><a href="/privacy-policy/">Privacy Policy</a></li>
+			  
+			  <li><a href="/advertising/">Advertising</a></li>
+			  
+			  <li><a href="/sitemap/">Sitemap</a></li>
+			  
+			  <li><a href="/contact/">Contact</a></li>
+			  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+	
+	
+    <script src="/assets/js/theDocs.all.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/delftstack.js"></script>
+	
+	
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-113286584-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-113286584-1');
+	</script>
+    
+    
+    
+    
+
+  
+
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=2&shcb=34', true, ['/detroitchicago/minneapolisz.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=2&shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="delftstack_com",_audins_did=96282;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=195-2");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.delftstack_com,DomainId.96282" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script type="text/javascript" data-cfasync="false"></script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=2&cb=3', false, ['/detroitchicago/minneapolisz.js'], true, false, true, false);</script></body></html>

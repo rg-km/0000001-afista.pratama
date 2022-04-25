@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f2327">
+    <meta name="msapplication-TileColor" content="#1f2327">
+    <meta name="theme-color" content="#1f2327">
+
+    <link rel="canonical" href="https://cointiply.com"/>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="Xp7YymjGu4yTgBX0fFoDv6kOOUinB2nHVwRL8PVY">
+
+        <title>Cointiply Bitcoin Rewards - Earn Free Bitcoin</title>
+    <meta name="description" content="Earn free Bitcoin & crypto from the best Bitcoin faucet & crypto rewards platform. Complete offers & surveys, watch videos & play games to earn free Bitcoin.">
+    
+
+    <!-- Styles -->
+    <link rel="preconnect" href="http://fonts.gstatic.com">
+    <link rel="preconnect" href="https://ik.imagekit.io/">
+    <link rel="stylesheet" href="/v3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/v3/style.min.css?v=20210707">
+    <link rel="preload" as="image" href="https://ik.imagekit.io/earnly/cointiply/bg-mobile_-m9J9uaOa.png?updatedAt=1628449961276">
+    <link rel="preload" as="image" href="https://ik.imagekit.io/earnly/cointiply/bg2_cLtzYdDFWwU.png?updatedAt=1628449961320">
+
+    <style type="text/css">
+
+        .lander-left {
+            width: 45%;
+            margin-right: 20px;
+        }
+
+        .lander-left h2, .lander-left p {
+            color: #ffffff !important;
+        }
+
+        .lander-right {
+            width: 45%;
+        }
+
+        .lander-wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 120px;
+        }
+
+        @media (max-width: 767px) {
+            .lander-right, .lander-left {
+                width: 100%;
+            }
+            .lander-left {
+                margin-right: 0px;
+                margin-top: 40px;
+            }
+            .lander-left h2, .lander-left p {
+                color: #000000 !important;
+            }
+            .lander-wrap {
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-content: center;
+                margin-top: 40px;
+            }
+
+            .auth-card .auth-offer {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        .auth-card {
+            max-width: 460px;
+            border: 1px solid #9ea3a3;
+            background-color: rgba(255, 255, 255, 0.96);
+            padding: 16px;
+            border-radius: 8px;
+            min-height: 600px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 6px 7px 12px 1px rgba(0, 0, 0, 0.32);
+            -webkit-box-shadow: 6px 7px 12px 1px rgba(0, 0, 0, 0.32);
+            -moz-box-shadow: 6px 7px 12px 1px rgba(0, 0, 0, 0.32);
+        }
+
+        .auth-card .auth-header {
+            border-bottom: 1px solid #9ea3a3;
+            padding: 8px 0px;
+            margin-bottom: 12px;
+        }
+
+        .auth-card .auth-offer {
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .auth-offer .label-bonus {
+            background-color: #e91e63;
+            font-size: 100%;
+            padding: 5px;
+        }
+
+        .auth-form .error {
+            color: #ff0046;
+        }
+
+        .no-shadow {
+            box-shadow: none !important;
+        }
+
+        .list-group .selected {
+            background-color: rgb(222 222 226);
+        }
+
+        .list-group-horizontal {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .focus-input {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+            -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+            -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+            -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+        .email-input-wrap {
+            width: 100%;
+            position: relative;
+            background-color: #fff;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .email-input {
+            outline: none;
+            border: none;
+            display: block;
+            width: 100%;
+            background: transparent;
+            font-family: inherit;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e2028;
+            line-height: 1.2;
+            height: 48px;
+            padding: 0 16px 0 16px;
+        }
+
+        .awesome-feature.style-2 .awesome-feature-icon span::after {
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 767px) {
+            .sub-title {
+                font-size: 1.2em!important;
+                line-height: 1.4em;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+
+            .promo-header-area h1 {
+                font-size: 32px;
+                line-height: 1.1em;
+            }
+            .promo-header-area {
+                margin: 50px auto 0;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112733560-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        
+                    gtag('config', 'UA-112733560-1');
+        
+    </script>
+
+        
+    <script type="text/javascript">
+        window.shared = {
+        	user: null,
+            SETTINGS: {
+                COIN_NAME: 'Coins',
+                SOLVEMEDIA_KEY: 'yV2-eDlG17xYgQSNc9RF31oDSJmLOwhY',
+            },
+        };
+
+        			window.shared.axiosConfig = {
+                headers: {
+                }
+            }
+		
+    </script>
+
+        
+</head>
+<body>
+
+        <div id="app">
+        <vue-snotify></vue-snotify>
+            <!-- page wrapper start -->
+    <div id="page-top" class="wrapper">
+
+        <!-- header area start -->
+<header class="home-style-2">
+    <nav class="navbar navbar-fixed-top" data-spy="affix" data-offset-top="1">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" aria-label="Expand Main Menu"
+                        data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="/img/cointiply_sm_live.png" width="180" height="42"
+                                                      style="margin-top: -10px;" alt="logo"
+                                                      class="img-responsive"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li class="inactive"><a href="/#how-it-works-area">How it Works</a></li>
+                    <li class="inactive"><a href="/#features-area">Features</a></li>
+                    <li class="inactive"><a href="/advertise">Advertise</a></li>
+                    <li class="inactive"><a href="https://support.cointiply.com" rel="noopener" target="_blank"
+                                            >Contact</a></li>
+                                            <li class="inactive"><a href="/login">Login</a></li>
+                        <li class="inactive"><a
+                                    style="border: 2px solid #e91e63; border-radius: 5px; padding: 8px 16px 8px 16px; margin-top: 8px;"
+                                    href="/register">Sign Up</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- header area end -->
+        <!-- slider area start -->
+        <section id="slider-area" class="home-style-2 blue-grad-bg bg-black-img">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="promo-header-area text-center" style="position: relative;">
+                            <h3 class="color-white sub-title sub-title-text">Over $12 Million Paid</h3>
+                            <h1>Earn Free Bitcoin</h1>
+                            <!--
+                            <img class="hidden-md hidden-xs" src="/img/promo/cta-arrow-3.png" alt="Join Cointiply" style="position: absolute; left: -145px; top: 120px;"/>
+                            -->
+                            <form method="get" action="/register">
+                                <input type="hidden" name="_token" value="Xp7YymjGu4yTgBX0fFoDv6kOOUinB2nHVwRL8PVY">
+
+                                <div class="col-lg-8 col-lg-offset-2 mt-20">
+                                    <div class="email-input-wrap">
+                                        <input type="text" name="email" class="email-input"
+                                               placeholder="Enter Your Email Address"/>
+                                        <span class="focus-input"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <button type="submit" class="btn join-button  mb-15"
+                                            style="font-size: 22px; margin-top: 2px; width: 100%; ">
+                                        Start Earning Now <i class="md-icon material-icons md-theme-default" style="position: relative; left: 8px; top: 4px;">login</i>
+                                        <span></span>
+                                    </button>
+                                    <br/>
+                                </div>
+                            </form>
+                            <div class="clearfix"></div>
+                            <div class="mt-10 text-center col-lg-8 col-lg-offset-2" >
+                                <div class="color-white mt-lg-5 hidden-xs" style="margin-top: 20px; margin-bottom: 25px;">
+                                    <span style="font-weight: 600; font-size: 1.2em;">Join the #1 Bitcoin Rewards Platform <br/> Trusted by over 3 million users.</span>
+                                </div>
+
+                                <!-- Swiper -->
+                                <div class="row text-center hidden-xs">
+
+                                    <picture style="margin-right: auto; margin-left: auto;">
+                                        <source srcset="https://ik.imagekit.io/earnly/cointiply/mockup1_oEpMBVUgrqr.webp?updatedAt=1628529296811" type="image/webp">
+                                        <source srcset="https://ik.imagekit.io/earnly/cointiply/mockup1_k696SwtDw.png?updatedAt=1628529296877" type="image/png">
+                                        <img src="https://ik.imagekit.io/earnly/cointiply/mockup1_k696SwtDw.png?updatedAt=1628529296877" class="img-responsive mt-20"
+                                             alt="Cointiply Rewards">
+                                    </picture>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row visible-xs" style="margin-top: 20px; min-height: 600px; min-width: 300px;">
+                    <div class="slider-wrapper-2 pl-5 pr-5 pt-5">
+                        <div class="slide one">
+                            <div>
+                                <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-330,h-660/screenshot3-min_hKdYNh6L6oM.webp?updatedAt=1628449790688"
+                                     alt="Cointiply App Screenshot" class="img-responsive" width="330" height="660" style="border-radius: 8px;">
+                            </div>
+                        </div>
+                        <div class="slide two">
+                            <div>
+                                <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-330,h-660/screenshot4-min_alVZU2xJihy7.webp?updatedAt=1628449790972"
+                                     alt="Cointiply App Screenshot" class="img-responsive" width="330" height="660" style="border-radius: 8px;">
+                            </div>
+                        </div>
+                        <div class="slide three">
+                            <div>
+                                <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-330,h-660/screenshot5-min_izGofCeVQz6n.webp?updatedAt=1628449791213"
+                                     alt="Cointiply App Screenshot" class="img-responsive" width="330" height="660" style="border-radius: 8px;">
+                            </div>
+                        </div>
+                        <div class="slide four">
+                            <div>
+                                <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-330,h-660/screenshot6-min_j_GYbh6k82c.webp?updatedAt=1628449791509"
+                                     alt="Cointiply App Screenshot" class="img-responsive" width="330" height="660" style="border-radius: 8px;">
+                            </div>
+                        </div>
+                        <div class="slide five">
+                            <div>
+                                <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-330,h-660/screenshot7-min_J4cJBPk5dt.webp?updatedAt=1628449791985"
+                                     alt="Cointiply App Screenshot" class="img-responsive" width="330" height="660" style="border-radius: 8px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a class="visible-xs mt-2" target="_blank" rel="noopener"
+                       href="https://play.google.com/store/apps/details?id=com.cointiply.earn.bitcoin&utm_source=web&utm_campaign=homepage&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                        <!-- <img class="img-responsive" src='/img/promo/mobile_1.png' alt="Cointiply Android App" width="270" height="500" style="margin-right: auto; margin-left: auto; margin-top: 25px;"/> -->
+                        <img alt='Get it on Google Play'
+                             src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+                             width="215" height="83"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- slider area end -->
+
+        <!-- app features area start -->
+        <section id="partners-area" class="home-style-2 pt-20">
+
+            <div class="margin-top-10 margin-bottom-30 text-center col-lg-8 col-lg-offset-2">
+                <p class="hidden-xs" style="font-weight: 600; font-size: 18px; margin-bottom: 40px;">Get more money for
+                    the things you love, <br/> or start saving for the future by joining Cointiply today. <br/><br/> Our
+                    members have earned over $12,000,000 in Bitcoin, now it's your turn!</p>
+                <p class="visible-xs" style="font-weight: 600; font-size: 18px; margin-bottom: 40px;">Get more money for
+                    the things you love, or start saving for the future by joining Cointiply today. <br/><br/> Our
+                    members have earned over $12,000,000 in Bitcoin, now it's your turn!</p>
+
+
+            </div>
+
+            <div class="clearfix"></div>
+        </section>
+        <!-- app features area end -->
+
+        <!-- testimonial area start -->
+        <section id="testimonial-area" class="home-style-2 pb-20">
+            <div class="testimonial-slider-2">
+                <div class="slide">
+                    <div class="slider-content text-center">
+                        <div class="client-testimonial">
+                            <h3>@The  D. </h3>
+                            <p class="client-designation">May 31, 2021</p>
+                            <p class="client-review">Better payouts and more ways to earn than any other faucet site
+                                I've tried. Fun and easy to use. Have made about $17 in the first 4 days I've been
+                                actively using it. Would recommend.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slider-content text-center">
+                        <div class="client-testimonial">
+                            <h3>@Dioni</h3>
+                            <p class="client-designation">June 20, 2021</p>
+                            <p class="client-review">Cointiply is the real deal! It is very easy to earn cryptocurrency
+                                both on their website and mobile app. I did my first payout a few days ago and it
+                                arrived in my Exodus wallet within 24 hours (DOGE) - as advertised.
+                                Highly recommend as a side hustle!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slider-content text-center">
+                        <div class="client-testimonial">
+                            <h3>@Ashley300</h3>
+                            <p class="client-review">With both its website and app versions, there are so many things to
+                                do here at Cointiply. It's also a great place to share ideas with like-minded folks from
+                                all over the world. If you're wanting to start with crypto, you've definitely come to
+                                the right place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slider-content text-center">
+                        <div class="client-testimonial">
+                            <h3>@Robert</h3>
+                            <p class="client-designation">May 25, 2021</p>
+                            <p class="client-review">I have been a user of Cointiply for more than 3 years. During that
+                                time I have withdrawn more than 140 times with no issues. If you are diligent play by
+                                the rules and are consistent you can earn here for many years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a target="_blank" rel="noopener" href="https://www.trustpilot.com/review/cointiply.com?stars=4&stars=5"
+                ><img class="img-responsive" src="https://ik.imagekit.io/earnly/cointiply/tr:w-360,h-80/trustpilot_uRybgLLYzV.png?updatedAt=1628449789962" alt="Cointiply TrustPilot Rating"
+                      width="360" height="80">
+                </a>
+            </div>
+
+
+        </section>
+        <!-- testimonial area end -->
+
+        <!-- app about area start -->
+        <section id="app-about-area" class="home-style-3 pt-80 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <h2>Turn Your Time Into Money</h2>
+                            <p>We all spend a LOT of time online, why not make it work for you? <br/> You can earn
+                                Bitcoin, DOGE, LTC or DASH by doing the things you love online.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-app mt-20 text-left">
+                            <ul>
+                                <li>Earn crypto by playing fun games online.</li>
+                                <li>Get rewards for watching videos, shopping online, or signing up for exciting
+                                    services.
+                                </li>
+                                <li>Share your opinion on popular products and businesses and earn real crypto
+                                    currency.
+                                </li>
+
+                            </ul>
+
+                            <div class="button-group store-buttons ">
+                                <a href="/register" class="btn btn-style-2 btn-bordered-grad mb-0">
+
+                                    <p class="dsp-tc"><span>Sign Up & Start Earning</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 wow fadeIn">
+                        <div class="about-app-mockup">
+                            <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-450,h-290/earn-bitcoin-1_NYGqQR1cJ.webp?updatedAt=1628449788737" alt="Users Earning Bitcoin" width="450"
+                                 height="290" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="app-about-area" class="home-style-2 pt-120 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <h2>Your Opinion Is Worth a LOT!</h2>
+                            <p>Your opinion is in high demand. Participate in surveys for products, services &
+                                businesses and help shape the future of the economy. <br/> You earn Coins for each and
+                                every survey you complete.
+                                Stop just sharing your opinions and start earning from them!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 wow fadeIn">
+                        <div class="about-app-mockup">
+                            <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-450,h-290/money-for-online-surveys_e7nJ9py_8.png?updatedAt=1628449790002" width="450" height="290"
+                                 alt="People Taking Online Surveys" class="img-responsive ml-0">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-app mt-20">
+                            <ul>
+                                <li>Earn from $1 to $5 for every online survey you participate in.</li>
+                                <li>Receive credits if you are disqualified from a survey.</li>
+                                <li>See the impact of your responses among businesses & brands around the world.</li>
+
+                            </ul>
+
+                            <div class="button-group store-buttons ">
+                                <a href="/register" class="btn btn-style-2 btn-bordered-grad mb-0">
+
+                                    <p class="dsp-tc"><span>Start Taking Online Surveys</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="app-about-area" class="gray-bg ptb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <h2>Earn Rewards While You Play Games</h2>
+                            <p>Don't just play games - play games & earn Bitcoin, DOGE, Dash or LTC while you play
+                                them!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-app mt-20 text-left">
+                            <ul>
+                                <li>Play games in your mobile or desktop browser & earn Coins while you play.</li>
+                                <li>Install mobile games and earn rewards as you progress through the games.</li>
+                                <li>Share your victories & tips with others in the Cointiply chat room!</li>
+
+                            </ul>
+
+                            <div class="button-group store-buttons ">
+                                <a href="/register" class="btn btn-style-2 btn-bordered-grad mb-0">
+
+                                    <p class="dsp-tc"><span>Start Playing Games & Earning</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 wow fadeIn">
+                        <div class="about-app-mockup">
+                            <img src="https://ik.imagekit.io/earnly/tr:w-450,h-290/cointiply/earn-playing-games_WjiMDVHu_d.webp?updatedAt=1628449789337" alt="People Playing Online Games" width="450"
+                                 height="290" class="img-responsive">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- how it work area start -->
+        <section id="how-it-works-area" class="home-style-2 ptb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-heading shape-2 text-center margin-bottom-20">
+                            <h2>HOW DOES IT WORK?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="hiw-feature-content style-2">
+                    <div class="hiw-mockup style-2">
+                        <img src="https://ik.imagekit.io/earnly/cointiply/how-does-it-work_UpyIk0FbCk.webp?updatedAt=1628449789394" width="360" height="229"
+                             alt="How Does Cointiply Work" class="img-responsive center-block mt-60">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 p-0  wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+                            <div class="hiw-feature three media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/046-small_9u5s9m4Fl7Z4.png?updatedAt=1628450027374" alt="Sign Up" width="64" height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Sign Up</h5>
+                                    <p>Create a new account and login to get started.</p>
+                                </div>
+                            </div>
+                            <div class="hiw-feature three media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/035-small_8Oqd392qr.png?updatedAt=1628450028735" alt="Play Games" width="64" height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Play Games & Earn Coins</h5>
+                                    <p>Play mobile & desktop games to earn Coin rewards.</p>
+                                </div>
+                            </div>
+                            <div class="hiw-feature three media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/088-small_PI3x68fxQd.png?updatedAt=1628450035869" alt="Complete Tasks" width="64" height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Complete Tasks</h5>
+                                    <p>Complete tasks to level up and earn reward points.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 p-0 wow fadeIn" data-wow-duration="2s"
+                             data-wow-delay="0.6s">
+                            <div class="hiw-feature four media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/069-small_LGgM6lMSpk.png?updatedAt=1628450032168" alt="Complete Offers" width="64" height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Complete Offers</h5>
+                                    <p>Complete quick offers to earn even more Bitcoin each day.</p>
+
+                                </div>
+                            </div>
+                            <div class="hiw-feature three media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/050-small_j8yENpXYYBS.png?updatedAt=1628450028448" alt="Share Your Opionin" width="64"
+                                         height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Share Your Opinion</h5>
+                                    <p>Complete surveys every day to earn thousands of Coins.</p>
+                                </div>
+                            </div>
+                            <div class="hiw-feature three media">
+                                <div class="hiw-feature-icon media-left">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-64,h-64/onboard/048-small_zvjg0cXb2c.png?updatedAt=1628450028783g" alt="Watch Videos" width="64" height="64">
+                                </div>
+                                <div class="hiw-feature-details media-body">
+                                    <h5>Watch Videos</h5>
+                                    <p>Watch videos and earn Coins.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- how it work area end -->
+
+        <!-- frequently asked questions area start -->
+        <section id="faq-area" class="faq-home-2 ptb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-heading shape-2 text-center">
+                            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                            <p>Learn more about how Cointiply can help you earn free Bitcoin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 p-0">
+                        <div class="faq-content-wrapper">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                                               class="collapsed">How much can I earn on Cointiply?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <p>
+                                                The average user earns up to $30/month on Cointiply by completing
+                                                surveys, playing free games & discovering new products &
+                                                businesses. </p>
+                                            <p> How much YOU can earn will depend on your location, how much free time
+                                                you have and the variety of tasks you complete. Our top users earn
+                                                hundreds of dollars every month!
+                                                It will take time & effort on your part, but there are no fixed limits
+                                                to how much you can earn.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
+                                               class="">What is the minimum withdrawal limit on Cointiply?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
+                                         aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>You can withdraw your Coins to your Bitcoin, DOGE, Dash or LTC wallet
+                                                after you have accumulated the equivalent of $3 (30,000 coins). Most
+                                                users who are active can reach this threshold within a few days.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseThree" aria-expanded="true" aria-controls="collapseThree"
+                                               class="collapsed">Does Cointiply have an Android app?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <p>You can download the official <a class="link-accent"
+                                                                                href="https://play.google.com/store/apps/details?id=com.cointiply.earn.bitcoin&utm_source=web&utm_campaign=homepage&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Cointiply
+                                                    Android app</a> in the Google Play Store.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingFour">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"
+                                               class="collapsed">Does Cointiply have an iOS app?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingFour">
+                                        <div class="panel-body">
+                                            <p>We do not currently have an iOS app due to Apple store restrictions. You
+                                                can still earn on iOS by using our mobile friendly website.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingFive">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseFive" aria-expanded="true" aria-controls="collapseFive"
+                                               class="collapsed">Is Cointiply free to use?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingFive">
+                                        <div class="panel-body">
+                                            <p>Absolutely. You can use all of our services for free. Some high reward
+                                                tasks or games may require purchases to complete but these are entirely
+                                                optional.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingSix">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseSix" aria-expanded="true" aria-controls="collapseSix"
+                                               class="collapsed">Does Cointiply have a referral program?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingSix">
+                                        <div class="panel-body">
+                                            <p>Yes! You can earn up to 25% of any Coins by earned by a user that you
+                                                refer to Cointiply. You will earn 10% of their offer earnings and 25% of
+                                                their faucet earnings.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingSeven">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven"
+                                               class="collapsed">Is Cointiply supported in my country?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingSeven">
+                                        <div class="panel-body">
+                                            <p>Cointiply is available worldwide and open to all users. We have users
+                                                from every country around the world! Some countries and offers may be
+                                                restricted to specific locations and some surveys & offers
+                                                are only available in English. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingEight">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseEight" aria-expanded="true" aria-controls="collapseEight"
+                                               class="collapsed">Is Cointiply a Bitcoin Faucet?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingEight">
+                                        <div class="panel-body">
+                                            <p>Bitcoin faucets are websites that give away small amounts of Bitcoin (or
+                                                other crypto currencies) to users for free. Cointiply does have a free
+                                                faucet where you can collect
+                                                Coins each day, but we also have tons of other ways for you to earn WAY
+                                                more DOGE, Dash, LTC or Bitcoin. You can think of Cointiply as a
+                                                super-charged Bitcoin faucet :)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 padding-40 wow fadeIn" data-wow-duration="2s">
+                        <div class="about-app-mockup">
+                            <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-450,h-290/customer-support-team_wKrM4keNvM.webp?updatedAt=1628449788095" width="450" height="290"
+                                 alt="Cointiply Support Team" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- awesome feature area start -->
+        <section id="features-area" class="overlay-white ptb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-heading shape-2 text-center">
+                            <h2>Cointiply Features</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="awesome-feature one style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">today</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>LOYALTY BONUS</h5>
+                                <p>Login each day to boost your loyalty bonus all the way to 100%.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+                        <div class="awesome-feature two style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">attach_money</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>EARN INTEREST</h5>
+                                <p>Earn 5% interest on your Coin balance when you reach 35,000 Coins</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="awesome-feature three style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">account_balance</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>DEPOSIT COINS</h5>
+                                <p>Send Bitcoin directly to your Cointiply account to earn even more interest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+                        <div class="awesome-feature four style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">redeem</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>REWARD POINTS</h5>
+                                <p>Earn reward points by completing tasks and boosting your level. Cash in reward points
+                                    for real prizes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+                        <div class="awesome-feature four style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">local_play</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>MULTIPLY YOUR COINS</h5>
+                                <p>Play our unique sci-fi themed multiplier game to boost your Coin balance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">
+                        <div class="awesome-feature five style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span> <i class="md-icon material-icons md-theme-default">chat_bubble</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>COMMUNITY</h5>
+                                <p>Chat with over 3 million like-minded Cointiply users. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">
+                        <div class="awesome-feature five style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span> <i class="md-icon material-icons md-theme-default">account_balance_wallet</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>FAST PAYMENTS</h5>
+                                <p>Withdraw your Coins any time to your Bitcoin, DOGE, Dash or LTC wallet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s">
+                        <div class="awesome-feature six style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">contact_support</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>EXPERT SUPPORT</h5>
+                                <p>Customer support is available 24/7 to help you with any questions or issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 p-0 wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s">
+                        <div class="awesome-feature six style-2 media">
+                            <div class="awesome-feature-icon media-left">
+                                <span><i class="md-icon material-icons md-theme-default">people</i></span>
+                            </div>
+                            <div class="asesome-feature-details media-body">
+                                <h5>25% FOR REFERRALS</h5>
+                                <p>Earn 25% of all your referrals faucet claims and 10% of their offer earnings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- awesome feature area end -->
+
+        <!-- fun fact area start -->
+        <section id="fun-fact-area" class="overlay-grad-two ptb-80 bg1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="single-fact text-center">
+                            <i class="md-icon material-icons md-theme-default">assignment</i>
+                            <h5>OFFERS COMPLETED</h5>
+                            <h2 class="counter">82,172,153</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-fact text-center">
+                            <i class="md-icon material-icons md-theme-default">speed</i>
+                            <h5>FAUCET CLAIMS</h5>
+                            <h2 class="counter">148,371,801</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-fact text-center">
+                            <i class="md-icon material-icons md-theme-default">people</i>
+                            <h5>TOTAL USERS</h5>
+                            <h2 class="counter">3,112,481</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="single-fact text-center">
+                            <i class="md-icon material-icons md-theme-default">assessment</i>
+                            <h5>BITCOIN EARNED</h5>
+                            <h2 class="counter">296.034203322</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- fun fact area end -->
+
+        <!-- blog area start -->
+        <section id="blog-area" class="home-style-2 ptb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <h2>From The Cointiply Blog</h2>
+                            <p>Learn more about how to earn crypto currency on the Cointiply Rewards platform.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <article class="blog-post">
+                            <div class="post-thumbnail">
+                                <a href="https://cointiply.com/blog/complete-guide-taking-surveys-on-cointiply">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-290,h-148/blog-post-1_TP1-2LHNnKGB.webp?updatedAt=1628449793453" alt="How to Take Surveys Online"
+                                         width="290" height="148" style="width: 290px; height: 148px;"
+                                         class="img-responsive center-block">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-content-inner">
+                                    <h5 class="post-title"><a
+                                                href="https://cointiply.com/blog/complete-guide-taking-surveys-on-cointiply">A
+                                            Complete Guide to Earning More Coins by Taking Surveys on Cointiply</a></h5>
+                                    <p>Taking online surveys is one of the best ways to earn more Bitcoin on Cointiply.
+                                        This guide is written by an expert survey taker to help you get the most out of
+                                        taking surveys on Cointiply, including some useful tips and tricks you can use
+                                        along the way.</p>
+                                </div>
+                                <div class="read-more-wrapper">
+                                    <a href="https://cointiply.com/blog/complete-guide-taking-surveys-on-cointiply"
+                                       class="read-more-btn">Learn About Surveys</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <article class="blog-post">
+                            <div class="post-thumbnail">
+                                <a href="https://cointiply.com/blog/how-to-earn-bitcoin-by-completing-offers-on-cointiply">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-290,h-148/blog-post-2_SFdMNWcBIjfs.webp?updatedAt=1628449793774" style="width: 290px; height: 148px;"
+                                         width="290" height="148" alt="How to Complete Offers"
+                                         class="img-responsive center-block">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-content-inner">
+                                    <h5 class="post-title"><a
+                                                href="https://cointiply.com/blog/how-to-earn-bitcoin-by-completing-offers-on-cointiply">How
+                                            to Earn Bitcoin by Completing Offers on Cointiply</a></h5>
+                                    <p>There are many ways to earn on Cointiply, and we are always working hard to bring
+                                        you even more ways to earn. Completing offers from our world-class offerwalls
+                                        are hands down the best way to earn, and we'll step you through how to do it.
+                                        <br/></p>
+                                </div>
+                                <div class="read-more-wrapper">
+                                    <a href="https://cointiply.com/blog/how-to-earn-bitcoin-by-completing-offers-on-cointiply"
+                                       class="read-more-btn">Learn About Offers</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 col-sm-6 hidden-sm">
+                        <article class="blog-post">
+                            <div class="post-thumbnail">
+                                <a href="https://cointiply.com/blog/grow-your-earnings-by-enabling-5-interest-on-your-cointiply-account">
+                                    <img src="https://ik.imagekit.io/earnly/cointiply/tr:w-290,h-148/blog-post-3_uuVllvYQXUMJ.webp?updatedAt=1628449794476" alt="How to Enable Interest"
+                                         style="width: 290px; height: 148px;" width="290" height="148"
+                                         class="img-responsive center-block">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-content-inner">
+                                    <h5 class="post-title"><a
+                                                href="https://cointiply.com/blog/grow-your-earnings-by-enabling-5-interest-on-your-cointiply-account">Grow
+                                            Your Earnings by Enabling 5% Interest on Your Cointiply Account</a></h5>
+                                    <p>Did you know you can earn interest on the Coins in your Cointiply account? It's
+                                        easy to set up, and we'll explain how. Interest is paid out on a weekly basis to
+                                        to all members
+                                        that maintain a balance of at least 35,000 Coins. ($3.50)</p>
+                                </div>
+                                <div class="read-more-wrapper">
+                                    <a href="https://cointiply.com/blog/grow-your-earnings-by-enabling-5-interest-on-your-cointiply-account"
+                                       class="read-more-btn">Learn About interest</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog area end -->
+
+
+        <div class="partner-images  text-center" style="margin: 50px 0px;">
+            <div class="col-lg-10 col-lg-offset-1 margin-top-50 ">
+                <div class="text-center">
+                    <h2>In Partnership With...</h2>
+                </div>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/playtime-bw-240x60_9euUjKJesc.png?updatedAt=1628449870398" alt="Playtime" width="240" height="60"
+                     class="img-responsive  display-inline mt-10 "/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/cpx-research-bw-240x60_ApbAdWiQTmP.png?updatedAt=1628449864472" alt="CPX Research Surveys" width="240" height="60"
+                     class="img-responsive  display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/adgem-bw-240x60_Ozmq5xHk9z.png?updatedAt=1628449861905" alt="Ad Gem Mobile Offers" width="240" height="60"
+                     class="img-responsive  display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/theorem-reach-bw-240x60_M8yg1L5teOG4.png?updatedAt=1628449874335" alt="Theorem Reach Surveys" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/adscendmedia-bw-240x60_NiNYIiHykU.png?updatedAt=1628449862325" alt="Adscend Media" width="240" height="60"
+                     class="img-responsive  display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/pollfish-bw-240x60_JRXHuFhCC.png?updatedAt=1628449870868" alt="Poll Fish Surveys" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/offertoro-bw-240x60_jrhydIiFzD.png?updatedAt=1628449868261" alt="Offer Toro" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/ad-gate-media-bw-240x60_S4rO-UXeT.png?updatedAt=1628449861505" alt="Ad Gate Media" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/your-surveys-bw-240x60_G7eCqFb2G1_F.png?updatedAt=1628449876152" alt="Your Surveys" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+
+                <img src="https://ik.imagekit.io/earnly/cointiply/partners/yuno-surveys-bw-240x60_jzgKxgChtnMS.png?updatedAt=1628449876866" alt="Yuno Surveys" width="240" height="60"
+                     class="img-responsive display-inline mt-10 ml-20"/>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+
+
+        <!-- footer area start -->
+<footer id="footer-area" class="home-style-2 pt-40 margin-top-50">
+    <div class="container">
+        <div class="row center-block text-center">
+            <div class="col-sm-3">
+                <a href="/"><img src="/img/cointiply_sm_live.png" width="180" height="42" alt="Cointiply Logo"
+                                 class="mt-40"></a>
+            </div>
+            <div class="col-sm-2 mt-10">
+                <h5>Get Started</h5>
+                <ul>
+                    <li class="mt-10"><a href="/">Free Bitcoin Rewards</a></li>
+                    <li class="mt-10"><a href="/register">Sign Up & Start Earning</a></li>
+                    <li class="mt-10"><a href="/login">Login to Your Account</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 mt-10">
+                <h5>About Us</h5>
+                <ul>
+                    <li class="mt-10"><a href="https://www.trustpilot.com/review/cointiply.com?stars=4&stars=5"
+                                         rel="noopener" target="_blank">Payment Proof</a></li>
+                    <li class="mt-10"><a href="/terms" rel="nofollow">Terms of Service</a></li>
+                    <li class="mt-10"><a href="/privacy" rel="nofollow">Privacy Policy</a></li>
+                    <li class="mt-10"><a href="https://cointiply.freshdesk.com" target="_blank" rel="noopener">FAQ
+                            & Help Desk</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 mt-10">
+                <h5>Support</h5>
+                <ul>
+                                            <li class="mt-10"><a href="https://support.cointiply.com" target="_blank" rel="noopener">Customer
+                                Support</a></li>
+                                        <li class="mt-10"><a href="https://status.cointiply.com" target="_blank" rel="noopener">System
+                            Status</a></li>
+                    <li class="mt-10"><a href="/blog" target="_blank">Blog & Earning Guides</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 mt-10">
+                <div class="social-networks mt-20 mb-10 ml-20">
+                    <a href="https://twitter.com/cointiplyfaucet" class="twitter mr-10" target="_blank"
+                       rel="noopener"><img src="/img/twitter-white.png" height="32" width="32"
+                                           alt="Cointiply Twitter"></a>
+                    <a href="https://www.facebook.com/CointiplyRewards" class="facebook" target="_blank"
+                       rel="noopener"><img src="/img/facebook-white.png" height="32" width="32"
+                                           alt="Cointiply Facebook"></a>
+                </div>
+                                    <a href="https://support.cointiply.com" target="_blank" rel="noopener" class="btn btn-style-2 mt-10">Contact
+                        Us</a>
+                            </div>
+        </div>
+        <div class="copyright text-center mt-20">
+            <p>© Copyright 2022 3DAH</p>
+        </div>
+    </div>
+</footer>
+<!-- footer area end -->
+
+<div class="hidden-xs" style="position: fixed; bottom: 10px; right: 10px; z-index: 10;">
+    <a target="_blank"
+       rel="noopener"
+       href='https://play.google.com/store/apps/details?id=com.cointiply.earn.bitcoin&utm_source=web&utm_campaign=homepage&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
+                alt='Get it on Google Play'
+                src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+                width="215" height="83"/></a>
+</div>
+        <div class="hidden-xs" style="position: fixed; bottom: 10px; right: 10px; z-index: 10;">
+            <a target="_blank"
+               href='https://play.google.com/store/apps/details?id=com.cointiply.earn.bitcoin&utm_source=web&utm_campaign=homepage&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
+                        alt='Get it on Google Play'
+                        src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+                        width="215" height="83"/></a>
+        </div>
+
+    </div>
+    <!-- page wrapper end -->
+    </div>
+
+        <script type="text/javascript">
+        /*! modernizr 3.6.0 (Custom Build) | MIT *
+        * https://modernizr.com/download/?-webp-setclasses !*/
+        !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+    </script>
+
+
+    <link rel="stylesheet"  href="/v3/css/color-variation.css?v=20210712">
+    <link rel="stylesheet" href="/v3/css/elements.css">
+    <link rel="stylesheet" href="/v3/css/responsive.css">
+    <link rel="stylesheet" href="/v3/css/slick.css">
+
+    <!-- <link rel="stylesheet" href="/v3/css/icofont.css"> -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="/v3/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/v3/js/bootstrap.min.js"></script>
+    <script src="/v3/js/slick.min.js"></script>
+    <script src="/v3/js/plugins.js"></script>
+    <script src="/v3/js/main.js?v=20210712"></script>
+
+        
+    
+        
+</body>
+</html>

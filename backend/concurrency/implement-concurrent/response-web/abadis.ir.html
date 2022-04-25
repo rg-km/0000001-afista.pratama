@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="fa" class="DK HM">
+<head>
+	<title>دیکشنری آنلاین آبادیس - Abadis Dictionary</title>
+	<script>
+		var cl = document.querySelector("html").classList, ls = localStorage; if (ls["FS"]) cl.add("FS" + ls["FS"]); if (ls["NM"] == "true") cl.add("NM");
+	</script> 
+	<meta charset="utf-8" />
+	<meta name="description" content="دیکشنری و مترجم آنلاین آبادیس - دیکشنری و مترجم انگلیسی و فارسی با تلفظ" />
+	<meta name="keywords" content="دیکشنری,مترجم،متن,ترجمه،گوگل,آنلاین,لغت نامه,دهخدا,فرهنگ,معین,فارسی,انگليسی,عربی,اسم,رایگان,تلفظ" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=3" />
+	<meta name="theme-color" content="#7E1975">
+	<meta itemprop="name" content="دیکشنری آنلاین آبادیس - Abadis Dictionary"><meta itemprop="description" content="">
+	<link rel="manifest" href="/libs/manifest.json" />
+	<link rel="icon" sizes="128x128" href="/images/abadisapp.png" />
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preload" href="/libs/font/web_yekan.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" as="image" href="/images/abadis.svg" type="image/svg+xml">
+	<link rel="preload" as="image" href="/images/icons.png">
+	<style>@font-face{font-family:"MsYekan";font-display:swap;src:url("/libs/font/web_yekan.woff")}:root{--clr-f5f:#f5f5f9;--clr-f8f:#f8f8f8;--clr-f6f:#f6f6f6;--clr-fff:#fff;--clr-eee:#eee;--clr-aaa:#aaa;--clr-ccc:#ccc;--clr-bbb:#bbb;--clr-e2e:#e2e2e2;--clr-666:#666;--clr-444:#444;--clr-333:#333;--clr-222:#222;--clr-7e1:#7e1975}.NM:root{--clr-f5f:#444;--clr-f8f:#444;--clr-f6f:#666;--clr-fff:#444;--clr-eee:#333;--clr-ccc:#333;--clr-aaa:#222;--clr-bbb:#222;--clr-e2e:#666;--clr-444:#bbb;--clr-666:#aaa;--clr-333:#333;--clr-222:#fff;--clr-7e1:#333}html{background-color:var(--clr-fff);color:var(--clr-444);font-size:14px;height:100%}html.DK{font-size:15px;background-color:var(--clr-f5f)}body{font-family:MsYekan;line-height:1.8;margin:0;direction:rtl;overflow-x:hidden;height:100%;border-top:solid 3px var(--clr-7e1)}.NM body{background-color:var(--clr-fff)}body,div,input,textarea,select,label{box-sizing:border-box}input[type=text],input[type=password],textarea,select{border:solid 1px var(--clr-ccc);background-color:var(--clr-f6f);color:var(--clr-444);font-family:MsYekan;font-size:95%;padding:10px;margin:0;width:100%;margin-top:-1px}select option{font-family:MsYekan,Tahoma}.anaTermMean input[type=text]{width:50% !important;height:30px;vertical-align:top}.DK .anaTermMean input[type=text]{width:75% !important;display:table-cell}.anaTermMean input[type=text]:first-child{width:100% !important;border-bottom:none}.DK .anaTermMean input[type=text]:first-child{width:15% !important;border-bottom:solid 1px var(--clr-ccc);border-left:none}textarea{height:120px}textarea#cmHrefs{height:80px}select{width:100%;padding:8px}input[type=file],progress{display:none}progress{width:calc(100% - 2px);margin-top:5px}input[type=button]{color:var(--clr-444);background-color:var(--clr-f6f);border:solid 1px var(--clr-ccc);font-family:MsYekan;padding:5px;cursor:pointer;width:150px;margin:30px auto 20px auto}.anaTermMean input[type=button]{width:50% !important;height:30px;border-right:none;margin-top:-1px !important}.DK .anaTermMean input[type=button]{width:10% !important;display:table-cell}#boxCmt input[type=button]{margin:10px auto 10px auto}h1{font-size:115%;margin:0}.PT h1,.PU h1{background-color:var(--clr-f6f);text-align:center;font-size:100%;padding:8px;border-bottom:solid 1px var(--clr-ccc)}.DK.PT h1,.DK.PU h1{background-color:transparent;color:var(--clr-eee);text-align:center;position:fixed;z-index:100;width:60%;left:18.5%;top:14px;border-bottom:unset}.boxHd label,.boxHd h1,.boxHd h2{position:absolute;background-color:var(--clr-7e1);padding:0 5px 0 5px;top:-11px;right:12px;border-radius:5px;font-size:85%;z-index:1}.NM .boxHd label,.NM .boxHd h1,.NM .boxHd h2{color:var(--clr-444)}.boxHd h1{font-size:95%}.DK .boxHd label,.DK .boxHd h1,.DK .boxHd h2{font-size:100%;right:15px;top:-16px;padding:1px 10px 2px 10px}.boxMain h1{display:inline-block;font-size:150%;vertical-align:middle}h2{font-size:110%;margin:0}hr{height:1px;border-width:0;border-top:solid 1px var(--clr-e2e)}#mnuSl hr{margin:10px 0}.lineLow{height:1px;border-width:0;border-top:dashed 1px var(--clr-e2e)}a,a:link,a:visited{color:var(--clr-444);text-decoration:underline;text-underline-position:under;text-decoration-style:dotted;cursor:pointer}a:hover{color:var(--clr-222)}#msBd a,#msBd div{display:block;padding:4px 10px;white-space:nowrap;text-decoration:none}.AP #msBd a{padding:7px 10px}.boxLi a,.boxLiCh a,.paging a,#ftLinks a{display:block;border:solid 1px var(--clr-e2e);padding:15px;margin-top:-1px;margin-right:-1px;text-decoration:none;white-space:nowrap;overflow:hidden}.boxLiCh a,.paging a{text-align:center}.boxLi a:hover,.boxLiCh a:hover,.paging a:hover{background-color:var(--clr-eee)}#ftServices a{padding:5px;margin:0}.DK #ftServices a{display:table-cell}#ftLinks a{padding:5px;font-size:90%;margin:10px 0}.DK #ftLinks a{font-size:90%}.linkAd{color:#008000;background-color:var(--clr-ccc);text-decoration:none !important;display:inline-block;padding:2px 5px;border-radius:5px;font-size:80%}.NM .boxBd img{opacity:.6}.boxBd img{max-width:100%;height:auto}.DK .boxBd img{max-width:unset}#ftServices img{display:block;width:230px;height:130px;margin:auto}.NM #ftServices img{opacity:.4}x{display:block;position:relative;background-color:var(--clr-f8f);padding:20px 20px 10px 20px;height:260px;overflow:hidden;text-align:center;opacity:.8}x:hover{opacity:1}.NM x{opacity:.4}.DK x{margin:0 0 0 0}.DK x[i='0']{padding:20px 5px 10px 5px}x .YEKTANET{margin:0 !important}x .yn-header{height:30px !important}x .yn-content{margin:0 !important;padding:0 !important}x .yn-item_title{font-size:13px !important}.item-link{width:85% !important}.stick-pos{z-index:1}.NM .stick-pos,.NM .YEKTANET{opacity:.8}.DK #yn-notification-2780{left:8px !important;bottom:260px;width:160px}.DK .push-notification-video{left:8px !important;bottom:20px !important}x ct{display:block;line-height:3;padding-top:20px;height:250px}xc{font-size:75%;position:absolute;top:45%;left:-25px;transform:rotate(270deg);cursor:pointer;color:var(--clr-222)}.DK xc{left:-30px}.wpic{text-align:center;padding:30px 0;overflow:hidden}.boxBd p{margin:0 0 10px 0;padding:0}crd{color:#f00}cgr{color:#008000}cor{color:#ff8c00}cbl{color:#00f}nof{display:block;text-align:center;font-size:90%;color:#000080}.hide{display:none}.center{text-align:center !important}.ico{background-image:url("/images/icons.png");background-position:center center;display:inline-block;vertical-align:middle;background-size:476px;height:34px;width:34px;opacity:.5;cursor:pointer}.NM .ico{filter:invert(1);opacity:.7}#msBd .ico{margin-left:8px;margin-top:-3px}#msBd a:hover .ico{opacity:1}.ico:hover{opacity:1 !important}.icoLi,.icoLii{background-position:-34px -34px}#mnu .icoLi{position:absolute;top:5px;right:5px}.DK #mnu .icoLi{filter:invert(1);top:15px;right:15px;opacity:1}.DK.NM #mnu .icoLi{opacity:.7}.DK.HM #mnu .icoLi{opacity:.7;filter:unset}.DK.HM.NM #mnu .icoLi{filter:invert(1)}.SF #mnu .icoLi{position:fixed;top:5px;right:5px;z-index:100}.icoSr{background-position:0 -34px}#boxSr .icoSr{position:absolute;bottom:calc(50% - 16px);left:6px}.TR #boxSr .icoSr{bottom:5px}.NM #boxSr .icoSr{opacity:.7}#acLi .icoSr{position:absolute;left:8px;top:10px;opacity:.3;transform:scale(.8)}.DK #acLi .icoSr{top:6px}#acLi span:hover .icoSr{opacity:1}#acLi.acLiLtr .icoSr{left:auto !important;right:8px !important}#acLi label{padding:3px 0 10px 0;text-align:center;color:#008000;display:block}.icoDn{background-position:-306px 0}#boxSr .icoDn{position:absolute;bottom:calc(50% - 16px);right:6px}.TR #boxSr .icoDn{bottom:5px}.SF #boxSr .icoDn{right:36px}.icoHm{background-position:0 0}.icoOp{background-position:-34px 0}.icoUs{background-position:-68px 0}.icoRi{background-position:-238px 0}#msHd .icoRi{position:absolute;right:10px}.DK #msHd .icoRi{right:15px}.icoLe{background-position:-204px 0}.icoAp{background-position:-272px 0}#mnu>.icoAp{position:absolute;top:5px;left:3px}#mnu>.icoSr{position:absolute;top:5px;left:32px}.DK #mnu>.icoSr{filter:invert(1);opacity:1;top:15px;left:10px}.AP #mnu>.icoSr{left:4px}.icoCl{background-position:-102px -34px}#mnuSl .icoCl{transform:scale(.9);margin-right:-1px}#boxSr .icoCl{display:none;transform:scale(.7);position:absolute;left:38px;bottom:calc(50% - 17px)}.TR #boxSr .icoCl{left:calc(50% - 16px);bottom:42px}.icoMi{background-position:-68px -34px}#boxSr .icoMi{transform:scale(.9);display:none}.AP #boxSr .icoMi{display:inline-block;position:absolute;left:36px;bottom:6px}.AP.TR #boxSr .icoMi{left:calc(50% - 18px);bottom:42px}.icoAu{background-position:-136px -34px}.icoAuUs{background-position:-136px -34px}.icoAuUk{background-position:-136px -34px}.icoAuUs:hover{background-position:-272px -34px}.icoAuUk:hover{background-position:-306px -34px}.icoEd{background-position:-238px -34px}.icoLik{background-position:-172px -36px;opacity:.4}.icoDlk{background-position:-204px -36px;opacity:.4}.icoDi{background-position:-306px -68px}.icoTr{background-position:-340px -68px}.icoCn{background-position:-376px -68px}.icoDa{background-position:-376px 0}.icoSt{background-position:-136px 0}.icoHi{background-position:-102px 0}.icoSu{background-position:-238px -34px}.icoNi{background-position:-340px -34px}.icoFs{background-position:-374px -34px}.icoCo{background-position:-170px 0}.icoSh{background-position:-340px 0}.icoIn{background-position:0 -68px}.icoTg{background-position:-34px -68px}.icoFb{background-position:-68px -68px}.icoLd{background-position:-102px -68px}.icoYu{background-position:-136px -68px}.icoAt{background-position:-170px -68px}.icoPi{background-position:-204px -68px}.icoTw{background-position:-238px -68px}.icoWs{background-position:-272px -68px}#head{background-color:var(--clr-f5f);border-top:solid 3px var(--clr-7e1);position:fixed;width:100%;top:0;z-index:100}.DK #head{height:65px;border-top:none;background-color:var(--clr-7e1)}.HM #head{border-top:none;height:100%;position:unset;background-color:inherit;min-height:400px}.PM{height:140px}.DK.TR #head,.DK.PI #head{height:65px}.DK.PT #head,.DK.PU #head{height:65px !important}.DK.TR.HM #head{height:100%}.PT #head,.PU #head{height:46px !important}.AP #head{height:unset}#mnu{position:relative}#mnuLk{display:none;position:absolute;top:10px;right:40px}.DK #mnuLk{top:15px;right:60px}.HM #mnuLk{display:block}#diLk,#trLk{color:var(--clr-444);margin-right:10px;text-decoration:none;padding-bottom:2px}#diLk:hover,#trLk:hover,#diLk{border-bottom:solid 1px var(--clr-444)}.TR #diLk{border:none}.TR #trLk{border-bottom:solid 1px var(--clr-444)}#abadis{position:absolute;width:70px;top:8px;right:48px;opacity:.7;cursor:pointer}.NM #abadis{filter:invert(1)}.DK #abadis{filter:invert(1);width:90px;top:14px;right:62px;opacity:1}.DK.NM #abadis{opacity:.7}.HM #abadis{width:120px;top:130px;right:calc(50% - 60px);opacity:.6}.DK.HM #abadis{filter:unset;width:180px;top:160px;right:calc(50% - 90px)}.DK.HM.NM #abadis{filter:invert(1)}#boxSr{background-color:var(--clr-f5f);width:100%;margin:auto;top:45px;position:relative;border-top:solid 1px var(--clr-ccc);border-bottom:solid 1px var(--clr-ccc);overflow:hidden;box-shadow:0 5px 5px var(--clr-ccc)}.DK #boxSr{border:none;width:600px;top:6px;border-radius:10px;box-shadow:unset}.DK.HM #boxSr{border:solid 1px var(--clr-ccc);width:600px;top:270px}.HM #boxSr{top:200px;box-shadow:unset}.TR #boxSr{width:100%;height:165px}.DK.TR #boxSr{width:600px}.DK.TR #boxSr{border:solid 2px var(--clr-7e1)}.DK.TR.HM #boxSr{border:solid 1px var(--clr-ccc)}.SF #boxSr{position:fixed;top:0;border-top:none}.boxSrAcOpen,.DK.TR.PM #boxSr{border-bottom-left-radius:unset !important;border-bottom-right-radius:unset !important}.PT #boxSr,.PU #boxSr{border-top:none;box-shadow:unset}#tbSr{background-color:var(--clr-fff);color:var(--clr-444);width:100%;font-size:150%;padding:6px 70px;text-align:center;border:none;margin-bottom:0;height:46px}.DK #tbSr{padding:8px 70px;font-size:160%;height:54px}.TR #tbSr{padding:8px;font-size:95%;font-family:MsYekan;height:120px;resize:none;border-bottom:solid 1px var(--clr-ccc)}.TR #trTi{position:absolute;bottom:10px;text-align:center;width:100%;font-size:90%;cursor:pointer;z-index:0}.PT #tbSr,.PU #tbSr{display:none}#mnuSl{position:fixed;right:0;top:0;width:0;height:100%;z-index:100001;background-color:rgba(0,0,0,.6);text-align:right;padding:0}.SL #mnuSl{width:100%}#mc{background-color:var(--clr-fff);height:100%;width:0;overflow:auto;overflow-x:hidden;transition:width .3s}.SL #mc{width:280px}#msHd{position:relative;background-color:var(--clr-eee);height:45px;padding:4px 8px;white-space:nowrap;border-top:solid 3px var(--clr-7e1);text-align:left;direction:ltr}.DK #msHd{height:65px;padding:12px 12px}#msBd{padding:10px 0;height:calc(100% - 65px)}#usn{font-size:85%;opacity:.8;margin-top:-2px;margin-right:5px;background-color:var(--clr-eee)}#fs{width:100px;margin-right:5px;position:relative;top:8px}#nm{width:20px;height:20px;position:relative;top:5px;margin-right:10px;background-color:#ccc}#tSo{padding-top:5px;text-align:center}#ver{text-align:center;font-size:80%;color:var(--clr-aaa)}#acLi{display:none;position:fixed;right:0;top:94px;margin-top:1px;width:100%;height:calc(100% - 90px);z-index:100000;background-color:var(--clr-fff);text-align:right;overflow:auto}.DK #acLi{top:55px;width:600px;right:calc(50% - 300px);height:unset;max-height:383px;box-shadow:-3px 3px 12px -4px var(--clr-aaa);border-bottom-left-radius:15px;border-bottom-right-radius:15px}.SF #acLi{top:45px;height:calc(100% - 45px)}.acLiLtr{direction:ltr !important;text-align:left !important}#acLi div{padding:10px 0;text-align:center;cursor:pointer;direction:rtl}#acLi span{position:relative;padding:10px 15px;border-bottom:solid 1px var(--clr-eee);display:block;cursor:pointer;font-size:120%;white-space:nowrap;overflow-x:hidden}#acLi span:first-child{padding-top:15px}#acLi span:hover,.acLiItmActive{background-color:var(--clr-eee)}.DK #acLi span{height:37px;padding:8px 15px 2px 15px}#acMsg{padding:3px 0 10px 0;text-align:center;color:#008000;display:block}#selLn{display:none;position:absolute;right:0;top:92px;width:100%;height:300px;z-index:100000;font-size:90%;background-color:var(--clr-fff);text-align:right;overflow:auto;border-bottom:solid 1px var(--clr-ccc);box-shadow:-3px 3px 12px -4px var(--clr-aaa)}.DK #selLn{width:600px;height:340px;top:59px;right:calc(50% - 300px);font-size:100%;border-bottom-left-radius:15px;border-bottom-right-radius:15px}.HM #selLn{top:250px}.DK.HM #selLn{top:327px;border:solid 1px var(--clr-ccc)}.TR #selLn{height:255px;top:210px}.HM.TR #selLn{top:368px}.DK.TR #selLn{height:260px;top:172px}.DK.HM.TR #selLn{top:437px}.SF #selLn{top:43px}.lnBR,.lnBL{display:block;position:absolute;width:50%;padding:10px 20px 10px 20px;cursor:pointer;border-bottom:solid 1px var(--clr-eee)}.TR .lnBR,.TR .lnBL{cursor:unset;height:100%}.DK .lnBR,.DK .lnBL{padding:10px 50px 10px 50px}.lnBR{right:0;border-left:solid 1px var(--clr-eee)}.lnBL{left:0}.TR #selLn label{display:block;cursor:pointer;padding:3px 0}#lnOpt{position:absolute;bottom:20px;width:100%;text-align:center}#lunMnu #lnOpt{position:unset;width:unset;display:inline-block;text-align:right}.DK #lunMnu #lnOpt{width:100%}#lnOpt a{text-decoration:none;display:block;color:#8a2be2}#lnOpt .icoOp{transform:scale(.7);margin-top:-10px;margin-bottom:-8px}#lunMnu #lnOpt .icoOp{margin-right:-10px}#lunMnu{display:none;position:relative;top:45px;background-color:var(--clr-f8f);padding:10px;white-space:nowrap;overflow:auto;text-align:right;font-size:90%;direction:ltr;box-shadow:0 5px 5px var(--clr-ccc)}.PM #lunMnu{display:block}.TR #lunMnu{display:none}.SF #lunMnu{top:43px}.DK #lunMnu{background-color:unset;position:absolute;display:none;right:0;top:65px;width:180px;border:none;box-shadow:none;z-index:-1}.lunItm{background-color:var(--clr-fff);border:solid 1px var(--clr-eee);display:inline-block;padding:4px 8px;margin-right:5px;border-radius:5px;cursor:pointer}.DK .lunItm{display:block;margin-top:3px;margin-right:0;font-size:85%}.lunActive{border-color:var(--clr-444)}main{background-color:var(--clr-fff);margin:140px 0 20px 0;padding-bottom:20px}.DK main{margin:auto 180px}.HM main{padding:0}.PM main{margin-top:160px}.AP.PM main{padding-bottom:100px}.DK.PM main{margin-top:60px;padding-bottom:40px}.PM.SR main{margin-bottom:150px}.TR.PM main{margin-top:200px}.DK.TR.PM main{margin-top:60px;background-color:unset}.PT main,.PU main{margin-top:46px}.DK.PT main,.DK.PU main{margin-top:40px;padding-top:20px}.boxHd{color:var(--clr-eee);position:relative;text-align:right;border-bottom:solid 2px var(--clr-7e1);margin-bottom:0;margin-top:40px;white-space:nowrap}.boxBd{position:relative;padding:30px 15px;direction:rtl;min-height:80px;overflow:hidden}.boxMain{padding-top:10px;padding-bottom:20px;min-height:unset;background-color:var(--clr-fff)}.TR .boxMain{padding:30px 20px 100px 20px;min-height:150px}.DK .boxMain{padding-top:20px;padding-bottom:20px}.DK.TR .boxMain{width:600px;min-height:200px;margin:160px auto -1px auto;padding:30px 20px 20px 20px;border:solid 1px var(--clr-e2e)}#boxSch{display:grid;grid-template-columns:100%;align-content:flex-start;padding-bottom:10px}.DK #boxSch{grid-template-columns:15% 85%;margin-bottom:30px}#boxSch span,#boxSch b{border:solid 1px var(--clr-eee);padding:5px;margin-top:-1px;margin-left:-1px}#boxSch b{background-color:var(--clr-eee);white-space:nowrap}.DK #boxSch span,.DK #boxSch b{padding:15px;background-color:var(--clr-fff)}#boxWrd{display:grid;grid-template-columns:50% 50%;align-items:center;white-space:nowrap}.boxLtr{direction:ltr;text-align:left}.boxLi,.boxLiCh,.paging{margin:25px 0 45px 0;display:grid;grid-template-columns:50% 50%}.boxLiWd{grid-template-columns:100%}#boxRel{display:grid;grid-template-columns:100%;grid-column-gap:20px;align-content:flex-start}.DK #boxRel{grid-template-columns:65% 35%;grid-column-gap:20px}#boxRel img[loading=lazy]{opacity:.8}.DK #boxRel img[loading=lazy]{margin-top:5px;width:300px}.boxInfo{padding:70px 0 50px 0;text-align:center}#meanTools{text-align:left;direction:ltr;padding-top:10px;margin-top:12px;border-top:solid 1px var(--clr-e2e)}.TR #meanTools{padding:10px;border-bottom:solid 1px var(--clr-e2e);margin-bottom:100px}.DK.TR #meanTools{width:600px;margin:0 auto 100px auto;border:solid 1px var(--clr-e2e)}.TR #goToDic{text-align:center;padding:10px 15px;margin-bottom:-12px;border-top:solid 1px var(--clr-e2e)}.DK.TR #goToDic{width:600px;margin:-1px auto;border:solid 1px var(--clr-e2e)}.TR #goToDic a{text-decoration:none}#msgTools{float:right;margin-top:5px}#pho{font-size:110%;white-space:nowrap;text-align:right}.DK #pho{display:block}#phSep{display:block}.DK #phSep{display:inline-block;width:10px}.aud{cursor:pointer;display:inline-block;width:33px;height:33px;border:solid 1px transparent;border-radius:3px;margin-left:2px;margin-top:-2px}.aud:hover{border:solid 1px var(--clr-7e1)}.boxFaEn .aud{margin-top:4px}#pho .aud{margin-bottom:4px}.au{color:var(--clr-666);font-size:90%;text-align:left;padding:0 0 10px 0}.dis{color:var(--clr-aaa)}#boxCmt{text-align:right}.TR #cmtFormHl{display:none}.TR #cmtFormHl.cmtShow{display:block}#cmts{margin-top:60px}.cmt{position:relative;border-bottom:dashed 1px var(--clr-ccc);margin-bottom:15px;padding-top:40px;padding-bottom:55px}.DK .cmt{padding-top:35px;padding-bottom:45px}.cmtU,.cmtW{position:absolute;right:0;top:0}.cmtDt{position:absolute;left:0;top:0;font-size:90%}.cmtR{position:absolute;left:50px;bottom:5px;text-align:left;letter-spacing:1px;font-size:90%;color:var(--clr-bbb)}.cmtR1,.cmtR0,.tmR1,.tmR0{color:var(--clr-666)}.cmt .linkAd{position:absolute;right:0;bottom:8px}.cmt .delCb{position:absolute;right:55px;bottom:10px}.cmtRp{position:absolute;left:0;bottom:10px}.meanRp{display:block;text-align:center;margin-top:30px}.cmtRp b,.meanRp b{display:inline-block;font-size:80%;cursor:pointer;font-weight:normal;color:var(--clr-666);background-color:var(--clr-eee);border-radius:5px;padding:2px 7px}.meanRp b{color:var(--clr-333);padding:5px 20px}.lunCmtAct{background-color:var(--clr-fff);width:100%;height:100%;position:fixed;z-index:10000;top:0;border-radius:10px;border:solid 2px var(--clr-ccc);overflow:auto}.lunCmtAct .boxHd{display:none !important}.lunCmtAct #boxCmt{height:1000px}#cmtUpload{text-align:right;margin-top:10px}#cmtAt{padding:10px 0}#cmtAct{height:40px}#addCmtFi{margin-left:15px}#msgCmtFi{display:inline-block}#cmtHs{font-size:90%;margin:10px 0 10px 0;border:dotted 1px var(--clr-ccc)}#cmtHs legend{padding:0 10px;color:var(--clr-444)}#cmtHs a{display:block;direction:ltr;text-align:left}#cmtPs{display:grid;grid-template-columns:repeat(6,15%);grid-column-gap:5px}.DK #cmtPs{grid-template-columns:repeat(6,15%);grid-column-gap:10px}#cmtPs div{text-align:center;font-size:90%}#cmtPs div a:first-child{display:inline-block;height:60px;overflow:hidden}#cmtPs img{width:100%}#backCmt{text-align:left}#sortC{position:absolute;border-bottom:solid 3px var(--clr-ccc);margin-bottom:30px}#sortC b{border-bottom:solid 3px transparent;display:inline-block;font-weight:normal;margin-right:20px;cursor:pointer;padding-bottom:8px;margin-bottom:-3px}#sortC .srAc{border-bottom:solid 3px #008000}.tm{position:relative}.tmR{display:inline-block;direction:rtl;font-size:95%;text-align:left;white-space:nowrap;margin-right:5px;position:relative;top:3px}.tmR sp{margin:0 5px 0 4px}.tm .linkAd{position:absolute;left:0;bottom:8px}.paging{grid-template-columns:repeat(5,20%)}.pagingAc{background-color:var(--clr-ccc)}.DK .boxLi{grid-template-columns:repeat(5,20%)}.DK .boxLiCh{grid-template-columns:repeat(8,12.5%)}.DK .boxLiWd{grid-template-columns:50% 50%}.DK .paging{grid-template-columns:repeat(10,10%)}.boxBd img[loading=lazy]{display:block;margin:20px auto;background-color:var(--clr-eee);border:solid 1px var(--clr-f8f)}.wikilink{text-align:left;direction:ltr}.meanType{color:var(--clr-666);font-style:italic;font-size:85%}.anaPart{background-color:var(--clr-f5f);padding:10px;margin:15px 0 8px 0}.anaRel{direction:ltr;text-align:left}.anaRel b{margin-right:4px}.anaPart:first-child{margin-top:0}.anaDef{display:inline;direction:ltr;text-align:left}.anaTermExp{direction:ltr;text-align:left}.anaTermMean{direction:rtl;text-align:right;font-size:90%;color:var(--clr-444);margin-bottom:20px}.anaTermMean img{margin-top:-2px !important}.anaTermMean .edit{cursor:pointer;width:15px;margin-left:5px}.anaTermMean .meanRow{direction:rtl;display:inline-block}.anaTermMean span{font-size:90%;color:var(--clr-666);margin-left:7px}.tmR span{margin-left:0}.anaForm{padding:10px 0 0 0;direction:rtl;display:table;width:100%}#anaMsg{font-size:90%;text-align:center;padding:5px;color:#008000;background-color:var(--clr-f5f)}#footer{text-align:center}#ftServices{background-color:var(--clr-e2e);width:100%;height:330px;text-align:center;display:table;padding:30px 10px 20px 10px;margin-top:-20px}.DK #ftServices{padding:30px 165px 20px 165px;height:208px}#ftText{display:block;padding:15px 0;color:var(--clr-666);text-align:justify;padding-bottom:5px;padding:10px 20px;font-size:90%}.DK #ftText{padding:15px 180px}#ftText a{text-decoration:none}#ftLinks{width:100%;height:1300px;text-align:center}.DK #ftLinks{height:700px}#ftLinks div{padding:10px 5px;width:50%;float:right}.DK #ftLinks div{padding:10px 10px;width:25%}#ftCopyRight{clear:both;background-color:var(--clr-7e1);color:var(--clr-fff);direction:ltr;font-family:arial;font-size:80%;margin-top:15px;padding:5px}.boxFrm{width:90%;margin:auto;text-align:center}.DK .boxFrm{width:600px}.boxFrm label{display:block;text-align:right;margin-top:5px;color:var(--clr-666);font-size:90%}.boxFrm msg{display:block;margin:0 0 20px 0;font-size:90%;color:#008000}#lblMsg{color:#f00}.upBack{padding:0 0 10px 0;text-align:center;border-bottom:solid 1px var(--clr-ccc)}.DK .upBack{padding:0 0 10px 30px;text-align:left}#spPop,#rtPop,#rpPop{display:none;position:fixed;z-index:10000;left:0;top:0;width:100%;height:100%;overflow:hidden;background-color:rgba(0,0,0,.7);text-align:center}#spPopWn,#rtPopWn,#rpPopWn{background-color:var(--clr-fff);margin:100px auto;padding:20px;border:1px solid var(--clr-ccc);width:160px}#rtPopWn{font-size:90%;text-align:right;width:250px}#rpPopWn{text-align:right;margin:0;width:100%;height:340px;border-radius:10px;border:solid 2px var(--clr-333);overflow:auto}#rpPopWn hh{display:block;height:200px}.DK #rpPopWn{margin:50px auto;width:500px}.spItm{display:inline-block;width:50%;color:var(--clr-444);text-decoration:none !important}#rtOK,#rpOK{background-color:var(--clr-eee);color:var(--clr-444);display:block;padding:5px;border:solid 1px var(--clr-ccc);text-align:center;margin:10px 0;border-radius:10px;text-decoration:none}#rpOK{border-radius:0;padding:3px;width:150px;margin:15px auto}#rtCnl,#rpCnl{display:block;cursor:pointer;text-align:center;color:#f00}#rpCnl{display:inline-block;float:left}#rpMsg{float:right;font-size:90%}.FS1{font-size:80% !important}.FS3{font-size:115% !important}.FS4{font-size:130% !important}::placeholder{font-family:MsYekan;font-weight:normal;font-size:70%;direction:rtl;text-align:center;position:relative;top:-3px}.boxFrm *::placeholder{font-size:100%;text-align:right}.TR #tbSr::placeholder{font-size:100%}:focus{outline:none}#lunMnu::-webkit-scrollbar{display:none}</style>
+	<script src="/libs/main.min.js?5" async onload="init()"></script>
+</head>
+<body>
+	<header id="head">
+		<div id="mnu">
+			<i class="ico icoLi" onclick="openSl()"></i>
+			<div id="mnuLk">
+				<a id="diLk" href="/">دیکشنری</a> <a id="trLk" href="/translator/">مترجم</a>
+			</div>
+			<div id="mnuSl"></div>
+		</div>
+		<img id="abadis" src="/images/abadis.svg" alt="دیکشنری و مترجم آبادیس" onclick="rd('/')" />
+		<div id="pnlSr">
+			<div id="boxSr">
+					<input id="tbSr" type="text" placeholder="واژه یا عبارت خود را بنویسید" onkeyup="setDir(); fireSr(event);" onfocus="tbSrFocus()" autocomplete="off" inputmode="search" aria-label="sr" value="" ln="en" />
+				<i class="ico icoDn" onclick="toggleSelLn()"></i>
+				<i class="ico icoSr" onclick="srClick()"></i>
+				<i class="ico icoCl" onclick="clrTb()" id="clr"></i>
+				<i class="ico icoMi" onclick="app_showMic()" id="mic" ver=""></i>
+			</div>
+			<div id="selLn"></div>
+			<div id="acLi"></div>
+			<div id="lunMnu"></div>
+		</div>
+		
+	</header>
+	<main>
+		
+<div id="stat">آمار لحظه ای جستجوی امروز<br><a href="/page/dayword/" aria-label="stat"><b>...</b></a></div>
+<style>
+	#stat
+	{
+		position: absolute;
+		top: 300px;
+		width: 200px;
+		right: Calc(50% - 100px);
+		font-size: 85%;
+		text-align: center;
+		color: var(--clr-666);
+	}
+	.DK #stat
+	{
+		top: 380px;
+	}
+	#stat a:link
+	{
+		text-decoration: none;
+	}
+	#stat .aClass
+	{
+		text-decoration: underline !important;
+		text-underline-position: under !important;
+		text-decoration-style: dotted !important;
+	}
+	#stat b
+	{
+		font-size: 95%;
+		font-weight: normal;
+		letter-spacing: 1px;
+		font-family: sans-serif;
+	}
+</style>
+<script>
+
+	var start = "910184" * 1;
+	var startDate = "637864924620163879";
+	window.addEventListener("load", function ()
+	{
+		aTag = S("#stat").querySelector("a");
+		bTag = S("#stat").querySelector("b");
+		window.setTimeout(function () { getStat(); }, 2000);
+	});
+	function getStat()
+	{
+		var rq = httpRq();
+		rq.onreadystatechange = function ()
+		{
+			if (rq.readyState == 4)
+			{
+				var start = rq.responseText.split(",")[0] * 1;
+				var end = start + rq.responseText.split(",")[1] * 1;
+				if (end != start) animateValue(bTag, start, end, 20000);
+			}
+		}
+		rq.open("Get", "/ajaxcmd/stat/getend/?start=" + start + "&date=" + startDate, true); rq.send(null);
+	}
+	function animateValue(oItem, start, end, duration)
+	{
+		var range = end - start;
+		var current = start;
+		var stepTime = Math.abs(Math.floor(duration / range));
+		var timer = setInterval(function ()
+		{
+			current += 1;
+			oItem.innerHTML = digit3(current);
+			if (current > end)
+			{
+				clearInterval(timer);
+				aTag.innerHTML = "مشاهده ریز آمار";
+				aTag.addClass("aClass");
+			}
+		}, stepTime);
+	}
+</script>
+
+	<div class="boxHd"><h1>دیکشنری آنلاین آبادیس</h1></div>
+	<div class="boxBd">
+		برای استفاده از دیکشنری آبادیس لطفا کلمه خود رو در بخش بالا بنویسید. همچنین می توانید از لیست، نوع دیکشنری را انتخاب کنید. بعد از نمایش معنی، با کلیک بر روی آیکون بلندگو، تلفظ به زبان انتخاب شده، پخش می شود.
+		<hr />
+		<h2>دیکشنری</h2>
+		<p>
+			دیکشنری (Dictionary) که گاهی اوقات به عنوان یک واژه نامه، فرهنگ لغت، لغت نامه یا فرهنگنامه شناخته می شود، مجموعه ای از کلمات در یک یا چند زبان خاص است، که اغلب بر اساس حروف الفبا مرتب سازی می شود، و ممکن است شامل اطلاعاتی در مورد تعاریف، کاربردها، ریشه شناسی، تلفظ، ترجمه، و غیره باشد. واژه نامه کتابی است که معانی لغات یک زبان در آن توضیح داده شده باشد. واژه ها به صورت الفبایی مرتب شده اند و معمولاً املا و تلفظ و معنای هر کلمه یاد شده است. فرهنگ لغات در یک رشته خاص، معمولاً حاوی معانی هر واژه است. اگرچه تصور می شود که دیکشنری فقط با واژه ها سر و کار دارد ولی دامنه پوشش آن اغلب می تواند از این هم فراتر برود.
+		</p>
+		<img loading="lazy" width="400" height="267" src="//img.abadis.ir/pages/dictionary/Dictionary.jpg" alt="دیکشنری" />
+		<h2>دیکشنری آنلاین</h2>
+		<p>
+			دیکشنری آنلاین (Online Dictionary) وب سایت و یا اپلیکیشنی است که به صورت اینترنتی خدماتی مربوط به دیکشنری ها و فرهنگنامه ها را ارائه می دهد. مانند سایت دیکشنری آبادیس. در دیکشنری آنلاین شما با وارد کردن هر واژه ای در بخش مشخص شده و زدن دکمه جستجو، به سرعت معنی و توضیحات مربوطه را می توانید مشاهده کنید.
+		</p>
+		<img loading="lazy" width="400" height="300" src="//img.abadis.ir/pages/dictionary/OnlineDictionary.jpg" alt="دیکشنری آنلاین" />
+		<h2>واژه</h2>
+		<p>
+			مجموعهٔ حروفی که یک واحد را تشکیل دهند، واژه یا کلمه (انگلیسی: Word) نام دارند. در دستور زبان فارسی، معمولاً کلمه را به نُه بخش تقسیم می کنند: اسم، صفت، عدد، کنایه، فعل، قید، حرف اضافه، حرف ربط، صوت.
+			«واژه» کوچک ترین شکل معنادار از حروف است، اگر بتواند به تنهایی به کار رود. برای نمونه، «-انه» در واژه هایی مانند مردانه، زنانه، مهربانانه، دارای معنی ویژهٔ خود است، ولی از آنجا که نمی توان آن را به تنهایی به کار برد، واژه نامیده نمی شود. بسیاری از واژه ها به بخش های کوچک تری بخش پذیرند که به آن ها تکواژ گفته می شود. تکواژ کوچکترین بخش کلمه است که در بسیاری از موارد یک کلمهٔ مستقل محسوب شده و در برخی موارد نیز کلمه به حساب نمی آید.
+		</p>
+		<img loading="lazy" width="400" height="191" src="//img.abadis.ir/pages/dictionary/Word.jpg" alt="واژه" />
+		<h2>معنی واژگان در دیکشنری</h2>
+		<p>
+			در دیکشنری آبادیس نتایج حاصل از هر جستجو شامل موارد روبرو می شود: معانی اصلی، معانی فرعی، تلفظ انگلیسی، تلفظ آمریکایی، فونوتیک انگلیسی و آمریکایی، بخش بررسی کلمه، کاربرد کلمه در جمله های مختلف، مترادف، متضاد، مشابه، عبارات مشابه، کلمات مشابه و ...
+		</p>
+		<img loading="lazy" width="400" height="103" src="//img.abadis.ir/pages/dictionary/Mean.jpg" alt="معنی واژگان در دیکشنری" />
+		<h2>دیکشنری تخصصی</h2>
+		<p>
+			دیکشنری آبادیس بیش از بیست زمینه تخصصی را پشتیبانی می کند. در <a href="/page/diclist/">دیکشنری تخصصی</a> (Specialized Dictionary) معنی هر کلمه با توجه به آن رشته تخصصی نمایش داده می شود.
+		</p>
+		<img loading="lazy" width="400" height="212" src="//img.abadis.ir/pages/dictionary/SpecializedDictionary.jpg" alt="دیکشنری تخصصی" />
+		<h2>تفاوت دیکشنری با دانشنامه</h2>
+		<p>
+			دیکشنری با <a href="/wiki/">دانشنامه</a> (انگلیسی: Encyclopaedia) (دایرة المعارف) کمی تفاوت دارد. در یک دیکشنری معمولاً، به معنای واژه ها اکتفا می شود و اطلاعات دیگری (نظیر تاریخچه) کمتر داده می شود. به علاوه، در واژه نامه ها فقط به واژه های عمومی یک زبان اشاره می شود، و اسامی خاص (مانند اسم مکان ها و اشخاص) کمتر نوشته می شود. با این حال، مرز دقیقی بین دیکشنری و دانشنامه نمی توان تعیین کرد، و برخی کتب به نوعی در هر دو طبقه جا می گیرند، مانند <a href="/dehkhoda/">لغتنامهٔ دهخدا</a>
+		</p>
+		<img loading="lazy" width="400" height="178" src="//img.abadis.ir/pages/dictionary/DictionaryVswiki.jpg" alt="تفاوت دیکشنری با دانشنامه" />
+		<h2>تعریف یا معنی در دیکشنری</h2>
+		<p>
+			تعریف (واکـَـران) (انگلیسی: Definition) عبارتی است که معنای یک اصطلاح (کلمه، عبارت یا دسته ای از نمادها) یا نوع یک چیز را شرح می دهد. تعریف واژه به ما می گوید که یک چیز باید چه ویژگی هایی (مشخصه هایی کیفیاتی، خواصی) داشته باشد تا آن واژه بر آن اطلاق شود. تعریف باید جامع و مانع باشد، این بدان معناست که «تعریف واژهٔ مورد نظر باید جامع همهٔ جنبه های تعریف کننده و مانع همهٔ جنبه هایی باشد که جنبه های غیر تعریف کننده|تعریف کننده نیستند.». یعنی تعریفی که ارائه می شود ویژگی هایی که آن چیز را از بقیه جدا می کند را بیان کند. جنبه های تعریف کننده ویژگی هایی هستند که اگر اعضای یک طبقه دارای آن ویژگی ها نباشند، دیگر به آن طبقه تعلق ندارند. مانند ویژگی داشتن سه ضلع برای مثلث، که اگر چیزی سه ضلع نداشته باشد به هیچ وجه نمی تواند مثلث باشد.
+		</p>
+		<img loading="lazy" width="400" height="323" src="//img.abadis.ir/pages/dictionary/Definition.jpg" alt="تعریف یا معنی در دیکشنری" />
+		<h2>مفهوم در دیکشنری</h2>
+		<p>
+			مفهوم یا کانسپت (انگلیسی: Concept) در لغت آنچه مورد فهم واقع شده  است. مفهوم یعنی، معنا و مدلولی که لفظ بر آن دلالت می کند و از لفظ فهمیده می شود. به نظر متفکران بزرگی از قبیل ارسطو، هربرت پوتنام، ... مفهوم به صورت ساده معرفی و ترکیب برداشتهای حسی است به نظر دسته دیگری از متفکران از قبیل جان دیویی مغز نمی تواند یک دریافت کنندهٔ مفعول و بدون مداخله باشد. مفهوم به دو دسته طبقه بندی می شود: مفهوم جزئی و کلی. اولی شامل تمام خصوصیات تشکیل دهنده یک مفهوم می باشد، برداشت از یک مفهوم در واقع مجموعی از ویژگی هایی است که باعث تمایز آن مفهوم از بقیه مفاهیم می شود. و دومی (کلی) مجموع خصوصیاتی که تشکیل دهنده برداشت اول هستند (مانند مفهوم انسان بدون مشخصات یک مصداق خاص)
+		</p>
+		<img loading="lazy" width="400" height="266" src="//img.abadis.ir/pages/dictionary/Concept.jpg" alt="مفهوم در دیکشنری" />
+		<h2>تلفظ</h2>
+		<p>
+			تلفظ (Pronunciation) از مباحث ویژه دانش زبان شناسی است که در آن به روند و نحوه ادای هجاها و واج ها میان اهل زبان پرداخته می شود. یک واژه به گونه های متفاوتی تلفظ می گردد. چگونگی تلفظ یک واژه که از واج ها و هجا تشکیل شده ممکن است تحت تاثیر عواملی مانند سن و سال، طبقه اجتماعی، قومیت، سواد، جنسیت و مخاطب متفاوت باشد.
+		</p>
+		<img loading="lazy" width="400" height="275" src="//img.abadis.ir/pages/dictionary/Pronunciation.jpg" alt="تلفظ در دیکشنری" />
+		<h2>نرم افزارهای دیکشنری آبادیس</h2>
+		<p>
+			آبادیس برای استفاده راحت تر و کاربردی تر از دیکشنری، محصولاتی مانند اپلیکیشن دیکشنری برای اندروید (Android Dictionary)، ربات دیکشنری برای تلگرام (TelegramBot Dictionary)، افزونه دیکشنری برای فایرفاکس (Firefox Addon Dictionary) و افزونه دیکشنری برای کروم (Chrome Addon Dictionary) را طراحی کرده است که می توانید از لینک های زیر دانلود و نصب کنید.
+		</p>
+	</div>
+
+	</main>
+	<footer id="footer">
+			<div id="ftServices">
+					<a href="/page/firefox-dictionary/"><img loading="lazy" width="230" height="130" src="//img.abadis.ir/prodfirefox.jpg" alt="افزونه دیکشنری فایرفاکس" /></a>
+					<a href="/page/chrome-dictionary/"><img loading="lazy" width="230" height="130" src="//img.abadis.ir/prodchrome.jpg" alt="افزونه دیکشنری کروم" /></a>
+				<a href="/page/android-ios/"><img loading="lazy" width="230" height="130" src="//img.abadis.ir/prodandroid.jpg" alt="دیکشنری اندروید" /></a>
+				<a href="/page/telegram-bot/"><img loading="lazy" width="230" height="130" src="//img.abadis.ir/prodtelegram.jpg" alt="ربات تلگرام دیکشنری مترجم" /></a>
+			</div>
+			<div id="ftText">
+				<h3>دیکشنری آبادیس</h3>
+				<div>
+					آبادیس از سال 1385 فعالیت خود را در زمینه فن آوری اطلاعات آغاز کرد. نخستین پروژه آبادیس، سایت دیکشنری آبادیس بود. دیکشنری آنلاین آبادیس از ابتدا تاکنون تغییرات بسیاری کرده و ویژگی های مختلفی به آن اضافه شده است. آبادیس افزونه ای کاربردی برای مرورگرهای فایرفاکس و کروم، اپلیکیشن موبایل و همچنین ربات تلگرام دیکشنری و مترجم طراحی کرده است که میتوانید از لینک های بالا دانلود کنید. دیکشنری آبادیس شامل بخش هایی نظیر دیکشنری به زبان های مختلف از جمله انگلیسی، فارسی، عربی و همچنین بیست دیکشنری تخصصی با تلفظ انگلیسی و آمریکایی، ترجمه مخفف و کلمات اختصاری، مترجم آنلاین متن، لغتنامه دهخدا، فرهنگ معین، فرهنگ فارسی عمید، فرهنگ مترادف ها و متضاد ها، معادل فارسی کلمه یا به شیوه درست تر برابر پارسی واژه، فرهنگ سره، عبارات مصوب فرهنگستان زبان و ادب فارسی، دانشنامه عمومی، دانشنامه اسلامی، دیکشنری نام ها، هم خانواده یاب، تصویر مرتبط با کلمه، معنی در حل جدول کلمات متقاطع و ابزارهایی مانند <a href="/wordmaker/">واژه ساز</a>، راهنمای انتخاب <a href="/name/">اسم</a> و ... می باشد.
+				</div>
+				<br /><hr />
+				<div id="ftLinks">
+					<a href="/footerlinks/">لینک ها</a>
+				</div>
+				<div align="center">
+					حقوق این سامانه وابسته به دیکشنری آبادیس می باشد.
+					<br />
+					استفاده از نوشتارهای این دیکشنری، با ذکر منبع، آزاد است.
+					<br />
+					<img referrerpolicy="origin" id='jxlzjzpewlaojzpeesgtjxlz' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=174701&p=rfthjyoeaodsjyoeobpdrfth", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=174701&p=nbpdyndtshwlyndtlymanbpd' />
+				</div>
+			</div>
+			<div id="ftCopyRight">© 2006-2022 abadis.ir</div>
+	</footer>
+	<!-- Ga4 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPY5GQ56EL"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-LPY5GQ56EL');
+	</script>
+	<!-- /Ga4 -->
+	
+</body>
+</html>
+

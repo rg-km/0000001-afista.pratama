@@ -2,8 +2,13 @@ package main
 
 import (
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
+	"runtime"
+	"time"
+
+	"github.com/ruang-guru/playground/backend/concurrency/implement-concurrent/process"
 )
 
 // multiple request, ke beberapa list website
@@ -29,12 +34,31 @@ import (
 // dst
 
 // initialize
-func main() {
 
+var Worker = 200 // 8 // 6 dst
+
+// goroutine max 100
+// 100 <- 1 1 1 1 1
+// 1 <- 100 <- 1 1 1 1
+// 1 1 <- 100 <- 1 1 1
+
+func main() {
+	// set gomaxprocs
+	runtime.GOMAXPROCS(2)
+	start := time.Now()
+
+	datas := OpenCSV("top-100.csv")
+
+	_ = os.Mkdir("response-web", 0755)
+
+	process.AsyncStartProcess(Worker, datas, "top-100-resp.csv")
+
+	fmt.Println("process :", time.Since(start))
 }
 
 func OpenCSV(fileName string) [][]string {
 	// open file
+	log.Println("trying open file", fileName)
 	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_RDWR, os.ModePerm)
 	if err != nil {
 		log.Fatal("error :", err)
@@ -43,6 +67,7 @@ func OpenCSV(fileName string) [][]string {
 	defer file.Close()
 
 	// reading csv
+	log.Println("reading file", fileName)
 	csvReader := csv.NewReader(file)
 	records, err := csvReader.ReadAll()
 	if err != nil {
@@ -50,17 +75,6 @@ func OpenCSV(fileName string) [][]string {
 	}
 
 	// return
+	log.Println("success get file", fileName)
 	return records
-}
-
-func StartProcess(records [][]string) {
-	// goroutine
-}
-
-// crawler
-// goroutine
-// channel
-// set max worker / di limit goroutine
-func GetResponseWebsite() {
-
 }

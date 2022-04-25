@@ -1,0 +1,1823 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"6830633ae02e4577ad7b7d5d13815dd7","captureUncaught":true,"captureUnhandledRejections":true,"ignoredMessages":["Your rate limit has been reached for access token \"post_client_item\".","script error"],"payload":{"environment":"production","client":{"source_map_enabled":true,"guess_uncaught_frames":true}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Juicy SEO Tools You Will Love | Mangools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="mangools, seo, seo tool, marketing, online marketing, kwfinder, serpchecker" />
+    <meta name="description" content="Mangools is a bundle of 5 simple but powerful SEO tools made for an effective SEO workflow. Loved by beginners, trusted by professionals. Try it for free!" />
+    	<meta name="theme-color" content="#ffbe02">
+	<meta name="msapplication-navbutton-color" content="#ffbe02">
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ffbe02">
+
+	<meta property="og:url" content="https://mangools.com" /><link href="https://mangools.com" rel="canonical" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Juicy SEO tools you will love - Mangools" />
+	<meta property="og:description" content="Mangools SEO tools package. Productive keyword research, SERP analysis, rank tracking and backlink analysis thanks to super easy to use tools." />
+	<meta property="og:site_name" content="mangools" />
+	<meta property="fb:app_id" content="617718851755986" />
+	<meta property="og:image" content="https://mangools.com/assets/mangools-facebook-ab2f3f5e5ea182792eb29d244e69738487120159345525fffb93206f0073a522.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="Mangools SEO tools package. Productive keyword research, SERP analysis, rank tracking and backlink analysis thanks to super easy to use tools." />
+	<meta name="twitter:title" content="Juicy SEO tools you will love - Mangools" />
+	<meta name="twitter:site" content="@mangools_com" />
+	<meta name="twitter:image" content="https://mangools.com/assets/mangools-facebook-ab2f3f5e5ea182792eb29d244e69738487120159345525fffb93206f0073a522.png" />
+
+
+    <style>
+        html {
+            font-family: Arial, sans-serif;
+        }
+        .mg-nav > li {
+            float: left;
+            list-style: none;
+        }
+
+        .mg-nav > li > a, .mg-nav > li > button {
+            color: #3e4348 !important;
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none !important;
+            padding: 0.58824rem 1.47059rem;
+            position: relative;
+            line-height: 1.5em;
+        }
+        button {
+            background: none;
+            border: 0;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+        }
+
+        .uk-dropdown, .uk-modal, .uk-offcanvas, .initial-hide, .uk-hidden {
+            display: none;
+        }
+
+        .uk-flex {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .uk-flex-middle {
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .uk-flex-space-between {
+            -ms-flex-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+
+        .mg-logo {
+            color: #3e4348;
+            text-decoration: none !important;
+            line-height: 1em;
+        }
+        .uk-flex > *, .uk-flex-inline > * {
+            -ms-flex-negative: 1;
+        }
+        .uk-flex-inline {
+            display: -ms-inline-flexbox;
+            display: -webkit-inline-flex;
+            display: inline-flex;
+        }
+
+        .uk-text-center {
+            text-align: center;
+        }
+
+        .uk-text-left {
+            text-align: left;
+        }
+
+        .uk-container {
+            max-width: 1200px;
+        }
+
+        .mg-screenshot img {
+            width: 100%;
+        }
+
+        .uk-container-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mg-header {
+            background: #fff;
+            padding: 2.64706rem 3.52941rem;
+            width: 100%;
+            z-index: 2011;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .font-12 {
+            font-size: .70588rem;
+        }
+
+        .font-24 {
+            font-size: 1.41176rem;
+        }
+        .uk-text-bold {
+            font-weight: bold;
+        }
+
+        .mg-header + main {
+            margin-top: 158px;
+        }
+
+        .mg-hero h1 {
+            font-size: 2.82353rem;
+            letter-spacing: -0.015em;
+        }
+
+        .mg-hero h2 {
+            margin: 1.76471rem auto 3.52941rem auto;
+        }
+        .font-18 {
+            font-size: 1.05882rem;
+        }
+
+        .mg-hero {
+            padding-top: 3.52941rem;
+        }
+
+        .mg-searchform-inner {
+            background: #fff;
+            box-shadow: 0 20px 50px 0 rgba(0,0,0,0.2);
+            padding: 15px 204px 15px 15px;
+            min-height: 78px;
+        }
+
+        .mg-searchform-s {
+            border: 0;
+            color: #3e4348;
+            outline: 0 !important;
+            padding: 0 .88235rem 0 2.64706rem;
+            height: 48px;
+        }
+
+        .uk-width-medium-2-3, .uk-width-medium-4-6 {
+            width: 66.666%;
+        }
+        [class*="uk-width"] {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .uk-grid-collapse {
+            margin-left: 0;
+        }
+        .uk-grid {
+            margin-left: -45px;
+        }
+        .uk-grid {
+            margin-left: -30px;
+        }
+        .uk-grid {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0;
+                margin-left: 0px;
+            padding: 0;
+            list-style: none;
+        }
+        .mg-searchform-select {
+            position: relative;
+        }
+        .uk-width-medium-1-2, .uk-width-medium-2-4, .uk-width-medium-3-6, .uk-width-medium-5-10 {
+            width: 50%;
+        }
+
+        .mg-searchform-inner .mg-btn {
+            border-radius: 0;
+            line-height: 78px;
+            min-height: 78px;
+            min-width: 205px;
+        }
+        .mg-btn.is-green {
+            background-color: #1ba005;
+            color: #fff !important;
+            box-shadow: 0 2px 4px 0 #1ba00533;
+        }
+        .uk-position-absolute, [class*="uk-position-top"], [class*="uk-position-bottom"] {
+            position: absolute !important;
+        }
+        .uk-position-top-right {
+            top: 0;
+            right: 0;
+        }
+        .uk-position-relative {
+            position: relative !important;
+        }
+        .mg-margin-b-90 {
+            margin-bottom: 90px;
+        }
+        .mg-margin-t-45 {
+            margin-top: 45px;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .mg-header {
+                padding: 1.47059rem;
+            }
+
+            .uk-visible-large {
+                display: none;
+            }
+
+            .initial-hide-mobile {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" media="all" href="/assets/frontpage-a7f398deec366055d579c57db4533b08a7a35733fc061490c5aa8244c882acbd.css" />
+    <script src="/assets/common-0e9751a588f4ac322371d3ed0c10cc69df9b8e4494ce59df701bd508d8c451b3.js"></script>
+    <script src="/assets/landing-92cc79b66f2576edcef9eec22638f66743f06038c8c2bb5dceed8189f0925fa9.js"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="kUwbntiAInTW0gL/Z57r3f8s29ptz2Ln/jaXUfc7Y0JAPTC1NAHtOrT6j+nLTc8FwQzdtwa83mg5+qP/rfNh9A==" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-6342da3a449ee0b19d7ebce289df47b67e93ba255ee58b8e5c02fa28d6a058b6.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=S48cHMmLEmU46lt10FktKg&gtm_preview=env-1&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KJ9SW4K');</script>
+  <!-- End Google Tag Manager -->
+
+
+    
+
+
+  </head>
+  <body  >
+    <!--[if lte IE 10]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJ9SW4K&gtm_auth=S48cHMmLEmU46lt10FktKg&gtm_preview=env-1&gtm_cookies_win=x"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="mg-header font-16 " id="sticky-header">
+
+        <nav class="uk-flex uk-flex-middle uk-flex-space-between" id="header-nav">
+
+            <div class="uk-flex uk-flex-middle">
+                <h1 class="font-21 uk-text-bold uk-flex-middle uk-flex-inline uk-flex-middle uk-margin-remove color-primary mg-logo-landing">
+                    <a class="uk-flex-inline" title="Mangools homepage" href="/">
+                        <img alt="Mangools" width="140" src="/assets/app-logos/mangools-logo-full-80efddbf1742056da96d41bc32407c96b709655e19b2d5ca7df98adcfd605e8b.svg" />
+</a>                </h1>
+                <a class="mg-label is-orange-mngls is-small uk-hidden-small mg-margin-l-15 initial-hide" id="hiring-badge"
+                   href="https://itrinitycom.notion.site/Careers-work-with-us-d3796aa492764653af60f7028a87b206"
+                   target="_blank"
+                   rel="noopener nofollow">
+                    We are hiring!
+                </a>
+                <ul class="mg-nav initial-hide-mobile is-app-dropdown uk-visible-xlarge">
+                    <li data-uk-dropdown="{remaintime: 100,justify:'#header-nav'}"
+                        class="uk-position-relative">
+                        <button type="button" aria-label="Open SEO Tools submenu">
+                            SEO Tools
+                            <svg class="icon icon-chevron-down" aria-hidden="true">
+                                <use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-chevron-down"></use>
+                            </svg>
+                        </button>
+                        <div class="uk-dropdown mg-seo-tools-dropdown-wrap uk-dropdown-bottom" aria-hidden="true">
+    <div class="mg-seo-tools-dropdown mg-padding-15">
+        <ul class="uk-dropdown-grid mg-padding-15 mg-seo-tools uk-grid uk-grid-collapse font-14" data-uk-grid-margin="">
+            <li class="uk-width-2-10 uk-flex uk-margin-remove mg-border-r">
+                <a href="https://kwfinder.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                    <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                        <div class="mg-margin-b-15 image">
+                            <img alt="KWFinder - Keyword Research Analysis" width="70" src="/assets/other/keyword-research-47e1227afc2a2f7e356099d2c761b3a34e03b9b1306ec987ca7f5b06f6ce0690.svg" />
+                        </div>
+                        <div class="uk-text-center text">
+                            <div class="font-16 uk-text-bold">KWFinder</div>
+                            <div class="font-14 color-grey small-text">Keyword Research</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="uk-width-2-10 uk-flex uk-margin-remove mg-border-r">
+                <a href="https://serpchecker.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                    <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                        <div class="mg-margin-b-15 image">
+                            <img alt="SERPChecker - Google SERP Competitor Analysis Tool" width="70" src="/assets/other/serp-analysis-566fb1f86c78696bd3a43b5338d3f95439f7fe15d3df9fe72360dc4000bfd423.svg" />
+                        </div>
+                        <div class="uk-text-center text">
+                            <div class="font-16 uk-text-bold">SERPChecker</div>
+                            <div class="font-14 color-grey small-text">SERP Analysis</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="uk-width-2-10 uk-flex uk-margin-remove mg-border-r">
+                <a href="https://serpwatcher.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                    <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                        <div class="mg-margin-b-15 image">
+                            <img alt="SERPWatcher - SEO rank tracking tool" width="70" src="/assets/other/rank-tracking-264364e496e3a35c50dfd93569507e7c6006745055cd190688e227e24bdbe15a.svg" />
+                        </div>
+                        <div class="uk-text-center text">
+                            <div class="font-16 uk-text-bold">SERPWatcher</div>
+                            <div class="font-14 color-grey small-text">Rank Tracking</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="uk-width-2-10 uk-flex uk-margin-remove mg-border-r">
+                <a href="https://linkminer.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                    <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                        <div class="mg-margin-b-15 image">
+                            <img alt="Linkminer - Backlink Checker" width="70" src="/assets/other/backlink-analysis-ff9b0b7e81219cb5fec21639e91f3dc0fb40bbaf2b871d250394d05f906e8915.svg" />
+                        </div>
+                        <div class="uk-text-center text">
+                            <div class="font-16 uk-text-bold">LinkMiner</div>
+                            <div class="font-14 color-grey small-text">Backlink Analysis</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="uk-width-2-10 uk-flex uk-margin-remove">
+                <a href="https://siteprofiler.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                    <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                        <div class="mg-margin-b-15 image">
+                            <img alt="SiteProfiler - Website analysis tool" width="70" src="/assets/other/seo-metrics-and-insights-aad2289e7a6ed02751a70f023064844da47b230cbd5890b31851c1d8d3e0561e.svg" />
+                        </div>
+                        <div class="uk-text-center text">
+                            <div class="font-16 uk-text-bold">SiteProfiler</div>
+                            <div class="font-14 color-grey small-text">SEO metrics &amp; Insights</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <ul class="uk-flex mg-free-tools mg-padding-15 mg-no-margin font-14">
+            <li class="mg-margin-r-30">
+                <a href="https://mangools.com/seo-extension?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                    <svg class="icon icon-power-plug mg-margin-r-15"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-power-plug"></use></svg>
+                    <span>SEO Browser extension</span>
+                </a>
+            </li>
+            <li class="mg-margin-r-30">
+                <a href="https://mangools.com/insights/serp?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                    <svg class="icon icon-line-graph mg-margin-r-15"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-line-graph"></use></svg>
+                    <span>SERP Volatility checker</span>
+                </a>
+            </li>
+            <li class="mg-margin-r-30">
+                <a href="https://mangools.com/free-seo-tools/serp-simulator?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                    <svg class="icon icon-google2 mg-margin-r-15"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-google2"></use></svg>
+                    <span>SERP Simulator</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+                    </li>
+                    <li>
+                        <a href="/#learn-seo" data-uk-smooth-scroll>Knowledge
+                        </a>
+                    </li>
+                    <li><a href="https://mangools.com/blog/">Blog</a></li>
+                    <li>
+                      <a href="/plans-and-pricing">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="uk-flex uk-flex-middle initial-hide-mobile uk-visible-xlarge">
+                <ul class="mg-nav uk-padding-remove">
+                    <li data-signin-btn>
+                      <a rel="noopener" href="/users/sign_in?ref=header-mngls">
+                        Sign in
+</a>                    </li>
+                </ul>
+
+                  <a class="mg-btn is-blue is-gradient is-pill mg-margin-l-15" rel="noopener" data-register-btn="" href="/users/sign_up?ref=header-mngls">Start 10-day FREE trial</a>
+            </div>
+
+            <button class="mg-icon-btn uk-hidden-xlarge initial-hide" data-menu-toggle>
+                <svg class="icon icon-menu" aria-label="Toggle menu"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-menu"></use></svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+
+      <section class="mg-hero is-home bg-fff is-wave-bottom-orange uk-position-relative">
+    <div class="uk-container uk-container-center">
+        <div class="uk-flex uk-flex-middle uk-flex-space-between uk-flex-wrap uk-text-center-small">
+          <div class="uk-width-1-1 uk-width-medium-1-2">
+
+              <h1 class="uk-text-bold">Juicy <span class="color-secondary">SEO tools</span> you will love</h1>
+              <h2 class="font-24">We make SEO simple since 2014.</h2>
+              <div class="uk-flex uk-flex-middle uk-flex-wrap uk-flex-column-small">
+                <a class="mg-btn is-green is-gradient is-pill" rel="nofollow" data-register-btn="" href="/users/sign_up?ref=hero-mngls">Start 10-day FREE trial</a>
+                  <span class="mg-padding-15 color-grey font-14">No credit card needed!</span>
+              </div>
+          </div>
+          <div class="uk-width-1-1 uk-width-medium-1-2">
+            <svg id="hero-anim" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 569.8 467.4">
+              <g class="bganim" opacity=".85">
+                <path fill="#FDF0D9" d="M544.7 393.1c-7.9-.5-17-.9-26.4-1.2-8.3-1.8-17.6-2.3-25.8-2.6-7.3-.3-14.2-.6-17.5-1.9l-1-.4-1.2.1c-4.4.4-9.6.6-16.3.6h-6.7c-2.7 0-5.5-.1-8.3-.1-4.3-.1-262.7-64.2-267.7-64.3v.1h-.6v-.1c-1.1.1-2.2.2-3.4.5v.1c-.5.1-.9.1-1.3.2-.3.1-.6.1-.8.1-.9.1-1.7.2-2.4.2-.5 0-.9 0-1.4-.1-.9-.2-1.8-.5-2.7-.7-.9-.2-1.8-.4-2.7-.7h-.2l-1.3-.3-1.2-.3-2.5-.8c-1.7-.5-3.3-1-4.9-1.5l-1.3-.5c-.9-.3-1.8-.7-2.7-1-.3-.2-.5-.4-.7-.5-.2-.1-.4-.3-.6-.4-.2-.2-.5-.4-.7-.6-.3-.3-.6-.5-.9-.8-.6-.5-1.1-1-1.7-1.5-.5-.4-1-.9-1.6-1.4l-.8-.7s0-.1-.1-.1c-.1-.2-.3-.4-.4-.7l-.1-.2c-.2-.3-.4-.6-.6-1-.1-.1-.3-.5-.3-.6l-1.2-3.1c.5-1.1 1-2 1.6-2.8l2.7-3.5-3.1-3.1-.7-.7c-.6-.6-1.1-1.1-1.5-1.6-.1-.2-.3-.3-.4-.5v-.1l-.1-.1-.6-.8c-.2-.3-.4-.6-.6-.8-.1-.4-.3-.7-.5-1 0-.1-.2-.5-.2-.6-.1-.6-.2-1.3.1-2.1h3.5c2.5 0 5.3.1 8.2.2l11.4.3h2.8c1.1 0 2.2.1 3.3.1l5.5.1 21.3.3 129.2 1.5 1-.5c5.3-2.4 14-5.3 25.3-5.3 4.3 0 8.6.4 12.7 1.3l1.8.4 1.6-.9c3.9-2.1 11.3-2.4 18.7-2.4h8.7c9.9 0 20.4-.2 30.5-2.2 5.9 1.1 11.8 1.6 17.3 2.1h.6l.6-.1c3.1-.5 6.3-1 9.9-1.7 4-.8 7.9-1.6 13-3l1.5-.4 1.3-1.6c1.7-2 3.4-4 4.4-6.6l1.3-3.6c.6-.1 1.3-.3 1.9-.4 1.9-.4 3.8-1 5.9-1.8l.1-.1.1-.1c4.1-1.8 7.5-3.4 10.7-5.2 3.7-2 7.4-4.3 10.9-6.9 3.6-2.4 7.3-5.5 11-9 3.8-3.6 7.3-7.4 10.3-11.5 1.3-1.9 2.2-3.4 2.7-4.8.3-1 .4-1.8.4-2.6v-.1c.2-.4 6.5-12.9 6.8-13.8l.1-.3c.6-1.6 1.4-3.4 1.8-4.3l.1-.1.1-.1c.2-.5.4-.8.5-1 1-.2 2.5-.6 4-1.9l.1-.1.1-.1c.9-.9 1.7-2.2 2.6-4 .4-.8.8-1.9 1.2-3.1.3-.9 5.7-81-60.9-76.7h-.3-.9l.4-.5 1.5.2-.9-1 1.3-1.7-2.2-3c-.9-1.2-1.9-1.9-2.9-2.6-.3-.2-.5-.4-.8-.6l-.4-.3-.4-.2c-.4-.2-.7-.4-1.1-.6-.1-.1-.2-.1-.3-.2.3-.3.5-.7.9-1l1.8-2.1c1.8-.2 3.4-.3 5-.3 1.4 0 2.7.1 4 .3l5.1.8.7-5.1c0-.2.2-.5.6-.8l.5-.5c1.1-1.1 2.5-2.4 3.2-4.3.8-2.3 1-5.7-2.9-9.3l-.3-.3-.1-.1c-.2-.2-30.8-31.6-34.1-32-1.5-1.8-2.7-3.7-3.9-5.6l-1.5-2.4-2.4-.2c-4.5-4.9-215.7 4.2-246.2 9.8-3.2.8-6.5 1.5-9.9 2.4-2 .4-3.8.9-5.5 1.4-1.1.3-2.3.6-3.5.9-3 .7-6.6 1.5-10.3 2.4-1.1.3-2.3.5-3.5.8a274.38 274.38 0 00-23.6 6.3l.1.2c-.1 0-.6.1-.6.1l-.3.1c-3.9 1.5-29.5 12.9-36.4 22.9-20.9 30.2-3.3 55.9.1 60.6 2.9 4.1 6.3 7.9 10.9 12 6.6 5.7 14.1 10.6 23.6 15.5 4.3 2.2 7.9 3.9 11.4 5.5l5 2.2H155c-1 0-2.1-.1-3.2-.1-2.2 0-4.5-.1-6.9-.1s-4.9 0-7.4.1c-1.9 0-4.9.1-8.3.3-4.5 0-8.2.2-11.8.5-10.1.5-19.8 2.1-29.1 4.8-18.6 1.8-40.8 22.2-41.1 22.5-.9.8-1.8 1.7-2.6 2.7-20.5 16.3-19 90-13.5 106.3 2.7 8 6.1 15.6 10.1 22.5 2.2 3.7 3.9 6.5 6 9.6.5.7 1 1.4 1.6 2.1.5.6 1 1.3 1.4 2 1.1 1.5 2.2 2.9 3.3 4.3 4.1 5.2 9 10.3 14.5 15.1 28.7 28.7 92.3 36.8 92.3 36.8l1.7.2c2.4.4 4.7.7 6.9 1l3.5.5 3.5.4c18.8 2.2 262.4 9.1 265.1 8.8 1.3-.2 2.6-.3 3.9-.5 21.4-1.8 27.1-5.5 29.5-12.1 4.6-.6 9.4-1.2 14-1.7 2.8.5 5.9.8 9.3.8 4.2 0 8.4-.4 12.5-.8 3.8-.3 7.3-.7 10.7-.7l5.6-.1-.7-5.6c0-.3-.1-.6-.1-.9 3.6.3 7.3.5 10.7.6h.6l.6-.1c2.7-.5 4.8-1.1 6.7-1.6l3.3-.9.4-3.4c.2-1.4.3-2.3.6-3l2.5-6.4-6.4.3zM361.1 193c3-.2 6-.3 8.9-.5 2.2-.1 4.3-.2 6.5-.4-7.2.6-13.9 1.2-20.3 1.7 1.1-.3 2.2-.5 3.3-.8h1.6z"/>
+                <path fill="#F7E8D0" d="M447.6 241.5c7.4-2.7 14.7-6.1 21.7-10.7 4.9-1.5 9.3-3.1 14.1-6 3.6-2.7 6.8-6 9.1-9.5.6-.9 1.1-1.8 1.6-2.6.5-.9.9-1.8 1.3-2.6.2-.4.4-.9.6-1.4.2-.5.4-1 .6-1.4.2-.5.4-1 .5-1.3 0-.3.1-.6.1-.9.3-.4.5-.8.8-1.2.4-.9.9-1.7 1.3-2.6.5-1 1-2 1.5-3.1s.9-2.1 1.3-3.3c.4-1.2.8-2.3 1.2-3.6.2-.6.3-1.3.5-1.9.2-.6.3-1.4.4-2.1.1-.7.3-1.4.3-2.1.1-.8.1-1.6.2-2.3.1-.8.1-1.6 0-2.5 0-.9 0-1.7-.1-2.6-.1-.9-.3-1.9-.4-2.8-.1-.9-.5-1.9-.7-2.9-.9-1.1-2.1-2.4-3.6-4.2-.8-.8-1.6-1.7-2.6-2.6-.5-.4-1-.8-1.5-1.3-.3-.2-.5-.4-.8-.7-.3-.2-.6-.4-.8-.6l-1.8-1.2c-.6-.4-1.2-.7-1.9-1.1-.3-.2-.6-.4-1-.5-.3-.1-.6-.3-1-.4-.6-.3-1.3-.6-2-.9a40.1 40.1 0 00-8.2-2.3c-4.8-1.9-9.8-3.2-14-4.2-2.8-.4-4.2-.6-6.9-.9l.3-2.5c2.6-.9 5.5-1.6 8.8-2 3.3-.4 6.9-.6 11.1-.1 2.1.2 4.4.6 6.9 1.3 2.6.7 5.3 1.7 8.3 3.3 1.5.7 3.1 1.8 4.6 2.9.8.6 1.6 1.3 2.3 1.9l1.1 1c.4.4.8.8 1.1 1.2.7.8 1.5 1.6 2.1 2.5.7.9 1.3 1.8 1.9 2.8.6.9 1.1 2 1.6 3s1 2 1.3 3.1c.4 1 .7 2 1 3.1.3 1 .4 2 .6 3l.3 1.5c.1.5.1.9.1 1.4.1.9.1 1.8.2 2.7v2.5c0 .8-.1 1.7-.1 2.4-.2 1.4-.4 3-.6 4.3-1.1 5.5-2.8 9.7-4.6 13.5l-.7 1.4-.1.2-.8 1.6v.1l-.2.2-.3.5-1.7 2.6-1.2 1.8c-.4.6-.7 1-1.1 1.5-.7.9-1.4 1.9-2.2 2.7-3.1 3.5-6.4 6.6-9.9 9.3-6.7 7.5-14.4 13.3-22.1 17.9-6.6 2.7-12.9 4.5-19.1 6-6.2 1.5-12.3 2.6-18.5 3.5v-.9c7.2-3.3 13.3-6.8 19.8-10.9z"/>
+                <path fill="#F7E8D0" d="M221.2 400.2c-2.8-.3-4.7.1-7.6.4s-7.1.4-14.4-.5c-6.4-1.2-12.2-2.1-18.8-3.3-1.5-.1-3-.3-4.6-.5l-4.8-.6c-3.3-.4-6.6-.8-10-1.4-3.2-.6-6.4-1-9.7-1.7l-9.8-2.1c-3.3-.8-6.6-1.7-9.9-2.6-.8-.2-1.6-.4-2.5-.7l-2.5-.8-5-1.6c-3.9-.2-7.8-.9-11.7-1.7l-3.2-1.3-.8-.3-.9-.4-1.8-.9c-2.5-1.1-4.8-2.4-7.1-3.7-4.6-2.7-9-5.6-13.1-8.8-8.2-6.4-15.5-13.9-21.5-22.2-1.3-2-2.4-3.9-3.8-6.2a111.66 111.66 0 01-6.7-13.8c-1-2.3-1.8-4.7-2.6-7.1-.7-1.7-1.2-3.5-1.5-4.3-1.7-5.2-3.3-11.5-4.1-16.9-.5-8 0-13.9.6-18.6.6-4.6 1.4-8 2.2-10.9-.5-1.1-.7-3.1-.8-5.1 2.4-9.4 6.1-18.4 11.3-26.6 5-8.3 12.4-15.2 21.1-20 5.1-1.4 11.1-2.5 16.2-2.7-1.4.4-2.2 1-2.8 1.6-.6.6-1.1 1.2-1.7 1.9-.6.7-1.4 1.4-2.8 2.2-1.3.8-3.2 1.7-6 3-3.8 2.3-6.6 4.3-9 6-1.2.8-2.3 1.7-3.3 2.4s-1.9 1.5-2.8 2.2c-.9.7-1.7 1.5-2.6 2.3s-1.6 1.7-2.5 2.7c-1.7 2-3.3 4.4-4.9 7.9-3.1 5.9-5.6 12.2-7.3 18.7-.1 1.3 0 2.9 0 4.7.1 1.8.3 3.7.4 5.8.4 4.3.6 9.1.6 14.9.4 9.1 2.3 19.2 5.7 28 .8 2.6 1.9 5.3 3.1 8.1.6 1.3 1.3 2.7 2 4.1.7 1.4 1.5 2.7 2.2 4.1.8 1.4 1.7 2.8 2.5 4.1.4.6.8 1.2 1.2 1.9.4.6.9 1.2 1.3 1.8l2.7 3.6c1 1.2 1.9 2.4 2.9 3.5a83.34 83.34 0 0028.2 20.8c1.5 0 4.3.4 7.8 1.1 1.8.5 3.4.7 5.2 1.3 1.8.5 3.6 1.2 5.5 2.2.9.6 1.7 1.2 1.7 1.8 0 .6-1 1.3-3.8 2 .9.6 1.8 1.3 2.7 1.9 1 .6 2 1.3 3.2 2 13.1 4 26.2 6.5 38.9 8.3 2.7.5 4.7.7 6.7.9 1-1.1 3.4-1.8 7.5-1.5 4 .2 9.8 1.5 17.5 4 4.5.5 8.3 1.1 12.8 1.7 3.9.1 8-.6 12.5-.5 4.4.1 9.2 1 14.4 4-4.1.4-8 .8-11.9 1.4z"/>
+                <path fill="#F7E8D0" d="M476.1 182.1c-.6.5-.8.9-1.5 1.8-.3.4-.4.7-.9 1.3-.2.3-.3.5-.5.8l-.1.2v.1c0-.2-.2-.5-.8-.8-1.1-.6-2.9-1.3-5.2-1.7-1.1.7-2.8 1.1-4.9 1.4-2.2.3-4.6.7-6.7 1-2.2.4-4.2.8-5 1.3-.9.6-.9 1.3.5 2.2-.5 0-1.1.1-1.6.1-.6 0-1.1.1-1.7.1l-3.5.3-7.3.6c-4.9.4-10 .9-14.8 1.3-3.7.3-7.4.7-11.7 1.1-3.6-1.1-7.9-2.1-11.5-3.2-1.9 1.6-3.8 3.2-6.3 4.9-16.7 1.6-33.5 3.2-50.5 4.3-3.1-.7-6.2-1.2-9.3-1.9-.9.2-5.7.5-13.5.8-7.8.3-18.7.6-31.6.4-12.9-.2-27.9-.8-43.9-2.6-4-.5-8.1-.9-12.2-1.6l-6.2-.9c-2.1-.4-4.2-.7-6.2-1.1-8.3-1.6-16.8-3.4-25.2-5.8l-3.1-.9-3.1-1c-2.1-.6-4.2-1.2-6.2-1.9-4.1-1.4-8.2-2.8-12.3-4.4-2-.8-4.1-1.6-6-2.4-1.9-.8-3.7-1.6-5.6-2.4-3.8-1.6-7.6-3.4-11.3-5.3-7.5-3.8-15-8.2-21.6-14.3-3.3-3-6.4-6.5-8.9-10.4-2.5-3.9-4.4-8.3-5.5-12.7-.1-.6-.3-1.1-.4-1.6l-.3-1.9-.1-.9-.1-.5v-.4c0-.4-.1-.8-.1-1.1V123.5l-.1-1.4v-.2c0-.5.1-1.1.1-1.6.1-1.1.1-2.1.3-3.1.5-4.1 1.9-8.2 3.6-11.6.5-.9.9-1.7 1.4-2.5s1-1.6 1.5-2.3c.5-.7 1.1-1.4 1.6-2.1.3-.3.5-.7.8-1 .3-.3.6-.6.8-.9.6-.6 1.1-1.1 1.6-1.7.6-.5 1.1-1 1.6-1.5 1.1-1 2.1-1.7 3.2-2.5 4.1-3 7.5-4.6 10-5.8 2.5-1.1 4-1.7 4.4-2 8.8-3.2 17.4-4.6 25.8-5.6-4.5 3.2-8.2 6.5-12.2 10.3-.5.1-2 .5-4.3 1.1-2.3.7-5.5 1.6-9.3 3.2-3.8 1.6-8.3 3.8-12.8 7.7-2.2 1.9-4.4 4.3-6.2 7.2-1.8 2.9-3.1 6.3-3.7 10-.1.5-.2.9-.2 1.4-.1.5-.1.9-.1 1.4s-.1.9-.1 1.4v.7l.1 1.1c.1.8.1 1.6.3 2.7.1.5.2 1 .2 1.6a33.37 33.37 0 005.2 12.5c2.3 3.5 5.1 6.5 8.2 9.3 3.1 2.7 6.5 5.2 10 7.3 7 4.4 14.6 7.9 22.1 11.2l2.8 1.2c.9.4 1.9.9 2.9 1.2 2 .8 4 1.6 5.9 2.3 2 .8 4 1.4 6 2.2 2 .7 4 1.4 6 2l6.1 1.9c2 .6 4.1 1.1 6.1 1.7 2 .6 4.1 1.1 6.1 1.6l6.1 1.5c8.2 1.8 16.3 3.2 24.2 4.4 15.8 2.3 30.7 3.3 43.6 3.8s23.8.4 31.7.3c7.9-.1 12.9-.3 13.9-.4 3.1.8 6.1 1.4 8.6 2.2 15.2-3.1 20.8-4.9 27.7-6.3 8.1-.5 15.5-.8 23.5-1.4 4.9-.1 9.9-.2 14.8-.5 4.9-.5 9.8-.9 14.8-1.4 3.1.2 6.1.5 8.5 1 3.1-1.2 6.2-2.3 9.3-3.5 6.4-.5 12.9-1.1 19-1.5 6.2-.3 12.1-.5 17.1-.1 1-.1 1.6-.4 2.5-.4 2.3.4 4.1 1.1 5 1.8.1.1.2.1.3.2.1.1.2.1.2.2s.2.2.1.2l.1.1.1-.1.4-.4.1-.1-.1.1c-.1 0-.1.1-.2.1.1 0 .1-.1.2-.1l.1-.1s-.1 0-.1.1l-.1.1-.2.2-.2.2z"/>
+              </g>
+              <path class="bganim" fill="#0521CC" d="M118.4 222.7c-.6 18.7 0 37.1 4.7 55.5 2.8 11.2 6.4 21.8 10.9 32.4 9.2 21.2 23.4 37.9 42.7 50.8 8.1 5.3 70.9 37.9 168.5 3.3 34.3-12.3 67.2-27.6 97.4-48.8 7.5-5.3 15.3-10.9 21.2-18.1 12.3-10.6 17.6-24.8 19.8-40.2 3.9-26.2.3-51.1-14.8-73.4-13.4-19.5-32.4-31.3-54.1-39.1-29-10-58.9-12-89.3-10.9-34 1.1-68.1 3.9-101.8 8.9-21.8 3.3-43.2 7.3-63.6 15.6-17.9 7.3-32.1 18.4-37.9 37.7-.1 0-4.5 21-3.7 26.3z"/>
+              <g id="buble1">
+                <circle cx="81.2" cy="263.7" r="53.8" fill="#FFF"/>
+                <path fill="#0521CC" d="M109.3 288.7c1.1 1.2 1.1 2.8.2 3.6l-1.5 1.4c-.9.8-2.4.5-3.5-.5v-.1c-1.1-1.2-1.2-2.8-.4-3.6l1.5-1.4c1-.9 2.7-.6 3.7.6z"/>
+                <path fill="#0521CC" d="M109.5 288.9l-5 4.5-19.1-22.2 3.9-3.5z"/>
+                <path fill="#0623B2" d="M89.1 265.9c1.1 1.2 1 2.9-.1 4l-1.9 1.7c-1.2 1.1-2.9 1-4-.1-1.1-1.2-.9-3 .1-4l1.9-1.7c1.2-1.3 3-1.1 4 .1z"/>
+                <g fill="#0521CC">
+                  <path d="M78.2 239.2c8.4 2.7 13.1 11.6 10.4 19.9-2.7 8.4-11.6 13.1-19.9 10.4-8.3-2.7-13.1-11.6-10.4-19.9 2.6-8.4 11.5-13.1 19.9-10.4z" opacity=".03"/>
+                  <path d="M70.6 267.4c-2.6-.8-5.1-2.4-6.9-4.7-4.8-6-3.8-14.8 2.3-19.5 1.7-1.5 3.7-2.2 5.7-2.6-2.3.3-4.6 1.4-6.5 2.8-5.9 4.7-6.9 13.3-2.2 19.2 1.9 2.6 4.7 4.3 7.6 4.8z" opacity=".5"/>
+                  <path d="M60.4 240.4c-7.8 7.2-8.3 19.3-1.1 27 7.2 7.7 19.3 8.3 27 1.1 7.8-7.2 8.3-19.3 1.1-27-7.1-7.8-19.3-8.3-27-1.1zm24.1 26.1a16.5 16.5 0 01-23.4-1 16.5 16.5 0 011-23.4c6.7-6.2 17.2-5.8 23.4 1s5.8 17.3-1 23.4z"/>
+                  <path d="M62 241.9c-6.8 6.2-7.3 16.8-1 23.7 6.2 6.8 16.8 7.3 23.7 1 6.8-6.2 7.3-16.8 1-23.7-6.3-6.7-16.9-7.2-23.7-1zm21.8 23.8c-6.3 5.7-16.1 5.3-21.8-.9-5.7-6.3-5.3-16.1.9-21.8 6.2-5.7 16.1-5.3 21.8.9 5.8 6.3 5.3 16.1-.9 21.8z"/>
+                </g>
+                <path fill="#0623B2" d="M101.9 290.2s4.8-4.1 4.6-4.5c-.2-.4-.5-.4-.5-.4s-3.2 4.2-4.1 4.9z"/>
+                <path fill="#0623B2" d="M101.3 289.7s4.8-4.1 4.6-4.5c-.2-.4-.5-.4-.5-.4s-3.2 4.1-4.1 4.9z"/>
+              </g>
+              <g id="buble2">
+                <circle cx="511.4" cy="239.7" r="42.2" fill="#FFF"/>
+                <path fill="#0521CC" d="M492 247.8c.3-.2.3-.5.3-.8.4-1.7 1.3-3.3 2.5-4.5 2.9-3 5.9-5.9 8.8-8.8 1.1-1.1 2.6-1.8 3.9-2.5 2.2-.5 4.5-.6 6.6.2 3 1.2 5.1 3.3 6.3 6.3-.2.3-.4.6-.7.8-1.9 1.3-4 1.1-6.1-.7a4.46 4.46 0 00-6.3.5c-2.9 2.8-5.8 5.6-8.6 8.5-1.6 1.6-1.4 4.4.2 6 1.6 1.7 4.4 1.9 6.1.3 2.9-2.8 5.7-5.7 8.6-8.6.6.1 1.1.2 1.7.4 1.7.4 3.3 0 4.9-.2-.2 1.3-1 2.4-1.9 3.3-3 3.1-6.1 6.2-9.2 9.2a9.6 9.6 0 01-5.1 2.6c-.2 0-.4 0-.5.2h-3.1c-.2-.3-.6-.3-.9-.3-3.6-1-6-3.3-7.2-6.8-.2-.5-.1-1-.5-1.4.2-1.3.2-2.5.2-3.7z"/>
+                <path fill="#FFBE02" d="M507.4 238.2c1.7-1.9 4.4-2.1 6.3-.5 2.1 1.8 4.2 2 6.1.7.3-.2.6-.4.7-.8 3-2.8 5.8-5.6 8.6-8.6 1.6-1.7 1.2-4.7-.4-6.1a4.5 4.5 0 00-6.2.1c-.8.7-1.5 1.5-2.2 2.2-2 2.1-4.1 4.1-6.1 6.2-2.2-.8-4.4-.7-6.7-.2.2-1.4 1-2.5 2-3.4 3-3.1 6.1-6.2 9.2-9.2 1.4-1.3 3.1-2.2 5-2.5.2 0 .4 0 .5-.2h2.7c.1.1.2.2.3.2 2.9.4 5.1 1.9 6.8 4.3 1 1.4 1.4 2.9 1.8 4.5v2.7c-.3.4-.3.9-.4 1.3-.5 1.7-1.3 3.1-2.5 4.4-2.8 2.8-5.6 5.6-8.3 8.4-1.2 1.3-2.6 2.2-4.3 2.8l-.2.2c-1.6.2-3.3.6-4.9.2-.6-.1-1.1-.3-1.7-.4-2.8-1.2-4.9-3.3-6.1-6.3z"/>
+                <path fill="#0521CC" d="M520.3 244.7l.2-.2-.2.2z"/>
+              </g>
+              <g id="buble3">
+                <circle cx="454.1" cy="70.5" r="42.2" fill="#FFF"/>
+                <g fill="#0521CC">
+                  <path d="M438.9 75.7h5.8v14.8h-5.8z"/>
+                  <path d="M446.9 78.6h5.8v12h-5.8z"/>
+                  <path d="M454.8 70.5h5.8v20.1h-5.8z"/>
+                  <path d="M462.7 55.5h5.8v35h-5.8z"/>
+                  <path d="M470.6 65.5h5.8v25.1h-5.8z"/>
+                </g>
+                <circle cx="441.2" cy="61.5" r="9.5" fill="#FFBE02"/>
+                <path fill="#0521CC" d="M441.2 50.5h-.1v11.2h11.2v-.1c0-6.2-5-11.1-11.1-11.1z"/>
+              </g>
+              <g id="buble4">
+                <circle cx="151.9" cy="79.7" r="34.5" fill="#FFF"/>
+                <path fill="#FD5F69" d="M162.6 70.9a6.28 6.28 0 00-8.8 0l-1.7 1.6-1.7-1.6a6.28 6.28 0 00-8.8 0 6.82 6.82 0 000 9.7L152.1 91l10.5-10.3c2.7-2.7 2.7-7.1 0-9.8z"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M152.2 60.6v4.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M136.7 79.9h-4.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M171.9 79.9H167"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M133 62.6l5.8 5.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M171.5 62.6l-5.9 5.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M152.2 98.7v-4.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M171.5 96.7l-5.9-5.9"/>
+                <path fill="none" stroke="#FD5F69" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.51" d="M133 96.7l5.8-5.9"/>
+              </g>
+              <g id="face">
+                <path fill="#FD5F69" d="M231.1 101.2s-35.7 112.5-22.5 181.5c4.3 22.6 181.8 27 181.8 27s26.8-147.3 12.5-186"/>
+                <path fill="#EF5B69" d="M240.7 131.4s-17 126.7-9 146.3 6 9.7 6 9.7-1.7 1-3-17.7 7-134.3 7-134.3l-1-4z"/>
+                <path fill="#EF5B69" d="M385.5 137.8s-1.1 127.8-11.8 146.1c-10.7 18.3-7.3 8.7-7.3 8.7s1.5 1.2 5.5-17.1 12.1-134 12.1-134l1.5-3.7z"/>
+                <linearGradient id="e" x1="-313.1" x2="-313.1" y1="887.87" y2="1096.04" gradientTransform="rotate(8.85 5289.17 4619.5)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fff4eb"/>
+                  <stop offset=".26" stop-color="#fef2e7"/>
+                  <stop offset=".52" stop-color="#fcebda"/>
+                  <stop offset=".79" stop-color="#f8dfc6"/>
+                  <stop offset="1" stop-color="#f4d3b0"/>
+                </linearGradient>
+                <path fill="url(#e)" d="M397.1 176.6c-2.7-.8-5-1.6-7 .1 1.1-6.6 2.1-12.8 2.9-18.2 6.6-42.2-22.9-81.8-65.7-88.5-42.9-6.7-82.9 22.1-89.5 64.3-.9 5.6-1.8 12.1-2.6 19-1.5-1.3-3.6-1.3-6-1.3-4.6-.1-8.4-.8-8.7 10s3.2 19.7 7.8 19.9c1.9.1 3.6-1.3 5.1-3.7-1.1 41.7 8.7 89.2 61.9 97.5 57.7 9 79.7-34.9 90-75.7.7 2.9 2 4.8 3.8 5.4 4.5 1.3 10.5-6.2 13.4-16.6 2.8-10.5-.9-11-5.4-12.2z"/>
+                <linearGradient id="f" x1="-313.1" x2="-313.1" y1="887.87" y2="1096.04" gradientTransform="rotate(8.85 5289.17 4619.5)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fff4eb"/>
+                  <stop offset=".26" stop-color="#fef2e7"/>
+                  <stop offset=".52" stop-color="#fcebda"/>
+                  <stop offset=".79" stop-color="#f8dfc6"/>
+                  <stop offset="1" stop-color="#f4d3b0"/>
+                </linearGradient>
+                <path fill="url(#f)" d="M397.1 176.6c-2.7-.8-5-1.6-7 .1 1.1-6.6 2.1-12.8 2.9-18.2 6.6-42.2-22.9-81.8-65.7-88.5-42.9-6.7-82.9 22.1-89.5 64.3-.9 5.6-1.8 12.1-2.6 19-1.5-1.3-3.6-1.3-6-1.3-4.6-.1-8.4-.8-8.7 10s3.2 19.7 7.8 19.9c1.9.1 3.6-1.3 5.1-3.7-1.1 41.7 8.7 89.2 61.9 97.5 57.7 9 79.7-34.9 90-75.7.7 2.9 2 4.8 3.8 5.4 4.5 1.3 10.5-6.2 13.4-16.6 2.8-10.5-.9-11-5.4-12.2z"/>
+                <path fill="#FD5F69" d="M239.4 127c13-22.3 38.2-36.9 84.1-29.8 42.8 6.7 60.7 30 67.1 55.4l15.6-10.6c-.7-35.1-19.2-63.1-78.4-72.3-63.4-9.9-87.8 1.8-97.7 35.3l9.3 22z"/>
+                <path fill="#FFF" d="M325 226.4c-1 6.6-11.2 10.5-22.6 8.8-11.5-1.8-19.9-8.6-18.9-15.2.1-.1 41.5 6.3 41.5 6.4z"/>
+                <path fill="#EF5B69" d="M316.2 68.9s-15.4 5.9-21.3 16.3-3.3 9.4-3.3 9.4 4.1-8.4 11.8-14.3c7.7-5.9 15.3-10.8 15.3-10.8l-2.5-.6z"/>
+                <path fill="#FD5F69" d="M313.5 68.6c-1-1-4.5-6.8-8-7.3s8-2 8-2l4.3 9.5 7.8.7"/>
+                <path fill="#FD5F69" d="M321.9 69.2c1.1-.9 5.2-6.3 8.7-6.4 3.5-.1-7.8-2.8-7.8-2.8l-5.2 9-7.8-.1"/>
+                <path fill="#FD5F69" d="M292.2 95.6s91.6 70.6 104.1 72.8 8.9 1.1 8.9 1.1-4.3-57.8-31.4-69.5-62.2-16.8-62.2-16.8l-19.4 12.4z"/>
+                <path fill="#EF5B69" d="M296.4 91.3s78.8 61.3 91.9 66.7c8.3 3.5-.2-2.7-.2-2.7L297.3 90l-.9 1.3z"/>
+              </g>
+              <g class="bganim">
+                <rect x="97.4" y="431.5" fill="#FFFFFF" width="416.7" height="35.9"/>
+                <path fill="#e4e5e5" d="M304.9 440.2c95.8 0 173.5 5.5 173.5 12.3 0 6.8-77.7 12.3-173.5 12.3s-173.5-5.5-173.5-12.3c0-6.8 77.7-12.3 173.5-12.3z" />
+                <path fill="#F4F4F4" d="M420.6 455.6H182.7c-12.2 0-22-9.9-22-21.8V278.7c0-12.1 10-21.8 22-21.8h237.9c12.2 0 22 9.9 22 21.8v155.1c.2 11.9-9.8 21.8-22 21.8z"/>
+                <g fill="#DEE2E2">
+                  <path d="M317.9 356.6c-.7-3.4-2.4-6.6-4.7-9 1.7 1.9 3 4.3 3.6 7 1.6 7.4-2.3 14.5-8.6 15.9-6.3 1.4-12.8-3.5-14.4-10.9s2.3-14.5 8.6-15.9c3.9-.8 7.9.7 10.7 3.7-3.2-3.4-7.5-5.4-11.7-4.4-7.2 1.5-11.2 10.9-9.4 19.2 1.8 8.3 9.4 15.2 16.5 13.6 7.1-1.5 11.2-10.9 9.4-19.2z"/>
+                  <ellipse cx="306.2" cy="355.5" rx="9.9" ry="11.6" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="mg-bg-gradient-mngls is-wave-bottom mg-padding-90-0 color-white">
+    <div class="uk-container uk-container-center mg-tool-slider-holder">
+
+    <h2 class="font-48 uk-text-bold mg-margin-b-60 uk-text-center">What you can do with Mangools</h2>
+
+    <div class="uk-flex uk-flex-wrap uk-position-relative">
+      <div class="uk-flex-item-none mg-tool-slider-left">
+
+        <ul class="mg-tool-slider-nav" data-uk-switcher="{animation: 'fade', connect: '#tools-switcher-container'}">
+          <li class="uk-active" role="button" tabindex="0">
+            <div class="uk-flex">
+              <img data-src="/assets/other/hand-key-6a379a35b575a026aca0acebe35416e3392cf5ca98d87852dc6b9fabf557f2ea.svg" width="60" alt="Keyword research illustration" />
+              <div>
+                <button type="button" tabindex="-1">Find the right keywords</button>
+                <a class="mg-icon-btn is-white uk-position-top-right mg-padding-30 no-bordered" href="https://kwfinder.com/?ref=slider-mngls" target="_blank" rel="noopener" aria-label="Try KWFinder now (opens in a new tab)">
+                  <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+                  </svg>
+                </a>
+                <div class="mg-slider-info ln-15">
+                 Go for the keywords with low SEO difficulty and high search volume. We have the most accurate SEO difficulty and exact search volumes!
+                </div>
+              </div>
+            </div>
+          </li>
+          <li role="button" tabindex="0">
+            <div class="uk-flex">
+              <img data-src="/assets/other/serp-map-3655f1fd0892b1374a124ac08aea34a2d47fb615ed57364394e8404e3ce046ac.svg" width="60" alt="Serp analysis illustration" />
+              <div>
+                <button type="button" tabindex="-1">See SERP for any location</button>
+                <a class="mg-icon-btn is-white uk-position-top-right mg-padding-30 no-bordered" href="https://serpchecker.com/?ref=slider-mngls" target="_blank" rel="noopener" aria-label="Try SERPChecker now (opens in a new tab)">
+                  <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+                  </svg>
+                </a>
+                <div class="mg-slider-info ln-15">
+                  Dig into search results, SERP features, CTRs and 45+ SEO metrics. All for more than 52k locations including countries, cities or DMA regions.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li role="button" tabindex="0">
+            <div class="uk-flex">
+              <img data-src="/assets/other/serp-man-5e95f5fe510cf50110b8684ebc2d91ca4e4c2b8cef8d2efdbf673c27cdb4e3cb.svg" width="60" alt="Rank tracking illustration" />
+              <div>
+                <button type="button" tabindex="-1">Track your rankings</button>
+                <a class="mg-icon-btn is-white uk-position-top-right mg-padding-30 no-bordered" href="https://serpwatcher.com/?ref=slider-mngls" target="_blank" rel="noopener" aria-label="Try SERPWatcher now (opens in a new tab)">
+                  <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+                  </svg>
+                </a>
+                <div class="mg-slider-info ln-15">
+                  From setup to daily rankings in 30 seconds! Share interactive reports, stay notified about big bumps or schedule your own reports.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li role="button" tabindex="0">
+            <div class="uk-flex">
+              <img data-src="/assets/other/hand-backlinks-d7e3a9ac8ff33c7f2ffebdf6829d0af3dbecf3136cf324e8dfcc41d5b4f75220.svg" width="60" alt="Backlink analysis illustration" />
+              <div>
+                <button type="button" tabindex="-1">Find powerful backlinks</button>
+                <a class="mg-icon-btn is-white uk-position-top-right mg-padding-30 no-bordered" href="https://linkminer.com/?ref=slider-mngls" target="_blank" rel="noopener" aria-label="Try LinkMiner now (opens in a new tab)">
+                  <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+                  </svg>
+                </a>
+                <div class="mg-slider-info ln-15">
+                  See link previews directly in the tool instead of getting stuck with tens of browser tabs. Find the best backlinks with time-saving filters.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li role="button" tabindex="0">
+            <div class="uk-flex">
+              <img data-src="/assets/other/hand-flashlight-07c5b5a68fdb3973a586019a00c3ff48d72a51ff3597dafbd147d070b8820739.svg" width="60" alt="SEO analysis illustration" />
+              <div>
+                <button type="button" tabindex="-1">Check competitor’s website&nbsp;authority</button>
+                <a class="mg-icon-btn is-white uk-position-top-right mg-padding-30 no-bordered" href="https://siteprofiler.com/?ref=slider-mngls" target="_blank" rel="noopener" aria-label="Try SiteProfiler now (opens in a new tab)">
+                  <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+                  </svg>
+                </a>
+                <div class="mg-slider-info ln-15">
+                  Put your competitors under the spotlight using the essential SEO authority and popularity metrics and link profile insights.
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+          <div class="uk-text-center-small">
+            <a class="mg-btn is-blue is-gradient is-pill" rel="nofollow" href="/users/sign_up?ref=slider-mngls">Start 10-day FREE trial</a>
+          </div>
+      </div>
+
+      <div id="tools-switcher-container" class="mg-tool-slider-content uk-switcher uk-hidden-small mg-card uk-nbfc">
+
+        <section class="mg-tool-img">
+          <a class="uk-position-cover uk-visible-small uk-flex uk-flex-middle uk-flex-center" href="https://kwfinder.com/?ref=slider-mngls-mobile" target="_blank" rel="noopener">
+            <span class="mg-btn is-white is-small">
+              <svg class="icon-new-tab" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use>
+              </svg>
+              See more
+            </span>
+          </a>
+          <img
+              data-src="https://mangools.com/assets/screenshots/kwfinder-fullhd-34768ef7fba55e920e81f076dbdb265fd193afb1cc7dac9018e4792bc5e3b426.png"
+              alt="Screenshot of KWFinder - keyword research tool by Mangools"
+              width="1120"
+          />
+          <span id="kwf1" class="mg-tool-img-tooltip no-bordered" title="Don't know where to start? Just use your competitor’s domain and see the best keywords they already rank for."></span>
+          <span id="kwf2" class="mg-tool-img-tooltip no-bordered" title="You can narrow down your keyword research even to a city level! Choose from more than 52k locations."></span>
+          <span id="kwf3" class="mg-tool-img-tooltip no-bordered" title="See the search trend of the last 12&nbsp;months for every single keyword. We've got exact search volumes, no estimated ranges!"></span>
+          <span id="kwf4" class="mg-tool-img-tooltip no-bordered" title="Save the best keywords and organize them into lists so you won’t lose the track of your research."></span>
+          <span id="kwf5" class="mg-tool-img-tooltip no-bordered" title="Export your research to .csv file or copy & paste the keywords anywhere you want for further processing."></span>
+          <span id="kwf6" class="mg-tool-img-tooltip no-bordered" data-tooltip-content="#kd_tooltip_content" aria-labelledby="kd_tooltip_content"></span>
+          <span id="kwf7" class="mg-tool-img-tooltip no-bordered" title="Identify seasonal and trending keywords with long-term data from up 2004."></span>
+          <span id="kwf8" class="mg-tool-img-tooltip no-bordered" title="Scan local SERP for every single keyword. Identify the search intent and know your competitors for better keyword optimalisation."></span>
+          <span id="kwf9" class="mg-tool-img-tooltip no-bordered" title="Import your own list of keywords and get exact search volumes, PPC and CPC metrics for hundreds of keywords with a single request."></span>
+          <span id="kwf10" class="mg-tool-img-tooltip no-bordered" title="Get rid of low-traffic and high-difficulty keywords that you don't want to rank for."></span>
+          <div class="uk-hidden" aria-hidden="true">
+              <span id="kd_tooltip_content">
+                  Evaluate the keyword ideas with one of the most accurate <a href="https://mangools.com/blog/what-is-keyword-seo-difficulty/?ref=slider-mngls" target="_blank" rel="noopener">keyword difficulty metrics</a> on the market.
+              </span>
+          </div>
+        </section>
+
+        <section class="mg-tool-img">
+          <img
+              data-src="https://mangools.com/assets/screenshots/serpchecker-fullhd-65fcf604bcc20c320016d55ea0f7e779e2c618526cfc77533f1f66b1310bd93c.png"
+              alt="Screenshot of SERPChecker - SERP analysis tool by Mangools"
+              width="1120"
+          />
+          <span id="sch1" class="mg-tool-img-tooltip no-bordered" title="Get local Google Search results for more than 52k locations. Both mobile and desktop results are included."></span>
+          <span id="sch2" class="mg-tool-img-tooltip no-bordered" title="See how SERP features influence the organic search results."></span>
+          <span id="sch3" class="mg-tool-img-tooltip no-bordered" title="Check the actual appearance of the SERP to see the search results as Google Search users do."></span>
+          <span id="sch4" class="mg-tool-img-tooltip no-bordered" title="Share the analyzed search results with your teammates or clients."></span>
+          <span id="sch5" class="mg-tool-img-tooltip no-bordered" title="Spy on competitors with more than 45 SEO and popularity metrics. You can always make your own selection."></span>
+          <span id="sch6" class="mg-tool-img-tooltip no-bordered" title="Use the sticky compare box to benchmark your website with competitors."></span>
+          <span id="sch7" class="mg-tool-img-tooltip no-bordered" title="Find out if enhanced SERP results may influence click-through rates of the organic search results."></span>
+          <span id="sch10" class="mg-tool-img-tooltip no-bordered" title="Find out if enhanced SERP results may influence click-through rates of the organic search results."></span>
+          <span id="sch8" class="mg-tool-img-tooltip no-bordered" title="LPS estimates how difficult it is to rank in that particular position. The higher it is, the harder it is to compete with the URL (min = 0; max = 100)."></span>
+          <span id="sch9" class="mg-tool-img-tooltip no-bordered" title="Colored tags let you quickly spot the strengths and weaknesses of your competitors."></span>
+        </section>
+
+        <section class="mg-tool-img">
+          <img
+              data-src="https://mangools.com/assets/screenshots/serpwatcher-fullhd-0a5d559a272f8920402b9c58527da64d315772d38cbfbf9acc01e0cee1c9004c.png"
+              alt="Screenshot of SERPWatcher - rank tracking tool by Mangools"
+              width="1120"
+          />
+          <span id="sw1" class="mg-tool-img-tooltip no-bordered" title="Track rankings on any device, in any of more than 52k locations including countries, cities, states, or DMA regions."></span>
+          <span id="sw2" class="mg-tool-img-tooltip no-bordered" title="See daily updated rankings, changes and Estimated Visits of your website based on the current positions and search volumes."></span>
+          <span id="sw3" class="mg-tool-img-tooltip no-bordered" data-tooltip-content="#pi_tooltip_content" aria-labelledby="pi_tooltip_content"></span>
+          <span id="sw4" class="mg-tool-img-tooltip no-bordered" title="Get a quick overview of the most important rank changes."></span>
+          <span id="sw5" class="mg-tool-img-tooltip no-bordered" title="Pick from different time frames to see how your rankings evolve in time."></span>
+          <span id="sw6" class="mg-tool-img-tooltip no-bordered" title="Share interactive reports with clients or teammates. Use automatic emails based on different scenarios to stay updated about any significant changes."></span>
+          <span id="sw7" class="mg-tool-img-tooltip no-bordered" title="See how much organic traffic your rankings may gain for your website."></span>
+          <span id="sw8" class="mg-tool-img-tooltip no-bordered" title="Quickly filter keywords according to various conditions or create specific tags of your choice."></span>
+
+          <div class="uk-hidden" aria-hidden="true">
+              <span id="pi_tooltip_content">
+                  <a href="https://mangools.com/blog/performance-index/?ref=slider-mngls" target="_blank" rel="noopener">Performance index</a> shows the overall performance of your rankings in search results.
+              </span>
+          </div>
+
+
+        </section>
+
+        <section class="mg-tool-img">
+          <img
+              data-src="https://mangools.com/assets/screenshots/linkminer-fullhd-59b71bc9b112154d2ce0db1938596ab08780c2c9ad2a7a231a9784da4b4e7ab5.png"
+              alt="Screenshot of LinkMiner- backlink analysis tool by Mangools"
+              width="1120"
+          />
+          <span id="lm1" class="mg-tool-img-tooltip no-bordered" title="Use quick filters to see specific backlinks or set up your own filter based on various conditions."></span>
+          <span id="lm2" class="mg-tool-img-tooltip no-bordered" title="Get critical SEO and popularity metrics for each backlink."></span>
+          <span id="lm3" class="mg-tool-img-tooltip no-bordered" data-tooltip-content="#ls_tooltip_content" aria-labelledby="pi_tooltip_content"></span>
+          <span id="lm4" class="mg-tool-img-tooltip no-bordered" title="See the exact link placement and anchor in the website preview."></span>
+          <span id="lm5" class="mg-tool-img-tooltip no-bordered" title="Export backlinks in bulk so you can work with them in your own spreadsheets."></span>
+
+          <div class="uk-hidden" aria-hidden="true">
+              <span id="ls_tooltip_content">
+                  Pick the most powerful backlinks. The <a href="https://mangools.com/blog/what-is-the-link-strength/" rel="noopener" target="_blank">Link Strength</a> is a metric we’ve developed to evaluate the overall strength of the links.
+              </span>
+          </div>
+        </section>
+
+        <section class="mg-tool-img">
+          <img
+              data-src="https://mangools.com/assets/screenshots/siteprofiler-fullhd-17dff1fca24a5515f8ecd3d132a57b6002ff1610b6c5fd751384e59f3a9dd602.png"
+              alt="Screenshot of SiteProfiler- competitor analysis tool by Mangools"
+              width="1120"
+          />
+        </section>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="mg-padding-90-0">
+  <div class="uk-container uk-container-center">
+    <h2 class="font-48 uk-text-bold mg-margin-b-60 uk-text-center">Why people love Mangools</h2>
+
+    <div class="uk-grid mg-margin-b-90" data-uk-grid-margin>
+      <div class="uk-width-large-1-3 uk-width-medium-1-1" data-uk-scrollspy="{cls:'uk-animation-fade'}">
+          <div class="uk-text-center-small">
+            <img data-src="/assets/icons/ux-52bec76603f7c23cc3c83e55d2ec30b9a04a34ee04b95c08cf4b55c6c5ef9e5b.svg" class="mg-margin-b-15" width="120" alt="UX icon" aria-hidden="true" />
+          </div>
+          <h3 class="font-24 uk-text-bold" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 50}">Ease of use and great UI</h3>
+          <p data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 100}">
+            You don&apos;t have to be an expert to start using our SEO tools. You'll understand all the data and features instantly.
+          </p>
+      </div>
+      <div class="uk-width-large-1-3 uk-width-medium-1-1" data-uk-scrollspy="{cls:'uk-animation-fade', delay:300}">
+          <div class="uk-text-center-small">
+            <img data-src="/assets/icons/support-2-7f72e71825c60bbcf6ee1389fa5c504e1f2781da1b5cb4057b358d97bec0354e.svg" class="mg-margin-b-15" width="120" alt="Support icon" aria-hidden="true" />
+          </div>
+          <h3 class="font-24 uk-text-bold" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 350}">Support with SEO skills</h3>
+          <p data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 400}">
+            Unlike typical outsourced support agents, our support team consists of people actually doing SEO every day.
+          </p>
+      </div>
+      <div class="uk-width-large-1-3 uk-width-medium-1-1" data-uk-scrollspy="{cls:'uk-animation-fade', delay:600}">
+          <div class="uk-text-center-small">
+            <img data-src="/assets/icons/price-2a3bfd5d3168135ddbc62a490dbd2352fc4c84786aad580d31c74b8e9639be19.svg" class="mg-margin-b-15" width="120" alt="Price icon" aria-hidden="true" />
+          </div>
+          <h3 class="font-24 uk-text-bold" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 650}">Best value for money</h3>
+          <p data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay: 700}">
+            A good SEO toolset doesn't have to cost a fortune. We're no giant all-in-one tool, but you'll get all the features you need.
+          </p>
+      </div>
+    </div>
+
+    <div class="uk-text-center mg-margin-b-90 uk-visible-small">
+        <h3 class="font-24 uk-text-bold">Trusted by the big ones, loved by everyone</h3>
+
+        <div class="mg-testimonials-logos">
+            <img
+                data-src="https://mangools.com/assets/logos/airbnb-fa9de23f6d126246b9fd2a7ddd9f27da0d8b67bc8a4a42766d0baf1373d8302c.svg"
+                alt="airbnb.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/alexa-1267b9d90a2b12750ff992b964a291c7c1cac3556cb446a2f33f40658925eca7.svg"
+                alt="alexa.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/skyscanner-33d4991ec8fbc37508ead122b103ac17eeae4c3ca6b080e429d6363b60a2d75e.svg"
+                alt="skyscanner.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/adidas-e6fa44458ad67267267802c620f8b0f6acd789c8008c503e6048bb9af3c9ce5b.svg"
+                alt="adidas.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/rtmn-65d4562b76607ef62afee1ef52ec23775583444168264edd2fcd62cf7f51df80.svg"
+                alt="retailmenot.com"
+            />
+        </div>
+
+    </div>
+
+    <div class="uk-flex uk-flex-middle uk-flex-wrap uk-grid mg-margin-b-90">
+      <div class="uk-width-large-4-10 uk-position-relative uk-text-center mg-testimonial-photo">
+        <img
+          data-src="/assets/testimonials/gael2-342129e5197966bdba50662c7d46c00e646f24134fa2bf04ae6910d23a9e9540.png"
+          height="400"
+          alt="Photo of Gael Breton"
+          data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200}"
+        />
+      </div>
+      <div class="uk-width-large-5-10" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200, delay: 50}">
+          <p class="mg-testimonial-uvp mg-margin-b-30 font-21 ln-15">
+            It's got a seamless interface, powerful features, and beautiful design, which makes it a <strong>great choice especially for beginner bloggers.</strong>
+          </p>
+          <p class="ln-15 font-14">
+            <strong>Gael Breton</strong><br />
+            <a href="https://authorityhacker.com/" rel="noopener" target="_blank" class="mg-testimonial-link uk-visible-hover uk-flex-inline">
+              AuthorityHacker.com
+              <svg class="icon icon-new-tab uk-hidden mg-margin-l-5" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use></svg>
+            </a>
+          </p>
+      </div>
+    </div>
+
+    <div class="uk-flex uk-flex-middle uk-flex-wrap uk-flex-row-reverse uk-flex-space-between uk-grid mg-margin-b-90">
+      <div class="uk-width-large-4-10 uk-position-relative uk-text-center mg-testimonial-photo">
+        <img
+          data-src="/assets/testimonials/julia2-75b9e08bcbeab42f4b03f1f14de2a4008072aa9f170f4077b506ebc1c5d3d95e.png"
+          class="uk-position-relative"
+          height="400"
+          alt="Photo of Julia McCoy"
+          data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200}"
+          style="top: 5px"
+        />
+      </div>
+      <div class="uk-width-large-5-10" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200, delay: 50}">
+        <p class="mg-testimonial-uvp mg-margin-b-30 font-21 ln-15">
+          Mangools is much more than just software - you also get access to an amazing team of <strong>people with real knowledge in SEO.</strong>
+        </p>
+        <p class="ln-15 font-14">
+          <strong>Julia McCoy</strong><br />
+          <a href="https://contenthacker.com/academy/" rel="noopener" target="_blank" class="mg-testimonial-link uk-visible-hover uk-flex-inline">
+            ContentHacker.com
+            <svg class="icon icon-new-tab uk-hidden mg-margin-l-5" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="uk-flex uk-flex-middle uk-flex-wrap uk-grid">
+      <div class="uk-width-large-4-10 uk-position-relative uk-text-center mg-testimonial-photo">
+        <img
+          data-src="/assets/testimonials/brian2-59c3f515186f0aa5871533cc91be17e276ed3b34a3265f1c8623af7e444ae2a2.png"
+          height="400"
+          alt="Photo of Brian Dean"
+          data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200}"
+        />
+      </div>
+      <div class="uk-width-large-5-10" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', topoffset: -200, delay: 50}">
+        <p class="mg-testimonial-uvp mg-margin-b-30 font-21 ln-15">
+          At $29/month <strong>you really can&apos;t go wrong</strong> with a Mangools subscription. Great value!
+        </p>
+        <p class="ln-15 font-14">
+          <strong>Brian Dean</strong><br />
+          <a href="https://backlinko.com/" rel="noopener" target="_blank" class="mg-testimonial-link uk-visible-hover uk-flex-inline">
+            Backlinko.com
+            <svg class="icon icon-new-tab uk-hidden mg-margin-l-5" aria-hidden="true"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-new-tab"></use></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="uk-text-center mg-margin-t-90 uk-hidden-small">
+        <h3 class="font-24 uk-text-bold">Trusted by the big ones, loved by everyone</h3>
+
+        <div class="mg-testimonials-logos">
+            <img
+                data-src="https://mangools.com/assets/logos/airbnb-fa9de23f6d126246b9fd2a7ddd9f27da0d8b67bc8a4a42766d0baf1373d8302c.svg"
+                alt="airbnb.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/alexa-1267b9d90a2b12750ff992b964a291c7c1cac3556cb446a2f33f40658925eca7.svg"
+                alt="alexa.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/skyscanner-33d4991ec8fbc37508ead122b103ac17eeae4c3ca6b080e429d6363b60a2d75e.svg"
+                alt="skyscanner.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/adidas-e6fa44458ad67267267802c620f8b0f6acd789c8008c503e6048bb9af3c9ce5b.svg"
+                alt="adidas.com"
+            />
+            <img
+                data-src="https://mangools.com/assets/logos/rtmn-65d4562b76607ef62afee1ef52ec23775583444168264edd2fcd62cf7f51df80.svg"
+                alt="retailmenot.com"
+            />
+
+    </div>
+  </div>
+</section>
+
+<section id="learn-seo" class="bg-lightgrey is-wave-top-r mg-padding-90-0">
+    <div class="uk-container uk-container-center">
+        <h2 class="font-48 uk-text-bold uk-text-center mg-margin-b-60">Free learning materials</h2>
+
+        <div class="mg-margin-t-30 mg-margin-b-45 uk-grid uk-grid-medium" data-uk-grid-margin>
+            <div class="uk-width-large-1-4">
+                <a
+                  href="https://mangools.com/blog/learn-seo/" aria-hidden="true"
+                  class="mg-card is-hover mg-no-underline uk-display-block uk-overflow-container"
+                >
+                  <img data-src="https://mangools.com/blog/wp-content/uploads/2019/07/learn-seo-new-featured.png" width="960" height="517" alt="Learn seo guide illustration">
+
+                  <div class="font-21 uk-text-bold mg-padding-30 color-black" href="https://mangools.com/blog/learn-seo/">
+                    The complete SEO guide for beginners (2021)
+                  </div>
+                </a>
+            </div>
+            <div class="uk-width-large-1-4">
+                <a
+                  href="https://mangools.com/blog/keyword-research/"
+                  class="mg-card is-hover mg-no-underline uk-display-block uk-overflow-container"
+                  >
+                    <img data-src="https://mangools.com/blog/wp-content/uploads/2019/07/featured-image.png" alt="Keyword research guide illustration" width="960" height="517">
+                    <div class="font-21 uk-text-bold mg-padding-30 color-black">
+                      Keyword research in 2021: All you need to know
+                    </div>
+                </a>
+            </div>
+            <div class="uk-width-large-1-4">
+                <a
+                  href="https://mangools.com/blog/on-page-seo/"
+                  class="mg-card is-hover mg-no-underline uk-display-block uk-overflow-container"
+                >
+                  <img data-src="https://mangools.com/blog/wp-content/uploads/2019/09/on-page-seo-featured-2.png" width="960" height="517" alt="On-page SEO guide illustration">
+                  <div class="font-21 uk-text-bold mg-padding-30 color-black uk-display-block">
+                    On-page SEO: The practical guide for SEO beginners
+                  </div>
+                </a>
+              </div>
+            <div class="uk-width-large-1-4">
+                <a
+                  href="https://mangools.com/blog/google-rich-snippets-guide/"
+                  class="mg-card is-hover mg-no-underline uk-display-block uk-overflow-container"
+                >
+                  <img data-src="https://mangools.com/blog/wp-content/uploads/2018/03/rich-snippets-featured.png" width="960" height="517" alt="Google rich snippets guide illustration">
+                  <div class="font-21 uk-text-bold mg-padding-30 color-black uk-display-block">
+                    28 Google rich snippets you should know
+                  </div>
+                </a>
+              </div>
+        </div>
+
+        <div class="uk-grid uk-grid-medium mg-more-learn" data-uk-grid-margin>
+          <div class="uk-width-medium-1-3 mg-stone-1">
+              <a
+                href="/knowledge/#guides"
+                class="mg-card is-hover mg-padding-30 font-21 uk-display-block mg-no-underline color-black"
+              >
+                <div class="uk-flex mg-margin-b-15">
+                  <img data-src="https://mangools.com/blog/wp-content/themes/mangools2019/assets/images/other/tools.png" class="uk-flex-item-none mg-margin-r-5" aria-hidden="true" alt="icon" width="21" height="21">
+                  <div class="uk-text-bold">Tool guides</div>
+                </div>
+                <p class="color-grey font-18 ln-11 uk-margin-remove">Just in case you need a quick help with our tools.</p>
+              </a>
+          </div>
+          <div class="uk-width-medium-1-3 uk-position-relative uk-position-z-index">
+              <a
+                href="https://mangools.com/blog/seopedia/"
+                class="mg-card is-hover mg-padding-30 font-21 uk-display-block mg-no-underline color-black"
+              >
+                <div class="uk-flex mg-margin-b-15">
+                  <img data-src="https://mangools.com/blog/wp-content/themes/mangools2019/assets/images/other/books.png" class="uk-flex-item-none mg-margin-r-5" aria-hidden="true" alt="icon" width="21" height="21">
+                  <div class="uk-text-bold">SEOpedia</div>
+                </div>
+                <p class="color-grey font-18 ln-11 uk-margin-remove">More than the ultimate glossary of SEO terms.</p>
+              </a>
+          </div>
+          <div class="uk-width-medium-1-3 mg-stone-2">
+              <a
+                href="https://mangools.com/blog/archive/"
+                class="mg-card is-hover mg-padding-30 font-21 uk-display-block mg-no-underline color-black"
+              >
+                <div class="uk-flex mg-margin-b-15">
+                  <img data-src="https://mangools.com/blog/wp-content/themes/mangools2019/assets/images/other/glowing-star.png" class="uk-flex-item-none mg-margin-r-5" aria-hidden="true" alt="icon" width="21" height="21">
+                  <div class="uk-text-bold">Blog</div>
+                </div>
+                <p class="color-grey font-18 ln-11 uk-margin-remove">The knowledge hub for SEO enthusiasts.</p>
+              </a>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-lightorange-gradient is-wave-top-grey uk-clearfix" id="pricing">
+    <div class="uk-container uk-container-center">
+        <h2 class="font-48 uk-text-bold uk-text-center mg-margin-b-30">
+                Plans &amp; pricing
+        </h2>
+
+        
+  <p class="mg-margin-b-60 uk-text-center" id="pricing-subheadline">
+      Stay cool, we have a 48-hour money back guarantee!
+  </p>
+
+<div id="pricing-table">
+
+    <div class="uk-flex uk-flex-wrap uk-text-center">
+        <div class="mg-pricing-legend uk-width-xlarge-1-4">
+            <div class="mg-pricing-legend-inner bg-lightgrey mg-padding-30 mg-margin-t-30 mg-margin-b-30">
+
+                  <img src="/assets/other/gift-111ee13265d70204424a715229838dbdb501703ee0925d0fdcda48af69dbc6b0.svg" alt="Gift" width="50" class="mg-margin-b-15">
+
+
+                  <div class="color-blue uk-text-bold mg-margin-b-30">
+                      <div class="font-36 font-small-24 mg-margin-b-5">Save ~40 %</div>
+                      with annual plans
+                  </div>
+
+                <nav class="mg-btn-group is-pill uk-container-center uk-flex uk-flex-midddle is-switcher mg-margin-b-30" data-tab="1">
+                    <button class="mg-btn is-pill is-small is-active uk-width-1-2">
+                        Annual
+                    </button>
+                    <button class="mg-btn is-pill is-small uk-width-1-2">
+                        Monthly
+                    </button>
+                </nav>
+
+                <div class="mg-plan-limits font-14 uk-visible-xlarge">
+                    <div class="mangools-keyword-lookups">
+                        Keyword lookups / 24 h
+                    </div>
+                    <div class="mangools-keyword-rows">
+                        Keyword suggestions / search
+                    </div>
+                    <div class="mangools-comeptitor-rows">
+                        Competitor keywords / search
+                    </div>
+                    <div class="mangools-serp-lookups">
+                        SERP lookups / 24 h
+                    </div>
+                    <div class="mangools-tracked-keywords">
+                        Tracked keywords daily
+                    </div>
+                    <div class="mangools-links">
+                        Backlink rows monthly
+                    </div>
+                    <div class="mangools-siteprofiler">
+                        Site lookups / 24 h
+                    </div>
+                    <div class="mangools-logins">
+                        Simultaneous logins
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-width-xlarge-3-4 uk-position-relative">
+            <div class="mg-pricing-plans uk-grid uk-grid-collapse">
+
+
+
+
+
+                  <div class="mg-plan uk-width-large-1-3">
+                      <div class="mg-card mg-padding-0-15 mg-padding-45-0">
+
+                        <img width="110" class="mg-pricing-plan-img" src="/assets/subscription-basic-2149dcc5352d9e02f7c8a95cafa85be79bc0850ba5f5ef3df2b6cc6d52063e59.svg" alt="Subscription basic" />
+
+                        <h3 class="font-24 uk-text-bold mg-margin-b-30"><span>Mangools&nbsp;</span><span class="color-secondary">Basic</span></h3>
+
+                        <div class="annual-plans is-flipped">
+
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">29</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">90</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+
+
+                                <strong class="mg-label is-dark mg-margin-b-15 font-16">Save $229.20 per year</strong>
+
+
+                              <div class="font-14 color-grey">$358.80 billed upon purchase
+                              </div>
+                          </div>
+                        </div>
+
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">49</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">00</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="mg-plan-limits font-24 uk-text-bold mg-margin-t-30 mg-margin-b-15">
+                          <div aria-label="Keyword lookups per 24 hours">
+                              100
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword lookups / 24 h
+                          </div>
+
+                          <div aria-label="Keyword suggestions per search">
+                              <span>200</span> <span class="color-grey font-14">of 700</span>
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword suggestions / search
+                          </div>
+                          <div aria-label="Keyword suggestions per search">
+                              25
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Competitor keywords / search
+                          </div>
+                          <div aria-label="SERP lookups per 24 hours">
+                              100
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              SERP lookups / 24 h
+                          </div>
+                          <div aria-label="Maximum of tracked keywords in rank tracking">
+                              200
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Tracked keywords daily
+                          </div>
+                          <div aria-label="Maximum of backlink rows analyzed per month">
+                              100,000
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Backlink rows monthly
+                          </div>
+                          <div aria-label="Site lookups per 24 hours">
+                              20
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Site lookups / 24 h
+                          </div>
+                          <div aria-label="Simultaneous logins count">
+                              x
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Simultaneous logins
+                          </div>
+
+                        </div>
+
+                        <div class="annual-plans is-flipped">
+                          <a class="mg-btn is-green is-gradient is-pill is-small" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=56991d5e8ce44af72b70bd75">Subscribe now</a>
+                        </div>
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <a class="mg-btn is-green is-gradient is-pill is-small" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=5698f9028ce44af72b70bd6a">Subscribe now</a>
+                        </div>
+
+                      </div>
+                  </div>
+
+
+
+
+                  <div class="mg-plan uk-width-large-1-3">
+                      <div class="mg-card mg-padding-0-15 mg-padding-60-0">
+
+                        <img width="110" class="mg-pricing-plan-img" src="/assets/subscription-premium-8dc0c20749b74979528bc769d049b5cdc9080e99b84b7b2beef7e2cb5b6cf489.svg" alt="Subscription premium" />
+
+                        <h3 class="font-24 uk-text-bold mg-margin-b-30"><span>Mangools&nbsp;</span><span class="color-secondary">Premium</span></h3>
+
+                        <div class="annual-plans is-flipped">
+
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">39</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">90</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+
+
+                                <strong class="mg-label is-yellow mg-margin-b-15 font-16">Save $349.20 per year</strong>
+
+
+                              <div class="font-14 color-grey">$478.80 billed upon purchase
+                              </div>
+                          </div>
+                        </div>
+
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">69</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">00</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="mg-plan-limits font-24 uk-text-bold mg-margin-t-30 mg-margin-b-15">
+                          <div aria-label="Keyword lookups per 24 hours">
+                              500
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword lookups / 24 h
+                          </div>
+
+                          <div aria-label="Keyword suggestions per search">
+                              <span>700</span> <span class="color-grey font-14">of 700</span>
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword suggestions / search
+                          </div>
+                          <div aria-label="Keyword suggestions per search">
+                              <span class="mangools-competitor-rows-unlimited">
+                                Unlimited*
+                              </span>
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Competitor keywords / search
+                          </div>
+                          <div aria-label="SERP lookups per 24 hours">
+                              500
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              SERP lookups / 24 h
+                          </div>
+                          <div aria-label="Maximum of tracked keywords in rank tracking">
+                              700
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Tracked keywords daily
+                          </div>
+                          <div aria-label="Maximum of backlink rows analyzed per month">
+                              500,000
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Backlink rows monthly
+                          </div>
+                          <div aria-label="Site lookups per 24 hours">
+                              70
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Site lookups / 24 h
+                          </div>
+                          <div aria-label="Simultaneous logins count">
+                              3
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Simultaneous logins
+                          </div>
+
+                        </div>
+
+                        <div class="annual-plans is-flipped">
+                          <a class="mg-btn is-green is-gradient is-pill" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=56991d458ce44af72b70bd74">Subscribe now</a>
+                        </div>
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <a class="mg-btn is-green is-gradient is-pill" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=5698f9418ce44af72b70bd6b">Subscribe now</a>
+                        </div>
+
+                      </div>
+                  </div>
+
+
+
+
+                  <div class="mg-plan uk-width-large-1-3">
+                      <div class="mg-card mg-padding-0-15 mg-padding-45-0">
+
+                        <img width="110" class="mg-pricing-plan-img" src="/assets/subscription-agency-ef644e95735cb3b9f049c7d87d8959a575478808dd6d7dc4c9b9780b017ede72.svg" alt="Subscription agency" />
+
+                        <h3 class="font-24 uk-text-bold mg-margin-b-30"><span>Mangools&nbsp;</span><span class="color-secondary">Agency</span></h3>
+
+                        <div class="annual-plans is-flipped">
+
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">79</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">90</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+
+
+                                <strong class="mg-label is-dark mg-margin-b-15 font-16">Save $589.20 per year</strong>
+
+
+                              <div class="font-14 color-grey">$958.80 billed upon purchase
+                              </div>
+                          </div>
+                        </div>
+
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <div class="mg-plan-price">
+
+
+                              <strong class="font-36">
+                                <sup class="mg-currency">$</sup><span class="mg-price-base">129</span><span class="mg-pricing-delimiter">.</span><sup class="mg-price-decimal">00</sup>
+                              </strong>
+                              <div class="font-14 mg-margin-b-15">per month</div>
+
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="mg-plan-limits font-24 uk-text-bold mg-margin-t-30 mg-margin-b-15">
+                          <div aria-label="Keyword lookups per 24 hours">
+                              1,200
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword lookups / 24 h
+                          </div>
+
+                          <div aria-label="Keyword suggestions per search">
+                              <span>700</span> <span class="color-grey font-14">of 700</span>
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Keyword suggestions / search
+                          </div>
+                          <div aria-label="Keyword suggestions per search">
+                              <span class="mangools-competitor-rows-unlimited">
+                                Unlimited*
+                              </span>
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Competitor keywords / search
+                          </div>
+                          <div aria-label="SERP lookups per 24 hours">
+                              1,200
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              SERP lookups / 24 h
+                          </div>
+                          <div aria-label="Maximum of tracked keywords in rank tracking">
+                              1,500
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Tracked keywords daily
+                          </div>
+                          <div aria-label="Maximum of backlink rows analyzed per month">
+                              1,200,000
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                              Backlink rows monthly
+                          </div>
+                          <div aria-label="Site lookups per 24 hours">
+                              150
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Site lookups / 24 h
+                          </div>
+                          <div aria-label="Simultaneous logins count">
+                              10
+                          </div>
+                          <div class="uk-hidden-xlarge font-14 color-grey">
+                             Simultaneous logins
+                          </div>
+
+                        </div>
+
+                        <div class="annual-plans is-flipped">
+                          <a class="mg-btn is-green is-gradient is-pill is-small" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=597b0c904b13940c1fd9d9a7">Subscribe now</a>
+                        </div>
+
+                        <div class="monthly-plans uk-position-disappear" aria-hidden="true" hidden="true">
+                          <a class="mg-btn is-green is-gradient is-pill is-small" data-disable-with="Processing..." href="/subscriptions/checkout?currency=usd&amp;plan_id=597b0df74b13940c1fd9d9a8">Subscribe now</a>
+                        </div>
+
+                      </div>
+                  </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+        <div class="uk-text-center mg-margin-t-60" id="pricing-more">
+          <div class="">
+              <h3 class="font-30 uk-text-bold">Still not convinced? Start with a 10-day FREE trial!</h3>
+              <p>
+                  <a href="/users/sign_up?ref=pricing-mngls" class="mg-btn is-blue is-gradient is-pill">
+                    Start 10-day FREE trial
+                  </a>
+              </p>
+              <p class="uk-margin-remove font-14 color-grey">No credit card needed. No strings attached! 👍</p>
+          </div>
+        </div>
+</div>
+
+    </div>
+</section>
+
+
+    </main>
+
+
+
+    <footer class="mg-footer">
+    <div class="uk-container uk-container-center">
+        <div class="mg-border-b mg-margin-b-45 mg-padding-45-0 uk-flex uk-flex-space-between uk-flex-middle uk-flex-wrap">
+            <div class="mg-footer-subscrib" id="subscribe-newsletter">
+                <h4 class="font-18 uk-text-bold">Subscribe to our newsletter</h4>
+                <form method="post" class="mg-margin-b-15">
+                    <div class="mg-alert is-success mg-margin-b-15 uk-hidden font-14">Thanks for subscribing.</div>
+                    <div class="mg-alert is-error mg-margin-b-15 uk-hidden font-14"></div>
+                    <div class="uk-flex">
+                        <input class="mg-input is-small" type="email" id="subscriber-email" aria-required="true" placeholder="e.g. elon@tesla.com" aria-label="Your email" />
+                        <button class="mg-btn is-orange is-gradient is-small is-pill mg-margin-l-15 uk-flex-item-none" type="submit">
+                            Subscribe now
+                        </button>
+                    </div>
+                </form>
+                <p class="font-14 uk-margin-remove">
+                  Get the latest content to your inbox every month. No spam, we hate it too!
+                </p>
+            </div>
+            <div class="mg-margin-t-30 uk-visible-small uk-width-1-1"></div>
+            <div class="uk-text-right uk-text-center-small uk-flex-item-auto">
+                <a class="mg-link-social" href="https://twitter.com/mangools_com" target="_blank" rel="me noopener" aria-label="Mangools Twitter profile" title="Mangools Twitter profile"><svg class="icon icon-twitter"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-twitter"></use></svg></a>
+                <a class="mg-link-social" href="https://www.facebook.com/mangools/" target="_blank" rel="me noopener" aria-label="Mangools Facebook page" title="Mangools Facebook page"><svg class="icon icon-facebook"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-facebook"></use></svg></a>
+                <a class="mg-link-social" href="https://www.linkedin.com/company/mangools" target="_blank" rel="me noopener" aria-label="Mangools LinkeIn" title="Mangools LinkeIn"><svg class="icon icon-linkedin"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-linkedin"></use></svg></a>
+                <a class="mg-link-social" href="https://www.youtube.com/c/mangools" target="_blank" rel="me noopener" aria-label="Mangools Youtube channel" title="Mangools Youtube channel"><svg class="icon icon-youtube"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-youtube"></use></svg></a>
+                <a class="mg-link-social" href="https://www.instagram.com/mangools_com/" target="_blank" rel="me noopener" aria-label="Mangools Instagram profile" title="Mangools Instagram profile"><svg class="icon icon-instagram"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-instagram"></use></svg></a>
+            </div>
+        </div>
+        <nav class="uk-grid uk-flex">
+            <div class="uk-width-large-1-4 uk-width-medium-1-3">
+                <h4 class="font-18 uk-text-bold">Mangools</h4>
+                <ul class="mg-margin-b-30">
+                    <li><a href="/plans-and-pricing">Plans &amp; pricing</a></li>
+                    <li><a href="/affiliate-program">Affiliate program</a></li>
+                    <li><a href="/testimonials">Testimonials</a></li>
+                    <li><a href="/compare">Comparisons</a></li>
+                    <li><a href="/discounts-and-coupon-codes">Special offers</a></li>
+                    <li><a href="/careers">Jobs &amp; Careers</a></li>
+                    <li><a href="/press-kit">Press kit &amp; resources</a></li>
+                    <li><a href="/conditions">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about-us">About us</a></li>
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="uk-width-large-1-4 uk-width-medium-1-3">
+                <h4 class="font-18 uk-text-bold">SEO tools</h4>
+                <ul class="mg-margin-b-30">
+                    <li>
+                        <a href="https://kwfinder.com/?ref=footer-mngls">
+                            <img
+                                alt="KWFinder by Mangools"
+                                class="mg-margin-r-5"
+                                data-src="https://mangools.com/assets/app-logos/kwfinder-icon-a28eaf309a7546b9bbf69275a5b9ecf0502e4aa5d489c479521d47a5b1040faf.svg"
+                                width="12"
+                            />
+                            KWFinder
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://serpchecker.com/?ref=footer-mngls">
+                            <img
+                                alt="SERPChecker by Mangools"
+                                class="mg-margin-r-5"
+                                data-src="https://mangools.com/assets/app-logos/serpchecker-icon-4fd0201f90df3571b5c096377e8e634bd2f403eb13f2eb8638d0569835baa319.svg"
+                                width="12"
+                            />
+                            SERPChecker
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://serpwatcher.com/?ref=footer-mngls">
+                            <img
+                                alt="SERPWatcher by Mangools"
+                                class="mg-margin-r-5"
+                                data-src="https://mangools.com/assets/app-logos/serpwatcher-icon-42c42e1f486d6f82d29bf2050a9624045e96169e611eb620bb2b2395c64da46e.svg"
+                                width="12"
+                            />
+                            SERPWatcher
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkminer.com/?ref=footer-mngls">
+                            <img
+                                alt="LinkMiner by Mangools"
+                                class="mg-margin-r-5"
+                                data-src="https://mangools.com/assets/app-logos/linkminer-icon-061c72595c64c3cc763eb4e2354393cdc3f72d1671336d2a8656e07dee36af93.svg"
+                                width="12"
+                            />
+                            LinkMiner
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://siteprofiler.com/?ref=footer-mngls">
+                            <img
+                                data-src="https://mangools.com/assets/app-logos/siteprofiler-icon-a30260da551de17e9560fa36e6c2279fb32f4d0e4da19d4fcf695195942b28e0.svg"
+                                class="mg-margin-r-5"
+                                alt="SiteProfiler by Mangools"
+                                width="12"
+                            />
+                            SiteProfiler
+                        </a>
+                    </li>
+                    <li><a href="/api">Mangools API</a></li>
+                    <li><a href="/custom-data-exports">Custom data exports</a></li>
+                </ul>
+                <h5 class="font-18 uk-text-bold color-white">Free SEO tools</h5>
+                <ul class="mg-margin-b-30">
+                    <li><a href="/seo-extension?ref=footer-mngls">Browser extension</a></li>
+                    <li><a href="/free-seo-tools/serp-simulator?ref=footer-mngls">SERP simulator</a></li>
+                    <li><a href="/insights/serp?ref=footer-mngls">SERP volatility checker</a></li>
+                </ul>
+            </div>
+            <div class="uk-width-large-1-4 uk-width-medium-1-3">
+                <h4 class="font-18 uk-text-bold">Help &amp; knowledge</h4>
+                <ul class="mg-margin-b-30">
+                    <li><a href="/faq">Frequently Asked Questions</a></li>
+                    <li><a href="https://mangools.com/blog">Mangools Blog</a></li>
+                    <li><a href="https://mangools.com/blog/kwfinder-guide/">KWFinder guide</a></li>
+                    <li><a href="https://mangools.com/blog/serpchecker-guide/">SERPChecker guide</a></li>
+                    <li><a href="https://mangools.com/blog/serpwatcher-guide/">SERPWatcher guide</a></li>
+                    <li><a href="https://mangools.com/blog/linkminer-guide/">LinkMiner guide</a></li>
+                    <li><a href="https://mangools.com/blog/siteprofiler-guide/">SiteProfiler guide</a></li>
+                </ul>
+                <h5 class="font-18 uk-text-bold color-white">From our blog</h5>
+                <ul class="mg-margin-b-20">
+                    <li><a href="https://mangools.com/blog/learn-seo/?ref=footer-mngls">Learn SEO: The ultimate guide</a></li>
+                    <li><a href="https://mangools.com/blog/keyword-research/?ref=footer-mngls">Keyword research guide</a></li>
+                    <li><a href="https://mangools.com/blog/on-page-seo/?ref=footer-mngls">On-Page SEO guide</a></li>
+                </ul>
+            </div>
+            <div class="uk-width-1-1 mg-margin-t-30 uk-visible-small"></div>
+            <div class="uk-width-large-1-4 font-14 uk-text-center uk-flex-order-first-large">
+                <div>
+                    Made with love by<br />
+                    <a href="https://mangools.com" title="Go to mangools.com">
+                        <img alt="Mangools" width="180" class="mg-padding-15-0" src="/assets/app-logos/mangools-logo-full-white-fedd311d1a5ea69a3b23342a2720d5035bf55dc7b09269f868d61398c44b877e.svg" />
+                    </a>
+                    <br /> Juicy SEO Tools you will love
+                </div>
+                <div class="uk-flex uk-flex-center mg-margin-t-30">
+                    <a href="https://www.g2.com/products/mangools/reviews" class="mg-margin-r-15" target="_blank" rel="noopener"><img alt="G2 recognized Mangools" title="G2 recognized Mangools" data-src="https://mangools.com/assets/other/g2-medal-238c8024281d8a02c65d1901b4c35fe468d25f28c9f9d7ba61375d6d8564a4b3.svg" width="60"></a>
+                    <a href="https://crozdesk.com/marketing/seo-sem-software/mangools" target="_blank" title="Mangools - software ratings and reviews on Crozdesk" rel="noopener"><img data-src="https://crozdesk.com/top_badges/2020/crozdesk-trusted-vendor-badge-2020.png" width="70" /></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
+<!-- end footer -->
+
+<a href="#top" class="mg-btn is-white is-scroll-top" title="Scroll to top of the page" aria-label="Scroll top" data-uk-smooth-scroll>
+    <svg class="icon icon-chevron-up uk-margin-remove"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-chevron-up"></use></svg>
+</a>
+
+    <aside class="mg-main-nav-container uk-hidden-xlarge">
+    <div id="mobile-menu-overlay" class="uk-offcanvas"></div>
+    <div id="mg-main-nav" class="uk-flex" aria-hidden="true">
+        <div class="mg-padding-0-30 mg-margin-t-30 mg-margin-b-30 uk-width-1-1 uk-hidden-xlarge">
+            <div>
+                    <a class="uk-flex-inline" title="Mangools homepage" href="/">
+                        <img alt="Mangools" width="140" src="/assets/app-logos/mangools-logo-full-80efddbf1742056da96d41bc32407c96b709655e19b2d5ca7df98adcfd605e8b.svg" />
+</a>                <div class="font-14">Juicy SEO Tools you will love</div>
+            </div>
+        </div>
+        <div class="mg-apps-list uk-margin-bottom-remove">
+            <div class="mg-seo-tools-dropdown-wrap">
+                <div class="mg-seo-tools-dropdown">
+                    <ul class="mg-nav mg-seo-tools uk-grid uk-grid-collapse font-14" data-uk-grid-margin="">
+                        <li class="uk-width-2-10 uk-flex uk-margin-remove uk-row-first">
+                            <a href="https://kwfinder.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative is-active">
+                                <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                                    <div class="mg-margin-b-15 image">
+                                        <img alt="KWFinder - Keyword Research Analysis" width="70" src="/assets/other/keyword-research-47e1227afc2a2f7e356099d2c761b3a34e03b9b1306ec987ca7f5b06f6ce0690.svg" />
+                                    </div>
+                                    <div class="uk-text-center text">
+                                        <div class="font-16 uk-text-bold">KWFinder</div>
+                                        <div class="font-14 color-grey small-text">Keyword Research</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="uk-width-2-10 uk-flex uk-margin-remove uk-grid-margin uk-row-first">
+                            <a href="https://serpchecker.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                                <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                                    <div class="mg-margin-b-15 image">
+                                        <img alt="SERPChecker - Google SERP Competitor Analysis Tool" width="70" src="/assets/other/serp-analysis-566fb1f86c78696bd3a43b5338d3f95439f7fe15d3df9fe72360dc4000bfd423.svg" />
+                                    </div>
+                                    <div class="uk-text-center text">
+                                        <div class="font-16 uk-text-bold">SERPChecker</div>
+                                        <div class="font-14 color-grey small-text">SERP Analysis</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="uk-width-2-10 uk-flex uk-margin-remove uk-grid-margin uk-row-first">
+                            <a href="https://serpwatcher.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                                <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                                    <div class="mg-margin-b-15 image">
+                                        <img alt="SERPWatcher - SEO rank tracking tool" width="70" src="/assets/other/rank-tracking-264364e496e3a35c50dfd93569507e7c6006745055cd190688e227e24bdbe15a.svg" />
+                                    </div>
+                                    <div class="uk-text-center text">
+                                        <div class="font-16 uk-text-bold">SERPWatcher</div>
+                                        <div class="font-14 color-grey small-text">Rank Tracking</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="uk-width-2-10 uk-flex uk-margin-remove uk-grid-margin uk-row-first">
+                            <a href="https://linkminer.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                                <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                                    <div class="mg-margin-b-15 image">
+                                        <img alt="Linkminer - Backlink Checker" width="70" src="/assets/other/backlink-analysis-ff9b0b7e81219cb5fec21639e91f3dc0fb40bbaf2b871d250394d05f906e8915.svg" />
+                                    </div>
+                                    <div class="uk-text-center text">
+                                        <div class="font-16 uk-text-bold">LinkMiner</div>
+                                        <div class="font-14 color-grey small-text">Backlink Analysis</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="uk-width-2-10 uk-flex uk-margin-remove uk-grid-margin uk-row-first">
+                            <a href="https://siteprofiler.com/?ref=menu-mngls" class="uk-flex-item-1 uk-flex uk-flex-middle uk-flex-center mg-padding-30 uk-flex-bottom uk-position-relative">
+                                <div class="color-black uk-flex uk-flex-middle uk-flex-column">
+                                    <div class="mg-margin-b-15 image">
+                                        <img alt="SiteProfiler - Website analysis tool" width="70" src="/assets/other/seo-metrics-and-insights-aad2289e7a6ed02751a70f023064844da47b230cbd5890b31851c1d8d3e0561e.svg" />
+                                    </div>
+                                    <div class="uk-text-center text">
+                                        <div class="font-16 uk-text-bold">SiteProfiler</div>
+                                        <div class="font-14 color-grey small-text">SEO metrics &amp; Insights</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="mg-nav uk-padding-remove">
+            <li><a href="/plans-and-pricing">Pricing</a></li>
+            <li data-uk-dropdown="{remaintime: 100,pos:'bottom-center'}" class="uk-position-relative uk-hidden-xlarge">
+                <button type="button" aria-label="Open Knowledge submenu">
+                    Free SEO Tools 
+                    <svg class="icon icon-chevron-down" aria-hidden="true">
+                        <use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-chevron-down"></use>
+                    </svg>
+                </button>
+                <aside class="uk-dropdown is-inline">
+                    <ul class="mg-listnav is-small font-14">
+                        <li>
+                            <a href="https://mangools.com/seo-extension?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                                <svg class="icon icon-power-plug mg-margin-r-15" aria-hidden="true">
+                                    <use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-power-plug"></use>
+                                </svg>
+                                <span>SEO Browser extension</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://mangools.com/insights/serp?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                                <svg class="icon icon-line-graph mg-margin-r-15" aria-hidden="true">
+                                    <use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-line-graph"></use>
+                                </svg>
+                                <span>SERP Volatility checker</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://mangools.com/free-seo-tools/serp-simulator?ref=menu-mngls" class="uk-flex uk-flex-middle ln-11 mg-padding-15-0">
+                                <svg class="icon icon-google2 mg-margin-r-15" aria-hidden="true">
+                                    <use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-google2"></use>
+                                </svg>
+                                <span>SERP Simulator</span>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </li>
+            <li>
+                <a href="/#learn-seo" data-uk-smooth-scroll>Knowledge
+                </a>
+            </li>
+            <li><a href="https://mangools.com/blog/">Blog</a></li>
+            <li data-signin-btn>
+              <a rel="noopener" href="/users/sign_in?ref=header-mngls">
+                Sign in
+</a>            </li>
+        </ul>
+            <div class="mg-padding-15 uk-width-1-1">
+                <a class="mg-btn is-blue is-gradient is-pill uk-width-1-1" rel="noopener" data-register-btn="" href="/users/sign_up?ref=header-mngls">Start 10-day FREE trial</a>
+            </div>
+    </div>
+    <button
+        class="uk-close mg-close uk-hidden-xlarge is-hidden initial-hide"
+        title="Close Menu"
+        data-menu-toggle="close"
+    >
+        <svg class="icon icon-cross initial-hide" aria-label="Close"><use xlink:href="/assets/symbol-defs-96fd4ac4790c5338bbc3dd6f5d6d21648ba6697077c655eb496443a68c5bcb79.svg#icon-cross"></use></svg>
+    </button>
+</aside>
+
+
+
+    <!-- Send data to GTM -->
+<script>
+  if (window.location.hash.length > 0 && window.location.hash.match(/#a/)) {
+      dataLayer.push({
+        'campaignName': 'affiliate_mangools',
+        'campaignSource': document.referrer ? document.referrer : '(direct)',
+        'campaignMedium': 'affiliate'
+    });
+  }
+
+    //  Login status
+    dataLayer.push({'user_login_status': 'unlogged'});
+</script>
+
+<!-- Mangools Affiliate Tracking Code -->
+<script type="text/javascript">
+  window.onload = function () {
+    if (window.location.hash.length === 26 && window.location.hash.match(/#a/)) {
+        var affiliate_id = window.location.hash.substring(2);
+        var a_id = affiliate_id;
+
+        // Redirected from google SERP with affiliate_id, which is prohibited!
+        if (document.referrer && document.referrer.indexOf('google.') > -1) {
+            // Log the scammer (original affiliate_id) to GTM.
+            dataLayer.push({
+                event: 'prohibited_affiliate_redirect',
+                affiliate_id: affiliate_id
+            });
+
+            // And use our mngls acc instead, so we can track the amount of fraudulent PPC affiliates over time.
+            a_id = '57c975a9285f7327b801a2b0';
+        }
+
+        (new Image()).src = `https://mangools.com/affiliate/affiliates/set_cookie?affiliate_id=${a_id}&r=${Date.now()}`;
+        window.location.hash = '';
+    }
+  }
+</script>
+
+<!-- Mangools analytics -->
+<script type="text/javascript">
+  var referrer = document.referrer;
+  var page = window.location.href;
+
+  (new Image()).src =  'https://mangools.com/analytics/sources/set_cookie?referrer=' + encodeURIComponent(referrer) + '&page=' + encodeURIComponent(page) + '&r=' + Math.random();
+</script>
+
+<!-- Remove auth params -->
+<script>
+    var urlparts = window.location.toString().split('?');
+    var newUrl = window.location.toString();
+
+    if (urlparts.length >= 2) {
+        var prefixSsoTicket = encodeURIComponent('sso_ticket') + '=';
+        var prefixLoginToken = encodeURIComponent('login_token') + '=';
+
+        var pars = urlparts[1].split(/[&;]/g);
+
+        //reverse iteration as may be destructive
+        for (var i = pars.length; i-- > 0;) {
+            //idiom for string.startsWith
+            if (pars[i].lastIndexOf(prefixSsoTicket, 0) !== -1 || pars[i].lastIndexOf(prefixLoginToken, 0) !== -1) {
+                pars.splice(i, 1);
+            }
+        }
+
+        newUrl = urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
+    }
+
+    window.history.replaceState({}, document.title, newUrl);
+</script>
+
+<!-- User.com support widget -->
+<!--
+    window.civchat = {
+        apiKey: 'GGjNR4',
+        name: "John Doe",
+        user_id: "idfromyourdatabase",
+        email: "myemail@example.org",
+        gender: 2,
+        status: 2,
+        date_attr: "2017-07-25T14:14:08.612Z",   // Must be a valid ISO 8601 format
+        phone_number: "+44754123434", // Must be a valid E.164 format
+        score: 0,
+        company: {
+          name: "My Company",
+          company_id: "idfromyourdatabase",
+          revenue: "$239.9 billion"
+        }
+    };
+-->
+  <script data-cfasync="false" type="text/javascript">
+        window.civchat = {
+            apiKey: "c4Bh2w",
+        };
+  </script>
+  <script data-cfasync="false" type="text/javascript" src="https://mangools.user.com/widget.js">
+  </script>
+
+
+  </body>
+</html>

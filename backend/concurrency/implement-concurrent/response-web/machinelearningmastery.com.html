@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script type="cd8eb514ba1865aa7dff7760-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="cd8eb514ba1865aa7dff7760-text/javascript">class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+
+
+<link rel="pingback" href="https://machinelearningmastery.com/xmlrpc.php" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<script type="rocketlazyloadscript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$'],['\\(','\\)']], 
+    processEscapes: true
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore|editor-rich-text'
+  }
+};
+
+</script>
+
+<!--  Mobile viewport scale -->
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport"/>
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.6 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Machine Learning Mastery</title><link rel="stylesheet" href="https://machinelearningmastery.com/wp-content/cache/min/1/dbe9dcce364ada0e4bab9e8d3d2e25ed.css" media="all" data-minify="1" />
+	<meta name="description" content="Making developers awesome at machine learning." />
+	<link rel="canonical" href="https://machinelearningmastery.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Machine Learning Mastery" />
+	<meta property="og:description" content="Making developers awesome at machine learning." />
+	<meta property="og:url" content="https://machinelearningmastery.com/" />
+	<meta property="og:site_name" content="Machine Learning Mastery" />
+	<meta property="article:publisher" content="https://www.facebook.com/MachineLearningMastery/" />
+	<meta property="article:modified_time" content="2021-10-25T19:01:17+00:00" />
+	<meta property="og:image" content="https://machinelearningmastery.com/wp-content/uploads/2014/07/MachineLearningMastery.png" />
+	<meta property="og:image:width" content="1041" />
+	<meta property="og:image:height" content="1041" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://machinelearningmastery.com/#organization","name":"Machine Learning Mastery","url":"https://machinelearningmastery.com/","sameAs":["https://www.facebook.com/MachineLearningMastery/","https://www.linkedin.com/company/machine-learning-mastery","https://twitter.com/TeachTheMachine"],"logo":{"@type":"ImageObject","@id":"https://machinelearningmastery.com/#logo","inLanguage":"en-US","url":"https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon.png","contentUrl":"https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon.png","width":512,"height":512,"caption":"Machine Learning Mastery"},"image":{"@id":"https://machinelearningmastery.com/#logo"}},{"@type":"WebSite","@id":"https://machinelearningmastery.com/#website","url":"https://machinelearningmastery.com/","name":"Machine Learning Mastery","description":"Making developers awesome at machine learning","publisher":{"@id":"https://machinelearningmastery.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://machinelearningmastery.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://machinelearningmastery.com/#primaryimage","inLanguage":"en-US","url":"https://machinelearningmastery.com/wp-content/uploads/2014/07/MachineLearningMastery.png","contentUrl":"https://machinelearningmastery.com/wp-content/uploads/2014/07/MachineLearningMastery.png","width":1041,"height":1041,"caption":"Machine Learning Mastery"},{"@type":"WebPage","@id":"https://machinelearningmastery.com/#webpage","url":"https://machinelearningmastery.com/","name":"Machine Learning Mastery","isPartOf":{"@id":"https://machinelearningmastery.com/#website"},"about":{"@id":"https://machinelearningmastery.com/#organization"},"primaryImageOfPage":{"@id":"https://machinelearningmastery.com/#primaryimage"},"datePublished":"2014-07-27T03:56:21+00:00","dateModified":"2021-10-25T19:01:17+00:00","description":"Making developers awesome at machine learning.","breadcrumb":{"@id":"https://machinelearningmastery.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://machinelearningmastery.com/"]}]},{"@type":"BreadcrumbList","@id":"https://machinelearningmastery.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<meta name="google-site-verification" content="O3LTCRdIVJLKIpw1o89OoW_96MsILd8x7SaZKeV9b8I" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//ads.adthrive.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//loadeu.exelator.com' />
+<link rel='dns-prefetch' href='//sync.crwdcntrl.net' />
+<link rel='dns-prefetch' href='//gdpr-wrapper.privacymanager.io' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//gdpr.privacymanager.io' />
+<link rel='dns-prefetch' href='//sb.scorecardresearch.com' />
+<link rel='dns-prefetch' href='//confiant-integrations.global.ssl.fastly.net' />
+
+<link rel="alternate" type="application/rss+xml" title="Machine Learning Mastery &raquo; Feed" href="https://feeds.feedburner.com/MachineLearningMastery" />
+<link rel="alternate" type="application/rss+xml" title="Machine Learning Mastery &raquo; Comments Feed" href="https://machinelearningmastery.com/comments/feed/" />
+<!-- machinelearningmastery.com is managing ads with Advanced Ads 1.33.1 – https://wpadvancedads.com/ --><!--noptimize--><script id="machi-ready" type="cd8eb514ba1865aa7dff7760-text/javascript">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<!--/noptimize--><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+
+
+
+<!--[if lt IE 9]>
+<link href="https://machinelearningmastery.com/wp-content/themes/canvas-new/css/non-responsive.css" rel="stylesheet" type="text/css" />
+<style type="text/css">.col-full, #wrapper { width: 960px; max-width: 960px; } #inner-wrapper { padding: 0; } body.full-width #header, #nav-container, body.full-width #content, body.full-width #footer-widgets, body.full-width #footer { padding-left: 0; padding-right: 0; } body.fixed-mobile #top, body.fixed-mobile #header-container, body.fixed-mobile #footer-container, body.fixed-mobile #nav-container, body.fixed-mobile #footer-widgets-container { min-width: 960px; padding: 0 1em; } body.full-width #content { width: auto; padding: 0 1em;}</style>
+<![endif]-->
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='urvanov_syntax_highlighter_js-js-extra'>
+/* <![CDATA[ */
+var UrvanovSyntaxHighlighterSyntaxSettings = {"version":"2.8.27","is_admin":"0","ajaxurl":"https:\/\/machinelearningmastery.com\/wp-admin\/admin-ajax.php","prefix":"urvanov-syntax-highlighter-","setting":"urvanov-syntax-highlighter-setting","selected":"urvanov-syntax-highlighter-setting-selected","changed":"urvanov-syntax-highlighter-setting-changed","special":"urvanov-syntax-highlighter-setting-special","orig_value":"data-orig-value","debug":""};
+var UrvanovSyntaxHighlighterSyntaxStrings = {"copy":"Copied to the clipboard","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/plugins/urvanov-syntax-highlighter/js/min/urvanov_syntax_highlighter.min.js?ver=2.8.27' id='urvanov_syntax_highlighter_js-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/plugins/simple-social-buttons/assets/js/frontend-blocks.js?ver=4.0.0' id='ssb-blocks-front-js-js' defer></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='ssb-front-js-js-extra'>
+/* <![CDATA[ */
+var SSB = {"ajax_url":"https:\/\/machinelearningmastery.com\/wp-admin\/admin-ajax.php","fb_share_nonce":"2831a64052"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/cache/min/1/wp-content/plugins/simple-social-buttons/assets/js/front.js?ver=1650400278' id='ssb-front-js-js' defer></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='advanced-ads-advanced-js-js-extra'>
+/* <![CDATA[ */
+var advads_options = {"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+/* ]]> */
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.min.js?ver=1.33.1' id='advanced-ads-advanced-js-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='advanced_ads_pro/visitor_conditions-js-extra'>
+/* <![CDATA[ */
+var advanced_ads_pro_visitor_conditions = {"referrer_cookie_name":"advanced_ads_pro_visitor_referrer","referrer_exdays":"365","page_impr_cookie_name":"advanced_ads_page_impressions","page_impr_exdays":"3650"};
+/* ]]> */
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads-pro/modules/advanced-visitor-conditions/inc/conditions.min.js?ver=2.16.0' id='advanced_ads_pro/visitor_conditions-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/themes/canvas-new/includes/js/third-party.min.js?ver=5.9.2' id='third-party-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/themes/canvas-new/includes/js/modernizr.min.js?ver=2.6.2' id='modernizr-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/themes/canvas-new/includes/js/general.min.js?ver=5.9.2' id='general-js' defer></script>
+<link rel="https://api.w.org/" href="https://machinelearningmastery.com/wp-json/" /><link rel="alternate" type="application/json" href="https://machinelearningmastery.com/wp-json/wp/v2/pages/1678" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://machinelearningmastery.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://machinelearningmastery.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://machinelearningmastery.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://machinelearningmastery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinelearningmastery.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://machinelearningmastery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinelearningmastery.com%2F&#038;format=xml" />
+    <style type="text/css">
+
+      .mpcs-classroom .nav-back i,
+      .mpcs-classroom .navbar-section a.btn,
+      .mpcs-classroom .navbar-section a,
+      .mpcs-classroom .navbar-section button {
+        color: rgba(255, 255, 255) !important;
+      }
+
+      .mpcs-classroom .navbar-section .dropdown .menu a {
+        color: rgba(44, 54, 55) !important;
+      }
+
+      .mpcs-classroom .mpcs-progress-ring {
+        background-color: rgba(29, 166, 154) !important;
+      }
+
+      .mpcs-classroom .mpcs-course-filter .dropdown .btn span,
+      .mpcs-classroom .mpcs-course-filter .dropdown .btn i,
+      .mpcs-classroom .mpcs-course-filter .input-group .input-group-btn,
+      .mpcs-classroom .mpcs-course-filter .input-group .mpcs-search,
+      .mpcs-classroom .mpcs-course-filter .input-group input[type=text],
+      .mpcs-classroom .mpcs-course-filter .dropdown a,
+      .mpcs-classroom .pagination,
+      .mpcs-classroom .pagination i,
+      .mpcs-classroom .pagination a {
+        color: rgba(44, 54, 55) !important;
+        border-color: rgba(44, 54, 55) !important;
+      }
+
+      /* body.mpcs-classroom a{
+        color: rgba();
+      } */
+
+      #mpcs-navbar,
+      #mpcs-navbar button#previous_lesson_link,
+      #mpcs-navbar button#previous_lesson_link:hover {
+        background: rgba(44, 54, 55);
+      }
+
+      .course-progress .user-progress,
+      .btn-green,
+      #mpcs-navbar button:not(#previous_lesson_link){
+        background: rgba(29, 166, 154, 0.9);
+      }
+
+      .btn-green:hover,
+      #mpcs-navbar button:not(#previous_lesson_link):focus,
+      #mpcs-navbar button:not(#previous_lesson_link):hover{
+        background: rgba(29, 166, 154);
+      }
+
+      .btn-green{border: rgba(29, 166, 154)}
+
+      .course-progress .progress-text,
+      .mpcs-lesson i.mpcs-circle-regular {
+        color: rgba(29, 166, 154)
+      }
+
+      #mpcs-main #bookmark, .mpcs-lesson.current{background: rgba(29, 166, 154, 0.3)}
+
+      .mpcs-instructor .tile-subtitle{
+        color: rgba(29, 166, 154, 1)
+      }
+
+    </style>
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+           var ajaxurl = "https://machinelearningmastery.com/wp-admin/admin-ajax.php";
+         </script> <style media="screen">
+
+		.simplesocialbuttons.simplesocialbuttons_inline .ssb-fb-like {
+	  margin: ;
+	}
+		 /*inline margin*/
+	
+	
+	
+	
+	
+	
+			 .simplesocialbuttons.simplesocialbuttons_inline.simplesocial-simple-icons button{
+		 margin: ;
+	 }
+
+			 /*margin-digbar*/
+
+	
+	
+	
+	
+	
+	
+	
+</style>
+
+<!-- Open Graph Meta Tags generated by Simple Social Buttons 4.0.0 -->
+<meta property="og:title" content="Machine Learning Mastery - Machine Learning Mastery" />
+<meta property="og:url" content="https://machinelearningmastery.com/" />
+<meta property="og:site_name" content="Machine Learning Mastery" />
+<meta property="og:image" content="https://machinelearningmastery.com/wp-content/uploads/2014/07/MachineLearningMastery.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Machine Learning Mastery - Machine Learning Mastery" />
+<meta property="twitter:image" content="https://machinelearningmastery.com/wp-content/uploads/2014/07/MachineLearningMastery.png" />
+    
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+        var ajaxurl = 'https://machinelearningmastery.com/wp-admin/admin-ajax.php';
+    </script>
+<style id="wplmi-inline-css" type="text/css"> span.wplmi-user-avatar { width: 16px;display: inline-block !important;flex-shrink: 0; } img.wplmi-elementor-avatar { border-radius: 100%;margin-right: 3px; } 
+
+</style>
+
+<link rel="preload" as="font" href="https://machinelearningmastery.com/wp-content/themes/canvas-new/includes/fonts/fontawesome-webfont.woff2?v=4.5.0" crossorigin><script type="cd8eb514ba1865aa7dff7760-text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+		
+<!-- Custom CSS Styling -->
+<style type="text/css">
+#logo .site-title, #logo .site-description { display:none; }
+body {background-repeat:no-repeat;background-position:top left;background-attachment:scroll;border-top:0px solid #000000;}
+#header {background-repeat:no-repeat;background-position:left top;margin-top:0px;margin-bottom:0px;padding-top:10px;padding-bottom:10px;border:0px solid ;}
+#logo .site-title a {font:bold 40px/1em "Helvetica Neue", Helvetica, sans-serif;color:#222222;}
+#logo .site-description {font:normal 13px/1em "Helvetica Neue", Helvetica, sans-serif;color:#999999;}
+body, p { font:normal 14px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#555555; }
+h1 { font:bold 28px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }h2 { font:bold 24px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }h3 { font:bold 20px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }h4 { font:bold 16px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }h5 { font:bold 14px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }h6 { font:bold 12px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#222222; }
+.page-title, .post .title, .page .title {font:bold 28px/1.1em "Helvetica Neue", Helvetica, sans-serif;color:#222222;}
+.post .title a:link, .post .title a:visited, .page .title a:link, .page .title a:visited {color:#222222}
+.post-meta { font:normal 12px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#999999; }
+.entry, .entry p{ font:normal 15px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#555555; }
+.post-more {font:normal 13px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:;border-top:0px solid #e6e6e6;border-bottom:0px solid #e6e6e6;}
+#post-author, #connect {border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#fafafa}
+.nav-entries a, .woo-pagination { font:normal 13px/1em "Helvetica Neue", Helvetica, sans-serif;color:#888; }
+.woo-pagination a, .woo-pagination a:hover {color:#888!important}
+.widget h3 {font:bold 14px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#555555;border-bottom:1px solid #e6e6e6;}
+.widget_recent_comments li, #twitter li { border-color: #e6e6e6;}
+.widget p, .widget .textwidget { font:normal 13px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#555555; }
+.widget {font:normal 13px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#555555;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;}
+#tabs .inside li a, .widget_woodojo_tabs .tabbable .tab-pane li a { font:bold 12px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#555555; }
+#tabs .inside li span.meta, .widget_woodojo_tabs .tabbable .tab-pane li span.meta { font:300 11px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#999999; }
+#tabs ul.wooTabs li a, .widget_woodojo_tabs .tabbable .nav-tabs li a { font:300 11px/2em "Helvetica Neue", Helvetica, sans-serif;color:#999999; }
+@media only screen and (min-width:768px) {
+ul.nav li a, #navigation ul.rss a, #navigation ul.cart a.cart-contents, #navigation .cart-contents #navigation ul.rss, #navigation ul.nav-search, #navigation ul.nav-search a { font:bold 15px/1.2em "Helvetica Neue", Helvetica, sans-serif;color:#ffffff; } #navigation ul.rss li a:before, #navigation ul.nav-search a.search-contents:before { color:#ffffff;}
+#navigation ul.nav > li a:hover, #navigation ul.nav > li:hover a, #navigation ul.nav li ul li a, #navigation ul.cart > li:hover > a, #navigation ul.cart > li > ul > div, #navigation ul.cart > li > ul > div p, #navigation ul.cart > li > ul span, #navigation ul.cart .cart_list a, #navigation ul.nav li.current_page_item a, #navigation ul.nav li.current_page_parent a, #navigation ul.nav li.current-menu-ancestor a, #navigation ul.nav li.current-cat a, #navigation ul.nav li.current-menu-item a { color:#eeeeee!important; }
+#navigation ul.nav > li a:hover, #navigation ul.nav > li:hover, #navigation ul.nav li ul, #navigation ul.cart li:hover a.cart-contents, #navigation ul.nav-search li:hover a.search-contents, #navigation ul.nav-search a.search-contents + ul, #navigation ul.cart a.cart-contents + ul, #navigation ul.nav li.current_page_item a, #navigation ul.nav li.current_page_parent a, #navigation ul.nav li.current-menu-ancestor a, #navigation ul.nav li.current-cat a, #navigation ul.nav li.current-menu-item a{background-color:#84abc7!important}
+#navigation ul.nav li ul, #navigation ul.cart > li > ul > div  { border: 0px solid #dbdbdb; }
+#navigation ul.nav > li:hover > ul  { left: 0; }
+#navigation ul.nav > li  { border-right: 0px solid #dbdbdb; }#navigation ul.nav > li:hover > ul  { left: 0; }
+#navigation { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }#navigation ul li:first-child, #navigation ul li:first-child a { border-radius:0px 0 0 0px; -moz-border-radius:0px 0 0 0px; -webkit-border-radius:0px 0 0 0px; }
+#navigation {background:#84abc7;border-top:0px solid #dbdbdb;border-bottom:0px solid #dbdbdb;border-left:0px solid #dbdbdb;border-right:0px solid #dbdbdb;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
+#top ul.nav li a { font:normal 12px/1.6em "Helvetica Neue", Helvetica, sans-serif;color:#ddd; }
+}
+#footer, #footer p { font:normal 13px/1.4em "Helvetica Neue", Helvetica, sans-serif;color:#999999; }
+#footer {border-top:1px solid #dbdbdb;border-bottom:0px solid ;border-left:0px solid ;border-right:0px solid ;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
+.magazine #loopedSlider .content h2.title a { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+.wooslider-theme-magazine .slide-title a { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+.magazine #loopedSlider .content .excerpt p { font:300 13px/1.5em Arial, sans-serif;color:#cccccc; }
+.wooslider-theme-magazine .slide-content p, .wooslider-theme-magazine .slide-excerpt p { font:300 13px/1.5em Arial, sans-serif;color:#cccccc; }
+.magazine .block .post .title a {font:bold 18px/1.2em Helvetica Neue, Helvetica, sans-serif;color:#222222; }
+#loopedSlider.business-slider .content h2 { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+#loopedSlider.business-slider .content h2.title a { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+.wooslider-theme-business .has-featured-image .slide-title { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+.wooslider-theme-business .has-featured-image .slide-title a { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
+#wrapper #loopedSlider.business-slider .content p { font:300 13px/1.5em Arial, sans-serif;color:#cccccc; }
+.wooslider-theme-business .has-featured-image .slide-content p { font:300 13px/1.5em Arial, sans-serif;color:#cccccc; }
+.wooslider-theme-business .has-featured-image .slide-excerpt p { font:300 13px/1.5em Arial, sans-serif;color:#cccccc; }
+.archive_header { font:bold 18px/1em Arial, sans-serif;color:#222222; }
+.archive_header {border-bottom:1px solid #e6e6e6;}
+.archive_header .catrss { display:none; }
+</style>
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="https://machinelearningmastery.com/wp-content/uploads/2019/09/icon-16x16.png"/>
+<!-- Options Panel Custom CSS -->
+<style type="text/css">
+#logo img {
+   max-width: 100%;
+   height: auto;
+}
+</style>
+
+
+<!-- Woo Shortcodes CSS -->
+
+
+<!-- Custom Stylesheet -->
+
+
+<!-- Theme version -->
+<meta name="generator" content="Canvas 5.9.21" />
+<meta name="generator" content="WooFramework 6.2.9" />
+<script type="cd8eb514ba1865aa7dff7760-text/javascript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-44039733-3', 'auto',{'allowLinker': true });
+ga('require', 'linker');
+ga('linker:autoLink',['samcart.com']);
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js' type="cd8eb514ba1865aa7dff7760-text/javascript"></script>		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			if ( typeof advadsGATracking === 'undefined' ) {
+				window.advadsGATracking = {
+					delayedAds: {},
+					deferedAds: {}
+				};
+			}
+		</script>
+		<link rel="icon" href="https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-icon-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.display-posts-listing.image-left .listing-item {
+	overflow: hidden; 
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.display-posts-listing.image-left .image {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.display-posts-listing.image-left .attachment-thumbnail {
+	height: auto; 
+	width: auto; 
+	max-width: 50px; 
+	max-height: 50px;
+	border-radius: 50%;
+}
+
+.display-posts-listing.image-left .title {
+	display: block;
+}
+
+.display-posts-listing.image-left .excerpt-dash { 
+	display: none; 
+}
+
+.display-posts-listing.image-left {
+	margin: 0 0 40px 0;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<!-- Facebook Pixel Code -->
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '834324500844861');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=834324500844861&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+	
+	
+</head>
+<body class="home page-template-default page page-id-1678 unknown alt-style-default one-col width-960 one-col-960 aa-prefix-machi-">
+<div id="wrapper">
+
+	<div id="inner-wrapper">
+
+	<h3 class="nav-toggle icon"><a href="#navigation">Navigation</a></h3>
+
+	<header id="header" class="col-full">
+
+		<div id="logo">
+<a href="https://machinelearningmastery.com/" title="Making developers awesome at machine learning"><img width="480" height="80" src="https://machinelearningmastery.com/wp-content/uploads/2019/09/Header_smaller_text_better-1.png" alt="Machine Learning Mastery" /></a>
+<h1 class="site-title"><a href="https://machinelearningmastery.com/">Machine Learning Mastery</a></h1>
+<span class="site-description">Making developers awesome at machine learning</span>
+</div>
+	    <div class="header-widget">
+	        <div id="search-4" class="widget widget_search"><div class="search_main">
+    <form method="get" class="searchform" action="https://machinelearningmastery.com/" >
+        <input type="text" class="field s" name="s" value="Search..." onfocus="if (!window.__cfRLUnblockHandlers) return false; if (this.value == 'Search...') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '') {this.value = 'Search...';}" data-cf-modified-cd8eb514ba1865aa7dff7760-="" />
+		<input type="hidden" name="post_type" value="post" />
+        <button type="submit" class="fa fa-search submit" name="submit" value="Search"></button>
+    </form>
+    <div class="fix"></div>
+</div></div>	    </div>
+	
+	</header>
+	<nav id="navigation" class="col-full" role="navigation">
+
+	
+	<section class="menus">
+
+		<a href="https://machinelearningmastery.com" class="nav-home"><span>Home</span></a>
+
+	<h3>Main Menu</h3><ul id="main-nav" class="nav fl"><li id="menu-item-6503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6503"><a href="https://machinelearningmastery.com/start-here/">Get Started</a></li>
+<li id="menu-item-6501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6501"><a href="https://machinelearningmastery.com/blog/">Blog</a></li>
+<li id="menu-item-6506" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6506"><a href="#">Topics</a>
+<ul class="sub-menu">
+	<li id="menu-item-6508" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6508"><a href="https://machinelearningmastery.com/category/deep-learning/">Deep Learning (keras)</a></li>
+	<li id="menu-item-7921" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7921"><a href="https://machinelearningmastery.com/category/deep-learning-for-computer-vision/">Computer Vision</a></li>
+	<li id="menu-item-6509" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6509"><a href="https://machinelearningmastery.com/category/deep-learning-time-series/">Neural Net Time Series</a></li>
+	<li id="menu-item-6515" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6515"><a href="https://machinelearningmastery.com/category/natural-language-processing/">NLP (Text)</a></li>
+	<li id="menu-item-8576" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8576"><a href="https://machinelearningmastery.com/category/generative-adversarial-networks/">GANs</a></li>
+	<li id="menu-item-6511" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6511"><a href="https://machinelearningmastery.com/category/lstm/">LSTMs</a></li>
+	<li id="menu-item-7106" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7106"><a href="https://machinelearningmastery.com/category/better-deep-learning/">Better Deep Learning</a></li>
+	<li id="menu-item-13302" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13302"><a href="https://machinelearningmastery.com/category/calculus/">Calculus</a></li>
+	<li id="menu-item-6512" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6512"><a href="https://machinelearningmastery.com/category/machine-learning-algorithms/">Intro to Algorithms</a></li>
+	<li id="menu-item-6507" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6507"><a href="https://machinelearningmastery.com/category/algorithms-from-scratch/">Code Algorithms</a></li>
+	<li id="menu-item-6520" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6520"><a href="https://machinelearningmastery.com/category/time-series/">Intro to Time Series</a></li>
+	<li id="menu-item-6516" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6516"><a href="https://machinelearningmastery.com/category/python-machine-learning/">Python (scikit-learn)</a></li>
+	<li id="menu-item-11055" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11055"><a href="https://machinelearningmastery.com/category/ensemble-learning/">Ensemble Learning</a></li>
+	<li id="menu-item-9966" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9966"><a href="https://machinelearningmastery.com/category/imbalanced-classification/">Imbalanced Learning</a></li>
+	<li id="menu-item-10674" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10674"><a href="https://machinelearningmastery.com/category/data-preparation/">Data Preparation</a></li>
+	<li id="menu-item-6517" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6517"><a href="https://machinelearningmastery.com/category/r-machine-learning/">R (caret)</a></li>
+	<li id="menu-item-6522" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6522"><a href="https://machinelearningmastery.com/category/weka-machine-learning/">Weka (no code)</a></li>
+	<li id="menu-item-6510" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6510"><a href="https://machinelearningmastery.com/category/linear-algebra/">Linear Algebra</a></li>
+	<li id="menu-item-6519" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6519"><a href="https://machinelearningmastery.com/category/statistical-methods/">Statistics</a></li>
+	<li id="menu-item-12825" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12825"><a href="https://machinelearningmastery.com/category/optimization/">Optimization</a></li>
+	<li id="menu-item-8989" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8989"><a href="https://machinelearningmastery.com/category/probability/">Probability</a></li>
+	<li id="menu-item-6523" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6523"><a href="https://machinelearningmastery.com/category/xgboost/">XGBoost</a></li>
+</ul>
+</li>
+<li id="menu-item-6502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6502"><a href="https://machinelearningmastery.com/products/">EBooks</a></li>
+<li id="menu-item-6500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6500"><a href="https://machinelearningmastery.com/faq/">FAQ</a></li>
+<li id="menu-item-6504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6504"><a href="https://machinelearningmastery.com/about/">About</a></li>
+<li id="menu-item-6505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6505"><a href="https://machinelearningmastery.com/contact/">Contact</a></li>
+</ul>	<div class="side-nav">
+		</div><!-- /#side-nav -->
+
+	</section><!-- /.menus -->
+
+	<a href="#top" class="nav-close"><span>Return to Content</span></a>
+
+</nav>
+       
+    <!-- #content Starts -->
+	    <div id="content" class="col-full">
+    
+    	<div id="main-sidebar-container">    
+
+            <!-- #main Starts -->
+                        <section id="main">                     
+<article class="post-1678 page type-page status-publish has-post-thumbnail hentry">
+	<header>
+		<h2 class="title entry-title">Machine Learning Mastery</h2>	</header>
+
+	<section class="entry">
+	    <div class="threecol-two">
+<div style="background: #eef3f7; padding: 5px;">
+<h2>The Deck is Stacked Against Developers</h2>
+<p><strong>Machine learning is taught by academics, for academics</strong>.<br />
+That&#8217;s why most material is so <em>dry</em> and <em>math-heavy</em>.</p>
+<p><strong>Developers need to know what works and how to use it</strong>.<br />
+We need <em>less math</em> and <em>more</em> <em>tutorials with working code</em>.</p>
+</div>
+</div> <div class="threecol-one last">
+<img class="aligncenter wp-image-3086" src="/wp-content/uploads/2016/09/icon-300x300.png" alt="Machine Learning Mastery" width="150" height="150" srcset="https://machinelearningmastery.com/wp-content/uploads/2016/09/icon-300x300.png 300w, https://machinelearningmastery.com/wp-content/uploads/2016/09/icon-150x150.png 150w, https://machinelearningmastery.com/wp-content/uploads/2016/09/icon.png 512w" sizes="(max-width: 150px) 100vw, 150px" /><br />
+</div><div class="clear"></div></p>
+<p><div class="threecol-one">
+<img loading="lazy" class="aligncenter wp-image-359" src="/wp-content/uploads/2013/11/jason_brownlee-221x300.jpg" alt="Jason Brownlee" width="192" height="260" srcset="https://machinelearningmastery.com/wp-content/uploads/2013/11/jason_brownlee-221x300.jpg 221w, https://machinelearningmastery.com/wp-content/uploads/2013/11/jason_brownlee-757x1024.jpg 757w, https://machinelearningmastery.com/wp-content/uploads/2013/11/jason_brownlee.jpg 1893w" sizes="(max-width: 192px) 100vw, 192px" /></p>
+</div> <div class="threecol-two last">
+<h1 style="text-align: center;">Welcome to Machine Learning Mastery!</h1>
+<p style="text-align: center;">Hi, I&#8217;m Jason Brownlee PhD and I help developers like you skip years ahead.</p>
+<p style="text-align: center;"><strong>Discover how to get <em>better results</em>, <em>faster</em>.</strong></p>
+<p style="text-align: center;">Click the button below to get my free EBook and accelerate your next project<br />
+(<em>and access to my exclusive email course</em>).</p>
+<p style="text-align: center;"><script type="rocketlazyloadscript" src="https://embed.lpcontent.net/leadboxes/current/embed.js" async defer></script> <button data-leadbox-popup="8tZA6Dec6yd4iHZD6P7KXb" data-leadbox-domain="machinelearningmastery.lpages.co" style="background: rgb(255, 215, 18);border-color: rgb(255, 215, 18);border-radius: 20px;color: #FFFFFF;display: inline-block;vertical-align: middle;padding: 16px 32px;min-width: 192px;border: 1px solid rgb(255, 215, 18);font-size: 1rem;font-family: Helvetica, Arial, sans-serif;text-align: center;outline: 0;line-height: 1;cursor: pointer;-webkit-transition: background 0.3s, color 0.3s, border 0.3s;transition: background 0.3s, color 0.3s, border 0.3s;  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);"><b>Send Me the Free eBook!</b></button></p>
+<p style="text-align: center;">
+<strong>Join over 150,000 practitioners who already have a head start.</strong></p>
+</div><div class="clear"></div></p>
+<div class="widget widget_woothemes_testimonials">
+<div class="testimonials component columns-2 effect-fade">
+<div class="testimonials-list">
+<div id="quote-3210" class="quote first" itemprop="review" itemscope itemtype="http://schema.org/Review"><blockquote class="testimonials-text" itemprop="reviewBody"><img width="100" height="100" src="https://machinelearningmastery.com/wp-content/uploads/2016/09/David-150x150.jpg" class="avatar wp-post-image" alt="" loading="lazy" srcset="https://machinelearningmastery.com/wp-content/uploads/2016/09/David-150x150.jpg 150w, https://machinelearningmastery.com/wp-content/uploads/2016/09/David.jpg 221w" sizes="(max-width: 100px) 100vw, 100px" /> <p>Your work has been VERY helpful for me as an aspiring Data Scientist!</p>
+</blockquote><cite class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">David Dalisay</span> <span class="title" itemprop="jobTitle">Junior Data Scientist</span><!--/.title-->
+</cite><!--/.author-->
+</div><div id="quote-3214" class="quote last" itemprop="review" itemscope itemtype="http://schema.org/Review"><blockquote class="testimonials-text" itemprop="reviewBody"><img width="100" height="100" src="https://machinelearningmastery.com/wp-content/uploads/2016/09/Kevin-150x150.jpg" class="avatar wp-post-image" alt="" loading="lazy" srcset="https://machinelearningmastery.com/wp-content/uploads/2016/09/Kevin-150x150.jpg 150w, https://machinelearningmastery.com/wp-content/uploads/2016/09/Kevin-300x300.jpg 300w, https://machinelearningmastery.com/wp-content/uploads/2016/09/Kevin.jpg 337w" sizes="(max-width: 100px) 100vw, 100px" /> <p>I love your site by the way. It&#8217;s one of the few ML sources I&#8217;ve come across that explains things clearly rather than writing everything as if it were an academic paper.</p>
+</blockquote><cite class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kevin Beaulieu</span> <span class="title" itemprop="jobTitle">Software Engineer</span><!--/.title-->
+</cite><!--/.author-->
+</div><div class="fix"></div>
+</div><!--/.testimonials-list-->
+<div class="fix"></div>
+</div><!--/.testimonials-->
+</div>
+
+<div class="threecol-one">
+<div style="background: #eef3f7; padding: 2px;">
+<h3 style="text-align: center;">Quick-Start Guides</h3>
+<p>Discover the shortest path to a result.</p>
+<p>Top guides include:</p>
+<ul>
+<li><a href="/start-here/#getstarted">How to get started</a></li>
+<li><a href="/start-here/#algorithms">Understand algorithms</a></li>
+<li><a href="/start-here/#timeseries">Time series forecasting</a></li>
+</ul>
+<p style="text-align: center;"><a href="/start-here"><strong>&gt;&gt;Guides</strong></a></p>
+</div>
+</div> <div class="threecol-one">
+<div style="background: #eef3f7; padding: 2px;">
+<h3 style="text-align: center;">Latest Tutorials</h3>
+<p>Save weeks of searching and debugging.</p>
+<p>Top tutorials include:</p>
+<ul>
+<li><a href="/setup-python-environment-machine-learning-deep-learning-anaconda/">How to install everything</a></li>
+<li><a href="/machine-learning-in-python-step-by-step/">Your first complete project</a></li>
+<li><a href="/tutorial-first-neural-network-python-keras/">Your first neural network</a></li>
+</ul>
+<p style="text-align: center;"><a href="/blog"><strong>&gt;&gt;Blog</strong></a></p>
+</div>
+</div> <div class="threecol-one last">
+<div style="background: #eef3f7; padding: 2px;">
+<h3 style="text-align: center;">EBook Catalog</h3>
+<p>Get years of experience in a PDF.</p>
+<p>Top sellers include:</p>
+<ul>
+<li><a href="/master-machine-learning-algorithms/">Master Machine Learning Algorithms</a></li>
+<li><a href="/machine-learning-with-python/">Machine Learning With Python</a></li>
+<li><a href="/deep-learning-with-python/">Deep Learning With Python</a></li>
+</ul>
+<p style="text-align: center;"><strong><a href="/products">&gt;&gt;EBooks</a></strong></p>
+</div>
+</div><div class="clear"></div></p>
+	</section><!-- /.entry -->
+	<div class="fix"></div>
+</article><!-- /.post -->
+     
+            </section><!-- /#main -->
+                
+            
+		</div><!-- /#main-sidebar-container -->         
+
+		
+    </div><!-- /#content -->
+	
+	<footer id="footer" class="col-full">
+
+		
+		<div id="copyright" class="col-left">
+			<p>© 2022 Machine Learning Mastery. All Rights Reserved.<br />
+<a href="https://www.linkedin.com/company/machine-learning-mastery/">LinkedIn</a> |
+<a href="https://twitter.com/TeachTheMachine">Twitter</a> |
+<a href="https://www.facebook.com/MachineLearningMastery/">Facebook</a> |
+<a href="/newsletter/">Newsletter</a> |
+<a href="/rss-feed/">RSS</a></p>		</div>
+
+		<div id="credit" class="col-right">
+			<p><a href="/privacy/">Privacy</a> | 
+<a href="/disclaimer/">Disclaimer</a> | 
+<a href="/terms-of-service/">Terms</a> | 
+<a href="/contact/">Contact</a> |
+<a href="/sitemap.xml">Sitemap</a> |
+<a href="/site-search/">Search</a></p>		</div>
+
+	</footer>
+
+	
+	</div><!-- /#inner-wrapper -->
+
+</div><!-- /#wrapper -->
+
+<div class="fix"></div><!--/.fix-->
+
+<script type="rocketlazyloadscript">window.advanced_ads_check_adblocker=function(t){var n=[],e=null;function i(t){(window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(t){return setTimeout(t,16)}).call(window,t)}return i((function(){var t=document.createElement("div");t.innerHTML="&nbsp;",t.setAttribute("class","ad_unit ad-unit text-ad text_ad pub_300x250"),t.setAttribute("style","width: 1px !important; height: 1px !important; position: absolute !important; left: 0px !important; top: 0px !important; overflow: hidden !important;"),document.body.appendChild(t),i((function(){var i=window.getComputedStyle&&window.getComputedStyle(t),o=i&&i.getPropertyValue("-moz-binding");e=i&&"none"===i.getPropertyValue("display")||"string"==typeof o&&-1!==o.indexOf("about:");for(var a=0,r=n.length;a<r;a++)n[a](e);n=[]}))})),function(t){null!==e?t(e):n.push(t)}}();</script><!-- Drip -->
+<script type="rocketlazyloadscript" data-cfasync="false" data-rocket-type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '9556588';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/9556588.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<!-- end Drip --><script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/cache/min/1/npm/mathjax@3/es5/tex-chtml.js?ver=1650400278' id='mathjax-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/register\/machine-learning-university\/|\/courses\/\/lessons\/holding-back-goals\/|\/courses\/course-get-started\/|\/courses\/course-get-started\/lessons\/holding-back-goals\/|\/courses\/course-get-started\/lessons\/why-machine-learning-does-not-have-to-be-so-hard\/|\/courses\/course-get-started\/lessons\/how-to-think-about-machine-learning\/|\/courses\/course-get-started\/lessons\/find-your-machine-learning-tribe\/|\/courses\/step-by-step-process\/|\/courses\/probability-for-machine-learning\/|\/account\/|\/register\/|\/courses\/|\/machine-learning-mastery-university-registration\/|\/register\/|\/newsletter\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/login\/|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/machinelearningmastery.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads-pro/assets/js/advanced-ads-pro.min.js?ver=2.16.0' id='advanced-ads-pro/front-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='q2w3_fixed_widget-js-extra'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"primary","use_sticky_position":false,"margin_top":10,"margin_bottom":0,"stop_elements_selectors":"","screen_max_width":400,"screen_max_height":0,"widgets":["#custom_html-89","#custom_html-50","#custom_html-90","#custom_html-100","#custom_html-91","#custom_html-58","#custom_html-60","#custom_html-59","#custom_html-84","#custom_html-51","#custom_html-56","#custom_html-55","#custom_html-57","#custom_html-53","#custom_html-54","#custom_html-52","#custom_html-48","#custom_html-49","#custom_html-80","#custom_html-47","#custom_html-85","#custom_html-30","#custom_html-29","#custom_html-28","#custom_html-27","#custom_html-3","#custom_html-24","#custom_html-23","#custom_html-22","#custom_html-21","#custom_html-101","#custom_html-20","#custom_html-19","#custom_html-18","#custom_html-17","#custom_html-16","#custom_html-15","#custom_html-14","#custom_html-13","#custom_html-11","#custom_html-10","#custom_html-5","#custom_html-9","#custom_html-61","#custom_html-81","#custom_html-86","#custom_html-92","#custom_html-97"]}];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://machinelearningmastery.com/wp-content/plugins/q2w3-fixed-widget/js/frontend.min.js?ver=6.0.4' id='q2w3_fixed_widget-js' defer></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='advanced-ads-pro/cache_busting-js-extra'>
+/* <![CDATA[ */
+var advanced_ads_pro_ajax_object = {"ajax_url":"https:\/\/machinelearningmastery.com\/wp-admin\/admin-ajax.php","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"36000"};
+/* ]]> */
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads-pro/assets/js/base.min.js?ver=2.16.0' id='advanced-ads-pro/cache_busting-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='advadsTrackingScript-js-extra'>
+/* <![CDATA[ */
+var advadsTracking = {"impressionActionName":"aatrack-records","clickActionName":"aatrack-click","targetClass":"machi-target","blogId":"1"};
+/* ]]> */
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads-tracking/public/assets/js/dist/tracking.min.js?ver=2.3.0' id='advadsTrackingScript-js'></script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" id='advadsTrackingGAFront-js-extra'>
+/* <![CDATA[ */
+var advadsGALocale = {"Impressions":"Impressions","Clicks":"Clicks"};
+/* ]]> */
+</script>
+<script type="cd8eb514ba1865aa7dff7760-text/javascript" src='https://machinelearningmastery.com/wp-content/plugins/advanced-ads-tracking/public/assets/js/dist/ga-tracking.min.js?ver=2.3.0' id='advadsTrackingGAFront-js'></script>
+<!--noptimize--><script type="rocketlazyloadscript">window.advads_admin_bar_items = [];</script><!--/noptimize--><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>function initTwitCount(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://static1.twitcount.com/js/twitcount.js';fjs.parentNode.insertBefore(js,fjs)}}
+        var ssb_twit_count_init=!1;addEventListener('mouseover',function(event){if(!ssb_twit_count_init){initTwitCount(document,'script','twitcount_plugins')
+        ssb_twit_count_init=!0}})</script><!--noptimize--><script type="cd8eb514ba1865aa7dff7760-text/javascript">!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><!--/noptimize--><script id="machi-tracking" type="cd8eb514ba1865aa7dff7760-text/javascript">var advads_tracking_ads = {};var advads_tracking_urls = {"1":"https:\/\/machinelearningmastery.com\/wp-admin\/admin-ajax.php"};var advads_tracking_methods = {"1":"ga"};var advads_tracking_parallel = {"1":false};var advads_tracking_linkbases = {"1":"https:\/\/machinelearningmastery.com\/linkout\/"};var advads_gatracking_uids = {"1":"UA-44039733-3"};var advads_gatracking_allads = {};var advads_gatracking_anonym = false;var advads_gatracking_transmitpageqs = {};</script><script type="cd8eb514ba1865aa7dff7760-text/javascript">window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://machinelearningmastery.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js" type="cd8eb514ba1865aa7dff7760-text/javascript"></script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cd8eb514ba1865aa7dff7760-|49" defer=""></script></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

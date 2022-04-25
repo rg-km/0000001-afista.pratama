@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="/style/css/font-awesome.min.css" rel="stylesheet"  type="text/css">
+<link rel="stylesheet" href="/style/css/bootstrap.min.css"  type="text/css">
+<link rel="stylesheet" href="/style/css/common.css?21"  type="text/css">
+
+<link rel="shortcut icon" href="/style/img/b-16.ico" type="image/x-icon" />
+
+
+<title>BlackToon 블랙툰 - 무료웹툰 웹툰미리보기</title>
+<meta name="keywords" content="블랙툰,Blacktoon,웹툰,무료웹툰,웹툰 미리보기,네이버웹툰,다음웹툰,카카오웹툰,레진웹툰">
+<meta name="description" content="가장 많은 무료웹툰을 보유하고 있으며 빠른 업데이트와 편의성으로 네이버웹툰,다음웹툰,카카오웹툰,레진코믹스  웹툰 서비스 제공">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="//js.blackmanaimg.com/style/js/jquery-3.5.1.min.js"></script> 
+<script src="//js.blackmanaimg.com/style/js/popper.min.js" ></script>
+<script src="//js.blackmanaimg.com/style/js/bootstrap.min.js" ></script>
+<script src="//js.blackmanaimg.com/style/js/jsonDB.js" ></script>
+<script src="//js.blackmanaimg.com/style/js/common.js?22" ></script>
+<script>document.write("<script type='text/javascript' src='/data/config.js?v="+Math.random()+"'></s"+"cript>");</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F14Q6XRYP5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F14Q6XRYP5');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175188271-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-175188271-1');
+</script>	
+
+<script>
+//init platform/pday...
+var platforms={}, tags={}, pdays={};
+platforms["1"]	= '네이버';	
+platforms["2"]	= '다음';	
+platforms["3"]	= '카카오';	
+platforms["4"]	= '레진';	
+platforms["5"]	= '투믹스';	
+platforms["6"]	= '탑툰';	
+platforms["7"]	= '코미카';	
+platforms["8"]	= '배틀코믹';	
+platforms["9"]	= '코믹GT';	
+platforms["10"]	= '케이툰';	
+platforms["11"]	= '애니툰';	
+platforms["12"]	= '폭스툰';	
+platforms["13"]	= '피너툰';	
+platforms["14"]	= '봄툰';	
+platforms["15"]	= '코미코';	
+platforms["16"]	= '무툰';	
+platforms["17"]	= '지존신마';	
+platforms["99"]	= '기타';	
+platforms["1"] = '<img src="/style/img/naver.png"  class="rounded" style="">';	
+platforms["2"] = '<img src="/style/img/daum.png"  class="rounded" style="">';	
+platforms["3"] = '<img src="/style/img/kakao.png"  class="rounded" style="">';	
+platforms["4"] = '<img src="/style/img/rejin.png"  class="rounded" style="">';	
+platforms["5"] = '<img src="/style/img/tomics.png"  class="rounded" style="">';	
+platforms["6"] = '<img src="/style/img/toptoon.png"  class="rounded" style="">';	
+platforms["7"] = '<img src="/style/img/comica.png"  class="rounded" style="">';	
+platforms["8"] = '<img src="/style/img/battlecomics.png"  class="rounded" style="">';	
+platforms["9"] = '<img src="/style/img/comicgt.png"  class="rounded" style="">';	
+platforms["10"] = '<img src="/style/img/ktoon.png"  class="rounded" style="">';	
+platforms["11"] = '<img src="/style/img/anitoon.png"  class="rounded" style="">';	
+platforms["12"] = '<img src="/style/img/foxtoon.png"  class="rounded" style="">';	
+platforms["13"] = '<img src="/style/img/peanutoon.png"  class="rounded" style="">';	
+platforms["14"] = '<img src="/style/img/bom.png"  class="rounded" style="">';	
+platforms["15"] = '<img src="/style/img/comico.png"  class="rounded" style="">';	
+platforms["16"] = '<img src="/style/img/mootoon.png"  class="rounded" style="">';	
+platforms["17"] = '<img src="/style/img/etc.png"  class="rounded" style="">';	
+platforms["100"] = '<img src="/style/img/etc.png"  class="rounded" style="">';	
+platforms["99"] = '<img src="/style/img/etc.png"  class="rounded" style="">';	
+platforms["0"] = '<img src="/style/img/etc.png"  class="rounded" style="">';	
+//platforms["0"] = '기타';	
+
+tags["1"]	= '학원';	
+tags["2"]	= '액션';	
+tags["3"]	= 'SF';	
+tags["4"]	= '스토리';	
+tags["5"]	= '판타지';	
+tags["6"]	= 'BL/백합';	
+tags["7"]	= '개그/코미디';	
+tags["8"]	= '연애/순정';	
+tags["9"]	= '드라마';	
+tags["10"]	= '로맨스';	
+tags["11"]	= '시대극';	
+tags["12"]	= '스포츠';	
+tags["13"]	= '일상';	
+tags["14"]	= '추리/미스터리';	
+tags["15"]	= '공포/스릴러';	
+tags["16"]	= '성인';	
+tags["17"]	= '옴니버스';	
+tags["18"]	= '에피소드';	
+tags["19"]	= '무협';	
+tags["20"]	= '소년';	
+tags["99"]	= '기타';	
+	
+
+pdays["1"]	= '월';	
+pdays["2"]	= '화';	
+pdays["3"]	= '수';	
+pdays["4"]	= '목';	
+pdays["5"]	= '금';	
+pdays["6"]	= '토';	
+pdays["7"]	= '일';	
+pdays["10"]	= '10';	
+pdays["10"] = "열흘";
+</script>		
+	
+<script type="text/javascript">
+$(function(){
+	$('.search_btn').click(function(){
+			search();
+	});
+	
+
+	$('.search_input').keyup(function(event){
+		if(event.keyCode==13){
+			search();
+		}
+	})
+})
+	
+</script>
+</head>
+<body>
+<iframe src="//blacktoon66.com/cookie.html?2020" id="cookie_iframe" width="800" height="0" frameborder="0" style="display: none!important; height: 0px;" ></iframe>
+<script src="//js.blackmanaimg.com/style/js/cookie.js?_20201003123" ></script>
+
+<header class="container-full bg-black fixed-top" style="position: absolute;">
+<div class="container">
+<div class="row" style="padding:0px;">
+<nav class="navbar navbar-expand-lg navbar-dark  col-12 "> 
+  <a class="navbar-brand" href="/"><!-- <img src="/style/img/black-logo.png" > --><b style="color:#fff;">Black</b>TOON</a>
+
+
+
+ 
+
+
+	
+  <div class="collapse navbar-collapse" id="navbarText" >
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link nav_category nav_category_continue nav_category_end" href="/#continue" onClick="return gomenu('continue')">웹툰</a>
+      </li>
+		
+		<li class="nav-item" style="display: none!important">
+        <a class="nav-link nav_category nav_category_cartoon" href="/#cartoon" onClick="return gomenu('cartoon')">만화</a>
+      </li>
+		
+      <li class="nav-item">
+        <a class="nav-link nav_category nav_category_my"  href="/#my"  onClick="return gomenu('my')"  attr-id="my">북마크</a>
+      </li>
+	  <li class="nav-item">
+        <a  href="/#history" class="nav-link nav_category nav_category_history"  onClick="return gomenu('history')"  attr-id="history">최근본웹툰</a>
+      </li>
+	  <li class="nav-item">
+        <a  href="http://bk-guarantee.com/" class="nav-link nav_category " target="_blank"   >보증토토</a>
+      </li>
+      <li class="nav-item">
+        <a  href="https://sportsapp.link/ad2.html" class="nav-link nav_category " target="_blank"   >인증업체</a>
+      </li>
+      <li class="nav-item">
+        <a  href="https://bluelivetv.com/" class="nav-link nav_category " target="_blank"   >블루티비</a>
+      </li>
+    </ul>
+	<!-- <div class="form-inline my-2 my-lg-0">
+	<div class="input-group" >
+		  <input type="text" class="form-control search_input" id="search_input" placeholder="키워드" aria-label="키워드" aria-describedby="button-addon4" style="max-width:150px;">
+		  <div class="input-group-append" id="button-addon4">
+			<button class="btn btn-outline-secondary search_btn" type="button" ><i class="fa fa-search"></i></button>
+		  </div>
+		</div>
+	</div> -->
+    
+  </div>
+
+   <div class="navbar-toggler" style="padding:0px;margin:0px;border:none;display:block;">
+		<div class="input-group" >
+		  <input type="text" class="form-control search_input" placeholder="제목/작가" aria-label="제목/작가" aria-describedby="button-addon4" style="max-width:90px;background:#161823;border:1px solid #6c757d;color:#fff;font-size:14px;">
+		  <div class="input-group-append" id="button-addon4" style="background:#161823;">
+			<button class="btn btn-outline-secondary search_btn"  type="button" style="font-size:14px"><i class="fa fa-search"></i></button>
+		  </div>
+		</div>
+  </div>
+
+
+
+</nav>
+
+
+
+
+</div>
+</div>
+</header>
+
+<style>
+.mb-nav div.nav_category {float: left;flex: 1 1 auto;width: auto;}
+.mb-nav {text-align:center;color:#a2a5b0;background:#0b0b1c;padding:0;padding-left:15px;padding-right:15px;}
+.mb-nav a {color:#ccc;display:block;width:100%;height:100%;padding-top:7px;padding-bottom:7px;font-size:16px;border-bottom: 1px solid #000;}
+.mb-nav div.active {background:#0b0b1c;}
+.mb-nav div.active a {color:#fff;border-bottom: 1px solid #f83d3d;font-weight: bold;}
+.mb-nav div.cols {float:left;flex: 1 1 auto;text-align:center;}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark  col-12 mb-nav "> 
+	<div class="row">
+		<div class="cols nav_category nav_category_continue nav_category_end active" style="padding-left:0px;padding-right:0px;"><a  href="/#continue" onClick="gomenu('continue')">웹툰</a></div>
+		<div class="cols nav_category nav_category_cartoon" style="display: none!important" ><a  href="/#cartoon" onClick="gomenu('cartoon')">만화</a></div>
+		<div class="cols nav_category nav_category_my" style="padding-left:0px;padding-right:0px;"><a href="/#my"  onClick="gomenu('my')"  attr-id="my">북마크</a></div>
+		<div class="cols nav_category nav_category_history" style="padding-left:0px;padding-right:0px;"><a href="/#history"   onClick="gomenu('history')"  attr-id="history"><i class="fa fa-history"></i></a></div>
+		<div class="cols nav_category " style="padding-left:0px;padding-right:0px;"><a href="http://bk-guarantee.com/"  target="_blank" >보증토토</a></div>
+		<div class="cols nav_category " style="padding-left:0px;padding-right:0px;"><a href="https://sportsapp.link/ad2.html"  target="_blank" >인증업체</a></div>
+		<div class="cols nav_category " style="padding-left:0px;padding-right:0px;"><a href="https://bluelivetv.com/"  target="_blank" >블루티비<span class="badge badge-pill badge-danger" style="font-size: 50%;position: absolute;padding:2px;margin-left:-8px;border-radius: 3px;margin-top:-8px;z-index: 9999;">N</span></a></div>
+
+		<script>
+		function myFunction777() {
+		  alert("준비중입니다");
+		}
+		</script>
+
+	</div>
+</nav>
+
+
+<div class="container banner mt-2">
+	
+	<div class="row" style="">		
+		<div class="alert alert-dark" role="alert" style="font-size:14px;width:100%;background:#161823;color:#fff;border:none;margin-bottom:0px;padding: .5rem .75rem;border-radius:0px;text-align:center;">
+		  <span class="" style="margin-top:5px;">접속주소 공지사항 및 광고문의</span> &nbsp;&nbsp;<a href="https://blacktoon.club" class="btn btn-outline-dark btn-sm " target="_blank" style="font-size:12px;color:#fff;">바로가기</a>
+		</div>
+	</div>
+
+</div>
+
+<!-- <div class="container banner mt-2">
+	
+	<div class="row">
+		
+		<div class="alert alert-dark" role="alert" style="font-size:14px;width:100%;background:#161823;color:#fff;border:none;margin-bottom:0px;">
+		  <span class="float-left" style="margin-top:5px;">블랙넷에서 최신 접속 주소를 확인하세요</span> <a href="https://blacktoon.net" class="btn btn-dark btn-sm float-right" target="_blank" style="font-size:12px;">바로가기</a>
+		</div>
+	</div>
+
+</div> -->
+
+
+<div class="container banner mt-2" style="padding-left:20px;padding-right:20px;">
+	<div class="row">
+ <script>
+   document.write("<script type='text/javascript' src='/poster_js/11.js?v=2020"+new Date().getTime()+"'></s"+"cript>");
+</script>
+		
+
+	</div>
+</div>
+
+
+<script type="text/javascript">
+   //document.write("<script type='text/javascript' src='/data/toon.js?v=_2020"+new Date().getMonth()+new Date().getDay()+new Date().getHours()+new Date().getMinutes()+"'></s"+"cript>");
+   document.write("<script type='text/javascript' src='//js.blackmanaimg.com/data/webtoon_1.js?v=12022042514381620220425173.6"+window.name+"'></s"+"cript>");
+   document.write("<script type='text/javascript' src='//js.blackmanaimg.com/data/webtoon_0.js?v=22022022222335520220425173.6"+window.name+"'></s"+"cript>");
+
+	
+   
+</script>
+<script>document.write("<script type='text/javascript' src='//js.blackmanaimg.com/data/top.js?v="+Math.random()+"'></s"+"cript>");</script>
+
+ 
+<script>
+	var page_cat = '';
+	var page_platform = '';
+	var page_pday = '';
+	var page_tag = '';
+	var page_orderby = 'new';
+	var page_toptime = 'd';
+	var page_toptype = 'comm';
+	
+	function highlight_selected(){
+		$('#toonbook_list').html('<div style="width:100%;margin:0 auto; text-align:center;padding:15px 0;"><img src="/style/img/loading9.gif?33"></div>');
+		if($('.nav_platform_'+page_platform).length==0) page_platform='0';
+		if($('.nav_pday_'+page_pday).length==0) page_pday='0';
+		if($('.nav_tag_'+page_tag).length==0) page_tag='0';
+
+		/*if(page_platform!='0'){
+			$('#filter_platform').html(platforms[page_platform]+',');
+		}else{
+			$('#filter_platform').html('');
+		}
+		if(page_pday!='0'){
+			$('#filter_pday').html(pdays[page_pday]+',');
+		}else{
+			$('#filter_pday').html('');
+		}
+		if(page_tag!='0'){
+			$('#filter_tag').html(tags[page_tag]+'');
+		}else{
+			$('#filter_tag').html('');
+		}*/
+		
+		$('.nav_category').removeClass('active');
+		$('.nav_category_'+page_cat).addClass('active');
+		
+		$('.nav_platform').removeClass('btn-danger').addClass('btn-outline-secondary');
+		$('.nav_platform_'+page_platform).addClass('btn-danger').removeClass('btn-outline-secondary');
+		
+		$('.nav_pday').removeClass('btn-danger').addClass('btn-outline-secondary');
+		$('.nav_pday_'+page_pday).addClass('btn-danger').removeClass('btn-outline-secondary');
+		
+		
+		$('.nav_tag').removeClass('btn-danger').addClass('btn-outline-secondary');
+		$('.nav_tag_'+page_tag).addClass('btn-danger').removeClass('btn-outline-secondary');
+		
+		
+		$('.nav_orderby').removeClass('btn-danger').addClass('btn-outline-secondary');
+		$('.nav_orderby_'+page_orderby).addClass('btn-danger').removeClass('btn-outline-secondary');
+		
+		$('.nav_toptype').removeClass('btn-danger').addClass('btn-outline-secondary');
+		$('.nav_toptype_'+page_toptype).addClass('btn-danger').removeClass('btn-outline-secondary');
+		
+		$('.nav_toptime').removeClass('active');
+		$('.nav_toptime_'+page_toptime).addClass('active');
+		
+		
+	}
+	
+	function select_category(s){
+		if(s!='continue' && s!='end' && s!='my' && s!='history'   && s!='top') return;
+		if(s==page_cat) return;
+		page_cat = s;
+		page_platform = '0';
+		page_tag = '0';
+		
+		if(s=='continue'){
+			//page_pday=new Date().getDay();
+			page_pday='0';
+		}else{
+			page_pday = '0';
+		}		
+		
+		$('.search_result_div').hide();
+		if(s=='end'){
+			$('.f_pday').hide();
+			$('.f_platform').show();
+			$('.f_category').show();
+			$('.f_tag').show();
+			$('.f_filter').show();
+			$('.f_top').hide();//top
+			$('#toonbook_list').removeClass('showdelbtn').addClass('hidedelbtn');
+			$('.delete_all').parent().parent().hide();
+
+		}else if(s=='my'){
+			$('.f_pday').hide();
+			$('.f_platform').hide();
+			$('.f_category').hide();
+			$('.f_tag').hide();
+			$('.f_filter').hide();
+			$('.f_top').hide();//top
+ 			$('#toonbook_list').addClass('showdelbtn').removeClass('hidedelbtn');
+			$('.delete_all').html('북마크 비우기').parent().parent().show();
+			$('.delete_all_name').html('북마크');
+
+		}else if(s=='history'){
+			$('.f_pday').hide();
+			$('.f_platform').hide();
+			$('.f_category').hide();
+			$('.f_tag').hide();
+			$('.f_filter').hide();
+			$('.f_top').hide();//top
+			$('#toonbook_list').addClass('showdelbtn').removeClass('hidedelbtn');
+			$('.delete_all').html('히스토리 비우기').parent().parent().show();
+			$('.delete_all_name').html('히스토리');
+
+		}else if(s=='top'){
+			$('.f_pday').hide();
+			$('.f_platform').hide();
+			$('.f_category').show();
+			$('.f_tag').hide();
+			$('.f_filter').hide();
+			$('.f_top').show();//top
+			$('#toonbook_list').removeClass('showdelbtn').addClass('hidedelbtn');
+			$('.delete_all').parent().parent().hide();
+
+		}else{//s=='continue'
+			$('.f_pday').show();
+			$('.f_platform').show();
+			$('.f_category').show();
+			$('.f_tag').show();
+			$('.f_filter').show();
+			$('.f_top').hide();//top
+			$('#toonbook_list').removeClass('showdelbtn').addClass('hidedelbtn');
+			$('.delete_all').parent().parent().hide();
+
+		}
+		
+		highlight_selected();
+		
+		
+		where = {cat:s+'',pday:page_pday};
+		setTimeout(function(){	showlist(where);},0);
+
+		
+		
+	}
+	
+	function select_platform(s){
+		if(s==page_platform) return;
+		page_platform = s;
+		highlight_selected();
+		
+		where = {cat:page_cat, platform:page_platform, pday:page_pday, tag: page_tag};
+		setTimeout(function(){showlist(where,page_orderby);},0);
+	}
+	
+	function select_pday(s){
+		if(s==page_pday) return;
+		page_pday = s;
+		highlight_selected();
+		
+		where = {cat:page_cat, platform:page_platform, pday:page_pday, tag: page_tag};
+		setTimeout(function(){showlist(where,page_orderby);},0);
+	}
+	
+	function select_tag(s){
+		if(s==page_tag) return;
+		page_tag = s;
+		highlight_selected();
+		
+		where = {cat:page_cat, platform:page_platform, pday:page_pday, tag: page_tag};
+		setTimeout(function(){showlist(where,page_orderby);},0);
+	}
+	
+	function select_orderby(s){
+		if(s==page_orderby) return;
+		if(s=='hot'){
+			page_orderby = s;
+		}else{
+			page_orderby = 'new';
+		}
+		highlight_selected();
+		
+		where = {cat:page_cat, platform:page_platform, pday:page_pday, tag: page_tag};
+		setTimeout(function(){showlist(where,page_orderby);},0);
+	}
+	
+	function select_toptype(s){
+		page_cat = 'top';
+		if(s==page_toptype) return;
+		page_toptype = s;
+		highlight_selected();
+		
+		where = {cat:page_cat};
+		setTimeout(function(){showlist(where);},0);
+	}
+	
+	function select_toptime(s){
+		page_cat = 'top';
+		if(s==page_toptime) return;
+		page_toptime = s;
+		highlight_selected();
+		
+		where = {cat:page_cat};
+		setTimeout(function(){showlist(where);},0);
+
+	}
+	
+	function search(){
+		var keyword = $('.search_input').val().trim().replace(new RegExp(/( )/g),"").toUpperCase();
+		if(keyword=='Search' || keyword=='검색' || keyword=='웹툰 제목' ) return;
+		
+		if(!keyword){
+			select_category('continue');
+			return;
+		}
+		
+		page_platform = '0';
+		page_pday = '0';
+		page_tag = '0';
+		//if(page_cat=='my' || page_cat=='history'){
+			page_cat = 'search';	
+		//}
+		
+		$('.f_pday').hide();
+		$('.f_platform').hide();
+		$('.f_category').hide();
+		$('.f_tag').hide();
+		$('.f_filter').hide();
+		$('.delete_all').parent().parent().hide();
+		$('#toonbook_list').removeClass('showdelbtn').addClass('hidedelbtn');
+		$('#search_keyword').text(keyword);
+		$('.search_result_div').show();
+		highlight_selected();
+		
+		where = {cat:page_cat, platform:page_platform, pday:page_pday, tag: page_tag};
+		
+		if(keyword.length>0) where['keyword'] = keyword;
+		
+		setTimeout(function(){showlist(where,page_orderby);},0);
+		scrollPosition('.search_result_div',-10);
+	}
+	
+	
+	
+	
+	function delete_1(s){
+		
+		if(page_cat == 'my'){
+			var cookie_bookmark = getcookie('bookmark');
+			if(!cookie_bookmark){
+				bookmark = new Array();
+			}else{
+				bookmark = cookie_bookmark.split(',');
+			}
+
+			var in_bookmark = bookmark.indexOf(s+'');
+			if(in_bookmark==-1){
+			}else{
+				bookmark.splice(in_bookmark,1);	
+			}
+
+			setcookie('bookmark',bookmark,999);
+			
+		}else if(page_cat == 'history'){
+			
+			var cookie_myhistory = getcookie('myhistory');
+			if(!cookie_myhistory){
+				myhistory = new Array();
+			}else{
+				myhistory = cookie_myhistory.split(',');
+			}
+			
+			var in_myhistory = myhistory.indexOf(s+'');
+			if(in_myhistory==-1){
+
+			}else{
+				myhistory.splice(in_myhistory,1);	
+			}
+			setcookie('myhistory',myhistory,999);
+		}
+		$('#toon_'+s).remove();
+	}
+	
+	function delete_all(){
+		 
+		if(page_cat == 'my'){
+			bookmark = new Array();
+			setcookie('bookmark',bookmark,999);
+		}else if(page_cat == 'history'){
+			myhistory = new Array();
+			setcookie('myhistory',myhistory,999);
+		}
+		$('#toonbook_list').html('');
+	}
+	
+ 
+
+</script>
+	
+<script>
+	
+	var $data0;
+	var $data1;
+	//var $result;
+	
+	$(function(){
+		
+		//INIT DATA and SHOW
+		$data0 = eval(data0);
+		//$data1 = eval(data1);
+		if(typeof(data1)!="undefined"){
+			$data1 = eval(data1);
+			window.name = "";
+		}else{
+			var reload_time = window.name.split('__')[0];
+			if(!reload_time)  reload_time = 0;
+			if(reload_time<=3){
+				window.name = (reload_time*1+1)+'__'+Date.parse(new Date());
+				window.location.reload();
+			}
+
+		}
+		
+		
+		jsonDB($data0,'toons0').init('DB');
+		jsonDB($data1,'toons1').init('DB');
+		
+		scroll_listener()
+		//URL
+		var action = window.location.hash.split('#')[1]||'none';
+		if(action=='continue' ||  action=='end' || action=='my' || action=='history'){
+			select_category(action);
+		}else if(action.substr(0,7) == 'search?'){
+			var q = decodeURI(action.split('?')[1].trim());
+			if(q.length>0){
+				$('.search_input').val(q)
+				page_cat = "search";
+				search();
+			}
+		}else{
+			
+			select_category('continue');
+			//console.log(action);
+		}
+		
+		
+		//where = {cat:"continue"};
+		//showlist(where);
+		
+		
+		highlight_selected();
+		
+		//SELECT
+		$('.nav_p_category > li > a').click(function(){
+			select_category($(this).attr('attr-id'));
+		});
+		
+		$('.nav_p_platform > button').click(function(){
+			select_platform($(this).attr('attr-id'));
+		});
+		
+		$('.nav_p_pday > button').click(function(){
+			select_pday($(this).attr('attr-id'));
+		});
+		
+		$('.nav_p_tag > a').click(function(){
+			select_tag($(this).attr('attr-id'));
+		});
+			
+		$('.nav_p_orderby > button').click(function(){
+			select_orderby($(this).attr('attr-id'));
+		});
+		
+		$('.nav_p_toptype > button').click(function(){
+			select_toptype($(this).attr('attr-id'));
+		});
+		
+		$('.nav_p_toptime > div').click(function(){
+			select_toptime($(this).attr('attr-id'));
+		});
+		
+
+		
+		$('.delete_all').click(function(){
+			delete_all();	
+		});
+
+	})
+	
+	var scroll_flag = true;
+	function scroll_listener(){
+		
+		$(window).scroll(function () {
+				var scrollTop = $(this).scrollTop();
+				var scrollHeight = $(document).height();
+				var windowHeight = $(this).height();
+				if (scrollTop + windowHeight >= scrollHeight-450) {
+					if(scroll_flag){	
+						scroll_flag = false;
+						showmore();
+					}
+		　　}
+		});
+	
+	}
+	
+	function showmore(){
+		scroll_flag = true;	
+		$('#toonbook_list').find('.hide').each(function(index, element) {
+			if(index>35) return;		
+            $(this).removeClass('hide');
+        });
+		
+	}
+	
+	function showlist(where,orderby='new'){
+
+		$('#toonbook_list').html('<div style="width:100%;margin:0 auto; text-align:center;padding:15px 0;"><img src="/style/img/loading9.gif?33"></div>');
+				
+		var lists = new Array() ;
+		var sql = ''; 
+		setTimeout(function(){	
+			//console.time('aa');
+			if(where['cat']=='my'){
+				var bookmark = getcookie('bookmark');
+				sql = "select * from toons1 where (  ',"+bookmark+",'.indexOf(','.concat(x,','))>-1 )";
+				var lists1 =DB.query(sql);
+				 
+				sql = "select * from toons0 where (  ',"+bookmark+",'.indexOf(','.concat(x,','))>-1 )";
+				var lists0 =DB.query(sql);
+
+				
+				var listi=0;
+				for (var k in lists1) {
+					lists[listi++] = lists1[k];
+					//lists.push(lists1[k]);
+				}
+				for (var k in lists0) {
+					lists[listi++] = lists0[k];
+					//lists.push(lists0[k]);
+				}
+
+				lists.sort(function(a,b){ return bookmark.indexOf(b["x"])-bookmark.indexOf(a["x"]); } )
+								
+				//console.log(bookmark);
+
+				
+			}else if(where['cat']=='history'){
+				var myhistory = getcookie('myhistory');
+				sql = "select * from toons1 where (  ',"+myhistory+",'.indexOf(','.concat(x,','))>-1 )";
+				var lists1 =DB.query(sql);
+				 
+				sql = "select * from toons0 where (  ',"+myhistory+",'.indexOf(','.concat(x,','))>-1 )";
+				var lists0 =DB.query(sql);
+				
+			
+				var listi=0;
+				for (var k in lists1) {
+					lists[listi++] = lists1[k];
+					//lists.push(lists1[k]);
+				}
+				for (var k in lists0) {
+					lists[listi++] = lists0[k];
+					//lists.push(lists0[k]);
+				}
+
+				lists.sort(function(a,b){ return myhistory.indexOf(b["x"])-myhistory.indexOf(a["x"]); } )
+				//console.log(Object.keys(lists).sort());				
+				//console.log(bookmark);
+
+				
+			}else if(where['cat']=='continue_all'){
+				lists = DB.findAll('toons1');
+			}else if(where['cat']=='end_all'){
+				lists = DB.findAll('toons0');
+			}else if(where['cat']=='top'){
+				//tag= comm,19,bl
+				//time = w,m,d,h
+				var ids = tophits[page_toptime+'_'+page_toptype];		
+				if(!ids) return;
+				var hitnum = 'h';
+				if(page_toptime!='m') hitnum += page_toptime;
+
+				sql = "select * from toons1 where (  '"+ids+"'.indexOf(','.concat(x,','))>-1 ) order by "+hitnum+" descnum limit 0,100";
+				lists =DB.query(sql);
+
+			}else if(where['keyword']){//search
+				sql = "select * from toons1 where (  t.replace(new RegExp(/( )/g),'').toUpperCase().indexOf('"+where['keyword']+"')>=0 OR au.replace(new RegExp(/( )/g),'').toUpperCase().indexOf('"+where['keyword']+"')>=0 )";
+				var lists1 =DB.query(sql);
+				 
+				sql = "select * from toons0 where (  t.replace(new RegExp(/( )/g),'').toUpperCase().indexOf('"+where['keyword']+"')>=0 OR au.replace(new RegExp(/( )/g),'').toUpperCase().indexOf('"+where['keyword']+"')>=0)";
+				var lists0 =DB.query(sql);
+				var listi=0;
+				for (var k in lists1) {
+					lists[listi++] = lists1[k];
+					//lists.push(lists1[k]);
+				}
+				for (var k in lists0) {
+					lists[listi++] = lists0[k];
+					//lists.push(lists0[k]);
+				}
+			}else{
+				
+				if(where['cat']=='continue'){
+					sql = "select * from toons1 where (1=1";
+					
+					if(where['pday'] && where['pday']!='0'){
+						sql += " AND pd='"+where['pday']+"' ";
+					}else{
+						if(!where['keyword'])
+							sql += " AND up='1' ";
+					}
+				}else if(where['cat']=='end'){
+					sql = "select * from toons0 where (1=1";
+				}
+				if(where['platform'] && where['platform']!='0'){
+					sql += " AND c='"+where['platform']+"' ";
+				}
+ 
+				if(where['tag'] && where['tag']!='0'){
+					sql += " AND tag.indexOf(',"+where['tag']+",')>=0 ";
+				}
+				if(where['keyword']){
+					sql += " AND t.replace(new RegExp(/( )/g),'').indexOf('"+where['keyword']+"')>=0 ";
+				}
+				if(where['author']){
+					sql += " AND au.indexOf('"+where['author']+"')>=0 ";
+				}
+				sql += ") ";
+				if(orderby=='new'){
+					//sql += " order by o descnum";
+					sql += " order by d desc";
+				}else if(orderby=='hot'){
+					sql += " order by h descnum";
+				}
+				
+				//console.log(sql);
+				lists =DB.query(sql);
+			}
+			//console.timeEnd('aa');
+			//console.log(lists);
+			//$result = lists;
+			
+			display_lists(lists);
+		},1);
+		
+	}
+	
+	function display_lists(lists){
+		$('#toonbook_list').html('');
+		if(lists.length<=0){
+			//EMPTY		
+			$('#toonbook_list').html('<div class="container mt-2 mb-2" style=""><div class="alert " role="alert" style="width:100%;color:#fff;background:#000;text-align:center;"><h6>검색 결과가 없습니다.</h6></div></div>');
+			return;
+		}
+
+
+		for (var i=0; i < lists.length; i++) {
+			var r = lists[i];
+			var div = '';
+			var hide = "";
+			if(i>=35) hide='hide';
+
+			div+= '<div class="col-4 col-sm-4 col-md-2 '+hide+'" id="toon_'+r.x+'" >';
+			div+= '<a href="/webtoon/'+r.x+'.html" class="toon-link" title="'+r.t+'" alt="'+r.t+'">';
+			div+= '<div class="card card-fluid" >';
+			div+= '	<div class="card-header naver" >';
+			div+= '		<img src="'+img_domain+r.p.replace("_x4","").replace("_x3","")+'" class="back-img-style" >';
+			div+= '		<div class="adlut-style">';
+			if(r.ag!='0')
+				div+= ' <span class="badge badge-danger float-right">'+r.ag+'</span>';
+			var ago = xdaysago(r.g);
+			if(ago=='y'){
+				div+= '<span class="badge badge-dark float-left" style="margin-left:35px;font-size: 60%;height:18px;line-height:16px;">어제</span>';
+			}else if(ago.indexOf('h')>0){
+				div+= '<span class="badge badge-success float-left" style="margin-left:35px;font-size: 60%;height:18px;line-height:16px;"><i class="fa fa-clock-o"></i>'+ago+'</span>';
+			}else if(ago.indexOf('d')>0){
+				div+='<span class="badge badge-secondary float-left" style="margin-left:35px;font-size: 60%;height:18px;line-height:16px;">'+ago.replace('d','')+'일전</span>';
+			}
+
+			div+= '		</div>';
+
+
+			if(platforms[r.c]) platform1 = platforms[r.c];
+			if(r.c!='' && platform1)
+				div+= '	<div class="platfrom-style">'+platform1+'</div>';
+			div+= '		</div>';
+			div+= '	<div class="card-body " >';
+			div+= '		<p class="text-muted mb-3" style="margin-top:-30px;"> ';
+			if(r.co>0){
+					var co_icon;
+					if(r.co=='1') co_icon = 'ko'; 
+					if(r.co=='2') co_icon = 'cn'; 
+					if(r.co=='3') co_icon = 'jp'; 
+					div+= '<span class="badge badge-danger" style="padding:0px;background:none;margin-top:-2px;"><img src="style/img/icon-lan-'+co_icon+'.jpg" style="width:21px;border-radius:.25rem;margin-top:-2px;"></span>';
+				}
+			var tagss = r.tag.split(",");
+			for(ti=0;ti<tagss.length;ti++){
+				if(tagss[ti]) div+= ' <span class="badge badge-light">'+tags[tagss[ti]]+'</span> ';
+			}
+
+			div+= '		</p>';
+			div+= '		<h3 style="">';
+
+			if(r.up=='1') div+= '<span class="badge badge-success float-left">UP</span>';
+
+			div+= '		 '+r.t.slice(0,8)+'</h3>';
+			div+= '			<p class="" style="color:#a2a5b1;margin-bottom:5px;"> '+r.nt.slice(0,12)+'</p>';
+			//div+= '			<p class="text-muted mt-1" style="font-size:10px;"><i class="fa fa-eye"></i> '+r.h+'';
+			div+= '			<p class="text-muted mt-1" style="font-size:10px;"><i class="fa fa-user" style="float:left;margin-top:2px;"></i> <span style="width:50px;margin-left:5px;float:left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+r.au.slice(0,8)+'</span>';
+			div+='	<div class="book-del delete_1"><a href="javascript:;" onclick="delete_1('+r.x+')" style=""><i class="fa fa-trash" aria-hidden="true"></i> 삭제</a></div></p>';
+			div+= '	</div>';
+			div+= '</div>';
+			div+= '</a>';
+
+			div+='<div class="blank-btn"><a href="/webtoon/'+r.x+'.html"  style="" target="_blank">새창</a></div>';
+
+
+			div+= '</div>';
+
+
+
+			$('#toonbook_list').append(div);
+
+		}
+	}
+	
+	function gomenu(s){
+		select_category(s);
+	}
+	
+	function scrollPosition(id,p_top) {
+	   var offset= $(id).offset();
+	   console.log(offset);
+
+	   $('body,html').animate({
+		 scrollTop:offset.top+p_top
+	   })
+	 };
+ 
+
+
+
+</script>
+
+<style>
+.nav-tabs li.nav-item {width:33.3%;}
+.nav-tabs li.nav-item span.badge {font-size:50%;position: absolute}
+	
+.best-webtoon-list {}
+.best-webtoon-list div.col {padding:0px;text-align:center;}
+.best-webtoon-list div.col a {display:block;width:100%;height:100%;color:#ccc;border-bottom:1px solid #474a53;font-size:14px;padding:7px 7px;}
+.best-webtoon-list div.active a {color:#fff;border-bottom:1px solid #f83d3d;font-weight: bold;}
+.best-webtoon-btn button.btn {font-size:12px;padding: .3rem .4rem;}
+
+</style>
+
+
+<div class="container banner mt-2" style="padding-left:1px;padding-right:1px;">
+	
+	
+<script>
+	document.write("<script type='text/javascript' src='//js.blackmanaimg.com/poster_js/19.js?v=2020"+new Date().getTime()+"'></s"+"cript>");
+	</script>
+    
+    
+
+
+</div>
+
+
+<div class="container-full mt-2">
+	<div class="container">
+		<div class="row" >
+			<div class="col-12 f_category" style="padding:5px;">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+				  <li class="nav-item nav_category nav_category_continue" role="presentation">
+					<a class="nav-link active" id="home-tab" href="#continue" onClick="gomenu('continue')" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">연재</a>
+				  </li>
+				  <li class="nav-item  nav_category_end" role="presentation">
+					<a class="nav-link" id="profile-tab" data-toggle="tab"  href="#end" onClick="gomenu('end')"  role="tab" aria-controls="profile" aria-selected="false">완결</a>
+				  </li>
+				  <li class="nav-item nav_category_top" role="presentation">
+					<a class="nav-link" id="profile-tab2" data-toggle="tab" href="#top" onClick="gomenu('top')" role="tab" aria-controls="profile" aria-selected="true">인기</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="col-12 " >
+				<div class="tab-content " id="myTabContent1">
+
+				<div class=" show active f_pday" id="home" >
+					
+					<div class="week row mt-2 nav_p_pday " style="text-align:center;padding:5px;">
+
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_0" attr-id="0">UP</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_1" attr-id="1">월</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_2" attr-id="2">화</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_3" attr-id="3">수</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_4" attr-id="4">목</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_5" attr-id="5">금</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_6" attr-id="6">토</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_7" attr-id="7">일</button>
+						<button type="button" class="btn btn-outline-secondary nav_pday nav_pday_10" attr-id="10">10</button>
+
+					</div>
+
+				  </div>
+					
+				<div class=" show active f_platform" id="home" >
+					
+					<div class="platform mt-2 nav_p_platform " style="text-align:center;padding:5px;padding-top:10px;background:#161823;border-radius:15px;margin-left:-10px;margin-right:-10px;">
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_0" attr-id="0" style="width:auto;margin-bottom:5px;font-size:12px;">전체</button>
+						
+												
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_1"  attr-id="1" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/naver.png?" alt="네이버" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_2"  attr-id="2" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/daum.png?" alt="다음" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_3"  attr-id="3" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/kakao.png?" alt="카카오" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_4"  attr-id="4" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/rejin.png?" alt="레진" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_5"  attr-id="5" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/tomics.png?" alt="투믹스" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_6"  attr-id="6" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/toptoon.png?" alt="탑툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_7"  attr-id="7" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/comica.png?" alt="코미카" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_8"  attr-id="8" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/battlecomics.png?" alt="배틀코믹" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_9"  attr-id="9" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/comicgt.png?" alt="코믹GT" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_10"  attr-id="10" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/ktoon.png?" alt="케이툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_11"  attr-id="11" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/anitoon.png?" alt="애니툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_12"  attr-id="12" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/foxtoon.png?" alt="폭스툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_13"  attr-id="13" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/peanutoon.png?" alt="피너툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_14"  attr-id="14" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/bom.png?" alt="봄툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_15"  attr-id="15" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/comico.png?" alt="코미코" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_16"  attr-id="16" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/mootoon.png?" alt="무툰" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+													
+						<button type="button" class="btn btn-outline-secondary nav_platform nav_platform_99"  attr-id="99" style="width:auto;margin-bottom:5px;">
+							<img src="/style/img/etc.png?" alt="기타" class="rounded" style="width:18px;margin-top:-0px;">
+						</button>
+						
+
+												</div>
+
+				  </div>
+					
+				  
+					
+					
+				  <div class=" f_tag" id="profile" >
+						
+						<div class="mt-2 my-cate nav_p_tag" style="margin:0 auto;margin-left:-15px;margin-right:-15px;padding:5px;text-align:center;">
+							<a class="btn btn-danger btn-sx btn btn-outline-secondary btn-sm nav_tag nav_tag_0">전체</a>
+							
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_1" attr-id="1">학원</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_2" attr-id="2">액션</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_3" attr-id="3">SF</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_4" attr-id="4">스토리</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_5" attr-id="5">판타지</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_6" attr-id="6">BL/백합</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_7" attr-id="7">개그/코미디</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_8" attr-id="8">연애/순정</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_9" attr-id="9">드라마</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_10" attr-id="10">로맨스</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_11" attr-id="11">시대극</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_12" attr-id="12">스포츠</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_13" attr-id="13">일상</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_14" attr-id="14">추리/미스터리</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_15" attr-id="15">공포/스릴러</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_16" attr-id="16">성인</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_17" attr-id="17">옴니버스</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_18" attr-id="18">에피소드</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_19" attr-id="19">무협</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_20" attr-id="20">소년</a>
+														<a class="btn btn-outline-secondary btn-sm nav_tag nav_tag_99" attr-id="99">기타</a>
+														
+
+						</div>
+				  </div>
+
+					
+				 <div class="active show f_top" id="profile2" role="tabpanel" aria-labelledby="profile-tab" style="display: none">
+						
+							<div class="best-webtoon-list mt-2">
+								<div class="row nav_p_toptime" >
+									<div class="col  nav_toptime nav_toptime_d" attr-id="d"><a href="javascript:;">일간BEST</a></div>
+									<div class="col  nav_toptime nav_toptime_w" attr-id="w"><a href="javascript:;">주간BEST</a></div>
+									<div class="col  nav_toptime nav_toptime_m" attr-id="m"><a href="javascript:;">월간BEST</a></div>
+									<div class="col  nav_toptime nav_toptime_h" attr-id="h"><a href="javascript:;">실시간BEST</a></div>
+								</div>
+							</div>
+						
+
+						<div class="mt-2 my-cate" style="margin:0 auto;margin-left:-15px;margin-right:-15px;padding:5px;">
+							<div class="btn-group btn-group-sm best-webtoon-btn nav_p_toptype" role="group" aria-label="Button group with nested dropdown" style="width:100%;">
+								  <button type="button" class="btn btn-danger nav_toptype nav_toptype_comm" attr-id="comm">일반웹툰</button>
+								  <button type="button" class="btn btn-outline-secondary nav_toptype nav_toptype_19" attr-id="19">성인웹툰</button>
+								  <button type="button" class="btn btn-outline-secondary nav_toptype nav_toptype_bl" attr-id="bl">BL/백합</button>
+							</div>
+							
+						</div>
+
+				  </div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="container banner mt-2" style="padding-left:1px;padding-right:1px;">
+	
+	<div class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size:12px;width:100%;background:#161823;color:#f8e876;border:none;margin-bottom:0px;padding: .5rem .75rem;padding-right: 45px;border-radius:0px;text-align:center;">
+		  <strong>[공지]</strong> 북마크,최근본웹툰 기록이 없을시 새로고침 해주세요
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="padding: .5rem .75rem;line-height: 15px;">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+	</div>
+
+
+</div>
+-->
+<div class="container banner mt-2" style="padding-left:1px;padding-right:1px;">
+	
+	<div class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size:12px;width:100%;background:#161823;color:#f8e876;border:none;margin-bottom:0px;padding: .5rem .75rem;padding-right: 45px;border-radius:0px;text-align:center;">
+		  <strong>[공지]</strong> 이미지가 안나올 시 페이지를 새로고침 해주세요
+
+
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="padding: .5rem .75rem;line-height: 15px;">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+	</div>
+	<!--<div class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size:12px;width:100%;background:#161823;color:#f8e876;border:none;margin-bottom:0px;border-radius:0px;text-align:center;padding:0px;">
+		  <a href="https://bluelivetv.com/html/game_list/show_21269.html" target="_blank"><img src="https://blackmanaimg.com/img/ad-img/son2.png" style="width:100%;max-width:450px;"></a>
+	</div>-->
+
+
+</div>
+			
+<div class="container container_main">
+	<div class="row list-item"  >
+	<div class="col-12 col-sm-12 col-md-12 mt-2 mb-2 f_filter" style="padding:5px;">
+			<div class="btn-group btn-group-sm nav_p_orderby" role="group" aria-label="Button group with nested dropdown">
+			  <button type="button" class="btn btn-danger nav_orderby nav_orderby_new"  attr-id="new" style="font-size:11px;">최신순</button>
+			  <button type="button" class="btn btn-outline-secondary nav_orderby nav_orderby_hot"  attr-id="hot" style="font-size:11px;">인기순</button>  
+			</div>
+		</div> 
+		
+		<div class="col-12 col-sm-12 col-md-12 mt-2 mb-2" style="padding:5px;">
+			<h3 class="float-left delete_all_name" style="color:#fff;font-size:20px;">북마크</h3>
+			<div class="btn-group btn-group-sm float-right" role="group" aria-label="Button group with nested dropdown">
+			  <button type="button" class="btn btn-danger delete_all" style="font-size:11px;">북마크 비우기</button>
+			</div>
+		</div>
+		
+		<div class="col-12 col-sm-12 col-md-12 mt-2 mb-2 search_result_div" style="padding:5px;display: none;">
+			<h3 class="float-left" style="color:#fff;font-size:16px;">[ <span id="search_keyword"></span> ] <span style="color:#ccc;font-size:14px;">검색결과</span></h3>
+		</div>
+		
+	</div>
+	<div class="row list-item"  id="toonbook_list" >
+		<div style="width:100%;margin:0 auto; text-align:center;padding:15px 0;"><img src="/style/img/loading9.gif?313"></div>
+
+		
+
+		
+		
+		
+
+
+
+
+	</div>
+</div>
+
+<!-- <div class="container banner mt-3 mb-3">
+	<div class="row">
+	<script>
+   	document.write("<script type='text/javascript' src='//js.blackmanaimg.com/poster_js/12.js?v=2020"+new Date().getMonth()+new Date().getDay()+new Date().getHours()+new Date().getMinutes()+"'></s"+"cript>");
+	document.write("<script type='text/javascript' src='//js.blackmanaimg.com/poster_js/12.js?v=2020"+new Date().getTime()+"'></s"+"cript>");
+	</script>
+
+	</div>
+</div> -->
+
+<div class="container banner mt-3 mb-3">
+	<div class="row">
+	<script>
+	document.write("<script type='text/javascript' src='//js.blackmanaimg.com/poster_js/12.js?v=2020"+new Date().getTime()+"'></s"+"cript>");
+	</script>
+	</div>
+</div>
+
+
+
+
+ 
+
+<!--<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>-->
+
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>

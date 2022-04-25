@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>文件 - 567盘</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<base href="https://www.567yunpan.com/" />
+
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="Copyright" content="Z-Core Advanced Edition 6.6 build20180129" />
+<meta name="generator" content="PHPDisk Team" />
+<script type="text/javascript" src="includes/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="includes/js/common.js"></script>
+<script>window.onerror=function(){return true;};</script>
+<link href="images/common.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="templates/phpdisk_new_blue/images/style.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="includes/js/pace.min.js"></script>
+<link type="text/css" rel="stylesheet" href="images/pace/silver/pace-theme-minimal.css"/>
+<script type="text/javascript">
+document.domain = "567yunpan.com";
+</script>
+
+		<meta name="keywords" content="的网盘, ," />
+<meta name="description" content="的网盘, ," />
+<link href="templates/phpdisk_new_blue/images/css/mini.css" rel="stylesheet" media="screen">
+<link href="templates/phpdisk_new_blue/images/css/space.css" rel="stylesheet" media="screen">
+<link href="templates/phpdisk_new_blue/images/css/comm.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="templates/phpdisk_new_blue/images/js/comm.js" charset="utf-8"></script>
+</head>
+<body class="has-navbar-fixed-top page-index">
+		<div class="navbar navbar-inverse">
+		  <div class="navbar-inner">
+			<div id="ie_tips" style="display:none"></div>
+		   <div class="container-fluid">
+
+
+			  <a class="brand" href="https://www.567yunpan.com/"><img src="templates/phpdisk_new_blue/images/my_logo.png" alt="网盘系统"/> </a>
+			  
+			  <ul class="nav main-menu menu-left">
+							<li><a href="vip.php"  rel="nofollow">高级会员</a></li>
+							<li><a href="pay.php" rel="nofollow">充值金钱</a></li>
+				<li><a href="search.php"  rel="nofollow">资源搜索</a></li>
+				<li><a href="about.php?action=money"  rel="nofollow">分享赚钱</a></li>
+                <li><a href="http://www.panshij.com/"  rel="nofollow" target="_blank">在线视频</a></li>
+            </ul>
+
+						  <ul class="nav ace-nav pull-right">
+				<li class="light-blue user-profile">
+						<a href="account.php?action=register" class="user-menu"  rel="nofollow">注册 <i class="icon-circle-arrow-right"></i></a>
+					</li>
+					<li class="light-blue user-profile">
+						<a onClick="this.href = this.href + '&ref=' + escape(document.location);" href="account.php?action=login" class="user-menu" rel="nofollow">登录 <i class="icon-circle-arrow-right"></i></a>
+					</li>
+				</ul>
+			  			
+		   </div><!--/.container-fluid-->
+		  </div><!--/.navbar-inner-->
+		</div><!--/.navbar-->
+		<script language="javascript">
+function fd_stat(folder_id){
+	$('#fd_s_'+folder_id).html('loading...');
+	$.ajax({
+		type : 'post',
+		url : 'ajax.php',
+		data : 'action=fd_stat&folder_id='+folder_id+'&t='+Math.random(),
+		dataType : 'text',
+		success:function(msg){	
+		var arr = msg.split('|');
+			if(arr[0]=='true'){
+				$('#fd_s_'+folder_id).html(arr[1]);
+			}else{
+				alert(msg);
+			}
+		},
+		error:function(){
+		}
+
+	});
+}
+
+</script>
+<div class="container-fluid" id="main-container">
+<div id="main-content" class="clearfix">
+
+					<div id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="icon-home"></i><a href="#">目录导航</a><span class="divider"><i class="icon-angle-right"></i></span></li>
+						<li><a href="./"></a></li>					</ul><!--.breadcrumb-->
+					
+					<div id="nav-search" class="pull-right">
+						<form class="form-search pull-right" >
+							<span class="input-icon ">
+														<i class="icon-search pointer" id="nav-search-icon" onclick="window.location.href='search.php'"></i>
+															<input type="text" placeholder="关键字..." class="input-small search-query" id="nav-search-input">
+							</span>
+						</form>
+					</div><!--nav-search-->
+				</div>
+									<div id="page-content" class="clearfix">
+										<div class="row-fluid" style="width: 960px; margin: 0 auto 10px;">
+																
+					</div>
+					
+					<div class="row-fluid">
+		<div role="grid" class="dataTables_wrapper" id="table_files_wrapper">
+		<table class="table table-hover dataTable table-striped" id="table_files" aria-describedby="table_files_info" style="border-top: 1px solid #DDDDDD;">
+			<thead>
+			<th role="columnheader" tabindex="0" aria-controls="table_files" rowspan="1" colspan="1" >文件名</th>
+			<th class="center" style="width: 100px;" >下载次数</th>
+			<th class="center" style="width: 100px;" >文件大小</th>
+			<th class="center " style="width: 100px;" >修改时间</th></tr>
+			</thead>
+									
+			
+		<tbody role="alert" aria-live="polite" aria-relevant="all">
+		<tr class="odd">
+		<td class="" colspan="4">找不到文件记录</td>
+		</tr>
+		</tbody>
+		</table>
+		
+		<div class="row-fluid"></div>
+		</div>
+
+									
+
+</div>
+<div class="row-fluid" style="width: 960px; margin: 0 auto 10px;"></div>
+</div>		
+</div><!--main-content -->
+		</div><!--/.fluid-container#main-container-->
+		<script language="javascript">		
+function favorite_as(user_id){
+	$.ajax({
+		type : 'post',
+		url : 'ajax_pt.php',
+		data : 'action=favorite&uid='+user_id+'&task=to_favorite&t='+Math.random(),
+		dataType : 'text',
+		success:function(msg){
+			if(msg == 'ok'){
+				ajsuccess("关注成功");
+			}else{
+				ajerror(msg);
+			}
+		},
+		error:function(){
+		
+		}
+
+	});
+}
+			favorite_alert = function(){
+				ajerror("登录后才能关注");
+			}
+</script>
+no username
+<script type="text/javascript" src="includes/js/jquery.backstretch.min.js"></script>
+<script>
+        $.backstretch([
+		  "images/default_bg.png"
+        ], {
+            fade: 750,
+            duration: 1000
+        });
+</script>
+
+ <div class="container-fluid footer" id="footer">
+		 <div class="text-right">	
+				网盘系统 &copy; Powered by phpdisk.com &nbsp;&nbsp;&nbsp;服务邮箱：w567pan@163.com&nbsp;&nbsp;网盘系统致力于为网友们提供免费、稳定、快速、超大容量的文件存储与分享服务。
+    </div>
+		<div class="text-right">
+			<a href="announce.html" target="_blank">最新公告</a> · 
+			<a href="about.php?action=protocol">网站服务条款</a> · 
+			<a href="about.php?action=help">常见问题</a> · 
+		</div>
+		
+</div>
+<script type='text/javascript'>  
+$(function(){ 
+if(navigator.userAgent.indexOf("MSIE")>0){
+	if(navigator.userAgent.indexOf("MSIE 6.0")>0 || navigator.userAgent.indexOf("MSIE 7.0")>0  || navigator.userAgent.indexOf("MSIE 8.0")>0){
+	$("#ie_tips").show();
+	$("#ie_tips").html("<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><strong>Warning!</strong> 本站已经停止对IE8以下版本浏览器进行美化兼容，推荐使用更快更先进的IE9、谷歌浏览器、Firefox浏览器，享受飞一般的快感。</div>");
+}
+}
+});
+</script>
+<div style="display:none;">
+</div>
+
+</body>
+</html>

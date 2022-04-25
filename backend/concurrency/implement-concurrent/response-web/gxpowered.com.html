@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;600&display=swap" rel="stylesheet">
+    <title>Opera GX</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/f9kw.png"/>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W22TDPP');</script>
+            <!-- End Google Tag Manager -->
+            
+    <style>
+        html,
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: black;
+        }
+        .content{
+            position: absolute;
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+        #bkg1{
+            position: relative;
+            background-image: url('assets/xwk9.png');
+            background-size: cover;
+            background-position: 100%;
+            width: 100%;
+            height: 100vh;
+            padding: 20px 0;
+        }
+        #bkg2{
+            position: relative;
+            display: none;
+            background-image: url('assets/bkg2.png');
+            background-size: cover;
+            background-position: 100%;
+            width: 100%;
+            height: 100vh;
+            padding: 20px 0;
+        }
+        #bkg3{
+            position: relative;
+            display: none;
+            background-image: url('assets/bkg3.png');
+            background-size: cover;
+            background-position: 100%;
+            width: 100%;
+            height: 100vh;
+            padding: 20px 0;
+        }
+        #bkg4{
+            position: relative;
+            display: none;
+            background-image: url('assets/bkg4.png');
+            background-size: cover;
+            background-position: 100%;
+            width: 100%;
+            height: 100vh;
+            padding: 20px 0;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1230px;
+            margin: 1em auto 7em;
+            font-weight: 600;
+        }
+
+        #brazil, #bk-brazil{
+            display: none;
+        }
+
+        .cta{
+            display: block;
+            margin: 30px 0;
+            padding-right: 5px;
+        }
+        .cta a{
+            padding: 10px 5px;
+            color: white;
+            text-decoration: none;
+            background: #FA1E4E;
+            transition: .3s;
+        }
+        .cta a:hover{
+            color: #FA1E4E;
+            background: white;
+            box-shadow: 0px 2px 5px 2px #ffffff56;
+        }
+        .white{
+            display: none;
+            margin: 30px 0;
+            padding-right: 5px;
+        }
+        .white a{
+            padding: 10px 5px;
+            color: #FA1E4E;
+            text-decoration: none;
+            background: white;
+            transition: .3s;
+        }
+        .white a:hover{
+            color:white ;
+            background: #FA1E4E;
+            box-shadow: 0px 2px 5px 2px #fa1e4e73;
+        }
+        .green{
+            display: none;
+            margin: 30px 0;
+            padding-right: 5px;
+        }
+        .green a{
+            padding: 10px 5px;
+            color: white;
+            text-decoration: none;
+            background: rgb(127, 255, 0);
+            transition: .3s;
+        }
+        .green a:hover{
+            color:rgb(127, 255, 0) ;
+            background: white;
+            box-shadow: 0px 2px 5px 2px rgba(128, 255, 0, 0.377);
+        }
+        .cta-bottom a{
+            text-decoration: none;
+            font-size: 30px;
+            width: 90%;
+            max-width: 1220px;
+        }
+        .cta-bottom{
+            cursor: pointer;
+            padding: 15px;
+            display: none;
+            color: white;
+            background: #FA1E4E;
+            width: 90%;
+            max-width: 1220px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            transition: .3s;
+            font-weight: 600;
+        }
+        
+        .cta-bottom:hover{
+            color: #FA1E4E;
+            background: white;
+            box-shadow: 0px 2px 5px 2px #ffffff56;
+        }
+        .cta-white a{
+            text-decoration: none;
+            font-size: 30px;
+            width: 90%;
+            max-width: 1220px;
+        }
+        .cta-white{
+            padding: 15px;
+            cursor: pointer;
+            display: none;
+            color: #FA1E4E;
+            background: white;
+            width: 90%;
+            max-width: 1220px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            transition: .3s;
+            font-weight: 600;
+        }
+        
+        .cta-white:hover{
+            color: white;
+            background: #FA1E4E;
+            box-shadow: 0px 2px 5px 2px #fa1e4e73;
+        }
+        .cta-green a{
+            text-decoration: none;
+            font-size: 30px;
+            width: 90%;
+            max-width: 1220px;
+        }
+        .cta-green{
+            padding: 15px;
+            cursor: pointer;
+            display: none;
+            color: white;
+            background: rgb(127, 255, 0);
+            width: 90%;
+            max-width: 1220px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            transition: .3s;
+            font-weight: 600;
+        }
+        
+        .cta-green:hover{
+            color: rgb(127, 255, 0);
+            background: white;
+            box-shadow: 0px 2px 5px 2px rgba(128, 255, 0, 0.377);
+        }
+        .logo{
+            max-width: 200px;
+            width: 100%;
+        }
+        .logo img{
+                width: 100%;
+            }
+        .main-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            max-width: 1230px;
+            margin: 0 auto;
+        }
+        .info{
+            padding: 0 10px;
+        }
+        .info p{
+            color: white;
+            margin-block-end: auto;
+        }
+        .info span{
+            color: #FA1E4E;
+        }
+        .info-img{
+            display: flex;
+            flex-direction: column;
+        }
+        .img img {
+            width: 100%;
+        }
+        .text{
+            display: flex;
+            align-items: center;
+        }
+        .video{
+            display: none;
+        }
+        .video iframe{
+            width: 600px;
+            height: 400px;
+        }
+        #impressum-links-wrapper{
+            font-size: 20px;
+            display: none;
+            color: white;
+        }
+        #impressum-links-wrapper a{
+            font-size: 15px;
+            color: rgba(245, 245, 245, 0.705);
+            text-decoration: none;
+        }
+        #impressum-title{
+            font-size: 15px;
+            color: rgba(245, 245, 245, 0.705);
+        }
+
+        #impressum-title:hover, #impressum-links-wrapper a:hover {
+            cursor: pointer !important;
+            text-decoration: underline;
+            color: grey;
+        }
+
+        #impressum-wrapper{
+            display: none;
+            position: absolute;
+            z-index: 9999;
+            height: 25rem;
+            width: 30rem;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            text-align: left;
+            border-radius: 15px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 3px solid;
+        }
+
+        .impressum-content{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 3rem;
+        }
+
+        .impressum-content div{
+            margin-bottom: 1rem;
+        }
+
+        .impressum-content a{
+            color: blue;
+        }
+
+        #close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 30px;
+            margin-right: 1rem;
+            margin-top: .5rem;
+        }
+        #close:hover{
+            cursor: pointer;
+        }
+        #slogan{
+            display: none;
+            align-items: center;
+        }
+        .slogan{
+            margin: 0 auto;
+            color: white;
+
+        }
+        .slogan h1{
+            margin-block-end: 10px;
+            margin-block-start: 0;
+            text-align: center;
+            font-size: 60px;
+        }
+        .slogan .star{
+            font-size: 30px;
+            color: #FA1E4E;
+            margin: 0 10px ;
+            margin-block-end: 15px;
+        }
+ @media screen and (max-width: 1600px) {
+            .cta-bottom, .cta-white, .cta-green{
+                padding: 15px;
+            }
+}
+ @media screen and (max-width: 980px) {
+            .main-content{
+                flex-direction: column;
+                align-items: center;
+                margin: 40px auto;
+            }
+            .navbar{
+                margin: 0 auto;
+            }
+        .slogan{
+            padding: 0 20px;
+        }
+        .slogan h1{
+            font-size: 30px;
+        }
+        .slogan .star{
+            font-size: 25px;
+        }
+            
+}
+
+@media screen and (max-width: 600px) {
+            .video iframe{
+            width: 450px;
+            height: 400px;
+        }
+}
+@media screen and (max-width: 460px) {
+            .cta a{
+                font-size: 9px;
+            }
+            .logo img{
+                width: 70%;
+            }
+            .video iframe{
+            width: 400px;
+            height: 400px;
+        }
+}
+@media screen and (max-width: 400px) {
+            .video iframe{
+            width: 300px;
+            height: 400px;
+        }
+}
+    </style>
+</head>
+<body>
+
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W22TDPP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                <!-- End Google Tag Manager (noscript) -->
+                            <!-- bkg URL -->
+                <div id="bkg1"></div><div id="bkg2"></div><div id="bkg3"></div><div id="bkg4"></div>
+                            <!-- bkg URL -->   
+<div class="content">
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/3809.png" alt="">
+            </div>
+            <div class="cta" id="cta">
+                <a href="javascript:;" onclick="goto();" trans="free">Free Download</a>
+            </div>
+            <div class="white" id="white">
+                <a href="javascript:;" onclick="goto();" trans="free">Free Download</a>
+            </div>
+            <div class="green" id="green">
+                <a href="javascript:;" onclick="goto();" trans="free">Free Download</a>
+            </div>
+
+        </div>
+    </header>
+    <div id="slogan" class="slogan">
+        <div class="star"> &bigstar;</div>
+        <h1>MAKE BROWSING<span style="color: #FA1E4E;"> GREAT AGAIN</span></h1>
+        <div class="star"> &bigstar;</div>
+    </div>
+        <div class="main-content">
+            <div class="info">
+                <h1 style="color: white;" trans="title">
+                    Top 5 Reasons To Try Opera GX <span style="color: #FA1E4E;">For Free!</span>
+                </h1> <br>
+                <div class="text">
+                    <div class="icon">
+                        <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 51 51"><defs><style>.a{fill:#fa1e4e;}.b{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><g transform="translate(-139 -421)"><g transform="translate(0 -245)"><circle class="a" cx="25.5" cy="25.5" r="25.5" transform="translate(139 666)"/></g><g transform="translate(153 435)"><circle class="b" cx="10" cy="10" r="10" transform="translate(2 2)"/><line class="b" y2="4" transform="translate(12 8)"/><line class="b" x2="0.01" transform="translate(12 16)"/></g></g></svg>
+                    </div>
+                    <div><p trans="subtitle1"> Set <span>limits</span> to your browser’s CPU, RAM and network usage</p><br></div>
+                </div>
+                <div class="text">
+                    <div class="icon">
+                        <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 51 51"><defs><style>.a{fill:#fa1e4e;}.b{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><g transform="translate(-139 -526)"><g transform="translate(0 -4)"><circle class="a" cx="25.5" cy="25.5" r="25.5" transform="translate(139 530)"/></g><g transform="translate(0.316 -0.684)"><path class="b" d="M26.367,14.035A10.879,10.879,0,0,1,25.2,18.968a11.035,11.035,0,0,1-9.866,6.1A10.879,10.879,0,0,1,10.4,23.9L3,26.367l2.467-7.4A10.879,10.879,0,0,1,4.3,14.035a11.035,11.035,0,0,1,6.1-9.866A10.879,10.879,0,0,1,15.333,3h.649A11.009,11.009,0,0,1,26.367,13.386Z" transform="translate(149.5 537.5)"/><g transform="translate(41 1)"><circle cx="1.245" cy="1.245" r="1.245" transform="translate(118 550)"/><circle cx="1.245" cy="1.245" r="1.245" transform="translate(122.151 550)"/><circle cx="1.245" cy="1.245" r="1.245" transform="translate(126.301 550)"/></g></g></g></svg>
+                    </div>
+                    <div><p trans="subtitle2"><span>Twitch</span> & <span>Discord</span> Integration</p><br></div>
+                </div>
+                <div class="text">
+                    <div class="icon">
+                        <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 51 51"><defs><style>.a{fill:#fa1e4e;}</style></defs><g transform="translate(-139 -666)"><circle class="a" cx="25.5" cy="25.5" r="25.5" transform="translate(139 666)"/><path d="M25.28,4.5H3.878A2.385,2.385,0,0,0,1.5,6.878V23.524A2.385,2.385,0,0,0,3.878,25.9h21.4a2.385,2.385,0,0,0,2.378-2.378V6.878A2.385,2.385,0,0,0,25.28,4.5Zm0,19.024H3.878V6.878h11.89v4.756H25.28Z" transform="translate(149.5 676.5)"/></g></svg>
+                    </div>
+                    <div><p trans="subtitle3"><span>Hot Tabs Killer</span> - Slash the tabs killing your resources</p><br></div>
+                </div>
+                <div class="text">
+                    <div class="icon">
+                        <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 51 51"><defs><style>.a{fill:#fa1e4e;}.b{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><g transform="translate(-139 -666)"><circle class="a" cx="25.5" cy="25.5" r="25.5" transform="translate(139 666)"/><g transform="translate(151.222 678.222)"><circle class="b" cx="12" cy="12" r="12" transform="translate(1.778 1.778)"/><line class="b" x2="24" transform="translate(1.778 13.778)"/><path class="b" d="M12.711,2a18.021,18.021,0,0,1,4.711,11.778,18.021,18.021,0,0,1-4.711,11.778A18.021,18.021,0,0,1,8,13.778,18.021,18.021,0,0,1,12.711,2Z" transform="translate(1.067)"/></g></g></svg>
+                    </div>
+                    <div><p trans="subtitle4">Free <span>UNLIMITED VPN</span> for extra Privacy</p><br></div>
+                </div>
+                <div class="text">
+                    <div class="icon">
+                       <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 51 51"><defs><style>.a,.c{fill:#fa1e4e;}.b{stroke:#000;}.d,.f{stroke:none;}.e{fill:none;}.f{fill:#000;}</style></defs><g transform="translate(-139 -830)"><g transform="translate(0 164)"><circle class="a" cx="25.5" cy="25.5" r="25.5" transform="translate(139 666)"/></g><g transform="translate(1.342 1.342)"><g transform="translate(152 843)"><g class="b" transform="translate(-0.342 -0.342)"><circle class="d" cx="12" cy="12" r="12"/><circle class="e" cx="12" cy="12" r="11.5"/></g></g><g class="c" transform="translate(146.017 843.128)"><path class="d" d="M 17.50000381469727 22.54883003234863 L 17.50000381469727 0.5112733244895935 C 20.28182983398438 0.6364384293556213 23.03899383544922 1.7986900806427 25.13300514221191 3.743441343307495 C 27.41426467895508 5.862101078033447 28.67061424255371 8.62744140625 28.67061424255371 11.53005123138428 C 28.67061424255371 14.43266105651855 27.41426467895508 17.19800186157227 25.13300514221191 19.3166618347168 C 23.03899383544922 21.26141166687012 20.28182983398438 22.42366409301758 17.50000381469727 22.54883003234863 Z"/><path class="f" d="M 18.00000381469727 1.04693603515625 L 18.00000381469727 22.01316452026367 C 20.48518943786621 21.78062629699707 22.91605949401855 20.69321060180664 24.79275512695312 18.95029067993164 C 26.97099494934082 16.92730140686035 28.17061424255371 14.29208087921143 28.17061424255371 11.53005123138428 C 28.17061424255371 8.768021583557129 26.97099494934082 6.132801055908203 24.79275512695312 4.109811782836914 C 22.91605949401855 2.366891860961914 20.48518943786621 1.279476165771484 18.00000381469727 1.04693603515625 M 17.00000381469727 1.9073486328125e-06 C 23.36787414550781 1.9073486328125e-06 29.17061424255371 5.162181854248047 29.17061424255371 11.53005123138428 C 29.17061424255371 17.89792060852051 23.36787414550781 23.06010055541992 17.00000381469727 23.06010055541992 C 17.00000381469727 17.07245063781738 17.00000381469727 10.60726165771484 17.00000381469727 1.9073486328125e-06 Z"/></g></g></g></svg>
+                    </div>
+                    <div><p trans="subtitle5">Force any webpage to display in <span>dark mode</span></p><br></div>
+                </div>
+                <br>
+            </div>
+            <div class="info-img">
+                <div id="img" class="img">
+                    <img id="bk" src="assets/xm1k.png" alt="">
+                    <img id="bk-brazil" src="assets/brazil.png" alt="">
+                </div>
+                <div id="video" class="video">
+                    <iframe src="https://www.youtube.com/embed/Uv-jwjKxZsk?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="cta" id="cta-1">
+                    <center><a trans="download" style="font-weight: bolder;"   onclick="goto();" href="javascript:;" >Download Opera Gx</a></center>
+                </div>
+            </div>
+        </div>
+         <div class="cta-bottom" id="cta-2" href="javascript:;" onclick="goto();">
+            <center><a id="color"  trans="download">Download Opera GX</a></center>
+        </div>
+        <div class="cta-white" id="cta-white" href="javascript:;" onclick="goto();">
+            <center><a  trans="download">Download Opera GX</a></center>
+        </div>
+        <div class="cta-green" id="cta-green" href="javascript:;" onclick="goto();">
+            <center><a  trans="download">Download Opera GX</a></center>
+        </div>
+
+        <center><div style="margin: 20px 0;" id="impressum-links-wrapper">
+            <span id="impressum-title">Impressum, </span>
+            <a>Privacy Policy</a>
+        </div></center>
+        <div id="impressum-wrapper">
+            <div class="impressum-content">
+                <h4>IMPRESSUM</h4>
+                <div>
+                    Gameaddik Network / PWN Games
+                    <br />
+                    REGISTRATION NUMBER: 1171189955
+                    <br />
+                    Managing Director: Éric Jodoin
+                    <br />
+                    9327-7358 Québec inc
+                    <br />
+                    5260 rue de Verdun
+                    <br />
+                    Montreal, Quebec
+                    <br />
+                    H4H 1K1
+                    <br />
+                    Canada
+                </div>
+                <div>
+                    email : <a href="mailto:team@gameaddik.com">team@gameaddik.com</a>
+                    <br />
+                    internet : www.pwngames.com
+                </div>
+                <div>
+                    Tel : +1 514 598 1648
+                </div>
+                <span id="close">&times;</span>
+            </div>
+        </div>
+        <br>
+</div>
+</body>
+<script>
+
+var get_url_params = function() {
+    var params = {};
+    window.location.href.split('#')[0].replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        params[key] = value;
+    });
+    return params;
+};
+
+var get_url_param = function(name, default_value) {
+    var params = get_url_params();
+    if(default_value===undefined){
+        default_value=null;
+    }
+    return params[name]!==undefined?params[name]:default_value;
+};
+//goto//
+function goto() {
+    if(window.location.search=='' || !window.location.search){
+        window.location = "https://www.ostlon.com/cmp/3HS6M21/P5HPHB/?source_id=downloadoperagx&sub1=typein"
+    }else{
+        window.location = "https://okpoodle.com/click" + window.location.search
+    } 
+}
+//goto//
+var get_browser_locale = function () {
+    if (navigator.languages !== undefined){
+        return navigator.languages[0];
+    }else {
+         return navigator.language;
+    }
+};
+
+var get_browser_short_locale = function () {
+    var locale = get_browser_locale();
+    return locale.split("-")[0];
+};
+
+var get_available_locale = function(available_locales, default_locale, force_locale) {
+
+    if(default_locale===undefined){
+        default_locale=available_locales[0];
+    }
+
+    if(force_locale!==undefined){
+        if(available_locales.indexOf(force_locale)!==-1){
+            return force_locale;
+        }
+    }
+
+    var locale = get_browser_locale();
+    if(available_locales.indexOf(locale)!==-1){
+        return locale;
+    }
+
+    var shortLocale = get_browser_short_locale();
+    if(available_locales.indexOf(shortLocale)!==-1){
+        return shortLocale;
+    }
+    var len = available_locales.length;
+    for (var i = 0; i < len; i++){
+        if(available_locales[i].indexOf(shortLocale)!==-1){
+            return available_locales[i];
+        }
+    }
+
+    return default_locale;
+};
+
+var translate = function(language, translations, extra_variables, cb){
+
+    if (translations[language] === undefined){
+        return;
+    }else{
+
+        var translation = translations[language];
+
+        var extra_variables = extra_variables!==undefined?extra_variables:{};
+
+        var cb = cb;
+
+        on_dom_load(function(event){
+
+            var elems = fetch_elements('[trans]');
+            var elems_count = elems.length;
+            var el;
+            var key;
+            var html_value;
+
+
+            for(var i = 0; i < elems_count; i++) {
+                el = elems[i];
+                if (el.hasAttribute('trans')) {
+                    key = el.getAttribute('trans');
+                    if(translation[key] !== undefined){
+                        html_value = translation[key];
+
+                        for(var key in extra_variables) {
+                          html_value = html_value.replace("{"+key+"}", extra_variables[key]);
+                        }
+
+                        el.innerHTML = html_value;
+                    }
+                }
+            }
+
+            if(typeof cb === "function"){
+                cb();
+            }
+
+        });
+
+    }
+};
+
+
+var fetch_elements = function(selector){
+    return document.querySelectorAll(selector);
+};
+
+var on_dom_load = function(cb){
+
+    if(window.addEventListener){
+        window.addEventListener('DOMContentLoaded', cb);
+    }else{
+        window.attachEvent('onload', cb);
+    }
+};
+
+var locales = {
+    en: {
+        free: 'Free Download',
+        title: 'Top 5 Reasons To Try Opera GX <span style="color: #FA1E4E;">For Free!</span>',
+        subtitle1: 'Set <span>limits</span> to your browser’s CPU, RAM and network usage',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> Integration',
+        subtitle3: '<span>Hot Tabs Killer</span> - Slash the tabs killing your resources',
+        subtitle4: 'Free <span>UNLIMITED VPN</span> for extra Privacy',
+        subtitle5: 'Force any webpage to display in <span>dark mode</span>',
+        download: 'Download Opera GX'
+
+    },
+    fr: {
+        free: 'Téléchargement Gratuit',
+        title: '5 Bonnes Raisons D’Essayer Opera GX <span style="color: #FA1E4E;">Gratuitement!</span>',
+        subtitle1: 'Le navigateur comprend des <span>limiteurs</span> d’unité centrale, de mémoire vive et de réseau',
+        subtitle2: '<span>Twitch</span> et <span>Discord</span> disponibles directement dans votre barre latérale',
+        subtitle3: '<span>Bloqueur de pubs</span> - bloquez les pubs qui ralentissent votre ordinateur',
+        subtitle4: 'Un accès <span> VPN ILLIMITÉ</span> pour plus de confidentialité',
+        subtitle5: 'Activez le <span>mode sombre</span> sur n’importe quelle page',
+        download: 'Téléchargez Opera GX'
+
+    },
+    it: {
+        free: 'Scarica Gratuito',
+        title: '5 Fantastici Motivi per provare  Opera GX <span style="color: #FA1E4E;">Gratis!</span>',
+        subtitle1: '<span>lLimita</span> l’utilizzo di CPU, RAM e Network da parte del Browser',
+        subtitle2: 'Integrato con <span>Twitch</span> e <span>Discord</span>',
+        subtitle3: '<span>Hot Tabs Killer</span> - Elimina le finestre che distruggono le tue risorse',
+        subtitle4: '<span>VPN ILLIMITATO</span> e Gratis per extra Privacy',
+        subtitle5: '<span>Modalità scura</span> disponibile su qualsiasi Pagina Web',
+        download: 'Scarica Opera GX'
+
+    },
+    de: {
+        free: 'Kostenloses Herunterladen',
+        title: 'Die 5 besten Gründe, Opera GX kostenlos <span style="color: #FA1E4E;">auszuprobieren</span>',
+        subtitle1: '<span>Setzen</span> Sie Grenzen für die CPU-, RAM- und Netzwerknutzung Ihres Browsers',
+        subtitle2: 'Integration von  <span>Twitch</span> und <span>Discord</span>',
+        subtitle3: '<span>Hot Tabs Killer</span> - Schließen Sie Tabs, die Ihr Gerät überlasten',
+        subtitle4: 'Kostenloses unbegrenztes <span>VPN</span> für mehr Privatsphäre',
+        subtitle5: 'Jede Website im <span>dunklen Modus</span> anzeigen',
+        download: 'Opera GX herunterladen'
+
+    },
+    es: {
+        free: 'Descarga gratis',
+        title: '¡Las 5 razones principales para probar Opera GX <span style="color: #FA1E4E;">gratis!</span>',
+        subtitle1: 'Establezca <span>límites</span> en el uso de la CPU, la RAM y la red de su navegador',
+        subtitle2: 'Integración de <span>Twitch</span> y <span>Discord</span>',
+        subtitle3: '<span>Hot Tabs Killer</span> - elimina las pestañas que acaban con tus recursos',
+        subtitle4: '<span>VPN ILIMITADA</span> gratuita para mayor privacidad',
+        subtitle5: 'Forzar que todas las páginas web aparezcan en la <span>oscuridad</span>',
+        download: 'Descarga Opera GX'
+    },
+    no: {
+        free: 'Gratis nedladdning',
+        title: 'Topp 5 skäl att prova Opera GX <span style="color: #FA1E4E;">gratis!</span>',
+        subtitle1: 'Ställ in <span>gränser</span> för din webbläsares CPU, RAM och nätverksanvändning',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span>-integration',
+        subtitle3: '<span>Hot Tabs Killer</span> - Hugg ner flikarna som dödar dina resurser',
+        subtitle4: 'Gratis <span>OBEGRÄNSAD VPN</span> för extra sekretess',
+        subtitle5: 'Tvinga alla webbsidor att visas i <span>mörkt läge</span>',
+        download: 'Ladda ner Opera GX'
+    },
+    da: {
+        free: 'Gratis download',
+        title: 'Top 5 grunde til at prøve Opera GX <span style="color: #FA1E4E;">gratis!</span>',
+        subtitle1: 'Angiv <span>grænser</span> for din browsers CPU, RAM og netværksbrug',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> integration',
+        subtitle3: '<span>Hot Tabs Killer</span> - Hak fanerne ned, der dræber dine ressourcer',
+        subtitle4: 'Gratis Ubegrænset <span>VPN</span> for ekstra privatliv',
+        subtitle5: 'Tving alle websider til at blive vist i <span>mørket</span>',
+        download: 'Hent Opera GX'
+    },
+    sv: {
+        free: 'Gratis download',
+        title: 'Topp 5 skäl att prova Opera GX <span style="color: #FA1E4E;">gratis!</span>',
+        subtitle1: 'Ställ in <span>gränser</span> för din webbläsares CPU, RAM och nätverksanvändning',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> integration',
+        subtitle3: '<span>Hot Tabs Killer</span> - Hugg ner flikarna som dödar dina resurser',
+        subtitle4: 'Gratis <span>OBEGRÄNSAD VPN</span> för extra sekretess',
+        subtitle5: 'Tvinga alla webbsidor att visas i <span>mörkt läge</span>',
+        download: 'Ladda ner Opera GX'
+    },
+    fi: {
+        free: 'Ilmainen lataus',
+        title: '5 parasta syytä kokeilla Opera GX: <span style="color: #FA1E4E;">tä ilmaiseksi!</span>',
+        subtitle1: 'Aseta <span>rajoitukset</span> selaimesi suorittimelle, RAM -muistille ja verkon käytölle',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> integraatio',
+        subtitle3: '<span>Hot Tabs Killer</span> - Katkaise välilehdet, jotka tappavat resurssit',
+        subtitle4: 'Ilmainen rajoittamaton <span>VPN</span> lisää yksityisyyttä',
+        subtitle5: 'Pakota kaikki verkkosivut näkymään <span>pimeässä</span>',
+        download: 'Lataa Opera GX'
+    },
+    pl: {
+        free: 'Pobierz za darmo',
+        title: 'Top 5 powodów, dla których warto wypróbować Operę GX <span style="color: #FA1E4E;">za darmo!</span>',
+        subtitle1: 'Ustaw <span>limity</span> wykorzystania procesora, pamięci RAM i sieci przez przeglądarkę',
+        subtitle2: 'Integracja z <span>Twitch</span> i <span>Discord</span>',
+        subtitle3: '<span>Hot Tabs Killer</span> - Zamykanie kart, które obciażają Twoje urządzenie',
+        subtitle4: 'Darmowy, nieograniczony <span>VPN</span> dla większej prywatności',
+        subtitle5: 'Wyświetlanie dowolnej strony internetowej w <span>trybie ciemnym</span>',
+        download: 'Pobierz Opera GX'
+    },
+    pt: {
+        free: 'Download Grátis',
+        title: ' Navegador nº 1 no <span style="color: #FA1E4E;"> Brasil</span>',
+        subtitle1: 'Defina <span>limites</span> para o uso da CPU, RAM e rede do seu navegador',
+        subtitle2: 'Integração com <span>Twitch</span> & <span>Discord</span>',
+        subtitle3: '<span>Matador de Hot Tabs</span> - Elimine as guias que comem os seus recursos',
+        subtitle4: '<span>VPN ILIMITADO</span> grátis para extra Privacidade',
+        subtitle5: 'Force qualquer página da Web a ser exibida no <span>modo escuro</span>',
+        download: 'Baixar Opera GX'
+    },
+    nl: {
+        free: 'Gratis Downloaden',
+        title: 'Top 5 Redenen om Opera GX <span style="color: #FA1E4E;">gratis te testen!</span>',
+        subtitle1: 'Stel <span>grenzen</span> aan het CPU, RAM en netwerkgebruik van je browser',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> integratie',
+        subtitle3: '<span>Hot Tabs Killer</span> - Laat de tabs die je beschikbare ram gebruikt verdwijnen',
+        subtitle4: 'Gratis <span>ONBEPERKTE VPN</span> voor extra Privacy',
+        subtitle5: 'Forceer elke webpagina om in <span>donkere modus</span> weer te geven',
+        download: 'Opera GX downloaden'
+    },
+    ru: {
+        free: 'Скачать бесплатно',
+        title: '5 причин попробовать Opera GX <span style=“color: #FA1E4E;“>бесплатно!</span>',
+        subtitle1: 'Контролируйте <span>потребление ресурсов</span> вашего процессора, оперативной памяти и сетевого трафика',
+        subtitle2: '<span>Twitch</span> & <span>Discord</span> интегрированы в браузер!',
+        subtitle3: '<span>Hot Tabs Killer</span> - Контролируйте вкладки потребляющие много ресурсов',
+        subtitle4: 'Бесплатный и <span>БЕЗЛИМИТНЫЙ VPN</span> для экстра конфиденциальности',
+        subtitle5: '<span>Темная тема</span> для любых сайтов',
+        download: 'Скачать Opera GX'
+    }
+}
+
+var language = get_available_locale(['en','fr','it','de','es','no','da','sv','fi','pl','pt','nl','ru'], 'en', get_url_param('lan'));
+
+console.log(language)
+document.addEventListener('DOMContentLoaded', function(){
+    translate(language, locales)
+    if(get_url_param('imp') === '1') {
+        document.getElementById('impressum-links-wrapper').style.display = 'block'
+
+        document.getElementById('impressum-links-wrapper').addEventListener('click', function() {
+            document.getElementById('impressum-wrapper').style.display = 'block'
+        })
+
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('impressum-wrapper').style.display = 'none'
+        })
+    }
+    if(get_url_param('btn') === '2') {
+        document.getElementById('cta-1').style.display = 'none'
+        document.getElementById('cta-2').style.display = 'flex'
+
+    }
+    if(get_url_param('color') === 'white') {
+        document.getElementById('cta-2').style.display = 'none'
+        document.getElementById('cta-white').style.display = 'flex'
+        document.getElementById('cta').style.display = 'none'
+        document.getElementById('white').style.display = 'flex'
+    }
+    if(get_url_param('color') === 'green') {
+        document.getElementById('cta-2').style.display = 'none'
+        document.getElementById('cta-green').style.display = 'flex'
+        document.getElementById('cta').style.display = 'none'
+        document.getElementById('green').style.display = 'flex'
+    }
+
+    if(get_url_param('video') === 'true') {
+        document.getElementById('video').style.display = 'block'
+        document.getElementById('img').style.display = 'none'
+
+    }
+    if(get_url_param('slogan') === 'on') {
+        document.getElementById('slogan').style.display = 'none'
+        document.getElementById('slogan').style.display = 'flex'
+
+    }
+    if(get_url_param('brazil') === 'on') {
+        document.getElementById('bk').style.display = 'none'
+        document.getElementById('bk-brazil').style.display = 'flex'
+
+    }
+    if(get_url_param('bkg') === '2') {
+        document.getElementById('bkg1').style.display = 'none'
+        document.getElementById('bkg2').style.display = 'block'
+    }
+    if(get_url_param('bkg') === '3') {
+        document.getElementById('bkg1').style.display = 'none'
+        document.getElementById('bkg2').style.display = 'none'
+        document.getElementById('bkg3').style.display = 'block'
+    }
+    if(get_url_param('bkg') === '4') {
+        document.getElementById('bkg1').style.display = 'none'
+        document.getElementById('bkg2').style.display = 'none'
+        document.getElementById('bkg3').style.display = 'none'
+        document.getElementById('bkg4').style.display = 'block'
+    }
+    document.querySelectorAll('#impressum-links-wrapper a')[0].setAttribute('href', 'https://www.pwnprivacy.com/?domain=' + window.location.host)
+})
+</script>
+</html>

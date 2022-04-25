@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["gov-bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"877b02039c",applicationID:"140456413"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async src="/sites/default/files/google_analytics/gtag.js?ravsxn"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-32318423-1", {"groups":"default","anonymize_ip":true,"allow_ad_personalization_signals":false});gtag("config", "UA-32318423-1", {"custom_map":{"dimension1":"dimension1"}});gtag("event", "custom", {"dimension1":"(DHS) Department of Homeland Security"});</script>
+<link rel="canonical" href="https://www.dhs.gov/" />
+<link rel="shortlink" href="https://www.dhs.gov/" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/dhs_uswds/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Home | Homeland Security</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_9am41g7TTd9280JnNQQJ4qlkGPsBtS1WzMVJoDDApoU.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_TDiTqs9j0-ncN8aLBFaoW6tsVjT66kRl7DioYFBAfRQ.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_EvAGCIiE_ky73q1rah7PH_AayNUlXEgKrXrYbQJE3Co.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_L4hQCN5JhbXq0JRs3MliVf7T7CUtUMYa542Uxqf84s8.css" />
+
+    
+  
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="A3WTK-PERZP-2W77L-XJ2AR-542NX",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"A3WTK-PERZP-2W77L-XJ2AR-542NX",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="n2ewn6tilvvc6ytgnqha-f-8c7c53568-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"32","ak.cp":"26930","ak.ai":parseInt("102510",10),"ak.ol":"0","ak.cr":22,"ak.ipv":4,"ak.proto":"h2","ak.rid":"303c1445","ak.r":25904,"ak.a2":e,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"110.137.102.0","ak.cport":25956,"ak.gh":"118.97.158.29","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1650879502","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==EdOT40m9wiNbhKdtRhpCi60we17+c+EKyk1KtRl0WfeSO0jCzw/O9iz/X8ZbGuF294S32L9xbfshtv1egO3vLo7gYNKW0IDoBh1ZtTnDG4iNuBZKrNBf3YYa3fzypGiEbk5gkKKBLSaMzG+Aoz4ckYRiTQNWQG9oapZKmpljjd5kPGG1RSmJpVH47UBOSH5Dr1De7UKR5qT+zxV9pKTXsxOiz3uLKArS9C5JgCAZSOObmpmjaqwrGrNoXoBkbelSgmc57VAwAPZWsn6ujg59LIV7rZbLZb9evOIID9qyHJ5P4yN9DF5iCT+7F3x+ldyKDPybgdFGLI0MKDU6o/VLyIHB7/mMjFc9eDRMvvxB16L+CGn4ChGbpzIXpyf6G0DG/3QH8qVQ7yiy1J0RqGSn70p/22dcU8S5KubWvxBMVXA=","ak.pv":"432","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body class="path-frontpage page-node-type-site-page">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/profiles/dhsd8_gov/themes/custom/dhs_uswds_subtheme/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/profiles/dhsd8_gov/themes/custom/dhs_uswds_subtheme/assets/img/icon-dot-gov.svg" role="img" alt="Government Website">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>
+                Official websites use .gov              </strong>
+              <br/>
+                              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                          </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/profiles/dhsd8_gov/themes/custom/dhs_uswds_subtheme/assets/img/icon-https.svg" role="img" alt="Safely connect using HTTPS">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>
+                Secure .gov websites use HTTPS              </strong>
+              <br/>
+              A <strong>lock</strong>
+                (<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>)
+                or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="usa-overlay"></div>
+
+  <div class="grid-container header-top">
+      <div class="region region-header-top">
+    <div class="views-element-container block block-views block-views-blockalert-box-block-1" id="block-views-block-alert-box-block-1">
+  
+    
+      <div><div class="view view-alert-box view-id-alert_box view-display-id-block_1 js-view-dom-id-198c0e8b713be0b949cf5c6b3ffb6d25a972d7a2d44243e65c2122b07fd93632">
+  
+    
+      
+  
+          </div>
+</div>
+
+  </div>
+
+  </div>
+
+  </div>
+<header class="usa-header usa-header--basic usa-header--megamenu" role="banner">
+      <div class="usa-nav-container">
+         <div class="usa-navbar">
+          <div class="region region-header">
+    
+<div class="header-inner">
+  <div class="header-logo usa-logo tablet:grid-col-8">
+
+        <a class="logo-img" href="/" accesskey="1" title="Go to the U.S. Department of Homeland Security homepage" aria-label="U.S. Department of Homeland Security homepage link">
+      <img src="/themes/custom/dhs_uswds/logo-wordmark-blue.svg" alt="U.S. Department of Homeland Security logo" />
+    </a>
+          </div>
+  
+  <div id="search-block-wrap" class="tablet:grid-col-4" role="searchbox">
+    <script async src="https://cse.google.com/cse.js?cx=a8e90417aed6e7a75"></script>
+    <div class="gcse-searchbox-only" data-resultsurl="/search" data-defaulttorefinement="DHS.gov" data-gname="dhsallsearch" role="presentation"></div>
+  </div>
+
+</div>
+
+  </div>
+
+        <button class="usa-menu-btn">Menu</button>
+      </div>
+
+      <nav aria-label="Primary navigation" class="usa-nav" role="navigation">
+        <button class="usa-nav__close">
+          <img src="/themes/custom/dhs_uswds/assets/img/close-white.svg" alt="close" />
+        </button>
+        
+                            <div class="region region-primary-menu">
+      
+  
+          <div class="usa-nav__secondary">
+        <div class="usa-searchbar-mobile">
+            <div id="mobile-search-block-wrap" class="tablet:grid-col-4">
+              <script async src="https://cse.google.com/cse.js?cx=a8e90417aed6e7a75"></script>
+              <div class="gcse-searchbox-only" data-resultsurl="/search"></div>
+            </div>
+        </div>
+      </div>
+      <ul class="usa-nav__primary usa-accordion">
+    
+    
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-1">
+          <span>Topics</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-1" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/topics">
+                <span><h3>Topics</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/topics" >
+              <span>Topics</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/border-security">
+          <span>Border Security</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/citizenship-and-immigration-services">
+          <span>Citizenship and Immigration</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/cybersecurity">
+          <span>Cybersecurity</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/disasters">
+          <span>Disasters</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/economic-security">
+          <span>Economic Security</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/election-security">
+          <span>Election Security</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/homeland-security-enterprise">
+          <span>Homeland Security Enterprise</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/human-trafficking">
+          <span>Human Trafficking</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/immigration-and-customs-enforcement">
+          <span>Immigration and Customs Enforcement</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/preventing-terrorism">
+          <span>Preventing Terrorism</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/resilience">
+          <span>Resilience</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/science-and-technology">
+          <span>Science and Technology</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/transportation-security">
+          <span>Transportation Security</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-2">
+          <span>News</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-2" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/news">
+                <span><h3>News</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/news" >
+              <span>News</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/all-news-updates">
+          <span>All DHS News</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/dhs-citizen-application-directory">
+          <span>Apps</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/blog">
+          <span>Blog</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/comunicados-de-prensa">
+          <span>Comunicados de Prensa</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/data">
+          <span>Data</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/events">
+          <span>Events</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/fact-sheets">
+          <span>Fact Sheets</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/featured">
+          <span>Featured News</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/live">
+          <span>Homeland Security LIVE</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/media-contacts">
+          <span>Media Contacts</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/medialibrary">
+          <span>Media Library</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/national-terrorism-advisory-system">
+          <span>National Terrorism Advisory System</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/press-releases">
+          <span>Press Releases</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/publications">
+          <span>Publications Library</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/social-media-directory">
+          <span>Social Media</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/speeches">
+          <span>Speeches</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="https://public.govdelivery.com/accounts/USDHS/subscriber/new">
+          <span>Subscribe</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/news-releases/testimony">
+          <span>Testimony</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-3">
+          <span>In Focus</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-3" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/focus">
+                <span><h3>In Focus</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/focus" >
+              <span>In Focus</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/dhs-actions-climate-change">
+          <span>Addressing Climate Change</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/coronavirus">
+          <span>Coronavirus (COVID-19)</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/topics/cybersecurity">
+          <span>Cybersecurity</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/deferred-action-childhood-arrivals-daca">
+          <span>Deferred Action for Childhood Arrivals</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/allieswelcome">
+          <span>Operation Allies Welcome</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/recognizing-dhs-excellence">
+          <span>Recognizing DHS Excellence</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-4">
+          <span>How Do I?</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-4" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/how-do-i">
+                <span><h3>How Do I?</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/how-do-i" >
+              <span>How Do I?</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/how-do-i-alphabetical">
+          <span>Alphabetical Listing</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/how-do-i/at-dhs">
+          <span>At DHS</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/how-do-i/for-businesses">
+          <span>For Businesses</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/how-do-i/for-travelers">
+          <span>For Travelers</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/how-do-i/for-the-public">
+          <span>For the Public</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-5">
+          <span>Get Involved</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-5" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/get-involved">
+                <span><h3>Get Involved</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/get-involved" >
+              <span>Get Involved</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/blue-campaign">
+          <span>Blue Campaign</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="https://www.ready.gov/citizen-corps">
+          <span>Citizen Corps</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/see-something-say-something">
+          <span>If You See Something, Say Something®</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/nationwide-sar-initiative-nsi">
+          <span>Nationwide SAR Initiative</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/real-id">
+          <span>REAL ID</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="https://www.ready.gov">
+          <span>Ready.gov</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/stopthebleed">
+          <span>Stop the Bleed</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/us-coast-guard-auxiliary">
+          <span>US Coast Guard Auxiliary</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+              <li class="usa-nav__primary-item">
+      
+              <button class="usa-accordion__button usa-nav__link " aria-expanded="false" aria-controls="basic-mega-nav-section-6">
+          <span>About DHS</span><span class="expansion-indicator"></span>
+        </button>
+      
+                
+  
+          <div id="basic-mega-nav-section-6" class="usa-nav__submenu usa-megamenu" hidden="">
+
+              <div id="desktop-submenu" class="grid-row grid-gap-4">
+          <div class="desktop:grid-col-3">
+            <div class="usa-nav__submenu-item">
+              <a href="/about-dhs">
+                <span><h3>About DHS</h3></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      
+        <div id="extra-parent" class="grid-row grid-gap-4">
+    
+          <div id="mobile-submenu">
+        <div class="usa-col">
+          <div class="usa-nav__submenu-item">
+            <a href="/about-dhs" >
+              <span>About DHS</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/2022-priorities">
+          <span>2022 Priorities</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/budget-performance">
+          <span>Budget &amp; Performance</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/contact-us">
+          <span>Contact Us</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/employee-resources">
+          <span>Employee Resources</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/history">
+          <span>History</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/homeland-security-careers">
+          <span>Homeland Security Careers</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/laws-regulations">
+          <span>Laws &amp; Regulations</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/leadership">
+          <span>Leadership</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/mission">
+          <span>Mission</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/organization">
+          <span>Organization</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+              <div class="usa-col">
+
+              
+      
+                        <div class="usa-nav__submenu-item">
+                <a href="/site-links">
+          <span>Site Links</span>
+        </a>
+                  </div>
+              
+              </div>
+      
+    
+            </div>
+      </div>
+    
+  
+
+      
+              </li>
+      
+    
+          </ul>
+    
+  
+
+
+
+
+  </div>
+
+        
+                
+             </nav>
+
+      </div>
+  
+</header>
+
+ <main class="usa-section" id="main-content">
+   <div class="grid-edge-to-edge">
+     <div class="grid-row grid-gap">
+       <div class="grid-col-12">
+         
+         
+
+         
+      </div>
+     </div>
+
+     <div class="grid-row grid-gap">
+            
+       <div class="region-content tablet:grid-col-12">
+           <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div><div id="block-mainpagecontent" class="block block-system block-system-main-block">
+      <article role="article" lang="en">
+
+  
+    
+
+  
+  <div>
+
+    
+    
+      <div class="field field--name-field-hero field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+<div class="usa-hero paragraph paragraph--type--uswds-hero paragraph--view-mode--default"  style="background-image:url('/sites/default/files/2022-04/22_0420_s1_recognition-month_0.jpg');">
+  <div class="grid-container">
+
+                  <div class="usa-hero__callout">
+                                          <h1 class="usa-hero__heading">
+            <span class="usa-hero__heading--alt">Recognizing DHS Excellence</span>
+      </h1>
+                                            
+            <div class="clearfix text-formatted field field--name-field-body field--type-text-long field--label-hidden field__item"><p>Leading up to May’s Public Service Recognition Week, Secretary Mayorkas and Department leadership are paying special tribute to members of the workforce and their incredible contributions.</p></div>
+      
+                                            
+            <div class="field field--name-field-button field--type-link field--label-hidden field__item"><a href="/recognizing-dhs-excellence" class="usa-button usa-button--outline usa-button--inverse">Recognizing DHS Excellence</a></div>
+      
+                                    </div>
+        
+  </div>
+</div>
+</div>
+              <div class="field__item">
+<div class="usa-hero paragraph paragraph--type--uswds-hero paragraph--view-mode--default"  style="background-image:url('/sites/default/files/2022-04/shutterstock_1889589925_dhs-hero_0.jpg');">
+  <div class="grid-container">
+
+                  <div class="usa-hero__callout">
+                                          <h1 class="usa-hero__heading">
+            <span class="usa-hero__heading--alt">DHS Extends COVID-19 Vaccination Requirements for Non-U.S. Travelers</span>
+      </h1>
+                                            
+                                            
+            <div class="field field--name-field-button field--type-link field--label-hidden field__item"><a href="/news/2022/04/21/dhs-extends-covid-19-vaccination-requirements-non-us-travelers-entering-united" class="usa-button usa-button--outline usa-button--inverse">Read the Press Release</a></div>
+      
+                                    </div>
+        
+  </div>
+</div>
+</div>
+              <div class="field__item">
+<div class="usa-hero paragraph paragraph--type--uswds-hero paragraph--view-mode--default"  style="background-image:url('/sites/default/files/2022-04/22_0422_WH_Ukraine.jpg');">
+  <div class="grid-container">
+
+                  <div class="usa-hero__callout">
+                                          <h1 class="usa-hero__heading">
+            <span class="usa-hero__heading--alt">President Biden Announces Uniting for Ukraine</span>
+      </h1>
+                                            
+            <div class="clearfix text-formatted field field--name-field-body field--type-text-long field--label-hidden field__item"><p>New Streamlined Process to Welcome Ukrainians Fleeing Russia's Invasion</p></div>
+      
+                                            
+            <div class="field field--name-field-button field--type-link field--label-hidden field__item"><a href="/news/2022/04/21/president-biden-announce-uniting-ukraine-new-streamlined-process-welcome-ukrainians" class="usa-button usa-button--outline usa-button--inverse">Read the Press Release</a></div>
+      
+                                    </div>
+        
+  </div>
+</div>
+</div>
+              <div class="field__item">
+<div class="usa-hero paragraph paragraph--type--uswds-hero paragraph--view-mode--default"  style="background-image:url('/sites/default/files/2022-04/22_0412_opa_child-abuse-month.jpg');">
+  <div class="grid-container">
+
+                  <div class="usa-hero__callout">
+                                          <h1 class="usa-hero__heading">
+            <span class="usa-hero__heading--alt">DHS Efforts to Combat Child Exploitation and Abuse</span>
+      </h1>
+                                            
+            <div class="clearfix text-formatted field field--name-field-body field--type-text-long field--label-hidden field__item"><p>The whole of DHS works tirelessly to protect children from those who would do them harm.</p></div>
+      
+                                            
+            <div class="field field--name-field-button field--type-link field--label-hidden field__item"><a href="/news/2022/04/04/fact-sheet-dhs-efforts-combat-child-exploitation-and-abuse" class="usa-button usa-button--outline usa-button--inverse">Read the Fact Sheet</a></div>
+      
+                                    </div>
+        
+  </div>
+</div>
+</div>
+          </div>
+  
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- DHS.gov Home Page --></div>
+      
+      <div class="field field--name-field-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--section paragraph--view-mode--default" id=''>
+        
+            <div class="grid-col-fill">
+      
+      
+      <div class="field field--name-field-content field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+<div class="paragraph paragraph--type--uswds-card-container paragraph--view-mode--default paragraph--id--39">
+  <ul class="usa-card-group">
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">Project iGuardian</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2022-04/22_0331_ICE_iGuardians.jpg?h=73306683&amp;itok=hqlTZ0hy" width="500" height="281" alt="Project iGuardian graphic image with illustration of team members" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>Project iGuardian is focused on keeping children and teens safe from online predators through education and awareness.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="https://www.ice.gov/topics/iGuardians" class="usa-button">
+                                Learn More About iGuardians
+              </a>
+            </div>
+                  </div>
+              </li>
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">Addressing Climate Change</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2021-12/21_1215_climate-change.jpg?h=73306683&amp;itok=h_CfZD8w" width="500" height="281" alt="farm landscape" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>DHS is committed to adapting and responding to the climate emergency.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="/dhs-actions-climate-change?utm_source=hp_slideshow&amp;utm_medium=web&amp;utm_campaign=dhsgov" class="usa-button">
+                                DHS Actions: Climate Change
+              </a>
+            </div>
+                  </div>
+              </li>
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">Operation Allies Welcome</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2021-12/21_1217_operation-allies-welcome-sc.jpg?h=73306683&amp;itok=ZH1qpwtI" width="500" height="281" alt="American flag silhouetted against the sky" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>DHS is leading federal efforts to resettle vulnerable Afghans.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="/allieswelcome?utm_source=hp_slideshow&amp;utm_medium=web&amp;utm_campaign=dhsgov" class="usa-button">
+                                DHS Actions: Operation Allies Welcome
+              </a>
+            </div>
+                  </div>
+              </li>
+      </ul>
+</div>
+</div>
+              <div class="field__item">
+
+
+<div class="paragraph paragraph--type--uswds-card-container paragraph--view-mode--default paragraph--id--5364">
+  <ul class="usa-card-group">
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">Cybersecurity</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2022-03/shutterstock_1902760141_dhs-large-card.jpg?h=73306683&amp;itok=cBlUR1Cm" width="500" height="281" alt="Cybersecurity network icons floating on a black background" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>Enhancing the nation’s cybersecurity resilience is a top priority for DHS.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="/topics/cybersecurity" class="usa-button">
+                                DHS Response: Cybersecurity
+              </a>
+            </div>
+                  </div>
+              </li>
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">National Terrorism Advisory System</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2021-12/21_1221_ntas-banner-sc.jpg?h=73306683&amp;itok=zFbs1tFe" width="500" height="281" alt="Department of Homeland Security logo with text National Terrorism Advisory System Bulletin, DHS.gov/advisories" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>Bulletin Active through June 7, 2022.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="/ntas/advisory/national-terrorism-advisory-system-bulletin-february-07-2022" class="usa-button">
+                                View Active Bulletin
+              </a>
+            </div>
+                  </div>
+              </li>
+                            <li class="tablet:grid-col-4 usa-card">
+
+                <div class="usa-card__container">
+          <header class="usa-card__header">
+            <h2 class="usa-card__heading">REAL ID</h2>
+          </header>
+
+          <div class="usa-card__media">
+                                                      <div class="usa-card__img">
+                <article class="media media--type-image media--view-mode-large-card-standard">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large_card/public/2021-12/21_1221_realid-sc.jpg?h=73306683&amp;itok=AT_XCBtR" width="500" height="281" alt="Arizona driver&#039;s license suspended above an outstretched hand" loading="lazy" class="image-style-large-card" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+
+              </div>
+                      </div>
+
+          <div class="usa-card__body">
+           <p>Meet your new ID.<br />
+The one that's ready to fly.</p>
+
+<p>Be your REAL ID self by <strong>May 3, 2023</strong>.</p>
+
+          </div>
+
+                      <div class="usa-card__footer">
+              <a href="/real-id/are-you-real-id-ready?utm_source=hp_slideshow&amp;utm_medium=web&amp;utm_campaign=dhsgov" class="usa-button">
+                                Are You REAL ID Ready?
+              </a>
+            </div>
+                  </div>
+              </li>
+      </ul>
+</div>
+</div>
+          </div>
+  
+
+            </div>
+      
+            </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--section paragraph--view-mode--default" id=''>
+        
+            <div class="grid-col-fill">
+      
+      
+      <div class="field field--name-field-content field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--uswds-grid paragraph--view-mode--default">
+    
+            <div class="grid-row grid-col-fill">
+      
+      
+
+<div class="field field--name-field-uswds-paragraphs field--type-entity-reference-revisions field--label-hidden grid-row">
+      <div class="field__item tablet:grid-col">  <div class="paragraph paragraph--type--uswds-grid paragraph--view-mode--default">
+    
+            <div class="grid-row grid-col-fill">
+      
+      
+
+<div class="field field--name-field-uswds-paragraphs field--type-entity-reference-revisions field--label-hidden grid-row">
+      <div class="field__item tablet:grid-col">  <div class="paragraph paragraph--type--view paragraph--view-mode--default">
+    
+            <div class="grid-col-fill">
+      
+      
+            <div class="field field--name-field-view field--type-viewsreference field--label-hidden field__item"><div class="viewsreference--view-title hidden">
+    <h2>News &amp; Updates</h2>
+</div>
+<div class="views-element-container"><div class="view view-news-updates-home view-id-news_updates_home view-display-id-block_1 js-view-dom-id-f7ba46155f4988db448b4eb9d6ab08bd47e8ec5fe987b3953dcf90fb25872bce">
+  
+    
+      <div class="view-header">
+      <h2>News &amp; Updates</h2>
+    </div>
+      
+      <div class="view-content">
+          <div class="news-updates views-row"><div class="news-updates-date-type"><div><span class="news-created">April 22, 2022</span> | <span class="news-type"><a href="/news-releases/press-releases" title="View Press Releases">Press Releases</a></span>
+</div></div><h3 class="news-updates-title"><span><a href="/news/2022/04/22/hack-dhs-program-successfully-concludes-first-bug-bounty-program" hreflang="en">“Hack DHS” Program Successfully Concludes First Bug Bounty Program</a></span></h3></div>
+    <div class="news-updates views-row"><div class="news-updates-date-type"><div><span class="news-created">April 21, 2022</span> | <span class="news-type"><a href="/news-releases/press-releases" title="View Press Releases">Press Releases</a></span>
+</div></div><h3 class="news-updates-title"><span><a href="/news/2022/04/21/fact-sheet-dhs-international-cybersecurity-efforts" hreflang="en">Fact Sheet: DHS International Cybersecurity Efforts </a></span></h3></div>
+    <div class="news-updates views-row"><div class="news-updates-date-type"><div><span class="news-created">April 21, 2022</span> | <span class="news-type"><a href="/news-releases/press-releases" title="View Press Releases">Press Releases</a></span>
+</div></div><h3 class="news-updates-title"><span><a href="/news/2022/04/21/president-biden-announce-uniting-ukraine-new-streamlined-process-welcome-ukrainians" hreflang="en">President Biden to Announce Uniting for Ukraine, a New Streamlined Process to Welcome Ukrainians Fleeing Russia&#039;s Invasion of Ukraine </a></span></h3></div>
+    <div class="news-updates views-row"><div class="news-updates-date-type"><div><span class="news-created">April 21, 2022</span> | <span class="news-type"><a href="/news-releases/press-releases" title="View Press Releases">Press Releases</a></span>
+</div></div><h3 class="news-updates-title"><span><a href="/news/2022/04/21/dhs-extends-covid-19-vaccination-requirements-non-us-travelers-entering-united" hreflang="en">DHS Extends COVID-19 Vaccination Requirements for Non-U.S. Travelers Entering the United States via Land Ports of Entry and Ferry Terminals</a></span></h3></div>
+    <div class="news-updates views-row"><div class="news-updates-date-type"><div><span class="news-created">April 20, 2022</span> | <span class="news-type"><a href="/news-releases/press-releases" title="View Press Releases">Press Releases</a></span>
+</div></div><h3 class="news-updates-title"><span><a href="/news/2022/04/20/readout-secretary-mayorkass-trip-panama" hreflang="en">Readout of Secretary Mayorkas’s Trip to Panama</a></span></h3></div>
+
+    </div>
+  
+            <div class="view-footer">
+      <a href="/news-releases/press-releases" class="usa-button" id="home-more-news-updates">Show me more News &amp; Updates</a>
+    </div>
+    </div>
+</div>
+</div>
+      
+
+            </div>
+      
+      </div>
+</div>
+      <div class="field__item tablet:grid-col">  <div class="paragraph paragraph--type--text-field paragraph--view-mode--default">
+    
+            <div class="grid-col-fill">
+      
+      
+            <div class="clearfix text-formatted field field--name-field-body field--type-text-long field--label-hidden field__item"><h2>Social Media</h2>
+
+<div style="display:flex;justify-content:center;"><a class="twitter-timeline" data-chrome="noheader noborders" data-dnt="true" data-height="590" data-width="450" href="https://twitter.com/DHSgov/lists/dhs-twitter-accounts?ref_src=twsrc%5Etfw">DHS Twitter Accounts</a> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+<p> </p>
+</div>
+      
+
+            </div>
+      
+      </div>
+</div>
+  </div>
+
+
+            </div>
+      
+      </div>
+</div>
+  </div>
+
+
+            </div>
+      
+      </div>
+</div>
+          </div>
+  
+
+            </div>
+      
+            </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--section paragraph--view-mode--default" id=''>
+        
+            <div class="grid-col-fill">
+      
+      
+      <div class="field field--name-field-content field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+
+<div class="paragraph paragraph--type--carousel-container paragraph--view-mode--default paragraph--id--51">
+  <ul class="usa-card-group carousel-item">
+          <li class="tablet:grid-col-3 usa-card carousel-item">
+        <a href="/homeland-security-careers" class="text-no-underline card-link">
+          <div class="usa-card-carousel-item__container">
+            <header class="usa-card-carousel-item__header">
+              <h2 class="usa-card-carousel-item__heading">Homeland Security Careers</h2>
+            </header>
+            <div class="usa-card__media carousel-item">
+                              <div class="usa-card__img carousel-item">
+                  
+            <div class="field field--name-field-carousel-image field--type-entity-reference field--label-hidden field__item"><article class="media media--type-image media--view-mode-default">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2022-01/21_1221-homeland-security-enterprise-careers.png?itok=dfEgtdzH" width="480" height="270" alt="Graphic of a resume and people talking at a table representing the Homeland Security Careers topic." loading="lazy" class="image-style-large" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+</div>
+      
+                </div>
+                          </div>
+          </div>
+        </a>
+      </li>
+          <li class="tablet:grid-col-3 usa-card carousel-item">
+        <a href="/see-something-say-something/how-to-report-suspicious-activity" class="text-no-underline card-link">
+          <div class="usa-card-carousel-item__container">
+            <header class="usa-card-carousel-item__header">
+              <h2 class="usa-card-carousel-item__heading">How to Report Suspicious Activity</h2>
+            </header>
+            <div class="usa-card__media carousel-item">
+                              <div class="usa-card__img carousel-item">
+                  
+            <div class="field field--name-field-carousel-image field--type-entity-reference field--label-hidden field__item"><article class="media media--type-image media--view-mode-default">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2022-02/22_0214-human-trafficking-sc.jpg?itok=tbrRaN2K" width="480" height="270" alt="Graphic of phone calling and ID card" loading="lazy" class="image-style-large" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+</div>
+      
+                </div>
+                          </div>
+          </div>
+        </a>
+      </li>
+          <li class="tablet:grid-col-3 usa-card carousel-item">
+        <a href="/check-wait-times" class="text-no-underline card-link">
+          <div class="usa-card-carousel-item__container">
+            <header class="usa-card-carousel-item__header">
+              <h2 class="usa-card-carousel-item__heading">Check Wait Times</h2>
+            </header>
+            <div class="usa-card__media carousel-item">
+                              <div class="usa-card__img carousel-item">
+                  
+            <div class="field field--name-field-carousel-image field--type-entity-reference field--label-hidden field__item"><article class="media media--type-image media--view-mode-default">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2022-02/22_0214-travel-sc.jpg?itok=gmnvzQ4D" width="480" height="270" alt="Graphic of passport and plane traveling the globe" loading="lazy" class="image-style-large" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+</div>
+      
+                </div>
+                          </div>
+          </div>
+        </a>
+      </li>
+          <li class="tablet:grid-col-3 usa-card carousel-item">
+        <a href="/topics/cybersecurity" class="text-no-underline card-link">
+          <div class="usa-card-carousel-item__container">
+            <header class="usa-card-carousel-item__header">
+              <h2 class="usa-card-carousel-item__heading">Cybersecurity</h2>
+            </header>
+            <div class="usa-card__media carousel-item">
+                              <div class="usa-card__img carousel-item">
+                  
+            <div class="field field--name-field-carousel-image field--type-entity-reference field--label-hidden field__item"><article class="media media--type-image media--view-mode-default">
+  
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2021-11/21_1103-Homepage-Pictography-Cybersecurity.jpg?itok=xBzXndrd" width="480" height="270" alt="Cybersecurity" loading="lazy" class="image-style-large" />
+
+
+</div>
+          </div>
+
+    </div>
+  </div>
+
+  </article>
+</div>
+      
+                </div>
+                          </div>
+          </div>
+        </a>
+      </li>
+      </ul>
+</div>
+</div>
+          </div>
+  
+
+            </div>
+      
+            </div>
+</div>
+          </div>
+  
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+       </div>
+            
+    </div>
+   </div>
+
+   </main>
+
+
+<div class="usa-footer-container">
+  <footer class="usa-footer usa-footer--medium" role="contentinfo">
+    <div class="grid-container usa-footer__return-to-top">
+      <a href="#" class="focusable">Return to top</a>
+    </div>
+
+           <div class="usa-footer__primary-section">
+         <div class="grid-container">
+           <div class="grid-row grid-gap ">
+                                         <div class="">
+                 <nav class="usa-footer__nav" aria-label="Footer navigation">  <div class="region region-footer-menu">
+    
+
+    
+                <ul class="grid-row grid-gap add-list-reset">
+        
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/topics" class="usa-footer__primary-link" title="Topics" data-drupal-link-system-path="node/336">Topics</a>
+      </li>
+      
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/news" class="usa-footer__primary-link" title="News" data-drupal-link-system-path="node/337">News</a>
+      </li>
+      
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/focus" class="usa-footer__primary-link" data-drupal-link-system-path="node/13079">In Focus</a>
+      </li>
+      
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/how-do-i" class="usa-footer__primary-link" data-drupal-link-system-path="node/16252">How Do I?</a>
+      </li>
+      
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/get-involved" class="usa-footer__primary-link" title="Get Involved" data-drupal-link-system-path="node/282">Get Involved</a>
+      </li>
+      
+    
+                  <li class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content">
+        <a href="/about-dhs" class="usa-footer__primary-link" data-drupal-link-system-path="node/283">About DHS</a>
+      </li>
+      
+    
+                </ul>
+        
+  
+
+
+
+  </div>
+
+                 </nav>
+               </div>
+             
+                     </div>
+                               </div>
+       </div>
+                            
+        <div class="usa-footer__intermediate-section">
+          <div class="grid-container">
+
+                      <div class="grid-row grid-gap">
+              <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+                <div class="mobile-lg:grid-col-auto">
+                  <img class="usa-footer__logo-img" src="/profiles/dhsd8_gov/themes/custom/dhs_uswds_subtheme/logo-wordmark-blue.svg" alt="U.S. Department of Homeland Security Seal">
+              </div>
+                              </div>
+                                                              <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+                  <div class="usa-footer__social-links grid-row grid-gap-1">
+                                                                  <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--facebook" href="/facebook">
+                            <span class="usa-social-link__icon usa-social-link__icon--facebook" role="img" aria-label="Facebook">Facebook</span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--twitter" href="/twitter">
+                            <span class="usa-social-link__icon usa-social-link__icon--twitter" role="img" aria-label="Twitter">Twitter</span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--youtube" href="/youtube">
+                            <span class="usa-social-link__icon usa-social-link__icon--youtube" role="img" aria-label="YouTube">YouTube</span>
+                          </a>
+                        </div>
+                                                                                                                                  <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--flickr" href="/flicker">
+                            <span class="usa-social-link__icon usa-social-link__icon--flickr" role="img" aria-label="Flickr">Flickr</span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--instagram" href="/instagram">
+                            <span class="usa-social-link__icon usa-social-link__icon--instagram" role="img" aria-label="Instagram">Instagram</span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--linkedin" href="/linkedin">
+                            <span class="usa-social-link__icon usa-social-link__icon--linkedin" role="img" aria-label="LinkedIn">LinkedIn</span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--email" href="https://public.govdelivery.com/accounts/USDHS/subscriber/new" target="_blank">
+                            <span class="usa-social-link__icon usa-social-link__icon--email" role="img" aria-label="Email">Email</span>
+                          </a>
+                        </div>
+                                                            </div>
+
+                                  <address class="usa-footer__address">
+                    <div class="usa-footer__contact-info grid-row grid-gap">
+                                                                </div>
+                  </address>
+                </div>
+                          </div>
+          
+          </div>
+        </div>
+      
+    <div class="usa-footer__secondary-section">
+      <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="grid-col-9">
+            <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__logos">
+                  <a href="https://www.dhs.gov" class="usa-identifier__logo">
+                    <img class="usa-identifier__logo-img" src="/themes/custom/dhs_uswds/logo.svg" alt="U.S. Department of Homeland Security Seal">
+                  </a></div>
+                <div class="usa-identifier__identity" aria-label="Agency description">
+                  <p class="usa-identifier__identity-domain">DHS.gov</p>
+                  <p class="usa-identifier__identity-disclaimer">
+                    An official website of the <a href="https://www.dhs.gov">U.S. Department of Homeland Security</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+              <div class="region region-footer-secondary">
+    <nav role="navigation" aria-labelledby="block-dhs-uswds-subtheme-footer-menu" id="block-dhs-uswds-subtheme-footer" class="grid-col-9 block block-menu navigation menu--footer">
+            
+      <ul class="menu menu--footer nav">
+                              <li class="first">
+                                                  <a href="/about-dhs" class="first" data-drupal-link-system-path="node/283">About DHS</a>
+                  </li>
+                              <li>
+                                                  <a href="/accessibility" data-drupal-link-system-path="node/53598">Accessibility</a>
+                  </li>
+                              <li>
+                                                  <a href="/performance-financial-reports" data-drupal-link-system-path="node/5067">Budget and Performance</a>
+                  </li>
+                              <li>
+                                                  <a href="/websites" title="DHS Components" data-drupal-link-system-path="node/8968">DHS Components</a>
+                  </li>
+                              <li>
+                                                  <a href="/foia" data-drupal-link-system-path="node/7361">FOIA Requests</a>
+                  </li>
+                              <li>
+                                                  <a href="/homeland-security-no-fear-act-reporting" data-drupal-link-system-path="node/4646">No FEAR Act Data</a>
+                  </li>
+                              <li>
+                                                  <a href="/privacy-policy" data-drupal-link-system-path="node/4652">Privacy Policy</a>
+                  </li>
+                              <li>
+                                                  <a href="/site-links" data-drupal-link-system-path="node/3797">Site Links</a>
+                  </li>
+                              <li>
+                                                  <a href="https://www.oig.dhs.gov/" title="Office of the Inspector General">Office of Inspector General</a>
+                  </li>
+                              <li>
+                                                  <a href="https://www.whitehouse.gov" title="The White House">The White House</a>
+                  </li>
+                              <li class="last">
+                                                  <a href="https://www.usa.gov" title="USA.gov" class="last">USA.gov</a>
+                  </li>
+          </ul>
+  
+
+  </nav>
+<div id="block-hotfixstyles" class="block block-block-content block-block-contente04a246e-b318-4671-9a2c-b2082cb6871f">
+  
+    
+        <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@media (min-width: 64em) {
+  #block-breadcrumbs {
+    padding-top: 2em;
+  }
+}
+
+/*--><!]]>*/
+</style></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+  </div>
+
+                        <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="U.S. government information and services">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
+                <a href="https://www.usa.gov/" class="usa-link" title="Visit the USA.gov website">Visit USA.gov</a>
+              </div>
+            </section>
+          </div>
+          <div class="grid-col-3 ntas-widget">
+            <iframe id="ntas-frame" src="https://www.dhs.gov/ntas/" name="NationalTerrorismAdvisorySystem" title="National Terrorism Advisory System" width="170" height="180" scrolling="no" frameborder="0" seamless border="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/53114","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"classy\/base,classy\/messages,core\/drupal.dialog.ajax,core\/normalize,dhs_core\/dhs_anchor_accordion_links,dhs_uswds\/global,dhs_uswds_subtheme\/global,dhs_uswds_subtheme\/siteimprove,emerald\/ableplayer,extlink\/drupal.extlink,extlink_extra\/extlink_508,extlink_extra\/extlink_extra,google_analytics\/google_analytics,layout_discovery\/onecol,paragraphs\/drupal.paragraphs.unpublished,system\/base,usfedgov_google_analytics\/load-analytics-cdn,uswds\/drupal,views\/views.module,wcm_node_feedback\/wcm_node_feedback,wcm_survey\/survey","theme":"dhs_uswds_subtheme","theme_token":null},"ajaxTrustedUrl":[],"extlink_extra":{"extlink_alert_type":"modal","extlink_modal_width":"420px","extlink_alert_timer":0,"extlink_alert_url":"https:\/\/www.dhs.gov\/now-leaving","extlink_cache_fix":1,"extlink_exclude_warning":"","extlink_508_fix":1,"extlink_508_text":" [external link]","extlink_url_override":0,"extlink_url_params":[]},"google_analytics":{"account":"UA-32318423-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"wcmSurvey":{"userPercentage":"25","pageDepth":"2","url":"https:\/\/www.surveymonkey.com\/s\/dhs-survey","force":false,"surveyRetakeTimeout":"30","surveyPopup":"\u003Cdiv id=\u0022wcm-survey-popup\u0022 class=\u0022\u0022\u003E\n            \u003Cdiv class=\u0022logo logo-img\u0022\u003E\n            \u003Cimg id=\u0022logo\u0022 alt=\u0022 Logo\u0022 src=\u0022\/themes\/custom\/dhs_uswds\/logo-wordmark-blue.svg\u0022\/\u003E\n        \u003C\/div\u003E\n\n        \u003Cdiv class=\u0022message\u0022\u003E\n        \u003Cp\u003EYou have been selected to participate in a brief survey about your experience today with DHS.gov.\u003C\/p\u003E\r\n\n    \u003C\/div\u003E\n\u003C\/div\u003E\n","survey":{"sid":"1","title":"Thank you for visiting our website.","body":"\u003Cp\u003EYou have been selected to participate in a brief survey about your experience today with DHS.gov.\u003C\/p\u003E\r\n","url":"https:\/\/www.surveymonkey.com\/s\/dhs-survey","targetlang":"en","yeslabel":"Yes, I\u0027ll give feedback","nolabel":"No Thanks","yestitle":"Yes, I\u0027ll give feedback","notitle":"No Thanks, I do not want to give feedback","is_active":"1","patterns":[],"force":false},"debugMode":false,"position":"centered","offset":"","height":"320","width":"","maxHeight":"","maxWidth":"100%"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"(\\.fayze2\\.com|\\.gov|\\.mil|feedburner\\.com|www\\.facebook\\.com\\\/homelandsecurity|www\\.facebook\\.com\\\/ntasalerts|twitter\\.com|www\\.twitter\\.com|www\\.youtube\\.com\\\/user\\\/ushomelandsecurity|www\\.surveymonkey\\.com|homelandsecurity\\.ideascale\\.com|tel:|sms:|www\\.gocoastguard\\.com|section508testing\\.org|JavaScript:void()|tel:|sms:|www\\.gocoastguard\\.com|itunes\\.apple\\.com|pcast:\\\/\\\/www\\.dhs\\.gov|play\\.google\\.com|dvidshub\\.net|join\\.cgaux\\.org|appengine\\.egov\\.com\\\/apps\\\/ar\\\/DFA\\\/RealID|www\\.guamtax\\.com\\\/about\\\/mvd\\.html|www\\.ksrevenue\\.org\\\/dovrealid\\.html|www\\.expresslane\\.org\\\/Pages\\\/default\\.aspx|dmvnv\\.com\\\/realid\\.htm|www\\.scdmvonline\\.com\\\/Driver\\-Services\\\/Drivers\\-License\\\/REAL\\-ID|www\\.dot\\.state\\.wy\\.us\\\/home\\\/driver\\_license\\_records\\\/driver\\-license\\.html)","extInclude":"","extCssExclude":"#wcm-survey-popup","extCssExplicit":"","extAlert":false,"extAlertText":"\u0026lt;style type=\u0026quot;text\/css\u0026quot;\u0026gt;.ui-dialog .ui-dialog-titlebar {background-color: #005288;color: #FFFFFF;}\r\n\u0026lt;\/style\u0026gt;\r\n\u0026lt;p style=\u0026quot;display:flex;justify-content:center;\u0026quot;\u0026gt;\u0026lt;img alt=\u0026quot;\u0026quot; src=\u0026quot;\/themes\/custom\/dhs_uswds\/logo.png\u0026quot; style=\u0026quot;width:55%;height:auto;\u0026quot; \/\u0026gt;\u0026lt;\/p\u0026gt;\r\n\r\n\u0026lt;h4\u0026gt;You are now leaving the Department of Homeland Security\u0026#039;s website and headed towards:\u0026lt;\/h4\u0026gt;\r\n\r\n\u0026lt;p\u0026gt;[extlink:external-url]\u0026lt;\/p\u0026gt;\r\n\r\n\u0026lt;p\u0026gt;Are you sure you want to proceed?\u0026lt;\/p\u0026gt;\r\n\r\n\u0026lt;div class=\u0026quot;usa-button-group\u0026quot;\u0026gt;\r\n\u0026lt;div style=\u0026quot;width:100%;margin:1rem;\u0026quot;\u0026gt;\u0026lt;a class=\u0026quot;usa-button\u0026quot; href=\u0026quot;[extlink:external-url]\u0026quot; style=\u0026quot;background-color:#477326;color:white;width:100%;\u0026quot;\u0026gt;Yes\u0026lt;\/a\u0026gt;\u0026lt;\/div\u0026gt;\r\n\r\n\u0026lt;div style=\u0026quot;width:100%;margin:1rem;\u0026quot;\u0026gt;\u0026lt;a class=\u0026quot;usa-button usa-button--outline\u0026quot; href=\u0026quot;[extlink:back-url]\u0026quot; style=\u0026quot;color:#005288;width:100%;\u0026quot;\u0026gt;No, return to DHS.gov\u0026lt;\/a\u0026gt;\u0026lt;\/div\u0026gt;\r\n\u0026lt;\/div\u0026gt;\r\n\r\n\u0026lt;p\u0026gt;For more information, read the \u0026lt;a href=\u0026quot;https:\/\/www.dhs.gov\/linking-policy\u0026quot; title=\u0026quot;Linking Policy\u0026quot;\u0026gt;DHS.gov linking policy\u0026lt;\/a\u0026gt;.\u0026lt;\/p\u0026gt;\r\n","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"user":{"uid":0,"permissionsHash":"611f272965debf1fbb5ca626723f0c8ed4b3bcaf59ed71f1fae2c021f2a5d212"}}</script>
+<script src="/sites/default/files/js/js_axXsx6jxUkozUEo7GyNmfYCA4aUxz0n3S9IcJbf2gXw.js"></script>
+<script src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DHS&amp;pua=0" id="_fed_an_ua_tag"></script>
+<script src="/sites/default/files/js/js_FrrZv28W7AH5ha90kSmRo0u4hmuOw3M0nS92Y8S8rkk.js"></script>
+<script src="/modules/contrib/ableplayer/js/ableplayer.min.js?v=4.0.0"></script>
+<script src="/sites/default/files/js/js_FRu6MnRYT4JLYft3Yj5wKMicTk3dJw0wHwrcIN0I1JI.js"></script>
+<script src="https://siteimproveanalytics.com/js/siteanalyze_6025116.js" async></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"gov-bam.nr-data.net","licenseKey":"877b02039c","applicationID":"140456413,1295044520","transactionName":"ZFYHMhZSXUpRUkcKDF0cJAUQWlxXH3VBFhNSXzkIC1dWZXNeXRcRXF8JAxZvfVZUVGUKBkRwCggQQVxVXFRBTl1FWgAR","queueTime":0,"applicationTime":1901,"atts":"SBEERF5ITkQ=","errorBeacon":"gov-bam.nr-data.net","agent":""}</script></body>
+</html>

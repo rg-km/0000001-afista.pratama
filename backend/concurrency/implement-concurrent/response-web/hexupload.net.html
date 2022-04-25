@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Hexupload - Fast and Free File Hosting. Make Money Uploading Files, No Files Deletion, Unlimited Bandwidth, Unlimited Storage, Unlimited File Size">
+    <meta name="keywords"    content="file upload,share files,free upload,File hosting, file sharing, file upload, free file sharing, upload files, large file transfer, upload file, send this file, free file hosting, online file storage, sending large files, send large files free, send files, big file transfer, free file transfer,file uploader,free file sharing site, free file upload, file upload site, file sharing free, mp3 upload, upload large files, file share website, upload a file, file hosting sites,free file storage, free upload site, upload files free, large file sharing, file share free,file storage online, online file storage free">
+
+    <script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="/ds2/js/jquery-1.9.1.min.js"></script>
+
+    
+    <title>Hexupload - Easy way to share your files</title>
+    <link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	
+
+
+    <script type="text/javascript" src="/ds2/js/jquery.paging.js"></script>
+    <script type="text/javascript" src="/ds2/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/ds2/js/paging.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#showallarch").click(function() {
+                $(this).css('display', 'none'),
+                    $("#fileinfoarch").css('height', '100%'),
+                    $("#grad").css('display', 'none');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        (function($) {
+            $(function() {
+
+                $('ul.tabs').on('click', 'li:not(.current)', function() {
+                    var section = $(this).parents('div.section:first');
+                    var idx = $(this).index();
+
+                    $(this).addClass('current').siblings().removeClass('current');
+                    $(section).find('> div.box').eq(idx).fadeIn(150).siblings('div.box').hide();
+                    $.cookie($(section).attr('id') + 'tab', idx);
+                });
+
+                $('.section').each(function(i, e) {
+                    if(!e.id) return;
+
+                    var idx;
+                    if(idx = $.cookie(e.id + 'tab'))
+                    {
+                        $(e).find('> ul > li').eq(idx).click();
+                    }
+                });
+
+            })
+        })(jQuery)
+    </script>
+    
+
+    <!-- Styles -->
+    
+	
+	
+	
+	 <link href="https://hexupload.net/doup1/assets/styles/bootstrap.min.css" media="all" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="/ds2/css/style.min.css?v=0.04" /> 
+	 <link id="stylesheet" href="https://hexupload.net/doup1/assets/styles/white.min.css?v=191222" media="all" rel="stylesheet" type="text/css">
+    
+	
+	<style>
+        #news_last {
+
+        }
+
+        #news_last strong {
+
+        }
+
+        #news_last
+
+        body {
+            padding-bottom: 254px;
+        }
+
+        footer {
+            bottom: 54px;
+        }
+
+        table#torrents {
+            background: #fff;
+            padding: 15px;
+            -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-radius: 4px;
+            margin: 0 0 30px;
+            position: relative;
+        }
+
+        table#torrents .hdr td {
+            font-size: 1.25rem;
+            color: #202430;
+        }
+
+        .webdav_wrapper .list li {
+            display: inline-block;
+            margin: 10px 0 0;
+            padding-right: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .webdav_wrapper .list li i {
+            color: #22a76d;
+        }
+
+        .form-control.nice-select .list {
+            max-height: 300px;
+            overflow: auto;
+        }
+
+        @media (max-width: 786px) {
+            body {
+                padding-bottom: 304px;
+            }
+
+            footer {
+                bottom: 78px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-bottom: 505px;
+            }
+
+            footer {
+                bottom: 119px;
+            }
+        }
+
+        .navbarLayout .navbar-brand {
+            padding: 0;
+        }
+	.dropdown:hover .dropdown-show {display: block;}
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbarLayout fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/ds2/img/Hexupload_White_Header_Logo.png?v=1">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fad fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main-menu">
+            <button class="navbar-toggler position-absolute" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fad fa-times"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="/?op=upload_form">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/premium.html">Premium</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/make_money.html">Monetization</a>
+                </li>
+                
+                    <li class="nav-item ml-lg-5 login visitarea">
+                        <a class="nav-link position-relative" href="/login.html"><i class="fad fa-sign-in position-absolute"></i> Login</a>
+                    </li>
+                    <li class="nav-item login ml-lg-3 visitarea">
+                        <a class="nav-link position-relative" href="/register.html"><i class="fad fa-user-plus position-absolute"></i> Sign up</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+.navbar
+{
+	background: #23a86d
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover,.navbar .navbar-toggler,.premium-page .features .features-description.premium h4
+{
+	color: #fff
+}
+
+.navbar .navbar-collapse.collapsing
+{
+	height: 100%;
+	transition: transform .3s ease-in,height 0s ease
+}
+
+@media all and (max-width:992px)
+{
+	.navbar .navbar-collapse
+	{
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100%;
+		background: #fff;
+		bottom: 0;
+		width: 100%;
+		box-shadow: 0 .5625rem 2.8125rem 0 rgba(35,69,152,.15);
+		max-width: 250px;
+		z-index: 1000;
+		padding: 56px 20px 20px;
+		display: block!important;
+		transform: translateX(100%);
+		transition: transform .3s ease-in
+	}
+
+	.navbar .navbar-collapse.show
+	{
+		transform: translateX(0)
+	}
+}
+
+.navbar .navbar-collapse .navbar-toggler
+{
+	display: none;
+	font-size: 1.4285714285714286rem
+}
+
+@media all and (max-width:992px)
+{
+	.navbar .navbar-collapse .navbar-toggler
+	{
+		display: block;
+		top: 20px;
+		right: 20px;
+		color: #23a86d
+	}
+}
+
+.navbar .navbar-nav .nav-item .nav-link
+{
+	text-transform: uppercase;
+	color: #d6e7e0;
+	font-size: .8571428571428571rem;
+	font-weight: 700;
+	font-family: 'Brandon',sans-serif
+}
+
+@media all and (max-width:992px)
+{
+	.navbar .navbar-nav .nav-item .nav-link
+	{
+		color: #23a86d
+	}
+}
+
+@media all and (max-width:992px)
+{
+	.navbar .navbar-nav .nav-item .nav-link:hover
+	{
+		color: #146340
+	}
+}
+
+.navbar .navbar-nav .nav-item.login .nav-link,.navbar .navbar-nav .nav-item.register .nav-link
+{
+	padding-right: 15px;
+	padding-left: 40px;
+	transition: border .2s ease,color .2s ease,background .2s ease,box-shadow .3s ease
+}
+
+.navbar .navbar-nav .nav-item.login .nav-link i,.navbar .navbar-nav .nav-item.register .nav-link i
+{
+	font-size: 1rem;
+	left: 15px;
+	top: 9px
+}
+
+@media all and (max-width:992px)
+{
+	.navbar .navbar-nav .nav-item.login.login .nav-link,.navbar .navbar-nav .nav-item.register.login .nav-link
+	{
+		background: #23a86d;
+		color: #fff
+	}
+}
+
+.navbar .navbar-nav .nav-item.login.login .nav-link:focus,.navbar .navbar-nav .nav-item.login.login .nav-link:hover,.navbar .navbar-nav .nav-item.register.login .nav-link:focus,.navbar .navbar-nav .nav-item.register.login .nav-link:hover
+{
+	background: #146340;
+	color: #fff
+}
+  
+ .visitarea a {
+	display: inline-block;
+	height: 36px; 
+	background-color: #23a86d;
+	border-radius: 100px;
+	padding: 0 20px;
+	line-height: 34px;
+	border: 2px solid #ffffff;
+	color: #fff;
+	font-size: 17px;
+	margin: 6px 5px;
+	width:120px;
+}
+ .visitarea a:hover {
+	background-color: #ffffff;
+	color: #000;
+}
+ .visitarea a i {margin: 0 10px 0 0;}
+ .login2{
+    background: #23a86d;
+ }
+ .login1{
+    background: #23a86d;
+ }
+ 
+</style>
+<div id="container">
+
+    
+<br><br>
+    <!--<link href="//code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css" type="text/css" rel="stylesheet" />-->
+<script src="/ds2/js/jquery-ui.js"></script>
+<script src="/doup1/upload.js"></script>
+
+<!--<script src="/doup1/dragndrop.js"></script>-->
+<script src="/doup1/multiselector.js?v=1"></script>
+
+<div class="indexBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Hexupload - Free Cloud Storage</h1>
+                <p>Powerful and Flexible cloud storage hosting with unique features that allows you to upload your files and retrieve them from any computer. A high quality service is our top priority</p>
+
+                
+                <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="179eb20a-9e9d-4791-b26e-1eea55bfbac6" data-blockingmode="auto" type="text/javascript"></script>
+                <!--Cookie Consent notification-->
+                
+            </div>
+            <div class="col-md-6">
+                <div class="upoad_home text-center">
+                    <div class="upload_icon">
+                        <i class="fas fa-file-upload"></i>
+                        <div class="icons">
+                            <i class="far fa-file-word"></i>
+                            <i class="far fa-file-image"></i>
+                            <i class="far fa-file-video"></i>
+                            <i class="far fa-file-invoice-dollar"></i>
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+ .upload_layout .upload_controls .btn.btn-white{background:#23a86d;color:#fff;border-color:#23a86d}
+</style>
+<div class="upload_layout">
+    <div class="container">
+
+        <ul class="nav nav-pills mt-5 mb-3 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" style="background:#23a86d;"  id="tab-file_upload" data-toggle="pill" href="#file_upload" role="tab" aria-controls="file_upload" aria-selected="true">
+                    <i class="far fa-desktop"></i>
+                    <span>Local Upload</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="background:#23a86d;" id="tab-remote_upload" data-toggle="pill" href="#remote_upload" role="tab" aria-controls="remote_upload" aria-selected="false">
+                    <i class="far fa-globe"></i>
+                    <span>Remote Upload</span>
+                </a>
+            </li>
+            
+               <li class="nav-item">
+                <a class="nav-link" style="background:#23a86d;"  id="tab-copy_files" data-toggle="pill" href="#copy_files" role="tab" aria-controls="copy_files" aria-selected="false">
+                    <i class="far fa-clone"></i>
+                    <span>Clone/Copy</span>
+                </a>
+            </li>
+                         <li class="nav-item">
+                <a class="nav-link" style="background:#23a86d;"  id="tab-img_files" data-toggle="pill" href="#img_files" role="tab" aria-controls="img_files" aria-selected="false">
+                   <i class="far fa-file-image"></i>
+                    <span>Image</span>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="file_upload" role="tabpanel" aria-labelledby="tab-file_upload">
+                <div class="upload_local">
+                    <form id="uploadfile" action="https://200417693.contenthx.me/cgi-bin/upload.cgi?upload_type=file&utype=anon">
+                        <input type="hidden" name="sess_id" value="">
+                        <input type="hidden" name="utype" value="anon">
+						<input type="hidden" name="mode" value="">
+                        <div class="uploadfile">
+                            <input type="file" multiple="multiple" id="file_0" class="uploadbtn">
+                            <label for="file_0" class="browse">
+                                <i class="fal fa-cloud-upload"></i>
+                                <p>Drag & Drop files here or click to browse</p>
+                            </label>
+                            <div class="progressSpace">
+                                <div class="js_progress"></div>
+                            </div>
+                            <div class="file_list">
+                                <ul id="files_list"></ul>
+                                <div class="collapse" id="options">
+                                    <div class="card card-body row flex-row">
+                                        <div class="form-group col position-relative">
+                                            <label>Recipient's Email</label>
+                                            <input type="text" name="link_rcpt" class="form-control hasIcon">
+                                            <i class="far fa-envelope"></i>
+                                        </div>
+                                        <div class="form-group col position-relative">
+                                            <label>Link Password</label>
+                                            <input type="text" name="link_pass" class="form-control hasIcon">
+                                            <i class="far fa-key"></i>
+                                        </div>
+                                        <div class="form-group col position-relative">
+                                            <label>Upload to folder</label>
+                                            <select name="to_folder" class="form-control hasIcon">
+                                                <option value="">--</option>
+                                                <option value="0"> / </option>
+                                                
+                                            </select>
+                                            <i class="far fa-folder"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="remote_upload" role="tabpanel" aria-labelledby="tab-remote_upload">
+                
+                    <div class="uploadMessage">
+                        
+                                <a href="https://hexupload.net/register.html">Register on site</a>
+                        
+                        to use Remote URL upload
+                    </div>
+                
+            </div>
+            <div class="tab-pane fade" id="copy_files" role="tabpanel" aria-labelledby="tab-copy_files">
+                <div class="copyfiles">
+                    <form method="post" action="" onsubmit="if(!this.tos.checked){ alert('You must agree with TOS'); return(false); }">
+                        <input type="hidden" name="op" value="my_files">
+                        <input type="hidden" name="add_my_acc" value="1">
+                        <input type="hidden" name="token" value="4d49cd686d80a871c31525b5f238666e">
+
+                        <div class="inputWrap">
+                            <textarea name="url_mass" rows="7" class="form-control" placeholder="https://hexupload.net/file.zip"></textarea>
+
+                            <div class="d-flex justify-content-between flex-wrap align-items-center pt-4">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="tos" id="tosCopy" value="" checked>
+                                    <label for="tosCopy" class="tosread">I have read and agree to the TOS</label>
+                                </div>
+                                <button name="upload" class="btn btn-primary uploadbtn">
+                                    Upload
+                                    <i class="far fa-upload"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+			 <div class="tab-pane fade" id="img_files" role="tabpanel" aria-labelledby="tab-img_files">
+                <div class="copyfiles" style="text-align:center">
+                   <a href="https://veryimg.com" target="_blank"><img src="/images/logo_img.svg" alt=""/></a><br>
+				   <br>
+				   Uplaod your images & photos on <strong>Veryimg.com</strong> for unlimited days, without any limits.
+				   
+                </div>
+            </div>
+            <div class="tab-pane fade" id="torrent" role="tabpanel" aria-labelledby="tab-torrent">
+                
+                    
+                            <div class="uploadMessage"><a href="https://hexupload.net/register.html">Register on site</a> to use Torrent leech</div>
+                    
+                    
+            </div>
+            <div class="tab-pane fade" id="ftp" role="tabpanel" aria-labelledby="tab-ftp">
+                
+                    <div class="uploadMessage">
+                        <a href="https://hexupload.net/register.html">Register on site</a>
+                        to use FTP upload
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex flex-wrap justify-content-between">
+                <div class="features">
+                    <div class="title upload d-flex flex-wrap align-items-center">
+                        <i class="far fa-upload"></i>
+                        <h2>Simple upload</h2>
+                    </div>
+                    <p>Upload your files with few methods and as fast as your connection will allow. We support multi upload methods like: Web Upload, Remote Upload, FTP, API</p>
+                </div>
+                <div class="features">
+                    <div class="title statistic d-flex flex-wrap align-items-center">
+                        <i class="far fa-video-plus"></i>
+                        <h2>Exclusive Player</h2>
+                    </div>
+                    <p>Watch your videos without buffering with ultra fast HLS technology on any device. Forget about non optimized quality, We can convert your videos to make it web optimized</p>
+                </div>
+                <div class="features">
+                    <div class="title earn d-flex flex-wrap align-items-center">
+                        <i class="far fa-usd-circle"></i>
+                        <h2>Monetization</h2>
+                    </div>
+                    <p>We have made it possible for users to earn money legally. You can earn money from selling your files, courses, videos or from every visit of your files. This feature is completely optional and you can enable or disable this feature.</p>
+                </div>
+                <div class="features">
+                    <div class="title earn d-flex flex-wrap align-items-center">
+                        <i class="far fa-hdd"></i>
+                        <h2>Unlimited Storage</h2>
+                    </div>
+                    <p>With Unlimited working space, you can use Upload to store and share you files.</p>
+                </div>
+                <div class="features">
+                    <div class="title earn d-flex flex-wrap align-items-center">
+                        <i class="far fa-headset"></i>
+                        <h2>24/7 Support</h2>
+                    </div>
+                    <p>Our team will be ready to assist with any questions or issues you might have.</p>
+                </div>
+                <div class="features">
+                    <div class="title earn d-flex flex-wrap align-items-center">
+                        <i class="far fa-gem"></i>
+                        <h2>Premium Access</h2>
+                    </div>
+                    <p>With our amazing premium features your expectations will go beyond imagination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="get_started pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="statsBox d-flex align-items-center justify-content-center">
+                    <i class="fal fa-copy"></i>
+                    <h3>+200000<small>FILES</small></h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="statsBox d-flex align-items-center justify-content-center">
+                    <i class="fal fa-server"></i>
+                    <h3> +50 TB<small>DISK USED</small></h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="statsBox d-flex align-items-center justify-content-center">
+                    <i class="fal fa-users"></i>
+                    <h3>+10000<small>USERS</small></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>.faq .card{border:0;background:#fff;margin:0 0 20px;-webkit-box-shadow:0 0 50px 5px rgba(214,214,214,0.29);-moz-box-shadow:0 0 50px 5px rgba(214,214,214,0.29);box-shadow:0 0 50px 5px rgba(214,214,214,0.29)}
+.faq .card .card-header{background:#fff;padding:0;margin:0;border:0;border-radius:3px}
+.faq .card .card-header h2 .btn-link{display:block;text-align:left;width:100%;margin:0;padding:15px;color:#28a745;font-weight:700;font-size:.875rem;position:relative;padding-right:40px;text-decoration:none;border-radius:3px}
+.faq .card .card-header h2 .btn-link:after{content:"\f078";text-rendering:auto;font-family:'Font Awesome 5 Pro';-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;font-weight:normal;line-height:1;vertical-align:-0.125em;font-size:.875rem;position:absolute;top:50%;transform:translate(0,-50%);right:15px;font-weight:900;transition:all .3s ease-in-out}.faq .card .card-header h2 .btn-link:after.fa-pull-left{margin-right:.3em}
+.faq .card .card-header h2 .btn-link:after.fa-pull-right{margin-left:.3em}
+.faq .card .card-header h2 .btn-link:hover{color:var(--blue);text-decoration:none}
+.faq .card .card-header h2 .btn-link:not(.collapsed):after{transform:translate(0,-50%) rotate(180deg)}
+.faq .card .collapse,.faq .card .collapsing{border-radius:0 0 3px 3px}
+.faq .card .collapse .card-body,.faq .card .collapsing .card-body{color:#28a745;font-weight:500;font-size:.875rem}
+.title2{font-weight:700;font-size:1.875rem;padding:0 0 10px}
+.title2:before,.title2:after{content:'';position:absolute;display:block;width:50px;
+height:2px;border-radius:2px;background:linear-gradient(to right,#348fff,#00d688);
+bottom:0;margin:0 auto;left:0;right:0;transform:translateX(-20px)}
+.title2:after{width:10px;transform:translateX(20px)}
+</style>
+<div class="webdav_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+			
+         <div class="d-block position-relative text-center">
+		   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838.09 636.47" style="width:120px">
+		   <defs><style>.e98f6ab8-fb35-4d69-b977-271f1aa975bc{fill:#fff}
+		   .b0d8733b-8deb-4c2c-9347-1e1103114cb9{fill:#28a745}
+		   .a9ea34cb-7600-437b-a2f2-1ed413dc7142{fill:#fff}</style>
+		   </defs>
+		   <g id="b6ba954d-092a-477e-bde6-6073eaa8d359" data-name="Ã‘Ã«Ã®Ã© 2">
+		   <path d="M370 572.07c0 105.59 120.63 192.69 276.38 205.18 12.66 1.02 73.62.59 90.5-1.25a453.92 453.92 0 0045.02-7.18c4.35-.92 124.06 52.56 124.06 52.56s-35.55-81.56-21.86-89.11c70.28-38.74 115.9-95.6 115.9-160.2 0-114.16-141.03-206.71-315-206.71S370 457.9 370 572.07z" transform="translate(-185.04 -363.53)" style="fill:#efefef" /><path class="e98f6ab8-fb35-4d69-b977-271f1aa975bc" d="M860.75 713.75C927.85 676.96 971.4 623 971.4 561.64c0-108.4-129.56-196.28-295.63-196.28-75.38 0-144.75 21.65-198.2 53.82 127.86 3.02 230.11 71.98 230.11 156.63 0 76.2-93.17 147.19-182.64 157.62 0 0 69.76 19.92 108.8 23.03 12.07.97 70.27.56 86.38-1.18q22.07-2.4 42.98-6.82c4.15-.87 116.02 49.91 116.02 49.91s-31.53-77.45-18.46-84.62z" transform="translate(-185.04 -363.53)" /><path class="b0d8733b-8deb-4c2c-9347-1e1103114cb9" d="M367.57 572.31c.18 45.06 22.4 85.72 54.22 116.56 38.47 37.27 88.7 61.24 139.9 75.35 27.81 7.67 56.89 13.1 85.72 14.72 20.52 1.16 41.3.49 61.83-.04 8.93-.23 17.9-.4 26.8-1.28 8.77-.87 17.52-2.14 26.2-3.58q5.92-.98 11.8-2.11c2.12-.41 4.33-.72 6.42-1.29.92-.24 1.44-.2.72-.28 3.8.38 8 2.72 11.5 4.1 7.14 2.84 14.22 5.81 21.29 8.8a5138.48 5138.48 0 0188.24 38.58l1.86.83c.98.44 5.14-.01 4.3-1.93-8.88-20.4-17.2-41.6-22.42-63.25-1.33-5.53-2.65-11.34-2.56-17.06.03-1.74.06-3.93.87-5.52 1.33-2.6 4.77-3.6 7.2-5a286.31 286.31 0 0055.9-41.48c28.88-27.84 50.95-63.97 54.54-104.58 2.93-33.1-6.65-65.76-24.58-93.48-42.93-66.39-123.31-102.3-198.25-117.4-89.19-17.99-186.39-10.78-270.08 25.98-63.02 27.68-126.88 77.93-139.37 149.64a141.47 141.47 0 00-2.05 23.72c-.01 2.28 4.85 1.4 4.86-.48.29-72.5 56.34-128.17 116.74-159.94 79.96-42.06 175.82-53.03 264.5-39.91 77.33 11.44 160.1 43.56 209.59 106.92 19.95 25.54 33.17 56.4 34.24 89.05 1.32 40.38-16.25 78.1-42.85 107.73-15.27 17-33.16 31.5-52.32 43.87q-6.88 4.45-13.98 8.54c-2.7 1.55-6.26 2.73-8.08 5.46-2.02 3.02-1.86 7.19-1.64 10.65.85 12.94 5.33 25.83 9.5 38.01a562.64 562.64 0 0015.41 39.82l4.3-1.93q-38.15-17.04-76.52-33.6c-13.73-5.9-27.45-11.97-41.46-17.18-4.21-1.56-6.6-2.28-11.08-1.36-15.32 3.14-30.97 5.82-46.6 6.9-45.76 3.17-92.2 2.56-137.28-6.4-54.46-10.84-108.35-31.9-151.96-66.88-35.2-28.24-63.72-67.26-69.45-112.98a139.3 139.3 0 01-1.06-16.77c0-2.28-4.87-1.4-4.86.48zM957.53 378.65a145.28 145.28 0 00-10.46 37.33c-.18 1.34 4.6.47 4.78-.8a145.28 145.28 0 0110.46-37.32c.42-.96-4.21-.52-4.78.8zM972.96 428.36a161.86 161.86 0 0130.83-29.59c2.65-1.92-1.36-3.11-3.1-1.85a166.15 166.15 0 00-31.7 30.3c-1.86 2.32 2.76 2.65 3.97 1.14zM983.24 448.26a142.68 142.68 0 0137.35-7.55c2.46-.16 3.95-3.08.6-2.86a147.91 147.91 0 00-38.65 7.8c-2.8.97-2.2 3.6.7 2.6z" transform="translate(-185.04 -363.53)" /><path d="M686.69 568.76c0 81.57-93.19 148.85-213.51 158.5-9.78.8-56.87.46-69.91-.96a350.64 350.64 0 01-34.78-5.54c-3.36-.71-100.39 40.6-100.39 40.6s32.01-63.01 21.44-68.84C235.24 662.59 200 618.67 200 568.76c0-88.2 108.95-159.7 243.35-159.7s243.34 71.5 243.34 159.7z" transform="translate(-185.04 -363.53)" style="fill:#efefef" /><path class="a9ea34cb-7600-437b-a2f2-1ed413dc7142" d="M685.67 558.6c1.66 76.36-86.7 139.38-199.98 148.42-9.2.74-53.54.42-65.8-.9q-16.82-1.82-32.75-5.2c-3.16-.66-93.77 38.03-93.77 38.03s29.4-59 19.45-64.47c-51.12-28.02-84.3-69.14-84.3-115.88 0-82.58 102.57-149.53 229.09-149.53s226.6 82.45 228.06 149.53z" transform="translate(-185.04 -363.53)" /><path class="b0d8733b-8deb-4c2c-9347-1e1103114cb9" d="M684.26 569c-.43 83.25-88.22 131.98-159.15 148.69-19.89 4.69-40.49 8.02-60.96 8.35-17.23.28-34.53.13-51.75-.73a246.56 246.56 0 01-28.62-3.39c-5.96-1-12.31-3.82-18.28-1.98-9.85 3.05-19.43 7.32-28.97 11.2a4610.6 4610.6 0 00-69.44 29l3.3 1.39a352.38 352.38 0 0019.33-44.57c2.16-6.29 6.34-16.1 3.92-22.87a5.64 5.64 0 00-1.8-2.57c-2.95-2.47-7.15-4.1-10.45-6.11a231.53 231.53 0 01-22.35-15.47c-25.35-19.93-46.89-46.68-54.06-78.7-5.82-26.01-1.17-53.05 11.56-76.3 28.86-52.74 89.38-82.12 145.65-95.25 69.1-16.12 145.51-11.67 211.12 16.11 48.97 20.74 98.99 58.88 109.2 114.23a107.61 107.61 0 011.75 18.97c.01 2.29 4.87 1.4 4.86-.48-.28-55.87-42.57-99.03-88.94-124.19-61.94-33.6-136.75-42.9-206-33.52-60.79 8.23-125.68 32.26-166.13 80.49-16.18 19.28-27.7 42.66-30.03 67.94-2.82 30.59 8.27 60.08 27.2 83.83a187.37 187.37 0 0036.94 34.64 257.17 257.17 0 0024.02 15.28c3.14 1.78 3.27 4.13 2.95 7.61-.93 10.2-5.34 20.37-9.19 29.74a452.1 452.1 0 01-14.12 30.85c-1 1.98 2.32 1.8 3.3 1.38q30.18-12.85 60.5-25.35c11.3-4.64 22.58-9.42 34.09-13.52a29.18 29.18 0 013.85-1.27c.77-.16.81-.11-.03-.11 3.28 0 7.03 1.43 10.3 2.01a260.32 260.32 0 0031 4.02c36.74 2.07 73.3 1.53 109.42-6.08 42-8.86 83.6-25.66 117-53.1 30.46-25.03 53.66-60.16 53.87-100.65.01-2.28-4.85-1.4-4.86.48zM205.97 407.27a145.93 145.93 0 0022.97 31.54c.91.96 5.41-.78 4.53-1.7a144.04 144.04 0 01-22.67-31.14c-.7-1.29-5.3.42-4.83 1.3zM185.1 445.19a146.07 146.07 0 0035.54 16.2c1.06.31 5.27-1.41 4-1.8a143.9 143.9 0 01-34.99-16c-1.12-.71-5.08 1.27-4.56 1.6zM256.53 427.99a162.94 162.94 0 01-4.12-42.68c.1-2.28-4.79-1.44-4.86.48a166.13 166.13 0 004.15 43.5c.45 1.97 5.3.72 4.83-1.3z" transform="translate(-185.04 -363.53)" /><path class="e98f6ab8-fb35-4d69-b977-271f1aa975bc" d="M371.24 518.2q0-13.9 8.94-28.2 8.93-14.27 26.07-23.65 17.14-9.37 40-9.37 21.23 0 37.5 7.83 16.25 7.84 25.11 21.32a52.29 52.29 0 018.87 29.3 45.3 45.3 0 01-5.06 21.82 66.8 66.8 0 01-12 16.19q-6.97 6.8-24.98 22.92a101.77 101.77 0 00-7.99 7.98 32.33 32.33 0 00-4.47 6.3 30.77 30.77 0 00-2.27 5.72q-.8 2.85-2.41 10.03-2.79 15.24-17.43 15.23a17.81 17.81 0 01-12.82-4.98q-5.2-4.97-5.2-14.8 0-12.3 3.8-21.3a54.06 54.06 0 0110.11-15.82 231.51 231.51 0 0117-16.2q9.37-8.2 13.55-12.37a41.98 41.98 0 007.03-9.3 22.5 22.5 0 002.85-11.13 25.9 25.9 0 00-8.71-19.78q-8.72-8.05-22.49-8.06-16.11 0-23.73 8.13-7.62 8.13-12.89 23.95-4.98 16.56-18.9 16.56a18.57 18.57 0 01-13.84-5.79q-5.64-5.78-5.64-12.52zm71.49 160.55a23.05 23.05 0 01-15.6-5.78q-6.67-5.79-6.67-16.19a20.85 20.85 0 016.45-15.53 21.77 21.77 0 0115.82-6.3 21.51 21.51 0 0121.82 21.83q0 10.26-6.59 16.11a22.25 22.25 0 01-15.23 5.86z" transform="translate(-185.04 -363.53)" style="fill:url(#b8fc12d5-763a-4070-adff-cd7b1bbba966)" /><path class="b0d8733b-8deb-4c2c-9347-1e1103114cb9" d="M373.66 517.56c.44-23.51 17.53-43.53 38.15-53.1 21.56-10 50-8.86 71.11 1.87 18.93 9.63 32.37 28.06 32.4 49.74.01 21.6-14.31 35.59-29.16 49.13-7.77 7.08-16.72 13.73-22.99 22.26-5.46 7.43-5.1 16.2-8.4 24.42-1.97 4.93-5.5 8.41-11.04 8.8a16.94 16.94 0 01-15.3-7.47c-5.26-8.27-3.19-21.59-.23-30.28 6.86-20.18 26.38-32.04 40.85-46.35 7.15-7.07 12.11-15.72 10.46-26.05-1.43-8.9-7.69-16.46-15.75-20.29-15.68-7.45-37.79-3.24-47.67 11.34a71.73 71.73 0 00-7.64 15.42c-1.94 5.23-3.3 10.74-7.37 14.83-10.6 10.67-26.85-2.03-27.42-14.27-.03-.65-4.89.08-4.83 1.3.87 18.7 26.1 24.5 37.6 11.42 3.38-3.86 4.75-8.62 6.46-13.35a72.4 72.4 0 017.94-16.26c2.83-4.15 6.24-7.87 10.97-9.84 7.32-3.05 17.25-2.8 24.66-.14 10.62 3.82 18.28 13.51 18.55 24.9.29 12.46-9.39 20.88-17.9 28.51-8.42 7.55-17.5 14.8-24.68 23.62a53.32 53.32 0 00-11.73 32.9c-.21 9.86 3.52 19.16 14.06 21.43 6.6 1.43 15 .04 20.2-4.47 6.79-5.88 6.2-15.97 9.08-23.82 4.18-11.36 15.57-19.15 24.21-27 15.28-13.86 31.2-28.01 31.86-50.22.72-23.69-14.49-43.65-35.5-53.19-22.17-10.05-50.23-9.83-72.64-.6-22.8 9.4-42.66 30.34-43.14 56.1-.01.56 4.8-.02 4.83-1.3zM444.31 677.85c-10.18-.3-19.37-6.8-21.08-17.16-1.88-11.4 4.95-24.83 17.9-24.83a21.15 21.15 0 0120.46 16.44c2.58 11.7-4.06 25.14-17.28 25.55-.93.03-5.4 1.88-3.17 1.8 11.6-.35 23.44-6.68 25.48-19.02 2.34-14.17-7.9-26.58-22.3-26.58-11.6 0-23.6 6.87-25.87 18.95-2.82 14.99 8.09 26.22 22.69 26.66.94.03 5.44-1.74 3.17-1.81z" transform="translate(-185.04 -363.53)" /><path class="a9ea34cb-7600-437b-a2f2-1ed413dc7142" d="M772.85 579.37l-4.7-70.17q-1.31-20.5-1.31-29.44 0-12.16 6.37-18.97t16.77-6.81q12.6 0 16.85 8.71 4.25 8.72 4.25 25.12a192 192 0 01-1.03 19.63l-6.3 72.22q-1.02 12.9-4.4 19.77a11.51 11.51 0 01-11.12 6.89q-7.91 0-10.99-6.67t-4.4-20.28zm16.26 96.38a23.05 23.05 0 01-15.6-5.78q-6.67-5.79-6.67-16.19a21.76 21.76 0 0121.97-21.83 21.7 21.7 0 0115.75 6.38 20.81 20.81 0 016.52 15.45q0 10.26-6.6 16.11a22.44 22.44 0 01-15.37 5.86z" transform="translate(-185.04 -363.53)" style="fill:url(#b8fc12d52)" /><path class="b0d8733b-8deb-4c2c-9347-1e1103114cb9" d="M775.26 578.72l-3.13-46.8-1.47-22.08c-.78-11.76-2.9-25.06-.86-36.8 1.66-9.56 8.4-16.83 18.37-17.35 9.45-.5 15.57 3.88 18.2 12.8 3.83 13.1 2.28 27.5 1.1 40.88q-2.39 26.9-4.7 53.8c-.59 6.75-1.02 13.53-1.8 20.26-.96 8.39-3.47 24.93-15.87 20.64-8.57-2.96-9.08-17.99-9.84-25.35-.21-2.07-5.06-.92-4.83 1.3.79 7.6 1.32 19.04 7.47 24.64 4.6 4.19 12.5 4.34 17.79 1.4 9.66-5.33 9.93-20 10.77-29.66l5.42-62.16c1-11.43 2.19-22.88 1.38-34.37-.53-7.45-1.62-16.9-7.27-22.42-5.2-5.07-13.5-5.84-20.35-4.78a24.47 24.47 0 00-17.5 11.64c-4.1 6.97-3.86 15.1-3.6 22.9.35 10.16 1.05 20.3 1.72 30.45l4.17 62.35c.14 2.05 4.98.94 4.83-1.3zM789.96 674.08c-10.57-.31-19.4-7.04-20.55-17.86-1.23-11.5 6.76-22.55 18.85-22.55a20.53 20.53 0 0120.3 19.06c.74 11.83-7.21 20.98-19.21 21.35-2.68.08-3.79 3.44-.48 3.34 13.43-.4 24.67-9.97 24.65-23.85-.03-13.25-11.15-23.28-24.16-23.29-12.55 0-24.1 9.33-24.92 22.22-.91 14.33 9.78 24.5 23.8 24.92 2.23.07 4.99-3.24 1.72-3.34z" transform="translate(-185.04 -363.53)" /></g></svg>
+		  </div>
+<h2 class="title2 d-block text-center">Frequently Asked Questions</h2>
+ 
+            </div>     
+                <div class="col-md-10 offset-md-1 mt-5  faq">
+ <div class="accordion" id="accordion_faq">
+   <div class="card">
+   <div class="card-header" id="headingOne">
+    <h2 class="mb-0">
+    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is Hexupload & its working?</button></h2></div>
+   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_faq">
+   <div class="card-body"><strong><span style="color: #000000;">Simple.</span></strong> 
+   <span style="color: #000000;">Hexupload is a File &amp; Video hosting service were you can upload your videos, share &amp; make money (optional).</span>
+   </div>
+   </div>
+   </div>
+   <div class="card">
+   <div class="card-header" id="headingTwo"><h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Why do you recommend Hexupload?</button></h2></div>
+   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_faq">
+   <div class="card-body"><strong><span style="color: #000000;">It's free and Flexible!</span></strong><span style="color: #000000;">Whenever you need to send a file that is too large for e-mail, Hexupload can help. If you need secure remote storage capacity for off-site backups and access personal data on the go, Hexupload is a perfect way of doing so. Can't find what you are looking for? At Hexupload we can customise your account as per your needs, your desired features unique only to you for free</a></span></div></div>
+   </div>
+   
+   <div class="card"><div class="card-header" id="headingThree">
+<h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+   How long are the files stored</button></h2>
+   </div>
+   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;"><strong>Forever.</strong> Yes, for free users active files will be stored for lifetime, meaning there must be at least one download per sixty/hundered days, with unlimited storage zero restrictions. If you are looking for more, Hexupload premium plans comes with more customizable account/download pages.</span> </div></div>
+   </div>
+   <div class="card"><div class="card-header" id="headingFour">
+   <h2 class="mb-0">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" 
+   aria-controls="collapseFour">Is Hexupload really free?</button></h2></div>
+   <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;"><strong>Yes.</strong> The core service is completely free, & will stay free forever, 
+   there are no hidden costs to host your files. We have paid plans for advanced features, but the service will 
+   always remain free to use.</span></div></div>
+   </div>
+   <div class="card"><div class="card-header" id="headingFive">
+   <h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" 
+   aria-expanded="false" aria-controls="collapseFive">What kind of files can be uploaded?</button></h2></div>
+   <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">Anything. Just keep it legal. Hexupload was built with love, to allow everybody to be able to share their files. We'll be able to keep offering the service as long as the files shared aren't breaking any laws. Please refer to our <a href="/tos.html">terms of service</a> for more info</span></div></div>
+   </div>
+   <div class="card"><div class="card-header" id="headingSeven">
+   <h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" 
+   aria-expanded="false" aria-controls="collapseSeven">How to upload files on Hexupload?</button></h2></div>
+   <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">You can upload files or videos via browser, FTP, Remote URL & API.</span></div></div>
+   </div>
+   <div class="card"><div class="card-header" id="headingEight"><h2 class="mb-0">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" 
+   aria-expanded="false" aria-controls="collapseEight">How to remove ads from the player and downlod pages?</button></h2></div>
+   <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">From Dashboard > Configuration tab, and choose Non-Profit mode. So most of the ads will be disabled for you and your viewers, 
+   You can also purchase our premium bandwidth service to remove 100% of ads from the player for all of your viewers.</span></div></div>
+   </div>
+   <div class="card"><div class="card-header" id="headingNine"><h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+   What are the main features?</button></h2></div>
+   <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion_faq">
+   <div class="card-body">
+   <div class="features d-flex justify-content-between align-items-center flex-wrap">
+   <ul class="border-0"><li class="position-relative"><span style="color: #000000;">Track & manage files</li></span>
+   <li class="position-relative"><span style="color: #000000;">Upload upto 15GB per file</li><li class="position-relative"><span style="color: #000000;">Password protection</li></span>
+   <li class="position-relative"><span style="color: #000000;"><span style="color: #000000;">Exclusive Video Player</li></span>
+   <li class="position-relative"><span style="color: #000000;">Flexiblity. You can control almost everything.</li></span>
+   <li class="position-relative"><span style="color: #000000;">Unlimited storage</li></span>
+   <li class="position-relative"><span style="color: #000000;">Longer file retention by request (Really Long)</li></span>
+   <li class="position-relative"><span style="color: #000000;">Unlimited bandwidth</li></span>
+   <li class="position-relative"><span style="color: #000000;">No download limits</li><li class="position-relative"><span style="color: #000000;">Ad-Free</li></span>
+   <li class="position-relative"><span style="color: #000000;">Direct downloads</li><li class="position-relative"><span style="color: #000000;">Remote upload</li></span>
+   <li class="position-relative"><span style="color: #000000;">No downloads delays</li></span>
+   <li class="position-relative"><span style="color: #000000;">Resumeable downloads</li><li class="position-relative"><span style="color: #000000;">Parallel downloading</li></span>
+   <li class="position-relative"><span style="color: #000000;">Unlimited transfer quota</li><li class="position-relative"><span style="color: #000000;">High speed download</li></span>
+   <li class="position-relative"><span style="color: #000000;">Sell your files as you desire</li><a href="/premium.html"><b>Click here to see rest of the features</span></b></a>
+   </ul>
+   </div>
+   </div>
+   </div>
+   </div>
+    <div class="card"><div class="card-header" id="headingTen">
+   <h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" 
+   aria-expanded="false" aria-controls="collapseTen">Is any bandwidth limitations?</button></h2></div>
+   <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">No, there is no bandwidth limitations. You may also like to buy our premium CDN bandwidth. With premium bandwidth you can provide direct & fast downloads or streams for your users.</span></div>
+   </div>
+   </div>
+   <div class="card">
+   <div class="card-header" id="headingEleven">
+   <h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" 
+   aria-expanded="false" aria-controls="collapseEleven">How many views are counted per day?</button></h2></div>
+   <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">Views/Downloads are counted multiple times within 24 hours per user/ip.</span>
+   </div>
+   </div>
+   </div>
+   
+   <div class="card">
+   <div class="card-header" id="headingTwelve">
+   <h2 class="mb-0"><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+   What payment methods do you support?</button></h2>
+   </div>
+   <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">We have 5 payout options including PayPal, Webmoney, Bitcoin, Litcoin, Payeer.</span></div>
+   </div>
+   </div>
+   
+   <div class="card">
+   <div class="card-header" id="headingThirteen">
+   <h2 class="mb-0">
+   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThirteen" 
+   aria-expanded="false" aria-controls="collapseThirteen">I love it but I still have questions, what should I do?</button>
+   </h2></div><div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordion_faq">
+   <div class="card-body"><span style="color: #000000;">If you still have questions regarding our services don't hesitate to contact us using our 
+   <a href="/contact.html"><b>contact form</b></a> or 
+   live chat button at the bottom right of this page, we will do everything we can to get you started with 
+   your account on Hexupload less than 10 minutes!</span>
+   </div>
+   </div>
+   </div>
+   </div>
+   
+   
+   </div>
+            </div>
+            <div class="col-md-4">
+                <svg id="web_devices" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1036" height="612" viewBox="0 0 1036 612">
+                    <defs>
+                        <linearGradient id="deacd444-d5db-4c24-9492-02e57292be3c" x1="675.05" y1="606.02" x2="675.05" y2="240.27" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="gray" stop-opacity="0.25" />
+                            <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
+                            <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+                        </linearGradient>
+                        <linearGradient id="a1de9c2c-a914-4f57-a703-6b671b828453" x1="473.94" y1="635.65" x2="473.94" y2="301.65" xlink:href="#deacd444-d5db-4c24-9492-02e57292be3c" />
+                        <linearGradient id="33ead0d0-8f65-4117-bca2-44ecb419ecb0" x1="363.44" y1="662.65" x2="363.44" y2="401.65" xlink:href="#deacd444-d5db-4c24-9492-02e57292be3c" />
+                        <linearGradient id="9a5964b5-9011-4675-8f60-8033350848c0" x1="849.68" y1="703.66" x2="849.68" y2="385.5" xlink:href="#deacd444-d5db-4c24-9492-02e57292be3c" />
+                    </defs>
+                    <title>web_devices</title>
+                    <path d="M233.4,144.07c-8.06-.23-16.32,0-23.88,2.32-20.57,6.32-30.32,27-27.15,44.87s16.21,33.44,29.74,47.67,28.19,28.3,35.61,45.31c3.7,8.49,5.43,18,1.67,26.48-5.8,13.07-23.29,20.37-40.08,21.89s-33.65-1.44-50.5-2.43c-7.07-.41-14.34-.46-21,1.45-7.31,2.08-13.4,6.33-19,10.76-21.85,17.38-39.34,41.09-36.51,66,3.2,28.23,31.74,50.54,63,62.51,10.35,4,21.3,7.18,30.41,12.84,24,14.93,29.39,42.93,27,67.64s-10.53,49.45-6,73.94c5.33,28.49,28.92,54.23,60.74,66.25,28.35,10.71,63.83,10,89-5.11,12.27-7.38,21.55-17.63,29.62-28.23a227.74,227.74,0,0,0,29.45-51c3.51-8.49,6.81-17.62,15-23.52,5-3.63,11.48-5.66,17.89-7.24,19.32-4.76,39.67-6.06,59.17-10.3S536.7,554,547.3,539.9c15-20,8-45.62,8.07-69.14.12-53.66,39.11-101.69,53.5-154,4.7-17.09,6.45-36-4.05-51.25-7.13-10.35-19.16-17.82-31.8-23.59-27.81-12.69-59.42-18.34-90.51-23.84-43.21-7.64-95.68-8.63-129.17-33.35C321.2,161,277.23,144.07,233.4,144.07Z" transform="translate(-82 -144)" fill="#23a86d" opacity="0.2" />
+                    <ellipse cx="571" cy="487.48" rx="465" ry="124.52" fill="#f5f5f5" />
+                    <path d="M1008.37,563.92H944.13a21.42,21.42,0,0,0,2.24-9.57V261.79a21.51,21.51,0,0,0-21.51-21.51H427.52A21.51,21.51,0,0,0,406,261.79V554.36a21.42,21.42,0,0,0,2.24,9.57H341.73a5.69,5.69,0,0,0-5.69,5.69v4.59A31.82,31.82,0,0,0,367.86,606H982.24a31.82,31.82,0,0,0,31.82-31.82v-4.59A5.69,5.69,0,0,0,1008.37,563.92Zm-395.89,18.2L607,575.87H743.72l-6.1,6.26Z" transform="translate(-82 -144)" fill="url(#deacd444-d5db-4c24-9492-02e57292be3c)" />
+                    <rect x="330.11" y="100.42" width="528.12" height="327.99" rx="23.26" ry="23.26" fill="#23a86d" />
+                    <rect x="341.22" id="screen" y="148.23" width="504.77" height="267.95" fill="#fff" />
+                    <circle cx="593.61" cy="124.88" r="4.45" fill="#fff" />
+                    <path d="M753.55,560.73,736.2,578.52H613.9l-15.67-17.79H349.29a5.56,5.56,0,0,0-5.56,5.56v4.48a31.1,31.1,0,0,0,31.1,31.1H975.28a31.1,31.1,0,0,0,31.1-31.1v-4.48a5.56,5.56,0,0,0-5.56-5.56Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M580.41,301.65H367.48a19.51,19.51,0,0,0-19.53,19.48v295a19.51,19.51,0,0,0,19.53,19.48H580.41a19.51,19.51,0,0,0,19.53-19.48v-295A19.51,19.51,0,0,0,580.41,301.65Z" transform="translate(-82 -144)" fill="url(#a1de9c2c-a914-4f57-a703-6b671b828453)" />
+                    <rect x="268.94" y="161.65" width="246" height="327" rx="20" ry="20" fill="#23a86d" />
+                    <rect x="281.44" id="screen" y="192.58" width="221" height="265.14" fill="#fff" />
+                    <circle cx="390.94" cy="176.65" r="3" fill="#fff" />
+                    <circle cx="390.94" cy="472.65" r="9" fill="#fff" />
+                    <path d="M418.11,401.65H308.78a10.81,10.81,0,0,0-10.83,10.79V651.86a10.81,10.81,0,0,0,10.83,10.79H418.11a10.81,10.81,0,0,0,10.83-10.79V412.44A10.81,10.81,0,0,0,418.11,401.65Z" transform="translate(-82 -144)" fill="url(#33ead0d0-8f65-4117-bca2-44ecb419ecb0)" />
+                    <rect x="216.94" y="259.65" width="129" height="258" rx="11" ry="11" fill="#23a86d" />
+                    <rect x="226.44" id="screen" y="283.65" width="110" height="210" fill="#fff" />
+                    <circle cx="268.44" cy="271.65" r="1" fill="#fff" />
+                    <rect x="273.44" y="270.65" width="22" height="2" rx="1" ry="1" fill="#fff" />
+                    <circle cx="280.94" cy="503.65" r="7" fill="#fff" />
+                    <path d="M285.73,680.25s-13.26-45,2.49-78.14A71.09,71.09,0,0,0,294,557.5a119.57,119.57,0,0,0-6.31-20.93" transform="translate(-82 -144)" fill="none" stroke="#23a86d" stroke-miterlimit="10" stroke-width="2" />
+                    <path d="M297.45,515.63c0,5.52-10,21.51-10,21.51s-10-16-10-21.51a10,10,0,0,1,20,0Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M314,546.19c-3,4.63-20.08,12.63-20.08,12.63s.31-18.86,3.31-23.49A10,10,0,1,1,314,546.19Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M313.24,598.4c-4.93,2.48-23.71.77-23.71.77s9.79-16.12,14.71-18.6a10,10,0,0,1,9,17.84Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M303.8,637.79c-4.44,3.28-23.24,4.76-23.24,4.76s6.92-17.54,11.36-20.82a10,10,0,0,1,11.88,16.06Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M272.91,559.89c4,3.84,22.39,7.83,22.39,7.83s-4.51-18.31-8.47-22.15a10,10,0,1,0-13.92,14.33Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M262.45,606.09c4.93,2.48,23.71.77,23.71.77s-9.79-16.12-14.71-18.6a10,10,0,1,0-9,17.84Z" transform="translate(-82 -144)" fill="#23a86d" />
+                    <path d="M258.45,652.39c4.44,3.28,23.24,4.76,23.24,4.76s-6.92-17.54-11.36-20.82a10,10,0,0,0-11.88,16.06Z" transform="translate(-82 -144)" fill="#23a86d" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="get_started pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>What are you waiting for!?</h2>
+                <p>Get started and sign up for free and enjoy your flexible fast cloud storage & player</p>
+                <a href="https://hexupload.net/register.html" class="btn btn-white-outline">Get started <i class="far fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<script>
+    var urluploader = new URLUploader('.reurlupload form', '.reurlupload .js_progress', {
+        return_url: 'https://hexupload.net/?op=upload_result&',
+        tmp_url: 'https://200417693.contenthx.me/tmp',
+        oncomplete: function(ret)
+        {
+            var redirect_params = $(ret).map(function(i, e) {
+                return "st=" + e.file_status + "&fn=" + e.file_code;
+            });
+            document.location = 'https://hexupload.net/?op=upload_result&' + redirect_params.toArray().join('&');
+        }
+    });
+    $('.reurlupload .uploadbtn').click(function(evt)
+    {
+        evt.preventDefault();
+        if(!$('.reurlupload form').get(0).tos.checked)
+        {
+            alert("You must agree with TOS");
+            return;
+        }
+        urluploader.start(this.form.url_mass.value);
+    });
+
+    var uploader = new FileUploader('#uploadfile', { return_url: 'https://hexupload.net/?op=upload_result&' });
+    var multiselector = new MultiSelector('#files_list', '#file_0',
+        {
+            file_public_default: '0',
+            ext_allowed: '',
+            ext_not_allowed: 'jpeg|jpg|png',
+            max_upload_files: '10',
+            max_upload_filesize: '2048',
+            oncomplete: function(files)
+            {
+                uploader.start(files);
+            }
+        });
+    $('.torrent input[type=file]').change(function()
+    {
+        $(this.form).submit();
+    });
+    $('#magnet').on('paste', function(evt) { setTimeout(function() { evt.target.form.submit() }, 0) });
+</script>
+
+</div>
+<br><br>
+<footer class="footer p-5 position-absolute">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-sm-4">
+                <div class="logo">
+                    <img src="/ds2/img/Hexupload_Black_Footer_Logo.png">
+                </div>
+                <div class="copyrights">
+         <p style="line-height: 50px;">© 2018-2022  <a href="http://Hexupload.net" title="All Rights Reserved By Hexuplaod">All Rights Reserved</a></p> 
+                </div>
+                <div class="credits">
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h4>Quick Links</h4>
+                <ul class="menu p-0 m-0">
+                    <li>
+                    <a href="/pages/advertise_with_us.html">Advertisers</a>
+                    </li>
+                    <li>
+                    <a href="https://hexupload.docs.apiary.io/" target="_blank" rel="noopener noreferrer">API</a>
+				    </li>
+					<!--<li>
+                    <a href="/news.html">News</a>....
+                    </li> -->
+                    <li>
+                        <a href="/?op=check_files">Check Files</a>
+                    </li>
+                    <li>
+                        <a href="/contact.html">Support</a>
+                    </li>
+                    <li>
+                        <a href="/faq.html">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="https://veryimg.com" target="_blank">Image Hosting</a>
+                    </li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Legal & Policy</h4>
+                <ul class="menu p-0 m-0">
+                    <li>
+                        <a href="/tos.html">Terms & Conditions</a>
+                    </li>
+                    <li>
+                        <a href="/dmca.html">Copyright Policy</a>
+                    </li>
+                    <li>
+                        <a href="/pages/privacy_policy.html">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="/child_abuse.html">Child Exploitation Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+	<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/ds2/js/bootstrap.min.js" ></script>
+<script src="/ds2/js/clipboard.min.js" ></script>
+<script src="/ds2/js/main.js" ></script>
+
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4167218,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4167218&101" alt="site stats" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e7a460e69e9320caabc8ac2/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120931509-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120931509-1');
+</script>
+
+<script type="text/javascript">
+var _nAdzq=_nAdzq||[];(function(){
+_nAdzq.push(["setIds","9821b7c2e007d136"]);
+_nAdzq.push(["setPk","BJwCdoJhinluL1DQWE3lB_k5ju1XpxNmz7N7bDiJ7r-q99DKF6qPNH7lUCgf_1CfMCIGM921gQv2EbYBbR0Rx9w"]);
+_nAdzq.push(["setDomain","notifpush.com"]);
+_nAdzq.push(["setNativDomain",true]);
+_nAdzq.push(["setSubscriptionNotif",false]);
+_nAdzq.push(["setTemplateId","optinboxperso"]);
+_nAdzq.push(["setEnv"]);
+var e="https://notifpush.com/scripts/";
+var t=document.createElement("script");
+t.type="text/javascript";
+t.defer=true;
+t.async=true;
+t.src=e+"nadz-sdk.js";
+var s=document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(t,s)})();
+ window.tpl_text1="Keep in touch with our latest news and partner offers!";
+window.tpl_text2="No e-mail required, cancel any time";
+window.tpl_text3="Please click Allow to subscribe.";
+window.tpl_colorText1="#292929";
+window.tpl_colorText2="#23a76c";
+window.tpl_colorText3="#292929";
+window.no_mobile="0";
+window.tpl_logo="https://statics.pushaddict.com/images/1152/imageDesktop_2379527469669107_Hexupload_Black_Footer_Logo.png";
+ window.tpl_textMobile="Keep in touch with our latest news and partner offers!";
+ window.tpl_logoMobile="";
+</script>
+
+<!--Push Ad Service_ Notifadz-->
+
+</body>
+</html>

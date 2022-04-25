@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <title>Последние новости</title>
+    <link href="/css/styles_90.css?v25" rel="stylesheet">
+<link href="/css/template.css" rel="stylesheet"></head>
+<body>
+<input type="hidden" id="newsId" value="0">
+<input type="hidden" id="sourceId" value="8">
+<input type="hidden" id="siteId" value="">
+<input type="hidden" id="useTextInPreview" value="">
+<input type="hidden" id="fromSite" value="0">
+<input type="hidden" id="pushSubscription" value="1">
+<input type="hidden" id="showInfoxItems" value="1">
+<input type="hidden" id="countryIso" value="ID">
+<input type="hidden" id="hostLocale" value="ru_RU">
+<input type="hidden" id="removeScripts" value="0">
+
+<!--header-->
+<header class="header decorated-bottom">
+    <div class="center-wrapper">
+        <div class="header__inner">
+
+            <div class="header__columns">
+
+                <div class="header__column hidden" id="header-menu">
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a class="menu__link" data-id="9" href="/category/shoubiz" target="_blank" rel="nofollow noreferrer">Шоу-бизнес</a></li>
+                            <li class="menu__item">
+                                <a class="menu__link" data-id="11" href="/category/zdorovie" target="_blank" rel="nofollow noreferrer">Здоровье</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                                <div class="header__column">
+                    <a href="/" class="logotype logo-to-change">
+                        вестник
+                    </a>
+                </div>
+                
+                <div class="header__column" id="header-exchange_rates">
+    <div class="currencies">
+        <span class="currency">
+            <span class="currency__name currency__name_usd">1</span>
+            =
+            <span class="currency__value currency__value_rub">73,50</span>
+        </span>
+        <span class="currency">
+            <span class="currency__name currency__name_eur">1</span>
+            =
+            <span class="currency__value currency__value_rub">80,02</span>
+        </span>
+    </div>
+</div>
+                <div class="header__column" id="header-togglers">
+                    <button type="button" class="header-toggler header-toggler_search" id="header-search-toggler">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button type="button" class="header-toggler header-toggler_menu" id="header-menu-toggler">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="hidden" id="header-search-container">
+                <form action="/search" class="search search_header">
+                    <input class="search__field" name="searchString" type="search" placeholder="Поиск" id="search-field">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</header>
+<!--\header-->
+
+
+<section class="tail-fragment tail-fragment_white decorated-bottom top-page-section first_open">
+    <div class="center-wrapper">
+        <div class="section-headline">Главные новости</div>
+        <div class="fints-line fints-line_of-3">
+            <a href="#" class="fint fint_vertical fint_bordered hide-on-560">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="fints-line fints-line_of-4">
+            <a href="#" class="fint fint_vertical fint_bordered hide-on-1000">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered  hide-on-560">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="tail-fragment tail-fragment_white first_open">
+    <div class="center-wrapper">
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet fint_bordered hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet fint_bordered">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet fint_bordered hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet fint_bordered">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet fint_bordered hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet fint_bordered">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="tail-fragment first_open">
+    <div class="center-wrapper">
+        <div class="section-headline">Читайте также</div>
+        <div class="fints-line fints-line_of-3">
+            <a href="#" class="fint fint_vertical hide-on-560">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+        <div class="fints fints_billet">
+            <a href="#" class="fint fint_billet hide-on-1000">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_billet">
+                <div class="fint__image fint__image_billet">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_billet">
+                    <div class="fint__title fint__title_billet"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="tail-fragment tail-fragment_white decorated-bottom first_open">
+    <div class="center-wrapper">
+        <div class="fints-line fints-line_of-4">
+            <a href="#" class="fint fint_vertical fint_bordered hide-on-1000">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered hide-on-560">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="fint fint_vertical fint_bordered">
+                <div class="fint__image fint__image_vertical">
+                    <img src="">
+                </div>
+                <div class="fint__content fint__content_vertical">
+                    <div class="fint__title fint__title_vertical"></div>
+                    <div class="fint__post-time fint__post-time_vertical">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="s_date"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="append"></section>
+
+<section id="row_append" class="template">
+    <section class="tail-fragment first_open">
+        <div class="center-wrapper">
+            <div class="fints-line fints-line_of-3">
+                <a href="#" class="fint fint_vertical hide-on-560">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_vertical">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_vertical">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="fints fints_billet">
+                <a href="#" class="fint fint_billet hide-on-1000">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_billet">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="fints fints_billet">
+                <a href="#" class="fint fint_billet hide-on-1000">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_billet">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="fints fints_billet">
+                <a href="#" class="fint fint_billet hide-on-1000">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_billet">
+                    <div class="fint__image fint__image_billet">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_billet">
+                        <div class="fint__title fint__title_billet"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="tail-fragment tail-fragment_white decorated-bottom first_open">
+        <div class="center-wrapper">
+            <div class="fints-line fints-line_of-4">
+                <a href="#" class="fint fint_vertical fint_bordered hide-on-1000">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_vertical fint_bordered hide-on-560">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_vertical fint_bordered">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="fint fint_vertical fint_bordered">
+                    <div class="fint__image fint__image_vertical">
+                        <img src="">
+                    </div>
+                    <div class="fint__content fint__content_vertical">
+                        <div class="fint__title fint__title_vertical"></div>
+                        <div class="fint__post-time fint__post-time_vertical">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="s_date"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!--footer-->
+<footer class="footer">
+    <div class="center-wrapper">
+        <div class="footer__inner">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="info-links">
+                        <span class="about">О проекте</span>
+                        <span class="contacts">Контакты</span>
+                    </div>
+                    <div class="copyright">
+                        Copyright © 2020 <span class="logo-to-change-w">«news-sphere.com»</span><br/>
+                        Все права защищены. <br class="hide show-on-1000">
+                        Для детей старше 16 лет
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="socials socials_footer">
+                        <a href="#" class="social-net social-net_twitter"></a>
+                        <a href="#" class="social-net social-net_facebook"></a>
+                        <a href="#" class="social-net social-net_vkontakte"></a>
+                        <a href="#" class="social-net social-net_telegram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--\footer-->
+
+<div id="modal-background">
+    <div id="about" class="modal-window" style="display: none;">
+        <div class="modal-headline">
+            О проекте
+            <div class="modal-close">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="modal-content">
+            Информационный ресурс для русскоязычного
+            населения стран СНГ. Мы предлагаем обзор главных мировых событий дня
+            в области политики, экономики, общественной жизни, а также
+            популярных интернет-трендов.<br>
+            Проект является частным независимым изданием, не отражает позицию какой-либо
+            из политических сил и следует критериям информационной объективности.
+        </div>
+    </div>
+    <div id="contacts" class="modal-window" style="display: none;">
+        <div class="modal-headline">
+            Напишите нам
+            <div class="modal-close">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="modal-content">
+            <form id="question" action="#" method="post" novalidate="novalidate">
+                <div class="form-group clearfix">
+                    <label for="c-name">Имя</label>
+                    <input id="c-name" class="form-element" type="text" name="name" required="">
+                </div>
+                <div class="form-group clearfix">
+                    <label for="c-email">E-mail</label>
+                    <input id="c-email" class="form-element" type="email" name="email" required="">
+                </div>
+                <div class="form-group clearfix">
+                    <label for="c-theme">Тема сообщения</label>
+                    <input id="c-theme" class="form-element" type="text" name="subject" required="">
+                </div>
+                <textarea name="message" id="message" required=""></textarea>
+                <input class="form-element submit" type="submit" value="Отправить">
+            </form>
+            <div class="success" style="display: none;">
+                <div class="message">Сообщение отправлено!</div>
+            </div>
+            <div class="progress-bar" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/assets/651d827f/yii.js"></script>
+<script src="/js/dateformat.js"></script>
+<script src="/js/underscore.min.js?1"></script>
+<script src="/js/backbone.min.js?1"></script>
+<script src="/js/helpers_90.js?229"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/view/split_90/main.js?10"></script>
+<script src="/js/view/split_90/index.js?11"></script>
+<script src="/js/subscribe.min.js?1"></script></body>
+</html>

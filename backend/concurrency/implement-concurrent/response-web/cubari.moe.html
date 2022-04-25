@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html class="home h-100" lang="en" class="bg-dark h-100">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/css/normalize.css?v=5be8458
+">
+
+
+<link rel="stylesheet" href="/static/css/main.css?v=5be8458
+">
+
+
+<script src="/static/js/alg_lib.js?v=5be8458
+"></script>
+<script src="/static/js/UI2.js?v=5be8458
+"></script>
+
+<link rel="canonical" href="https://cubari.moe/" />
+<link rel="manifest" href="/static/manifest.json?v=5be8458
+">
+<link rel="shortcut icon" sizes="128x128" type="image/png" href="/static/favicon.png?v=5be8458
+" defer />
+<link rel="icon" sizes="128x128" type="image/png" href="/static/favicon.png?v=5be8458
+" />
+<link rel="icon" sizes="512x512" type="image/png" href="/static/favicon.png?v=5be8458
+" />
+<link rel="apple-touch-icon" sizes="128x128" href="/static/favicon.png?v=5be8458
+" />
+<link rel="apple-touch-icon" sizes="256x256" href="/static/favicon.png?v=5be8458
+" />
+<link rel="apple-touch-icon" sizes="512x512" href="/static/favicon.png?v=5be8458
+" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#2b2f33" />
+<meta name="format-detection" content="telephone=no">
+<title>Cubari</title>
+<meta name="twitter:description" content="The versatile manga-oriented image reader." />
+<meta property="og:description" content="The versatile manga-oriented image reader." />
+<meta name="description" content="The versatile manga-oriented image reader.">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Cubari" />
+<meta name="twitter:image" content="/static/cubari_logo.png" />
+<meta property="og:image" content="/static/cubari_logo.png">
+<meta property="og:url" content="https://cubari.moe/">
+<meta name="referrer" content="same-origin" />
+<script src="/static/js/remotestorage.min.js"></script>
+<script src="/static/js/widget.min.js"></script>
+<script id="history_coverUrl" type="application/json">""</script>
+<script id="history_source" type="application/json">""</script>
+<script id="history_slug" type="application/json">""</script>
+<script id="history_url" type="application/json">""</script>
+<script id="history_title" type="application/json">""</script>
+<script>
+  // remoteStorage backend that'll be our plugged in module
+  // This should be abstracted from what actually handles updates,
+  // since this'll give us the ability to pull this out in the future
+  const RS_PATH = "cubari";
+
+  const remoteStorage = (() => {
+    // Define the schema for our history
+    const Model = {name: RS_PATH, builder: (private) => {
+      const SERIES_META = "series";
+      const REPLACEMENT_STR = "{SOURCE_SLUG_REPLACEMENT}";
+      const SERIES_META_PATH_BASE = "series/";
+      const SERIES_META_PATH = `${SERIES_META_PATH_BASE}${REPLACEMENT_STR}`;
+
+      private.declareType(SERIES_META, {
+        type: "object",
+        properties: {
+          slug: {
+            type: "string"
+          },
+          coverUrl: {
+            type: "string"
+          },
+          source: {
+            type: "string"
+          },
+          url: {
+            type: "string"
+          },
+          title: {
+            type: "string"
+          },
+          timestamp: {
+            type: "number"
+          },
+          chapters: {
+            type: "array",
+            default: [] // Note that these aren't validated by our schema handler
+          },
+          pinned: {
+            type: "boolean",
+            default: false // Thus it's documenting only; handle it
+          }
+        },
+        required: ["slug", "source", "url", "title", "timestamp", "chapters", "pinned"]
+      });
+
+      let firstPartyValidator = (source) => {
+        return (source === "manga" || source === "series" || source === "default");
+      };
+
+      let pathBuilder = (path, slug, source) => {
+        if (!source) source = "default";
+        if (firstPartyValidator(source)) source = "default";
+        source = source.replace(" ", "_");
+        return path.replace(REPLACEMENT_STR, `${source}-${slug}`);
+      };
+
+      let seriesBuilder = (slug, coverUrl, source, url, title, pinned, chapters) => {
+        source = source.replace(" ", "_");
+        if (firstPartyValidator(source)) {
+          source = "default";
+          pinned = true; // First party chapters always pinned
+        }
+        return {
+          slug: slug,
+          coverUrl: coverUrl || "",
+          source: source,
+          url: url,
+          title: title,
+          timestamp: Date.now(),
+          chapters: chapters || [],
+          pinned: (pinned === undefined) ? false : pinned
+        };
+      };
+
+      return {
+        exports: {
+          firstPartyHandler: (source) => {
+            return firstPartyValidator(source) ? "default" : source;
+          },
+          slugBuilder: (slug, source) => {
+            return `${source}-${slug}`;
+          },
+          addSeries: (slug, coverUrl, source, url, title, pinned, chapters) => {
+            let toStore = seriesBuilder(slug, coverUrl, source, url, title, pinned, chapters);
+            return private.storeObject(
+              SERIES_META,
+              pathBuilder(SERIES_META_PATH, slug, source),
+              toStore);
+          },
+          editSeries: async (slug, coverUrl, source, url, title, pinned, chapters) => {
+            let obj = await private.getObject(pathBuilder(SERIES_META_PATH, slug, source));
+            if (obj) {
+              let toStore = seriesBuilder(
+                slug || obj.slug,
+                coverUrl || obj.coverUrl,
+                source || obj.source,
+                url || obj.url,
+                title || obj.title,
+                (pinned !== undefined) ? pinned : obj.pinned,
+                chapters || obj.chapters // Empty array is truthy
+              );
+              return private.storeObject(
+                SERIES_META,
+                pathBuilder(SERIES_META_PATH, slug, source),
+                toStore
+              )
+            } else {
+              // Fail-fast instead of adding the series
+              throw new Error("Cannot edit a non-existent series.");
+            }
+          },
+          getSeries: (slug, source) => {
+            return private.getObject(pathBuilder(SERIES_META_PATH, slug, source));
+          },
+          removeSeries: (slug, source) => {
+            return private.remove(pathBuilder(SERIES_META_PATH, slug, source));
+          },
+          getAllSeries: () => {
+            // Note for the future: getAll gives you the objects within, while
+            // getListing gives you just a list of files; thus, this gives you the
+            // metadata within
+            if (private.storage.connected) {
+              // maxAge cache in millis
+              return private.getAll(SERIES_META_PATH_BASE, 30000);
+            } else {
+              // Promise resolves immediately if no storage is connected
+              // https://remotestoragejs.readthedocs.io/en/v1.2.3/js-api/base-client.html#caching-logic-for-read-operations
+              return private.getAll(SERIES_META_PATH_BASE);
+            }
+          }
+        }
+      }
+    }};
+
+    let remoteStorage = new RemoteStorage({cache: true, modules: [Model]});
+
+    remoteStorage.access.claim(RS_PATH, "rw");
+    remoteStorage.caching.enable(`/${RS_PATH}/`);
+
+    return remoteStorage;
+  })();
+
+  // This will be the main handler that deals with both
+  // chapter and series history. All logic should be here
+  // and abstracted from the rest of the code
+  const globalHistoryHandler = (() => {
+    const STORAGE_KEY = "proxyHistory";
+    const SORT_KEY = "timestamp";
+    const MAX_VALUES = 20;
+
+    // Helper to return an array of objects from a nested object, sorted by key
+    let sortObjectByKey = (obj, key) => {
+      let sortable = [];
+      for (let k in obj) {
+        sortable.push(obj[k]);
+      }
+      sortable.sort((f, s) => s[key] - f[key]);
+      return sortable;
+    };
+
+    const sync = async () => {
+      // Sync operation ensures the local cache doesn't have any dangling objects.
+      // We'll sort for the timestamp key since that's what we use everywhere else
+      let allSeries = await remoteStorage[RS_PATH].getAllSeries();
+      for (const [key, value] of Object.entries(allSeries)) {
+        try {
+          if (!value[SORT_KEY]) {
+            // We don't use split here since the slug can potentially include "-"
+            let separatorIndex = key.indexOf("-");
+            let slug = key.slice(separatorIndex + 1);
+            let source = key.slice(0, separatorIndex);
+            await remoteStorage[RS_PATH].removeSeries(slug, source);
+          }
+        } catch (e) {
+          console.error("[Global History] Sync error, continuing.");
+        }
+      }
+    };
+
+    const enabled = () => {
+      return localStorage.getItem(STORAGE_KEY) ? true : false;
+    };
+
+    const enable = () => {
+      let settings = localStorage.getItem("settings");
+      let redirected = localStorage.getItem("redirected");
+      let storageOnce = localStorage.getItem("storageOnce");
+      localStorage.clear();
+      if (settings) localStorage.setItem("settings", settings);
+      if (redirected) localStorage.setItem("redirected", redirected);
+      if (storageOnce) localStorage.setItem("storageOnce", storageOnce);
+      localStorage.setItem(STORAGE_KEY, true);
+    };
+
+    const disable = () => {
+      let settings = localStorage.getItem("settings");
+      let redirected = localStorage.getItem("redirected");
+      let storageOnce = localStorage.getItem("storageOnce");
+      localStorage.clear();
+      if (settings) localStorage.setItem("settings", settings);
+      if (redirected) localStorage.setItem("redirected", redirected);
+      if (storageOnce) localStorage.setItem("storageOnce", storageOnce);
+    };
+
+    const pushSeries = async (slug, coverUrl, source, url, title) => {
+      await sync();
+      source = remoteStorage[RS_PATH].firstPartyHandler(source);
+      let allCurrentSeries = sortObjectByKey(await remoteStorage[RS_PATH].getAllSeries() || {}, SORT_KEY);
+      let existingSeries = allCurrentSeries.find((e) => e.slug === slug && e.source === source.replace(" ", "_"));
+
+      allCurrentSeries = allCurrentSeries.filter(e => !e.pinned);
+
+      // Be mindful of the cap regardless of the state of the tree
+      while ((allCurrentSeries.length + ((existingSeries) ? 0 : 1)) > MAX_VALUES) {
+        let last = allCurrentSeries.pop();
+        await remoteStorage[RS_PATH].removeSeries(last.slug, last.source);
+      }
+
+      if (existingSeries) {
+        // Effectively this updates the timestamp of the series, pushing it to the top
+        return remoteStorage[RS_PATH].editSeries(slug, coverUrl, source, url, title, existingSeries.pinned, existingSeries.chapters);
+      } else {
+        return remoteStorage[RS_PATH].addSeries(slug, coverUrl, source, url, title, undefined, undefined);
+      }
+    };
+
+    const removeSeries = async (slug, source) => {
+      await sync();
+      return remoteStorage[RS_PATH].removeSeries(slug, source);
+    };
+
+    const removeAllUnpinnedSeries = async () => {
+      let series = await globalHistoryHandler.getAllUnpinnedSeries();
+      if(series) {
+        Array.prototype.forEach.call(series, srs => {
+            removeSeries(srs.slug, srs.source)
+        })
+      }
+    };
+
+    const addChapters = async (slug, source, chapters) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        chapters = [...new Set([...chapters, ...existingSeries.chapters])];
+        return remoteStorage[RS_PATH].editSeries(slug, undefined, source, undefined, undefined, undefined, chapters);
+      } else {
+        console.error("[Global History] addChapters - Series didn't exist.");
+      }
+    };
+
+    const addChapter = async (slug, source, chapter) => {
+      return addChapters(slug, source, [chapter]);
+    };
+
+    const removeChapter = async (slug, source, chapter) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        chapters = existingSeries.chapters.filter(e => e !== chapter);
+        return remoteStorage[RS_PATH].editSeries(slug, undefined, source, undefined, undefined, undefined, chapters);
+      } else {
+        console.error("[Global History] removeChapter - Series didn't exist.");
+      }
+    };
+
+    const removeAllChapters = async (slug, source) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        return remoteStorage[RS_PATH].editSeries(slug, undefined, source, undefined, undefined, undefined, []);
+      } else {
+        console.error("[Global History] removeAllChapters - series didn't exist.");
+      }
+    };
+
+    const getReadChapters = async (slug, source) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        return existingSeries.chapters;
+      } else {
+        console.error("[Global History] getReadChapters - series didn't exist.");
+      }
+    };
+
+    const pinSeries = async (slug, source) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        return remoteStorage[RS_PATH].editSeries(slug, undefined, source, undefined, undefined, true, undefined);
+      } else {
+        console.error("[Global History] pinSeries - series didn't exist.");
+      }
+    };
+
+    const unpinSeries = async (slug, source) => {
+      let existingSeries = await remoteStorage[RS_PATH].getSeries(slug, source);
+
+      if (existingSeries) {
+        return remoteStorage[RS_PATH].editSeries(slug, undefined, source, undefined, undefined, false, undefined);
+      } else {
+        console.error("[Global History] unpinSeries - series didn't exist.");
+      }
+    };
+
+    const getAllPinnedSeries = async () => {
+      await sync();
+      return sortObjectByKey(await remoteStorage[RS_PATH].getAllSeries() || {}, SORT_KEY).filter(e => e.pinned);
+    };
+
+    const getAllUnpinnedSeries = async () => {
+      await sync();
+      return sortObjectByKey(await remoteStorage[RS_PATH].getAllSeries() || {}, SORT_KEY).filter(e => !e.pinned);
+    };
+
+    return {
+      max: MAX_VALUES,
+      enabled,
+      pushSeries,
+      removeSeries,
+      removeAllUnpinnedSeries,
+      addChapters,
+      addChapter,
+      removeChapter,
+      removeAllChapters,
+      getReadChapters,
+      pinSeries,
+      unpinSeries,
+      getAllPinnedSeries,
+      getAllUnpinnedSeries,
+      toggle: {
+        enable,
+        disable
+      }
+    };
+  })();
+
+  const tag = () => {
+    try {
+      let coverUrl = JSON.parse(document.getElementById("history_coverUrl").textContent);
+
+      let source = JSON.parse(document.getElementById("history_source").textContent);
+
+      if (!source) {
+        source = window.location.pathname
+        .split("/")
+        .filter(e => e)[1]
+        .replace("_", " ");
+      } else {
+        source = source.split("/")[1];
+      }
+
+      let slug = JSON.parse(document.getElementById("history_slug").textContent);
+
+      let url = JSON.parse(document.getElementById("history_url").textContent);
+
+      if (url) {
+        url = `/${url}`.split(slug)[0] + slug;
+      }
+
+      let title = JSON.parse(document.getElementById("history_title").textContent);
+
+      if (source && slug && url && title) {
+        remoteStorage.on("ready", async () => {
+          await globalHistoryHandler.pushSeries(slug, coverUrl, source, url, title);
+          window.dispatchEvent(new CustomEvent("history-ready"));
+        });
+      }
+    } catch (e) {
+      // Do nothing, silently fail.
+    }
+  };
+window.addEventListener("load", async () => {
+  if((await localStorage.getItem('storageOnce')) == "1") return;
+  if (!globalHistoryHandler.enabled()) {
+    globalHistoryHandler.toggle.enable();
+    localStorage.setItem('storageOnce', "1")
+  }
+})
+</script>
+</head>
+<body>
+<div class="body-wrapper">
+<div class="home-background"></div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX1TZQKKPL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZX1TZQKKPL');
+</script>
+<header>
+<a class="donate" href="https://ko-fi.com/cubari"><span>‹</span>&nbsp;&nbsp;send coffee&nbsp;&nbsp;<span>›</span></a>
+<a href="/" class="cubari-logo"></a>
+<a class="rhombutton icon-help" id="help-button" onclick="openModal('about')"></a>
+</header>
+<div id="main">
+<section>
+<div class="header-wrapper">
+<h1>CUBARI</h1>
+<h2>While Mangadex is dead.</h2>
+</div>
+<div class="search-wrapper">
+<div class="search-box">
+<div class="cubari-logo"></div>
+<input type="text" id="search" name="cubariInput" placeholder="Imgur, NH, MD, mangasee, git.io, raw GitHub link..."><button class="ico-btn icon-ri" id="search-button"></button>
+</div>
+<div id="status"><a href="https://old.reddit.com/r/manga/comments/s1x668/sl_cubarimoe_gist_links_are_now_deprecated">UPDATE: git.io deprecation</a><br><br>To unite several chapters under one gist link,<br>you can use this <a href="https://stirante.com/facaccimo/">useful tool</a> by Stirante.</div>
+</div>
+</section>
+</div>
+<footer>
+<a class="guya" href="https://guya.moe/"><img src="/static/img/gmprj.png" /></a>
+<div class="history-scroller" onclick="window.scrollTo({top: document.getElementById('history').offsetTop, behavior: 'smooth'})">YOUR HISTORY</div>
+</footer>
+<script src="/static/js/main.js?v=5be8458
+"></script>
+<script>
+	document.querySelector('.header-wrapper h2').innerHTML =
+	([
+		'That one cool web manga reader.',	
+		`${Math.round((new Date().getTime() - new Date("07/15/2019").getTime()) / (1000 * 3600 * 24))} days of uptime.`,
+		`No accounts, no problems.`,
+		`Read Kaguya.`,
+		`For legal reasons, we don't host <i>anything</i>.`,
+		`The reader could be better.`,
+		`Did you know that the reader has, like, options and stuff?`,
+		`<i>Advanced.</i>`,
+		`We gotchu, Mangadex.`,
+		`Everyone get on the lifeboats, the main ship is down!`,
+		`We're under heavy load, please come back later...<br>Just kidding.`,
+	])[Math.round(Math.random()*10)]
+</script>
+</div>
+<div id="history">
+</div>
+<div id="layers">
+<article id="about" class="hidden">
+<a class="rhombutton icon-close"></a>
+<h2>What's this thing?</h2>
+<p>This website is an image proxy. It takes images from other websites and displays them in a better manga-oriented reader, Cubari.</p>
+<p>Cubari does not host any of the content you are viewing. Just like your computer does not store or own all the images you see on the internet, Cubari is doing the same thing. We are simply a service that lets you view other data on the internet using our custom UI.</p>
+<p>This reader was born while developing Guya.moe, the website to host Kaguya. After a while we added a lot of useful features, and now we branched it into a separate domain. We don't host anything, this is just a web image viewer that can parse other websites.</p>
+<h2>What are the sites you can proxy?</h2>
+<p>Currently it supports imgur, nhentai and custom appropriately-formatted JSON hosted on GitHub Gists. This is an advanced feature and will be explained in detail below.</p>
+<h2>Are you the next Mangadex?</h2>
+<p>No, but we might become a web version Tachiyomi. This is not a guarantee, though.</p>
+<h2>Add [X]!</h2>
+<p>For now we wont accept feature requests because we have a pretty straightforward roadmap that we need to realize first. Keep an eye on us, something new might pop up soon.</p>
+<h2>What will happen to Guya?</h2>
+<p>Nothing. We're still fans of Kaguya, so it will just stay there on Guya.moe and will continue utilizing our nice manga reader. We're just branching out the proxy stuff.</p>
+<h2>Github Gists</h2>
+<p>Supplying the reader with special code that tells the reader where the images are lets you display series of chapters. A thorough guide can be found in this <a href="https://www.reddit.com/r/manga/comments/mcicbp/sl_how_to_host_a_series_on_imgur_with_guyamoe/" target="_blank">reddit post</a> while we work on making a user-friendly constructor for this.</p>
+<h2>Data Synchronisation</h2>
+<p>You can synchronise your reading history across different devices using a third-party data storage service that's powered by the open source <code>remotestorage</code> protocol. Visit our homepage and scroll down to learn more.</p>
+<h2>What about Tachiyomi?</h2>
+<p>We support that too! Get the extension <a href="https://tachiyomi.org/extensions/#all.cubari" target="_blank">here</a>. It unlocks the ability to open Cubari links in the app. In addition, if you sign into a <code>remotestorage</code> account <sup>[1]</sup>, the Tachiyomi extension will show your reading history and pinned galleries.</p>
+<p><i><sup>[1]</sup> You must first open a webview and sign into your <code>remotestorage</code> account</i></p>
+</article>
+</div>
+<script>
+		const layerHandler = e => {
+		let article = e.target.closest('article');
+			if(article == null || e.target.classList.contains('icon-close')) {
+				closeModal();
+			}
+		}
+
+		const openModal = (modal) => {
+			document.getElementById(modal).classList.remove('hidden');
+		let offset = window.innerWidth - document.documentElement.scrollWidth;
+			document.body.firstElementChild.style.paddingRight = offset + 'px';
+			Array.prototype.forEach.call(document.querySelectorAll('article .rhombutton.icon-close'), x => {x.style.right = offset + 'px'})
+			document.body.style.overflow = 'hidden';
+		}
+
+		const closeModal = (m) => {
+		let children = Array.prototype.reverse.call(document.getElementById('layers').children);
+			for (var i = 0; i < children.length; i++) {
+			let l = children[i];
+				if(!l.classList.contains('hidden')) {
+					l.classList.add('hidden');
+					break;
+				}
+			}
+			Array.prototype.forEach.call(document.querySelectorAll('article .rhombutton.icon-close'), x => {x.style.right = ''})
+			document.body.style.overflow = '';
+			document.body.firstElementChild.style.paddingRight = '';
+		}
+		document.getElementById('layers').addEventListener("click", layerHandler);
+
+		const toggleFocus = (e) => {
+			if(e.target.closest('.search-box')) {
+				document.body.classList.add('search-focus');
+			}else{
+				document.body.classList.remove('search-focus');
+			}
+		}
+		document.body.addEventListener("click", toggleFocus);
+	</script>
+<script>
+		isiOSAux = (window.navigator.standalone == true);
+		if(isiOSAux) {
+			var aList = document.getElementsByTagName("a");
+			for(var i=0; i<aList.length; i++) {
+				if(!aList[i].onclick
+				&& aList[i].href.length > 0
+				&& aList[i].href.indexOf(document.location.origin) > -1) {
+					aList[i].onclick = function() {
+						window.location = this.getAttribute("href");
+						return false;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

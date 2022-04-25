@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"983008b81c",applicationID:"533672816"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/icons/font/dotesports.woff2?36239003">
+<style>
+		.admin-bar #skin {
+			top: 32px;
+		}
+		#sticky-bottom,
+		#sticky-top {
+			background: rgba(255, 255, 255, 0.9);
+			overflow: hidden;
+			text-align: center;
+			transition: min-height 0.5s;
+			width: 100%;
+			z-index: 99999;
+		}
+		#sticky-top {
+			display: block;
+			height: 50px;
+			position: sticky;
+			top: 0;
+		}
+		#sticky-bottom {
+			bottom: 0;
+			display: block;
+			height: 50px;
+			position: fixed;
+		}
+		#sticky-bottom.show {
+			min-height: 50px;
+		}
+		#skin {
+			display: none;
+			position: fixed !important;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+		}
+		#top-heroboard {
+			display: none;
+			margin-top: 1.5rem;    
+			margin-bottom: 0.5rem;
+			min-height: 270px;
+			position: relative;
+			width: 970px;
+		}
+		.dotesports-display,
+		.proper-ad-unit:not(#skin):not(#top-heroboard):not(.sticky-units) {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.proper-ad-unit:not(#skin):not(.sticky-units) {
+			min-height: 640px;
+		}
+		#side-display-2 {
+			margin: 0 0 1rem 0;
+		}
+		div.primis-player {
+			display: flex;
+			margin: 1em auto 1.5em;
+			padding-top: 74.8376811594%; /* (258.19/345)*100 */
+			position: relative;
+		}
+		div.primis-player > div {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.entry-content .proper-ad-unit {
+			display: block !important;
+			min-height: 700px !important;
+		}
+		.entry-content .proper-ad-unit:before {
+			border-bottom: 1px solid #dfdfdf;
+			color: #949494;
+			content: "Content Continues After Ad";
+			font-family: "Montserrat";
+			font-size: 0.65rem;
+			padding: 0 2rem 0.25rem;
+			text-transform: uppercase;
+		}
+		.entry-content .proper-ad-unit > div:first-child {
+			margin-top: 0.5rem !important;
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: 55px;
+		}
+		@media (min-width: 37.5em) {
+			#sticky-bottom,
+			#sticky-top {
+				display: none;
+			}
+			#top-heroboard {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.dotesports-display,
+			.proper-ad-unit:not(#skin):not(.sticky-units) {
+				min-height: 290px;
+			}
+			.entry-content .proper-ad-unit {
+				min-height: 320px !important;
+			}
+			.entry-content .proper-ad-unit > div:first-child {
+				top: 75px;
+			}
+			div.primis-player {
+				padding-top: 70.9589041%; /* (518/730)*100 */
+			}
+		}
+		@media (min-width: 1100px) {
+			#skin {
+				display: block;
+			}
+		}
+		@media (max-width: 1920px) {
+			#skin #dotesports_skin {
+				height: 1080px;
+				max-width: 1920px !important;
+				width: 1920px;
+			}
+
+			#skin #proper-ad-dotesports_skin,
+			#skin #dotesports_skin {
+				margin-left: calc((100% - 1920px)/2) !important;
+			}
+		}
+	</style>
+<script>var special_ops=special_ops||{};</script>
+<script>special_ops.page_type = "home";</script>
+<script>special_ops.tags = ["home-page"];</script>
+<script>
+				var propertag = propertag || {};
+				propertag.cmd = propertag.cmd || [];
+				(function() {
+				var pm = document.createElement('script');
+				pm.async = true; pm.type = 'text/javascript';
+				var is_ssl = 'https:' == document.location.protocol;
+				pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/dotesports.min.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(pm, node);
+				})();
+			</script>
+<script>
+		var dataLayer = [{'is_usa':0, 'country_code':'GB', 'is_paid_member':0}];
+	</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86459307-1"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+							gtag('config', 'UA-86459307-1');
+					</script>
+<script type="text/javascript" async>
+		;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://dotesports.com/plow.lite.js","snowplow"));
+	</script>
+<script>
+		window.snowplow('newTracker', 'sp1', 'https://spc.dotesports.com', { 
+			appId: 'dotesports-web',
+		});
+		snowplow('enableActivityTracking', { 
+			minimumVisitLength: 30, 
+			heartbeatDelay: 10 
+		});
+		window.snowplow('trackPageView');
+		window.top.addEventListener('primisPlayerInit', function (e) {
+			if (e.detail.playerApiId == 'primisPlayer') {
+				var player = e.detail;
+				player.addEventListener('adStarted', function (val) {
+					window.snowplow('trackSelfDescribingEvent', {
+						event: {
+							schema: 'iglu:group.gamurs/primis_ad_impression/jsonschema/1-0-0',
+							data: {
+								impressionValue: val.impValue,
+								servingFee: val.servingFee,
+							}
+						}
+					});
+				});
+			}
+		});
+	</script>
+<script>
+		(function() {
+			var processCWV = function(obj) {
+				window.snowplow('trackSelfDescribingEvent', {
+					event: {
+						schema: 'iglu:group.gamurs/core_web_vitals/jsonschema/1-0-0',
+						data: {
+							name: obj.name,
+							value: obj.value,
+							delta: obj.delta,
+						},
+					},
+				});
+			}
+			var script = document.createElement('script');
+			script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+			script.onload = function() {
+				webVitals.getCLS(processCWV);
+				webVitals.getFID(processCWV);
+				webVitals.getLCP(processCWV);
+			}
+			document.head.appendChild(script);
+		}())
+	</script>
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://superficialeyes.com/v2qdehg3FX_7OxDONgV4bpLiSBNLtGgXEb2ocBO-ZUtcZQrCZ40slwvGE7c8u2len",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o[n]=o[n]||t})(window,String.fromCharCode(97,100,109,105,114,97,108));!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-recovered","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");;;!(function(t,n,i,e,o){function a(){for(var t=[],i=0;i<arguments.length;i++)t.push(arguments[i]);if(!t.length)return o;"ping"===t[0]?t[2]({gdprAppliesGlobally:!!n.__cmpGdprAppliesGlobally,cmpLoaded:!1,cmpStatus:"stub"}):t.length>0&&o.push(t)}function c(t){if(t&&t.data&&t.source){var e,o=t.source,a="string"==typeof t.data&&t.data.indexOf("__tcfapiCall")>=0;(e=a?((function(t){try{return JSON.parse(t)}catch(n){}})(t.data)||{}).__tcfapiCall:(t.data||{}).__tcfapiCall)&&n[i](e.command,e.version,(function(t,n){var i={__tcfapiReturn:{returnValue:t,success:n,callId:e.callId}};o&&o.postMessage(a?JSON.stringify(i):i,"*")}),e.parameter)}}!(function f(){if(!window.frames[e]){var n=t.body;if(n){var i=t.createElement("iframe");i.style.display="none",i.name=e,n.appendChild(i)}else setTimeout(f,5)}})(),o=[],a.v=1,"function"!=typeof n[i]&&(n[i]=n[i]||a,n.addEventListener?n.addEventListener("message",c,!1):n.attachEvent&&n.attachEvent("onmessage",c))})(document,window,"__tcfapi","__tcfapiLocator");;!(function(n,t,i,u,e,o,r){function a(n){if(n){var u=(n.data||{}).__uspapiCall;u&&t[i](u.command,u.version,(function(t,i){n.source.postMessage({__uspapiReturn:{returnValue:t,success:i,callId:u.callId}},"*")}))}}!(function f(){if(!window.frames[u]){var t=n.body;if(t){var i=n.createElement("iframe");i.style.display="none",i.name=u,t.appendChild(i)}else setTimeout(f,5)}})();var s={getUSPData:function(n,t){return n!==1?t&&t(null,!1):t&&t({version:null,uspString:null},!1)}};function c(n,t,i){return s[n](t,i)}c.v=1,"function"!=typeof t[i]&&(t[i]=t[i]||c,t.addEventListener?t.addEventListener("message",a,!1):t.attachEvent&&t.attachEvent("onmessage",a)),o=n.createElement(e),r=n.getElementsByTagName(e)[0],o.src="https://terrifictooth.com/v2yql9k4T6k7ulnLdu9T3vjE3RdrEidmFgmKu1yWl-FwaldZE_W0jBh0x__27GHGnmCyIzPfywJbVSE39bg",r.parentNode.insertBefore(o,r)})(document,window,"__uspapi","__uspapiLocator","script");</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356934496955375" crossorigin="anonymous"></script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<title>Dot Esports - Esports News, Analysis, Tournament Coverage, and More</title>
+<meta name="description" content="The world leader in esports and competitive gaming coverage, including breaking news, features, analysis, opinion, tournament coverage, and more." />
+<link rel="canonical" href="https://dotesports.com/" />
+<link rel="next" href="https://dotesports.com/page/2" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dot Esports" />
+<meta property="og:description" content="The world leader in esports and competitive gaming coverage, including breaking news, features, analysis, opinion, tournament coverage, and more." />
+<meta property="og:url" content="https://dotesports.com/" />
+<meta property="og:site_name" content="Dot Esports" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@DotEsports" />
+
+<link rel='dns-prefetch' href='//dotesports.com' />
+<link rel='dns-prefetch' href='//unpkg.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Dot Esports &raquo; Feed" href="https://dotesports.com/feed" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/dotesports.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://dotesports.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dotesports-blocks-css' href='https://dotesports.com/wp-content/plugins/dotesports-gutenberg-blocks/build/style-index.css?ver=1636561707' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='theme-my-login-css' href='https://dotesports.com/wp-content/plugins/theme-my-login/assets/styles/theme-my-login.min.css?ver=7.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='pmpro_frontend-css' href='https://dotesports.com/wp-content/plugins/paid-memberships-pro/css/frontend.css?ver=2.7.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='pmpro_print-css' href='https://dotesports.com/wp-content/plugins/paid-memberships-pro/css/print.css?ver=2.7.3' type='text/css' media='print' />
+<link rel='stylesheet' id='wordpress-popular-posts-css-css' href='https://dotesports.com/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css?ver=5.5.1' type='text/css' media='all' />
+<style id="dotesports-google-fonts-css" media="all">@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw5aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIQzD-0qpwxpaWvjeD0X88SAOeauXQ-pQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIXzD-0qpwxpaWvjeD0X88SAOeasasatSyqwQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/sourceserifpro/v11/neIXzD-0qpwxpaWvjeD0X88SAOeasc8btSyqwQ.ttf) format('truetype');
+}
+</style>
+<link rel='stylesheet' id='dotesports-style-css' href='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/style.css?ver=13' type='text/css' media='all' />
+<link rel='stylesheet' id='dotesports-icons-css' href='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/icons/dotesports-icons.css?ver=20210330' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://dotesports.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<script type='application/json' id='wpp-json'>
+{"sampling_active":1,"sampling_rate":100,"ajax_url":"https:\/\/dotesports.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/dotesports.com\/wp-json\/wordpress-popular-posts","ID":0,"token":"38cfd0056b","lang":0,"debug":0}
+</script>
+<script type='text/javascript' src='https://dotesports.com/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js?ver=5.5.1' id='wpp-js-js'></script>
+<script type='text/javascript' src='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/js/ads-prebid-banner-proper-outbrain.js?ver=5.9.3' id='dotesports-adblock-bait-js'></script>
+<link rel="https://api.w.org/" href="https://dotesports.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dotesports.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dotesports.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel="alternate" hreflang="pt-BR" href="https://dotesports.com/br/"><link rel="alternate" hreflang="es-ES" href="https://dotesports.com/es/"><link rel="alternate" hreflang="fr-FR" href="https://dotesports.com/fr/"><link rel="alternate" hreflang="en-US" href="https://dotesports.com/">
+
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var dataLayer_content = {"siteID":"1","siteName":"Dot Esports","visitorLoginState":"logged-out","pageTitle":"Dot Esports - Esports News, Analysis, Tournament Coverage, and More","pagePostType":"frontpage","deviceType":"mobile","deviceManufacturer":"Apple","deviceModel":"iPhone"};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDR623V');//]]>
+</script>
+
+ <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https:\/\/schema.org","@type":"NewsMediaOrganization","@id":"https:\/\/dotesports.com#Organization","name":"Dot Esports","url":"https:\/\/dotesports.com","sameAs":[],"logo":{"@type":"ImageObject","url":"https:\/\/cdn1.dotesports.com\/wp-content\/uploads\/2018\/12\/13191656\/dotesports-amp.png","width":"600","height":"60"}}]
+</script>
+<link rel="icon" href="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05202510/cropped-black-white-dotlogo-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05202510/cropped-black-white-dotlogo-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05202510/cropped-black-white-dotlogo-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05202510/cropped-black-white-dotlogo-1-270x270.png" />
+<style type="text/css" id="wp-custom-css">
+			/* Temporay CSS */
+
+.settings-table-style table {
+    font-size: smaller;
+    border-spacing: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.settings-table-style table td {
+    text-align: left;
+    padding: 8px;
+		border: 1px solid #e7e7e7;
+}
+
+.settings-table-style table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.settings-table-style table th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+	  border: 1px solid #e7e7e7;
+}
+
+/* use caption heading in settings table */
+
+.settings-table-style.use-caption-heading{ /* if using postion relative and figcaption as header of table */
+    position: relative;
+}
+
+.settings-table-style.use-caption-heading table{ 
+    margin-top: 40px;
+}
+  
+.settings-table-style.use-caption-heading figcaption { /* if using postion relative and figcaption as header of table */
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/*Temprory fixed for text italic issues*/
+
+.wp-block-dotesports-product-summary__recommendations li {
+	display: inline-block;
+}
+
+.wp-block-dotesports-product-summary__recommendations li::before {
+	width: 27px
+}		</style>
+<script>
+		window.snowplow('trackSelfDescribingEvent', {
+			event: {
+				schema: 'iglu:group.gamurs/ad_block_detection/jsonschema/1-0-0',
+				data: {
+					adsBlocked: window.haveWeGotAds === undefined,
+				}
+			}
+		});
+		gtag('event', window.haveWeGotAds === undefined ? "Blocked" : "Allowed", {
+			'event_category' : 'Ad Block',
+			'non_interaction': true,
+		});
+	</script>
+
+<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "36750692" });
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+		s.src = "https://sb.scorecardresearch.com/cs/36750692/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+	</script>
+<noscript>
+	<img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=36750692&amp;cv=3.6.0&amp;cj=1">
+	</noscript>
+
+</head>
+<body class="home blog hfeed">
+<div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<div id="sticky-top">
+<div class="proper-ad-unit sticky-units"> <div id="proper-ad-dotesports_mobile_sticky_top"> <script> propertag.cmd.push(function() { proper_display('dotesports_mobile_sticky_top'); }); </script> </div> </div>
+</div>
+<header id="masthead" class="site-header">
+<div class="container">
+<div class="site-branding">
+<a href="https://dotesports.com/">
+<picture>
+<source media="(min-width: 769px)" srcset="https://cdn1.dotesports.com/wp-content/uploads/2018/08/11085710/logo-dot_esports-h-white-300x82.png">
+<source media="(max-width: 768px)" srcset="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05102536/logo-dot_esports-mark-white-150x150.png">
+<img src="https://cdn1.dotesports.com/wp-content/uploads/2020/08/05102536/logo-dot_esports-mark-white-150x150.png">
+</picture>
+</a>
+</div>
+<nav id="site-navigation" class="main-navigation">
+<i class="menu-toggle icon-menu" aria-controls="primary-menu" aria-expanded="false" role="button"></i>
+<div class="menu-top-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-1433" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1433"><a href="https://dotesports.com/league-of-legends">LoL</a></li>
+<li id="menu-item-1434" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1434"><a href="https://dotesports.com/overwatch">Overwatch</a></li>
+<li id="menu-item-1435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1435"><a href="https://dotesports.com/counter-strike">CS:GO</a></li>
+<li id="menu-item-228651" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-228651"><a href="https://dotesports.com/valorant">Valorant</a></li>
+<li id="menu-item-508254" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-508254"><a href="https://dotesports.com/dota-2">Dota 2</a></li>
+<li id="menu-item-1438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1438"><a href="https://dotesports.com/call-of-duty">CoD</a></li>
+<li id="menu-item-108515" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108515"><a href="https://dotesports.com/apex-legends">Apex Legends</a></li>
+<li id="menu-item-1439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1439"><a href="https://dotesports.com/fortnite">Fortnite</a></li>
+<li id="menu-item-397501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397501"><a href="https://dotesports.com/deals"><span style="color: #df2940; ">Deals</span></a></li>
+<li id="menu-item-39274" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-39274"><a href="#">More</a>
+<ul class="sub-menu">
+<li id="menu-item-247117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-247117"><a href="https://dotesports.com/hardware">Hardware</a></li>
+<li id="menu-item-233884" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-233884"><a href="https://dotesports.com/hearthstone">Hearthstone</a></li>
+<li id="menu-item-39464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39464"><a href="https://dotesports.com/pubg">PUBG</a></li>
+<li id="menu-item-203427" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-203427"><a href="https://dotesports.com/tft">Teamfight Tactics</a></li>
+<li id="menu-item-203426" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-203426"><a href="https://dotesports.com/mtg">MTG</a></li>
+<li id="menu-item-118580" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118580"><a href="https://dotesports.com/rainbow-6">Rainbow 6</a></li>
+<li id="menu-item-549037" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-549037"><a href="https://dotesports.com/streaming">Streaming</a></li>
+<li id="menu-item-127962" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-127962"><a href="https://dotesports.com/oceania">Oceania</a></li>
+<li id="menu-item-39275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39275"><a href="https://dotesports.com/business">Business</a></li>
+<li id="menu-item-39281" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39281"><a href="https://dotesports.com/br/?noredirect=pt_BR">Ir para o Dot Esports Brasil</a></li>
+<li id="menu-item-39282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39282"><a href="https://dotesports.com/es/?noredirect=es_ES">Ir a Dot Esports Espanol</a></li>
+<li id="menu-item-279927" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-279927"><a href="https://dotesports.com/fr/">Dot Esports français</a></li>
+<li id="menu-item-39312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39312"><a href="https://dotesports.com/privacy">Privacy Policy</a></li>
+<li id="menu-item-164596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164596"><a href="https://dotesports.com/terms">Terms of Service</a></li>
+<li id="menu-item-39393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39393"><a href="https://dotesports.com/about">About</a></li>
+<li id="menu-item-559845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-559845"><a href="https://dotesports.com/corrections-policy">Corrections Policy</a></li>
+<li id="menu-item-559846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-559846"><a href="https://dotesports.com/ethics-policy">Ethics Policy</a></li>
+<li id="menu-item-559847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-559847"><a href="https://dotesports.com/fact-checking-policy">Fact Checking Policy</a></li>
+<li id="menu-item-559844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-559844"><a href="https://dotesports.com/ownership-policy">Ownership Policy</a></li>
+</ul>
+</li>
+</ul></div> <div class="site-header-right">
+<div class="site-header-search">
+<i class="search-toggle icon-search"></i>
+<script>
+    (function() {
+      document.querySelector('.search-toggle').onclick = function() {
+        if (!document.querySelector('.search-form').classList.contains('toggled')) {
+          document.querySelectorAll('.popover').forEach(popover => popover.classList.remove('toggled'));
+          document.querySelectorAll('.site-header i').forEach(icon => icon.classList.remove('toggled'));
+          document.querySelector('.search-toggle').classList.add('toggled');
+          document.querySelector('.search-form').classList.add('toggled');
+        } else {
+          document.querySelector('.search-toggle').classList.remove('toggled');
+          document.querySelector('.search-form').classList.remove('toggled');
+        }
+      };
+    })();
+  </script>
+</div>
+<a class="site-header-auth logged-out red" href="/go-ad-free">Go Ad-Free</a>
+<a class="site-header-auth logged-out" href="/login">Login</a>
+</div>
+</nav>
+<form role="search" method="get" class="search-form popover" action="/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search..." name="s">
+</label>
+</form> </div>
+</header>
+<div id="content" class="site-wrapper">
+<div class="proper-ad-unit" id="skin">
+<div id="proper-ad-dotesports_skin">
+<script>
+          window.propertag.cmd.push(function() {
+            proper_display('dotesports_skin');
+          })
+        </script>
+</div>
+</div>
+<div class="proper-ad-unit" id="top-heroboard">
+<div id="proper-ad-dotesports_main_1"> <script> propertag.cmd.push(function() { proper_display('dotesports_main_1'); }); </script> </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="hero-post-item col-12 col-md-6 active">
+<img width="640" height="411" src="https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-768x493.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-768x493.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-300x193.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-1024x658.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-1536x986.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/18132338/EG-Danny-2022-2048x1315.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> <div class="gradient "></div>
+<div class="info">
+<h2 class="entry-title"><a href="https://dotesports.com/league-of-legends/news/evil-geniuses-lift-first-2022-lcs-spring-trophy-after-sweeping-reigning-champions-100-thieves">Evil Geniuses lift first LCS trophy after sweeping reigning champions 100 Thieves in 2022 Spring Split finals</a></h2> <p class="entry-lede"> The young talent seized their moment.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/ethangarcia" title="Posts by Ethan Garcia" class="author url fn" rel="author">Ethan Garcia</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T17:44:16-05:00">Apr 24, 2022 5:44 pm</time><time class="updated" datetime="April 24, 2022, 17:44 GMT-0500">2022-04-24T18:03:15-05:00</time></span> </div>
+</div>
+</div>
+<div class="hero-post-item col-12 col-md-6 ">
+<img width="640" height="360" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-768x432.jpeg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-768x432.jpeg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-300x169.jpeg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-1024x576.jpeg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-1536x864.jpeg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-2048x1152.jpeg 2048w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-800x450.jpeg 800w" sizes="(max-width: 640px) 100vw, 640px" /> <div class="gradient right"></div>
+<div class="info">
+<h2 class="entry-title"><a href="https://dotesports.com/valorant/news/riot-games-gives-first-look-at-fade-valorants-terrifying-new-initiator">Riot Games gives first in-game look at Fade, VALORANT&#8217;s terrifying new initiator</a></h2> <p class="entry-lede"> Fade is almost here. </p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/jalenlopez" title="Posts by Jalen Lopez" class="author url fn" rel="author">Jalen Lopez</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T16:28:36-05:00">Apr 24, 2022 4:28 pm</time><time class="updated" datetime="April 24, 2022, 16:28 GMT-0500">2022-04-24T16:29:20-05:00</time></span> </div>
+</div>
+</div>
+<div class="hero-post-item-divider col-12"></div>
+</div>
+</div>
+<div class="container">
+<div class="row site-content">
+<div id="primary" class="content-area col-lg-8">
+<main id="main" class="site-main">
+<article id="post-580467" class="list-item post-580467 post type-post status-publish format-standard has-post-thumbnail hentry category-fgc article_type-news pmpro-has-access">
+<a href="https://dotesports.com/fgc/news/glutonny-gets-revenge-on-mkleo-wins-super-smash-bros-ultimate-at-pound-2022" class="post-thumbnail">
+<img width="640" height="352" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/25022051/MkLeo-and-Glutonny-Pound-2022-768x422.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/25022051/MkLeo-and-Glutonny-Pound-2022-768x422.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/25022051/MkLeo-and-Glutonny-Pound-2022-300x165.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/25022051/MkLeo-and-Glutonny-Pound-2022-1024x563.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/25022051/MkLeo-and-Glutonny-Pound-2022.jpg 1200w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/fgc/news/glutonny-gets-revenge-on-mkleo-wins-super-smash-bros-ultimate-at-pound-2022" rel="bookmark">Glutonny gets revenge on MkLeo, wins Super Smash Bros. Ultimate at Pound 2022</a></h3><p class="entry-lede"> He made Smash history with a big win over a long-time rival.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/cale-michael" title="Posts by Cale Michael" class="author url fn" rel="author">Cale Michael</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-25T02:34:56-05:00">Apr 25, 2022 2:34 am</time><time class="updated" datetime="April 25, 2022, 02:34 GMT-0500">2022-04-25T02:34:59-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/fgc" rel="category tag">FGC</a></li></ul> </div>
+</article>
+<article id="post-580452" class="list-item post-580452 post type-post status-publish format-standard has-post-thumbnail hentry category-league-of-legends article_type-news pmpro-has-access">
+<a href="https://dotesports.com/league-of-legends/news/evil-geniuses-danny-breaks-all-time-lcs-postseason-kill-record" class="post-thumbnail">
+<img width="640" height="416" src="https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-768x499.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-768x499.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-300x195.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-1024x665.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-1536x997.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2021/07/26123417/EG-Danny-2-2048x1330.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/league-of-legends/news/evil-geniuses-danny-breaks-all-time-lcs-postseason-kill-record" rel="bookmark">Evil Geniuses&#8217; Danny breaks all-time LCS postseason kill record</a></h3><p class="entry-lede"> With 111 kills during the spring playoffs, Danny broke an LCS record that stood for nearly a decade. </p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/michaelkelly" title="Posts by Michael Kelly" class="author url fn" rel="author">Michael Kelly</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T23:18:02-05:00">Apr 24, 2022 11:18 pm</time><time class="updated" datetime="April 24, 2022, 23:18 GMT-0500">2022-04-24T23:18:06-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/league-of-legends" rel="category tag">League of Legends</a></li></ul> </div>
+</article>
+<article id="post-580447" class="list-item post-580447 post type-post status-publish format-standard has-post-thumbnail hentry category-fgc article_type-news pmpro-has-access">
+<a href="https://dotesports.com/fgc/news/zain-wins-second-straight-super-smash-bros-melee-major-defeats-hungrybox-at-pound-2022" class="post-thumbnail">
+<img width="640" height="349" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24225723/Zain-Pound-2022-768x419.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24225723/Zain-Pound-2022-768x419.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24225723/Zain-Pound-2022-300x164.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24225723/Zain-Pound-2022-1024x559.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24225723/Zain-Pound-2022.jpg 1200w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/fgc/news/zain-wins-second-straight-super-smash-bros-melee-major-defeats-hungrybox-at-pound-2022" rel="bookmark">Zain wins second-straight Super Smash Bros. Melee Major, defeats Hungrybox at Pound 2022</a></h3><p class="entry-lede"> Another Melee Major ends with several incredible deep runs. </p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/cale-michael" title="Posts by Cale Michael" class="author url fn" rel="author">Cale Michael</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T23:14:43-05:00">Apr 24, 2022 11:14 pm</time><time class="updated" datetime="April 24, 2022, 23:14 GMT-0500">2022-04-24T23:14:45-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/fgc" rel="category tag">FGC</a></li></ul> </div>
+</article>
+<article id="post-580429" class="list-item post-580429 post type-post status-publish format-standard has-post-thumbnail hentry category-dota-2 article_type-news pmpro-has-access">
+<a href="https://dotesports.com/dota-2/news/og-gladiators-liquid-and-tundra-qualify-for-stockholm-major-team-secret-fall-short" class="post-thumbnail">
+<img width="640" height="428" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24210759/ceb-1200-768x513.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24210759/ceb-1200-768x513.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24210759/ceb-1200-300x200.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24210759/ceb-1200-1024x684.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24210759/ceb-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/dota-2/news/og-gladiators-liquid-and-tundra-qualify-for-stockholm-major-team-secret-fall-short" rel="bookmark">OG, Gladiators, Liquid, and Tundra qualify for Stockholm Major, Team Secret fall short</a></h3><p class="entry-lede"> "New suit, same old me."</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/gokhancakir" title="Posts by Gökhan Çakır" class="author url fn" rel="author">Gökhan Çakır</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T21:40:52-05:00">Apr 24, 2022 9:40 pm</time><time class="updated" datetime="April 24, 2022, 21:40 GMT-0500">2022-04-24T21:40:53-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/dota-2" rel="category tag">Dota 2</a></li></ul> </div>
+</article>
+<article id="post-580388" class="list-item post-580388 post type-post status-publish format-standard has-post-thumbnail hentry category-league-of-legends article_type-news pmpro-has-access">
+<a href="https://dotesports.com/league-of-legends/news/lcs-2022-spring-split-finals-amassed-highest-peak-viewership-of-the-season" class="post-thumbnail">
+<img width="640" height="427" src="https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-768x512.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-768x512.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-300x200.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-1024x683.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-1536x1024.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/02/25162306/Jojopyun_2022_1-2048x1366.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/league-of-legends/news/lcs-2022-spring-split-finals-amassed-highest-peak-viewership-of-the-season" rel="bookmark">LCS&#8217; 2022 Spring Split finals amassed highest peak viewership of the season</a></h3><p class="entry-lede"> Over 387,000 viewers tuned in to watch Evil Geniuses' historic win.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/ethangarcia" title="Posts by Ethan Garcia" class="author url fn" rel="author">Ethan Garcia</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T19:36:55-05:00">Apr 24, 2022 7:36 pm</time><time class="updated" datetime="April 24, 2022, 19:36 GMT-0500">2022-04-24T19:36:59-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/league-of-legends" rel="category tag">League of Legends</a></li></ul> </div>
+</article>
+<article id="post-580365" class="list-item post-580365 post type-post status-publish format-standard has-post-thumbnail hentry category-valorant article_type-news pmpro-has-access">
+<a href="https://dotesports.com/valorant/news/some-valorant-fans-unhappy-fade-revealed-armenian-genocide-remembrance-day" class="post-thumbnail">
+<img width="640" height="360" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-768x432.jpeg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-768x432.jpeg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-300x169.jpeg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-1024x576.jpeg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-1536x864.jpeg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-2048x1152.jpeg 2048w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/18121642/Fade-Valorant-800x450.jpeg 800w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/valorant/news/some-valorant-fans-unhappy-fade-revealed-armenian-genocide-remembrance-day" rel="bookmark">Some VALORANT fans are unhappy with Fade being revealed on Armenian Genocide Remembrance Day</a></h3><p class="entry-lede"> Members of the community did not take kindly to Fade hunting people down. </p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/dannyappleford" title="Posts by Danny Appleford" class="author url fn" rel="author">Danny Appleford</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T19:03:58-05:00">Apr 24, 2022 7:03 pm</time><time class="updated" datetime="April 24, 2022, 19:03 GMT-0500">2022-04-24T19:04:00-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/valorant" rel="category tag">Valorant</a></li></ul> </div>
+</article>
+<article id="post-580367" class="list-item post-580367 post type-post status-publish format-standard has-post-thumbnail hentry category-dota-2 article_type-news pmpro-has-access">
+<a href="https://dotesports.com/dota-2/news/9pasha-to-take-break-from-dota-2-cis-rejects-signs-miero-and-g" class="post-thumbnail">
+<img width="640" height="428" src="https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k-768x513.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k-768x513.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k-300x200.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k-1024x684.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k-770x514.jpg 770w, https://cdn1.dotesports.com/wp-content/uploads/2020/01/19194654/48467793362_67c41585f1_k.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/dota-2/news/9pasha-to-take-break-from-dota-2-cis-rejects-signs-miero-and-g" rel="bookmark">9pasha to take break from Dota 2, CIS Rejects signs MieRo and G</a></h3><p class="entry-lede"> The team is changing slightly as the entire region awaits news on its DPC future. </p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/cale-michael" title="Posts by Cale Michael" class="author url fn" rel="author">Cale Michael</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T18:40:13-05:00">Apr 24, 2022 6:40 pm</time><time class="updated" datetime="April 24, 2022, 18:40 GMT-0500">2022-04-24T18:40:16-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/dota-2" rel="category tag">Dota 2</a></li></ul> </div>
+</article>
+<article id="post-580345" class="list-item post-580345 post type-post status-publish format-standard has-post-thumbnail hentry category-valorant article_type-news pmpro-has-access">
+<a href="https://dotesports.com/valorant/news/vct-masters-reykjavik-2022-becomes-third-valorant-event-peak-1-million-viewers" class="post-thumbnail">
+<img width="640" height="443" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy-768x531.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy-768x531.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy-300x208.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy-1024x709.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy-1536x1063.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24180520/optic-masters-trophy.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/valorant/news/vct-masters-reykjavik-2022-becomes-third-valorant-event-peak-1-million-viewers" rel="bookmark">VCT Masters Reykjavík 2022 becomes third VALORANT event to peak at 1 million viewers, narrowly misses breaking all-time record</a></h3><p class="entry-lede"> Just hit another milli.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/scott-robertson" title="Posts by Scott Robertson" class="author url fn" rel="author">Scott Robertson</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T18:32:33-05:00">Apr 24, 2022 6:32 pm</time><time class="updated" datetime="April 24, 2022, 18:32 GMT-0500">2022-04-24T18:32:36-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/valorant" rel="category tag">Valorant</a></li></ul> </div>
+</article>
+<article id="post-580327" class="list-item post-580327 post type-post status-publish format-standard has-post-thumbnail hentry category-league-of-legends article_type-news pmpro-has-access">
+<a href="https://dotesports.com/league-of-legends/news/evil-geniuses-break-record-for-fastest-finals-in-lcs-history" class="post-thumbnail">
+<img width="640" height="427" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-768x512.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-768x512.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-300x200.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-1024x683.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-1536x1024.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24175746/EG100T-2048x1365.jpg 2048w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/league-of-legends/news/evil-geniuses-break-record-for-fastest-finals-in-lcs-history" rel="bookmark">Evil Geniuses break record for fastest finals in LCS history</a></h3><p class="entry-lede"> The evil era has begun.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/tyleresguerra" title="Posts by Tyler Esguerra" class="author url fn" rel="author">Tyler Esguerra</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T18:26:31-05:00">Apr 24, 2022 6:26 pm</time><time class="updated" datetime="April 24, 2022, 18:26 GMT-0500">2022-04-24T18:26:35-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/league-of-legends" rel="category tag">League of Legends</a></li></ul> </div>
+</article>
+<article id="post-580202" class="list-item post-580202 post type-post status-publish format-standard has-post-thumbnail hentry category-valorant article_type-news pmpro-has-access">
+<a href="https://dotesports.com/valorant/news/second-set-of-rgx-11z-pro-skins-coming-to-valorant-on-april-27" class="post-thumbnail">
+<img width="640" height="360" src="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-768x432.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" srcset="https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-768x432.jpg 768w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-300x169.jpg 300w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-1024x576.jpg 1024w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-1536x864.jpg 1536w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080-800x450.jpg 800w, https://cdn1.dotesports.com/wp-content/uploads/2022/04/24162320/RGX_11z_Pro_2022_Bundle_1920x1080.jpg 1920w" sizes="(max-width: 640px) 100vw, 640px" /> </a>
+<div class="right">
+<h3 class="entry-title"><a href="https://dotesports.com/valorant/news/second-set-of-rgx-11z-pro-skins-coming-to-valorant-on-april-27" rel="bookmark">Second set of RGX 11z Pro skins coming to VALORANT on April 27</a></h3><p class="entry-lede"> Shine bright on the battlefield with these gaming PC-inspired cosmetics.</p> <div class="entry-meta">
+<span class="byline"><span class="author vcard"><a href="https://dotesports.com/author/tyleresguerra" title="Posts by Tyler Esguerra" class="author url fn" rel="author">Tyler Esguerra</a></span></span> - <span class="posted-on"><time class="entry-date published" datetime="2022-04-24T16:23:32-05:00">Apr 24, 2022 4:23 pm</time><time class="updated" datetime="April 24, 2022, 16:23 GMT-0500">2022-04-24T16:23:33-05:00</time></span> </div>
+<ul class="post-categories">
+<li><a href="https://dotesports.com/valorant" rel="category tag">Valorant</a></li></ul> </div>
+</article>
+<nav class="navigation posts-navigation" aria-label="Posts">
+<h2 class="screen-reader-text">Posts navigation</h2>
+<div class="nav-links"><div class="nav-previous"><a href="https://dotesports.com/page/2">Older posts</a></div></div>
+</nav>
+</main>
+</div>
+<aside id="secondary" class="widget-area d-none d-lg-block col-lg-4">
+<div id="top-sticky-sidebar-wrapper">
+<div id="top-sticky-sidebar">
+<div id="top-sticky-sidebar__inner">
+<div id="side-display-1"><div class="proper-ad-insert-side-1"></div></div><div id="side-display-2"><div class="proper-ad-insert-side-2"></div></div> </div>
+</div>
+</div>
+<div id="nonsticky-sidebar">
+<aside class="widget popular-posts">
+<div class="widget-item">
+<h2>Trending Articles</h2>
+<ul class="wpp-list">
+<li><a href="https://dotesports.com/valorant/news/sources-sentinels-in-discussions-to-sign-kanpeki" class="wpp-post-title" title="Sources: Sentinels in discussions to sign Kanpeki" target="_self">Sources: Sentinels in discussions to sign Kanpeki</a><div class="wpp-meta post-stats"><span class="wpp-author"><a href="https://dotesports.com/author/georgegeddes">George Geddes</a></span> - <span class="wpp-date">April 21, 2022</span></div></li><li><a href="https://dotesports.com/valorant/news/100-thieves-couldve-acquired-tenz-2-million-says-cloud9-ceo" class="wpp-post-title" title="100 Thieves could’ve acquired TenZ for $2 million in 2021, says Cloud9 CEO" target="_self">100 Thieves could’ve acquired TenZ for $2 million in 2021, says Cloud9 CEO</a><div class="wpp-meta post-stats"><span class="wpp-author"><a href="https://dotesports.com/author/georgegeddes">George Geddes</a></span> - <span class="wpp-date">April 21, 2022</span></div></li><li><a href="https://dotesports.com/league-of-legends/news/bard-disabled-from-play-in-all-league-queues-april-22" class="wpp-post-title" title="Bard is disabled from play in all League queues right now" target="_self">Bard is disabled from play in all League queues right now</a><div class="wpp-meta post-stats"><span class="wpp-author"><a href="https://dotesports.com/author/ethangarcia">Ethan Garcia</a></span> - <span class="wpp-date">April 22, 2022</span></div></li><li><a href="https://dotesports.com/league-of-legends/news/edgs-2021-league-of-legends-world-championship-skins-leaked" class="wpp-post-title" title="EDG&#039;s 2021 League of Legends World Championship skins leaked" target="_self">EDG&#039;s 2021 League of Legends World Championship skins leaked</a><div class="wpp-meta post-stats"><span class="wpp-author"><a href="https://dotesports.com/author/ceciliaciocchetti">Cecilia Ciocchetti</a></span> - <span class="wpp-date">April 22, 2022</span></div></li><li><a href="https://dotesports.com/valorant/news/valorant-leaker-reveals-new-vandal-skins-melee-and-tournament-mode" class="wpp-post-title" title="VALORANT leaker reveals new Vandal skins, melee, and tournament mode" target="_self">VALORANT leaker reveals new Vandal skins, melee, and tournament mode</a><div class="wpp-meta post-stats"><span class="wpp-author"><a href="https://dotesports.com/author/dannyappleford">Danny Appleford</a></span> - <span class="wpp-date">April 21, 2022</span></div></li>
+</ul>
+</div>
+</aside>
+</div>
+<div id="sticky-sidebar-wrapper" class="sticky-sidebar-wrapper">
+<div id="sticky-sidebar" class="sticky-sidebar">
+<div class="sticky-sidebar__inner">
+<div id="side-display-2"><div class="proper-ad-insert-side-2"></div></div><div id="side-display-3"><div class="proper-ad-insert-side-3"></div></div> </div>
+</div>
+</div>
+</aside>
+<script type="application/javascript">
+	window.addStickySidebar = function(postId, index) {
+			if (!postId || window.initialiseStickySidebar === undefined) return;
+			(function () {
+					var initialStickySidebar = document.getElementById('sticky-sidebar-wrapper');
+					var newElement = document.createElement('div');
+					newElement.innerHTML = '<div class="sticky-sidebar-wrapper"><div class="sticky-sidebar"><div class="sticky-sidebar__inner"><div id="side-display-2"><div class="proper-ad-insert-side-2"><\/div><\/div><div id="side-display-3"><div class="proper-ad-insert-side-3"><\/div><\/div><\/div><\/div><\/div>';
+					var newStickySidebar = newElement.firstChild;
+
+					// tag sidebar with post ids
+					newStickySidebar.classList.add('post-' + postId);
+					newStickySidebar.querySelector('.sticky-sidebar').classList.add('post-' + postId);
+					newStickySidebar.querySelector('.sticky-sidebar__inner').classList.add('post-' + postId);		
+
+					initialStickySidebar.parentNode.appendChild(newStickySidebar);
+
+					window.initialiseStickySidebar(postId);
+			})();
+	}
+</script>
+</div>
+</div>
+</div>
+<footer id="colophon" class="site-footer">
+<div class="site-info container">
+<p class="site-copyright">
+&copy; 2021 Dot Esports
+</p>
+</div>
+</footer>
+</div>
+<div id="sticky-bottom">
+<div class="proper-ad-unit sticky-units">
+<div id="proper-ad-dotesports_main_3"> <script> propertag.cmd.push(function() { proper_display('dotesports_main_3'); }); </script> </div>
+</div>
+</div>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDR623V"
+height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<script type='text/javascript' src='https://dotesports.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.14.2' id='gtm4wp-form-move-tracker-js'></script>
+<script type='text/javascript' src='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/js/navigation.js?ver=20210330' id='dotesports-navigation-js'></script>
+<script type='text/javascript' src='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/js/skip-link-focus-fix.js?ver=20210330' id='dotesports-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='https://unpkg.com/css-element-queries@1.2.3/src/ResizeSensor.js' id='dotesports-resizesensorjs-js'></script>
+<script type='text/javascript' src='https://unpkg.com/sticky-sidebar@3.3.1/dist/sticky-sidebar.min.js' id='dotesports-stickysidebarjs-js'></script>
+<script type='text/javascript' src='https://dotesports.com/wp-content/themes/dotesports-wordpress-theme/js/sticky-sidebar.js?ver=3' id='dotesports-sticky-sidebar-js'></script>
+<script type="text/javascript" src="https://s.skimresources.com/js/114526X1573490.skimlinks.js"></script>
+<div class="proper-ad-unit ad-sticky sticky-units" style="display:none">
+<div id="proper-ad-dotesports_sticky_1">
+<script>propertag.cmd.push(function() { proper_display('dotesports_sticky_1'); });</script>
+</div>
+</div>
+<script type="text/javascript"> 
+(function () { 
+window.aax = window.aax || {}; 
+var aax = window.aax; 
+aax.initTime = new Date().getTime(); 
+aax.pubId = "AAXBD4DM4"; 
+aax.ver = "1.2"; 
+aax.hst = window.location.hostname; 
+var aaxEndpoint = "https://c.aaxads.com/aax.js?pub=" + aax.pubId + "&hst=" + 
+aax.hst + "&ver=" + aax.ver; 
+ 
+function loadScript(endpoint) { 
+var scriptTag = document.createElement("script"), 
+placeTag = document.getElementsByTagName("script")[0]; 
+scriptTag.type = "text/javascript"; 
+scriptTag.async = true; 
+scriptTag.src = endpoint; 
+placeTag.parentNode.insertBefore(scriptTag, placeTag); 
+} 
+loadScript(aaxEndpoint); 
+})(); 
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"983008b81c","applicationID":"533672816","transactionName":"ZFJaMkUCWBdWU0BfC10YbRReTF8KU1VMGBRbRw==","queueTime":0,"applicationTime":408,"atts":"SBVZRA0YSxk=","errorBeacon":"bam.nr-data.net","agent":""}</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"701619f239536bbb","token":"8d0dd9e6c6fb4f8f833910a010d3b5ea","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

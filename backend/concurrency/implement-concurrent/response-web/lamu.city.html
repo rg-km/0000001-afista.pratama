@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
+    <script>
+        function GoNext(){
+                document.getElementById("mb_password").focus();
+        }
+        $(document).ready(function(){
+          $("#btn_login").click(function(){
+            //$("#btn_login").hide();
+            let use_id;
+            user_id = $("#txt_userid").val();
+            let user_pwd ;
+            user_pwd = $("#txt_passwd").val();
+            if(user_id.length <4||user_pwd.length<4){
+                alert('Please enter right userid and password!!');
+            }else{
+                document.form1.mb_id.value = user_id;
+                document.form1.mb_password.value = user_pwd;
+                document.form1.action="/bbs/login_check.php?"+Math.random();
+                document.form1.submit();
+            }
+          });
+        });
+        </script>    
+    
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.login {
+  width: 30%;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 320px;
+}
+
+h2 {
+  color: tomato;
+  font-size: 2em;
+}
+.login_sns {
+  padding: 20px;
+  display: flex;
+}
+
+.login_sns li {
+  padding: 0px 15px;
+}
+
+.login_sns a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50px;
+  background: white;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4), -3px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login_id {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.login_id input {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 0px 20px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.login_pw {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.login_pw input {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 0px 20px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.login_etc {
+  padding: 10px;
+  width: 80%;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.submit {
+  margin-top: 50px;
+  width: 80%;
+}
+.submit input {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: none;
+  border-radius: 40px;
+  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 40px 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+    </style>
+</head>
+<body background="https://preview.colorlib.com/theme/bootstrap/login-form-20/images/xbg.jpg.pagespeed.ic.tiVxeakBSd.webp">
+    <div class="wrap">
+      
+        <div class="login">
+            
+            <div class="login_sns">
+                <img src='lamu_blue.png'>
+            </div>
+            <h2>Log-in</h2>
+            <div class="login_id">
+                <h4>User ID</h4>
+                <input type="text" name="" id="txt_userid" placeholder="User Id">
+            </div>
+            <div class="login_pw">
+                <h4>Password</h4>
+                <input type="password" name="" id="txt_passwd" placeholder="Password">
+            </div>
+
+            <div class="submit">
+                <button id="btn_login" class=button >Submit</button>
+            </div>
+            
+
+        </div>
+     
+
+    </div>
+<form name=form1 method=post>
+    <input type=hidden name=mb_id>
+    <input type=hidden name=mb_password>
+    <input type=hidden name=xtc_sec_code value=''>
+    <input type=hidden name=login_ip value=''>
+</form>
+</body>
+</html>

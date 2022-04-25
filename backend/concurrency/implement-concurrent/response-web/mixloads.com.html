@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Required meta tags -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="MixLoads - Free file upload service">
+	<meta name="keywords"    content="file upload,share files,free upload">
+
+	<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="/max/js/jquery-1.9.1.min.js"></script>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/max/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/max/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/max/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/max/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/max/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/max/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/max/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/max/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/max/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/max/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/max/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/max/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/max/favicon-16x16.png">
+	<link rel="manifest" href="/max/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#0264fb">
+
+	
+		<script type='text/javascript'>
+			if (top !== self) top.location.href = self.location.href;
+		</script>
+	
+
+	<title>MixLoads - Easy way to share your files</title>
+	
+	<script type="text/javascript" src="/max/js/jquery.paging.js"></script>
+	<script type="text/javascript" src="/max/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/max/js/paging.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#showallarch").click(function() {
+				$(this).css('display', 'none'),
+						$("#fileinfoarch").css('height', '100%'),
+						$("#grad").css('display', 'none');
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		(function($) {
+			$(function() {
+
+				$('ul.tabs').on('click', 'li:not(.current)', function() {
+					var section = $(this).parents('div.section:first');
+					var idx = $(this).index();
+
+					$(this).addClass('current').siblings().removeClass('current');
+					$(section).find('> div.box').eq(idx).fadeIn(150).siblings('div.box').hide();
+					$.cookie($(section).attr('id') + 'tab', idx);
+				});
+
+				$('.section').each(function(i, e) {
+					if(!e.id) return;
+
+					var idx;
+					if(idx = $.cookie(e.id + 'tab'))
+					{
+						$(e).find('> ul > li').eq(idx).click();
+					}
+				});
+
+			})
+		})(jQuery)
+	</script>
+	
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-49432491-13']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+	
+
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	
+	
+		<link rel="stylesheet" type="text/css" href="/max/css/style.min.css?v=2" /> 
+    
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+	<div class="container">
+		<a class="navbar-brand" href="/"><img src="/max/img/logo.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<i data-feather="menu"></i>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbar">
+			<button class="navbar-toggler position-absolute d-block d-md-none" type="button" 
+					data-toggle="collapse" 
+					data-target="#navbar" 
+					aria-controls="navbar" 
+					aria-expanded="false" 
+					aria-label="Toggle navigation"
+			>
+				<i data-feather="x"></i>
+			</button>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/?op=upload_form">Upload</a>
+				</li>
+								
+				
+					
+						<li class="nav-item">
+							<a class="nav-link" href="https://fastclick.to" target="_blank">FastClick Hosting</a>
+						</li>					
+						<li class="nav-item ml-md-5">
+							<a class="nav-link login" href="https://mixloads.com/login.html">Login</a>
+						</li>
+						<li class="nav-item ml-md-2">
+							<a class="nav-link join" href="https://mixloads.com/register.html">Sign Up</a>
+						</li>						
+					
+							
+				
+									
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+<div id="container" >
+	<style>
+	.navbar{background: transparent;}
+	#wheader {
+		display: none;
+	}
+</style>
+
+<div class="index position-relative">
+	<div class="background"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-lg-5 text-center text-md-left">
+				<h1>Free file hosting storage!</h1>
+				<p>Secure, easy, free. File sharing storage made simple!</p>
+				<a href="/?op=upload_form" class="btn btn-warning"><i data-feather="upload"></i> Upload now!</a>
+			</div>
+			<div class="col-md-5 col-lg-7 text-right">
+				<img src="/max/img/files.svg" class="img-fluid d-none d-md-block ml-auto">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container features mt-5 mb-5">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="title d-block text-center">Our Features</h2>
+			<p class="subtitle d-block mb-5 text-center position-relative">Choose one of our packaes and enjoy limitless file sharing service.</p>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="upload-cloud"></i>
+				</div>
+				<div class="info">
+					<h4>Simple Upload</h4>
+					<p>Upload your videos as fast as your connection will allow & up to 5GB per file.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="hard-drive"></i>
+				</div>
+				<div class="info">
+					<h4>Unlimited Storage</h4>
+					<p>Don't worry about low space, There is no limit for Storage .. you can upload as you like.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="activity"></i>
+				</div>
+				<div class="info">
+					<h4>Live Reports</h4>
+					<p>Get and track all your views and earning in real time.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="target"></i>
+				</div>
+				<div class="info">
+					<h4>Ad-Free</h4>
+					<p>Enjoy downloading and surfing in our website without the interruption of ads.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="zap"></i>
+				</div>
+				<div class="info">
+					<h4>Unlimited Speed</h4>
+					<p>Downloading has never been faster with our blazing fast servers.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="box d-flex align-items-center justify-content-between flex-wrap">
+				<div class="icon">
+					<i data-feather="shield"></i>
+				</div>
+				<div class="info">
+					<h4>Safe & Secure</h4>
+					<p>With our advanced encryption method your files will be always safe with us.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="get_started">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="title mb-4">What are you waiting for!?</h2>
+				
+					<a href="/register.html" class="btn btn-primary">Register now <i data-feather="arrow-right"></i></a>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+		<div class="payment_methods py-5 bg-white">
+			<div class="container">
+				<div class="col-md-12">
+					<ul class="d-flex flex-wrap align-items-center justify-content-between m-0 p-0">
+						<li>
+							<img src="/max/img/paypal.svg">
+						</li>
+						<li>
+							<img src="/max/img/visa.svg">
+						</li>
+						<li>
+							<img src="/max/img/mastercard.png">
+						</li>
+						<li>
+							<img src="/max/img/bitcoin.svg">
+						</li>
+						<li>
+							<img src="/max/img/bitcoin-cash.png">
+						</li>						
+						<li>
+							<img src="/max/img/webmoney.svg">
+						</li>
+						<li>
+							<img src="/max/img/ethereum.svg">
+						</li>						
+					</ul>
+				</div>
+			</div>
+		</div>				
+<footer>
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-12 text-center text-md-left col-md-3 mb-4 mb-md-0">
+				<div class="logo">
+					<img src="/max/img/logo-grey.svg">
+				</div>
+				<ul class="m-0 p-0">
+					<li>
+						<a class="w-100 text-center text-md-left justify-content-center justify-content-md-start" href="mailto:info@mixloads.com"><i data-feather="mail"></i> info@mixloads.com</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 col-md-3">
+				<h4>About</h4>
+				<ul class="m-0 p-0">
+					<li>
+						<a href="/premium.html">Premium</a>
+					</li>				
+					<li>
+						<a href="/news.html">News</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 col-md-3">
+				<h4>Helpful</h4>
+				<ul class="m-0 p-0">
+					<li>
+						<a href="/?op=check_files">Link Checker</a>
+					</li>
+					<li>
+						<a href="https://mixloads.docs.apiary.io" target="_blank">API</a>
+					</li>					
+					<li>
+						<a href="/faq.html">FAQ</a>
+					</li>
+					<li>
+						<a href="/contact.html">Contact us</a>
+					</li>					
+				</ul>
+			</div>
+			<div class="col-12 mt-4 mt-md-0 col-md-3">
+				<h4>Legal & Policy</h4>
+				<ul class="m-0 p-0">
+					<li>
+						<a href="/dmca.html">DMCA</a>
+					</li>				
+					<li>
+						<a href="/tos.html">Terms & Conditions</a>
+					</li>
+					<li>
+						<a href="/privacy_policy.html">Privacy Policy</a>
+					</li>					
+					<li>
+						<a href="/refund_policy.html">Refund Policy</a>
+					</li>						
+				</ul>
+			</div>
+			<div class="col-md-12 text-center">
+				<div class="credits">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+<!-- JavaScript -->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/max/js/bootstrap.min.js"></script>
+<script src="/max/js/feather.min.js" ></script>
+<script src="/max/js/app.js" ></script>
+</body>
+</html>

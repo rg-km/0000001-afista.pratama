@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gofile - Free file sharing and storage platform</title>
+  <meta name="keywords" content="gofile,download,upload,free,host,storage,share,large,file,video,image,audio,cdn,direct,link" />
+  <meta name="description" content="Gofile is a free file sharing and storage platform.  You can store and share your content of any type without any limit." />
+
+  <meta property='og:title' content='Gofile - Free file sharing and storage platform'>
+  <meta property='og:description' content='Gofile is a free file sharing and storage platform.  You can store and share your content of any type without any limit.'>
+  <meta property='og:image' content='/dist/img/logo-small-og.png'>
+  <meta property='og:type' content='website'>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/dist/img/favicon16.png" />
+  <link rel="icon" type="image/png" href="/dist/img/favicon32.png" />
+  <link rel="icon" type="image/png" href="/dist/img/favicon96.png" />
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- Sweetalert2 -->
+  <!--<link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">-->
+  <link rel="stylesheet" href="/plugins/sweetalert2/dark.min.css">
+  <!-- Dropzone -->
+  <link rel="stylesheet" href="/plugins/dropzone/min/dropzone.min.css">
+  <!-- Bootstrap-table -->
+  <link rel="stylesheet" href="/plugins/bootstrap-table/bootstrap-table.css">
+  <!-- Tabulator -->
+  <!--<link rel="stylesheet" href="/plugins/tabulator/tabulator.min.css">-->
+  <!-- plyr -->
+  <link rel="stylesheet" href="/plugins/plyr/plyr.css" />
+  <!-- easydme -->
+  <link rel="stylesheet" href="/plugins/easymde/easymde.min.css" />
+  <!-- tempusdominus -->
+  <link rel="stylesheet" href="/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+  <!-- tags Input -->
+  <link href="/plugins/tagsinput/tagsinput.css" rel="stylesheet" />
+
+  <!-- Matomo -->
+  <!-- <script async type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+  	        var u="//matomo.gofile.io/";
+  		    _paq.push(['setTrackerUrl', u+'piwik.php']);
+  		    _paq.push(['setSiteId', '1']);
+  		        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  		        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  			  })();
+  </script> -->
+  <!-- End Matomo Code -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-38638530-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-38638530-4');
+  </script>-->
+  
+  <!--<script data-ad-client="ca-pub-5469679028990347" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+  
+  <style>
+    /*custom nav link color*/
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active
+    {
+      background-color: #e7af1e !important;
+      color: #000 !important;
+    }
+    /*Remove toast icon*/
+    #toast-container > .toast {
+      background-image: none !important;
+    }
+    /*Cookie popup*/
+    #tyche_cmp_modal
+    {
+      background: #343a40 !important;
+      color: #fff !important;
+    }
+    .banner_title--2vgc3
+    {
+      color: #fff !important;
+    }
+    .banner_continueBtn--3KNKl
+    {
+      background-color: #343a40 !important;
+      border-color: gray !important;
+    }
+    ins[data-ad-status=unfilled] {display:none!important}
+    @media only screen and (min-width: 0px) and (min-height: 0px) {
+  		div[id^="bsa-zone_1639674624988-0_123456"] {
+  			min-width: 320px;
+  			min-height: 50px;
+  		}
+  	}
+  	@media only screen and (min-width: 640px) and (min-height: 0px) {
+  		div[id^="bsa-zone_1639674624988-0_123456"] {
+  			min-width: 728px;
+  			min-height: 90px;
+  		}
+  	}
+  </style>
+</head>
+<body class="hold-transition sidebar-mini dark-mode accent-warning">
+<div class="wrapper">
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="/dist/img/logo-small.png" alt="Gofile logo small" width="100">
+  </div>
+
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="mr-1" href="https://www.buymeacoffee.com/gofile" target="_blank"><img src="/dist/img/bmac.png" alt="Buy Me A Coffee" style="height: 35px"></a>
+      </li>
+      <li class="nav-item">
+        <a class="mr-1" target="_blank" href="https://www.patreon.com/gofile/membership"><img src="/dist/img/patreon.png" style="height: 35px;"></a>
+      </li>
+    </ul>
+  </nav>
+
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/welcome" class="brand-link">
+      <img src="/dist/img/logo-small.png" alt="Gofile logo small" class="brand-image" style="opacity: .8">
+      <span class="brand-text font-weight-light">Gofile</span>
+    </a>
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column user-panel" data-widget="treeview" role="menu">
+          <li class="nav-item">
+            <a id="accountTreeView" href="#" class="nav-link">
+              <i class="nav-icon">
+                <i id="blockiesIconLoading" class="fas fa-spinner fa-spin" style="display:none;"></i>
+                <img id="blockiesIcon" src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" style="display:none">
+              </i>
+
+              <p>
+                <span class="text-truncate" id="accountName" style="max-width: 130px; display: inline-block;">guest1324</span>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li id="li-myProfile" class="nav-item">
+                <a href="/myProfile" class="nav-link ajaxLink">
+                  <i class="far fa-address-card nav-icon"></i>
+                  <p>My Profile</p>
+                </a>
+              </li>
+              <li id="li-myFiles" class="nav-item">
+                <a href="/myFiles" class="nav-link ajaxLink">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>My Files</p>
+                </a>
+              </li>
+              <li id="li-login" class="nav-item">
+                <a href="/login" class="nav-link ajaxLink">
+                  <i class="fas fa-sign-out-alt nav-icon"></i>
+                  <p>Login</p>
+                </a>
+              </li>
+              <li id="li-logout" class="nav-item">
+                <a href="/logout" class="nav-link ajaxLink">
+                  <i class="fas fa-sign-out-alt nav-icon"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column">
+          <li id="li-welcome" class="nav-item">
+            <a href="/welcome" class="nav-link ajaxLink">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Welcome
+              </p>
+            </a>
+          </li>
+          <li id="li-uploadFiles" class="nav-item">
+            <a href="/uploadFiles" class="nav-link ajaxLink">
+              <i class="nav-icon fas fa-file-upload"></i>
+              <p>
+                Upload Files
+              </p>
+            </a>
+          </li>
+          <li id="li-api" class="nav-item">
+            <a href="/api" class="nav-link ajaxLink">
+              <i class="nav-icon fas fa-laptop-code"></i>
+              <p>
+                API
+              </p>
+            </a>
+          </li>
+          <li id="li-faq" class="nav-item">
+            <a href="/faq" class="nav-link ajaxLink">
+              <i class="nav-icon fas fa-question-circle"></i>
+              <p>
+                FAQ
+              </p>
+            </a>
+          </li>
+          <li id="li-contact" class="nav-item">
+            <a href="/contact" class="nav-link ajaxLink">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li>
+          <!--<li id="li-test" class="nav-item">-->
+          <!--  <a href="/test" class="nav-link ajaxLink">-->
+          <!--    <i class="nav-icon fas fa-envelope"></i>-->
+          <!--    <p>-->
+          <!--      Test-->
+          <!--    </p>-->
+          <!--  </a>-->
+          <!--</li>-->
+          <li id="li-twitter" class="nav-item">
+            <a href="https://twitter.com/Gofile_io" target="_blank" class="nav-link">
+              <i class="text-info nav-icon fab fa-twitter"></i>
+              <p>
+                @gofile_io
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </aside>
+
+  <div class="content-wrapper">
+    <div id="mainContent" class="content pt-2">
+      <div class="text-center"><span><i class="fas fa-spinner fa-spin"></i></span></div>
+    </div>
+    <div id="bottom-leaderboard" style="display:none;"></div>
+  </div>
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-inline">
+      <span class="copyright">
+        WOJTEK SAS ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <small><i class="fa fa-heart" style="color: #EB5E28;animation: hearthing 1s ease infinite;"></i></small> by Gofile Team
+      </span>
+    </div>
+    <a class="mr-3" href="https://gofile.io">Gofile</a><a class="ajaxLink mr-3" href="/terms">Terms</a><a class="ajaxLink mr-3" href="/copyright">Copyright</a><a class="ajaxLink mr-3" href="/privacy">Privacy</a><a class="ajaxLink mr-3" href="/contact">Contact</a>
+  </footer>
+</div>
+<!-- jQuery -->
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Gofile -->
+<script src="/plugins/gofile/gofile.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.min.js"></script>
+<!-- Blockies icon -->
+<script src="/plugins/blockies/blockies.min.js"></script>
+<!-- Sweetalert2 -->
+<script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Dropzone -->
+<script src="/plugins/dropzone/min/dropzone.min.js"></script>
+<!-- Qrcode -->
+<script src="/plugins/qrcode/qrcode.min.js"></script>
+<!-- Bootstrap-table -->
+<script src="/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<!-- MomentJs -->
+<script src="/plugins/moment/moment.min.js"></script>
+<!-- Tabulator -->
+<!--<script src="/plugins/tabulator/tabulator.min.js"></script>-->
+<!-- plyr -->
+<script src="/plugins/plyr/plyr.js"></script>
+<!-- easymde -->
+<script src="/plugins/easymde/easymde.min.js"></script>
+<!-- tempusdominus -->
+<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Tags input -->
+<script src="/plugins/tagsinput/tagsinput.js"></script>
+<!-- marked -->
+<script src="/plugins/marked/marked.min.js"></script>
+<!-- sha256 -->
+<script src="/plugins/sha256/sha256.min.js"></script>
+
+<script>
+//Global var
+var pageMode = "index"
+var dropFiles
+var accountEmail = "guest@gofile.io";
+var accountToken
+var accountTier = "guest";
+var accountTierAmount = 0;
+var accountIsCleaner = false
+var rootFolder
+var accountIcon = "";
+var geo
+var apiServer;
+var random = Math.random()
+
+if (window.location.host.includes("dev"))
+{
+  //apiServer = "apidev";
+  apiServer = "storedev";
+}
+else
+{
+  apiServer = "api";
+}
+var pathSplit = window.location.pathname.split("/")
+
+var adReady = false
+var tyche = {
+	mode: 'tyche',
+	config: 'https://config.playwire.com/1024419/v2/websites/73114/banner.json',
+	passiveMode: true
+}
+
+var initRail = function () {
+    tyche
+    .addUnits({
+	    type: 'bottom_rail'
+	  })
+    .then(() => {
+        tyche.displayUnits();
+    }).catch( (e) =>{
+    	// catch errors
+    	tyche.displayUnits();
+    	console.log(e);
+	})
+}
+
+var initATF = function () {
+    tyche.destroyUnits('leaderboard_atf');
+    tyche
+    .addUnits({
+  	  selectorId: 'top-leaderboard',
+  	  type: 'leaderboard_atf'
+  	})
+    .then(() => {
+      tyche.displayUnits('leaderboard_atf');
+    }).catch( (e) =>{
+    	// catch errors
+    	tyche.displayUnits('leaderboard_atf');
+    	console.log(e);
+	})
+}
+
+// var initTrendi = function () {
+//     tyche
+//     .addUnits({
+//   	  type: 'trendi_video'
+//   	})
+//     .then(() => {
+//         tyche.displayUnits('trendi_video');
+//     }).catch( (e) =>{
+//     	// catch errors
+//     	tyche.displayUnits('trendi_video');
+//     	console.log(e);
+// 	})
+// }
+
+var initTrendi = function () {
+    tyche
+    .addUnits([{
+      selectorId: 'bottom-leaderboard',
+  	  type: 'leaderboard_btf'
+    },
+    {
+      type: 'trendi_video'
+    }])
+    .then(() => {
+        tyche.displayUnits();
+        tyche.destroyUnits('leaderboard_btf');
+    }).catch( (e) =>{
+    	// catch errors
+    	tyche.displayUnits();
+    	console.log(e);
+	})
+}
+
+tyche.onReady = function () { // attach function to tyche onReady
+ adReady = true
+};
+
+function toHHMMSS(secondsToFormat)
+{
+    var sec_num = parseInt(secondsToFormat, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours + ':' + minutes + ':' + seconds;
+}
+
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function sleep(ms)
+{
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function validateEmail(email)
+{
+    // http://stackoverflow.com/a/46181/11236
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function validatePasswd(passwd)
+{
+    var re = /^[a-z0-9]{4,100}$/i;
+    return re.test(passwd);
+}
+
+function humanFileSize(bytes, si)
+{
+  var thresh = si ? 1000 : 1024;
+  if(Math.abs(bytes) < thresh) {
+      return bytes + ' B';
+  }
+  var units = si
+      ? ['KB','MB','GB','TB','PB','EB','ZB','YB']
+      : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+  var u = -1;
+  do {
+      bytes /= thresh;
+      ++u;
+  } while(Math.abs(bytes) >= thresh && u < units.length - 1);
+  return bytes.toFixed(1)+' '+units[u];
+}
+
+async function onAjaxLink()
+{
+  pageMode = "index" //Reinit page mode to default
+  $('[data-toggle="tooltip"]').tooltip("hide")
+  pathSplit = window.location.pathname.split("/")
+  var contentsDir = "/contents/"
+  $("#mainContent").html('<div class="text-center"><i class="fas fa-spinner fa-spin"></i></div>');
+
+  //Temp update pending
+  // if(pathSplit[1] != "update")
+  // {
+  //   history.pushState(null, '', 'https://'+window.location.hostname+'/update')
+  //   return await onAjaxLink()
+  // }
+
+  if(pathSplit[1] == "")
+  {
+    history.replaceState(null, '', 'https://'+window.location.hostname+'/welcome')
+    await onAjaxLink()
+  }
+  else if (pathSplit[1])
+  {
+    //Remove all "active" class on menu element
+    $('.nav-item > a').each(function(i)
+    {
+        $(this).removeClass("active")
+    });
+    
+    //Create guest account on required pages
+    if(pathSplit[1] == "myProfile" || pathSplit[1] == "myFiles" || pathSplit[1] == "uploadFiles" || pathSplit[1] == "d")
+    {
+      if(accountToken == undefined)
+      {
+        await createGuestAccount()
+        await verifAccount()
+      }
+    }
+    
+    //If myFiles is requested, redirect to rootFolder
+    if(pathSplit[1] == "myFiles")
+    {
+      history.replaceState(null, '', 'https://'+window.location.hostname+'/d/'+rootFolder)
+      return await onAjaxLink()
+    }
+    
+    //Open the account menu on required condition
+    if(pathSplit[1] == "myProfile" || pathSplit[1] == "login" || (pathSplit[1] == "d" && pathSplit[2] == rootFolder))
+    {
+      if($("#accountTreeView").parent().hasClass("menu-open") == false)
+      {
+        $("#accountTreeView").click()
+      }
+    }
+    
+    //Pass the right menu to "active" class
+    if(pathSplit[1] == "d" && pathSplit[2] == rootFolder)
+    {
+      $("#li-myFiles > a").addClass("active");
+    }
+    else
+    {
+      $("#li-" + pathSplit[1] + " > a").addClass("active");
+    }
+    
+    //Load the required html
+    try
+    {
+      if(pathSplit[1] == "uploadFiles" || pathSplit[1] == "d")
+      {
+        await $("#mainContent").load(contentsDir+"files.html")
+      }
+      else
+      {
+        await $("#mainContent").load(contentsDir + pathSplit[1] + ".html")
+      }
+    }
+    catch(e)
+    {
+      history.pushState(null, '', 'https://' + window.location.hostname + '/welcome');
+      return await onAjaxLink()
+    }
+  }
+  
+  //Display or Hide login and logout button
+  if(accountToken == undefined)
+  {
+    $("#li-login").show()
+    $("#li-logout").hide()
+  }
+  else
+  {
+    $("#li-login").hide()
+    $("#li-logout").show()
+  }
+  return
+}
+
+function updateBlockiesAccount()
+{
+  accountIcon = blockies.create({ // All options are optional
+    seed: accountEmail, // seed used to generate icon data, default: random
+    //color: '#dfe', // to manually specify the icon color, default: random
+    //bgcolor: '#aaa', // choose a different background color, default: random
+    size: 8, // width/height of the icon in blocks, default: 8
+    scale: 4, // width/height of each block in pixels, default: 4
+    // spotcolor: '#000' // each pixel has a 13% chance of being of a third color,
+    // default: random. Set to -1 to disable it. These "spots" create structures
+    // that look like eyes, mouths and noses.
+  });
+
+  $('#blockiesIcon').attr('src', accountIcon.toDataURL()); // icon is a canvas element
+  $('#blockiesIcon').show()
+}
+
+async function createGuestAccount()
+{
+  try
+  {
+    var createAccountResult = await $.ajax({
+      url: "https://"+apiServer+".gofile.io/createAccount",
+    });
+  }
+  catch(e)
+  {
+    return Swal.fire({
+      title: 'Error',
+      icon: 'error',
+      html: "<span class='font-weight-bold'>Something went wrong.</span><br>Gofile could be under maintenance<br>Please try again later.",
+    }).then(function(result) {
+      for (var i in localStorage)
+      {
+        if (i.match(/account/))
+        {
+          localStorage.removeItem(i)
+        }
+      }
+      window.location = "/"
+    })
+  }
+  
+  if(createAccountResult.status != "ok")
+  {
+    return Swal.fire({
+      title: 'Error',
+      icon: 'error',
+      html: createAccountResult.status,
+    }).then(function(result) {
+      for (var i in localStorage)
+      {
+        if (i.match(/account/))
+        {
+          localStorage.removeItem(i)
+        }
+      }
+      window.location = "/"
+    })
+  }
+
+  accountToken = createAccountResult.data.token
+  return
+}
+
+async function verifAccount()
+{
+  $("#blockiesIconLoading").show()
+  var returningUser = true
+  if(pathSplit[1] == "login" && pathSplit[2])
+  {
+    returningUser = false
+  }
+
+  try
+  {
+    var verifAccountResult = await $.ajax({
+      url: "https://"+apiServer+".gofile.io/getAccountDetails",
+      data: {
+        token: accountToken,
+      }
+    });
+    
+  }
+  catch(e)
+  {
+    for (var i in localStorage)
+    {
+      if (i.match(/account/))
+      {
+        localStorage.removeItem(i)
+      }
+    }
+      
+    return Swal.fire({
+      title: 'Error',
+      icon: 'error',
+      html: "<span class='font-weight-bold'>Something went wrong.</span><br>Gofile could be under maintenance<br>Please try again later.",
+    }).then(function(result) {
+      window.location = "/"
+    })
+  }
+  
+  if(verifAccountResult.status != "ok")
+  {
+    if(sessionStorage.getItem("verifAccountReloaded") == "true")
+    {
+      return Swal.fire({
+        title: 'Error',
+        icon: 'error',
+        html: "<span class='font-weight-bold'>Something went wrong.</span><br>Gofile could be under maintenance<br>Please try again later.",
+      }).then(function(result) {
+        sessionStorage.removeItem('verifAccountReloaded')
+        window.location = "/"
+      })
+    }
+    sessionStorage['verifAccountReloaded'] = "true"
+    //We remove all accounts in localStorage
+    for (var i in localStorage)
+    {
+        if (i.match(/account/)) 
+        {
+          localStorage.removeItem(i)
+        }
+    }
+    
+    document.cookie = "accountToken=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=gofile.io;SameSite=Lax;Secure;"
+    window.location.reload()
+  }
+  else
+  {
+    accountEmail = verifAccountResult.data.email
+    accountTier = verifAccountResult.data.tier
+    accountTierAmount = verifAccountResult.data.tierAmount
+    accountIsCleaner = verifAccountResult.data.isCleaner
+    rootFolder = verifAccountResult.data.rootFolder
+    localStorage['account|' + verifAccountResult.data.email] = verifAccountResult.data.token
+    
+    document.cookie = "accountToken="+accountToken+";path=/;domain=gofile.io;SameSite=Lax;Secure;";
+  }
+  
+  updateBlockiesAccount()
+      
+  if(returningUser == false)
+  {
+    Swal.fire(
+    {
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+        icon: 'success',
+        title: 'Welcome ' + accountEmail
+    })
+  }
+
+  if(pathSplit[1] == "login" && pathSplit[2])
+  {
+    history.pushState(null, '', 'https://'+window.location.hostname+'/welcome')
+    await onAjaxLink()
+  }
+
+  $("#li-logout").removeClass("d-none")
+  $("#accountName").html(accountEmail)
+  $("#blockiesIconLoading").hide()
+  $("#blockiesIcon").show()
+  
+  return
+}
+
+function getGeo()
+{
+  return new Promise(async function(resolve,reject)
+  {
+    $.ajax({
+        url: "https://"+apiServer+".gofile.io/getGeo",
+      }).done(function(result)
+      {
+        if(result.status == "ok")
+        {
+          geo = result.data
+        }
+        return resolve()
+      })
+      .fail(function(result)
+      {
+        return resolve()
+      })
+      .always(function(result)
+      {
+        return resolve()
+      })
+  })
+}
+
+async function welcomeVPN()
+{
+  if(!localStorage['welcomeVPN'] || localStorage['welcomeVPN'] == 1 || moment().diff(new Date(localStorage['welcomeVPN']),'days') > 7)
+  {
+    localStorage['welcomeVPN'] = Date()
+    await sleep(5000)
+    Swal.fire({
+      title: 'Are you protected with a VPN ?',
+      imageUrl: 'https://piunikaweb.com/wp-content/uploads/2019/06/NordVPN-400x200.png',
+      //type: 'info',
+      html: 'Using a <b>VPN</b> when surfing the web is very important. Gofile promotes <b>security</b> and <b>privacy</b>. That\'s why we encourage you to subscribe to a <b>VPN</b> service.',
+      showCancelButton: true,
+      //confirmButtonClass: 'btn btn-success',
+      confirmButtonText: 'Subscribe to a VPN',
+      //cancelButtonClass: 'btn btn-secondary',
+      cancelButtonText: 'I have a VPN already',
+      buttonsStyling: true,
+    }).then(function(result) {
+        if (result.value)
+        {
+            window.open("https://go.nordvpn.net/aff_c?offer_id=15&aff_id=28850&url_id=902",'_blank');
+         }
+    })
+  }
+}
+
+window.onpopstate = function(event) {
+  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  onAjaxLink()
+};
+
+$("body").on('click', '.ajaxLink', async function(e) {
+  e.preventDefault();
+  history.pushState(null, '', 'https://'+window.location.hostname+$(this).attr("href"));
+  await onAjaxLink();
+});
+
+//Drop behavior
+$(document).on("dragover", function(event) {
+  event.preventDefault();  
+  event.stopPropagation();
+});
+$(document).on("dragleave", function(event) {
+    event.preventDefault();  
+    event.stopPropagation();
+});
+$(document).on("drop", async function(event) {
+    event.preventDefault();  
+    event.stopPropagation();
+    
+    dropFiles = event.originalEvent.dataTransfer.files
+    if(dropFiles.length == 0)
+    {
+      dropFiles = undefined
+      return 
+    }
+    
+    if (pageMode != "quickUpload" && pageMode != "view") //That means we are not in quickUpload or view mode. Must change page before
+    {
+      history.pushState(null, '', 'https://' + window.location.hostname + '/uploadFiles');
+      await onAjaxLink()
+    }
+    else //We are already in an upload page. No need to load page, just process upload
+    {
+      newFilesToUpload(dropFiles)
+			dropFiles = undefined
+    }
+});
+
+$(document).ready(async function() {
+  //Tracking code
+  var adScript = document.createElement('script');
+  adScript.setAttribute('data-domain','gofile.io');
+  adScript.setAttribute('src','https://plausible.gofile.io/js/plausible.js');
+  document.head.appendChild(adScript);
+  
+  if(pathSplit[1] == "login" && pathSplit[2])
+  {
+    //We remove all accounts in localStorage before processing the token
+    for (var i in localStorage)
+    {
+      if (i.match(/account/))
+      {
+        localStorage.removeItem(i)
+      }
+    }
+    accountToken = pathSplit[2]
+  }
+
+  //Check if an account exist in cache
+  for (var i in localStorage)
+  {
+    if (i.match(/account/))
+    {
+      accountEmail = i.toString().split("|")[1]
+      accountToken = localStorage.getItem(i)
+    }
+  }
+  
+  //Add getGeo and verifAccount to funcToLaunch
+  var funcToLaunch = [getGeo()]
+  
+  
+  //If an account has been found in cache, check his validity. Oterhwise, just put guest as a name.
+  if(accountToken == undefined)
+  {
+    $("#accountName").html("guest")
+    updateBlockiesAccount()
+  }
+  else
+  {
+    funcToLaunch.push(verifAccount())
+  }
+  
+  await Promise.all(funcToLaunch)
+  
+  if(accountTier != "donor")
+  {
+    if(pathSplit[1] == "test")
+    {
+      
+    }
+    else if(geo && (geo.country == "IN0" || geo.country == "ID0" || geo.country == "TW0" || geo.country == "KR0" || geo.country == "PH0"))
+    {
+      
+    }
+    else if(random < 1)
+    {
+      //Google
+      var adScript = document.createElement('script');
+      adScript.setAttribute('src','https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5469679028990347');
+      adScript.setAttribute('crossorigin','anonymous');
+      document.head.appendChild(adScript);
+      
+      //Bsa
+      (function(){
+    		var bsa_optimize=document.createElement('script');
+    		bsa_optimize.type='text/javascript';
+    		bsa_optimize.async=true;
+    		bsa_optimize.src='https://cdn4.buysellads.net/pub/gofile.js?'+(new Date()-new Date()%600000);
+    		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa_optimize);
+    	})();
+    }
+    // else if(random < 1)
+    // {
+    //   //Bsa
+    //   (function(){
+    // 		var bsa_optimize=document.createElement('script');
+    // 		bsa_optimize.type='text/javascript';
+    // 		bsa_optimize.async=true;
+    // 		bsa_optimize.src='https://cdn4.buysellads.net/pub/gofile.js?'+(new Date()-new Date()%600000);
+    // 		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa_optimize);
+    // 	})();
+    // }
+    else
+    {
+      //Playwire
+      var adScript = document.createElement('script');
+      adScript.setAttribute('id','tyche');
+      adScript.setAttribute('src','//cdn.intergient.com/pageos/pageos.js');
+      document.head.appendChild(adScript);
+      
+      var adScript = document.createElement('script');
+      adScript.setAttribute('src','//btloader.com/tag?o=5150306120761344&upapi=true');
+      document.head.appendChild(adScript);
+      
+      (async function() {
+        while(adReady == false)
+        {
+          await sleep(100)
+        }
+        //initTrendi()
+        initRail()
+      })()
+    }
+  }
+  
+  await onAjaxLink()
+
+  // Swal.fire(
+  // {
+  //     toast: true,
+  //     position: 'top-end',
+  //     showConfirmButton: false,
+  //     timer: 10000,
+  //     timerProgressBar: true,
+  //     icon: 'info',
+  //     title: "<span><strong>⚙️ Gofile is currently being upgraded to a new storage system. ⚙️</strong><br>Some features or files may not be available during migration. Please come back in a few hours.</span>"
+  // })
+})
+</script>
+</body>
+</html>

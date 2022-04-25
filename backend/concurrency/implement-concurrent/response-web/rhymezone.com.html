@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<HEAD>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  }
+})});
+</script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+<script>
+var gptAdSlots = [];
+var sizeMappings = [];
+googletag.cmd.push(function() {
+    sizeMappings['RZ_Desktop_Left'] = googletag.sizeMapping()
+      .addSize([1024, 200],[160, 600]) //Desktop
+      .addSize([768, 200], [160, 600]) //Tablet
+      .addSize([320, 100], [160, 600]) //Mobile
+      .build();
+    gptAdSlots[0] = googletag.defineSlot('/7765068/rz/RZ_Desktop_Left', [160, 600], 'RZ_Desktop_Left')
+            .defineSizeMapping(sizeMappings['RZ_Desktop_Left'])
+            .setTargeting('pos',['left'])
+            .addService(googletag.pubads());   
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<link rel="stylesheet" type="text/css" href="rz.css?6">
+<link type="application/opensearchdescription+xml" rel="search" href="rz.osdd"/>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<meta name=description content="A comprehensive rhyming dictionary, thesaurus, and brainstorming tool for the English language.  Includes dozens of functions to help songwriters, poets, and anyone else in need of a word.">
+<meta name=keywords content="rhyming dictionary rhyme rhymes thesaurus spelling spellcheck words songwriting poetry language lyrics shakespeare quotations mother goose quotes rimezone rymezone">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<TITLE>RhymeZone rhyming dictionary and thesaurus</TITLE>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" />
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.rhymezone.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.rhymezone.com/r/rhyme.cgi?Word={search_term_string}&typeofrhyme=perfect&loc=sitelinks",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</HEAD>
+<BODY BGCOLOR="#c6e2ee">
+<center>
+
+<table width=800>
+<tr><td valign=top width=180>
+<div id='RZ_Desktop_Left'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('RZ_Desktop_Left');});
+  </script>
+  </div>
+</td><td>&nbsp;</td><td valign=top>
+
+<TABLE BORDER=0 WIDTH=600 CELLSPACING=2 CELLPADDING=0>
+<TR><TD colspan=2 ALIGN=CENTER><IMG SRC="rz6_large.png" BORDER=0 alt="RhymeZone"></TD></TR>
+<tr><td><br>
+<center><b>Find rhymes, synonyms, adjectives, and more!</b><br><br></center>
+</tr>
+<br><center><table id="welcomebox" border=0>
+<tr><td align=center>
+
+<div class="mainform">
+<form METHOD="GET" name="form1" id="form1"
+      ACTION="/r/rhyme.cgi">
+
+<input SIZE=16 MAXLENGTH=60 placeholder="Word"  NAME="Word" autocapitalize="false" id="rzinput" style="padding-left: 10px; font-size: 20px; height: 35px; background-color:#ffffff; border-radius:10px;"
+Value="">
+
+<INPUT TYPE="submit" VALUE="Search" style="font-size: 20px;  height: 40px; border-radius:10px;">
+&nbsp;
+<select onchange="if ($('#rzinput').val() !== '') {$('<input>').attr({type: 'hidden',name: 'loc',value: 'sel_change' }).appendTo('#form1');  this.form.submit()}" name="typeofrhyme" style="font-size: 16px; height: 40px; border-radius:10px; text-align-last:center; font-weight:bold;  background-color:#ffffff77;"> 
+<option value=perfect
+SELECTED
+>
+Rhymes
+<option value=adv
+>
+Rhymes (advanced)
+<option value=nry
+>
+Near rhymes
+<option value=syn
+>
+Synonyms
+<option value=jjb
+>
+Descriptive words
+<option value=phr
+>
+Phrases
+<option value=wke
+>
+Mentions
+<option value=ant
+>
+Antonyms
+<option value=def
+>
+Definitions
+<option value=exa
+>
+Lyrics and poems
+<option value=exc
+>
+Find lyrics (by concept)
+<option value=rel
+>
+Related words
+<option value=sim
+>
+Similar sounding words
+<option value=spell
+>
+Similarly spelled words
+<option value=hom
+>
+Homophones
+<option value=cons
+>
+Match consonants
+<option value=sub
+>
+Match these letters
+<option value=ana
+>
+Unscramble (anagrams)
+<option value=pic
+>
+Search for pictures
+<option value=shake
+>
+Search in Shakespeare
+<option value=wke
+>
+Search for quotations
+</select>
+<br>
+
+<font size=-1>
+<br><b>Organize results by</b>:   
+<INPUT TYPE="radio" NAME="org1" VALUE="syl" CHECKED>Syllables
+<INPUT TYPE="radio" NAME="org1" VALUE="let">Letters
+&nbsp;&nbsp;&nbsp;
+<b>Include phrases</b>:&nbsp;<INPUT TYPE="radio" NAME="org2" VALUE="l" CHECKED>Yes&nbsp;<INPUT TYPE="radio" NAME="org2" VALUE="sl">No
+</font>
+<input type="hidden" name="org3" value="y">
+</form>
+</div>
+
+
+
+<!-- <br><a href="https://blog.datamuse.com/25-years-of-rhymezone-and-onelook-what-were-musing-on-lately"><i><b>Celebrating 25 years!</b></i></a><br> -->
+
+<!-- <br><b>Tip:</b>&nbsp;&nbsp;
+RhymeZone has a <a href="https://www.rhymezone.com/r/rhyme.cgi?Word=feeling+of+joy&loc=fpteaser&typeofrhyme=syn&org1=syl&org2=l&org3=y">thesaurus</a>!<br> -->
+
+<br>
+
+<a href="/adv/">Advanced search</a>
+&nbsp;&nbsp;
+<a href="/r/rhyme.cgi?Word=joyful&typeofrhyme=syn&loc=fp">Thesaurus</a>
+
+
+
+</font>
+
+<script language="javascript" type="text/javascript">
+<!--
+function init() {
+  document.form1.Word.focus();
+}
+function getCookie(Name) {
+	var search = Name + "="
+	if (document.cookie.length > 0) { // if there are any cookies
+	offset = document.cookie.indexOf(search) 
+	if (offset != -1) { // if cookie exists 
+		offset += search.length 
+		// set index of beginning of value
+		end = document.cookie.indexOf(";", offset) 
+		// set index of end of cookie value
+		if (end == -1) 
+		end = document.cookie.length
+		return unescape(document.cookie.substring(offset, end))
+		} 
+	}
+    }
+
+    var selected1 = getCookie("rzDm");
+
+    var sel1 = document.form1.typeofrhyme;
+    for (var i = 0; i < sel1.length; i++) {
+        if (sel1[i].value == selected1) {
+            sel1[i].selected = true;
+            break;
+        }
+    }
+    selected1 = getCookie("rzOrg1");	
+    sel1 = document.form1.org1;
+    for (var i = 0; i < sel1.length; i++) {
+        if (sel1[i].value == selected1) {
+	    sel1[i].checked = true;
+            break;
+        }
+     }
+    selected1 = getCookie("rzOrg2");	
+    sel1 = document.form1.org2;
+    for (var i = 0; i < sel1.length; i++) {
+            if (sel1[i].value == selected1) {
+	    sel1[i].checked = true;
+            break;
+        }
+    }
+    selected1 = getCookie("rzOrg3");	
+    if (selected1 == "n") document.form1.org3.value = "n";
+// -->
+</SCRIPT>
+
+</td></tr>
+</table>
+
+</center>
+
+<br>
+
+<center><table border=0 width=600 cellspacing=0 style="border-radius: 15px;">
+<tr>
+
+<tr><td align=left>
+<center>
+
+
+<div id="pattern-cheatsheet">
+<b>Hint</b>:  Type a "?" after your word to jump to synonyms and related words.
+</div>
+
+<br>
+<div id="more-from-rz">
+<table width="90%" border=0>
+<tr>
+<td colspan=1 align=left valign=top>
+<center><font size=3><b>More from RhymeZone</b></font></center>
+<br>
+<li>Apps:  <A href="/r/rd.cgi?c=ios&url=hp1">iPhone/iPad</a>, <A href="/r/rd.cgi?c=and&url=hp1">Android</a><br>
+<li><A href="https://workspace.google.com/marketplace/app/onelook_thesaurus/372652075936">Google&nbsp;Docs&nbsp;add-on</a><br>
+<li><a href="https://forum.rhymezone.com/">Message board</a><br>
+<li><a href="https://www.rhymezone.com/contest/2021/">2021&nbsp;Poetry&nbsp;Contest</a><br>
+<li>Top rhymes:  <a href="https://www.rhymezone.com/toprhymes/">English</a>, 
+<a href="https://rimar.io/toprhymes/es/">Spanish</a>
+</td>
+
+<td width=40>&nbsp;</td>
+
+
+<td colspan=1 align=left valign=top>
+<center><font size=3><b>Affiliated sites</b></font></center>
+<br>
+<li><a href="https://rimar.io">Rimar.io&nbsp;(Spanish)</a><br>
+<li><a href="https://www.onelook.com/">OneLook</a><br>
+<li><a href="https://www.onelook.com/reverse-dictionary.shtml">Reverse&nbsp;Dictionary</a><br>
+<li><A href="https://www.onelook.com/spruce/">Spruce&nbsp;quote&nbsp;finder</a><br>
+<li><a href="/shakespeare/">Shakespeare&nbsp;Search</a><br>
+</td>
+
+</table>
+</center>
+</table>
+</div>
+
+<center>
+
+<br>
+<font FACE="VERDANA,HELVETICA,ARIAL">
+<A HREF="/help/">Help</A>&nbsp;
+<A HREF="/adv">Advanced Search</A>&nbsp;
+<A HREF="https://twitter.com/RhymeZonecom">Follow us</A>&nbsp;
+<A HREF="https://www.onelook.com/?c=about&sel=rz#feedback">Feedback</A>&nbsp;
+<A HREF="https://www.datamuse.com/api/">API</A>&nbsp;
+<A HREF="/help#privacy">Privacy</A>
+
+<br><br>Copyright &copy; 2022 Datamuse
+</center>
+</font>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(function() {
+init();
+});
+  $(function() {
+    last_req = "";
+    var vocab = "rz_full";
+    $( "#rzinput" ).autocomplete({
+	    minLength: 2,
+	    delay: 100,
+            open: function(event, ui) {
+                    $('.ui-autocomplete').off('menufocus mouseover hover mouseenter');
+            },
+	    select: function(event, ui) { 
+                if (ui.item.value.match("Hint:")) {
+                  ui.item.value = $( "#rzinput").val();
+                  return;
+                }
+		$('<input>').attr({
+			type: 'hidden',
+			    name: 'loc',
+			    value: 'home_ac_' + last_req
+			    }).appendTo('#form1');
+		$( "#rzinput" ).val(ui.item.value);
+		$( "#form1" ).submit();
+	    },
+	    source: function( request, response ) {
+	        var u = '//api.rhymezone.com/sug?v=' + vocab + '&k=rz_sugj&s=' + encodeURIComponent(request.term);
+		if (request.term.endsWith("!")) {
+		   var words = request.term.replace("!","").split(" ");
+		   u = '//api.rhymezone.com/words?v=' + vocab + '&max=20&k=rz_sugjjb&rel_jjb='
+		       + encodeURIComponent(words[words.length-1]);
+		}
+		if (request.term.endsWith("_")) {
+		   var words = request.term.replace("_","").split(" ");
+		   u = '//api.rhymezone.com/words?v=' + vocab + '&max=20&k=rz_sug2jja&rel_jja='
+		       + encodeURIComponent(words[0]);
+		}
+		if (request.term.startsWith("_")) {
+		   var words = request.term.replace("_","").split(" ");
+		   u = '//api.rhymezone.com/words?v=' + vocab + '&max=20&k=rz_sug2jjb&rel_jjb='
+		       + encodeURIComponent(words[words.length-1]);
+		}
+		// If it's a multi-word query from the thesaurus page, do "?" to force means-like interpreation
+		if ($(location).attr('href').includes("typeofrhyme=syn") &&
+		    (request.term.includes(" "))) {
+		    u = '//api.rhymezone.com/sug?v=' + vocab + '&max=20&k=rz_sug3&s='
+			+ encodeURIComponent(request.term) + "?";
+		}
+		$.ajax({
+			dataType: "json",
+			    type : 'Get',
+			    url: u,
+			    success: function(data) {
+//                            data.push({"word": "Hit Enter to submit your query or select a word above."});
+			    var r = Math.random();
+			    if (request.term.startsWith("//")) {
+			    } else if (r < 0.1) {
+				data.push({"word": "Hint:  Type \"//\" and some letters to unscramble them."});
+			    } else if (r < 0.7) {
+				data.push({"word": "Hint:  Type a word and then '?' to see related words."});
+			    } else {
+				data.push({"word": "Hint:  Type \"!\" after a word to see adjectives."});
+			    }
+			    response( $.map( data, function(item) { return item["word"]; }))
+			},
+		    });
+		last_req = request.term;
+	    }
+	});
+    });
+// Smart auto-complete provided by the Datamuse API, https://www.datamuse.com/api/
+
+</script>
+
+</BODY>
+</HTML>

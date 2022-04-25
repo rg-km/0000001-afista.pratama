@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<!--
+                  _
+                 | |
+ __ ___ ___ ___ _| |_ _ _ _ _ _   ___ __  _ _ _
+/ _|   Y _ Y _ Y   | '_| | | ' | /  _/  \| ' ' \
+\__\ | | __/ __/ | | | | | | | |_| || () | | | |
+|__/ __|___|___|___|_| \_,_|_|_|_\___\__/|_|_|_|
+   |_|
+
+-->
+<html class="hidden">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>speedrun.com</title>
+			<meta name="csrftoken" content="">
+			<meta name="description" content="Speedrunning leaderboards, resources, forums, and more!">
+			<meta name="format-detection" content="telephone=no">
+			<meta name="og:description" content="Speedrunning leaderboards, resources, forums, and more!">
+			<meta name="og:image" content="https://www.speedrun.com/images/1st.png">
+			<meta name="og:title" content="speedrun.com">
+			<meta name="og:type" content="website">
+			<meta name="src:date-format" content="Y-m-d">
+			<meta name="src:session" content="{&quot;signedIn&quot;:false,&quot;showAds&quot;:true,&quot;user&quot;:null,&quot;dateFormat&quot;:&quot;Y-m-d&quot;,&quot;timeFormat&quot;:&quot;H:i&quot;,&quot;timeReference&quot;:0,&quot;timeUnits&quot;:0}">
+			<meta name="src:time-format" content="H:i">
+			<meta name="src:time-units" content="0">
+			<meta name="theme-color" content="#199C77">
+			<meta name="theme-color-dark" content="#199C77">
+			<meta name="theme-color-light" content="#199C77">
+			<meta name="twitter:card" content="summary">
+			<meta name="twitter:description" content="Speedrunning leaderboards, resources, forums, and more!">
+			<meta name="twitter:image" content="https://www.speedrun.com/images/1st.png">
+			<meta name="twitter:site" content="@speedruncom">
+			<meta name="twitter:title" content="speedrun.com">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="preconnect" href="https://www.google-analytics.com" />
+	<link rel="preconnect" href="https://static.hotjar.com" />
+	<link rel="preconnect" href="https://cloud-strife.speedrun.com" />
+
+	<link rel="icon" href="/images/1st.png">
+
+	<link href="/assets/css/vendor.min.css?v=528d1198" rel="stylesheet">
+	<link href="/themecss/dzr2x840?v=13ddab0.82ef63b.13" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/ofy1zzg.css">
+
+	<script src="/assets/js/vendor.min.js?v=a41f5a0d"></script>
+	<script src="/assets/js/app.min.js?v=ba030749"></script>
+	<script src="/assets/js/bundle.min.js?v=470d5264" async></script>
+	<script src="https://cloud-strife.speedrun.com/cargo.js?upapi=true" type="text/javascript" async></script>
+
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+	
+
+	<!-- Google Analytics -->
+	<script>
+		document.documentElement.className += ' js';
+
+		var loadinggif = "<div class=\"spinner center\"><i class=\"fas fa-circle-notch fa-spin\"><\/i><\/div>";
+		var dateformat = {
+			relative: true,
+			dates: "Y-m-d",
+			times: "H:i",
+			long: "Y-m-d, H:i",
+		};
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1997700,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+		ga('create', 'UA-46440602-1', 'www.speedrun.com');
+		ga('send', 'pageview');
+
+		var bgscroll = 0;
+		var fgscroll = 0;
+	</script>
+</head>
+<body class="dark">
+	<div data-type="elo-user" data-site="speedrun" data-area="home" data-user-type="0" data-themed="0" style="display: none"></div>
+	<div class="fullscreen-menu-background"></div>
+
+	
+<!-- Image and text -->
+<div class="navbar-background fixed-top">
+  <nav class="navbar navbar-expand navbar-dark">
+    <div class="container">
+      <a class="navbar-brand hidden-sm-down" href="/" style="float: left;">
+        <span class="hidden-light">
+                      <img class="logo hidden-sm-down" id="logo-light" src="/images/logo-white.png" alt="speedrun.com">
+            <img class="logo hidden-sm-down" id="logo-dark" src="/images/logo-black.png" alt="speedrun.com" style="display: none;">
+                  </span>
+        <span class="hidden-dark">
+          <img class="logo hidden-sm-down" id="logo-light" src="/images/logo-white.png" alt="speedrun.com">
+        </span>
+      </a>
+
+      <div id="navbar-right">
+        <div id="navbar-main">
+          <ul class="navbar-nav">
+                        <li class="nav-item hidden-md-down">
+              <a class="nav-link" href="/games">Games</a>
+            </li>
+                        <li class="nav-item hidden-md-down">
+              <a class="nav-link" href="/streams">Streams</a>
+            </li>
+                        <li class="nav-item hidden-md-down">
+              <a class="nav-link" href="/forum">Forums</a>
+            </li>
+                        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-toggle-hidden-md-down" href="javascript:;" id="navbarDropdown" role="button" data-toggle="dropdown">
+                <span class="hidden-lg-up"><i class="fal fa-bars"></i></span>
+                <span class="hidden-md-down">More...</span>
+              </a>
+              <div class="dropdown-menu">
+                <a class="hidden-lg-up dropdown-item" href="/"><i class="fal fa-home fa-margin"></i>Home</a>
+                <a class="hidden-lg-up dropdown-item" href="/games"><i class="fal fa-gamepad fa-margin"></i>Games</a>
+                <a class="hidden-lg-up dropdown-item" href="/streams"><i class="fab fa-twitch fa-margin"></i>Streams</a>
+                                <a class="hidden-lg-up dropdown-item" href="/forum"><i class="fal fa-comments fa-margin"></i>Forums</a>
+                <div class="hidden-lg-up dropdown-divider"></div>
+                <a class="dropdown-item" href="/news"><i class="fal fa-newspaper fa-margin"></i>News</a>
+                <a class="dropdown-item" href="/knowledgebase"><i class="fal fa-book"></i> Knowledge Base</a>
+                <a class="dropdown-item" href="/about"><i class="fal fa-info-circle fa-margin"></i>About</a>
+                <a class="dropdown-item" href="/knowledgebase/supporthub"><i class="fal fa-at fa-margin"></i>Support Hub</a>
+                <a class="dropdown-item" href="/supporter"><img src="/images/supporter/shiny-medal.png" alt="" style="width: 16px; height: auto; margin-right: 4px"/>SRC Supporter</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dark-mode active" href="javascript:;"><i class="fas fa-moon fa-margin"></i>Night Mode</a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-header">Social</div>
+                <a class="dropdown-item" href="https://www.twitter.com/speedruncom" target="_blank"><i class="fab fa-twitter fa-margin"></i>Twitter</a>
+                <a class="dropdown-item" href="https://discord.gg/0h6sul1ZwHVpXJmK" target="_blank"><span class="icomoon icon-discord"></span>Discord</a>
+              </div>
+            </li>
+            <li class="hidden-sm-up nav-item dropdown">
+              <a class="nav-link search-button-xs" href="javascript:;" id="navbarDropdown" role="button" data-toggle="dropdown">
+                <i class="fal fa-search"></i>
+              </a>
+              <div class="dropdown-menu" id="search-results-xs">
+                <form class="navbar-form" onsubmit="return false;">
+                  <input type="text" id="search-xs" class="form-control search searchbar-xs" placeholder="Search for games, users, etc...">
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="navbar-user">
+          <ul class="navbar-nav">
+                        <li class="nav-item nav-item-wide nobr"><a class="nav-link" href="#login" data-toggle="modal">Log in</a></li>
+            <li class="nav-item nav-item-wide nobr"><a class="nav-link" href="#signup" data-toggle="modal">Sign up</a></li>
+                        <li class="nav-item nobr" data-toggle="modal" data-target="#language">
+              <a class="nav-link" href="javascript:;" data-toggle="tooltip" data-placement="top" data-original-title="English" onclick="$(this).blur();">
+                <img src="/images/flags/gb.png" class="flagicon margin-none">
+              </a>
+            </li>
+                      </ul>
+        </div>
+        <div id="navbar-search" class="hidden-xs">
+          <ul class="navbar-nav">
+            <form onsubmit="return false;">
+              <input class="form-control search" type="search" placeholder="Search for games, users, etc...">
+            </form>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+	<div component-name="MaintenanceBanner" component-data="eyJtYWludGVuYW5jZU1vZGUiOmZhbHNlfQ=="></div>
+
+
+
+
+<div class="modal fade" id="language" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Language (Beta)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row hidden-xs">
+                      <div class="col-4">
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="bg">
+                  <img src="/images/flags/bg.png" class="flagicon mr-1">български
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ca">
+                  <img src="/images/flags/es/ct.png" class="flagicon mr-1">Català
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="cs">
+                  <img src="/images/flags/cz.png" class="flagicon mr-1">Čeština
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="da">
+                  <img src="/images/flags/dk.png" class="flagicon mr-1">Dansk
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="de">
+                  <img src="/images/flags/de.png" class="flagicon mr-1">Deutsch
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="el">
+                  <img src="/images/flags/gr.png" class="flagicon mr-1">ελληνικά
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent active">
+                <a href="javascript:;" class="changelanguage truncate-child active" data-language="en">
+                  <img src="/images/flags/gb.png" class="flagicon mr-1">English
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="es">
+                  <img src="/images/flags/es.png" class="flagicon mr-1">Español
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="fr">
+                  <img src="/images/flags/fr.png" class="flagicon mr-1">Français
+                </a>
+              </p>
+                          </div>
+                      <div class="col-4">
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ga">
+                  <img src="/images/flags/ie.png" class="flagicon mr-1">Gaeilge
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="gd">
+                  <img src="/images/flags/gb/sct.png" class="flagicon mr-1">Gàidhlig
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="id">
+                  <img src="/images/flags/id.png" class="flagicon mr-1">Bahasa Indonesia
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="it">
+                  <img src="/images/flags/it.png" class="flagicon mr-1">Italiano
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="he">
+                  <img src="/images/flags/il.png" class="flagicon mr-1">עברית‎
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="lv">
+                  <img src="/images/flags/lv.png" class="flagicon mr-1">Latviešu valoda
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="lt">
+                  <img src="/images/flags/lt.png" class="flagicon mr-1">Lietuvių kalba
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="nl">
+                  <img src="/images/flags/nl.png" class="flagicon mr-1">Nederlands
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ja">
+                  <img src="/images/flags/jp.png" class="flagicon mr-1">日本語
+                </a>
+              </p>
+                          </div>
+                      <div class="col-4">
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="no">
+                  <img src="/images/flags/no.png" class="flagicon mr-1">Norsk
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="pl">
+                  <img src="/images/flags/pl.png" class="flagicon mr-1">Polski
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="pt">
+                  <img src="/images/flags/pt.png" class="flagicon mr-1">Português
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ru">
+                  <img src="/images/flags/ru.png" class="flagicon mr-1">Русский
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="fi">
+                  <img src="/images/flags/fi.png" class="flagicon mr-1">Suomi
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="sv">
+                  <img src="/images/flags/se.png" class="flagicon mr-1">Svenska
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="tr">
+                  <img src="/images/flags/tr.png" class="flagicon mr-1">Türkçe
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="zh">
+                  <img src="/images/flags/cn.png" class="flagicon mr-1">中文 (简体)
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="zh-tw">
+                  <img src="/images/flags/tw.png" class="flagicon mr-1">中文 (繁體)
+                </a>
+              </p>
+                          </div>
+                  </div>
+        <div class="row hidden-sm-up">
+                      <div class="col-6">
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="bg">
+                  <img src="/images/flags/bg.png" class="flagicon mr-1">български
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ca">
+                  <img src="/images/flags/es/ct.png" class="flagicon mr-1">Català
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="cs">
+                  <img src="/images/flags/cz.png" class="flagicon mr-1">Čeština
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="da">
+                  <img src="/images/flags/dk.png" class="flagicon mr-1">Dansk
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="de">
+                  <img src="/images/flags/de.png" class="flagicon mr-1">Deutsch
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="el">
+                  <img src="/images/flags/gr.png" class="flagicon mr-1">ελληνικά
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent active">
+                <a href="javascript:;" class="changelanguage truncate-child active" data-language="en">
+                  <img src="/images/flags/gb.png" class="flagicon mr-1">English
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="es">
+                  <img src="/images/flags/es.png" class="flagicon mr-1">Español
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="fr">
+                  <img src="/images/flags/fr.png" class="flagicon mr-1">Français
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ga">
+                  <img src="/images/flags/ie.png" class="flagicon mr-1">Gaeilge
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="gd">
+                  <img src="/images/flags/gb/sct.png" class="flagicon mr-1">Gàidhlig
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="id">
+                  <img src="/images/flags/id.png" class="flagicon mr-1">Bahasa Indonesia
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="it">
+                  <img src="/images/flags/it.png" class="flagicon mr-1">Italiano
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="he">
+                  <img src="/images/flags/il.png" class="flagicon mr-1">עברית‎
+                </a>
+              </p>
+                          </div>
+                      <div class="col-6">
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="lv">
+                  <img src="/images/flags/lv.png" class="flagicon mr-1">Latviešu valoda
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="lt">
+                  <img src="/images/flags/lt.png" class="flagicon mr-1">Lietuvių kalba
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="nl">
+                  <img src="/images/flags/nl.png" class="flagicon mr-1">Nederlands
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ja">
+                  <img src="/images/flags/jp.png" class="flagicon mr-1">日本語
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="no">
+                  <img src="/images/flags/no.png" class="flagicon mr-1">Norsk
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="pl">
+                  <img src="/images/flags/pl.png" class="flagicon mr-1">Polski
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="pt">
+                  <img src="/images/flags/pt.png" class="flagicon mr-1">Português
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="ru">
+                  <img src="/images/flags/ru.png" class="flagicon mr-1">Русский
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="fi">
+                  <img src="/images/flags/fi.png" class="flagicon mr-1">Suomi
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="sv">
+                  <img src="/images/flags/se.png" class="flagicon mr-1">Svenska
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="tr">
+                  <img src="/images/flags/tr.png" class="flagicon mr-1">Türkçe
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="zh">
+                  <img src="/images/flags/cn.png" class="flagicon mr-1">中文 (简体)
+                </a>
+              </p>
+                            <p class="mb-1 pl-2 pb-1 truncate-parent">
+                <a href="javascript:;" class="changelanguage truncate-child " data-language="zh-tw">
+                  <img src="/images/flags/tw.png" class="flagicon mr-1">中文 (繁體)
+                </a>
+              </p>
+                          </div>
+                  </div>
+      </div>
+      <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="login" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="loginform" method="post" action="/ajax_login.php" class="ajaxpost form-horizontal ajax-include-target" data-target="loginmessage">
+        <div class="modal-header">
+          <h5 class="modal-title">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="loginbody" class="modal-body">
+          <div class="form-group row">
+            <div class="col-sm-3 text-sm-right col-label-padding">
+              <label for="login_username">
+                Username:
+              </label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="login_username" name="username" placeholder="Username" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3 text-sm-right col-label-padding">
+              <label for="login_password">
+                Password:
+              </label>
+            </div>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="login_password" name="password" placeholder="Password" required>
+              <p class="hidden-sm-up right"><small><a href="/resetpassword">Forgot password</a></small></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9 offset-sm-3">
+              <span id="loginmessage">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit">Log in</button>
+          <a class="btn btn-default hidden-xs" href="/resetpassword">Forgot password</a>
+          <a class="btn btn-default" data-dismiss="modal">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="signupform" method="post" action="/ajax_signup.php" class="ajaxpost form-horizontal" data-target="signupmessage" onsubmit="$('#btn-signup').prop('disabled', true);">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <div class="col-sm-3 text-sm-right col-label-padding">
+              <label for="username1">
+                Username:
+              </label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="username1" name="username" placeholder="Username" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3 text-sm-right col-label-padding">
+              <label for="email">
+                E-mail:
+              </label>
+            </div>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3 text-sm-right col-label-padding">
+              <label for="confirmemail">
+                Confirm:
+              </label>
+            </div>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="confirmemail" name="confirmemail" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3 col-label-padding">
+            </div>
+            <div class="col-9">
+              <div id="recaptcha"></div>
+                <script>
+                  var onloadCallback = function() {
+                    recaptcha_render("dark");
+                  };
+                </script>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-9 offset-sm-3">
+              <span id="signupmessage">&nbsp;</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" id="btn-signup">Sign up</button> <a class="btn btn-default" data-dismiss="modal">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade"role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <input type="text" class="form-control">
+      <a class="btn btn-default"></a>
+      <a class="btn btn-primary"></a>
+    </div>
+  </div>
+</div>
+
+	
+	<div class="skin-container">
+					<div class="hidden-md-down"><div class="malediction desktop_skin space-dementia" data-type="elo-placement" data-area="" data-space="desktop_skin"></div></div><div class="hidden-lg-up"><div class="malediction mobile_skin space-dementia" data-type="elo-placement" data-area="" data-space="mobile_skin"></div></div>
+
+		
+        <main role="main" class="container">			            <div class="row">
+				<div class="col-12 ">
+						<div class="hidden-md-down"><div class="malediction desktop_hero " data-type="elo-placement" data-area="" data-space="desktop_hero"></div></div><div class="hidden-lg-up"><div class="malediction mobile_hero " data-type="elo-placement" data-area="" data-space="mobile_hero"></div></div>
+
+				</div>
+
+									<div id="centerwidget" class="col-auto">
+						
+						<div class="maincontent"><div class="widget-container new-to-speedrun show">
+    <div class="widget-header header-justified">
+        <div class="widget-title">New to Speedrun.com?</div>
+        <span aria-hidden="true"><i class="fal fa-times widget-close"></i></span>
+    </div>
+    <div class="widget-body row">
+        <a href="/knowledgebase/how-to-start-speedrunning" class="widget-knowledgebase col-4">
+            <img class="widget-image" style="height: 136px;" src="/images/startspeedrunning.png">
+            <p class="widget-text" style="padding-top: 8px">
+                <img src="/images/1st.png" class="trophy">
+                Start Speedrunning
+            </p>
+        </a>
+        <a href="/knowledgebase/joining-a-community" class="widget-knowledgebase col-4">
+            <img class="widget-image" style="height: 136px;" src="/images/joinacommunity.png">
+            <p class="widget-text" style="padding-top: 8px">
+                <img src="/images/1st.png" class="trophy">
+                Join a Community
+            </p>
+        </a>
+        <a href="/knowledgebase/what-is-speedrunning" class="widget-knowledgebase col-4">
+            <img class="widget-image" style="height: 136px;" src="/images/whatisspeedrunning.png">
+            <p class="widget-text" style="padding-top: 8px">
+                <img src="/images/1st.png" class="trophy">
+                What is Speedrunning?
+            </p>
+        </a>
+    </div>
+</div>
+<div id="latest-leaderboard" class="widget-container">
+    <div class="widget-header" style="margin-bottom: 8px;">
+        <div class="widget-title">Latest Runs</div>
+    </div>
+    <div id="leaderboard-wrapper">		<div class="loadingbox"><div class="spinner center"><i class="fas fa-circle-notch fa-spin"></i></div></div>
+</div>
+    <script>ajax_get('/ajax_latestleaderboard.php?amount=25&layout=new&fg=&min=5&max=10&tl=1209600&sgt=0&timeunits=0', 'leaderboard-wrapper');</script>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var hideIntro = localStorage.getItem('hide_intro');
+        if(hideIntro) {
+            $('.new-to-speedrun').hide();
+        }
+        $('.widget-close').on('click', function () {
+           localStorage.setItem('hide_intro', 1);
+           $('.new-to-speedrun').fadeOut("fast", function () {});
+        });
+    });
+</script>
+</div>
+					</div>
+					<div id="widget" class="col-auto">
+						<div class="widget-container">
+      <a href="/news/895-2022-4-14-introducing-supporter" class="hover">
+            <div style="position: relative;">
+                                    <div class="article-tag-wrapper">
+                                                      <div class="article-tag">announcement</div>
+                                                      <div class="article-tag">site update</div>
+                                          </div>
+                  <img class="widget-image" src="https://connect.elo.io/blob/BRcfB9CUan3JhrQNh+UZK6sZiXWJBtcbhN-S5+c0h2sYi+KVitvVKainK1CGva0E?q=80&amp;w=400">
+                              </div>
+            <div class="widget-body">
+                  <div style="font-size: 14px;"><time class="short" data-format="M. d, Y" datetime="2022-04-14T16:13:25Z">14 Apr 2022</time></div>
+                  <div class="widget-title">Introducing Supporter</div>
+            </div>
+      </a>
+</div>
+	<div class="hidden-md-down"><div class="malediction desktop_sidebar_a " data-type="elo-placement" data-area="" data-space="desktop_sidebar_a"></div></div><div class="hidden-lg-up"><div class="malediction mobile_midcontent_b " data-type="elo-placement" data-area="" data-space="mobile_midcontent_b"></div></div>
+
+<div class="widget-container">
+      <a href="/news/893-2022-3-31-spotlight-ryan-ford" class="hover">
+            <div style="position: relative;">
+                                    <div class="article-tag-wrapper">
+                                                      <div class="article-tag">spotlight</div>
+                                          </div>
+                  <img class="widget-image" src="https://connect.elo.io/blob/BRcfB9CUanC7hXLXlVJZl2sOhrH3Btx3ht9S5tLNl2ssK1LNh+xnKap0KtCGva0E?q=80&amp;w=400">
+                              </div>
+            <div class="widget-body">
+                  <div style="font-size: 14px;"><time class="short" data-format="M. d, Y" datetime="2022-03-31T16:03:36Z">31 Mar 2022</time></div>
+                  <div class="widget-title">Spotlight: Ryan Ford</div>
+            </div>
+      </a>
+</div>
+	<div class="hidden-md-down"><div class="malediction desktop_sidebar_b " data-type="elo-placement" data-area="" data-space="desktop_sidebar_b"></div></div>
+
+<div class="widget-container">
+    <div class="widget-header">
+        <a href="/news" class="widget-title color-text">More from the Newsroom</a>
+    </div>
+    <div class="widget-body">
+        <ul style="margin: 0; padding-left: 24px;">
+                        <li><a href="/news/892-2022-3-3-esa-winter-2022-highlights">ESA Winter 2022 Highlights</a></li>
+                        <li><a href="/news/891-2022-2-25-spotlight-rosecurel">Spotlight: RoseCurel</a></li>
+                        <li><a href="/news/890-2022-2-3-settings-security-and-infrastructure-update">Settings, Security, and Infrastructure Update</a></li>
+                        <li><a href="/news/889-2022-1-19-agdq-2022-highlights">AGDQ 2022 Highlights</a></li>
+                    </ul>
+    </div>
+</div><div class="widget-container">
+    <div class="widget-header">
+        <div class="widget-title">Latest Tweets by <a href="https://www.twitter.com/speedruncom" class="twitter-handle">@speedruncom</a></div>
+    </div>
+    <div id="latest-tweets" class="widget-body">
+        <script>latest_tweets("dark");</script>
+    </div>
+</div>
+					</div>
+
+				
+				<div class="col-12 ">
+						<div class="hidden-md-down"><div class="malediction desktop_footer " data-type="elo-placement" data-area="" data-space="desktop_footer"></div></div><div class="hidden-lg-up"><div class="malediction mobile_footer " data-type="elo-placement" data-area="" data-space="mobile_footer"></div></div>
+
+				</div>
+
+			</div>
+		</main>
+
+		<footer id="footer">
+        <div class="container main">
+        <a href="/" class="brand">
+			<span class="hidden-light">
+                        <img class="footer-logo hidden-sm-down" src="/images/logo-white.png" alt="speedrun.com">
+			</span>
+            <span class="hidden-dark">
+				<img class="footer-logo hidden-sm-down" src="/images/logo-black.png" alt="speedrun.com">
+			</span>
+        </a>
+        <div class="section">
+            <div class="title">Overview</div>
+            <a href="/games">Games</a>
+            <a href="/forum">Forums</a>
+            <a href="/streams">Streams</a>
+            <a href="/news">News</a>
+        </div>
+        <div class="section">
+            <div class="title">Support</div>
+            <a href="/knowledgebase">Knowledge Base</a>
+            <a href="/about">About</a>
+            <a href="/knowledgebase/supporthub">Support Hub</a>
+            <a href="/partnerships">Partnerships</a>
+        </div>
+        <div class="section">
+            <div class="title">More</div>
+            <a href="/supporter">Speedrun.com Supporter</a>
+            <a href="/pages/privacy-policy">Privacy Policy</a>
+            <a href="/pages/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="section">
+            <div class="title">Socials</div>
+            <a href="https://www.twitter.com/speedruncom" class="footer-icon"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://discord.gg/0h6sul1ZwHVpXJmK " class="footer-icon"><i class="icomoon icon-discord footer-discord"></i> Discord</a>
+        </div>
+    </div>
+    <div class="elo">
+        <div class="container">
+            <div style="padding-right: 8px;">Copyright 2022</div>
+            <a href="https://elo.io/" style="padding-right: 8px;">Elo Entertainment Inc.</a>
+        </div>
+    </div>
+</footer>
+
+		<footer id="foreground" class="hidden-light"></footer>
+
+	</div>
+
+	<a class="btn btn-primary" style="display: none"></a>
+
+	<div class="device-xs hidden-sm-up"></div>
+	<div class="device-sm hidden-xs hidden-md-up"></div>
+	<div class="device-md hidden-sm-down hidden-lg-up"></div>
+	<div class="device-lg hidden-md-down hidden-xl"></div>
+	<div class="device-lg hidden-lg-down"></div>
+
+	<!-- Begin comScore -->
+	<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "6035118" });
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+		s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+	</script>
+	<noscript>
+	   <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035118&amp;cv=2.0&amp;cj=1" style="position: absolute; margin: -1rem;" />
+	</noscript>
+	<!-- End comScore -->
+
+	<!-- Nielsen Online SiteCensus -->
+	<div><img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" style="position: absolute; margin: -1rem;" /></div>
+	<!-- End Nielsen Online SiteCensus -->
+
+	<div id='cdm-zone-end'></div>
+</body>
+</html>

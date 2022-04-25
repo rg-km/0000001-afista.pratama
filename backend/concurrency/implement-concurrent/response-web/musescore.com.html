@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+    (function () {
+        var isTouch = 'ontouchstart' in window || 'onmsgesturechange' in window;
+        var isMac = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'].indexOf(window.navigator.platform) > -1;
+
+        if (isMac && isTouch) {
+            var date = new Date();
+            date.setFullYear(date.getFullYear() + 1);
+
+            document.cookie = '_mu_force_ipad=1;path=/;domain=.musescore.com;expires=' + date.toUTCString() + ';';
+            window.location = window.location.href
+        }
+    })()
+</script>
+            <link href="https://musescore.com/index" rel="canonical">
+<link href="https://musescore.com/static/public/build/musescore/vendor.f928a9269b4abc70fc90743c9a24c5d7.js" rel="preload" as="script">
+<link href="https://musescore.com/static/public/build/musescore/ms~runtime.b6b08d5810bd92f7de6444cba5c75ac7.js" rel="preload" as="script">
+<link href="https://musescore.com/static/public/build/musescore/ms.cf05968017a06474d27a767481137dad.js" rel="preload" as="script">
+    <title>Musescore.com | The world&#039;s largest free sheet music catalog and community</title>
+    <meta name="description" content="Share, download and print free sheet music for piano, guitar, flute and more with the world&#039;s largest community of sheet music creators, composers, performers, music teachers, students, beginners, artists and other musicians with over 1,000,000 sheet digital music to play, practice, learn and enjoy.">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta charset="utf-8" />
+    <meta name="author" content="Musescore" />
+        <meta name="google-play-app" content="app-id=com.musescore.playerlite" />
+    <meta name="kindle-fire-app" content="app-id=com.musescore.player" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="O0-OfS3Im0LCKcTC3GpmhRXF6ceF93hhKzDU8ZtGroNjAOYYco3XCrRcvqazDwvBZIKrvt-TAA1eQbaariHZ3A==">
+    
+<link rel="manifest" href="/manifest.json" />
+<link rel="icon" type="image/svg+xml" href="https://musescore.com/static/public/img/product_icons/musescore/favicon_ver1650877147.svg">
+<link rel="icon" type="image/x-icon" href="https://musescore.com/static/public/img/product_icons/musescore/favicon_ver1650877147.ico">
+<link rel="apple-touch-icon" href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="72x72"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-72x72-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="76x76"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-76x76-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="114x114"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-114x114-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="120x120"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-120x120-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="144x144"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-144x144-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="180x180"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-180x180-precomposed_ver1650877147.png" />
+    <link
+        rel="apple-touch-icon" sizes="192x192"
+        href="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-192x192-precomposed_ver1650877147.png" />
+<meta name="application-name" content="Musescore" />
+<meta name="msapplication-TileColor" content="#fff" />
+<meta name="msapplication-TileImage" content="https://musescore.com/static/public/img/product_icons/musescore/apple-touch-icon-precomposed_ver1650877147.png">    <script>
+    var UGERROR = {
+        errors: [],
+        loggerLoaded: false,
+    };
+    var oldOnError = window.onerror;
+    var loadScript = function (src, resolve) {
+        UGERROR.loggerLoaded = true;
+        var script = document.createElement('script');
+        script.async = true;
+        script.type = 'text/javascript';
+        script.src = src;
+
+        var changeState = function () {
+            if (!loaded) {
+                resolve()
+                loaded = true;
+            }
+        };
+        var loaded;
+
+        script.onreadystatechange = changeState;
+        script.onload = changeState;
+
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(script, node);
+    };
+
+    UGERROR.loadErrorLogger = function (release) {
+        var whitelistUrls = [
+            new RegExp('https://musescore.com/static/public')
+        ];
+
+        if (window.location.pathname !== '/') {
+            whitelistUrls.push(new RegExp(window.location.href))
+        }
+
+        !UGERROR.loggerLoaded && loadScript('https://musescore.com/static/vendor/centry/raven.3.27.0.min.js', function () {
+            var data = {}
+            var tags = {"country":"ID","isProUser":false,"isAuthenticated":false}
+            if (window.navigator.connection) {
+                var conn = window.navigator.connection
+                data.downlink = conn.downlink
+                data.effectiveType = conn.effectiveType
+                data.rtt = conn.rtt
+                tags.effectiveType = conn.effectiveType
+
+                window.Raven.setExtraContext(data)
+            }
+
+            data.id = parseInt('0', 10);
+            data.userId = '0';
+
+            window.onerror = oldOnError;
+
+            data.id && window.Raven.setUserContext(data);
+
+            window.Raven.config('https://23f7f9adc71e43919814a71a87ea2c52@sentry10.ultimate-guitar.com/6', {
+                release: release,
+                whitelistUrls: whitelistUrls,
+                ignoreErrors: [/ChunkLoadError:.*/],
+                tags: tags,
+            }).install();
+            UGERROR.errors.forEach(function (args) {
+                (args.length > 1) ? window.onerror.apply(this, args) : window.Raven.captureException(args[0]);
+            });
+        })
+    };
+
+    window.onerror = function () {
+        UGERROR.errors.push(arguments);
+        oldOnError && oldOnError.apply(this, arguments);
+
+        if (!UGERROR.hasFirstError) {
+            function load() {
+                UGERROR.loadErrorLogger("mu-web_app_0.05.21");
+            }
+
+            if (document.readyState === 'complete') {
+                load();
+            } else {
+                window.addEventListener('load', load)
+            }
+            UGERROR.hasFirstError = true
+        }
+    };
+</script>
+                
+        <style>body,html{touch-action:manipulation;background:#fff;box-sizing:border-box;-webkit-tap-highlight-color:transparent}body *{box-sizing:inherit}body{color:#1a202e;font-family:Inter,Helvetica neue,Helvetica,sans-serif;-webkit-text-size-adjust:100%}a{text-decoration:none}body,form{margin:0}@page{margin:0;position:relative}@media print{body,html{background:#fff!important}}body.maintenance-page,body.page-boxed-content{background:#f6f6f6}</style>
+                            
+        <link rel="preload" href="https://musescore.com/static/public/build/polyfills/polyfills.js" as="script">
+    
+        <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2E68C0">
+
+    </head>
+
+<body class="js desktop js-cookie-compliance  theme-react">
+        <script>
+    var hasFirstTap = false;
+    (function () {
+        function onFirstTap () {
+            hasFirstTap = true
+            document.body.removeEventListener('touchstart', onFirstTap)
+        }
+
+        document.body.addEventListener('touchstart', onFirstTap)
+    })()
+</script>
+
+                    
+        <div class="js-page react-container" style="min-height: 100vh;">
+            </div>
+        
+            <style>
+        .ms-footer {
+            background: #0c2438;
+            position: relative;
+            z-index: 100;
+            padding: 36px 0;
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            color: #fff;
+        }
+
+        .ms-footer_visible {
+            display: flex;
+        }
+
+        .ms-footer--container {
+            margin-right: -90px;
+            max-width: 976px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1
+        }
+
+        .ms-footer--app {
+            width: 375px
+        }
+
+        @media (min-width: 768px) {
+            .ms-footer--section {
+                min-width: 240px;
+                margin-bottom: 22px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ms-footer--section {
+                width: 50%;
+                padding: 0 12px;
+                margin-bottom: 10px
+            }
+        }
+
+        .ms-footer--title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 133%;
+            margin-bottom: 5px
+        }
+
+        .ms-footer--nav-link {
+            cursor: pointer;
+            line-height: 36px;
+            color: #fff;
+            font-size: 13px;
+            text-decoration: none;
+            display: block
+        }
+
+        .ms-footer--icon {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+            display: inline-block;
+            vertical-align: middle
+        }
+
+        .ms-footer--billing {
+            margin-top: 10px;
+            width: 82px;
+            height: 36px
+        }
+
+        .ms-footer--caption, .ms-footer--text {
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 143%
+        }
+
+        .ms-footer--caption {
+            color: #97a6ba;
+            margin-bottom: 14px
+        }
+    </style>
+    <script>
+        function showCookieSettings(event) {
+            event.preventDefault();
+            if (!!window.__tcfapi) {
+                window.__tcfapi('displayConsentUi', 2, function() {});
+            }
+        }
+    </script>
+
+            <footer class="ms-footer">
+            <section class="ms-footer--container">
+                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">About Musescore</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="/about" rel="" target="" onclick="">
+                                About            </a>
+                    <a class="ms-footer--nav-link" href="https://mu.se/careers" rel="" target="" onclick="">
+                                Jobs            </a>
+                    <a class="ms-footer--nav-link" href="/contact" rel="" target="" onclick="">
+                                Contact us            </a>
+                    <a class="ms-footer--nav-link" href="/our-products" rel="" target="" onclick="">
+                                Our Products            </a>
+                    <a class="ms-footer--nav-link" href="/upgrade?feature=footer" rel="" target="" onclick="">
+                                MuseScore PRO            </a>
+            </nav>
+</section>                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">Community</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="/our-ethical-line" rel="" target="" onclick="">
+                                Our Ethical Line            </a>
+                    <a class="ms-footer--nav-link" href="/contact?category=Report abuse" rel="" target="" onclick="">
+                                Report abuse            </a>
+                    <a class="ms-footer--nav-link" href="/community-guidelines" rel="" target="" onclick="">
+                                Community Guidelines            </a>
+                    <a class="ms-footer--nav-link" href="/score-uploading-guidelines" rel="" target="" onclick="">
+                                Score Uploading Guidelines            </a>
+                    <a class="ms-footer--nav-link" href="/community" rel="" target="" onclick="">
+                                Community            </a>
+            </nav>
+</section>                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">Software</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="https://musescore.org" rel="" target="_blank" onclick="">
+                                Download            </a>
+                    <a class="ms-footer--nav-link" href="https://musescore.org/en/handbook"" rel="nofollow noopener" target="_blank" onclick="">
+                                Handbook            </a>
+                    <a class="ms-footer--nav-link" href="https://musescore.org/en/forum" rel="nofollow noopener" target="_blank" onclick="">
+                                Forum            </a>
+                    <a class="ms-footer--nav-link" href="https://help.musescore.com" rel="" target="_blank" onclick="">
+                                Help center            </a>
+            </nav>
+</section>                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">More</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="/licensing" rel="" target="" onclick="">
+                                Licensing            </a>
+                    <a class="ms-footer--nav-link" href="/legal/privacy" rel="" target="" onclick="">
+                                Privacy Policy            </a>
+                    <a class="ms-footer--nav-link" href="/legal/terms" rel="" target="" onclick="">
+                                Terms of Use            </a>
+                    <a class="ms-footer--nav-link" href="/legal/dmca" rel="" target="" onclick="">
+                                DMCA            </a>
+            </nav>
+</section>                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">Social</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="https://www.youtube.com/channel/UCfY410QyoHlC4jwUZZOjgOg" rel="nofollow noopener" target="_blank" onclick="">
+                                <svg viewBox="0 0 24 24" class="ms-footer--icon">
+                    <path d="M12 4c-2.506 0-4.448.088-5.827.264-1.365.162-2.373.521-3.022 1.076-.65.555-1.034 1.36-1.154 2.416-.12 1.056-.179 2.47-.179 4.244 0 1.773.06 3.188.18 4.244.119 1.055.503 1.868 1.153 2.436.65.555 1.657.914 3.022 1.076C7.553 19.92 9.494 20 12 20s4.441-.081 5.807-.244c1.379-.162 2.393-.52 3.043-1.076.65-.568 1.034-1.38 1.153-2.436.12-1.056.179-2.47.179-4.244 0-1.773-.06-3.188-.18-4.244-.118-1.056-.503-1.86-1.152-2.416-.65-.555-1.664-.914-3.043-1.076C16.44 4.088 14.506 4 12 4zm3.261 8.345l-4.573 2.193c-.2.095-.372.095-.518 0-.132-.095-.198-.257-.198-.487V9.949c0-.216.066-.372.199-.467.145-.095.318-.095.517 0l4.573 2.173c.2.095.299.21.299.345 0 .135-.1.25-.299.345z"></path>
+                </svg>
+                                YouTube            </a>
+                    <a class="ms-footer--nav-link" href="https://facebook.com/Musescore" rel="nofollow noopener" target="_blank" onclick="">
+                                <svg viewBox="0 0 12 12" class="ms-footer--icon">
+                    <path d="M9.12501 1H2.875C1.83984 1 1 1.83984 1 2.875V9.12498C1 10.1601 1.83984 11 2.875 11H6.33855V7.12629H5.03647V5.61587H6.33855V4.5026C6.33855 3.21353 7.13282 2.51041 8.28516 2.51041C8.83204 2.51041 9.3073 2.54948 9.44402 2.56901V3.91666L8.64975 3.92317C8.01824 3.92317 7.90105 4.21614 7.90105 4.65234V5.61587H9.39194L9.19663 7.12629H7.90105V11H9.12501C10.1602 11 11 10.1601 11 9.12498V2.875C11 1.83984 10.1602 1 9.12501 1Z"></path>
+                </svg>
+                                Facebook            </a>
+                    <a class="ms-footer--nav-link" href="https://twitter.com/musescore" rel="nofollow noopener" target="_blank" onclick="">
+                                <svg viewBox="0 0 12 12" class="ms-footer--icon">
+                    <path d="M9.33334 4.13802C9.15106 4.41796 8.91668 4.65884 8.64975 4.84764C8.65626 4.90624 8.65626 4.96483 8.65626 5.02342C8.65626 6.83331 7.27605 8.91664 4.76303 8.91664C3.98829 8.91664 3.27214 8.68878 2.66667 8.30467C2.77083 8.31769 2.88151 8.3242 2.99219 8.3242C3.63673 8.3242 4.22266 8.10284 4.69141 7.73826C4.09245 7.72525 3.59114 7.32811 3.41536 6.78774C3.5 6.80076 3.58464 6.81379 3.66928 6.81379C3.79297 6.81379 3.88412 6.79426 4.00131 6.76171C3.37631 6.63801 2.875 6.08462 2.875 5.42057C2.875 5.41405 2.875 5.40754 2.875 5.40754C3.08334 5.50519 3.29818 5.5703 3.52604 5.57681C3.15495 5.32941 2.93359 4.91275 2.93359 4.43749C2.93359 4.19009 3.00521 3.94921 3.1224 3.74739C3.79948 4.58072 4.8086 5.12108 5.94792 5.17968C5.92188 5.08202 5.91537 4.97135 5.91537 4.86718C5.91537 4.11197 6.52735 3.5 7.28256 3.5C7.67318 3.5 8.03126 3.66275 8.27866 3.92968C8.59115 3.87108 8.88412 3.7539 9.15105 3.59764C9.04689 3.91666 8.83204 4.19009 8.54558 4.35937C8.82553 4.3203 9.08595 4.24869 9.33334 4.13802ZM11 2.875C11 1.83984 10.1602 1 9.12501 1H2.875C1.83984 1 1 1.83984 1 2.875V9.12498C1 10.1601 1.83984 11 2.875 11H9.12501C10.1602 11 11 10.1601 11 9.12498V2.875Z"></path>
+                </svg>
+                                Twitter            </a>
+                    <a class="ms-footer--nav-link" href="https://linkedin.com/company/musescore" rel="nofollow noopener" target="_blank" onclick="">
+                                <svg viewBox="0 0 12 12" class="ms-footer--icon">
+                    <path d="M2.54297 9.37241V4.85416H4.04688V9.37241H2.54297ZM4.14453 3.46093C4.14453 3.89062 3.81901 4.24218 3.29167 4.24218H3.28515C2.77735 4.24218 2.45182 3.89062 2.45182 3.46093C2.45182 3.01823 2.79037 2.67969 3.30469 2.67969C3.81901 2.67969 4.13803 3.01823 4.14453 3.46093ZM7.95314 9.37241V6.95702C7.95314 6.34504 7.73829 5.93488 7.19793 5.93488C6.78126 5.93488 6.53386 6.21483 6.42319 6.48175C6.38412 6.57941 6.37762 6.71613 6.37762 6.84634V9.37241H4.8737C4.89324 5.27734 4.8737 4.85416 4.8737 4.85416H6.37762V5.51171H6.36459C6.5599 5.1992 6.91798 4.74999 7.72527 4.74999C8.71486 4.74999 9.45705 5.39452 9.45705 6.78124V9.37241H7.95314ZM11 2.875C11 1.83984 10.1602 1 9.12501 1H2.875C1.83984 1 1 1.83984 1 2.875V9.12498C1 10.1601 1.83984 11 2.875 11H9.12501C10.1602 11 11 10.1601 11 9.12498V2.875Z"></path>
+                </svg>
+                                LinkedIn            </a>
+            </nav>
+</section>                <section class="ms-footer--section">
+    <h2 class="ms-footer--title">Content</h2>
+    <nav>
+                    <a class="ms-footer--nav-link" href="/sheetmusic?sort=view_count" rel="" target="" onclick="">
+                                Top Scores            </a>
+                    <a class="ms-footer--nav-link" href="/sheetmusic?sort=date_uploaded" rel="" target="" onclick="">
+                                New Scores            </a>
+                    <a class="ms-footer--nav-link" href="/sheetmusic/all-artists" rel="" target="" onclick="">
+                                All Artists            </a>
+                    <a class="ms-footer--nav-link" href="/sheetmusic/category-pages" rel="" target="" onclick="">
+                                Scores Categories            </a>
+                    <a class="ms-footer--nav-link" href="/courses" rel="" target="" onclick="">
+                                Courses            </a>
+            </nav>
+</section>                <div class="ms-footer--section">
+                    <div class="ms-footer--text">© 2022 MuseScore BV</div>
+                    <div class="ms-footer--caption">
+                        Kortrijksesteenweg 1126, <br>9051 Gent, <br>Belgium
+                    </div>
+                    <img class="ms-footer--billing lazyload no-src" alt="cards" data-src="https://musescore.com/static/public/img/musescore/footer_cards_ver1650877147.png"/>
+                </div>
+            </section>
+            <div id="footer-explore-app" class="ms-footer--app"></div>
+        </footer>
+            
+            
+                                            
+        <script defer src="https://musescore.com/static/public/build/polyfills/polyfills.js"></script>
+    
+                    <script defer src="https://musescore.com/static/public/build/musescore/vendor.f928a9269b4abc70fc90743c9a24c5d7.js"></script>
+        <script defer src="https://musescore.com/static/public/build/musescore/ms~runtime.b6b08d5810bd92f7de6444cba5c75ac7.js"></script>
+        <script defer src="https://musescore.com/static/public/build/musescore/ms.cf05968017a06474d27a767481137dad.js"></script>
+                                            <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                window.navigator.serviceWorker.register('/sw_mu.js').catch(function(error) {
+                    if (window.UGERROR && window.UGERROR.errors) {
+                        window.UGERROR.errors.push(error)
+                    }
+                })
+            })
+        }
+    </script>
+    
+<div
+    class="js-store"
+    data-content="{&quot;config&quot;:{&quot;releaseVer&quot;:&quot;mu-web_app_0.05.21&quot;,&quot;staticPrefix&quot;:&quot;/static&quot;,&quot;urlFacebook&quot;:&quot;&quot;,&quot;urlGoogle&quot;:&quot;&quot;,&quot;main_server&quot;:&quot;musescore.com&quot;,&quot;ug_server_name&quot;:&quot;ultimate-guitar.com&quot;,&quot;static_server&quot;:&quot;https://musescore.com/static&quot;,&quot;statik_cache&quot;:&quot;_ver1650877147&quot;,&quot;upload_server&quot;:&quot;https://upload.musescore.com&quot;,&quot;metricaId&quot;:46196364,&quot;country&quot;:&quot;ID&quot;,&quot;stripeApiKey&quot;:&quot;pk_live_0jDVKIBXIeIW27jHu1LWHNy4&quot;,&quot;is_mobile&quot;:false,&quot;captcha_id&quot;:&quot;&quot;,&quot;is_tablet&quot;:false,&quot;is_android&quot;:0,&quot;is_ios&quot;:false,&quot;isGDPRAvailable&quot;:false,&quot;isCcpaAvailable&quot;:false,&quot;hasStaticCache&quot;:false,&quot;app_url&quot;:&quot;&quot;,&quot;isWebp&quot;:true,&quot;withSSR&quot;:false,&quot;googleOneTap&quot;:{&quot;client_id&quot;:&quot;129899489146-28hqj8qdpippf2vama0sm48qqiduiovg.apps.googleusercontent.com&quot;,&quot;login_uri&quot;:&quot;https://musescore.com/user/auth/oauth/auth?service=google&amp;onetap=1&quot;},&quot;rtAnalytics&quot;:{&quot;trackUrl&quot;:&quot;/components/analytics/rt&quot;,&quot;trackingEnabled&quot;:true},&quot;countryCode&quot;:&quot;ID&quot;,&quot;os&quot;:&quot;&quot;,&quot;platform&quot;:4,&quot;browser&quot;:&quot;{\&quot;browser\&quot;:{\&quot;name\&quot;:\&quot;Go Http Client\&quot;,\&quot;version\&quot;:\&quot;2.0\&quot;},\&quot;device\&quot;:{\&quot;type\&quot;:\&quot;bot\&quot;}}&quot;,&quot;browserName&quot;:&quot;Go Http Client&quot;,&quot;metricaParams&quot;:{&quot;login&quot;:0,&quot;has_pro&quot;:0,&quot;rights&quot;:0,&quot;auth&quot;:&quot;None&quot;,&quot;ab&quot;:[]},&quot;banners&quot;:[],&quot;jinba&quot;:{&quot;appLabel&quot;:&quot;ms_search&quot;,&quot;appLabelExp&quot;:&quot;null&quot;}},&quot;store&quot;:{&quot;user&quot;:{&quot;id&quot;:0,&quot;avatarUrl&quot;:&quot;&quot;,&quot;profileUrl&quot;:&quot;&quot;,&quot;username&quot;:&quot;&quot;,&quot;email&quot;:&quot;&quot;,&quot;usergroupid&quot;:&quot;&quot;,&quot;iq&quot;:&quot;&quot;,&quot;user_status&quot;:&quot;&quot;,&quot;isDebounced&quot;:false,&quot;isPro&quot;:false,&quot;isProPlus&quot;:false,&quot;isNewUser&quot;:true,&quot;isStaff&quot;:false,&quot;isModerator&quot;:false,&quot;isObserver&quot;:false,&quot;isCopyrightManager&quot;:false,&quot;userDateCreated&quot;:0,&quot;emailFlags&quot;:[],&quot;daily_user_counter&quot;:1,&quot;isRatingDisabled&quot;:0,&quot;totalScoresCount&quot;:0,&quot;firstScoreUploadTimestamp&quot;:0,&quot;accesses&quot;:[],&quot;outdated_accesses&quot;:[]},&quot;search&quot;:{&quot;value&quot;:&quot;&quot;,&quot;activeHubId&quot;:&quot;All&quot;,&quot;hubs&quot;:{&quot;ids&quot;:[[&quot;All&quot;,&quot;Disney&quot;,&quot;Piano&quot;,&quot;Film, TV &amp; Video Games&quot;,&quot;Saxo

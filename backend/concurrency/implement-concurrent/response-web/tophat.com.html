@@ -1,0 +1,901 @@
+
+<!DOCTYPE html>
+<!-- Top Hat -->
+<html lang="en-US">
+<head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<meta name="ahrefs-site-verification" content="39f1d94c7004cd064a7a456b32dc9e4e8aacd72288daa327baf4649403ba9020">
+	<meta name="google-site-verification" content="AucGfXRBcYec9IE7gIBkB9jRpaoczKMBXlegsUg89Zg" />
+	
+
+	    <link rel="shortcut icon" href="https://tophat.com/wp-content/themes/TOPHAT01/build/images/favicons/favicon_27dcef69.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tophat.com/wp-content/themes/TOPHAT01/build/images/favicons/apple-touch-icon_4e181b57.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tophat.com/wp-content/themes/TOPHAT01/build/images/favicons/favicon-32x32_8addb980.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tophat.com/wp-content/themes/TOPHAT01/build/images/favicons/favicon-16x16_d9c67cd9.png">
+    <link rel="mask-icon" href="https://tophat.com/wp-content/themes/TOPHAT01/build/images/favicons/safari-pinned-tab_d93f25da.svg" color="#5bbad5">
+	
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+	
+    
+				<link data-minify="1" rel="stylesheet" href="https://tophat.com/wp-content/cache/min/1/wp-content/themes/TOPHAT01/build/css/main.css?ver=1648572052">
+	
+	
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WH54DX');</script>
+	<!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="//logx.optimizely.com">
+	<link rel="preload" href="//cdn.optimizely.com/js/8467131323.js" as="script" crossorigin="anonymous">
+	<link rel="preload" href="https://kit.fontawesome.com/a3d76e49a9.js" as="script">
+	
+	<!-- Optimizely Snippet -->
+	<script type="rocketlazyloadscript" src="//cdn.optimizely.com/js/8467131323.js" crossorigin="anonymous" defer></script>
+
+    <!-- Font Awesome Pro Kit -->
+    <script type="rocketlazyloadscript" src="https://kit.fontawesome.com/a3d76e49a9.js" defer></script>
+
+	<!-- Marketo Munchkin -->
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async>
+		(function() {
+		var didInit = false;
+		function initMunchkin() {
+			if(didInit === false) {
+			didInit = true;
+			Munchkin.init('566-JGI-821');
+			}
+		}
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = '//munchkin.marketo.net/munchkin.js';
+		s.onreadystatechange = function() {
+			if (this.readyState == 'complete' || this.readyState == 'loaded') {
+			initMunchkin();
+			}
+		};
+		s.onload = initMunchkin;
+		document.getElementsByTagName('head')[0].appendChild(s);
+		})();
+	</script>
+
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.4.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>The Active Learning Platform for Online, In-Person and Blended Courses | Top Hat</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&#038;display=swap" /></noscript>
+	<meta name="description" content="Get the flexibility to engage your students for free—anytime, anywhere" />
+	<link rel="canonical" href="https://tophat.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="The Active Learning Platform for Online, In-Person and Blended Courses | Top Hat" />
+	<meta property="og:description" content="Get the flexibility to engage your students for free—anytime, anywhere" />
+	<meta property="og:url" content="https://tophat.com/" />
+	<meta property="og:site_name" content="Top Hat" />
+	<meta property="article:modified_time" content="2021-09-14T21:32:54+00:00" />
+	<meta property="og:image" content="https://tophat.com/wp-content/uploads/Meta-Card_Homepage.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="628" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tophat.com/#organization","name":"Top Hat","url":"https://tophat.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://tophat.com/#logo","inLanguage":"en-US","url":"https://tophat.com/wp-content/uploads/2017/05/tophat.png","contentUrl":"https://tophat.com/wp-content/uploads/2017/05/tophat.png","width":400,"height":400,"caption":"Top Hat"},"image":{"@id":"https://tophat.com/#logo"}},{"@type":"WebSite","@id":"https://tophat.com/#website","url":"https://tophat.com/","name":"Top Hat","description":"Top Hat - Higher Ed Apps for Classroom Response, OER &amp; Assessment","publisher":{"@id":"https://tophat.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tophat.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://tophat.com/#primaryimage","inLanguage":"en-US","url":"https://tophat.com/wp-content/uploads/Meta-Card_Homepage.jpg","contentUrl":"https://tophat.com/wp-content/uploads/Meta-Card_Homepage.jpg","width":1200,"height":628,"caption":"Active Learning. From Anywhere."},{"@type":"WebPage","@id":"https://tophat.com/#webpage","url":"https://tophat.com/","name":"The Active Learning Platform for Online, In-Person and Blended Courses | Top Hat","isPartOf":{"@id":"https://tophat.com/#website"},"about":{"@id":"https://tophat.com/#organization"},"primaryImageOfPage":{"@id":"https://tophat.com/#primaryimage"},"datePublished":"2018-10-11T13:35:57+00:00","dateModified":"2021-09-14T21:32:54+00:00","description":"Get the flexibility to engage your students for free—anytime, anywhere","breadcrumb":{"@id":"https://tophat.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tophat.com/"]}]},{"@type":"BreadcrumbList","@id":"https://tophat.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link data-minify="1" rel='stylesheet' id='editor_plus-plugin-frontend-style-css'  href='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/dist/style-gutenberg-frontend-style.css?ver=1649170127' type='text/css' media='' />
+<style id='editor_plus-plugin-frontend-style-inline-css' type='text/css'>
+
+    @font-face {
+      font-family: 'eplus-icon';
+      src: url('https://tophat.com/wp-content/plugins/editorplus/extensions/icon-inserter/fonts/eplus-icon.eot?xs1351');
+      src: url('https://tophat.com/wp-content/plugins/editorplus/extensions/icon-inserter/fonts/eplus-icon.eot?xs1351#iefix')
+          format('embedded-opentype'),
+        url('https://tophat.com/wp-content/plugins/editorplus/extensions/icon-inserter/fonts/eplus-icon.ttf?xs1351') format('truetype'),
+        url('https://tophat.com/wp-content/plugins/editorplus/extensions/icon-inserter/fonts/eplus-icon.woff?xs1351') format('woff'),
+        url('https://tophat.com/wp-content/plugins/editorplus/extensions/icon-inserter/fonts/eplus-icon.svg?xs1351#eplus-icon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='https://tophat.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<style id='extendify-gutenberg-patterns-and-templates-utilities-inline-css' type='text/css'>
+.ext-absolute{position:absolute!important}.ext-relative{position:relative!important}.ext-top-base{top:var(--wp--style--block-gap,1.75rem)!important}.ext-top-lg{top:var(--extendify--spacing--large)!important}.ext--top-base{top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--top-lg{top:calc(var(--extendify--spacing--large)*-1)!important}.ext-right-base{right:var(--wp--style--block-gap,1.75rem)!important}.ext-right-lg{right:var(--extendify--spacing--large)!important}.ext--right-base{right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--right-lg{right:calc(var(--extendify--spacing--large)*-1)!important}.ext-bottom-base{bottom:var(--wp--style--block-gap,1.75rem)!important}.ext-bottom-lg{bottom:var(--extendify--spacing--large)!important}.ext--bottom-base{bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--bottom-lg{bottom:calc(var(--extendify--spacing--large)*-1)!important}.ext-left-base{left:var(--wp--style--block-gap,1.75rem)!important}.ext-left-lg{left:var(--extendify--spacing--large)!important}.ext--left-base{left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--left-lg{left:calc(var(--extendify--spacing--large)*-1)!important}.ext-order-1{order:1!important}.ext-order-2{order:2!important}.ext-col-auto{grid-column:auto!important}.ext-col-span-1{grid-column:span 1/span 1!important}.ext-col-span-2{grid-column:span 2/span 2!important}.ext-col-span-3{grid-column:span 3/span 3!important}.ext-col-span-4{grid-column:span 4/span 4!important}.ext-col-span-5{grid-column:span 5/span 5!important}.ext-col-span-6{grid-column:span 6/span 6!important}.ext-col-span-7{grid-column:span 7/span 7!important}.ext-col-span-8{grid-column:span 8/span 8!important}.ext-col-span-9{grid-column:span 9/span 9!important}.ext-col-span-10{grid-column:span 10/span 10!important}.ext-col-span-11{grid-column:span 11/span 11!important}.ext-col-span-12{grid-column:span 12/span 12!important}.ext-col-span-full{grid-column:1/-1!important}.ext-col-start-1{grid-column-start:1!important}.ext-col-start-2{grid-column-start:2!important}.ext-col-start-3{grid-column-start:3!important}.ext-col-start-4{grid-column-start:4!important}.ext-col-start-5{grid-column-start:5!important}.ext-col-start-6{grid-column-start:6!important}.ext-col-start-7{grid-column-start:7!important}.ext-col-start-8{grid-column-start:8!important}.ext-col-start-9{grid-column-start:9!important}.ext-col-start-10{grid-column-start:10!important}.ext-col-start-11{grid-column-start:11!important}.ext-col-start-12{grid-column-start:12!important}.ext-col-start-13{grid-column-start:13!important}.ext-col-start-auto{grid-column-start:auto!important}.ext-col-end-1{grid-column-end:1!important}.ext-col-end-2{grid-column-end:2!important}.ext-col-end-3{grid-column-end:3!important}.ext-col-end-4{grid-column-end:4!important}.ext-col-end-5{grid-column-end:5!important}.ext-col-end-6{grid-column-end:6!important}.ext-col-end-7{grid-column-end:7!important}.ext-col-end-8{grid-column-end:8!important}.ext-col-end-9{grid-column-end:9!important}.ext-col-end-10{grid-column-end:10!important}.ext-col-end-11{grid-column-end:11!important}.ext-col-end-12{grid-column-end:12!important}.ext-col-end-13{grid-column-end:13!important}.ext-col-end-auto{grid-column-end:auto!important}.ext-row-auto{grid-row:auto!important}.ext-row-span-1{grid-row:span 1/span 1!important}.ext-row-span-2{grid-row:span 2/span 2!important}.ext-row-span-3{grid-row:span 3/span 3!important}.ext-row-span-4{grid-row:span 4/span 4!important}.ext-row-span-5{grid-row:span 5/span 5!important}.ext-row-span-6{grid-row:span 6/span 6!important}.ext-row-span-full{grid-row:1/-1!important}.ext-row-start-1{grid-row-start:1!important}.ext-row-start-2{grid-row-start:2!important}.ext-row-start-3{grid-row-start:3!important}.ext-row-start-4{grid-row-start:4!important}.ext-row-start-5{grid-row-start:5!important}.ext-row-start-6{grid-row-start:6!important}.ext-row-start-7{grid-row-start:7!important}.ext-row-start-auto{grid-row-start:auto!important}.ext-row-end-1{grid-row-end:1!important}.ext-row-end-2{grid-row-end:2!important}.ext-row-end-3{grid-row-end:3!important}.ext-row-end-4{grid-row-end:4!important}.ext-row-end-5{grid-row-end:5!important}.ext-row-end-6{grid-row-end:6!important}.ext-row-end-7{grid-row-end:7!important}.ext-row-end-auto{grid-row-end:auto!important}.ext-m-0:not([style*=margin]){margin:0!important}.ext-m-auto:not([style*=margin]){margin:auto!important}.ext-m-base:not([style*=margin]){margin:var(--wp--style--block-gap,1.75rem)!important}.ext-m-lg:not([style*=margin]){margin:var(--extendify--spacing--large)!important}.ext--m-base:not([style*=margin]){margin:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--m-lg:not([style*=margin]){margin:calc(var(--extendify--spacing--large)*-1)!important}.ext-mx-0:not([style*=margin]){margin-left:0!important;margin-right:0!important}.ext-mx-auto:not([style*=margin]){margin-left:auto!important;margin-right:auto!important}.ext-mx-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important;margin-right:var(--wp--style--block-gap,1.75rem)!important}.ext-mx-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important;margin-right:var(--extendify--spacing--large)!important}.ext--mx-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--mx-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important;margin-right:calc(var(--extendify--spacing--large)*-1)!important}.ext-my-0:not([style*=margin]){margin-bottom:0!important;margin-top:0!important}.ext-my-auto:not([style*=margin]){margin-bottom:auto!important;margin-top:auto!important}.ext-my-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important;margin-top:var(--wp--style--block-gap,1.75rem)!important}.ext-my-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important;margin-top:var(--extendify--spacing--large)!important}.ext--my-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--my-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important;margin-top:calc(var(--extendify--spacing--large)*-1)!important}.ext-mt-0:not([style*=margin]){margin-top:0!important}.ext-mt-auto:not([style*=margin]){margin-top:auto!important}.ext-mt-base:not([style*=margin]){margin-top:var(--wp--style--block-gap,1.75rem)!important}.ext-mt-lg:not([style*=margin]){margin-top:var(--extendify--spacing--large)!important}.ext--mt-base:not([style*=margin]){margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--mt-lg:not([style*=margin]){margin-top:calc(var(--extendify--spacing--large)*-1)!important}.ext-mr-0:not([style*=margin]){margin-right:0!important}.ext-mr-auto:not([style*=margin]){margin-right:auto!important}.ext-mr-base:not([style*=margin]){margin-right:var(--wp--style--block-gap,1.75rem)!important}.ext-mr-lg:not([style*=margin]){margin-right:var(--extendify--spacing--large)!important}.ext--mr-base:not([style*=margin]){margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--mr-lg:not([style*=margin]){margin-right:calc(var(--extendify--spacing--large)*-1)!important}.ext-mb-0:not([style*=margin]){margin-bottom:0!important}.ext-mb-auto:not([style*=margin]){margin-bottom:auto!important}.ext-mb-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important}.ext-mb-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important}.ext--mb-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--mb-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important}.ext-ml-0:not([style*=margin]){margin-left:0!important}.ext-ml-auto:not([style*=margin]){margin-left:auto!important}.ext-ml-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important}.ext-ml-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important}.ext--ml-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.ext--ml-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important}.ext-block{display:block!important}.ext-inline-block{display:inline-block!important}.ext-inline{display:inline!important}.ext-flex{display:flex!important}.ext-inline-flex{display:inline-flex!important}.ext-grid{display:grid!important}.ext-inline-grid{display:inline-grid!important}.ext-hidden{display:none!important}.ext-w-auto{width:auto!important}.ext-w-full{width:100%!important}.ext-max-w-full{max-width:100%!important}.ext-flex-1{flex:1 1 0%!important}.ext-flex-auto{flex:1 1 auto!important}.ext-flex-initial{flex:0 1 auto!important}.ext-flex-none{flex:none!important}.ext-flex-shrink-0{flex-shrink:0!important}.ext-flex-shrink{flex-shrink:1!important}.ext-flex-grow-0{flex-grow:0!important}.ext-flex-grow{flex-grow:1!important}.ext-list-none{list-style-type:none!important}.ext-grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))!important}.ext-grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.ext-grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.ext-grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))!important}.ext-grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}.ext-grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))!important}.ext-grid-cols-7{grid-template-columns:repeat(7,minmax(0,1fr))!important}.ext-grid-cols-8{grid-template-columns:repeat(8,minmax(0,1fr))!important}.ext-grid-cols-9{grid-template-columns:repeat(9,minmax(0,1fr))!important}.ext-grid-cols-10{grid-template-columns:repeat(10,minmax(0,1fr))!important}.ext-grid-cols-11{grid-template-columns:repeat(11,minmax(0,1fr))!important}.ext-grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))!important}.ext-grid-cols-none{grid-template-columns:none!important}.ext-grid-rows-1{grid-template-rows:repeat(1,minmax(0,1fr))!important}.ext-grid-rows-2{grid-template-rows:repeat(2,minmax(0,1fr))!important}.ext-grid-rows-3{grid-template-rows:repeat(3,minmax(0,1fr))!important}.ext-grid-rows-4{grid-template-rows:repeat(4,minmax(0,1fr))!important}.ext-grid-rows-5{grid-template-rows:repeat(5,minmax(0,1fr))!important}.ext-grid-rows-6{grid-template-rows:repeat(6,minmax(0,1fr))!important}.ext-grid-rows-none{grid-template-rows:none!important}.ext-flex-row{flex-direction:row!important}.ext-flex-row-reverse{flex-direction:row-reverse!important}.ext-flex-col{flex-direction:column!important}.ext-flex-col-reverse{flex-direction:column-reverse!important}.ext-flex-wrap{flex-wrap:wrap!important}.ext-flex-wrap-reverse{flex-wrap:wrap-reverse!important}.ext-flex-nowrap{flex-wrap:nowrap!important}.ext-items-start{align-items:flex-start!important}.ext-items-end{align-items:flex-end!important}.ext-items-center{align-items:center!important}.ext-items-baseline{align-items:baseline!important}.ext-items-stretch{align-items:stretch!important}.ext-justify-start{justify-content:flex-start!important}.ext-justify-end{justify-content:flex-end!important}.ext-justify-center{justify-content:center!important}.ext-justify-between{justify-content:space-between!important}.ext-justify-around{justify-content:space-around!important}.ext-justify-evenly{justify-content:space-evenly!important}.ext-justify-items-start{justify-items:start!important}.ext-justify-items-end{justify-items:end!important}.ext-justify-items-center{justify-items:center!important}.ext-justify-items-stretch{justify-items:stretch!important}.ext-gap-0{gap:0!important}.ext-gap-base{gap:var(--wp--style--block-gap,1.75rem)!important}.ext-gap-lg{gap:var(--extendify--spacing--large)!important}.ext-gap-x-0{-moz-column-gap:0!important;column-gap:0!important}.ext-gap-x-base{-moz-column-gap:var(--wp--style--block-gap,1.75rem)!important;column-gap:var(--wp--style--block-gap,1.75rem)!important}.ext-gap-x-lg{-moz-column-gap:var(--extendify--spacing--large)!important;column-gap:var(--extendify--spacing--large)!important}.ext-gap-y-0{row-gap:0!important}.ext-gap-y-base{row-gap:var(--wp--style--block-gap,1.75rem)!important}.ext-gap-y-lg{row-gap:var(--extendify--spacing--large)!important}.ext-justify-self-auto{justify-self:auto!important}.ext-justify-self-start{justify-self:start!important}.ext-justify-self-end{justify-self:end!important}.ext-justify-self-center{justify-self:center!important}.ext-justify-self-stretch{justify-self:stretch!important}.ext-rounded-none{border-radius:0!important}.ext-rounded-full{border-radius:9999px!important}.ext-rounded-t-none{border-top-left-radius:0!important;border-top-right-radius:0!important}.ext-rounded-t-full{border-top-left-radius:9999px!important;border-top-right-radius:9999px!important}.ext-rounded-r-none{border-bottom-right-radius:0!important;border-top-right-radius:0!important}.ext-rounded-r-full{border-bottom-right-radius:9999px!important;border-top-right-radius:9999px!important}.ext-rounded-b-none{border-bottom-left-radius:0!important;border-bottom-right-radius:0!important}.ext-rounded-b-full{border-bottom-left-radius:9999px!important;border-bottom-right-radius:9999px!important}.ext-rounded-l-none{border-bottom-left-radius:0!important;border-top-left-radius:0!important}.ext-rounded-l-full{border-bottom-left-radius:9999px!important;border-top-left-radius:9999px!important}.ext-rounded-tl-none{border-top-left-radius:0!important}.ext-rounded-tl-full{border-top-left-radius:9999px!important}.ext-rounded-tr-none{border-top-right-radius:0!important}.ext-rounded-tr-full{border-top-right-radius:9999px!important}.ext-rounded-br-none{border-bottom-right-radius:0!important}.ext-rounded-br-full{border-bottom-right-radius:9999px!important}.ext-rounded-bl-none{border-bottom-left-radius:0!important}.ext-rounded-bl-full{border-bottom-left-radius:9999px!important}.ext-border-0{border-width:0!important}.ext-border-t-0{border-top-width:0!important}.ext-border-r-0{border-right-width:0!important}.ext-border-b-0{border-bottom-width:0!important}.ext-border-l-0{border-left-width:0!important}.ext-p-0:not([style*=padding]){padding:0!important}.ext-p-base:not([style*=padding]){padding:var(--wp--style--block-gap,1.75rem)!important}.ext-p-lg:not([style*=padding]){padding:var(--extendify--spacing--large)!important}.ext-px-0:not([style*=padding]){padding-left:0!important;padding-right:0!important}.ext-px-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important;padding-right:var(--wp--style--block-gap,1.75rem)!important}.ext-px-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important;padding-right:var(--extendify--spacing--large)!important}.ext-py-0:not([style*=padding]){padding-bottom:0!important;padding-top:0!important}.ext-py-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important;padding-top:var(--wp--style--block-gap,1.75rem)!important}.ext-py-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important;padding-top:var(--extendify--spacing--large)!important}.ext-pt-0:not([style*=padding]){padding-top:0!important}.ext-pt-base:not([style*=padding]){padding-top:var(--wp--style--block-gap,1.75rem)!important}.ext-pt-lg:not([style*=padding]){padding-top:var(--extendify--spacing--large)!important}.ext-pr-0:not([style*=padding]){padding-right:0!important}.ext-pr-base:not([style*=padding]){padding-right:var(--wp--style--block-gap,1.75rem)!important}.ext-pr-lg:not([style*=padding]){padding-right:var(--extendify--spacing--large)!important}.ext-pb-0:not([style*=padding]){padding-bottom:0!important}.ext-pb-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important}.ext-pb-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important}.ext-pl-0:not([style*=padding]){padding-left:0!important}.ext-pl-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important}.ext-pl-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important}.ext-text-left{text-align:left!important}.ext-text-center{text-align:center!important}.ext-text-right{text-align:right!important}.ext-leading-none{line-height:1!important}.ext-leading-tight{line-height:1.25!important}.ext-leading-snug{line-height:1.375!important}.ext-leading-normal{line-height:1.5!important}.ext-leading-relaxed{line-height:1.625!important}.ext-leading-loose{line-height:2!important}.clip-path--rhombus img{-webkit-clip-path:polygon(15% 6%,80% 29%,84% 93%,23% 69%);clip-path:polygon(15% 6%,80% 29%,84% 93%,23% 69%)}.clip-path--diamond img{-webkit-clip-path:polygon(5% 29%,60% 2%,91% 64%,36% 89%);clip-path:polygon(5% 29%,60% 2%,91% 64%,36% 89%)}.clip-path--rhombus-alt img{-webkit-clip-path:polygon(14% 9%,85% 24%,91% 89%,19% 76%);clip-path:polygon(14% 9%,85% 24%,91% 89%,19% 76%)}.wp-block-columns[class*=fullwidth-cols]{margin-bottom:unset}.wp-block-column.editor\:pointer-events-none{margin-bottom:0!important;margin-top:0!important}.is-root-container.block-editor-block-list__layout>[data-align=full]:not(:first-of-type)>.wp-block-column.editor\:pointer-events-none,.is-root-container.block-editor-block-list__layout>[data-align=wide]>.wp-block-column.editor\:pointer-events-none{margin-top:calc(var(--wp--style--block-gap, 28px)*-1)!important}.ext .wp-block-columns .wp-block-column[style*=padding]{padding-left:0!important;padding-right:0!important}.ext .wp-block-columns+.wp-block-columns:not([class*=mt-]):not([class*=my-]):not([style*=margin]){margin-top:0!important}[class*=fullwidth-cols] .wp-block-column:first-child,[class*=fullwidth-cols] .wp-block-group:first-child{margin-top:0}[class*=fullwidth-cols] .wp-block-column:last-child,[class*=fullwidth-cols] .wp-block-group:last-child{margin-bottom:0}[class*=fullwidth-cols] .wp-block-column:first-child>*,[class*=fullwidth-cols] .wp-block-column>:first-child{margin-top:0}.ext .is-not-stacked-on-mobile .wp-block-column,[class*=fullwidth-cols] .wp-block-column>:last-child{margin-bottom:0}.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child){margin-bottom:var(--wp--style--block-gap,1.75rem)}@media (min-width:782px){.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child){margin-bottom:0}}.wp-block-columns[class*=fullwidth-cols].is-not-stacked-on-mobile>.wp-block-column{margin-bottom:0!important}@media (min-width:600px) and (max-width:781px){.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:nth-child(2n){margin-left:var(--wp--style--block-gap,2em)}}@media (max-width:781px){.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile){flex-wrap:wrap}.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column,.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not([style*=margin]){margin-left:0!important}.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (max-width:1079px){.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile){flex-wrap:wrap}.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column,.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not([style*=margin]){margin-left:0!important}.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child){margin-bottom:var(--wp--style--block-gap,1.75rem)!important}}.direction-rtl{direction:rtl}.direction-ltr{direction:ltr}.is-style-inline-list{padding-left:0!important}.is-style-inline-list li{list-style-type:none!important}@media (min-width:782px){.is-style-inline-list li{display:inline!important;margin-right:var(--wp--style--block-gap,1.75rem)!important}}@media (min-width:782px){.is-style-inline-list li:first-child{margin-left:0!important}}@media (min-width:782px){.is-style-inline-list li:last-child{margin-right:0!important}}.bring-to-front{position:relative;z-index:10}.text-stroke{-webkit-text-stroke-color:var(--wp--preset--color--background)}.text-stroke,.text-stroke--primary{-webkit-text-stroke-width:var(
+        --wp--custom--typography--text-stroke-width,2px
+    )}.text-stroke--primary{-webkit-text-stroke-color:var(--wp--preset--color--primary)}.text-stroke--secondary{-webkit-text-stroke-width:var(
+        --wp--custom--typography--text-stroke-width,2px
+    );-webkit-text-stroke-color:var(--wp--preset--color--secondary)}.editor\:no-caption .block-editor-rich-text__editable{display:none!important}.editor\:no-inserter .wp-block-column:not(.is-selected)>.block-list-appender,.editor\:no-inserter .wp-block-cover__inner-container>.block-list-appender,.editor\:no-inserter .wp-block-group__inner-container>.block-list-appender,.editor\:no-inserter>.block-list-appender{display:none}.editor\:no-resize .components-resizable-box__handle,.editor\:no-resize .components-resizable-box__handle:after,.editor\:no-resize .components-resizable-box__side-handle:before{display:none;pointer-events:none}.editor\:no-resize .components-resizable-box__container{display:block}.editor\:pointer-events-none{pointer-events:none}.is-style-angled{justify-content:flex-end}.ext .is-style-angled>[class*=_inner-container],.is-style-angled{align-items:center}.is-style-angled .wp-block-cover__image-background,.is-style-angled .wp-block-cover__video-background{-webkit-clip-path:polygon(0 0,30% 0,50% 100%,0 100%);clip-path:polygon(0 0,30% 0,50% 100%,0 100%);z-index:1}@media (min-width:782px){.is-style-angled .wp-block-cover__image-background,.is-style-angled .wp-block-cover__video-background{-webkit-clip-path:polygon(0 0,55% 0,65% 100%,0 100%);clip-path:polygon(0 0,55% 0,65% 100%,0 100%)}}.has-foreground-color{color:var(--wp--preset--color--foreground,#000)!important}.has-foreground-background-color{background-color:var(--wp--preset--color--foreground,#000)!important}.has-background-color{color:var(--wp--preset--color--background,#fff)!important}.has-background-background-color{background-color:var(--wp--preset--color--background,#fff)!important}.has-primary-color{color:var(--wp--preset--color--primary,#4b5563)!important}.has-primary-background-color{background-color:var(--wp--preset--color--primary,#4b5563)!important}.has-secondary-color{color:var(--wp--preset--color--secondary,#9ca3af)!important}.has-secondary-background-color{background-color:var(--wp--preset--color--secondary,#9ca3af)!important}.ext.has-text-color h1,.ext.has-text-color h2,.ext.has-text-color h3,.ext.has-text-color h4,.ext.has-text-color h5,.ext.has-text-color h6,.ext.has-text-color p{color:currentColor}.has-white-color{color:var(--wp--preset--color--white,#fff)!important}.has-black-color{color:var(--wp--preset--color--black,#000)!important}.has-ext-foreground-background-color{background-color:var(
+        --wp--preset--color--foreground,var(--wp--preset--color--black,#000)
+    )!important}.has-ext-primary-background-color{background-color:var(
+        --wp--preset--color--primary,var(--wp--preset--color--cyan-bluish-gray,#000)
+    )!important}.wp-block-button__link.has-black-background-color{border-color:var(--wp--preset--color--black,#000)}.wp-block-button__link.has-white-background-color{border-color:var(--wp--preset--color--white,#fff)}.has-ext-small-font-size{font-size:var(--wp--preset--font-size--ext-small)!important}.has-ext-medium-font-size{font-size:var(--wp--preset--font-size--ext-medium)!important}.has-ext-large-font-size{font-size:var(--wp--preset--font-size--ext-large)!important;line-height:1.2}.has-ext-x-large-font-size{font-size:var(--wp--preset--font-size--ext-x-large)!important;line-height:1}.has-ext-xx-large-font-size{font-size:var(--wp--preset--font-size--ext-xx-large)!important;line-height:1}.has-ext-x-large-font-size:not([style*=line-height]),.has-ext-xx-large-font-size:not([style*=line-height]){line-height:1.1}.ext .wp-block-group>*{margin-bottom:0;margin-top:0}.ext .wp-block-group>*+*{margin-bottom:0}.ext .wp-block-group>*+*,.ext h2{margin-top:var(--wp--style--block-gap,1.75rem)}.ext h2{margin-bottom:var(--wp--style--block-gap,1.75rem)}.has-ext-x-large-font-size+h3,.has-ext-x-large-font-size+p{margin-top:.5rem}.ext .wp-block-buttons>.wp-block-button.wp-block-button__width-25{min-width:12rem;width:calc(25% - var(--wp--style--block-gap, .5em)*.75)}.ext .ext-grid>[class*=_inner-container]{display:grid}.ext>[class*=_inner-container]>.ext-grid:not([class*=columns]),.ext>[class*=_inner-container]>.wp-block>.ext-grid:not([class*=columns]){display:initial!important}.ext .ext-grid-cols-1>[class*=_inner-container]{grid-template-columns:repeat(1,minmax(0,1fr))!important}.ext .ext-grid-cols-2>[class*=_inner-container]{grid-template-columns:repeat(2,minmax(0,1fr))!important}.ext .ext-grid-cols-3>[class*=_inner-container]{grid-template-columns:repeat(3,minmax(0,1fr))!important}.ext .ext-grid-cols-4>[class*=_inner-container]{grid-template-columns:repeat(4,minmax(0,1fr))!important}.ext .ext-grid-cols-5>[class*=_inner-container]{grid-template-columns:repeat(5,minmax(0,1fr))!important}.ext .ext-grid-cols-6>[class*=_inner-container]{grid-template-columns:repeat(6,minmax(0,1fr))!important}.ext .ext-grid-cols-7>[class*=_inner-container]{grid-template-columns:repeat(7,minmax(0,1fr))!important}.ext .ext-grid-cols-8>[class*=_inner-container]{grid-template-columns:repeat(8,minmax(0,1fr))!important}.ext .ext-grid-cols-9>[class*=_inner-container]{grid-template-columns:repeat(9,minmax(0,1fr))!important}.ext .ext-grid-cols-10>[class*=_inner-container]{grid-template-columns:repeat(10,minmax(0,1fr))!important}.ext .ext-grid-cols-11>[class*=_inner-container]{grid-template-columns:repeat(11,minmax(0,1fr))!important}.ext .ext-grid-cols-12>[class*=_inner-container]{grid-template-columns:repeat(12,minmax(0,1fr))!important}.ext .ext-grid-cols-13>[class*=_inner-container]{grid-template-columns:repeat(13,minmax(0,1fr))!important}.ext .ext-grid-cols-none>[class*=_inner-container]{grid-template-columns:none!important}.ext .ext-grid-rows-1>[class*=_inner-container]{grid-template-rows:repeat(1,minmax(0,1fr))!important}.ext .ext-grid-rows-2>[class*=_inner-container]{grid-template-rows:repeat(2,minmax(0,1fr))!important}.ext .ext-grid-rows-3>[class*=_inner-container]{grid-template-rows:repeat(3,minmax(0,1fr))!important}.ext .ext-grid-rows-4>[class*=_inner-container]{grid-template-rows:repeat(4,minmax(0,1fr))!important}.ext .ext-grid-rows-5>[class*=_inner-container]{grid-template-rows:repeat(5,minmax(0,1fr))!important}.ext .ext-grid-rows-6>[class*=_inner-container]{grid-template-rows:repeat(6,minmax(0,1fr))!important}.ext .ext-grid-rows-none>[class*=_inner-container]{grid-template-rows:none!important}.ext .ext-items-start>[class*=_inner-container]{align-items:flex-start!important}.ext .ext-items-end>[class*=_inner-container]{align-items:flex-end!important}.ext .ext-items-center>[class*=_inner-container]{align-items:center!important}.ext .ext-items-baseline>[class*=_inner-container]{align-items:baseline!important}.ext .ext-items-stretch>[class*=_inner-container]{align-items:stretch!important}.ext.wp-block-group>:last-child{margin-bottom:0}.ext .wp-block-group__inner-container{padding:0!important}.ext.has-background{padding-left:var(--wp--style--block-gap,1.75rem);padding-right:var(--wp--style--block-gap,1.75rem)}.ext [class*=inner-container]>.alignwide [class*=inner-container],.ext [class*=inner-container]>[data-align=wide] [class*=inner-container]{max-width:var(--responsive--alignwide-width,120rem)}.ext [class*=inner-container]>.alignwide [class*=inner-container]>*,.ext [class*=inner-container]>[data-align=wide] [class*=inner-container]>*{max-width:100%!important}.ext .wp-block-image{position:relative;text-align:center}.ext .wp-block-image img{display:inline-block;vertical-align:middle}body{--extendify--spacing--large:var(
+        --wp--custom--spacing--large,clamp(2em,8vw,8em)
+    );--wp--preset--font-size--ext-small:1rem;--wp--preset--font-size--ext-medium:1.125rem;--wp--preset--font-size--ext-large:clamp(1.65rem,3.5vw,2.15rem);--wp--preset--font-size--ext-x-large:clamp(3rem,6vw,4.75rem);--wp--preset--font-size--ext-xx-large:clamp(3.25rem,7.5vw,5.75rem);--wp--preset--color--black:#000;--wp--preset--color--white:#fff}.ext *{box-sizing:border-box}.block-editor-block-preview__content-iframe .ext [data-type="core/spacer"] .components-resizable-box__container{background:transparent!important}.block-editor-block-preview__content-iframe .ext [data-type="core/spacer"] .block-library-spacer__resize-container:before{display:none!important}.ext .wp-block-group__inner-container figure.wp-block-gallery.alignfull{margin-bottom:unset;margin-top:unset}.ext .alignwide{margin-left:auto!important;margin-right:auto!important}.is-root-container.block-editor-block-list__layout>[data-align=full]:not(:first-of-type)>.ext-my-0,.is-root-container.block-editor-block-list__layout>[data-align=wide]>.ext-my-0:not([style*=margin]){margin-top:calc(var(--wp--style--block-gap, 28px)*-1)!important}.block-editor-block-preview__content-iframe .preview\:min-h-50{min-height:50vw!important}.block-editor-block-preview__content-iframe .preview\:min-h-60{min-height:60vw!important}.block-editor-block-preview__content-iframe .preview\:min-h-70{min-height:70vw!important}.block-editor-block-preview__content-iframe .preview\:min-h-80{min-height:80vw!important}.block-editor-block-preview__content-iframe .preview\:min-h-100{min-height:100vw!important}.ext-mr-0.alignfull:not([style*=margin]):not([style*=margin]){margin-right:0!important}.ext-ml-0:not([style*=margin]):not([style*=margin]){margin-left:0!important}.is-root-container .wp-block[data-align=full]>.ext-mx-0:not([style*=margin]):not([style*=margin]){margin-left:calc(var(--wp--custom--spacing--outer, 0)*1)!important;margin-right:calc(var(--wp--custom--spacing--outer, 0)*1)!important;overflow:hidden;width:unset}@media (min-width:782px){.tablet\:ext-absolute{position:absolute!important}.tablet\:ext-relative{position:relative!important}.tablet\:ext-top-base{top:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-top-lg{top:var(--extendify--spacing--large)!important}.tablet\:ext--top-base{top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--top-lg{top:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-right-base{right:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-right-lg{right:var(--extendify--spacing--large)!important}.tablet\:ext--right-base{right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--right-lg{right:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-bottom-base{bottom:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-bottom-lg{bottom:var(--extendify--spacing--large)!important}.tablet\:ext--bottom-base{bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--bottom-lg{bottom:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-left-base{left:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-left-lg{left:var(--extendify--spacing--large)!important}.tablet\:ext--left-base{left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--left-lg{left:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-order-1{order:1!important}.tablet\:ext-order-2{order:2!important}.tablet\:ext-m-0:not([style*=margin]){margin:0!important}.tablet\:ext-m-auto:not([style*=margin]){margin:auto!important}.tablet\:ext-m-base:not([style*=margin]){margin:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-m-lg:not([style*=margin]){margin:var(--extendify--spacing--large)!important}.tablet\:ext--m-base:not([style*=margin]){margin:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--m-lg:not([style*=margin]){margin:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-mx-0:not([style*=margin]){margin-left:0!important;margin-right:0!important}.tablet\:ext-mx-auto:not([style*=margin]){margin-left:auto!important;margin-right:auto!important}.tablet\:ext-mx-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important;margin-right:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-mx-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important;margin-right:var(--extendify--spacing--large)!important}.tablet\:ext--mx-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--mx-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important;margin-right:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-my-0:not([style*=margin]){margin-bottom:0!important;margin-top:0!important}.tablet\:ext-my-auto:not([style*=margin]){margin-bottom:auto!important;margin-top:auto!important}.tablet\:ext-my-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important;margin-top:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-my-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important;margin-top:var(--extendify--spacing--large)!important}.tablet\:ext--my-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--my-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important;margin-top:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-mt-0:not([style*=margin]){margin-top:0!important}.tablet\:ext-mt-auto:not([style*=margin]){margin-top:auto!important}.tablet\:ext-mt-base:not([style*=margin]){margin-top:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-mt-lg:not([style*=margin]){margin-top:var(--extendify--spacing--large)!important}.tablet\:ext--mt-base:not([style*=margin]){margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--mt-lg:not([style*=margin]){margin-top:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-mr-0:not([style*=margin]){margin-right:0!important}.tablet\:ext-mr-auto:not([style*=margin]){margin-right:auto!important}.tablet\:ext-mr-base:not([style*=margin]){margin-right:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-mr-lg:not([style*=margin]){margin-right:var(--extendify--spacing--large)!important}.tablet\:ext--mr-base:not([style*=margin]){margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--mr-lg:not([style*=margin]){margin-right:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-mb-0:not([style*=margin]){margin-bottom:0!important}.tablet\:ext-mb-auto:not([style*=margin]){margin-bottom:auto!important}.tablet\:ext-mb-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-mb-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important}.tablet\:ext--mb-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--mb-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-ml-0:not([style*=margin]){margin-left:0!important}.tablet\:ext-ml-auto:not([style*=margin]){margin-left:auto!important}.tablet\:ext-ml-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-ml-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important}.tablet\:ext--ml-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.tablet\:ext--ml-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important}.tablet\:ext-block{display:block!important}.tablet\:ext-inline-block{display:inline-block!important}.tablet\:ext-inline{display:inline!important}.tablet\:ext-flex{display:flex!important}.tablet\:ext-inline-flex{display:inline-flex!important}.tablet\:ext-grid{display:grid!important}.tablet\:ext-inline-grid{display:inline-grid!important}.tablet\:ext-hidden{display:none!important}.tablet\:ext-w-auto{width:auto!important}.tablet\:ext-w-full{width:100%!important}.tablet\:ext-max-w-full{max-width:100%!important}.tablet\:ext-flex-1{flex:1 1 0%!important}.tablet\:ext-flex-auto{flex:1 1 auto!important}.tablet\:ext-flex-initial{flex:0 1 auto!important}.tablet\:ext-flex-none{flex:none!important}.tablet\:ext-flex-shrink-0{flex-shrink:0!important}.tablet\:ext-flex-shrink{flex-shrink:1!important}.tablet\:ext-flex-grow-0{flex-grow:0!important}.tablet\:ext-flex-grow{flex-grow:1!important}.tablet\:ext-list-none{list-style-type:none!important}.tablet\:ext-grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))!important}.tablet\:ext-grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.tablet\:ext-grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.tablet\:ext-grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))!important}.tablet\:ext-grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}.tablet\:ext-grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))!important}.tablet\:ext-grid-cols-7{grid-template-columns:repeat(7,minmax(0,1fr))!important}.tablet\:ext-grid-cols-8{grid-template-columns:repeat(8,minmax(0,1fr))!important}.tablet\:ext-grid-cols-9{grid-template-columns:repeat(9,minmax(0,1fr))!important}.tablet\:ext-grid-cols-10{grid-template-columns:repeat(10,minmax(0,1fr))!important}.tablet\:ext-grid-cols-11{grid-template-columns:repeat(11,minmax(0,1fr))!important}.tablet\:ext-grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))!important}.tablet\:ext-grid-cols-none{grid-template-columns:none!important}.tablet\:ext-flex-row{flex-direction:row!important}.tablet\:ext-flex-row-reverse{flex-direction:row-reverse!important}.tablet\:ext-flex-col{flex-direction:column!important}.tablet\:ext-flex-col-reverse{flex-direction:column-reverse!important}.tablet\:ext-flex-wrap{flex-wrap:wrap!important}.tablet\:ext-flex-wrap-reverse{flex-wrap:wrap-reverse!important}.tablet\:ext-flex-nowrap{flex-wrap:nowrap!important}.tablet\:ext-items-start{align-items:flex-start!important}.tablet\:ext-items-end{align-items:flex-end!important}.tablet\:ext-items-center{align-items:center!important}.tablet\:ext-items-baseline{align-items:baseline!important}.tablet\:ext-items-stretch{align-items:stretch!important}.tablet\:ext-justify-start{justify-content:flex-start!important}.tablet\:ext-justify-end{justify-content:flex-end!important}.tablet\:ext-justify-center{justify-content:center!important}.tablet\:ext-justify-between{justify-content:space-between!important}.tablet\:ext-justify-around{justify-content:space-around!important}.tablet\:ext-justify-evenly{justify-content:space-evenly!important}.tablet\:ext-justify-items-start{justify-items:start!important}.tablet\:ext-justify-items-end{justify-items:end!important}.tablet\:ext-justify-items-center{justify-items:center!important}.tablet\:ext-justify-items-stretch{justify-items:stretch!important}.tablet\:ext-justify-self-auto{justify-self:auto!important}.tablet\:ext-justify-self-start{justify-self:start!important}.tablet\:ext-justify-self-end{justify-self:end!important}.tablet\:ext-justify-self-center{justify-self:center!important}.tablet\:ext-justify-self-stretch{justify-self:stretch!important}.tablet\:ext-p-0:not([style*=padding]){padding:0!important}.tablet\:ext-p-base:not([style*=padding]){padding:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-p-lg:not([style*=padding]){padding:var(--extendify--spacing--large)!important}.tablet\:ext-px-0:not([style*=padding]){padding-left:0!important;padding-right:0!important}.tablet\:ext-px-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important;padding-right:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-px-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important;padding-right:var(--extendify--spacing--large)!important}.tablet\:ext-py-0:not([style*=padding]){padding-bottom:0!important;padding-top:0!important}.tablet\:ext-py-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important;padding-top:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-py-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important;padding-top:var(--extendify--spacing--large)!important}.tablet\:ext-pt-0:not([style*=padding]){padding-top:0!important}.tablet\:ext-pt-base:not([style*=padding]){padding-top:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-pt-lg:not([style*=padding]){padding-top:var(--extendify--spacing--large)!important}.tablet\:ext-pr-0:not([style*=padding]){padding-right:0!important}.tablet\:ext-pr-base:not([style*=padding]){padding-right:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-pr-lg:not([style*=padding]){padding-right:var(--extendify--spacing--large)!important}.tablet\:ext-pb-0:not([style*=padding]){padding-bottom:0!important}.tablet\:ext-pb-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-pb-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important}.tablet\:ext-pl-0:not([style*=padding]){padding-left:0!important}.tablet\:ext-pl-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important}.tablet\:ext-pl-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important}.tablet\:ext-text-left{text-align:left!important}.tablet\:ext-text-center{text-align:center!important}.tablet\:ext-text-right{text-align:right!important}}@media (min-width:1080px){.desktop\:ext-absolute{position:absolute!important}.desktop\:ext-relative{position:relative!important}.desktop\:ext-top-base{top:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-top-lg{top:var(--extendify--spacing--large)!important}.desktop\:ext--top-base{top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--top-lg{top:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-right-base{right:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-right-lg{right:var(--extendify--spacing--large)!important}.desktop\:ext--right-base{right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--right-lg{right:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-bottom-base{bottom:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-bottom-lg{bottom:var(--extendify--spacing--large)!important}.desktop\:ext--bottom-base{bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--bottom-lg{bottom:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-left-base{left:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-left-lg{left:var(--extendify--spacing--large)!important}.desktop\:ext--left-base{left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--left-lg{left:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-order-1{order:1!important}.desktop\:ext-order-2{order:2!important}.desktop\:ext-m-0:not([style*=margin]){margin:0!important}.desktop\:ext-m-auto:not([style*=margin]){margin:auto!important}.desktop\:ext-m-base:not([style*=margin]){margin:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-m-lg:not([style*=margin]){margin:var(--extendify--spacing--large)!important}.desktop\:ext--m-base:not([style*=margin]){margin:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--m-lg:not([style*=margin]){margin:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-mx-0:not([style*=margin]){margin-left:0!important;margin-right:0!important}.desktop\:ext-mx-auto:not([style*=margin]){margin-left:auto!important;margin-right:auto!important}.desktop\:ext-mx-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important;margin-right:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-mx-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important;margin-right:var(--extendify--spacing--large)!important}.desktop\:ext--mx-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--mx-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important;margin-right:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-my-0:not([style*=margin]){margin-bottom:0!important;margin-top:0!important}.desktop\:ext-my-auto:not([style*=margin]){margin-bottom:auto!important;margin-top:auto!important}.desktop\:ext-my-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important;margin-top:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-my-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important;margin-top:var(--extendify--spacing--large)!important}.desktop\:ext--my-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important;margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--my-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important;margin-top:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-mt-0:not([style*=margin]){margin-top:0!important}.desktop\:ext-mt-auto:not([style*=margin]){margin-top:auto!important}.desktop\:ext-mt-base:not([style*=margin]){margin-top:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-mt-lg:not([style*=margin]){margin-top:var(--extendify--spacing--large)!important}.desktop\:ext--mt-base:not([style*=margin]){margin-top:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--mt-lg:not([style*=margin]){margin-top:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-mr-0:not([style*=margin]){margin-right:0!important}.desktop\:ext-mr-auto:not([style*=margin]){margin-right:auto!important}.desktop\:ext-mr-base:not([style*=margin]){margin-right:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-mr-lg:not([style*=margin]){margin-right:var(--extendify--spacing--large)!important}.desktop\:ext--mr-base:not([style*=margin]){margin-right:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--mr-lg:not([style*=margin]){margin-right:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-mb-0:not([style*=margin]){margin-bottom:0!important}.desktop\:ext-mb-auto:not([style*=margin]){margin-bottom:auto!important}.desktop\:ext-mb-base:not([style*=margin]){margin-bottom:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-mb-lg:not([style*=margin]){margin-bottom:var(--extendify--spacing--large)!important}.desktop\:ext--mb-base:not([style*=margin]){margin-bottom:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--mb-lg:not([style*=margin]){margin-bottom:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-ml-0:not([style*=margin]){margin-left:0!important}.desktop\:ext-ml-auto:not([style*=margin]){margin-left:auto!important}.desktop\:ext-ml-base:not([style*=margin]){margin-left:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-ml-lg:not([style*=margin]){margin-left:var(--extendify--spacing--large)!important}.desktop\:ext--ml-base:not([style*=margin]){margin-left:calc(var(--wp--style--block-gap, 1.75rem)*-1)!important}.desktop\:ext--ml-lg:not([style*=margin]){margin-left:calc(var(--extendify--spacing--large)*-1)!important}.desktop\:ext-block{display:block!important}.desktop\:ext-inline-block{display:inline-block!important}.desktop\:ext-inline{display:inline!important}.desktop\:ext-flex{display:flex!important}.desktop\:ext-inline-flex{display:inline-flex!important}.desktop\:ext-grid{display:grid!important}.desktop\:ext-inline-grid{display:inline-grid!important}.desktop\:ext-hidden{display:none!important}.desktop\:ext-w-auto{width:auto!important}.desktop\:ext-w-full{width:100%!important}.desktop\:ext-max-w-full{max-width:100%!important}.desktop\:ext-flex-1{flex:1 1 0%!important}.desktop\:ext-flex-auto{flex:1 1 auto!important}.desktop\:ext-flex-initial{flex:0 1 auto!important}.desktop\:ext-flex-none{flex:none!important}.desktop\:ext-flex-shrink-0{flex-shrink:0!important}.desktop\:ext-flex-shrink{flex-shrink:1!important}.desktop\:ext-flex-grow-0{flex-grow:0!important}.desktop\:ext-flex-grow{flex-grow:1!important}.desktop\:ext-list-none{list-style-type:none!important}.desktop\:ext-grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))!important}.desktop\:ext-grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.desktop\:ext-grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.desktop\:ext-grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))!important}.desktop\:ext-grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}.desktop\:ext-grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))!important}.desktop\:ext-grid-cols-7{grid-template-columns:repeat(7,minmax(0,1fr))!important}.desktop\:ext-grid-cols-8{grid-template-columns:repeat(8,minmax(0,1fr))!important}.desktop\:ext-grid-cols-9{grid-template-columns:repeat(9,minmax(0,1fr))!important}.desktop\:ext-grid-cols-10{grid-template-columns:repeat(10,minmax(0,1fr))!important}.desktop\:ext-grid-cols-11{grid-template-columns:repeat(11,minmax(0,1fr))!important}.desktop\:ext-grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))!important}.desktop\:ext-grid-cols-none{grid-template-columns:none!important}.desktop\:ext-flex-row{flex-direction:row!important}.desktop\:ext-flex-row-reverse{flex-direction:row-reverse!important}.desktop\:ext-flex-col{flex-direction:column!important}.desktop\:ext-flex-col-reverse{flex-direction:column-reverse!important}.desktop\:ext-flex-wrap{flex-wrap:wrap!important}.desktop\:ext-flex-wrap-reverse{flex-wrap:wrap-reverse!important}.desktop\:ext-flex-nowrap{flex-wrap:nowrap!important}.desktop\:ext-items-start{align-items:flex-start!important}.desktop\:ext-items-end{align-items:flex-end!important}.desktop\:ext-items-center{align-items:center!important}.desktop\:ext-items-baseline{align-items:baseline!important}.desktop\:ext-items-stretch{align-items:stretch!important}.desktop\:ext-justify-start{justify-content:flex-start!important}.desktop\:ext-justify-end{justify-content:flex-end!important}.desktop\:ext-justify-center{justify-content:center!important}.desktop\:ext-justify-between{justify-content:space-between!important}.desktop\:ext-justify-around{justify-content:space-around!important}.desktop\:ext-justify-evenly{justify-content:space-evenly!important}.desktop\:ext-justify-items-start{justify-items:start!important}.desktop\:ext-justify-items-end{justify-items:end!important}.desktop\:ext-justify-items-center{justify-items:center!important}.desktop\:ext-justify-items-stretch{justify-items:stretch!important}.desktop\:ext-justify-self-auto{justify-self:auto!important}.desktop\:ext-justify-self-start{justify-self:start!important}.desktop\:ext-justify-self-end{justify-self:end!important}.desktop\:ext-justify-self-center{justify-self:center!important}.desktop\:ext-justify-self-stretch{justify-self:stretch!important}.desktop\:ext-p-0:not([style*=padding]){padding:0!important}.desktop\:ext-p-base:not([style*=padding]){padding:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-p-lg:not([style*=padding]){padding:var(--extendify--spacing--large)!important}.desktop\:ext-px-0:not([style*=padding]){padding-left:0!important;padding-right:0!important}.desktop\:ext-px-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important;padding-right:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-px-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important;padding-right:var(--extendify--spacing--large)!important}.desktop\:ext-py-0:not([style*=padding]){padding-bottom:0!important;padding-top:0!important}.desktop\:ext-py-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important;padding-top:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-py-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important;padding-top:var(--extendify--spacing--large)!important}.desktop\:ext-pt-0:not([style*=padding]){padding-top:0!important}.desktop\:ext-pt-base:not([style*=padding]){padding-top:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-pt-lg:not([style*=padding]){padding-top:var(--extendify--spacing--large)!important}.desktop\:ext-pr-0:not([style*=padding]){padding-right:0!important}.desktop\:ext-pr-base:not([style*=padding]){padding-right:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-pr-lg:not([style*=padding]){padding-right:var(--extendify--spacing--large)!important}.desktop\:ext-pb-0:not([style*=padding]){padding-bottom:0!important}.desktop\:ext-pb-base:not([style*=padding]){padding-bottom:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-pb-lg:not([style*=padding]){padding-bottom:var(--extendify--spacing--large)!important}.desktop\:ext-pl-0:not([style*=padding]){padding-left:0!important}.desktop\:ext-pl-base:not([style*=padding]){padding-left:var(--wp--style--block-gap,1.75rem)!important}.desktop\:ext-pl-lg:not([style*=padding]){padding-left:var(--extendify--spacing--large)!important}.desktop\:ext-text-left{text-align:left!important}.desktop\:ext-text-center{text-align:center!important}.desktop\:ext-text-right{text-align:right!important}}
+
+</style>
+<link data-minify="1" rel='stylesheet' id='ppress-frontend-css'  href='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css?ver=1648572052' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-flatpickr-css'  href='https://tophat.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css?ver=3.2.9' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-select2-css'  href='https://tophat.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css?ver=5.9.2' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://tophat.com/wp-json/" /><link rel="alternate" type="application/json" href="https://tophat.com/wp-json/wp/v2/pages/16429" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tophat.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tophat.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://tophat.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://tophat.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftophat.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://tophat.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftophat.com%2F&#038;format=xml" />
+<link rel="icon" href="https://tophat.com/wp-content/uploads/2017/05/tophat-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://tophat.com/wp-content/uploads/2017/05/tophat-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tophat.com/wp-content/uploads/2017/05/tophat-300x300.png" />
+<meta name="msapplication-TileImage" content="https://tophat.com/wp-content/uploads/2017/05/tophat-300x300.png" />
+</head>
+
+<body class="home page-template-default page page-id-16429 promo-banner-active eplus_styles elementor-default elementor-kit-50665">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WH54DX"
+height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- GA Connector -->
+<script type="rocketlazyloadscript" data-minify="1" data-cfasync="false" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/cache/min/1/gaconnector.js?ver=1648572052"></script>
+<script type="rocketlazyloadscript">
+	//GA Connector tracking code
+	function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function eraseCookie(name) {
+		createCookie(name,"",-1);
+	}
+
+	function clearBadCookies(){
+		/* Delete gaconnector_pages_visited_list from the cookie
+		to prevent the cookie becoming too large and causing a Bad Request error */
+		var cookieName = 'gaconnector_pages_visited_list';
+		eraseCookie(cookieName);
+	}
+
+	function setGaconnectorHiddenFields() {
+		var gaFields = gaconnector.getCookieValues();
+		gaconnector.setCallback(clearBadCookies);
+
+		for (var fieldName in gaFields) { //modified to include Salesforce notation of custom field name
+				var selectors = 'form input[name="' + fieldName + '__c"], form input#' + fieldName + ', form input#field_' + fieldName + ', form input[name="' + fieldName.toLowerCase() + '__c"], form input#' + fieldName.toLowerCase() + ', form input#field_' + fieldName.toLowerCase();
+				selectors += 'form textarea[name="'+fieldName+'__c"], form textarea#'+fieldName+', form textarea#field_'+fieldName + ', form textarea[name="'+fieldName.toLowerCase()+'__c"], form textarea#'+fieldName.toLowerCase()+', form textarea#field_'+fieldName.toLowerCase()+', form textarea.'+fieldName+', form textarea[name="param['+fieldName+'__c]"]'+", form textarea[id^='field_"+fieldName+"__c']";
+
+
+			var inputs = document.querySelectorAll(selectors);
+			if (inputs === null) {
+				continue;
+			} else if (typeof inputs.length === 'undefined') {
+				inputs.value = gaFields[fieldName];
+			} else {
+				for (var i = 0; i < inputs.length; i++) {
+					inputs[i].value = gaFields[fieldName];
+				}
+			}
+		}
+	}
+
+	gaconnector.setCallback(setGaconnectorHiddenFields);
+	setInterval(setGaconnectorHiddenFields, 1000);
+</script>
+
+
+	<header role="none" class="main header-global ">
+		
+<div id="promo-banner" class="promo-banner" role="complementary" aria-label="Current promotion">
+    <div class="wrapper">
+                                <a href="https://tophat.com/teaching-resources/webinars-and-videos/higher-learnings/" rel="nofollow" target="_blank" aria-label="Be inspired by bestselling author Dr. Christopher Emdin: Join our virtual event, opens in a new tab">Be inspired by bestselling author Dr. Christopher Emdin: <span class="highlight">Join our virtual event</span></a>
+    </div>
+</div>
+
+		
+			<div id="mobile-search-overlay" role="search" aria-label="Mobile Header Top Hat Website">
+				<form action="/" method="get">
+					<label for="search" style="display:none;">Search in https://tophat.com/</label>
+					<input type="text" name="s" id="mobile-search" placeholder="Search for anything" value="" />
+					<button type="submit" value="Search">Search</button>
+				</form>
+				<button type="button" class="close-btn" aria-label="Close Search"><span class="fas fa-times" aria-hidden="true"></span></button>
+			</div><!--.search-overlay-->
+
+			<div id="search-overlay" role="search" aria-label="Header Top Hat Website">
+				<form action="/" method="get">
+					<label for="search" style="display:none;">Search in https://tophat.com/</label>
+					<input type="text" name="s" id="search" placeholder="Search for anything" value="" />
+					<button type="submit" value="Search">Search</button>
+				</form>
+				<button type="button" class="close-btn" aria-label="Close Search"><span class="fas fa-times" aria-hidden="true"></span></button>
+			</div><!--.search-overlay-->
+
+		
+		<div class="menu-bar" role="banner" aria-label="Main Header">
+			<div class="wrapper">
+
+				
+				
+					<div class="header-logo">
+						<a href="https://tophat.com/" class="top-hat-logo" aria-label="Top Hat, Homepage">
+							<img width="220.92" height="30.16" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/logo.svg" alt="Top Hat">
+						</a>
+					</div><!--.header-logo-->
+
+				
+
+				
+				
+					<nav class="desktop-menu nav-primary" aria-label="Primary">
+
+						<ul class="menu" role="menubar" aria-label="Primary">
+
+							<li class="menu-item dropdown" role="none">
+								<button id="educatorsMenuItem" type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="educatorsSubmenu">For Educators</button>
+								<div id="educatorsSubmenu" role="menu" aria-labelledby="educatorsMenuItem" class="submenu">
+									<ul>
+										<li><a href="/features/">Features</a></li>
+										<li><a href="/catalog/">Catalog</a></li>
+										<li><a href="/educator-stories/">Educator Stories</a></li>
+										<li><a href="/institution-overview/">Institutions</a></li>
+										<li><a href="/tour-top-hat/">Virtual Tour</a></li>
+									</ul>
+								</div>
+							</li><!--.educators dropdown -->
+
+							<li class="menu-item" role="none">
+								<a href="/students/" rel="nofollow" class="nav-link" role="menuitem" aria-label="Header link: Students page">For Students</a>
+							</li>
+
+							<li class="menu-item dropdown" role="none">
+								<button id="resourcesMenuItem" type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="resourcesSubmenu">Teaching Resources</button>
+								<div id="resourcesSubmenu" role="menu" aria-labelledby="resourcesMenuItem" class="submenu">
+									<ul>
+										<li><a href="/blog/">Top Hat Blog</a></li>
+										<li><a href="/glossary/">Glossary of Higher Education</a></li>
+										<li><a href="/teaching-resources/ebooks-and-guides/">Guides and Whitepapers</a></li>
+										<li><a href="/teaching-resources/webinars-and-videos/">Webinars</a></li>
+									</ul>
+								</div>
+							</li><!--.resources dropdown -->
+
+							<li class="menu-item" role="none">
+								<a href="/pricing/" rel="nofollow" class="nav-link" role="menuitem" aria-label="Header link: Pricing page">Pricing</a>
+							</li>
+
+						</ul><!--.menu-->
+
+					</nav><!--.nav-primary-->
+
+				
+
+
+				
+				
+					<nav class="call-to-action nav-secondary" aria-label="Login, Signup, or Request a Demo for Top Hat">
+						<ul>
+							<li><a class="nav-login" href="https://app.tophat.com/login/" rel="nofollow">Login</a></li>
+							<li><a class="nav-signup btn grey-btn" href="https://app.tophat.com/register/" rel="nofollow">Sign Up</a></li>
+							<li><button type="button" class="nav-demo btn purple-btn" data-remodal-target="modal">Request A Demo</button></li>
+						</ul>
+					</nav><!--.call-to-action-->
+
+				
+													<div class="mobile-menu">
+
+						<div id="menu-btn">
+							<button type="button" aria-label="Toggle Menu, opens in a new pop-up" aria-haspopup="true" aria-expanded="false">
+								<span class="menu-icon fas fa-bars" aria-hidden="true"></span>
+								<span class="menu-label">Menu</span>
+							</button>
+						</div>
+
+													<nav id="mobile-menu" class="mobile-menu__dropdown" aria-label="Primary Mobile">
+								<div class="wrapper">
+									<ul class="secondary-nav">
+										<li class="secondary-cta">
+											<button type="button" class="nav-mobile-demo btn purple-btn" data-remodal-target="modal">Request A Demo</button>
+										</li>
+										<li class="secondary-cta">
+											<a href="https://app.tophat.com/register/" class="nav-mobile-signup btn grey-btn">Sign Up</a>
+										</li>
+										<li class="secondary-cta">
+											<a href="https://app.tophat.com/login/" class="nav-mobile-login btn grey-btn">Login</a>
+										</li>
+									</ul>
+									<ul class="primary-nav">
+										<li class="primary-nav__item">
+											<button type="button" class="dropdown-item" aria-expanded="false">
+												<h3>For Educators</h3>
+											</button>
+											<ul class="dropdown">
+												<li><a href="/features/">Features</a></li>
+												<li><a href="/catalog/">Catalog</a></li>
+												<li><a href="/educator-stories/">Educator Stories</a></li>
+												<li><a href="/institution-overview/">Institutions</a></li>
+												<li><a href="/tour-top-hat/">Virtual Tour</a></li>
+											</ul>
+										</li>
+										<li class="primary-nav__item">
+											<h3><a href="/students/">For Students</a></h3>
+										</li>
+										<li class="primary-nav__item">
+											<button type="button" class="dropdown-item" aria-expanded="false">
+												<h3>Teaching Resources</h3>
+											</button>
+											<ul class="dropdown">
+												<li><a href="/blog/">Top Hat Blog</a></li>
+												<li><a href="/glossary/">Glossary of Higher Education</a></li>
+												<li><a href="/teaching-resources/ebooks-and-guides/">Guides and Whitepapers</a></li>
+												<li><a href="/teaching-resources/webinars-and-videos/">Webinars</a></li>
+											</ul>
+										</li>
+										<li class="primary-nav__item">
+											<h3><a href="/pricing/">Pricing</a></h3>
+										</li>
+									</ul>
+								</div>
+							</nav><!--.mobile-menu-->
+						
+					</div>
+
+				
+				</div><!--.wrapper-->
+			</div><!-- .menu-bar -->
+	</header><!--.header-global-->
+
+
+<main class="defaults2020 home2020">
+    <!-- Hero -->
+    <section class="hero-home">
+        <div class="wrapper">
+            <div class="play-icon-con fade-in move-up animation js-animate animate">
+                <script type="rocketlazyloadscript" src="https://fast.wistia.com/embed/medias/a0slz6zoxx.jsonp" async></script>
+                <script type="rocketlazyloadscript" data-minify="1" src="https://tophat.com/wp-content/cache/min/1/assets/external/E-v1.js?ver=1648572053" async></script>
+                <span class="wistia_embed wistia_async_a0slz6zoxx popover=true popoverContent=link" style="display:inline;position:relative">
+                    <button type="button" aria-label="Play Top Hat's three-minute promotional video"><span class="fa fa-play fade-in move-up animation js-animate animate"></span></button>
+                </span>
+            </div>
+            <h1 class="fade-in move-up animation js-animate animate">Awaken Curiosity This&nbsp;Semester</h1>
+            <p class="text-large fade-in move-up animation js-animate animate">Get students to lean into learning with the all-in-one teaching platform purpose-built to motivate, engage and connect with students</p>
+            <div class="btn-group fade-in move-up animation js-animate animate">
+                                    <a href="https://app.tophat.com/register/" class="home-hero-signup btn-large btn-pink" rel="nofollow">Sign Up</a>
+                    <button type="button" class="home-hero-demo btn-arrow-h" data-remodal-target="modal">Request a Demo</button>
+                    <a href="/tour-top-hat/" class="home-hero-tourial btn-arrow-h display-none">Tour Top Hat</a>
+                            </div>
+        </div>
+        <div class="vid-con fade-in move-up animation js-animate animate">
+            <video preload="auto" autoplay muted loop playsinline class="hero-video" poster="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/BTS_loop_2.jpg">
+                <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/BTS_loop_2.webm" type="video/webm">
+                <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/BTS_loop_2.m4v" type="video/mp4">
+                <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/BTS_loop_2.ogv" type="video/ogg">
+            </video>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="fade-in move-up animation js-animate animate">
+        <div class="wrapper cols col-4 steps">
+            <div class="col cols no-wrap">
+                <div class="icon">
+                    <img width="81" height="81" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/step1.png" alt="">
+                </div>
+                <p class="no-margin">Help students learn better live</p>
+            </div>
+            <div class="col cols no-wrap">
+                <div class="icon">
+                    <img width="81" height="81" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/step2.png" alt="">
+                </div>
+                <p class="no-margin">Motivate students outside of class</p>
+            </div>
+            <div class="col cols no-wrap">
+                <div class="icon">
+                    <img width="82" height="81" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/step3.png" alt="">
+                </div>
+                <p class="no-margin">Give your LMS the perfect partner</p>
+            </div>
+            <div class="col cols no-wrap">
+                <div class="icon">
+                    <img width="82" height="81" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/step4.png" alt="">
+                </div>
+                <p class="no-margin">Get personalized, dedicated support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Callout Statement -->
+    <section class="center fade-in move-up animation js-animate animate">
+        <div class="wrapper">
+            <h2 class="display-small">
+                <span class="weight-bold highlight-yellow">
+                    <span>In Person.</span>
+                    <span> Blended.</span>
+                    <span> Online.</span>
+                </span>
+                <br>
+                <span class="weight-normal">Get the flexibility to engage your students, anytime, anywhere.</span>
+                <br>
+                <br>
+                <span class="weight-bold">&darr;</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section class="container-gray">
+            <div class="wrapper feature-block reverse block-1">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <img width="1140" height="900"
+                        src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_all-in-one.png"
+                        alt="An image showing a neuroanatomy multiple choice question with four options. Answer C, ‘Dendrite’, is highlighted as the correct answer with 85% of respondents answering correctly. On one side of the photo, there are three students answering the question. On the other side, there’s an instructor engaging with students through a laptop."
+                    />
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">All-in-one</span>
+                    <h2>One platform, one less thing to manage</h2>
+                    <p>Take attendance, present slides, host discussions, give homework, assign interactive readings and run tests—and do it all in one place. (Phew!)</p>
+                    <a href="/features/" class="btn-med btn-pink no-margin-bottom">View All Features</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section>
+            <div class="wrapper feature-block block-2">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_participation.png"
+                        aria-label="A video demonstration of how students can answer questions in the Top Hat app. The video starts by showing a question being answered. Then a live word cloud appears with the most popular responses increasing in size. After this, there is also a demonstration of the ability to click on an image in certain target areas. A heatmap is then shown with the collective answers."
+                    >
+                        <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/block_participation.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Participation</span>
+                    <h2>Crank engagement up to 11</h2>
+                    <p>Forget talking into the void. Make learning active with live discussions, polls and quizzes students can respond to on any device.</p>
+                    <p>With videos, GIFs and 3D images that can easily be added to your course materials, you’ll always have plenty of tricks up your sleeve. </p>
+                    <a href="/features/polls-and-quizzes/" class="btn-med btn-pink no-margin-bottom">Engage Your Students</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section class="container-gray">
+            <div class="wrapper feature-block reverse block-4">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_digital-textbooks.png"
+                        aria-label="A video of a student on a laptop viewing an interactive video on how dendrites receive messages."
+                    >
+                        <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/block_digital-textbooks.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Interactive Textbooks</span>
+                    <h2>Textbooks students actually want to read</h2>
+                    <p>Choose from thousands of affordable, high-quality interactive textbooks you can customize to suit your needs.</p>
+                    <p>Or create your own course materials and bring them to life with videos, simulations, interactive homework questions and more.</p>
+                    <a href="/interactive-textbooks/" class="btn-med btn-pink no-margin-bottom">Learn About Our Textbooks</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section class="container-purple">
+            <div class="wrapper feature-block block-5">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <img width="1432" height="1362"
+                        src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_assessments_flipped.png"
+                        alt="An image of an educator reviewing a Top Hat Weekly Course Report. The report shows quiz questions that students did well on and questions that students need help on. There is also a list of struggling students and a list of students that did exceptionally well."
+                    >
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Assessments</span>
+                    <h2>Assess your class early and often</h2>
+                    <p>Let instant feedback from polls, quizzes and assignments guide your teaching. Save time with question packs and auto-grading, and run secure in-class tests or remote proctored exams.</p>
+                    <p>Plus, get insights to support class and individual progress. With the Weekly Course Report, reaching out to struggling students is only a click away.</p>
+                    <a href="/features/secure-online-tests-and-exams/" class="btn-med btn-pink no-margin-bottom">Assess Your Students</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section class="container-gray">
+            <div class="wrapper feature-block reverse block-6">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <img width="865" height="1180"
+                        src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_learning-insights.png"
+                        alt="An image that shows a student's grade book, which displays details on the performance of individual students. The image shows which questions the student got correct and incorrect. And it also shows their total grade and attendance data."
+                    >
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Learning Insights</span>
+                    <h2>Get a lock on student success</h2>
+                    <p>Every interaction—attendance, participation, assignments, tests—is automatically captured in the Top Hat Gradebook.</p>
+                    <p>Get a view of each student's performance. Easily understand who's succeeding and who needs extra support.</p>
+                    <a href="/features/learning-insights/" class="btn-med btn-pink no-margin-bottom">Dig Into Student Insights</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section>
+            <div class="wrapper feature-block block-7">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_lms.png"
+                        aria-label="An animated image showing how grades, attendance, and participation data easily flow from the educator to Top Hat, to LMS, then back again."
+                    >
+                        <source src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/videos/block_lms.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Connect to your LMS</span>
+                    <h2 class="display-xlarge">LMS friendly? You bet!</h2>
+                    <p>We’re not an LMS, but we’re the perfect pairing for yours. Engage your students with Top Hat and view grades, attendance and participation data in real time in the Gradebook. Easily export to your LMS for the final tally.</p>
+                    <button type="button" data-remodal-target="modal" class="btn-med btn-arrow-h no-margin-bottom">Get started with Top&nbsp;Hat</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Features Grid -->
+    <section>
+        <ul class="wrapper cols col-3 features-grid fade-in move-up animation js-animate">
+            <li class="col fade-in move-up animation js-animate">
+                <a href="https://tophat.com/features/polls-and-quizzes/">
+                    <div class="icon">
+                        <img width="80" height="80" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/polling-and-quizzes.png" alt="">
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>Polls & Quizzes</strong></p>
+                    <p class="fade-in move-up animation js-animate">Use 15 different question types, like multiple choice, click-on-target and short&nbsp;answer</p>
+                </a>
+            </li>
+            <li class="col fade-in move-up animation js-animate">
+                <a href="https://tophat.com/features/secure-online-tests-and-exams/">
+                    <div class="icon fade-in move-up animation js-animate">
+                        <img width="80" height="80" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/secure-online-tests-and-exams.png" alt=""> 
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>Tests & Exams</strong></p>
+                    <p class="fade-in move-up animation js-animate">Securely administer in-class or remote quizzes, tests and exams on student&nbsp;devices</p>
+                </a>
+            </li>
+            <li class="col">
+                <a href="https://tophat.com/features/live-chat-and-discussions/">
+                    <div class="icon fade-in move-up animation js-animate">
+                        <img width="80" height="80" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/live-chat-and-discussions.png" alt="">
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>In-Class Discussions</strong></p>
+                    <p class="fade-in move-up animation js-animate">Let students ask questions, chat with each other and respond to your lecture with questions and&nbsp;emojis</p>
+                </a>
+            </li>
+            <li class="col fade-in move-up animation js-animate">
+                <a href="https://tophat.com/interactive-textbooks/">
+                    <div class="icon fade-in move-up animation js-animate">
+                        <img width="80" height="104" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/digital-textbooks.png" alt="">
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>Interactive Textbooks</strong></p>
+                    <p class="fade-in move-up animation js-animate">Adopt or create a customizable interactive textbook that tracks student&nbsp;comprehension</p>
+                </a>
+            </li>
+            <li class="col">
+                <a href="https://tophat.com/features/attendance/">
+                    <div class="icon fade-in move-up animation js-animate">
+                        <img width="80" height="80" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/attendance.png" alt="">
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>Attendance</strong></p>
+                    <p class="fade-in move-up animation js-animate">Get students to sign into class using any device—in person or&nbsp;remotely</p>
+                </a>
+            </li>
+            <li class="col fade-in move-up animation js-animate">
+                <a href="https://tophat.com/features/assignments/">
+                    <div class="icon fade-in move-up animation js-animate">
+                        <img width="80" height="80" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/features/icons/assignments.png" alt="">
+                    </div>
+                    <p class="no-margin fade-in move-up animation js-animate"><strong>Assignments</strong></p>
+                    <p class="fade-in move-up animation js-animate">Create auto-graded assignments tailored to your&nbsp;course</p>
+                </a>
+            </li>
+            <li class="col fade-in move-up animation js-animate">
+                <div class="icon fade-in move-up animation js-animate">
+                    <img width="82" height="81" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/step3.png" alt="">
+                </div>
+                <p class="no-margin fade-in move-up animation js-animate"><strong>LMS Export</strong></p>
+                <p class="fade-in move-up animation js-animate">Performance, attendance and participation data are all easily exported to your&nbsp;LMS</p>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Feature Block -->
+    <div class="container-overflow fade-in move-up animation js-animate">
+        <section class="container-purple">
+            <div class="wrapper feature-block reverse block-8">
+                <div class="col img-container fade-in move-up animation js-animate">
+                    <img width="930" height="810"
+                        src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/home/november2020/block_hands-on-support.png"
+                        alt="An image of an educator getting video help from the Top Hat support team."
+                    >
+                </div>
+                <div class="col">
+                    <span class="small-caps-header">Hands-on support</span>
+                    <h2>Make Learning Better with the Best Support in the Business</h2>
+                    <p>We meet you where you are with one-on-one training, reliable technical support and instructional design experts to help you deliver your perfect course.</p>
+                    <a href="/support/" class="btn-med btn-pink no-margin-bottom">See How We Can Help</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Customer Stories Grid -->
+    <section class="related-stories fade-in move-up animation js-animate">
+        <div class="wrapper">
+            <h2>See Why Educators Love Top Hat</h2>
+
+            <div class="story-grid">
+                <a href="https://tophat.com/educator-stories/university-st-joseph/" class="story-block">
+                    <div class="img-con">
+                        <img width="1024" height="540" src="https://tophat.com/wp-content/uploads/meta-christina-alevras-f.jpg" alt="">
+                    </div>
+                    <div class="story-block-text">
+                        <p>“Top Hat allowed me to truly interact with students, see what they’re doing at any given time and monitor their progress.”</p>
+                        <div class="professor-headshot">
+                            <h3 class="h6">Christina Alevras<span>Instructor of Biology<br>University of Saint Joseph</span></h3>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a href="https://tophat.com/educator-stories/western-university/" class="story-block fade-in move-up animation js-animate">
+                    <div class="img-con">
+                        <img width="1024" height="540" src="https://tophat.com/wp-content/uploads/meta-frank-spors.jpg" alt="">
+                    </div>
+                    <div class="story-block-text">
+                        <p>“Top Hat is a one-stop shop students can directly access from their devices, wherever they are. It saves them from having to navigate different resources.”</p>
+                        <div class="professor-headshot">
+                            <h3 class="h6">Frank Spors<span>Associate Professor, College of Optometry<br>Western University of Health Sciences</span></h3>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a href="https://tophat.com/educator-stories/georgia-state-university/" class="story-block fade-in move-up animation js-animate">
+                    <div class="img-con">
+                        <img width="1024" height="540" src="https://tophat.com/wp-content/uploads/cs-meta-ricardo-1024x540.jpg" alt="">
+                    </div>
+                    <div class="story-block-text">
+                        <p>“When I realized I could customize the textbook to make it more specific to my classroom, I was able to make the textbook an extension of my lecture.”</p>
+                        <div class="professor-headshot">
+                            <h3 class="h6">Ricardo Nogueira<span>Senior Lecturer, Department of Geosciences<br>Georgia State University</span></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://tophat.com/educator-stories/" class="btn-med btn-pink">Read Our Educator Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Logo Banner -->
+    <section>
+        <div class="school-logo-banner wrapper fade-in move-up animation js-animate" aria-label="Some of the schools we partner with include: Auburn University, Rutgers University, California State University, University of Iowa, University of Florida, University at Buffalo, and Vanderbilt University.">
+            <div class="logo-con-part"><img width="70" height="62" class="tall" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-auburn.svg" alt=""></div>
+            <div class="logo-con-part"><img width="178" height="48" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-rutgers.svg" alt=""></div>
+            <div class="logo-con-part"><img width="77" height="90" class="tall" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-california-state.svg" alt=""></div>
+            <div class="logo-con-part"><img width="177" height="47" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-iowa.svg" alt=""></div>
+            <div class="logo-con-part"><img width="73" height="50" class="tall" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-florida.svg" alt=""></div>
+            <div class="logo-con-part"><img width="97" height="50" class="tall" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-buffalo.svg" alt=""></div>
+            <div class="logo-con-part"><img width="68" height="90" class="tall" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/customers/school-logo-vanderbilt.svg" alt=""></div>
+        </div>
+    </section>
+</main>
+<!-- /.home2020 -->
+
+
+
+
+
+
+                        <div class="overflow-container" role="complementary" aria-labelledby="footerCTATitle">
+                <section id="demo1" class="cta-block cta-demo cta-demo-photo" style="background-image: url(https://tophat.com/wp-content/themes/TOPHAT01/build/images/global/footer-bg-triangle.svg);">
+                    <div class="wrapper">
+                        <div class="cta-copy">
+                                                            <h2 id="footerCTATitle">Get Started with Top&nbsp;Hat</h2>
+                                <p>Contact us to book a product tour. We can answer your questions and set your course up on Top&nbsp;Hat.</p>
+                                <div>
+                                    <button type="button" class="btn-med btn-pink" data-remodal-target="modal">Request a Demo</button>
+                                    <a href="https://app.tophat.com/register/" class="btn-med btn-arrow-h">Create a Free Account</a>
+                                </div>
+                                                    </div>
+                        <div class="photograph"><img width="991" height="615" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/global/footer-prof.png" alt=""></div>
+                    </div>
+                </section>
+            </div>
+        
+            
+
+            <div role="dialog" aria-labelledby="demoModalTitle" class="remodal demo-modal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+        <button type="button" class="remodal-close" data-remodal-action="close" aria-label="Close Modal"></button>
+
+        <div id="demoModalTitle" class="modal-title">Get Started</div>
+                <p class="modal-intro">Learn about the powerful active learning features of Top&nbsp;Hat&nbsp;Pro and our new, free offering, Top&nbsp;Hat&nbsp;Basic.</p>
+        <div class="marketo-form">
+            <div class='marketo-form-container'>
+    <div class="marketo-form-loading">
+        <div class="loading-bar"></div>
+        <span class="loading-message">If the form does not appear after a few seconds, please try refreshing the&nbsp;page.</span>
+    </div><form data-mkto-id='1581' data-mkto-params='true' data-mkto-custom-submit=''></form></div>        </div>
+    </div>
+    
+        
+    <div class="remodal-bg"></div>
+
+
+            <div class="wrapper footer-careers-banner">
+            <p>Interested in joining the Top Hat team? View our <a href="https://tophat.com/company/work-with-us/ ">Current Openings</a>.</p>
+        </div>
+    
+    <footer class="footer-global" role="none">
+
+        <div class="wrapper" role="contentinfo" aria-label="Footer">
+            <!-- Don't show footer menu and logo  -->
+            
+                <div class="footer-logo">
+                    <a href="https://tophat.com/" aria-label="Top Hat, Homepage"><img width="80" height="104" src="https://tophat.com/wp-content/themes/TOPHAT01/build/images/tophat-footer-logo.svg" alt="Top Hat" /></a>
+                </div>
+
+                <h2 class="sr-only">Footer Navigation</h2>
+
+                <ul class="footer-menu" role="menubar" aria-label="Footer">
+                    <li role="menuitem">
+                        <h3 class="display-small-caps footer-title" aria-label="Products Links"><a href="https://tophat.com/features/" aria-label="Top Hat Product page">Product</a></h3>
+                        <ul>
+                            <li><a href="https://tophat.com/features/" rel="nofollow" aria-label="Product overview">Overview</a></li>
+                            <li><a href="https://tophat.com/pricing/" rel="nofollow" aria-label="Pricing page">Pricing</a></li>
+                            <li><a href="/catalog/" aria-label="Top Hat Textbook Catalog">Catalog</a></li>
+                            <li><a href="https://tophat.com/support/" rel="nofollow" aria-label="Support page">Support</a></li>
+                            <li><a href="https://tophat.com/company/legal/accessibility-top-hat/" rel="nofollow" aria-label="Accessibility page">Accessibility</a></li>
+                        </ul>
+                    </li>
+
+                    <li role="menuitem">
+                        <h3 class="display-small-caps footer-title" aria-label="Links to Resources"><a href="https://tophat.com/teaching-resources/" aria-label="Resources page">Resources</a></h3>
+                        <ul>
+                            <li><a href="https://tophat.com/teaching-resources/" aria-label="Teaching Resources page">Teaching Resources</a></li>
+                            <li><a href="https://tophat.com/blog/" aria-label="Blog page">Blog</a></li>
+                            <li><a href="https://tophat.com/educator-stories/" rel="nofollow" aria-label="Educator Stories page">Educator Stories</a></li>
+                            <li><a href="https://tophat.com/glossary/" aria-label="Glossary of Higher Ed page">Glossary of Higher Ed</a></li>
+                            <li><a href="/textbook-affordability-calculator.html" rel="nofollow" aria-label="Calculate Textbook Savings page">Textbook Savings Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li role="menuitem">
+                        <h3 class="display-small-caps footer-title" aria-label="Company Links"><a href="https://tophat.com/company/top-hat-story/" aria-label="Company page">Company</a></h3>
+                        <ul>
+                            <li><a href="https://tophat.com/company/top-hat-story/" rel="nofollow" aria-label="The Top Hat Story page">The Top Hat Story</a></li>
+                            <li><a href="https://tophat.com/company/board-of-directors/" rel="nofollow" aria-label="Meet the Team page">Board of Directors</a></li>
+                            <li><a href="https://tophat.com/company/meet-the-team/" rel="nofollow" aria-label="Meet the Team page">Meet the Team</a></li>
+                            <li><a href="https://tophat.com/company/news/" rel="nofollow" aria-label="Newsroom page">Newsroom</a></li>
+                            <li><a href="https://tophat.com/company/legal/" rel="nofollow" aria-label="Terms and Conditions page">Terms and Conditions</a></li>
+                            <li><a href="https://tophat.com/company/security/" rel="nofollow" aria-label="Security page">Security</a></li>
+                            <li><a href="https://tophat.com/company/contact-us/" rel="nofollow" aria-label="Contact Us page">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li role="menuitem">
+                        <h3 class="display-small-caps footer-title" aria-label="More Top Hat Links"><span class="menu-title">More</span></h3>
+                        <ul>
+                            <li><a href="https://tophat.com/customers/become-a-top-scholar/" rel="nofollow" aria-label="Top Scholars Program page">Top Scholars Program</a></li>
+                            <li><a href="https://tophat.com/scholarship/" aria-label="Top Hat Scholarship page">Top Hat Scholarship</a></li>
+                            <li><a href="https://tophat.com/publishers/"  rel="nofollow" aria-label="Publisher Partnership page">Publisher Partnership</a></li>
+                            <li><a href="https://tophat.com/bookstore/" rel="nofollow" aria-label="Bookstore page">Bookstore Services</a></li>
+                            <li><a href="https://tophat.com/vs/" aria-label="Compare Top Hat page">Compare Top Hat</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+            
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="https://twitter.com/tophat" target="_blank" aria-label="Top Hat on Twitter, opens in a new tab" rel="nofollow"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+                        <li><a href="https://www.instagram.com/TopHat/" target="_blank" aria-label="Top Hat on Instagram, opens in a new tab" rel="nofollow"><span class="fab fa-instagram" aria-hidden="true"></span></a></li>
+                        <li><a href="https://www.facebook.com/TopHatHQ" target="_blank" aria-label="Top Hat on Facebook, opens in a new tab" rel="nofollow"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+                        <li><a href="https://www.linkedin.com/company/925855" target="_blank" aria-label="Top Hat on Linkedin, opens in a new tab" rel="nofollow"><span class="fab fa-linkedin-in" aria-hidden="true"></span></a></li>
+                        <li><a href="https://www.youtube.com/TopHatHQ?sub_confirmation=1" target="_blank" aria-label="Top Hat on YouTube, opens in a new tab" rel="nofollow"><span class="fab fa-youtube" aria-hidden="true"></span></a></li>
+                        <li><a href="https://g.page/TopHatHQ/review?rc" target="_blank" aria-label="Top Hat on Google My Business, opens in a new tab" rel="nofollow"> <div class="googlemybusiness">
+<svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m241 150v-150h-56.702l-30.002 150z"/><path d="m388.296 150h117.861l-56.226-140.566c-2.285-5.699-7.793-9.434-13.931-9.434h-77.706z"/><path d="m38.412 230.849c11.353 6.635 24.346 10.151 37.588 10.151 24.507 0 46.304-11.821 60-30.044 13.696 18.223 35.493 30.044 60 30.044s46.304-11.821 60-30.044c13.696 18.223 35.493 30.044 60 30.044s46.304-11.821 60-30.044c13.696 18.223 35.493 30.044 60 30.044 13.242 0 26.235-3.516 37.559-10.151 18.948-11.049 31.284-29.139 35.484-49.849h-506.086c4.201 20.709 16.531 38.8 35.455 49.849z"/><path d="m62.069 9.434-56.226 140.566h117.861l30.002-150h-77.706c-6.138 0-11.646 3.735-13.931 9.434z"/><path d="m272.043 0v150h86.704l-30.002-150z"/><path d="m376 252.074c-17.446 12.129-38.423 18.926-60 18.926s-42.554-6.797-60-18.926c-17.446 12.129-38.423 18.926-60 18.926s-42.554-6.797-60-18.926c-17.446 12.129-38.423 18.926-60 18.926-15.648 0-30.987-3.702-45-10.402v236.402c0 8.291 6.709 15 15 15h420c8.291 0 15-6.709 15-15v-236.402c-13.978 6.685-29.328 10.402-45 10.402-21.577 0-42.554-6.797-60-18.926zm-30 198.926c-41.353 0-75-33.647-75-75s33.647-75 75-75c20.054 0 38.877 7.808 53.042 21.973 5.845 5.874 5.845 15.366-.015 21.226-5.859 5.83-15.366 5.845-21.226-.015-8.481-8.511-19.775-13.184-31.801-13.184-24.814 0-45 20.186-45 45s20.186 45 45 45c19.53 0 36.024-12.578 42.237-30h-27.237c-8.291 0-15-6.709-15-15s6.709-15 15-15h45c8.291 0 15 6.709 15 15 0 41.353-33.647 75-75 75z"/></svg>
+</div>
+ </a> </li>
+                    </ul>
+                </div>
+                <div class="footer-copyright"><p>©2022 Tophatmonocle Corp.</p></div>
+            </div><!--.footer-bottom-->
+        </div><!--.wrapper-->
+    </footer><!-- .footer-global -->
+
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/cache/min/1/ajax/libs/jquery/3.3.1/jquery.min.js?ver=1648572053"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/cache/min/1/wp-content/themes/TOPHAT01/build/js/common.js?ver=1648572053" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/cache/min/1/wp-content/themes/TOPHAT01/build/js/main.js?ver=1648572053" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://tophat.com/wp-content/cache/min/1/wp-content/themes/TOPHAT01/build/js/ga-cid.js?ver=1648572053" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/themes/TOPHAT01/build/js/stickybits.min.js"></script>
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/*<![CDATA[*/
+(function() {
+	var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+	sz.src = '//siteimproveanalytics.com/js/siteanalyze_6116300.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+})();
+/*]]>*/
+</script>
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/assets/scripts/frontend.js?ver=1649170127' id='editor_plus-plugin-frontend-script-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/assets/scripts/progressbar.js?ver=1649170127' id='editorplus-progressbar-script-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/assets/scripts/toggles.js?ver=1649170127' id='editorplus-toggles-script-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/assets/scripts/counter.js?ver=1649170127' id='editorplus-counter-script-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://tophat.com/wp-content/cache/min/1/wp-content/plugins/editorplus/assets/scripts/tabs.js?ver=1649170127' id='editorplus-tabs-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/tophat.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://tophat.com/wp-content/cache/min/1/wp-content/themes/TOPHAT01/build/js/interactive/animate-in.js?ver=1648572053"></script>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,1287 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>中南大学新闻网门户网站</TITLE><META Name="keywords" Content="中南大学新闻网门户网站" />
+
+
+<script> setInterval("webjx.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);</script>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="css/style.css" rel="stylesheet" type="text/css">
+
+<LINK href="images/favicon.ico" rel="icon" type="image/x-icon">
+<LINK href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+<script language="javascript">
+function dosub()
+{
+    try{
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf("msie 8")>-1)
+        {
+            window.external.AddToFavoritesBar(document.location.href,document.title,"");//IE8
+        }else if(ua.toLowerCase().indexOf("rv:")>-1)
+        {
+            window.external.AddToFavoritesBar(document.location.href,document.title,"");//IE11+
+        }else{
+            if (document.all) 
+            {
+                window.external.addFavorite(document.location.href, document.title);
+            }else if(window.sidebar)
+            {
+                window.sidebar.addPanel( document.title, document.location.href, "");//firefox
+            }
+            else
+            {
+                alert(hotKeys());
+            }
+        }
+
+    }
+    catch (e){alert("无法自动添加到收藏夹，请使用 Ctrl + d 手动添加");}
+}
+
+
+function hotKeys() 
+{
+    var ua = navigator.userAgent.toLowerCase(); 
+    var str = "";    
+    var isWebkit = (ua.indexOf('webkit') != - 1); 
+    var isMac = (ua.indexOf('mac') != - 1);     
+    if (ua.indexOf('konqueror') != - 1) 
+    {  
+        str = 'CTRL + B'; // Konqueror   
+    } 
+    else if (window.home || isWebkit || isMac) 
+    {        
+        str = (isMac ? 'Command/Cmd' : 'CTRL') + ' + D'; // Netscape, Safari, iCab, IE5/Mac   
+    }
+    return ((str) ? '无法自动添加到收藏夹，请使用' + str + '手动添加' : str);
+}
+function setHomepage()
+{
+    var url = document.location.href;
+    if (document.all)
+    {
+        document.body.style.behavior='url(#default#homepage)';
+        document.body.setHomePage(url);
+    }
+    else if (window.sidebar)
+    {
+        if(window.netscape)
+        {
+             try{
+                  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+             }catch (e){
+                   alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+             }
+        }
+    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+    prefs.setCharPref('browser.startup.homepage',url);
+    }
+    else
+    {
+        alert("浏览器不支持自动设为首页，请手动设置");
+    }
+}
+</script><script language="javascript">
+function zxtg()
+{
+    window.location.href="https://zzgl.csu.edu.cn/system/contribute/caslogin.jsp"; 
+}
+function zxly()
+{
+    window.location.href="zxly.jsp?wbtreeid=1042"; 
+}
+function gjss()
+{
+    window.location.href="gjss.jsp?wbtreeid=1101"; 
+}
+
+
+</script><script language="javascript">
+function is_mobile() {
+var regex_match = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i;
+var u = navigator.userAgent;
+if (null == u) {
+return true;
+}
+var result = regex_match.exec(u);
+if (null == result) {
+return false
+} else {
+return true
+}
+}
+if (is_mobile()) {
+document.location.href= 'http://news.csu.edu.cn/mobile/';
+}
+</script>
+<STYLE></STYLE>
+
+<STYLE></STYLE>
+
+
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css" />
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:7765626265723230747a475c52505742000000004055 -->
+<link rel="stylesheet" type="text/css" href="index.vsb.css" />
+<script type="text/javascript" src="/system/resource/js/vsbscreen.min.js" id="_vsbscreen" devices="pc|pad"></script>
+<script type="text/javascript" src="/system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1001,'/index.jsp',-1,1092239805)</script>
+</HEAD>
+<BODY>
+
+<script type="text/javascript">
+function hidead()
+{document.getElementById("box1").style.display="none";}
+</script>
+<DIV class="wbmain" id="box1" style="right: 0px;display: block;top: 300px">
+<DIV align="right" onclick="hidead();" style="cursor: pointer;font-size: 9pt;margin-right: 10px">关闭</DIV>
+<TABLE width="111" border="0">
+<TBODY>
+<TR>
+<TD><IMG src="images/wb3.jpg"></TD></TR>
+<TR>
+<TD height="25">
+<DIV align="center">中南微博</DIV></TD></TR>
+<TR>
+<TD><IMG src="images/wb5.jpg"></TD></TR>
+<TR>
+<TD height="25">
+<DIV align="center">人民微博</DIV></TD></TR>
+<TR>
+<TD><IMG src="images/wb4.jpg"></TD></TR>
+<TR>
+<TD height="25">
+<DIV align="center">中南微信</DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV class="box">
+<TABLE width="100%" border="0" style="background: url(images/topbg.jpg) repeat-x left center">
+<TBODY>
+<TR>
+<TD height="33">欢迎您进入中南大学新闻网 现在是：<SPAN id="webjx"></SPAN> </TD>
+<TD>
+   <DIV align="right"><A href="index.htm">首页</A> | <A href="http://www.csu.edu.cn/">中南大学</A> | <A href="http://www.csu.edu.cn/index/xndh.htm ">学校导航</A> | <A href="javascript:setHomepage()">设为首页</A> | <A href="gjss.htm">高级检索</A> | <A href="http://en.csu.edu.cn/index/News.htm">ENGLISH</A> | <A href="sjewm.htm">手机版</A></DIV> </TD></TR></TBODY></TABLE>
+   
+   <TABLE width="100%" height="106" border="0" style="background: url(images/logbg.jpg) repeat-x">
+<TBODY>
+<TR>
+<TD rowspan="4"><A href="index.htm"><IMG src="images/logo.jpg"></A> </TD>
+<TD>&nbsp;</TD></TR>
+<TR>
+<TD>
+<P class="fr tpBtn"><A href="xmtsq.htm"><IMG src="images/bt1.jpg"></A><A href="https://zzgl.csu.edu.cn/system/contribute/caslogin.jsp"><IMG src="images/bt2.jpg"></A><A href="info/1041/1255.htm"><IMG src="images/bt4.jpg"></A></P></TD>
+</TR>
+
+<TR>
+<TD align="right">
+<DIV class="searchBox">
+<script type="text/javascript">
+    function _nl_ys_check(){
+        
+        var keyword = document.getElementById('showkeycode66293').value;
+        if(keyword==null||keyword==""){
+            alert("请输入你要检索的内容！");
+            return false;
+        }
+        if(window.toFF==1)
+        {
+            document.getElementById("lucenenewssearchkey66293").value = Simplized(keyword );
+        }else
+        {
+            document.getElementById("lucenenewssearchkey66293").value = keyword;            
+        }
+        var  base64 = new Base64();
+        document.getElementById("lucenenewssearchkey66293").value = base64.encode(document.getElementById("lucenenewssearchkey66293").value);
+        new VsbFormFunc().disableAutoEnable(document.getElementById("showkeycode66293"));
+        return true;
+    } 
+</script>
+<form action="ssjg.jsp?wbtreeid=1001" method="post" id="au2a" name="au2a" onsubmit="return _nl_ys_check()" style="display: inline">
+ <input type="hidden" id="lucenenewssearchkey66293" name="lucenenewssearchkey" value=""><input type="hidden" id="_lucenesearchtype66293" name="_lucenesearchtype" value="1"><input type="hidden" id="searchScope66293" name="searchScope" value="0">
+ <input name="showkeycode" class="searchInput" id="showkeycode66293">
+ <input class="searchBtn" type="image" src="images/searchbtn.jpg" align="absmiddle" style="cursor: hand">
+</form><script language="javascript" src="/system/resource/js/base64.js"></script><script language="javascript" src="/system/resource/js/formfunc.js"></script>
+</DIV></TD></TR>
+<TR>
+<TD>&nbsp;</TD></TR></TBODY></TABLE>
+   
+<TABLE width="100%" border="0">
+<TBODY>
+<TR>
+<TD width="15"><IMG src="images/navleft.jpg"></TD>
+<TD width="970" style="background: url(images/navMid.jpg) repeat-x left top"><DIV class="nav">
+ <A href="xxyw.htm">学校要闻</A>|
+ <A href="zhxw.htm">综合新闻</A>|
+ <A href="jxky.htm">教学科研</A>|
+ <A href="xstd.htm">学生天地</A>|
+ <A href="gjhz.htm">国际交流</A>|
+  <A href="jzgc.htm"> 记者观察</A>|
+ <A href="znrw.htm">中南人物</A>|
+  <A href="xydt.htm">校友动态</A>|
+ <A href="ldlt.htm">领导论坛</A>|
+  <A href="zngs.htm">中南故事</A>
+</br>
+ <A href="mtzn.htm">媒体中南</A>|
+ <A href="tszn.htm">图说中南</A>|
+ <A href="jczt.htm">精彩专题</A>|
+ <A href="jysd.htm">教育视点</A>| 
+ <A href="http://tv.csu.edu.cn/">视频中南</A>|
+ <A href="xygb.htm">校园广播</A>|
+ <A href="http://zndxb.ihwrm.com/index/article/oldrelease.html">电子校报</A>|
+ <A href="http://weibo.com/csunews ">中南微博</A>|
+ <A href="http://t.people.com.cn/13469038 ">人民微博</A>|
+ <A href="xmtsq.htm">中南微信</A>
+</DIV></TD>
+<TD width="15"><IMG src="images/navrit.jpg"></TD></TR></TBODY></TABLE>
+<DIV class="mainLeft mt8">
+<DIV class="topNews"><!--<SPAN><IMG src="/images/tt.jpg"></SPAN> --><script language="javascript" src="/system/resource/js/dynclicks.js"></script><script language="javascript" src="/system/resource/js/centerCutImg.js"></script><script language="javascript" src="/system/resource/js/ajax.js"></script>   <h4><a href="info/1031/152776.htm" target="_blank" title="中共中南大学委员会关于十九届中央第七轮巡视整改进展情况的通报">中共中南大学委员会关于十九届中央第七轮巡视整改进展</a></h4>
+
+<a href="index/sytt.htm" target="_blank"><img class="headline_news_more" src="images/space.gif" title="更多头条" width="23" height="60" border="0" style="background: url(images/s_21.gif) no-repeat;"></a>
+<script>_showDynClickBatch(['dynclicks_u4_152776'],[152776],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="newsPL mt10">
+<DIV class="newsPic">
+<LINK href="/system/resource/style/component/news/list/imagechangenews.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="/system/resource/js/news/imagechangenews.js"></script><script language="JavaScript">
+var u_u5_icn = new ImageChangeNews("u_u5_", 280, 198, 4, 2.0, true, false, false, true, false,"#u_u5_centerCutImg");
+
+//初始化图片, 并启动定时
+function u_u5_init_img()
+{
+
+    u_u5_icn.addimg("\/__local\/C\/4C\/18\/01A2CF2535EDA4CA1944AE68447_790D9AD4_3CFD40.jpeg", "info\/1102\/152147.htm", "中南大学召开党史学习教育...", "","中南大学召开党史学习教育总结会议");
+
+    u_u5_icn.addimg("\/__local\/5\/B0\/A7\/42605A71A20E3F3BDABCFC273EE_A7916184_198CA.jpeg", "info\/1102\/150651.htm", "中央第十二巡视组向中南大...", "","中央第十二巡视组向中南大学党委反馈巡视情况");
+
+    u_u5_icn.addimg("\/__local\/F\/B5\/F5\/155CBBD62C0D2A3F1955A590E77_504400DA_7DA205.jpg", "info\/1102\/150008.htm", "中南大学举行庆祝中国共产...", "","中南大学举行庆祝中国共产党成立100周年暨表彰大会");
+
+    u_u5_icn.addimg("\/__local\/8\/36\/00\/7298622F75C3747F896FAF21EBD_21514C75_B3500.jpg", "info\/1102\/149173.htm", "中央第十二巡视组巡视中南...", "","中央第十二巡视组巡视中南大学党委工作动员会召开");
+
+    u_u5_icn.addimg("\/__local\/9\/99\/DC\/031FBF0FF5ECB927AFE4C8138BE_9D95071F_2321B5.jpg", "info\/1102\/148331.htm", "湖南省委副书记、省长毛伟...", "","湖南省委副书记、省长毛伟明调研中南大学");
+
+    u_u5_icn.addimg("\/__local\/B\/40\/75\/A0A1DEBCC3683E704DB5FE675A8_07CDA3BE_D21F.jpg", "info\/1102\/146619.htm", "中南学子在第十一届中国大...", "","中南学子在第十一届中国大学生服务外包创新创业大赛中斩获佳绩");
+
+    u_u5_icn.changeimg(0);
+}
+</script><table cellspacing="0" cellpadding="0" border="0" style="padding:0px margin:0px; border:0px">
+    <tr><td>
+        <div id="u_u5_centerCutImg" style="OVERFLOW: hidden;height:198px;width:280px">
+            <div id="u_u5_div" align="center" style="padding:0px;margin:0px;border:0px solid black;background-color:#000000;FILTER: progid:DXImageTransform.Microsoft.RevealTrans (duration=2.0,transition=23);height:198px;width:280px">
+                <div id="u_u5_imgdiv" style="padding:0px;border:0px;"><a id="u_u5_url" target="_blank"><img id="u_u5_pic" border="0" src="/system/resource/images/space.gif"></a></div>
+            </div>
+            <div style="filter:alpha(style=1,opacity=10,finishOpacity=80);width:280px;height:19px;text-align:right;top:-19px;position:relative;padding:0px;margin:0px;border:0px;">
+<a href="javascript:u_u5_icn.changeimg(0)" ; id="u_u5_selectNode0" class="imagechangenews_pnode" target="_self">1</a><a href="javascript:u_u5_icn.changeimg(1)" ; id="u_u5_selectNode1" class="imagechangenews_pnode" target="_self">2</a><a href="javascript:u_u5_icn.changeimg(2)" ; id="u_u5_selectNode2" class="imagechangenews_pnode" target="_self">3</a><a href="javascript:u_u5_icn.changeimg(3)" ; id="u_u5_selectNode3" class="imagechangenews_pnode" target="_self">4</a><a href="javascript:u_u5_icn.changeimg(4)" ; id="u_u5_selectNode4" class="imagechangenews_pnode" target="_self">5</a><a href="javascript:u_u5_icn.changeimg(5)" ; id="u_u5_selectNode5" class="imagechangenews_pnode" target="_self">6</a>
+            </div></div></td></tr>
+       
+    <tr><td height="25">
+        <div align="center" style="overflow:hidden;text-overflow:ellipsis;height:25px;width:280px;"><a target="_blank" class="titlestyle72476" id="u_u5_newstitle"></a></div>
+    </td></tr>
+<div align="left" display="none" style="overflow:hidden;text-overflow:ellipsis;height:0px;width:280px;padding-left:2px;padding-right:2px"><a target="_blank" class="summarystyle72476" id="u_u5_newssummary"></a></div>   
+</table><SCRIPT language="JavaScript">u_u5_init_img();</SCRIPT></DIV>
+<DIV class="Media mt8">
+<H4 class="MdTitle"><SPAN><A href="mtzn.htm">媒体中南</A></SPAN> </H4>
+
+<ul class="mediaList">
+   <li>[中新网]<a href="info/1061/152867.htm" target="_blank" title="中南大学读书文化节开启阅读新“体验”">中南大学读书文化节开启...</a></li>
+   <li>[红网]<a href="https://hn.rednet.cn/content/2022/04/23/11153888.html" target="_blank" title="阅读原来可以这么科技：中南大学读书日活动有VR新体验">阅读原来可以这么科技：...</a></li>
+   <li>[新华社客户端]<a href="info/1061/152865.htm" target="_blank" title="半月谈 | “我的这十年”系列报道 医者十年，与健康中国同框">半月谈 | “我的这十年”...</a></li>
+   <li>[人民网]<a href="info/1061/152864.htm" target="_blank" title="VR实境、云享阅读：中南大学带你开启阅读新“体验”">VR实境、云享阅读：中南...</a></li>
+   <li>[新湖南客户端]<a href="info/1062/152863.htm" target="_blank" title="中南大学：VR实境、云享阅读……带你沉浸“书香校园”">中南大学：VR实境、云享...</a></li>
+   <li>[人民日报客户端]<a href="info/1061/152862.htm" target="_blank" title="“湘沪”照顾、共克时艰|湖南省第三批援沪医疗队顺利收治第一批新冠患者">“湘沪”照顾、共克时艰|...</a></li>
+   <li>[光明日报]<a href="info/1061/152853.htm" target="_blank" title="王维：行医需弃我，行医需谨慎">王维：行医需弃我，行医...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u6_152867','dynclicks_u6_152866','dynclicks_u6_152865','dynclicks_u6_152864','dynclicks_u6_152863','dynclicks_u6_152862','dynclicks_u6_152853'],[152867,152866,152865,152864,152863,152862,152853],"wbnews", 1092239805)</script>
+
+
+</DIV>
+<DIV class="Media mt8">
+<H4 class="MdTitle2"><SPAN><A href="znrw.htm">中南人物</A> </SPAN></H4><ul class="mediaList">
+   <li><a href="info/1007/152508.htm" target="_blank" title="中南大学张卫社教授获评“全国三八红旗手”">中南大学张卫社教授获评“全国三八红...</a></li>
+   <li><a href="info/1007/151469.htm" target="_blank" title="【特别报道】王锡阳：手术台上的外科医生，手术台下的“专利哥”">【特别报道】王锡阳：手术台上的外科...</a></li>
+   <li><a href="info/1007/151363.htm" target="_blank" title="【红色中南·传承】肖利民：利民之事，丝发必兴">【红色中南·传承】肖利民：利民之事，...</a></li>
+   <li><a href="info/1007/151187.htm" target="_blank" title="张国刚：为患者值守一生">张国刚：为患者值守一生</a></li>
+   <li><a href="info/1007/151142.htm" target="_blank" title="【致敬中南良师】张静平：育人良方须自寻">【致敬中南良师】张静平：育人良方须自寻</a></li>
+   <li><a href="info/1007/151076.htm" target="_blank" title="罗拉：追光者，十八岁">罗拉：追光者，十八岁</a></li>
+   <li><a href="info/1007/151075.htm" target="_blank" title="蒲润：意志蒲苇韧 信仰磐石坚">蒲润：意志蒲苇韧 信仰磐石坚</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u7_152508','dynclicks_u7_151469','dynclicks_u7_151363','dynclicks_u7_151187','dynclicks_u7_151142','dynclicks_u7_151076','dynclicks_u7_151075'],[152508,151469,151363,151187,151142,151076,151075],"wbnews", 1092239805)</script>
+</DIV></DIV>
+<DIV class="newsPR mt10">
+<DIV>
+<H4 class="GeneralNews"><SPAN>
+<UL id="tab" style="float: left">
+<LI class="current" jquery1710434909319042288="1" jquery17109001763357274419="1" jquery17107891093402550566="1" jquery17107233276696723829="1" style="float: left"><A href="xxyw.htm">学校要闻</A></LI><!--<LI jquery1710434909319042288="2" jquery17109001763357274419="2" jquery17107891093402550566="2" jquery17107233276696723829="2" style="float: left"><A href="sub.jsp?urltype=tree.TreeTempUrl&amp;wbtreeid=1051">&nbsp;简讯</A></LI>--></UL></H4></SPAN>
+<DIV id="content"><ul class="GNList" style="display:block;">
+   <li><a href="info/1002/152774.htm" target="_blank" title="中共中南大学委员会关于十九届中央第七轮巡视整改进展情况的通报">中共中南大学委员会关于十九届中央第七轮巡视整改进展情...</a></li>
+   <li><a href="info/1002/152852.htm" target="_blank" title="【特别报道】VR实境、云享阅读，“书香中南”开启阅读新体验">【特别报道】VR实境、云享阅读，“书香中南”开启阅读新...</a></li>
+   <li><a href="info/1002/152848.htm" target="_blank" title="校党委理论学习中心组开展2022年度第三次集中学习">校党委理论学习中心组开展2022年度第三次集中学习</a></li>
+   <li><a href="info/1002/152820.htm" target="_blank" title="【特别报道】中南大学增援104名湘雅专家到岗守“沪”">【特别报道】中南大学增援104名湘雅专家到岗守“沪”</a></li>
+   <li><a href="info/1002/152804.htm" target="_blank" title="学校召开网络安全和信息化领导小组工作会议">学校召开网络安全和信息化领导小组工作会议</a></li>
+   <li><a href="info/1002/152810.htm" target="_blank" title="中南大学开展“访企拓岗”行动：易红率队赴中兴通讯公司长沙研发中心调研">中南大学开展“访企拓岗”行动：易红率队赴中兴通讯公司...</a></li>
+   <li><a href="info/1002/152789.htm" target="_blank" title="中南大学第九届辅导员素质能力大赛落幕  24人获奖">中南大学第九届辅导员素质能力大赛落幕  24人获奖</a></li>
+   <li><a href="info/1002/152778.htm" target="_blank" title="中南大学湘雅医院第二团总支获评“全国五四红旗团支部”">中南大学湘雅医院第二团总支获评“全国五四红旗团支部”</a></li>
+   <li><a href="info/1002/152773.htm" target="_blank" title="【媒体聚焦】中南大学：站上新高地">【媒体聚焦】中南大学：站上新高地</a></li>
+   <li><a href="info/1002/152766.htm" target="_blank" title="中南大学5项案例获教育部学位中心2021年主题案例专项征集立项">中南大学5项案例获教育部学位中心2021年主题案例专项征集...</a></li>
+   <li><a href="info/1002/152723.htm" target="_blank" title="中南大学46个项目入选教育部首期供需对接就业育人项目">中南大学46个项目入选教育部首期供需对接就业育人项目</a></li>
+   <li><a href="info/1002/152712.htm" target="_blank" title="田红旗检查学校疫情防控和线上教学工作">田红旗检查学校疫情防控和线上教学工作</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u8_152774','dynclicks_u8_152852','dynclicks_u8_152848','dynclicks_u8_152820','dynclicks_u8_152804','dynclicks_u8_152810','dynclicks_u8_152789','dynclicks_u8_152778','dynclicks_u8_152773','dynclicks_u8_152766','dynclicks_u8_152723','dynclicks_u8_152712'],[152774,152852,152848,152820,152804,152810,152789,152778,152773,152766,152723,152712],"wbnews", 1092239805)</script>
+<!--<!--#begineditable name="简讯" contype="" action="" layout="" clone="0" namechanged="0" order="6" ispublic="0" tagname="简讯" viewid="60420" stylesysid=""--elementname<!--#endeditable--></DIV></DIV>
+<DIV class="fl mt8">
+<H4 class="GeneralNews"><SPAN><A href="zhxw.htm">综合新闻</A></SPAN></H4><ul class="GNList">
+   <li><a href="info/1003/152861.htm" target="_blank" title="学校召开2022年节能减排领导小组会议">学校召开2022年节能减排领导小组会议</a></li>
+   <li><a href="info/1003/152846.htm" target="_blank" title="我校学风建设主题纪录片获评中国科协2021年度优秀传播作品">我校学风建设主题纪录片获评中国科协2021年度优秀传播...</a></li>
+   <li><a href="info/1003/152841.htm" target="_blank" title="中南大学刘敏团队发表单原子Fe-N-C催化剂的理论研究成果">中南大学刘敏团队发表单原子Fe-N-C催化剂的理论研究成...</a></li>
+   <li><a href="info/1003/152840.htm" target="_blank" title="我校举行“科学精神赤子心”纪念陈国达院士诞辰110周年科普活动">我校举行“科学精神赤子心”纪念陈国达院士诞辰110周年...</a></li>
+   <li><a href="info/1003/152809.htm" target="_blank" title="我校刚果（金）外交学院孔子学院与刚果（金）军事语言学院合作共建中文教学点">我校刚果（金）外交学院孔子学院与刚果（金）军事语言...</a></li>
+   <li><a href="info/1003/152808.htm" target="_blank" title="典型事迹片《三份特殊的答卷》 荣获全国党员教育电视片观摩交流活动三等奖">典型事迹片《三份特殊的答卷》 荣获全国党员教育电视片...</a></li>
+   <li><a href="info/1003/152785.htm" target="_blank" title="岳麓区人大代表来第一附属中小学调研">岳麓区人大代表来第一附属中小学调研</a></li>
+   <li><a href="info/1003/152783.htm" target="_blank" title="我校5个学科被中国科协认定为英才计划培养基地">我校5个学科被中国科协认定为英才计划培养基地</a></li>
+   <li><a href="info/1003/152782.htm" target="_blank" title="教育部“误差理论与测量平差基础课程虚拟教研室”建设启动会在中南大学召开">教育部“误差理论与测量平差基础课程虚拟教研室”建设...</a></li>
+   <li><a href="info/1003/152770.htm" target="_blank" title="谢辉团队发文揭示糖皮质激素诱导的有益肠道菌胞外囊泡的减少与骨坏死发病相关">谢辉团队发文揭示糖皮质激素诱导的有益肠道菌胞外囊泡...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u9_152861','dynclicks_u9_152846','dynclicks_u9_152841','dynclicks_u9_152840','dynclicks_u9_152809','dynclicks_u9_152808','dynclicks_u9_152785','dynclicks_u9_152783','dynclicks_u9_152782','dynclicks_u9_152770'],[152861,152846,152841,152840,152809,152808,152785,152783,152782,152770],"wbnews", 1092239805)</script>
+</DIV></DIV></DIV>
+<DIV class="mainRit mt8">
+<DIV class="picXZ">
+<H4 class="picXZTitle"><SPAN><A href="tszn.htm">图说中南</A></SPAN> </H4><ul class="picXZList">
+
+    <li>    
+            <a href="info/1013/149922.htm" target="_blank" class="pXZPic"><img src="/__local/D/AD/F3/3FFEC42FC7F6969573650BF692D_C4185F2C_513154.jpg" width="105px" height="88px"></a>
+            <a href="info/1013/149922.htm" target="_blank" title="中南大学原创大型歌舞诗《中南故事》上演" class="pXZCont">中南大学原...</a>
+     </li>     
+    <li>    
+            <a href="info/1013/149838.htm" target="_blank" class="pXZPic"><img src="/__local/4/74/81/D7056D4541AA024D066ED3EE4AE_C4604171_95B53.jpg" width="105px" height="88px"></a>
+            <a href="info/1013/149838.htm" target="_blank" title="中南大学举行2021届毕业典礼暨学位授予仪式" class="pXZCont">中南大学举...</a>
+     </li>     
+
+
+    <li>    
+            <a href="info/1013/149515.htm" target="_blank" class="pXZPic"><img src="/__local/2/12/53/BBAB9AAA172EA116F6459D2E428_576ABA10_9887E.jpg" width="105px" height="88px"></a>
+            <a href="info/1013/149515.htm" target="_blank" title="献礼建党100周年“红心永向党·民族团结一家亲” 文艺晚会" class="pXZCont">献礼建党100...</a>
+     </li>     
+    <li>    
+            <a href="info/1013/147512.htm" target="_blank" class="pXZPic"><img src="/__local/5/69/3C/FE1E50173AE7C63FCDE36689ECD_CD2645B9_D2F7.jpg" width="105px" height="88px"></a>
+            <a href="info/1013/147512.htm" target="_blank" title="中南初雪" class="pXZCont">中南初雪</a>
+     </li>     
+
+</ul><script>_showDynClickBatch(['dynclicks_u10_149922','dynclicks_u10_149838','dynclicks_u10_149515','dynclicks_u10_147512'],[149922,149838,149515,147512],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="picXZ mt10">
+<H4 class="picXZTitle"><SPAN><A href="ldlt.htm">领导论坛</A></SPAN> </H4><ul class="leaderList">
+   <li><a href="info/1009/150728.htm" target="_blank" title="田红旗：这一站，蓄势正年华">田红旗：这一站，蓄势正年华</a></li>
+   <li><a href="info/1009/149801.htm" target="_blank" title="【2021毕业季】田红旗：寸心怀家国 奋进骋四海">【2021毕业季】田红旗：寸心怀家国 ...</a></li>
+   <li><a href="info/1009/146729.htm" target="_blank" title="田红旗：超越让青春更闪耀">田红旗：超越让青春更闪耀</a></li>
+   <li><a href="info/1009/145935.htm" target="_blank" title="田红旗：不惧挑战 勇创未来">田红旗：不惧挑战 勇创未来</a></li>
+   <li><a href="info/1009/141574.htm" target="_blank" title="田红旗：让大学时光聚成人生光源">田红旗：让大学时光聚成人生光源</a></li>
+   <li><a href="info/1009/140894.htm" target="_blank" title="田红旗：以格局致远人生">田红旗：以格局致远人生</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u11_150728','dynclicks_u11_149801','dynclicks_u11_146729','dynclicks_u11_145935','dynclicks_u11_141574','dynclicks_u11_140894'],[150728,149801,146729,145935,141574,140894],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="picXZ mt10">
+<H4 class="picXZTitle"><SPAN><A href="jczt.htm">精彩专题</A></SPAN> </H4><UL class="leaderList">
+
+
+
+
+
+
+
+
+
+<li><a href="jczt/xsj2021.htm" title="2021新生季">2021新生季</a></li>
+
+
+
+<li><a href="jczt/szxjzy.htm" title="思政实践资源">思政实践资源</a></li>
+
+
+
+<li><a href="jczt/byj2021.htm" title="2021毕业季">2021毕业季</a></li>
+
+
+
+<li><a href="jczt/dsxxjyztw.htm" title="党史学习教育专题">党史学习教育专题</a></li>
+
+
+
+<li><a href="jczt/a2020yjsjygzhy.htm" title="2020研究生教育工作会议">2020研究生教育工作会议</a></li>
+
+
+
+<li><a href="jczt/bwcx_ljsm.htm" title="不忘初心、牢记使命">不忘初心、牢记使命</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</UL>
+</DIV></DIV>
+<TABLE width="100%" class="fl" border="0">
+<TBODY>
+<TR>
+<TD><IMG src="images/explode-1.png"></TD></TR></TBODY></TABLE>
+<DIV class="mainLeft mt12 ">
+<DIV class="eduSc mr15">
+<H4 class="eduScTitle"><SPAN><A href="jxky.htm">教学科研</A></SPAN></H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="images/DSC_8025.JPG" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="info/1004/152849.htm" target="_blank" title="中南大学刘敏团队发表单原子Fe-N-C催化剂的理论研究成果">中南大学刘敏团队发表单...</a></li>
+   <li><a href="info/1004/152787.htm" target="_blank" title="我校5个学科被中国科协认定为英才计划培养基地">我校5个学科被中国科协认...</a></li>
+   <li><a href="info/1004/152786.htm" target="_blank" title="教育部“误差理论与测量平差基础课程虚拟教研室”建设启动会在中南大学召开">教育部“误差理论与测量...</a></li>
+   <li><a href="info/1004/152772.htm" target="_blank" title="中南大学举办2021年中国工程热物理学会工程热力学与能源利用学术会议">中南大学举办2021年中国...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u14_152849','dynclicks_u14_152787','dynclicks_u14_152786','dynclicks_u14_152772'],[152849,152787,152786,152772],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="info/1004/152771.htm" target="_blank" title="湖南省教育厅副厅长左清一行来校调研医学学科建设工作">湖南省教育厅副厅长左清一行来校调研医学学科...</a></li>
+   <li><a href="info/1004/152711.htm" target="_blank" title="中南大学马昌杯课题组在功能核酸研究方面取得新进展">中南大学马昌杯课题组在功能核酸研究方面取得...</a></li>
+   <li><a href="info/1004/152685.htm" target="_blank" title="中南大学殷刚团队揭示MEIS1启动子超甲基化与结直肠癌发生发展及奥沙利铂耐药的分子机制">中南大学殷刚团队揭示MEIS1启动子超甲基化与结...</a></li>
+   <li><a href="info/1004/152671.htm" target="_blank" title="湘雅医院神经外科蒋念在 Nature 子刊发表原创论文">湘雅医院神经外科蒋念在 Nature 子刊发表原创...</a></li>
+   <li><a href="info/1004/152642.htm" target="_blank" title="吴静教授主编的高教社“十四五”医学规划教材《医患沟通学》出版发行">吴静教授主编的高教社“十四五”医学规划教材...</a></li>
+   <li><a href="info/1004/152643.htm" target="_blank" title="中南大学刘敏团队纳米针尖场效应研究成果论文接连在国际期刊发表">中南大学刘敏团队纳米针尖场效应研究成果论文...</a></li>
+   <li><a href="info/1004/152612.htm" target="_blank" title="商学院朱学红团队在Nature Communications发表研究成果">商学院朱学红团队在Nature Communications发表...</a></li>
+   <li><a href="info/1004/152611.htm" target="_blank" title="土木工程学院学子在国际著名期刊发表相关研究成果">土木工程学院学子在国际著名期刊发表相关研究成果</a></li>
+</ul>
+
+<script>_showDynClickBatch(['dynclicks_u15_152849','dynclicks_u15_152787','dynclicks_u15_152786','dynclicks_u15_152772','dynclicks_u15_152771','dynclicks_u15_152711','dynclicks_u15_152685','dynclicks_u15_152671','dynclicks_u15_152642','dynclicks_u15_152643','dynclicks_u15_152612','dynclicks_u15_152611'],[152849,152787,152786,152772,152771,152711,152685,152671,152642,152643,152612,152611],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="eduSc mr10">
+<H4 class="eduScTitle"><SPAN><A href="jzgc.htm">记者观察</A></SPAN> </H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="57vd14br00.jpg" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="info/1016/151388.htm" target="_blank" title="双十一“热消费”的“冷处理”">双十一“热消费”的“冷...</a></li>
+   <li><a href="info/1016/148359.htm" target="_blank" title="世界睡眠日：放下手机，不做“特困生”">世界睡眠日：放下手机，...</a></li>
+   <li><a href="info/1016/148043.htm" target="_blank" title="图书馆预约制：你坐到空位了吗？">图书馆预约制：你坐到空...</a></li>
+   <li><a href="info/1016/147803.htm" target="_blank" title="2020中南调色盘">2020中南调色盘</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u17_151388','dynclicks_u17_148359','dynclicks_u17_148043','dynclicks_u17_147803'],[151388,148359,148043,147803],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="info/1016/147801.htm" target="_blank" title="【特别报道】思政课，在“集”中“升质”">【特别报道】思政课，在“集”中“升质”</a></li>
+   <li><a href="info/1016/147336.htm" target="_blank" title="少年当勉励 勤学成自然">少年当勉励 勤学成自然</a></li>
+   <li><a href="info/1016/147334.htm" target="_blank" title="“后疫情时代”的体育运动">“后疫情时代”的体育运动</a></li>
+   <li><a href="info/1016/147335.htm" target="_blank" title="扶贫日：在中南赶个“瑶家集”">扶贫日：在中南赶个“瑶家集”</a></li>
+   <li><a href="info/1016/146040.htm" target="_blank" title="【2020毕业季】记“疫”中的毕业季">【2020毕业季】记“疫”中的毕业季</a></li>
+   <li><a href="info/1016/143615.htm" target="_blank" title="回到梦开始的地方--记1979级校友入学40周年返校纪念活动">回到梦开始的地方--记1979级校友入学40周年返...</a></li>
+   <li><a href="info/1016/143614.htm" target="_blank" title="保研之后">保研之后</a></li>
+   <li><a href="info/1016/141935.htm" target="_blank" title="【2019新生季】“再见，国防生教官们”">【2019新生季】“再见，国防生教官们”</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u18_151388','dynclicks_u18_148359','dynclicks_u18_148043','dynclicks_u18_147803','dynclicks_u18_147801','dynclicks_u18_147336','dynclicks_u18_147334','dynclicks_u18_147335','dynclicks_u18_146040','dynclicks_u18_143615','dynclicks_u18_143614','dynclicks_u18_141935'],[151388,148359,148043,147803,147801,147336,147334,147335,146040,143615,143614,141935],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="eduSc mr15 mt15">
+<H4 class="eduScTitle"><SPAN><A href="xstd.htm">学生天地</A> </SPAN></H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="images/3.jpg" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="info/1005/152788.htm" target="_blank" title="我校5个学科被中国科协认定为英才计划培养基地">我校5个学科被中国科协认...</a></li>
+   <li><a href="info/1005/152746.htm" target="_blank" title="中南学子夺得第六届全国失效分析大赛2项一等奖">中南学子夺得第六届全国...</a></li>
+   <li><a href="info/1005/152730.htm" target="_blank" title="中南大学46个项目入选教育部首期供需对接就业育人项目">中南大学46个项目入选教...</a></li>
+   <li><a href="info/1005/152670.htm" target="_blank" title="第六期“校领导与学生午餐会”举行">第六期“校领导与学生午...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u20_152788','dynclicks_u20_152746','dynclicks_u20_152730','dynclicks_u20_152670'],[152788,152746,152730,152670],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="info/1005/152468.htm" target="_blank" title="中南学子参加第四届“外教社杯”全国高校学生跨文化能力大赛总决赛获佳绩">中南学子参加第四届“外教社杯”全国高校学生...</a></li>
+   <li><a href="info/1005/152480.htm" target="_blank" title="中南学子独立发现并证明两族新的q-Dyson类常数项恒等式">中南学子独立发现并证明两族新的q-Dyson类常数...</a></li>
+   <li><a href="info/1005/152249.htm" target="_blank" title="“我在中南过大年”：学校举行2022年寒假留校学生联欢会">“我在中南过大年”：学校举行2022年寒假留校...</a></li>
+   <li><a href="info/1005/152267.htm" target="_blank" title="中央电视台《新闻直播间》专题报道中南大学就业工作">中央电视台《新闻直播间》专题报道中南大学就...</a></li>
+   <li><a href="info/1005/152074.htm" target="_blank" title="中南学子夺得第18届中国研究生数学建模竞赛3个一等奖">中南学子夺得第18届中国研究生数学建模竞赛3个...</a></li>
+   <li><a href="info/1005/152050.htm" target="_blank" title="中南大学第十六届“芙蓉学子·榜样力量” 优秀大学生评选结果揭晓">中南大学第十六届“芙蓉学子·榜样力量” 优秀...</a></li>
+   <li><a href="info/1005/151988.htm" target="_blank" title="机电工程学院举行2021年度钟掘教育发展基金颁奖典礼">机电工程学院举行2021年度钟掘教育发展基金颁...</a></li>
+   <li><a href="info/1005/151972.htm" target="_blank" title="湘雅医学院图书馆“湘雅精神”文化墙开展">湘雅医学院图书馆“湘雅精神”文化墙开展</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u21_152788','dynclicks_u21_152746','dynclicks_u21_152730','dynclicks_u21_152670','dynclicks_u21_152468','dynclicks_u21_152480','dynclicks_u21_152249','dynclicks_u21_152267','dynclicks_u21_152074','dynclicks_u21_152050','dynclicks_u21_151988','dynclicks_u21_151972'],[152788,152746,152730,152670,152468,152480,152249,152267,152074,152050,151988,151972],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="eduSc mr10 mt15">
+<H4 class="eduScTitle"><SPAN><A href="gjhz.htm">国际交流</A></SPAN> </H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="26d71lepy1.jpg" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="info/1006/152811.htm" target="_blank" title="我校刚果（金）外交学院孔子学院与刚果（金）军事语言学院合作共建中文教学点">我校刚果（金）外交学院...</a></li>
+   <li><a href="info/1006/152658.htm" target="_blank" title="我校刚果（金）外交学院孔子学院与当地中学合作设立首个中文教学点">我校刚果（金）外交学院...</a></li>
+   <li><a href="info/1006/151924.htm" target="_blank" title="田红旗线上会见英国邓迪大学校长Iain Gillespie">田红旗线上会见英国邓迪...</a></li>
+   <li><a href="info/1006/151678.htm" target="_blank" title="哈萨克斯坦驻华大使馆代表团访问我校">哈萨克斯坦驻华大使馆代...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u23_152811','dynclicks_u23_152658','dynclicks_u23_151924','dynclicks_u23_151678'],[152811,152658,151924,151678],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="info/1006/151652.htm" target="_blank" title="刚果（金）外交学院孔子学院成立三周年庆典暨开放日活动成功举办">刚果（金）外交学院孔子学院成立三周年庆典暨...</a></li>
+   <li><a href="info/1006/151620.htm" target="_blank" title="刚果（金）外交学院孔子学院中方受邀访问金沙萨美术学院">刚果（金）外交学院孔子学院中方受邀访问金沙...</a></li>
+   <li><a href="info/1006/151126.htm" target="_blank" title="奥尔良大学孔子学院2021年“孔子三日”系列活动圆满落幕">奥尔良大学孔子学院2021年“孔子三日”系列活...</a></li>
+   <li><a href="info/1006/151147.htm" target="_blank" title="“‘一带一路’国家胃肠外科腹腔镜技术国际培训班”在中南大学举办">“‘一带一路’国家胃肠外科腹腔镜技术国际培...</a></li>
+   <li><a href="info/1006/148426.htm" target="_blank" title="尼日利亚驻华大使来校看望尼日利亚籍留学生">尼日利亚驻华大使来校看望尼日利亚籍留学生</a></li>
+   <li><a href="info/1006/147383.htm" target="_blank" title="我校举办2020中澳三校先进工程科研会议">我校举办2020中澳三校先进工程科研会议</a></li>
+   <li><a href="info/1006/147437.htm" target="_blank" title="智利驻华大使率团访问我校">智利驻华大使率团访问我校</a></li>
+   <li><a href="info/1006/147175.htm" target="_blank" title="中南大学与蒙纳士大学合作办学项目150名新生开学">中南大学与蒙纳士大学合作办学项目150名新生开...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u24_152811','dynclicks_u24_152658','dynclicks_u24_151924','dynclicks_u24_151678','dynclicks_u24_151652','dynclicks_u24_151620','dynclicks_u24_151126','dynclicks_u24_151147','dynclicks_u24_148426','dynclicks_u24_147383','dynclicks_u24_147437','dynclicks_u24_147175'],[152811,152658,151924,151678,151652,151620,151126,151147,148426,147383,147437,147175],"wbnews", 1092239805)</script>
+</DIV><BR><!--
+<DIV id="two">
+<object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="705" height="86" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"><param name="movie" value="/images/e5cdd629-bee0-40df-8ee1-7e1315f6850a.swf"> <param name="quality" value="high"><embed src="/images/e5cdd629-bee0-40df-8ee1-7e1315f6850a.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="705" height="86"></embed> </object></DIV>
+-->
+<DIV class="eduSc mr15 mt15">
+<H4 class="eduScTitle"><SPAN><A href="xydt.htm">校友动态</A> </SPAN></H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="96h18a7l7d.jpg" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="info/1017/151109.htm" target="_blank" title="中南大学土木工程学院校友会成立">中南大学土木工程学院校...</a></li>
+   <li><a href="info/1017/150782.htm" target="_blank" title="内蒙古校友会成立">内蒙古校友会成立</a></li>
+   <li><a href="info/1017/151094.htm" target="_blank" title="中南大学山西校友会成立">中南大学山西校友会成立</a></li>
+   <li><a href="info/1017/148955.htm" target="_blank" title="中南大学90级校友倪平利回母校作创新创业报告">中南大学90级校友倪平利...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u26_151109','dynclicks_u26_150782','dynclicks_u26_151094','dynclicks_u26_148955'],[151109,150782,151094,148955],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="info/1017/148914.htm" target="_blank" title="中南大学校友总会湘雅校友会生命科学学院校友分会成立">中南大学校友总会湘雅校友会生命科学学院校友...</a></li>
+   <li><a href="info/1017/148719.htm" target="_blank" title="青海校友会筹备会议在西宁召开">青海校友会筹备会议在西宁召开</a></li>
+   <li><a href="info/1017/147766.htm" target="_blank" title="校党委书记易红出席云南校友座谈会">校党委书记易红出席云南校友座谈会</a></li>
+   <li><a href="info/1017/147515.htm" target="_blank" title="公管院社会学系本科2010届校友返校话沧桑">公管院社会学系本科2010届校友返校话沧桑</a></li>
+   <li><a href="info/1017/147404.htm" target="_blank" title="陶立坚带队赴广西看望慰问我校选调生">陶立坚带队赴广西看望慰问我校选调生</a></li>
+   <li><a href="info/1017/147332.htm" target="_blank" title="土木1986级校友毕业三十周年母校聚会">土木1986级校友毕业三十周年母校聚会</a></li>
+   <li><a href="info/1017/147217.htm" target="_blank" title="中南大学天津校友会成立">中南大学天津校友会成立</a></li>
+   <li><a href="info/1017/146181.htm" target="_blank" title="陶立坚一行走访长沙校友企业并与校友代表座谈">陶立坚一行走访长沙校友企业并与校友代表座谈</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u27_151109','dynclicks_u27_150782','dynclicks_u27_151094','dynclicks_u27_148955','dynclicks_u27_148914','dynclicks_u27_148719','dynclicks_u27_147766','dynclicks_u27_147515','dynclicks_u27_147404','dynclicks_u27_147332','dynclicks_u27_147217','dynclicks_u27_146181'],[151109,150782,151094,148955,148914,148719,147766,147515,147404,147332,147217,146181],"wbnews", 1092239805)</script>
+</DIV>
+<DIV class="eduSc mr10 mt15">
+<H4 class="eduScTitle"><SPAN><A href="jysd.htm">教育视点</A></SPAN> </H4>
+<DIV>
+<P class="eduPic">        
+                
+                        <img src="g5nzqq3l5z.jpg" width="105" height="90">
+
+<P></P><ul class="eduList">
+   <li><a href="https://www.12371.cn/2020/07/29/ARTI1596023037764532.shtml" target="_blank" title="习近平对研究生教育工作作出重要指示">习近平对研究生教育工作...</a></li>
+   <li><a href="http://www.xinhuanet.com/politics/2019-04/30/c_1124440193.htm" target="_blank" title="习近平：在纪念五四运动100周年大会上的讲话">习近平：在纪念五四运动1...</a></li>
+   <li><a href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/201902/t20190222_370722.html" target="_blank" title="教育部2019年工作要点">教育部2019年工作要点</a></li>
+   <li><a href="http://dangjian.people.com.cn/n1/2018/1210/c117092-30454531.html" target="_blank" title="图解：为您解读《干部人事档案工作条例》上篇">图解：为您解读《干部人...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u29_152305','dynclicks_u29_140474','dynclicks_u29_140000','dynclicks_u29_139709'],[152305,140474,140000,139709],"wbnews", 1092239805)</script>
+</DIV><ul class="eduTatle">
+   <li><a href="http://dangjian.people.com.cn/n1/2018/1130/c117092-30434758.html" target="_blank" title="图解：带你读懂《中国共产党支部工作条例（试行）》下篇">图解：带你读懂《中国共产党支部工作条例（试...</a></li>
+   <li><a href="http://dangjian.people.com.cn/n1/2018/1129/c117092-30432739.html" target="_blank" title="图解：带你读懂《中国共产党支部工作条例（试行）》中篇">图解：带你读懂《中国共产党支部工作条例（试...</a></li>
+   <li><a href="http://dangjian.people.com.cn/n1/2018/1128/c117092-30430578.html" target="_blank" title="图解：带你读懂《中国共产党支部工作条例（试行）》上篇">图解：带你读懂《中国共产党支部工作条例（试...</a></li>
+   <li><a href="http://theory.people.com.cn/n1/2018/0918/c40531-30299238.html" target="_blank" title="新论：教育要促进人的全面发展">新论：教育要促进人的全面发展</a></li>
+   <li><a href="http://opinion.people.com.cn/n1/2018/0913/c1003-30289736.html" target="_blank" title="人民日报评论员：教育是国之大计、党之大计">人民日报评论员：教育是国之大计、党之大计</a></li>
+   <li><a href="http://news.youth.cn/sz/201809/t20180911_11723617.htm" target="_blank" title="新华社评论员：以立德树人铸就教育之魂">新华社评论员：以立德树人铸就教育之魂</a></li>
+   <li><a href="http://news.youth.cn/sz/201809/t20180911_11723614.htm" target="_blank" title="教育的首要问题，习近平讲了这十大“金句”">教育的首要问题，习近平讲了这十大“金句”</a></li>
+   <li><a href="http://www.xinhuanet.com/politics/leaders/2018-09/10/c_1123408400.htm" target="_blank" title="习近平：坚持中国特色社会主义教育发展道路培养德智体美劳全面发展的社会主义建设者和接班人">习近平：坚持中国特色社会主义教育发展道路培...</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u30_152305','dynclicks_u30_140474','dynclicks_u30_140000','dynclicks_u30_139709','dynclicks_u30_139715','dynclicks_u30_139711','dynclicks_u30_139713','dynclicks_u30_139049','dynclicks_u30_138982','dynclicks_u30_138914','dynclicks_u30_138913','dynclicks_u30_138911'],[152305,140474,140000,139709,139715,139711,139713,139049,138982,138914,138913,138911],"wbnews", 1092239805)</script>
+</DIV></DIV>
+<DIV class="mainRit mt12">
+<DIV class="picXZ">
+<H4 class="picXZTitle"><SPAN><A href="http://zndxb.cuepa.cn/oldrelease.php">电子校报</A></SPAN> </H4><A class="zaz" href="http://zndxb.cuepa.cn/oldrelease.php">      
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td><a href="http://zndxb.cuepa.cn/index.php?release_id=122823" target="_blank" onclick="_addDynClicks('wbimage',1092239805,17105)"><img src="images/9b5f22cc4f65728d051fab9aec758256324616_jpg.jpg" width="107" height="161" hspace="0" vspace="0" border="0"></a></td>
+        </tr>
+        </table>   </A><script language="javascript" src="/system/resource/js/openlink.js"></script><p class="zazLis">
+    <a href="http://zndxb.ihwrm.com/index/index/index/release_id/165899.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 69944)">第599期</a>
+    <a href="http://zndxb.ihwrm.com/index/index/index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 69644)">第598期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=157567" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11286)">第597期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=155993" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11277)">第596期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=156646" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11276)">第595期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=155721" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11266)">第594期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=155420" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11256)">第593期</a>
+    <a href="http://zndxb.cuepa.cn/index.php?release_id=153212" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 11248)">第592期</a>
+</p></DIV>
+<DIV class="picXZ mt10">
+<H4 class="picXZTitle"><SPAN><A href="zngs.htm">中南故事</A></SPAN> </H4><ul class="leaderList">
+   <li><a href="info/1018/150260.htm" target="_blank" title="【中南微故事】湘雅医学院里的“随机”救助现场">【中南微故事】湘雅医学院里的“随...</a></li>
+   <li><a href="info/1018/148403.htm" target="_blank" title="湘雅医院：一场病情复杂、情节起伏、医护感人的生死大营救">湘雅医院：一场病情复杂、情节起伏...</a></li>
+   <li><a href="info/1018/148308.htm" target="_blank" title="一场珍贵的“樱花之约”">一场珍贵的“樱花之约”</a></li>
+   <li><a href="info/1018/148041.htm" target="_blank" title="可爱的人， 动人的事——纪念中国人民志愿军抗美援朝出国作战70周年">可爱的人， 动人的事——纪念中国人...</a></li>
+   <li><a href="info/1018/144349.htm" target="_blank" title="【新闻故事】 居家隔离的温情">【新闻故事】 居家隔离的温情</a></li>
+</ul><script>_showDynClickBatch(['dynclicks_u33_150260','dynclicks_u33_148403','dynclicks_u33_148308','dynclicks_u33_148041','dynclicks_u33_144349'],[150260,148403,148308,148041,144349],"wbnews", 1092239805)</script>
+</DIV><DIV class="fl mt10" style="margin-top: 5px;"><A href="http://tv.csu.edu.cn/"><IMG src="images/ad3.jpg"></A></DIV>
+<DIV class="fl mt10">   <A href="last.jsp?urltype=news.NewsContentUrl&wbtreeid=1015&wbnewsid=86848"> <IMG src="images/ad4.jpg" style="margin-bottom: 5px;"></A>   </DIV>
+<DIV class="picXZ mt10" style="width: 280px;display: none">
+<H4 class="picXZTitle"><SPAN><A href="zxdc.htm">在线调查</A></SPAN> </H4><BR><script language="javascript" src="/system/resource/js/jquery/jquery-latest.min.js"></script>
+<style>
+A.f59671:link{color:#000000;}  
+A.f59671:visited{color:#000000;}  
+A.f59671:active{color:#000000;}  
+A.f59671:hover{color:#000000;}  
+</style>  
+<table class="winstyle59671" width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr><td align="center" valign="middle" width="10" nowrap><span class="leaderfont59671">·</span></td>
+<td valign="middle" align="left">
+    <a href="wjlast.jsp?urltype=survey.SurveyContentUrl&wbtreeid=1001&surveyid=1041" class="f59671" title="" target="_blank" style="TEXT-DECORATION: none">
+        <span class="titlestyle59671">您认为读书有多重要？</span></a>
+        
+        </td>
+        </tr>
+        
+</table>
+  </DIV>
+<DIV class="picXZ mt10" style="width: 280px;display: none">
+<H4 class="picXZTitle"><SPAN><A href="zxtp.htm">在线投票</A></SPAN> </H4><BR><script language="javascript" src="/system/resource/js/validateutil.js"></script>
+
+<style>
+A.f59672:link{COLOR: #555555;}  
+A.f59672:visited{COLOR: #555555;}  
+A.f59672:active{COLOR: #E82929;}  
+A.f59672:hover{COLOR: #E82929;}  
+</style>
+<form action="/system/resource/survey/solesurveyvote.jsp?rd=0" method="post" onsubmit="return survey_check_select59672()" style="display: inline;">
+<input type="hidden" name="survey_sole_59672" id="survey_sole_59672" value="">
+<input type="hidden" name="viewid" id="viewid" value="59672">
+<input type="hidden" name="treeid" id="treeid" value="1001">
+<input type="hidden" name="owner" id="owner" value="1092239805">
+<input type="hidden" name="mode" id="mode" value="10">
+<input type="hidden" name="survey_id_59672" id="survey_id_59672" value="1053">
+<table class="winstyle59672" width="100%" id="outlinetable" cellspacing="0" cellpadding="3" border="0">
+    
+    
+    
+        
+        
+        <tr><td colspan="2" class="showquestiontdstyle59672" align="left">中南大学校徽修改方案</td></tr>
+        
+            
+            
+            <tr>
+                <Td colspan="2">
+                     <table border="0" cellpadding="0" cellspacing="0">
+                     <tr><Td>
+                         <table border="0" cellpadding="0" cellspacing="0">
+                             <tr><td align="center" class="optiontdstyle59672" height="0px"><input type="radio" name="sole:1062" id="option:1062:1103" value="1103" onclick="javaScript:changeradiooptionvalue59672(this,'1062','1103')" optionqoid="1062:1103"><label for="option:1062:1103">校徽阐释：1、该校徽去掉了原校徽S形状中比较封闭的设计</td></tr>
+                             </table>
+                     </td><Td>
+                         <table border="0" cellpadding="0" cellspacing="0">
+                             <tr><td align="center" class="optiontdstyle59672" height="0px"><input type="radio" name="sole:1062" id="option:1062:1104" value="1104" onclick="javaScript:changeradiooptionvalue59672(this,'1062','1104')" optionqoid="1062:1104"><label for="option:1062:1104">校徽阐释：1、该校徽以方型骨架与圆形的造型构成创造之</td></tr>
+                             </table>
+                     </td><Td>
+                         <table border="0" cellpadding="0" cellspacing="0">
+                             <tr><td align="center" class="optiontdstyle59672" height="0px"><input type="radio" name="sole:1062" id="option:1062:1105" value="1105" onclick="javaScript:changeradiooptionvalue59672(this,'1062','1105')" optionqoid="1062:1105"><label for="option:1062:1105">目前正在使用的校徽 补充说明：根据师生在投票过程中</td></tr>
+                             </table>
+                     </td></tr></table>
+                </Td>
+            </tr>
+             
+             
+		
+	
+    
+    	
+	
+	
+	<tr>
+		<td align="center"><input type="image" src="/system/resource/images/research/bt_vote.gif" border="0" align="absmiddle"></td>
+		<td align="left"><a href="wjjg.jsp?urltype=survey.SurveyStatisticUrl&wbtreeid=1001&surveyid=1053" target="_blank"><img src="/system/resource/images/research/bt_voteresult.gif" border="0" align="absmiddle" /></a></td>	
+	</tr>
+</table>
+</form>
+<script>
+function change_imgcode59672(imgobj)
+{
+    imgobj.src = "/system/resource/survey/createsurveycheckimg.jsp?random="+new Date();
+}
+
+function changeradiooptionvalue59672(clickobj,qid,oid)
+{
+    var optiontextname = 'option-text:'+qid+":"+oid;
+    var radioobjname =  'option:'+qid+":"+oid;
+    
+    var radioobj = document.getElementById('option:'+qid+":"+oid);
+    var clicktextojb = document.getElementById('option-text:'+qid+":"+oid);
+    if(clickobj.name == optiontextname)//说明是点击的输入框
+    {
+        if(radioobj.type=="radio")
+        {
+             if(!radioobj.checked)
+             {
+                 radioobj.checked=true;
+                 if(clicktextojb.value=="请注明")
+                 {
+                    clicktextojb.value="";
+                 } 
+             }
+        }
+        if(radioobj.type=="checkbox")
+        {
+            if(radioobj.getAttribute('selectobj')!='radioorcheckbox')
+            {
+                if(clicktextojb.value=="请注明")
+                {
+                    clicktextojb.value="";
+                }
+                radioobj.setAttribute('selectobj','');
+            }else
+            {
+                if(!radioobj.checked)
+                {
+                    radioobj.checked=true;
+                    if(clicktextojb.value=="请注明")
+	                {
+	                    clicktextojb.value="";
+	                } 
+                    radioobj.setAttribute('selectobj','');
+                    radioobj.setAttribute('selectobj','radioorcheckbox');
+                }
+            }
+        }
+    }else
+    {
+        if(clicktextojb)
+        {
+            
+                if(clicktextojb.value=="请注明")
+                {
+                   clicktextojb.value="";
+                }
+            
+            radioobj.setAttribute('selectobj','radioorcheckbox'); 
+        }
+    }
+    var tagname = "option-tag:"+qid;
+    var clickname = "option-text:"+qid+":"+oid;
+    var allinput =  document.getElementsByTagName('input');
+    if(allinput)
+    {
+        for(var i=0;i<allinput.length;i++)
+        {
+            var optioninput = allinput[i];
+            var qoid = optioninput.getAttribute('optionqoid');
+            var currentoption = document.getElementById('option:'+qoid);
+            if(optioninput.optiontag==tagname&&optioninput.name!=clickname)
+            {
+                if(currentoption&&currentoption.checked==false)
+                {
+                    //optioninput.value = "请注明";
+                }
+            }
+        }
+    }
+}
+function survey_check_select59672()
+{
+    
+             
+             
+             
+                 if(survey_check_option_select59672('sole:1062')==false)
+                 {
+                     alert("请为 中南大学校徽修改方案 选择投票项");
+                     return false;
+                 }
+                 if(survey_check_option_select_num59672('sole:1062')<1)
+                 {
+                     alert("'中南大学校徽修改方案' 最少必须选择 '1' 个选项,请重新选择");
+                     return false;
+                 }
+             
+             
+            
+            
+                
+                        
+                     
+                        
+                     
+                        
+                     
+            
+             
+            
+    
+    
+    
+    
+    
+    
+    if(document.getElementById('wbname_temp1053'))
+    {
+         document.getElementById("wbname1053").value=new  Base64().encode(document.getElementById("wbname_temp1053").value);
+         document.getElementById("wbname_temp1053").disabled=true;
+    }
+    if(document.getElementById('wbidcard_temp1053'))
+    {
+         document.getElementById("wbidcard1053").value=new  Base64().encode(document.getElementById("wbidcard_temp1053").value);
+         document.getElementById("wbidcard_temp1053").disabled=true;
+    }
+    if(document.getElementById('wbemail_temp1053'))
+    {
+         document.getElementById("wbemail1053").value=new  Base64().encode(document.getElementById("wbemail_temp1053").value);
+         document.getElementById("wbemail_temp1053").disabled=true;
+    }
+    if(document.getElementById('wbaddress_temp1053'))
+    {
+         document.getElementById("wbaddress1053").value=new  Base64().encode(document.getElementById("wbaddress_temp1053").value);
+         document.getElementById("wbaddress_temp1053").disabled=true;
+    }
+    if(document.getElementById('wbcontactinfo_temp1053'))
+    {
+         document.getElementById("wbcontactinfo1053").value=new  Base64().encode(document.getElementById("wbcontactinfo_temp1053").value);
+         document.getElementById("wbcontactinfo_temp1053").disabled=true;
+    }
+    if(document.getElementById('wbadvice_temp1053'))
+    {
+         document.getElementById("wbadvice1053").value=new  Base64().encode(document.getElementById("wbadvice_temp1053").value);
+         document.getElementById("wbadvice_temp1053").disabled=true;
+    }
+    document.getElementById('survey_sole_59672').value = "survey_ok";
+    return true;
+}
+
+function survey_check_option_select59672(qn)
+{
+    var questionname  = document.getElementsByName(qn);
+    if(questionname)
+    {
+        for(var i=0;i<questionname.length;i++)
+        {
+            if(questionname[i].checked)
+            {
+                return true;
+            }
+        }
+    } 
+    return false;
+}
+
+function survey_check_option_select_num59672(qn)
+{
+    var num=0;
+    var questionname  = document.getElementsByName(qn);
+    if(questionname)
+    {
+        for(var i=0;i<questionname.length;i++)
+        {
+            if(questionname[i].checked)
+            {
+                num++;
+            }
+        }
+    } 
+    return num;
+}
+</script></DIV>
+<DIV class="weibo"> <A href="http://e.weibo.com/csunews" target="_blank" style="margin-top:20px"><IMG width="269" src="images/znweibo.jpg" border="0"></A> 
+<DIV class="sy-xinxiyugao">
+
+<IFRAME width="269" height="240" class="share_self" src="https://widget.weibo.com/weiboshow/index.php?language=&amp;width=269&amp;height=255&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=0&amp;noborder=1&amp;isWeibo=1&amp;isFans=0&amp;uid=1871765890&amp;verifier=4e1ba554&amp;dpc=1" border="0" frameborder="0" scrolling="no" style="margin-top: 2px"></IFRAME>
+
+
+</DIV>
+
+
+
+<A href="xmtsq.htm" target="_blank"><IMG width="269" src="images/weixin.jpg" border="0"></A> 
+<A href="http://t.people.com.cn/13469038 " target="_blank"><IMG width="269" src="images/renminw.jpg" border="0"></A> 
+
+
+</DIV>
+<DIV class="picXZ mt10" style="width: 280px;margin-top: 6px">
+<H4 class="picXZTitle"><SPAN>新闻排行</SPAN></H4>
+<!--%=view.includeJquery()%-->
+<div id="load_div_u37" style="width: 100%;height: 100%;text-align: center;vertical-align: middle;"><img border="0" src="/system/resource/images/loading.gif"></div>
+<table width="100%" cellspacing="0" cellpadding="0" id="hotnews_content_table_u37" style="display: none;">
+</table>
+<script type="text/javascript">
+function getHotNewsTitleu37()
+{
+    var mediaisshow = 'false';
+    var _this = this;
+    var loaddiv = jQuery("#load_div_u37");
+    var contenttable = jQuery("#hotnews_content_table_u37");
+    _this.t_body = jQuery("#hotnews_content_table_u37");
+    _this.clickshow = false;
+    _this.clickname = '点击';
+    _this.clickstyle = 'clickstyle59665';
+    _this.endimageposition = false;
+    _this.isfollowtilte = false;
+    //构造 参数
+    var param =  {owner:'1092239805',treeid:'1001',viewid:'59665',mode:'10',
+            locale:'zh_CN',
+            pageUrl:'/index.htm',uniqueId:'u37',
+            PAGENUM:_this.curpage,actionmethod:'getnewslist'}
+     var ajaxurl  = "/system/resource/js/news/hotdynpullnews.jsp";        
+     _this._getResult = function()
+     {
+        jQuery.post(ajaxurl,param,
+            function(data){
+                _this.dataloadComplete(data);
+            },
+            "json"
+        );
+      }
+      _this.show = function()
+      {
+        loaddiv.css("display","none");
+        contenttable.css("display","");
+      }
+      var newsidarray = new Array();
+      var newsidspanarray = new Array();
+     //数据加载
+     _this.dataloadComplete = function(data)
+     {
+             if(data&&data.length>0)
+            {
+                 var  img = '';
+                 var video = ''; 
+                 var attach = ''; 
+                 
+                 var isshowimg = false;
+                 var showimgalign =  '';
+                 var isshowvideo = false;
+                 var showvideoalign = 'left';
+                 var isshowattach = false;
+                 var showattachalign = 'left';
+                 for(var i=0;i<data.length;i++)
+                 {
+                     var notice_val = data[i];
+                     var wbishaveimg = notice_val.wbishaveimg;
+                     var wbishavevideo = notice_val.wbishavevideo;
+                     var wbhasattach = notice_val.wbhasattach;
+                     var wbpicurl = notice_val.wbpicurl;
+                     if(mediaisshow&&wbpicurl!=null&&wbpicurl!="")
+                     {
+                        var pic_tr = jQuery("<tr></tr>");
+                        var pic_td = jQuery("<td colspan='5'></td>");
+                        pic_td.html(notice_val.picdiv);
+                        _this.t_body.append(pic_tr);
+                     }
+                     var notice_tr = jQuery("<tr></tr>");
+                     //前导图
+                     var leader_td = jQuery("<td align='center' valign='middle' width=10 nowrap ></td>");
+                     var leaderspan =jQuery("<span >·</span>");
+                     leaderspan.addClass("leaderfont59665");
+                     leader_td.append(leaderspan);
+                     notice_tr.append(leader_td);
+                     var title_td = jQuery("<td valign='middle' align='left' ></td>");
+                     title_td.addClass("");
+                     
+                     var columnstr = jQuery(notice_val.columnstr);
+                     title_td.append(columnstr);
+                     
+                     if(isshowimg&&showimgalign=="left"&&(wbishaveimg==1))
+                     {
+                        var imgspan = jQuery("<span >"+img+"</span>");
+                        title_td.append(imgspan);
+                     }
+                     if(isshowvideo&&showvideoalign=="left"&&(wbishavevideo==1))
+                     {
+                        var videospan = jQuery("<span >"+video+"</span>");
+                        title_td.append(videospan);
+                     }
+                     if(isshowattach&&showattachalign=="left"&&(wbhasattach==1))
+                     {
+                        var attachspan = jQuery("<span >"+attach+"</span>");
+                        title_td.append(attachspan);
+                     }
+                     
+                     var link_a = jQuery("<a class='c59665' target=_blank  title='"+notice_val.showtitle+"'>"+notice_val.title+"</a>");
+                     link_a.attr("href",notice_val.linkurl);
+                     title_td.append(link_a);
+                     if(false)
+                     {
+                        var endimgspan = jQuery("<span>"+notice_val.endimg+"</span>");
+                        title_td.append(endimgspan);
+                     }
+                     
+                     if(isshowimg&&showimgalign=="right"&&(wbishaveimg==1))
+                     {
+                        var imgspan = jQuery("<span >"+img+"</span>");
+                        title_td.append(imgspan);
+                     }
+                     if(isshowvideo&&showvideoalign=="right"&&(wbishavevideo==1))
+                     {
+                        var videospan = jQuery("<span >"+video+"</span>");
+                        title_td.append(videospan);
+                     }
+                     if(isshowattach&&showattachalign=="right"&&(wbhasattach==1))
+                     {
+                        var attachspan = jQuery("<span >"+attach+"</span>");
+                        title_td.append(attachspan);
+                     }
+                     
+                     if(_this.clickshow)
+                     {
+                        var clicktimespan = jQuery("<span></span>");
+                        clicktimespan.html("("+_this.clickname+"&nbsp;<span id='_wzdjcs_"+notice_val.newsid+"' name='_wzdjcs_"+notice_val.newsid+"'></span>"+")");
+                        clicktimespan.addClass(_this.clickstyle);
+                        newsidarray.push(notice_val.newsid);
+                        newsidspanarray.push("_wzdjcs_"+notice_val.newsid);
+                        title_td.append(clicktimespan);
+                     }
+                     
+                     if(false)
+                     {
+                         var time_span = jQuery("<span width='1%' ></span>")
+                         
+                         time_span.addClass("timestyle59665");
+                         if(true)
+                         {
+                             var endimgspan = jQuery("<span>"+notice_val.endimg+"</span>");
+                             time_span.append(endimgspan);
+                         }  
+                         title_td.append(time_span); 
+                     }
+                     notice_tr.append(title_td);
+                     
+                     
+                     if(true)
+                     {
+                        var time_td = jQuery("<td valign='middle' align=right   width='1%' nowrap>");
+                        time_td.addClass("timestyle59665");
+                        
+                        if(true)
+                        {
+                            var time_span = jQuery("<span width='1%' ></span>")
+                            var endimgspan = jQuery("<span>"+notice_val.endimg+"</span>");
+                            time_span.append(endimgspan);
+                            time_td.append(time_span);
+                        }
+                        notice_tr.append(time_td);
+                     }
+                     
+                     _this.t_body.append(notice_tr);
+                     
+                     var lineimg = '';
+                     if(lineimg!=null&&lineimg!='')
+                     {
+                        var lineimgheight = 1;
+                        var line_tr = jQuery("<tr><td colspan='4' height='" + lineimgheight + "' BACKGROUND='" + lineimg + "'></td></tr>")
+                        _this.t_body.append(line_tr);
+                     }
+                 }
+                 _showDynClickBatch(newsidspanarray,newsidarray,'wbnews','1092239805');
+            }else
+            {
+                _this.t_body.append("<tr><td colspan=4 align=center style='color:#222222;font-size:12px;'>没有记录</td></tr>");
+            }      
+     }
+}
+jQuery(document).ready(function(){
+    var showcontentu37 = new getHotNewsTitleu37();
+    showcontentu37._getResult();
+    showcontentu37.show();
+});
+</script></DIV></DIV>
+<TABLE width="100%" class="fl mt12" border="0">
+<TBODY>
+<TR>
+<TD><A href="#" style="border-top: #ddd 1px solid;border-right: #ddd 1px solid;border-bottom: #ddd 1px solid;float: left;border-left: #ddd 1px solid">
+    <table align="center">
+            <tr>
+                <td>
+                        <img src="explode-0.png" border="0" width="1000" height="50">
+                </td>
+        </tr>
+</table>
+ </A></TD></TR></TBODY></TABLE>
+<DIV class="clear"></DIV>
+<DIV class="csuNews mt12" style="box-shadow: 0px 5px 5px 0px #ccc;height: 210px">
+<H4 class="eduScTitle"><SPAN>CSU news </SPAN></H4><div style="text-align:center;margin:0 auto;margin-left: 20px;">
+
+        <div class="csuLeft">
+                    <p><a href="http://en.csu.edu.cn/info/1083/2216.htm" target="_blank"><img src="/__local/F/42/F4/D01E9D520CDB32A7C269ED89A4B_1FB73747_53789.png" width="180px" height="120px"></a></p>
+                    <p><a href="http://en.csu.edu.cn/info/1083/2216.htm" target="_blank" title="How to keep yourself safe from new coronavirus?" class="csuTitle" style="width:180px;font-size:9pt;height: 25px; overflow: hidden; -ms-word-wrap: break-word;">How to keep yourself safe from new coronavirus?</a></p>
+                    <!--<p><a href="http://en.csu.edu.cn/info/1083/2216.htm" target=_blank title="How to keep yourself safe from new coronavirus?"   >   </a></p>-->
+        
+             
+        </div>
+        <div class="csuLeft">
+                    <p><a href="http://en.csu.edu.cn/info/1083/2211.htm" target="_blank"><img src="/__local/5/6A/30/2E48E31A2FBA75CA7A0ED6C3B1F_6910DF51_11236.jpg" width="180px" height="120px"></a></p>
+                    <p><a href="http://en.csu.edu.cn/info/1083/2211.htm" target="_blank" title="Delegation from House of China, Dominican Republic Visits CSU" class="csuTitle" style="width:180px;font-size:9pt;height: 25px; overflow: hidden; -ms-word-wrap: break-word;">Delegation from House of China, Dominican Republic Visits CSU</a></p>
+                    <!--<p><a href="http://en.csu.edu.cn/info/1083/2211.htm" target=_blank title="Delegation from House of China, Dominican Republic Visits CSU"   >   </a></p>-->
+        
+             
+        </div>
+
+
+        <div class="csuLeft">
+                    <p><a href="http://en.csu.edu.cn/info/1083/2210.htm" target="_blank"><img src="/__local/D/96/C0/84410E867D983612465936148BA_43918347_DFE00.png" width="180px" height="120px"></a></p>
+                    <p><a href="http://en.csu.edu.cn/info/1083/2210.htm" target="_blank" title="Psychiatric Department of Xiangya Hospital signs a MOU with Psychiatric Department of Yale School of Medicine" class="csuTitle" style="width:180px;font-size:9pt;height: 25px; overflow: hidden; -ms-word-wrap: break-word;">Psychiatric Department of Xiangya Hospital signs a MOU with Psychiatric Depar...</a></p>
+                    <!--<p><a href="http://en.csu.edu.cn/info/1083/2210.htm" target=_blank title="Psychiatric Department of Xiangya Hospital signs a MOU with Psychiatric Department of Yale School of Medicine"   >   </a></p>-->
+        
+             
+        </div>
+        <div class="csuLeft">
+                    <p><a href="http://en.csu.edu.cn/info/1083/2201.htm" target="_blank"><img src="/__local/9/57/6F/4F5A9BA9CB21F346F20CA7CA572_74C0037F_B89B4.jpg" width="180px" height="120px"></a></p>
+                    <p><a href="http://en.csu.edu.cn/info/1083/2201.htm" target="_blank" title="A Delegation Led by Tian Hongqi Visits Germany, Switzerland and Hungary" class="csuTitle" style="width:180px;font-size:9pt;height: 25px; overflow: hidden; -ms-word-wrap: break-word;">A Delegation Led by Tian Hongqi Visits Germany, Switzerland and Hungary</a></p>
+                    <!--<p><a href="http://en.csu.edu.cn/info/1083/2201.htm" target=_blank title="A Delegation Led by Tian Hongqi Visits Germany, Switzerland and Hungary"   >   </a></p>-->
+        
+             
+        </div>
+
+
+            <div class="csuLeft" style="margin-right: 0">
+                    <p><a href="http://en.csu.edu.cn/info/1083/2199.htm" target="_blank"><img src="/__local/7/8C/6A/64BE148C1AECE732A4810393DC3_4F6260C2_888E8.png" width="180px" height="120px"></a></p>
+                    <p><a href="http://en.csu.edu.cn/info/1083/2199.htm" target="_blank" title="CSU hosts the 2019 Annual Conference of Chinese Association of Microbial Ecology and the 1th International Forum for Advanced Microbial Ecology" class="csuTitle" style="width:180px;font-size:9pt;height: 25px; overflow: hidden; -ms-word-wrap: break-word;">CSU hosts the 2019 Annual Conference of Chinese Association of Microbial Ecol...</a></p>
+                    <!--<p><a href="http://en.csu.edu.cn/info/1083/2199.htm" target=_blank title="CSU hosts the 2019 Annual Conference of Chinese Association of Microbial Ecology and the 1th International Forum for Advanced Microbial Ecology"   >   </a></p>-->
+        
+             
+        </div>
+
+</div><script>_showDynClickBatch(['dynclicks_u39_145473','dynclicks_u39_143846','dynclicks_u39_143845','dynclicks_u39_143254','dynclicks_u39_143093'],[145473,143846,143845,143254,143093],"wbnews", 1092239805)</script>
+
+<DIV class="csuMid">
+<DIV style="padding-bottom: 16px"></DIV></DIV>
+<DIV class="csuRit"></DIV></DIV>
+<DIV class="friendLink mt12">
+<H4 class="fdTitl">友情链接</H4><p class="fdCont" style="line-height:20px">
+
+   <a href="http://www.xinhuanet.com/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8606)">新华网</a>   |  
+   
+
+   <a href="http://www.people.com.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8607)">人民网</a>   |  
+   
+
+   <a href="http://www.gmw.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8608)">光明网</a>   |  
+   
+
+   <a href="http://www.chinanews.com/index.shtml" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8609)">中新网</a>   |  
+   
+
+   <a href="http://www.cyol.net/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8610)">中青在线</a>   |  
+   
+
+   <a href="http://www.cntv.cn/index.shtml" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8847)">中央电视台</a>   |  
+   
+
+   <a href="http://www.moe.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8849)">教育部网站</a>   |  
+   
+
+   <a href="http://hunan.voc.com.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8850)">湖南在线</a>   |  
+   
+
+   <a href="http://dxs.moe.gov.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8851)">中国大学生在线</a>   |  
+   
+
+   <a href="http://www.rednet.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8852)">红网</a>   |  
+   
+
+   <a href="http://www.xiaomei.cc/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8853)">校媒网</a>   |  
+   
+
+    <a href="http://www.ifeng.com/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8854)">凤凰网</a> <br>
+
+
+
+   <a href="http://www.xinhuanet.com/zgjx/index.htm" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8855)">中国记协网</a>   |  
+   
+
+   <a href="http://news.tsinghua.edu.cn/publish/thunews/index.html" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 8857)">清华大学新闻网</a>   |  
+   
+
+   <a href="http://pkunews.pku.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 9141)">北大新闻网</a>   |  
+   
+
+   <a href="http://www.news.zju.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 9142)">浙大新闻网</a>   |  
+   
+
+   <a href="http://news.fudan.edu.cn/" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 9143)">复旦新闻网</a>   |  
+   
+
+   <a href="http://news.hust.edu.cn/" target="_blank" title="华中大新闻网" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 9912)">华中大新闻网</a>   |  
+   
+
+      
+     <a href="#" target="_blank" title="" onclick="_addDynClicks(&#34;wburl&#34;, 1092239805, 9162)">更多》</a>
+</p>
+<script language="javascript">
+function zxtg()
+{
+    window.location.href="tg.jsp?wbtreeid=1037"; 
+}
+function zxly()
+{
+    window.location.href="zxly.jsp?wbtreeid=1042"; 
+}
+function gjss()
+{
+    window.location.href="gjss.jsp?wbtreeid=1101"; 
+}
+
+
+</script></DIV>
+<DIV class="clear"></DIV>
+<DIV class="fl mt15 footer"><p>QQ:1594252309 EMAIL:xwwz@mail.csu.edu.cn 地址：湖南省长沙市岳麓区</p>
+<p><span style="font-family:arial;">Copyright &#169; 2014-2019 </span>中南大学党委宣传部（新闻中心）版权所有 湘ICP备05005659号-1 <a href="http://tongji.cnzz.com/main.php?c=site&a=frame&siteid=4718790">站长统计</a>
+ <a href="https://zzgl.csu.edu.cn/system/caslogin.jsp">管理员登陆</a>
+</p></DIV>
+<DIV></DIV></DIV>
+
+</BODY></HTML>

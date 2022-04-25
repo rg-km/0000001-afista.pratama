@@ -1,0 +1,116 @@
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="Loginhtml">
+<head id="Head1">
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <link rel="SHORTCUT ICON" href="Images/Sepah/Logo16.png" />
+    <title>
+	ورود به سامانه مدیریت بانکداری غیرحضوری سپه
+</title>
+    <script type="text/javascript">
+        if (window.location != window.parent.location)
+            window.location.href = '/Error.aspx?NoRedirect=y';
+
+        var textBoxkeyboardDivArray = new Array();
+        textBoxkeyboardDivArray.push('username');
+        textBoxkeyboardDivArray.push('password');
+        textBoxkeyboardDivArray.push('username_merge');
+        textBoxkeyboardDivArray.push('password_merge');
+        textBoxkeyboardDivArray.push('username_AcivateMerge');
+        textBoxkeyboardDivArray.push('password_ActivateMerge');
+
+    </script>
+    
+<script type="text/javascript" src="/JScripts_001218/Resource/JavaScriptResources.fa-ir.js">
+</script>
+
+
+    <script type="text/javascript" src="../JScripts_001218/TextBoxControl.js"></script>
+
+<script type="text/javascript" language="JavaScript" src="/JScripts_001218/Utility.js"></script>
+
+
+<script type="text/javascript" src="/JScripts_001218/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript" src="/JScripts_001218/jquery.searchabledropdown-1.0.8.min.js"></script>
+
+
+    <script type="text/javascript" src="../JScripts_001218/Tooltip.js"></script>
+  <script type="text/javascript" src="../JScripts_001218/DropDownControl.js"></script>
+ 
+
+    <script type="text/javascript" src="../JScripts_001218/jkeyboard.js"></script>
+
+<script type="text/javascript" language="JavaScript" src="../JScripts_001218/CarouselSlider.js"></script>
+<link href="App_Themes/SepahResponsive_001218/bootstrap.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/BootstrapSetting.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/calendar.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/CarouselSlider.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/CreditCardStatement.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/culture/fa-ir/FontIconCSS-fa-ir.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/dataTables.responsive.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/DropDownControl.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/FontIconCSS.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/Fonts/FontIcon/icons.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/GridStyle.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/jkeyboard.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/jquery.dataTables.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/Login.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/MainMenu.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/NoteBookControl.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/PagingControl.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/Print.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/SearchStyle.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/select2.min.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/site.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/TagControl.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/TextBoxControl.css" type="text/css" rel="stylesheet" /><link href="App_Themes/SepahResponsive_001218/UserCardDepositBookManager.css" type="text/css" rel="stylesheet" /></head>
+
+<body class="Loginbody">
+    <style>
+        .qrcode {
+            display: inline-block;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+            .qrcode img {
+                width: 170px;
+                height: 170px;
+                border: 10px solid white;
+                box-sizing: content-box;
+                /*box-shadow: 0 0 13px 2px rgba(0, 0, 0, 0.8);*/
+            }
+
+        #divQrCode {
+            padding-left: 25px;
+            padding-bottom: 20px;
+        }
+    </style>
+
+    
+<noscript>
+    <div class="popup-mask-Dark"></div>
+    <div class="msg_JS_disabled">
+        <div class="msg_disabledHeader">
+            <a class="icon ib-exclamation-fill large"></a>
+            <br />
+            کاربر گرامی جاوا اسکریپت مرورگر شما غیرفعال است.
+        </div>
+        <p>
+            برای استفاده از سامانه مدیریت بانکداری غیرحضوری سپه جاوا اسکریپت مرورگر خود را فعال نمایید.
+        </p>
+        <p>
+            برای مشاهده راهنمای فعال سازی جاوااسکریپت <a class="linkText" href="/InfoForms/ActiveJSHelp.aspx">اینجا</a>&nbsp;کلیک کنید.</p>
+    </div>
+</noscript>
+<script type="text/javascript">
+    checkCookie(true);
+    /*
+    checkCookie(true) : show alertMsg in browser if cookie was disabled
+    checkCookie(fasle) : will not show alertMsg in browser if cookie was disabled
+    */
+    function checkCookie(showAlertMsg) {
+        var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+        if (!cookieEnabled && showAlertMsg) {
+            showCookieFail();
+        }
+    }
+
+    function showCookieFail() {
+        document.body.innerHTML = '<div class=\"popup-mask-Dark\"></div>' +
+            '<div class=\"msg_cookie_disabled\">' +
+                                  '<div class=\"msg_disabledHeader\"><a class=\"icon ib-exclamation-fill large\"></a><br /> کاربر گرامی تنظیمات مرورگر شما اشتباه است. </div>' +
+                                 '<p> برای استفاده از سامانه مدیریت بانکداری غیرحضوری سپه تنظیمات مرورگر خود را تغییر دهید.  </p>' +
+                                 '<p> جهت مشاهده اطلاعات بیشتر  <a  href=\"/InfoForms/ActiveCookieHelp.aspx\">اینجا</a>&nbsp;کلیک کنید.</p>';
+
+    }
+</script>
+
+    <form name="form1" method="post" action="./" id="form1" autocomplete="off" class="LoginForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY3MTc5MTE0Mw8WAh4HcmVmZXJlcmQWBAIBD2QWBAIBDxUBF0ltYWdlcy9TZXBhaC9Mb2dvMTYucG5nZAIDDxUGCHVzZXJuYW1lCHBhc3N3b3JkDnVzZXJuYW1lX21lcmdlDnBhc3N3b3JkX21lcmdlFXVzZXJuYW1lX0FjaXZhdGVNZXJnZRZwYXNzd29yZF9BY3RpdmF0ZU1lcmdlZAIFD2QWDGYPFgIeB1Zpc2libGVoZAIHD2QWAgIBDw8WAh4EVGV4dGVkZAILD2QWBAIBDw8WBB4IQ3NzQ2xhc3MFBmFjdGl2ZR4EXyFTQgICZGQCAw8PFgQfA2UfBAICZGQCDA8PFgIfAWdkFggCAw9

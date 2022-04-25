@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="keywords" content="程序员宅基地，技术文章由你所想念有所思" />
+<meta name="description" content="程序员宅基地，技术文章由你所想念有所思" />
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+<title>程序员宅基地</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9066218177779829" crossorigin="anonymous"></script>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3J9Z5R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script type="text/javascript" async="true">
+(function() {
+    var host = 'www.themoneytizer.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://quantcast.mgr.consensu.org'
+        .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js');
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+        var TCF_LOCATOR_NAME = '__tcfapiLocator';
+        var queue = [];
+        var win = window;
+        var cmpFrame;
+
+        function addFrame() {
+            var doc = win.document;
+            var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+            if (!otherCMP) {
+                if (doc.body) {
+                    var iframe = doc.createElement('iframe');
+
+                    iframe.style.cssText = 'display:none';
+                    iframe.name = TCF_LOCATOR_NAME;
+                    doc.body.appendChild(iframe);
+                } else {
+                    setTimeout(addFrame, 5);
+                }
+            }
+            return !otherCMP;
+        }
+
+        function tcfAPIHandler() {
+            var gdprApplies;
+            var args = arguments;
+
+            if (!args.length) {
+                return queue;
+            } else if (args[0] === 'setGdprApplies') {
+                if (
+                    args.length > 3 &&
+                    args[2] === 2 &&
+                    typeof args[3] === 'boolean'
+                ) {
+                    gdprApplies = args[3];
+                    if (typeof args[2] === 'function') {
+                        args[2]('set', true);
+                    }
+                }
+            } else if (args[0] === 'ping') {
+                var retr = {
+                    gdprApplies: gdprApplies,
+                    cmpLoaded: false,
+                    cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                    args[2](retr);
+                }
+            } else {
+                queue.push(args);
+            }
+        }
+
+        function postMessageEventHandler(event) {
+            var msgIsString = typeof event.data === 'string';
+            var json = {};
+
+            try {
+                if (msgIsString) {
+                    json = JSON.parse(event.data);
+                } else {
+                    json = event.data;
+                }
+            } catch (ignore) {}
+
+            var payload = json.__tcfapiCall;
+
+            if (payload) {
+                window.__tcfapi(
+                    payload.command,
+                    payload.version,
+                    function(retValue, success) {
+                        var returnMsg = {
+                            __tcfapiReturn: {
+                                returnValue: retValue,
+                                success: success,
+                                callId: payload.callId
+                            }
+                        };
+                        if (msgIsString) {
+                            returnMsg = JSON.stringify(returnMsg);
+                        }
+                        event.source.postMessage(returnMsg, '*');
+                    },
+                    payload.parameter
+                );
+            }
+        }
+
+        while (win) {
+            try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                    cmpFrame = win;
+                    break;
+                }
+            } catch (ignore) {}
+
+            if (win === window.top) {
+                break;
+            }
+            win = win.parent;
+        }
+        if (!cmpFrame) {
+            addFrame();
+            win.__tcfapi = tcfAPIHandler;
+            win.addEventListener('message', postMessageEventHandler, false);
+        }
+    };
+
+    if (typeof module !== 'undefined') {
+        module.exports = makeStub;
+    } else {
+        makeStub();
+    }
+
+    var uspStubFunction = function() {
+        var arg = arguments;
+        if (typeof window.__uspapi !== uspStubFunction) {
+            setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                    window.__uspapi.apply(window.__uspapi, arg);
+                }
+            }, 500);
+        }
+    };
+
+    var checkIfUspIsReady = function() {
+        uspTries++;
+        if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+            console.warn('USP is not accessible');
+        } else {
+            clearInterval(uspInterval);
+        }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+        window.__uspapi = uspStubFunction;
+        var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+})();
+</script>
+
+</head>
+<body>
+
+<header>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6cbb0b5c46d9c0d9f023dd022abfc71e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCH1CNWGFS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JCH1CNWGFS');
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K3J9Z5R');</script>
+
+<link href="/css/bootstrap.css" rel="stylesheet" />
+<link href="/css/style.css" rel="stylesheet" />
+<link href='/css/css.css' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<div id="header">
+<div class="container">
+<div class="row">
+<div class="col-md-4 logo-div">
+<div class="logo-inner">
+<div class="logo-name">
+<a href="/">
+<span>程序员宅基地</span>
+<small>程序员宅基地，技术文章由你所想念有所思</small>
+</a>
+</div>
+<br />
+<div class="links-home">
+<a href="/">首页 /</a>
+<a href="#">联系我们 /</a>
+<a href="/copyright" rel="nofollow,noindex" target="_blank">版权申明
+/</a>
+<a href="/privacy-policy" rel="nofollow,noindex" target="_blank">隐私条款</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="width: 100%;text-align: center">
+</div>
+
+<div class="info-sec">
+<div class="container">
+<div class="row">
+<div class="col-md-2" style="width:100%;">
+<div class="social-link" style="float:right;">
+<form id="searchForm" action="/searchArticle" method="post">
+<div>
+<input type="text" name="qc" style="width:200px;" /> <input type="submit" value="搜索" style="color:black;" />
+</div>
+</form>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="container">
+<div class="row">
+</div>
+<div class="col-md-8">
+<div id="ad_1"></div>
+<h3>
+<span>最近更新</span>
+</h3>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/m0_55051386/121416497" rel="bookmark">Linux 修改MySQL密码_程序员迷途的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=java&amp;page=1" title="java">java</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=学习记录&amp;page=1" title="学习记录">学习记录</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=数据库&amp;page=1" title="数据库">数据库</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=sql&amp;page=1" title="sql">sql</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">查看MySQL服务有没有启动ps -ef|grep mysql若MySQL服务启动状态关闭MySQL服务service mysqld stop进入etc目录找到my.cnf文件（一般在这个目录）vim my.cnf在该文件添加下面代码# 跳过登录认证skip-grant-tables启动MySQL服务service mysqld stop进入mysql# 进入mysqlmysql -u root# 使用mysql数据库use mysql;.</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_30511107/96304809" rel="bookmark">Asp.net博客系统收集和简单介绍_weixin_30511107的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=测试&amp;page=1" title="测试">测试</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=数据库&amp;page=1" title="数据库">数据库</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=xhtml&amp;page=1" title="xhtml">xhtml</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">国内Asp.net博客系统收集和简单介绍 [转载文章,仅供个人参考,引自http://www.soyaoo.com/Blog/post/92.html]1.ZJ-Blog程序简介：基于ASP.net 1.1环境开发的单用户博客程序，支持Access和MySQL两种数据库，其最大的特点是采用.net开发并大量的使用了Ajax技术，...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/dengtuo6341/101345956" rel="bookmark">HTTP服务搭建_dengtuo6341的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=运维&amp;page=1" title="运维">运维</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=shell&amp;page=1" title="shell">shell</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=操作系统&amp;page=1" title="操作系统">操作系统</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">一、简介1、认识加密网页(https): tcp:443　　　　　　明文网页(http): tcp:80survey.netcraft.net 　　　　　　　　--这个网站上可以查到最新的网站服务器的使用率超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+ <a href="/article/weixin_42467457/116249634" rel="bookmark">php读音量大小,Android_Android中实时获取音量分贝值详解，基础知识
+度量声音强度，大 - phpStudy..._余知兮的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=php读音量大小&amp;page=1" title="php读音量大小">php读音量大小</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Android中实时获取音量分贝值详解基础知识度量声音强度，大家最熟悉的单位就是分贝(decibel，缩写为dB)。这是一个无纲量的相对单位，计算公式如下：分子是测量值的声压，分母是参考值的声压(20微帕，人类所能听到的最小声压)。因此日常中说道声音强度是多少多少分贝时，都是默认了一个很小的参考值的。而Android设备传感器可以提供的物理量是场的幅值(amplitude)，常用下列公式计算分贝值...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_45742386/104618749" rel="bookmark">使用分页助手实现分页_manhoho的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=ssm&amp;page=1" title="ssm">ssm</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">使用分页助手实现分页dao持久层/** * 订单Order 持久层 */public interface OrderDao { /** * 查询所有订单 * * @return */ public List&amp;lt;Order&amp;gt; findAll();}配置文件orderDao.xml&amp;lt;?xml version=&quot;...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_36380426/93338401" rel="bookmark">【HTTP】HTTP 的15个常见知识点复习_pingan8787的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=HTTPS&amp;page=1" title="HTTPS">HTTPS</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=网络通信协议&amp;page=1" title="网络通信协议">网络通信协议</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=3-JavaScript&amp;page=1" title="3-JavaScript">3-JavaScript</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=Cute-JavaScript&amp;page=1" title="Cute-JavaScript">Cute-JavaScript</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=HTTP&amp;page=1" title="HTTP">HTTP</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">前言自从入职新公司到现在，我们前端团队内部一直在做 </p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_32329555/116263390" rel="bookmark">php swoole协程,Swoole协程的执行顺序？_AkaCMD的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=php swoole协程&amp;page=1" title="php swoole协程">php swoole协程</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">在一个worker里，我们几乎可以随意起多个协程，如下面的代码for ($i = 0; $i &amp;lt; 4; $i++) {Swoole\Coroutine::Create(function () use ($i) {Swoole\Coroutine::sleep(1);echo &quot;hello $i \n&quot;;});};echo &quot;hello main \n&quot;;那他的执程流程如下：1、进入for，创...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_29914229/107238650" rel="bookmark">泛型的类型限定_qq_29914229的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=java&amp;page=1" title="java">java</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">public static &amp;lt;T extends Comparable &amp;gt; T min(T[] a)通过上面的设定，min方法只能实现了 Comparable 接口的类的数组调用一个类型变量或通配符可以多个限定，如下&amp;lt;T extends Comparable &amp;amp; Serializable &amp;gt;表示 只有同时实现了Comparable 和 Serializable 接口的类才能调用...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_43391700/100917536" rel="bookmark">在oracle数据库中，插入数据时常遇到的错误_青春，你好的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=oracle&amp;page=1" title="oracle">oracle</a></span>
+ </p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">#在oracle数据库中，插入数据时常遇到的错误1.ORA-00913: too many values例如：insert into s_emp(id,last_name) values(999,’_anny’,2500.00);修改：insert into s_emp(id,last_name) values(999,’_anny’);2.ORA-00947: not enough va...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/mingongge/113929741" rel="bookmark">获赞 23w+ 在 B 站一夜爆火，大写的牛 B！程序员进阶网盘资源（有链接和提取码）..._民工哥的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=python&amp;page=1" title="python">python</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=java&amp;page=1" title="java">java</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=linux&amp;page=1" title="linux">linux</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=编程语言&amp;page=1" title="编程语言">编程语言</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=微软&amp;page=1" title="微软">微软</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">这两天逛B站，在一个大佬那领到了一份资源，我看的时候视频刚上传不到24小时，当时已经有23w的点赞，大写的牛B（刚看了下那个视频已经删了），这套资料我当时保存到了网盘内，今天免费分享给大家...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/skylin19840101/72528739" rel="bookmark">深入剖析 iOS 编译 Clang / LLVM_skylin19840101的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=clang&amp;page=1" title="clang">clang</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=编译&amp;page=1" title="编译">编译</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=llvm&amp;page=1" title="llvm">llvm</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=iOS&amp;page=1" title="iOS">iOS</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=ios&amp;page=1" title="ios">ios</a></span>
+</p>
+ <div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">深入剖析 iOS 编译 Clang / LLVM 1深入剖析 iOS 编译 Clang / LLVM 2</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/mrw223/8027605" rel="bookmark">dbo详解_mrw223的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=活动&amp;page=1" title="活动">活动</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=sqlserver&amp;page=1" title="sqlserver">sqlserver</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=function&amp;page=1" title="function">function</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=服务器&amp;page=1" title="服务器">服务器</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=数据库&amp;page=1" title="数据库">数据库</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=sql&amp;page=1" title="sql">sql</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">数据库所有者 (dbo----database owner) 　　dbo 是具有在数据库中执行所有活动的暗示性权限的用户。将固定服务器角色 sysadmin 的任何成员都映射到每个数据库内称为 dbo 的一个特殊用户上。另外，由固定服务器角色 sysadmin 的任何成员创建的任何对象都自动属于 dbo。　　例如，如果用户 Andrew 是固定服务器角色 sysadmin 的成员，并创</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_39954464/117039075" rel="bookmark">c语言看不懂程序,昨天您帮我写的C语言一个程序，希望高手您给把代码思路讲解一下，有些地方看不懂（呜呜呜）..._weixin_39954464的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=c语言看不懂程序&amp;page=1" title="c语言看不懂程序">c语言看不懂程序</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">你这个代码排版，看着头晕。#include #include int fun(){double findRoot(double a,double b,double d,int *ct)；【*ct是啥意思】double y;int ct;y=findRoot(0,2,1e-6,&amp;amp;ct);printf(&quot;解为%.6lf\n迭代的次数=%d\n&quot;,y,ct);}int main(){fun();...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_36773706/122440411" rel="bookmark">一.因子图优化学习---董靖博士在深蓝学院的公开课学习（1）_goldqiu的博客-程序员宅基地_因子图优化</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=因子图优化&amp;page=1" title="因子图优化">因子图优化</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=自动驾驶&amp;page=1" title="自动驾驶">自动驾驶</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=人工智能&amp;page=1" title="人工智能">人工智能</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">各位朋友，新的一年好呀，好好干，出成果！不知不觉从9月份开始写到现在也写了40篇文章了，文章如有诸多问题还请批评指出。随着学习的深入的确发现之前的一些文章有一些问题或者有遗漏的地方，等过年有空再整理下吧。言归正传，现在越来越多搞SLAM的人开始用因子图优化，目前我也在学习中，有很多问题，因此再开一个专栏。话不多说，开始第一篇。先上链接：因子图的理论基础与在机器人中的应用 - 深蓝学院 - 专注人工智能的在线教育​www.shenlanxueyuan.com/open/course/28正在上</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/xiaoyaoprefecture/121532897" rel="bookmark">Java基础案例教程--第七讲：面向对象（下）_专科3年的修炼的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=java&amp;page=1" title="java">java</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=Java基础&amp;page=1" title="Java基础">Java基础</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">第七讲：面向对象（下）一.预习笔记二.课堂笔记三.课后回顾–仰望星空,脚踏实地;以梦为马,不负韶华</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/u011363248/10209271" rel="bookmark">坑爹的NLS_LANG_frozen_flash的博客-程序员宅基地</a>
+ </h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=c++&amp;page=1" title="c++">c++</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=oracle&amp;page=1" title="oracle">oracle</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">这两天搞OCI开发，程序部署在linux上，插入中文从sqlplus客户端查询出来一直是乱码，但是通过sqlplus插入中文再查询，中文显示是正常的。网上搜罗了很久，在linux上设置了很多lang，比如export LANG=zh_CN.GBK ,export LANG=zh_CN.UTF8等等，无奈一直不行啊。网上说，要oracle服务器和客户端的字符集显示要一致。关于客户端这个词，看</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/m0_56255097/117300994" rel="bookmark">15分钟的字节跳动视频面试，这原因我服了_Android女王的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=程序员&amp;page=1" title="程序员">程序员</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=面试&amp;page=1" title="面试">面试</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=android&amp;page=1" title="android">android</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=移动开发&amp;page=1" title="移动开发">移动开发</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">第一次观看我文章的朋友，可以关注、点赞、转发一下，每天分享各种干货技术和程序猿趣事前言随着移动终端的快速发展，Android开发人员也越来越多，Android开发市场也进入了一个饱和的状态，Android开发人员也面临着难找一份好工作的处境。而找工作的第一关就是面试，一个好的面试往往能很好的提高你的入职几率，下面我总结了一些本人在一些大厂的面试总结，希望的观看的小伙伴有所帮助。高级工程师之后可以有两种侧重方向或者说两种发展路线。第一种是管理路线首先要对移动端和前端有一个系统的认知，并非说要完.</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_39635567/118147298" rel="bookmark">计算机一级考试实训在线做,计算机基础综合实训与一级考试模拟训练教程/高等职业教育计算机规划教材..._weixin_39635567的博客-程序员宅基地</a>
+</h3>
+ <p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=计算机一级考试实训在线做&amp;page=1" title="计算机一级考试实训在线做">计算机一级考试实训在线做</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">《计算机基础综合实训与一级考试模拟训练教程/高等职业教育计算机规划教材》是高等职业教育计算机规划教材，由长期从事计算机教学工作的一线高校教师依据教育部最新制定的《高职高专教育计算机公共基础课程基本要求》和各省最新修订的《高等职业学院计算机应用课程合格考试大纲》编写而成。《计算机基础综合实训与一级考试模拟训练教程/高等职业教育计算机规划教材》共分三部分，内容包括计算机基础综合实训、模拟试题和疑难解答...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_31833307/114723256" rel="bookmark">java 最大的整数_java中最大的整数_微KO的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=java 最大的整数&amp;page=1" title="java 最大的整数">java 最大的整数</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">8种基本数据类型中，long类型所能表示的整数范围是最大的，但还是有限的。另外，基本数据类型中的整数还有一个问题，那就是不是每个数都能够正确的取负数。例如，对int型而言，“-2147483648”取负就不能得到正确的结果，对其他整数类型也有这个问题。为了解决这些问题，Java中专门提供了用来进行不限制大小的整数计算的类——java.math.BigInteger。该类可以对任意大小的整数进行操作...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/chichimanman/38821935" rel="bookmark">Oracle表空间(Tablespace)_chichimanman的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=ORACLE&amp;page=1" title="ORACLE">ORACLE</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">﻿﻿tablespace是Oracle空间管理上的逻辑单位，实体上存放数据的是tablespace里面的Data File。所以tablespace可以看成是Data File的群组。tablespace可进一步分为段segments、区段extents和块blocks。一个datafile只属于一个数据库的一个tablespace。当数据库刚建立起来，系统会建立一个叫做SYS</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_43502119/108994287" rel="bookmark">数组的创建___MATLAB_神龙_Str的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=MATLAB_Study&amp;page=1" title="MATLAB_Study">MATLAB_Study</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">创建数组函数法赋值法直接输入法冒号输入法循环赋值法数据创建读取法 MATlAB具有强大的功能，其中数组作为数据重要的运算单元，因而掌握数组的赋值形式格外重要。如果需要了解绘图函数具体用用法可以参考官网链接:参考函数.函数法 官网可搜索函数语法函数作用diag()产生对角数组eye()产生单位数组magic()产生魔方数组rand()产生均匀分布的随机数组randn()产生正太分布的随机数组ones()产生全1数组zeros()产</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_34463228/114862399" rel="bookmark">mysql数据库java链接_java链接mysql数据库_亚马逊Kindle的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=mysql数据库java链接&amp;page=1" title="mysql数据库java链接">mysql数据库java链接</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">package com.dezhonger;import java.sql.*;public class shiyan6 {public static void print(ResultSet rs) throws SQLException{while(rs.next()){String name = rs.getString(&quot;name&quot;);String sno = rs.getString(&quot;...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_35117981/118952438" rel="bookmark">计算机网络原理参考资料,《计算机网络原理》3 (2021)在线作业参考资料_江东的铁壁的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=计算机网络原理参考资料&amp;page=1" title="计算机网络原理参考资料">计算机网络原理参考资料</a></span>
+ </p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">《《计算机网络原理》3 (2021)在线作业参考资料》由会员分享，可在线阅读，更多相关《《计算机网络原理》3 (2021)在线作业参考资料(14页珍藏版)》请在人人文库网上搜索。1、计算机网络原理3 (2021)在线作业参考资料一、单选题(共30 讲试题，共60 分。)V 1. OSI/RM的传输层背责以下哪种功效？()A. 体例化报文B. 为数据取舍经由过程收集的路由C. 界说毗连到介量的个性D...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_17746623/62223891" rel="bookmark">正则表达式完美解析URL中的各部分_reactMan的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=前端&amp;page=1" title="前端">前端</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=正则表达式&amp;page=1" title="正则表达式">正则表达式</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=url&amp;page=1" title="url">url</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">URL 正则 host search hash</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_40712579/117255039" rel="bookmark">urlopen error unknown url type https错误解决方式_wkk1kkw的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=python&amp;page=1" title="python">python</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=Python&amp;page=1" title="Python">Python</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">错误场景:url为https链接 resp = request.urlopen(url)错误显示:urllib.error.URLError:urlopen error unknown url type:https解决办法:win10下1.安装opensslhttps://slproweb.com/products/Win32OpenSSL.html,下载安装注:该错误,本人测试时,在pycharm中可以正常执行,在命令行,进入虚拟环境时可以执行,但不进入虚拟环境,采</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/acetaohai123123/78266944" rel="bookmark">Solid Edge如何制作爆炸图_gary_tao的博客-程序员宅基地_solidedge怎么做爆炸图</a>
+</h3>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">1 最方便的方式是自动爆炸点击应用程式-&quot;爆炸-涂彩-动画&quot;  选择要爆炸的对象（默认是顶层组立件），要爆炸的距离（默认系统根据零件大小自动生成距离，你也可以手动设定距离）即可完成。  2 手动爆炸先选择要爆炸的零件（无需按住Ctrl或Shift即可多选）再选择以谁为基准零件和以谁为基准面（就是决定了要爆炸的方向）  最后生成效果如下图所示</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/weixin_40001309/111529270" rel="bookmark">python远程启动exe_Python 远程开机_weixin_40001309的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=python远程启动exe&amp;page=1" title="python远程启动exe">python远程启动exe</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">用 Python 关机你肯定听过或者实践过，那么用 Python 开机呢？这是一个神奇的方法，教你如何用 Python 来开机。本文目标远程开机原理Python 远程开机代码实现Python 关机说明Python 开机关于用程序来开机，是怎么做到的呢？这就是 WOL 技术 Wake-On-Lan, 利用计算机在关机或休眠状态时，网卡及主板部分仍然有微弱的供电，当然要保持电源是插上的，而且是有线连接...</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_35149546/103870331" rel="bookmark">Vue 导入文件import、路径@和.的区别_qq_35149546的博客-程序员宅基地</a>
+</h3>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">1.Vue 导入文件import、路径@和.的区别</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/dj0379/49329347" rel="bookmark">这些行业高薪职位最多_dj0379的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=杂谈&amp;page=1" title="杂谈">杂谈</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">2015-10-12 11:50:18　　依照企业惯常的全年招聘走势，一般夏季为调整期，但8月的全国招聘行情并不疲软。根据前程无忧无忧指数的统计数据显示，2015年8月，全国IT类(计算机/互联网/通信/电子)职能网上发布职位数为687 096万个，与去年同期相比增长了25%，更值得关注的是，IT类职位占去了全国8月网上发布职位总数的近2成江山。二线城市IT</p>
+</div>
+</div>
+</div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/qq_42240113/117804403" rel="bookmark">块级元素、行内元素、行内块元素_Hello，R的博客-程序员宅基地</a>
+</h3>
+<p style="margin-bottom: 0px;float:left;">标签：
+<span>&nbsp;&nbsp;<a href="/searchArticle?qc=前端&amp;page=1" title="前端">前端</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=HTML&amp;page=1" title="HTML">HTML</a></span><span>&nbsp;&nbsp;<a href="/searchArticle?qc=html&amp;page=1" title="html">html</a></span>
+</p>
+<div style="clear:both;"></div>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">块级元素、行内元素、行内块元素块级元素(display:block)行内元素(display:inline)行内块元素(display:inline-block)块级元素(display:block) 块级元素的特点： 可以设置宽度和高度 &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;	span { display: block; width: 200px;`在这里插入代码片` height: 200px;	}行内元素(display:inline)</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="actions pagination" style="float:right;">
+<li><a href="/?page=1">1</a></li>
+<li><a href="/?page=2">2</a></li>
+<li><a href="/?page=3">3</a></li>
+<li><a href="/?page=4">4</a></li>
+<li><a href="/?page=5">5</a></li>
+<li><a href="/?page=6">6</a></li>
+<li><a href="/?page=7">7</a></li>
+<li><a href="/?page=8">8</a></li>
+<li><a href="/?page=9">9</a></li>
+<li><a href="/?page=10">10</a></li>
+<li><a href="/?page=11">11</a></li>
+<li><a href="/?page=12">12</a></li>
+<li><a href="/?page=13">13</a></li>
+<li><a href="/?page=14">14</a></li>
+<li><a href="/?page=15">15</a></li>
+</ul>
+<div id="bottomads">
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="col-md-4">
+<h3>
+<span>热门文章</span>
+</h3>
+<div style="padding:5px 5px 0px 5px;word-wrap: break-word; word-break: normal;">
+<ul style="list-style: none;padding-left:0px;">
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/chichimanman/38821935">Oracle表空间(Tablespace)_chichimanman的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/qq_43502119/108994287">数组的创建___MATLAB_神龙_Str的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/qq_17746623/62223891">正则表达式完美解析URL中的各部分_reactMan的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/qq_42555009/105301980">【2020省选模拟】题解_stargazer.的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/yang5726685/53402778">XML 教程_杨四郎2018的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_32349223/113584147">openldap用mysql_OpenLDAP环境搭建 使用MySQL作为数据库存储_VDV空降兵费里的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/u010261063/120919448">RTT学习笔记2-线程_Car12的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_45129876/107719920">最受欢迎的12个Python开源框架，还没用过你就OUT了！！！_测试员小何的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_45620762/103677513">JavaScript的使用教程_Lord Jimmy的博客-程序员宅基地</a>
+</li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/AIxiaoming1105/106024206">二分（折半）查找及其使用示例_AIxiaoming1105的博客-程序员宅基地_折半查找实例</a>
+</li>
+</ul>
+</div>
+<h3>
+<span>推荐文章</span>
+</h3>
+<div style="padding:5px 5px 0px 5px;word-wrap: break-word; word-break: normal;">
+<ul style="list-style: none;padding-left:0px;">
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/bidepanm/118032731">el-select 组件filterable 属性之后， @blur 事件便失效处理办法_bidepanm的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_29444613/112873595">h3c s5500 ssh v5 配置_H3C 交换机基本设置(telnet、SSH、链路聚合)_章鱼剪辑的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/cum43546/109042360">linux用户的根目录_为什么Linux允许用户删除根目录？_cum43546的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/FnqTyr45/117049686">杭州佛学院招硕士当法师：没有KPI，绩效随缘，佛系上班，四点半下班…_算法与数学之美的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_34150830/91390831">前端工程化（2）：快速搭建基于angular团队代码提交规范的工作流_weixin_34150830的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weiweiweiIT/107437693">jsp 模拟售卖网站项目_爱吃喵的秋刀鱼的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_43571751/121588252">Angular 表单_weixin_43571751的博客-程序员宅基地_angular表单设计器</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/u013960979/112218841">浏览器渲染页面的原理及流程_h_yelin的博客-程序员宅基地_服务器渲染</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/weixin_30328063/99049644">css3-transform_weixin_30328063的博客-程序员宅基地</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;">
+<a href="/article/qq_40732336/116484611">[NET Core] Nuget包发布流程_今晚打老虎z的博客-程序员宅基地_nuget发布</a></li>
+</ul>
+</div>
+<h3>
+<span>随便推点</span>
+</h3>
+<div style="padding:5px 5px 0px 5px;word-wrap: break-word; word-break: normal;">
+<ul style="list-style: none;padding-left:0px;">
+</ul>
+</div>
+<div id="rightads">
+</div>
+</div>
+<div id="ad_12"></div>
+</div>
+</div>
+
+<footer>
+<div class="footer-sec" id="footer-sec">
+<div class="container">
+<div class="row">
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279778326'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279778326%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+<div class="col-md-12 foo-inner">
+Copyright &copy; 2018-2022 - All Rights Reserved - <a th:href="${domain}" th:text="${domain}" style="color:white;"></a> <span style="color:red;">网站内容人工审核和清理中！</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+        var num = Math.floor(Math.random() * 10) + 1;
+        if (num == 1) {
+            $('#header').css('background-color', '#ff00ff');
+            $('#footer-sec').css('background-color', '#ff00ff');
+        } else if (num == 2) {
+            $('#header').css('background-color', '#442525');
+            $('#footer-sec').css('background-color', '#442525');
+        } else if (num == 3) {
+            $('#header').css('background-color', '#bf6f6f');
+            $('#footer-sec').css('background-color', '#bf6f6f');
+        } else if (num == 4) {
+            $('#header').css('background-color', '#a69e9e');
+            $('#footer-sec').css('background-color', '#a69e9e');
+        } else if (num == 5) {
+            $('#header').css('background-color', '#929961');
+            $('#footer-sec').css('background-color', '#929961');
+        } else if (num == 6) {
+            $('#header').css('background-color', '#5d956d');
+            $('#footer-sec').css('background-color', '#5d956d');
+        } else if (num == 7) {
+            $('#header').css('background-color', '#5395a4');
+            $('#footer-sec').css('background-color', '#5395a4');
+        } else if (num == 8) {
+            $('#header').css('background-color', '#837dcc');
+            $('#footer-sec').css('background-color', '#837dcc');
+        } else if (num == 9) {
+            $('#header').css('background-color', '#aa72ae');
+            $('#footer-sec').css('background-color', '#aa72ae');
+        } else if (num == 10) {
+            $('#header').css('background-color', '#0c739b');
+            $('#footer-sec').css('background-color', '#0c739b');
+        } else {
+            $('#header').css('background-color', '#0c739b');
+            $('#footer-sec').css('background-color', '#0c739b');
+        }
+    </script>
+</footer>
+
+<script>
+    window.onload = function () {
+        var ad_1 = "<div style=\"text-align:center;\" id=\"82741-31\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=31\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=31\"><\/script><\/div>";
+        var ad_2 = "<div id=\"82741-11\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=11\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=11\"><\/script><\/div>";
+        var ad_3 = "<div class=\"outbrain-tm\" id=\"82741-16\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=16\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=16\"><\/script><\/div>";
+        var ad_4 = "<div id=\"82741-2\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=2\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=2\"><\/script><\/div>";
+        var ad_5 = "<div id=\"82741-3\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=3\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=3\"><\/script><\/div>";
+        var ad_6 = "<div id=\"82741-20\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=20\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=20\"><\/script><\/div>";
+        var ad_7 = "<div id=\"82741-19\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=19\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=19\"><\/script><\/div>";
+        var ad_8 = "<div id=\"82741-28\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=28\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=28\"><\/script><\/div>";
+        var ad_9 = "<div id=\"82741-6\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=6\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=6\"><\/script><\/div>";
+        var ad_10 = "";
+        var ad_11 = "<div id=\"82741-1\"><script src=\"\/\/ads.themoneytizer.com\/s\/gen.js?type=1\"><\/script><script src=\"\/\/ads.themoneytizer.com\/s\/requestform.js?siteId=82741\u0026formatId=1\"><\/script><\/div>";
+        var ad_12 = "";
+        $('#ad_1').html(ad_1);
+        $('#ad_2').html(ad_2);
+        $('#ad_3').html(ad_3);
+        $('#ad_4').html(ad_4);
+        $('#ad_5').html(ad_5);
+        $('#ad_6').html(ad_6);
+        $('#ad_7').html(ad_7);
+        $('#ad_8').html(ad_8);
+        $('#ad_9').html(ad_9);
+        $('#ad_10').html(ad_10);
+        $('#ad_11').html(ad_11);
+        $('#ad_12').html(ad_12);
+    }
+</script>
+</body>
+</html>

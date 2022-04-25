@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="theme-color" content="#ffffff">
+<style>
+		#sticky-bottom,
+		#sticky-top {
+			background: rgba(255, 255, 255, 0.9);
+			display: block;
+			min-height: 50px;
+			overflow: hidden;
+			text-align: center;
+			transition: min-height 0.5s;
+			width: 100%;
+			z-index: 5;
+		}
+		#sticky-top {
+			position: sticky;
+			top: 0;
+		}
+		#sticky-bottom {
+			position: fixed;
+			bottom: 0;
+		}
+		#top-billboard {
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+			position: relative;
+		}
+		#top-billboard.sticky-fixed {
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: 1rem;
+			width: 100%;
+			z-index: 1500;
+		}
+		#siteskin {
+			display: none;
+			position: fixed !important;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+		}
+		div.media-unit:not(.one-by-one) {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 1rem auto;
+			text-align: center;
+			z-index: 1;
+		}
+		.entry-content .proper-ad-unit {
+			display: block !important;
+			min-height: 700px !important;
+		}
+		.entry-content .proper-ad-unit:before {
+			border-bottom: 1px solid #dfdfdf;
+			color: #666;
+			content: "Content Continues After Ad";
+			display: block;
+			font-size: 0.6rem;
+			padding: 0 2rem 0.25rem;
+			position: relative;
+			text-align: center;
+		}
+		.entry-content .proper-ad-unit > div:first-child {
+			margin-top: 0.5rem !important;
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: 55px;
+		}
+		#sideAd-2 .media-unit:after,
+		#sideAd-3 .media-unit:before {
+			display: none;
+		}
+		#sideAd-2 .media-unit {
+			margin-bottom: 0.25rem;
+		}
+		#sideAd-3 .media-unit {
+			margin-top: 0.25rem;
+		}
+		div.primis-player {
+			display: flex;
+			margin: 0.7rem auto;
+			padding-top: 80.7799442897%; /* (290/359)*100 */
+			position: relative;
+		}
+		div.primis-player > div {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		@media (max-width: 840px) {
+			div.media-unit:not(.one-by-one) {
+				background: #f7f7f7;
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+			}
+		}
+		@media (min-width: 841px) {
+			#sticky-bottom,
+			#sticky-top {
+				display: none;
+			}
+			#top-billboard {
+				display: flex !important;
+				flex-direction: column;
+				justify-content: space-between;
+				margin: 1.5rem auto 0.5rem !important;
+				min-height: 290px;
+			}
+			div.media-unit:not(.one-by-one) {
+				min-height: 290px;
+			}
+			.entry-content .proper-ad-unit {
+				min-height: 320px !important;
+			}
+			.entry-content .proper-ad-unit > div:first-child {
+				top: 75px;
+			}
+			div.primis-player {
+				padding-top: 70.8563535912%; /* (513/724)*100 */
+			}
+		}
+		@media (min-width: 1100px) {
+			#siteskin {
+				display: block;
+			}
+		}
+		@media (max-width: 1920px) {
+			#siteskin > img {
+				height: 1080px;
+				max-width: 1920px !important;
+				width: 1920px;
+			}
+			#siteskin > img,
+			#proper-ad-progameguides_skin {
+				margin-left: calc((100% - 1920px)/2) !important;
+			}
+		}
+	</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356934496955375" crossorigin="anonymous"></script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>Pro Game Guides - Guides, News, and Leaks from every popular game!</title>
+<meta name="description" content="Guides, News, and Leaks from every popular game!" />
+<link rel="canonical" href="https://progameguides.com/" />
+<link rel="next" href="https://progameguides.com/page/2/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pro Game Guides" />
+<meta property="og:description" content="Guides, News, and Leaks from every popular game!" />
+<meta property="og:url" content="https://progameguides.com/" />
+<meta property="og:site_name" content="Pro Game Guides" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@progamerguides" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://progameguides.com/#organization","name":"Pro Game Guides","url":"https://progameguides.com/","sameAs":["https://www.facebook.com/progameguides/","https://twitter.com/progamerguides"],"logo":{"@type":"ImageObject","@id":"https://progameguides.com/#logo","inLanguage":"en-US","url":"https://progameguides.com/wp-content/uploads/2020/07/pgg-logo.jpg","contentUrl":"https://progameguides.com/wp-content/uploads/2020/07/pgg-logo.jpg","width":344,"height":78,"caption":"Pro Game Guides"},"image":{"@id":"https://progameguides.com/#logo"}},{"@type":"WebSite","@id":"https://progameguides.com/#website","url":"https://progameguides.com/","name":"Pro Game Guides","description":"Guides, News, and Leaks from every popular game!","publisher":{"@id":"https://progameguides.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://progameguides.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"CollectionPage","@id":"https://progameguides.com/#webpage","url":"https://progameguides.com/","name":"Pro Game Guides - Guides, News, and Leaks from every popular game!","isPartOf":{"@id":"https://progameguides.com/#website"},"about":{"@id":"https://progameguides.com/#organization"},"description":"Guides, News, and Leaks from every popular game!","breadcrumb":{"@id":"https://progameguides.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://progameguides.com/"]}]},{"@type":"BreadcrumbList","@id":"https://progameguides.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Pro Game Guides &raquo; Feed" href="https://progameguides.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Pro Game Guides &raquo; Comments Feed" href="https://progameguides.com/comments/feed/" />
+<script>var special_ops=special_ops||{};</script>
+<script>special_ops.page_type = "home";</script>
+<script type="text/javascript">
+        var propertag = propertag || {};
+        propertag.cmd = propertag.cmd || [];
+        (function() {
+        var pm = document.createElement('script');
+        pm.async = true; pm.type = 'text/javascript';
+        var is_ssl = 'https:' == document.location.protocol;
+        pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/progameguides.min.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(pm, node);
+        })();
+        </script>
+<script>
+            window.addEventListener('load', function() {
+                window.propertag.cmd.push(function() { properBuildSlots() });
+            });
+        </script>
+
+<script src="//btloader.com/tag?o=5645585240555520&upapi=true" async></script>
+
+<link rel='stylesheet' id='wp-block-library-css' href='https://progameguides.com/wp-content/plugins/gutenberg/build/block-library/style.css?ver=12.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='dotesports-blocks-css' href='https://progameguides.com/wp-content/plugins/dotesports-gutenberg-blocks/build/style-index.css?ver=1636561713' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='hurrytimer-css' href='https://progameguides.com/wp-content/uploads/hurrytimer/css/ade85cbdb63fd7a0.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='proguides-style-css' href='https://progameguides.com/wp-content/themes/proguides-lw/style.css?ver=12' type='text/css' media='all' />
+<script type='text/javascript' src='https://progameguides.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/themes/proguides-lw/js/ads-prebid-banner-proper-outbrain.js?ver=5.9.3' id='proguides-adblock-bait-js'></script>
+<link rel="https://api.w.org/" href="https://progameguides.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://progameguides.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://progameguides.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.9.3" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-293830-43"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'anonymizeIp', true);
+				gtag('config', 'UA-293830-43');
+				</script>
+<script type="text/javascript" async>
+			;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://progameguides.com/plow.lite.js","snowplow"));
+	</script>
+<script>
+			window.snowplow('newTracker', 'sp1', 'https://spc.progameguides.com', { 
+				appId: 'progameguides-web',
+			});
+			snowplow('enableActivityTracking', { 
+				minimumVisitLength: 30, 
+				heartbeatDelay: 10 
+			});
+			window.snowplow('trackPageView');
+			window.top.addEventListener('primisPlayerInit', function (e) {
+				if (e.detail.playerApiId == 'primisPlayer') {
+					var player = e.detail;
+					player.addEventListener('adStarted', function (val) {
+						window.snowplow('trackSelfDescribingEvent', {
+							event: {
+								schema: 'iglu:group.gamurs/primis_ad_impression/jsonschema/1-0-0',
+								data: {
+									impressionValue: val.impValue,
+									servingFee: val.servingFee,
+								}
+							}
+						});
+					});
+				}
+			});
+	</script>
+<script>
+		(function() {
+			var processCWV = function(obj) {
+				window.snowplow('trackSelfDescribingEvent', {
+					event: {
+						schema: 'iglu:group.gamurs/core_web_vitals/jsonschema/1-0-0',
+						data: {
+							name: obj.name,
+							value: obj.value,
+							delta: obj.delta,
+						},
+					},
+				});
+			}
+			var script = document.createElement('script');
+			script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+			script.onload = function() {
+				webVitals.getCLS(processCWV);
+				webVitals.getFID(processCWV);
+				webVitals.getLCP(processCWV);
+			}
+			document.head.appendChild(script);
+		}())
+	</script>
+<script defer src="https://cdn.unblockia.com/h.js"></script>
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://superficialeyes.com/v2tpqov7z0m8RFLANj03zLs6fKZpk_zHdUT3DCod_xVb56arbpCCPmMDuUKpP-_3d",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o[n]=o[n]||t})(window,String.fromCharCode(97,100,109,105,114,97,108));!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-recovered","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");;;!(function(t,n,i,e,o){function a(){for(var t=[],i=0;i<arguments.length;i++)t.push(arguments[i]);if(!t.length)return o;"ping"===t[0]?t[2]({gdprAppliesGlobally:!!n.__cmpGdprAppliesGlobally,cmpLoaded:!1,cmpStatus:"stub"}):t.length>0&&o.push(t)}function c(t){if(t&&t.data&&t.source){var e,o=t.source,a="string"==typeof t.data&&t.data.indexOf("__tcfapiCall")>=0;(e=a?((function(t){try{return JSON.parse(t)}catch(n){}})(t.data)||{}).__tcfapiCall:(t.data||{}).__tcfapiCall)&&n[i](e.command,e.version,(function(t,n){var i={__tcfapiReturn:{returnValue:t,success:n,callId:e.callId}};o&&o.postMessage(a?JSON.stringify(i):i,"*")}),e.parameter)}}!(function f(){if(!window.frames[e]){var n=t.body;if(n){var i=t.createElement("iframe");i.style.display="none",i.name=e,n.appendChild(i)}else setTimeout(f,5)}})(),o=[],a.v=1,"function"!=typeof n[i]&&(n[i]=n[i]||a,n.addEventListener?n.addEventListener("message",c,!1):n.attachEvent&&n.attachEvent("onmessage",c))})(document,window,"__tcfapi","__tcfapiLocator");;!(function(n,t,i,u,e,o,r){function a(n){if(n){var u=(n.data||{}).__uspapiCall;u&&t[i](u.command,u.version,(function(t,i){n.source.postMessage({__uspapiReturn:{returnValue:t,success:i,callId:u.callId}},"*")}))}}!(function f(){if(!window.frames[u]){var t=n.body;if(t){var i=n.createElement("iframe");i.style.display="none",i.name=u,t.appendChild(i)}else setTimeout(f,5)}})();var s={getUSPData:function(n,t){return n!==1?t&&t(null,!1):t&&t({version:null,uspString:null},!1)}};function c(n,t,i){return s[n](t,i)}c.v=1,"function"!=typeof t[i]&&(t[i]=t[i]||c,t.addEventListener?t.addEventListener("message",a,!1):t.attachEvent&&t.attachEvent("onmessage",a)),o=n.createElement(e),r=n.getElementsByTagName(e)[0],o.src="https://terrifictooth.com/v2jayjHpUMEvRtsIZGcOgxFlY06j6Ok17qsmpkYuCphTQL6-3gqYaLHjpbM_cbGORXIiJJn-GBOh5hhIZEA",r.parentNode.insertBefore(o,r)})(document,window,"__uspapi","__uspapiLocator","script");</script>
+<script>
+		window.snowplow('trackSelfDescribingEvent', {
+			event: {
+				schema: 'iglu:group.gamurs/ad_block_detection/jsonschema/1-0-0',
+				data: {
+					adsBlocked: window.haveWeGotAds === undefined,
+				}
+			}
+		});
+		gtag('event', window.haveWeGotAds === undefined ? "Blocked" : "Allowed", {
+			'event_category' : 'Ad Block',
+			'non_interaction': true,
+		});
+	</script>
+
+<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "36750692" });
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+		s.src = "https://sb.scorecardresearch.com/cs/36750692/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+	</script>
+<noscript>
+	<img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=36750692&amp;cv=3.6.0&amp;cj=1">
+	</noscript>
+
+</head>
+<body class="home blog" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<div id="page" class="site">
+<div id="sticky-top">
+<div class="proper-ad-unit sticky-units">
+<div id="proper-ad-progameguides_mobile_sticky_top"> <script> propertag.cmd.push(function() { proper_display('progameguides_mobile_sticky_top'); }); </script> </div>
+</div>
+</div>
+<header id="masthead" class="m-btm-half">
+<div class="container grid-xl">
+<h2 id="logo">
+<a href="https://progameguides.com" rel="home">
+<img height="48" src="https://progameguides.com/wp-content/themes/proguides-lw/images/pgg-logo.jpg" alt="Pro Game Guides Logo" />
+</a>
+</h2>
+<div id="main-navigation">
+<span id="nav-search">
+<span class="nav-search-icon">
+<img width="15" height="15" src="https://progameguides.com/wp-content/themes/proguides-lw/images/search-icon.png" alt="Search Icon" />
+</span>
+</span>
+<input class="menu-btn" type="checkbox" id="menu-btn" />
+<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+<ul class="menu-nav">
+<li><a href="https://progameguides.com/news/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - News' });">News</a></li>
+<li><a href="https://progameguides.com/fortnite/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - Fortnite' });">Fortnite</a></li>
+<li><a href="https://progameguides.com/roblox/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - Roblox' });">Roblox</a></li>
+<li><a href="https://progameguides.com/minecraft/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - Minecraft' });">Minecraft</a></li>
+<li><a href="https://progameguides.com/genshin-impact/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - Genshin Impact' });">Genshin Impact</a></li>
+<li><a href="https://progameguides.com/other-content/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - Other' });">Other</a></li>
+<li><a href="https://progameguides.com/about-us/" onclick="gtag('event', 'click', { 'event_category': 'Header', 'event_label': 'Navigation - About' });">About Us</a></li>
+</ul>
+</div>
+</div>
+</header>
+<div id="nav-search-form-wrap">
+<div class="container grid-xl">
+<div class="columns">
+<div class="col-12">
+<div class="nav-search-form">
+<form role="search" method="get" action="https://progameguides.com/">
+<div class="input-group">
+<input id="nav-search-input" type="search" class="form-input" placeholder="Enter Your Search Terms..." name="s">
+<button class="btn btn-primary input-group-btn">Search</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container grid-xl">
+<div id="content" class="site-content">
+<div class="proper-ad-unit will-fixed" id="top-billboard">
+<div id="proper-ad-progameguides_main_1"> <script> propertag.cmd.push(function() { proper_display('progameguides_main_1'); }); </script> </div>
+</div>
+<div class="columns">
+<div id="primary" class="column col-8 col-md-12">
+<main id="main" class="site-main">
+<h2 class="block-header">Latest News</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Mobile-Legends-Adventure-1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Mobile-Legends-Adventure-1-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Mobile-Legends-Adventure-1-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/mobile-legends-adventure/mobile-legends-adventure-is-an-idle-rpg-thatll-make-you-progress-even-while-offline/">Mobile Legends: Adventure is an idle RPG that&#8217;ll make you progress even while offline.</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/peterglagowski/" title="Posts by Peter Glagowski" class="author url fn" rel="author">Peter Glagowski</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-23T09:43:31-07:00">April 23, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-NSFW-Adventurer-Plates-are-getting-players-banned-in-Final-Fantasy-XIV-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-NSFW-Adventurer-Plates-are-getting-players-banned-in-Final-Fantasy-XIV-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-NSFW-Adventurer-Plates-are-getting-players-banned-in-Final-Fantasy-XIV-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/final-fantasy/nsfw-adventurer-plates-are-getting-players-banned-in-final-fantasy-xiv/">NSFW Adventurer Plates are getting players banned in Final Fantasy XIV</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/michaelhassall/" title="Posts by Michael Hassall" class="author url fn" rel="author">Michael Hassall</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-23T08:49:59-07:00">April 23, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Roblox-My-Hello-Kitty-Cafe-Featured-Image-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Roblox-My-Hello-Kitty-Cafe-Featured-Image-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Roblox-My-Hello-Kitty-Cafe-Featured-Image-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/sanrio-and-roblox-to-bring-hello-kitty-and-friends-to-the-platform-soon/">Sanrio and Roblox to bring Hello Kitty and friends to the platform soon</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/gracedoyle/" title="Posts by Grace Doyle" class="author url fn" rel="author">Grace Doyle</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T12:59:14-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/featured-final-fantasy-xiv-emergency-maintenance-for-all-worlds-on-apr-25-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/featured-final-fantasy-xiv-emergency-maintenance-for-all-worlds-on-apr-25-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/featured-final-fantasy-xiv-emergency-maintenance-for-all-worlds-on-apr-25-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/final-fantasy/final-fantasy-xiv-schedules-emergency-maintenance-for-all-worlds-on-apr-25/">Final Fantasy XIV schedules Emergency Maintenance for all Worlds on April 25</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/taihofmann/" title="Posts by Tai Hofmann" class="author url fn" rel="author">Tai Hofmann</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T13:24:52-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-Assassins-Creed-Ubisofts-Assassins-Creed-VR-game-reportedly-titled-Nexus-and-features-familiar-characters-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-Assassins-Creed-Ubisofts-Assassins-Creed-VR-game-reportedly-titled-Nexus-and-features-familiar-characters-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-Assassins-Creed-Ubisofts-Assassins-Creed-VR-game-reportedly-titled-Nexus-and-features-familiar-characters-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/assassins-creed/ubisofts-assassins-creed-vr-game-reportedly-titled-nexus-and-features-familiar-characters/">Ubisoft&#8217;s Assassin&#8217;s Creed VR game reportedly titled &#8216;Nexus&#8217; and features familiar characters</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/justinjoy/" title="Posts by Justin Joy" class="author url fn" rel="author">Justin Joy</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T12:04:30-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-Refugees-from-TERA-look-to-Final-Fantasy-XIV-in-search-for-new-home-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-Refugees-from-TERA-look-to-Final-Fantasy-XIV-in-search-for-new-home-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-Final-Fantasy-XIV-Refugees-from-TERA-look-to-Final-Fantasy-XIV-in-search-for-new-home-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/final-fantasy/refugees-from-tera-look-to-final-fantasy-xiv-in-search-for-new-home/">Refugees from TERA look to Final Fantasy XIV in search for new home</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/michaelhassall/" title="Posts by Michael Hassall" class="author url fn" rel="author">Michael Hassall</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T11:37:01-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="more-posts-link"><a href="https://progameguides.com/news">Read More News</a></div>
+<h2 class="block-header">Latest Guides</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-Where-to-find-Devil-Horns-in-Rune-Factory-5-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-Where-to-find-Devil-Horns-in-Rune-Factory-5-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-Where-to-find-Devil-Horns-in-Rune-Factory-5-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/rune-factory-5/where-to-find-devil-horns-in-rune-factory-5/">Where to find Devil Horns in Rune Factory 5</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/indiamacgregor/" title="Posts by India MacGregor" class="author url fn" rel="author">India MacGregor</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-25T00:52:27-07:00">April 25, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-genshin-impact-venti-dps-build-guide-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-genshin-impact-venti-dps-build-guide-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-genshin-impact-venti-dps-build-guide-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/genshin-impact-venti-dps-build-guide/">Genshin Impact Venti DPS Build Guide</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/tysonphillips/" title="Posts by Tyson Phillips" class="author url fn" rel="author">Tyson Phillips</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T22:28:41-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-all-seelie-locations-in-the-chasm-in-genshin-impact-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-all-seelie-locations-in-the-chasm-in-genshin-impact-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-all-seelie-locations-in-the-chasm-in-genshin-impact-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/all-seelie-locations-in-the-chasm-in-genshin-impact/">All Seelie locations in The Chasm in Genshin Impact</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/tysonphillips/" title="Posts by Tyson Phillips" class="author url fn" rel="author">Tyson Phillips</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T17:41:50-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Roblox-Anime-Dimensions-Simulator-Kokushibo-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Roblox-Anime-Dimensions-Simulator-Kokushibo-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Roblox-Anime-Dimensions-Simulator-Kokushibo-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/how-to-get-kokushibo-in-roblox-anime-dimensions-simulator/">How to get Kokushibo in Roblox Anime Dimensions Simulator</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/jordtury/" title="Posts by Jord Tury" class="author url fn" rel="author">Jord Tury</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T14:18:11-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/featured-Vampire-the-Masquerade-Bloodhunt-Release-Time-and-Launch-Schedule-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/featured-Vampire-the-Masquerade-Bloodhunt-Release-Time-and-Launch-Schedule-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/featured-Vampire-the-Masquerade-Bloodhunt-Release-Time-and-Launch-Schedule-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/vampire-the-masquerade-bloodhunt/vampire-the-masquerade-bloodhunt-release-time-and-launch-schedule/">Vampire: The Masquerade – Bloodhunt Release Time and Launch Schedule</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/petalord/" title="Posts by Praharsh Kashyap" class="author url fn" rel="author">Praharsh Kashyap</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T14:18:33-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Prehistoric-Kingdom-Animal-growth-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Prehistoric-Kingdom-Animal-growth-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Prehistoric-Kingdom-Animal-growth-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/prehistoric-kingdom/will-there-be-dinosaur-babies-in-prehistoric-kingdom/">Will there be dinosaur babies in Prehistoric Kingdom?</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/jorgeaguilar/" title="Posts by Jorge A. Aguilar &#039;Aggy&#039;" class="author url fn" rel="author">Jorge A. Aguilar &#039;Aggy&#039;</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T11:36:44-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="more-posts-link"><a href="https://progameguides.com/guides">Read More Guides</a></div>
+<h2 class="block-header">Fortnite</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/08/featured-fortnite-item-shop-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Possible Fortnite item shop skins" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2020/08/featured-fortnite-item-shop-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2020/08/featured-fortnite-item-shop-450x450.jpg 450w, https://progameguides.com/wp-content/uploads/2020/08/featured-fortnite-item-shop-398x398.jpg 398w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite-shop/">Today&#8217;s Fortnite Item Shop – Current Item Shop</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/eternallykaios/" title="Posts by Mark Carpenter" class="author url fn" rel="author">Mark Carpenter</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2021-08-09T13:26:04-07:00">August 9, 2021</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2018/05/fortnite-1920x1080-wallpaper-llama-spotted-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2018/05/fortnite-1920x1080-wallpaper-llama-spotted-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2018/05/fortnite-1920x1080-wallpaper-llama-spotted-450x450.jpg 450w, https://progameguides.com/wp-content/uploads/2018/05/fortnite-1920x1080-wallpaper-llama-spotted-398x398.jpg 398w, https://progameguides.com/wp-content/uploads/2018/05/fortnite-1920x1080-wallpaper-llama-spotted-300x300.jpg 300w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite/fortnite-features/fortnite-leaked-skins/">Fortnite Leaked Skins &#038; Cosmetics List (Chapter 3 Season 2)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a>, <a href="https://progameguides.com/author/eternallykaios/" title="Posts by Mark Carpenter" class="author url fn" rel="author">Mark Carpenter</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T09:13:47-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-exotic-weapons-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-exotic-weapons-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-exotic-weapons-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite/all-npc-locations-for-fortnite-chapter-3-season-2/">All NPC locations for Fortnite Chapter 3 Season 2</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/dipanjandey/" title="Posts by Dipanjan Dey" class="author url fn" rel="author">Dipanjan Dey</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-03-31T11:07:12-07:00">March 31, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-chapter-3-season-2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-chapter-3-season-2-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/03/featured-fortnite-chapter-3-season-2-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite/fortnite-chapter-3-season-2-achievements-legacies-feats/">Fortnite Chapter 3 Season 2 Achievements &#038; Legacies: Full List &#038; guides</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-03-21T15:05:09-07:00">March 21, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/03/Featured-All-new-weapons-in-Fortnite-Chapter-3-Season-2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/03/Featured-All-new-weapons-in-Fortnite-Chapter-3-Season-2-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/03/Featured-All-new-weapons-in-Fortnite-Chapter-3-Season-2-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite/fortnite-chapter-3-season-2-milestones/">All Milestones in Fortnite Chapter 3 Season 2</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-03-21T14:56:52-07:00">March 21, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2018/10/featured-fortnite-rarest-skins-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/fortnite/fortnite-rarest-skins/">What are the Rarest Skins in Fortnite? (April 2022)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/eternallykaios/" title="Posts by Mark Carpenter" class="author url fn" rel="author">Mark Carpenter</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-01T06:30:36-07:00">April 1, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<h3>Recent Posts</h3>
+<div class="meta-box no-border-sides m-btm-half">
+<ul>
+<li><a href="https://progameguides.com/fortnite/how-to-establish-a-device-uplink-in-zero-build-mode-fortnite-covert-ops/">How to Establish a Device Uplink in Zero Build Mode: Fortnite Covert Ops</a></li>
+<li><a href="https://progameguides.com/fortnite/fortnite-capture-the-flag-codes/">Fortnite Capture the Flag Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/fortnite/fortnite-murder-mystery-codes/">Fortnite Murder Mystery Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/fortnite/fortnite-puzzle-map-codes/">Fortnite Puzzle Map Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/fortnite/where-to-find-the-heavy-sniper-rifle-in-fortnite-chapter-3-season-2/">Where to Find the Heavy Sniper Rifle in Fortnite Chapter 3 Season 2</a></li>
+</ul>
+</div>
+<div class="more-posts-link"><a href="https://progameguides.com/fortnite/">Read More Fortnite Posts</a></div>
+<h2 class="block-header">Roblox</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Roblox-Promo-Code-List-Featured-Image-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Roblox-Promo-Code-List-Featured-Image-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Roblox-Promo-Code-List-Featured-Image-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-promo-codes-list/">Roblox Promo Codes List (April 2022) &#8211; Free Clothes &#038; Items!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-20T14:28:46-07:00">April 20, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/05/featured-roblox-game-codes-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-game-codes/">Roblox Game Codes (2022) &#8211; Tons of Codes for Many Different Games!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-02-28T05:18:34-07:00">February 28, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2021/07/featured-roblox-all-star-tower-defense-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2021/07/featured-roblox-all-star-tower-defense-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2021/07/featured-roblox-all-star-tower-defense-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-all-star-tower-defense-codes/">All Star Tower Defense Codes | Roblox (April 2022) &#8211; Free Gems, Gold, and EXP in ASTD!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-24T09:27:58-07:00">April 24, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/09/roblox-shindo-life-codes-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2020/09/roblox-shindo-life-codes-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2020/09/roblox-shindo-life-codes-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-shindo-life-codes/">Shindo Life Codes &#8211; Roblox (April 2022) &#8211; Free spins and EXP!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-11T08:25:34-07:00">April 11, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2021/03/roblox-anime-mania-codes-150x150.jpeg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2021/03/roblox-anime-mania-codes-150x150.jpeg 150w, https://progameguides.com/wp-content/uploads/2021/03/roblox-anime-mania-codes-450x450.jpeg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-anime-mania-codes/">Roblox Anime Mania Codes (April 2022)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-01T06:38:13-07:00">April 1, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/04/Featured-How-to-store-fruit-in-Roblox-Blox-Fruits-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/04/Featured-How-to-store-fruit-in-Roblox-Blox-Fruits-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/04/Featured-How-to-store-fruit-in-Roblox-Blox-Fruits-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/roblox/roblox-blox-fruits-codes/">Roblox Blox Fruits Codes (April 2022)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/pggstaff/" title="Posts by Pro Game Guides Staff" class="author url fn" rel="author">Pro Game Guides Staff</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-05T14:13:03-07:00">April 5, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<h3>Recent Posts</h3>
+<div class="meta-box no-border-sides m-btm-half">
+<ul>
+<li><a href="https://progameguides.com/roblox/how-to-get-kokushibo-in-roblox-anime-dimensions-simulator/">How to get Kokushibo in Roblox Anime Dimensions Simulator</a></li>
+<li><a href="https://progameguides.com/roblox/roblox-timber-codes/">Roblox Timber! Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/roblox/roblox-a-one-piece-game-codes/">Roblox A One Piece Game Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/roblox/roblox-tapping-legends-x-codes/">Roblox Tapping Legends X Codes (April 2022)</a></li>
+<li><a href="https://progameguides.com/roblox/roblox-freeze-simulator-codes/">Roblox Freeze Simulator Codes (April 2022)</a></li>
+</ul>
+</div>
+<div class="more-posts-link"><a href="https://progameguides.com/roblox/">Read More Roblox Posts</a></div>
+<h2 class="block-header">Genshin Impact</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2021/03/All-Genshin-Impact-Characters-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" /> </div>
+ </header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/all-genshin-impact-characters/">Genshin Impact Characters List &#8211; All Playable Genshin Impact Characters!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/rameez/" title="Posts by rameez" class="author url fn" rel="author">rameez</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2021-10-27T09:42:03-07:00">October 27, 2021</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2021/03/All-Genshin-Impact-Characters-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/all-genshin-impact-materials/">All Genshin Impact Materials</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/rameez/" title="Posts by rameez" class="author url fn" rel="author">rameez</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2021-04-06T12:10:08-07:00">April 6, 2021</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-codes-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-codes-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-codes-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/genshin-impact-codes/">Genshin Impact Codes (April 2022) – New 2.6 codes added!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/eternallykaios/" title="Posts by Mark Carpenter" class="author url fn" rel="author">Mark Carpenter</a>, <a href="https://progameguides.com/author/nickisi/" title="Posts by Nicki Si" class="author url fn" rel="author">Nicki Si</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-19T08:28:58-07:00">April 19, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/02/featured-when-is-the-next-banner-coming-genshin-impact-1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/02/featured-when-is-the-next-banner-coming-genshin-impact-1-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/02/featured-when-is-the-next-banner-coming-genshin-impact-1-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/genshin-impact-when-is-the-next-banner-coming/">Genshin Impact: When is the Next Banner Coming?</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/eternallykaios/" title="Posts by Mark Carpenter" class="author url fn" rel="author">Mark Carpenter</a>, <a href="https://progameguides.com/author/nickisi/" title="Posts by Nicki Si" class="author url fn" rel="author">Nicki Si</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-19T14:18:15-07:00">April 19, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2021/03/Ayaka-and-Traveler-1-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Genshin Impact featured image" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2021/03/Ayaka-and-Traveler-1-150x150.png 150w, https://progameguides.com/wp-content/uploads/2021/03/Ayaka-and-Traveler-1-450x450.png 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/genshin-impact-all-upcoming-characters/">Genshin Impact: All Upcoming Characters</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/sbwindham/" title="Posts by Sierra Windham" class="author url fn" rel="author">Sierra Windham</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2021-06-13T16:37:04-07:00">June 13, 2021</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-2.6-leaks-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-2.6-leaks-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2022/02/featured-genshin-impact-2.6-leaks-450x450.jpg 450w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/genshin-impact/genshin-impact-2-6-leaks-reruns-events-new-area-and-everything-we-know-so-far/">Genshin Impact 2.6 &#8211; Leaks, reruns, events, new area, and everything we know so far</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nickisi/" title="Posts by Nicki Si" class="author url fn" rel="author">Nicki Si</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-03-20T09:27:06-07:00">March 20, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<h3>Recent Posts</h3>
+<div class="meta-box no-border-sides m-btm-half">
+<ul>
+<li><a href="https://progameguides.com/genshin-impact/genshin-impact-venti-dps-build-guide/">Genshin Impact Venti DPS Build Guide</a></li>
+<li><a href="https://progameguides.com/genshin-impact/all-seelie-locations-in-the-chasm-in-genshin-impact/">All Seelie locations in The Chasm in Genshin Impact</a></li>
+<li><a href="https://progameguides.com/genshin-impact/genshin-impact-journey-with-a-gentle-breeze-web-event-guide/">Genshin Impact Journey With a Gentle Breeze Web Event guide</a></li>
+<li><a href="https://progameguides.com/genshin-impact/genshin-impact-character-tier-list-all-genshin-impact-characters-ranked/">Genshin Impact Character Tier List</a></li>
+<li><a href="https://progameguides.com/genshin-impact/who-is-morax-in-genshin-impact/">Who is Morax in Genshin Impact</a></li>
+</ul>
+</div>
+<div class="more-posts-link"><a href="https://progameguides.com/genshin-impact/">Read More Genshin Impact Posts</a></div>
+<h2 class="block-header">Minecraft</h2>
+<div class="columns">
+<div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2019/08/featured-minecraft-best-enchantments-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/minecraft/minecraft-best-enchantments/">Best Enchantments in Minecraft &#8211; Best Armor, Sword, Pickaxe, Trident Enchantments &amp; More!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2021-08-30T15:05:17-07:00">August 30, 2021</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/05/featured-minecraft-1-16-seeds-list-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Featured image for Minecraft 1.16 seeds" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2020/05/featured-minecraft-1-16-seeds-list-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2020/05/featured-minecraft-1-16-seeds-list-450x450.jpg 450w, https://progameguides.com/wp-content/uploads/2020/05/featured-minecraft-1-16-seeds-list-398x398.jpg 398w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/minecraft/minecraft-1-16-seeds/">Best Minecraft 1.16 Seeds (April 2022)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-01T06:34:35-07:00">April 1, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/08/minecraft-best-seeds-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2020/08/minecraft-best-seeds-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2020/08/minecraft-best-seeds-450x450.jpg 450w, https://progameguides.com/wp-content/uploads/2020/08/minecraft-best-seeds-398x398.jpg 398w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/minecraft/minecraft-best-seeds/">Best Minecraft Seeds (April 2022) &#8211; Xbox One, PS4, &#038; All Platforms!</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-13T14:06:28-07:00">April 13, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> <div class="column col-6 col-lg-12">
+<div class="meta-box loop-small">
+<div class="columns">
+<header class="entry-header column col-4 col-md-3">
+<div class="featured-image">
+<img width="150" height="150" src="https://progameguides.com/wp-content/uploads/2020/01/minecraft-pe-best-seeds-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://progameguides.com/wp-content/uploads/2020/01/minecraft-pe-best-seeds-150x150.jpg 150w, https://progameguides.com/wp-content/uploads/2020/01/minecraft-pe-best-seeds-450x450.jpg 450w, https://progameguides.com/wp-content/uploads/2020/01/minecraft-pe-best-seeds-398x398.jpg 398w" sizes="(max-width: 150px) 100vw, 150px" /> </div>
+</header>
+<div class="column col-8 col-md-9">
+<h2 class="entry-title"><a href="https://progameguides.com/minecraft/best-minecraft-pe-seeds/">Best Minecraft PE Seeds of All Time 1.18 (April 2022)</a></h2> <footer class="entry-footer">
+<div class="byline"><strong>By:</strong> <a href="https://progameguides.com/author/nicholas-fries/" title="Posts by Nicholas Fries" class="author url fn" rel="author">Nicholas Fries</a></div><div class="posted-on"><strong>Updated:</strong> <time class="updated" datetime="2022-04-22T08:10:23-07:00">April 22, 2022</time></div> </footer>
+</div>
+</div>
+</div>
+</div> </div>
+<h3>Recent Posts</h3>
+<div class="meta-box no-border-sides m-btm-half">
+<ul>
+<li><a href="https://progameguides.com/minecraft/minecraft-bedrock-seeds/">Best Minecraft Bedrock Seeds 1.18 (April 2022)</a></li>
+<li><a href="https://progameguides.com/minecraft/best-minecraft-pe-servers/">Best Minecraft PE Servers</a></li>
+<li><a href="https://progameguides.com/minecraft/best-minecraft-mods-for-1-18/">Best Minecraft Mods for 1.18+</a></li>
+<li><a href="https://progameguides.com/minecraft/minecraft-pillager-outpost-seeds/">Minecraft Pillager Outpost Seeds 1.18 (PS4, PE, Bedrock, Java)</a></li>
+<li><a href="https://progameguides.com/minecraft/rlcraft-beginners-guide-tips-and-crafting/">RLCraft Beginners Guide, Tips, and Crafting</a></li>
+</ul>
+</div>
+<div class="more-posts-link"><a href="https://progameguides.com/minecraft/">Read More Minecraft Posts</a></div>
+<div class="more-posts-link"><a href="https://progameguides.com/page/2/">See More Recent Posts</a></div>
+</main>
+</div>
+<div class="column col-4 col-md-12">
+<aside id="secondary" class="widget-area hide-md">
+<style>
+		#secondary .units {
+			position: sticky;
+			top: 70px;
+		}
+	</style>
+<div id="top-sticky-sidebar-container" style="position:relative;">
+<div class="units">
+<div class="proper-ad-insert-side-1"></div>
+<div class="proper-ad-insert-side-2"></div>
+</div>
+</div>
+<div id="nonsticky-sidebar">
+<div id="secondaryAdContainer">
+<div class="container">
+<div class="columns">
+<div class="column col-6"><a href="//www.instagram.com/progameguides/" class="btn btn-block" onclick="gtag('event', 'click', { 'event_category': 'Sidebar', 'event_label': 'Instagram Button' });">Instagram</a></div>
+<div class="column col-6"><a href="//twitter.com/progamerguides" class="btn btn-block" onclick="gtag('event', 'click', { 'event_category': 'Sidebar', 'event_label': 'Twitter Button' });">Twitter</a></div>
+<div class="column col-6"><a href="//www.facebook.com/progameguides/" class="btn btn-block" onclick="gtag('event', 'click', { 'event_category': 'Sidebar', 'event_label': 'Facebook Button' });">Facebook</a></div>
+<div class="column col-6"><a href="//www.youtube.com/channel/UC9LhXd5Ubbsao0HfIFYUmaA" class="btn btn-block" onclick="gtag('event', 'click', { 'event_category': 'Sidebar', 'event_label': 'YouTube Button' });">YouTube</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-sidebar-container" style="position:relative;margin-bottom:20px;">
+<div class="units">
+<div class="proper-ad-insert-side-2"></div>
+<div class="proper-ad-insert-side-3"></div>
+</div>
+</div>
+</aside>
+<script>
+	(function() {
+		function resizeInitialSidebar() {
+			if (document.querySelector('body.single-post article')) {
+				document.querySelector('#top-sticky-sidebar-container').style.height = (document.querySelectorAll('article.post')[0].clientHeight / 2) + 'px';
+				document.querySelector('.sticky-sidebar-container').style.height = (document.querySelectorAll('article.post')[0].clientHeight -
+					document.querySelector('#top-sticky-sidebar-container').clientHeight -
+					document.querySelector('#nonsticky-sidebar').clientHeight) + 'px';
+			}
+		}
+
+		resizeInitialSidebar();
+		window.addEventListener('scroll', function() {
+			resizeInitialSidebar();
+		});
+	})();
+</script>
+<script type="application/javascript">
+	window.addStickySidebar = function(postId) {
+		if (!postId) return;
+		(function () {
+			var newElement = document.createElement('div');
+			newElement.innerHTML = '<div class="sticky-sidebar-container"><div class="units"><div class="proper-ad-insert-side-3"></div><div class="proper-ad-insert-side-2"></div></div></div>';
+			var newStickySidebar = newElement.firstChild;
+			
+			newStickySidebar.style.position = 'relative';
+			newStickySidebar.style.marginBottom = '20px';
+			newStickySidebar.classList.add('post-' + postId);
+			newStickySidebar.style.height = (document.querySelector('article#post-' + postId).clientHeight - 20) + 'px';
+
+			document.querySelector('#secondary').appendChild(newStickySidebar);
+			
+			var $stickySideContainer = document.querySelector('.sticky-sidebar-container.post-' + postId);
+
+			function resizePostSidebar(postId) {
+				$stickySideContainer.style.height = (document.querySelector('article#post-' + postId).clientHeight - 20) + 'px';
+			}
+
+			resizePostSidebar(postId);
+			window.addEventListener('scroll', function() {
+				resizePostSidebar(postId);
+			});
+		})();
+	}
+</script></div>
+</div>
+</div>
+</div>
+<footer id="colophon" class="site-footer m-top-half">
+<div class="container grid-xl">
+<div class="columns">
+<div class="column col-12">
+<a href="https://progameguides.com/about-us/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'About Us' });">About Us</a> -
+<a href="https://progameguides.com/contact-us/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'Contact Us' });">Contact Us</a> - <a href="https://progameguides.com/cookie-policy/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'Cookie Policy' });">Cookie Policy</a> - <a href="https://progameguides.com/privacy-policy/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'Privacy Policy' });">Privacy Policy</a> - <a href="https://progameguides.com/terms-of-use/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'Terms of Use' });">Terms of Use</a> - <a href="https://progameguides.com/pro-game-guide-writers/" onclick="gtag('event', 'click', { 'event_category': 'Footer', 'event_label': 'Writer Application' });">Apply to be a Writer!</a><div id="ccpa-link"></div>
+<div>Copyright © 2022 Pro Game Guides. All rights reserved.</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="proper-ad-unit" id="siteskin">
+<div id="proper-ad-dotesports_skin">
+<div id="skinAd">
+<div class="media-unit one-by-one">
+<div id="proper-ad-progameguides_skin"> <script> propertag.cmd.push(function() { proper_display('progameguides_skin'); }); </script> </div>
+</div>
+</div>
+</div>
+</div>
+<div id="sticky-bottom">
+<div class="proper-ad-unit sticky-units">
+<div id="proper-ad-progameguides_main_3"> <script> propertag.cmd.push(function() { proper_display('progameguides_main_3'); }); </script> </div>
+</div>
+</div>
+<script>
+				// Used by Gallery Custom Links to handle tenacious Lightboxes
+				jQuery(document).ready(function () {
+
+					function mgclInit() {
+						if (jQuery.fn.off) {
+							jQuery('.no-lightbox, .no-lightbox img').off('click'); // jQuery 1.7+
+						}
+						else {
+							jQuery('.no-lightbox, .no-lightbox img').unbind('click'); // < jQuery 1.7
+						}
+						jQuery('a.no-lightbox').click(mgclOnClick);
+
+						if (jQuery.fn.off) {
+							jQuery('a.set-target').off('click'); // jQuery 1.7+
+						}
+						else {
+							jQuery('a.set-target').unbind('click'); // < jQuery 1.7
+						}
+						jQuery('a.set-target').click(mgclOnClick);
+					}
+
+					function mgclOnClick() {
+						if (!this.target || this.target == '' || this.target == '_self')
+							window.location = this.href;
+						else
+							window.open(this.href,this.target);
+						return false;
+					}
+
+					// From WP Gallery Custom Links
+					// Reduce the number of  conflicting lightboxes
+					function mgclAddLoadEvent(func) {
+						var oldOnload = window.onload;
+						if (typeof window.onload != 'function') {
+							window.onload = func;
+						} else {
+							window.onload = function() {
+								oldOnload();
+								func();
+							}
+						}
+					}
+
+					mgclAddLoadEvent(mgclInit);
+					mgclInit();
+
+				});
+			</script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/hurrytimer/assets/js/cookie.min.js?ver=3.14.1' id='hurryt-cookie-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js?ver=2.2.0' id='hurryt-countdown-js'></script>
+<script type='text/javascript' id='hurrytimer-js-extra'>
+/* <![CDATA[ */
+var hurrytimer_ajax_object = {"ajax_url":"https:\/\/progameguides.com\/wp-admin\/admin-ajax.php","ajax_nonce":"970f475595","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js?ver=2.7.2' id='hurrytimer-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/themes/proguides-lw/js/proguides.min.js?ver=1.1.6' id='proguides-js-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/themes/proguides-lw/js/pgg-affix.min.js?ver=1.0.52' id='proguides-sidebar-affix-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/pgg-core/js/tablesorter.min.js?ver=1.0.0' id='tablesorter-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/pgg-core/js/tablesorter-widgets.min.js?ver=1.0.0' id='tablesorter-widgets-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LfcYoQUAAAAABlT6GJbJW9uBolwJcHoQdiJDG2k&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://progameguides.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LfcYoQUAAAAABlT6GJbJW9uBolwJcHoQdiJDG2k","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://progameguides.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.5.3' id='wpcf7-recaptcha-js'></script>
+
+<script type="text/javascript" src="https://s.skimresources.com/js/114526X1659067.skimlinks.js"></script>
+<script type="text/javascript"> 
+(function () { 
+window.aax = window.aax || {}; 
+var aax = window.aax; 
+aax.initTime = new Date().getTime(); 
+aax.pubId = "AAXBD4DM4"; 
+aax.ver = "1.2"; 
+aax.hst = window.location.hostname; 
+var aaxEndpoint = "https://c.aaxads.com/aax.js?pub=" + aax.pubId + "&hst=" + 
+aax.hst + "&ver=" + aax.ver; 
+ 
+function loadScript(endpoint) { 
+var scriptTag = document.createElement("script"), 
+placeTag = document.getElementsByTagName("script")[0]; 
+scriptTag.type = "text/javascript"; 
+scriptTag.async = true; 
+scriptTag.src = endpoint; 
+placeTag.parentNode.insertBefore(scriptTag, placeTag); 
+} 
+loadScript(aaxEndpoint); 
+})(); 
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70161a48ae0a4d2d","token":"ad7594d7ab8c43668744bfe407c4ff35","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+			<script src="//cdn.optimizely.com/js/238376531.js"></script>
+
+		<title>GrabCAD Makes Additive Manufacturing at Scale Possible</title>
+<meta name="description" content="The GrabCAD platform drives additive manufacturing at scale through connected solutions, including GrabCAD Print, GrabCAD Shop &amp; the GrabCAD SDKs.">
+<meta name="keywords" content="pdm, plm, cloud based, version control, cad revisions, cad, file management, solidworks epdm, product data management, share cad, collaborate, library, free, cad models, cad drawings, models, open source, solid works, solidedge, autodesk, alibre, autocad,">
+		<meta charset="utf-8">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"2ff0bc8e20","applicationID":"4115141","transactionName":"c1hbEkVfCgoHQhkKV11SGg9ZVAMe","queueTime":0,"applicationTime":32,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VgEBWVNWGwcBVVRTAwA=",licenseKey:"2ff0bc8e20",applicationID:"4115141"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(28),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(29),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(10),t(9),"addEventListener"in window&&t(6),c.xhrWrappable&&t(11),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&&t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&&(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&&s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&&(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(29),a=t(28);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&l())&&(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(25),h=t(14);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],13:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function i(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(14),f=t(12).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(20),m=t(18),v=t(15),w=t(19),g=t(21).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(11),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;if("string"==typeof o?n=o:"object"==typeof o&&o instanceof y?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n),"data"!==this.params.protocol){var s=(""+(o&&o instanceof y&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],14:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],15:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(18);e.exports=r},{}],16:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),o(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(28),s=t(29),c=t("ee").get("tracer"),f=t("loader"),u=t(21),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var l=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(l,function(t,e){d[e]=i(p,e,!0,"api")}),d.addPageAction=i(p,"addPageAction",!0),d.setCurrentRouteName=i(p,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),o("err",[t,f.now(),!1,e])}},{}],17:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],20:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[s,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:i}},{}],22:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(30);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],23:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],24:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var i=[r],o=a({});o&&i.push(o),p("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,l,p=t("handle"),h=t("loader"),m=t(27),v=t(19),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}l=new PerformanceObserver(o);try{l.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],25:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],26:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],27:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(19);e.exports=r;var o,a,s;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],28:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],29:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],30:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return l[t]=l[t]||i(n)}function w(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(28),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(R,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=h+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(22),s=t("handle"),c=t(28),f=t("ee"),u=t(26),d=t(23),l=t(17),p=t(19),h=l.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,w="addEventListener",g="attachEvent",y=m.XMLHttpRequest,x=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var E=""+location,R={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},S=y&&x&&x[w]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:S,userAgent:u,disabled:b};if(!b){t(16),t(24),v[w]?(v[w]("DOMContentLoaded",o,p(!1)),m[w]("load",r,p(!1))):(v[g]("onreadystatechange",i),m[g]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(29),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,13,4,3]);</script>
+<meta name="robots" content="noodp">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="google-site-verification" content="sRcy8COOEVzfXadS3NzNsefhbSouqvlesgWngH5kKxs">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="PUosFgijHGfp6G3TsXvQiDTUPBxIIOnLtXTfhRZjNYo6RHtrFvqL3c05Kcx6bkwZEQ4FcFzRX7bEcokCZzzX6A==" />
+<link rel="shortcut icon" type="image/x-icon" href="https://d1pspl52z5rk07.cloudfront.net/static/favicon.ico" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type='text/javascript'>
+var Grabcad = Grabcad || {};
+Grabcad.openToWork_profileIcon_white = 'https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/gc-shared-opentowork-profileicon-white-21a94fec4637037f09f77f4bb0f1dd85d46a7b8119372f7067c248da45f92396.svg';
+Grabcad.asense = {
+	modal_image: 'https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/asense/modalimage-f53d5e8e4f17c51f5e98011814415365534b15a4b19246de79999414e305e91f.png',
+	info_icon: 'https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/asense/infoicon-21cf6b76c25d7b37bdf9e82b40ea4bc56362abd53afe3537b36cff6fd7277567.svg',
+}
+Grabcad.defaultAvatar = 'https://d1pspl52z5rk07.cloudfront.net/assets/production/app/default/avatar-13e49413d14d7528c1dba3d70cb39957e4aa4b997dff5cf4cd6c89992da9aaa5.png';
+Grabcad.Components = Grabcad.Components || {};
+
+Grabcad.locale = 'en';
+Grabcad.authenticated = false;
+Grabcad.memberAvatar = '';
+
+</script>
+
+		
+		<link rel="stylesheet" media="screen" href="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/frontpage-063e7826193ba4f4be69b5c76d46e6d85f0ea0e6f5beb5039589cf9c03b7d3a4.css" />
+		
+		<script type="text/javascript">
+var Analytical = {
+  track: function(page) {
+
+  },
+  event: function(name, data) {
+    if (typeof data === 'undefined') { data = {}; }
+
+  }
+};
+</script>
+
+		<script data-ad-client="ca-pub-2578830023638010" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+		  <script
+    id="bizible-settings"
+    type="text/javascript"
+    src="https://cdn.bizible.com/scripts/bizible.js?account=stratasys.com"
+    async="">
+  </script>
+
+	</head>
+	<body class="index">
+		<div class="gc-shared-homepagev2modal__overlay hidden">
+	<div class="gc-shared-homepagev2modal__wrapper">
+		<div class="gc-shared-homepagev2modal__box">
+			<img class="gc-shared-homepagev2modal__hidebutton" alt="Hide modal button" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/mobileNavButtonClose-e12499ee0504c21efa0a48408d113964d6c4f8f33e9ae44676837808f2320510.svg" />
+
+			<div class="gc-shared-homepagev2modal__image-box">
+				<img class="gc-shared-homepagev2modal__image" alt="GrabCAD Platform" width="320" height="200" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/hero/big-5e8eabd176a106bebf5f0bebf7a118d6a6f8fd60a0eef7706b9926f6adc6aaa1.svg" />
+			</div>
+
+			<div class="gc-shared-homepagev2modal__content">
+				<div class="gc-shared-homepagev2modal__title">Learn about the GrabCAD Platform</div>
+				<div class="gc-shared-homepagev2modal__text">Get to know GrabCAD as an open software platform for Additive Manufacturing</div>
+				<a href="https://grabcad.com/home" class="gc-shared-homepagev2modal__ctabutton gc_web_el-button--primary gc_web_el-button--icon-right-white">Visit our new homepage</a>
+			</div>
+	  </div>
+	</div>
+</div>
+
+		
+		
+
+		
+		
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-hero__wrapper">
+	<form id="logoutForm" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mBV+ToXlQur3qogqUa4KGzlwyPyKacuU/66P2a+HtyCfGykzm7zVUNN7zDWau5aKHKrxkJ6YfemOqNle3thVQg==" />
+  <input type="submit" name="commit" value="Log out" hidden="hidden" data-disable-with="Log out" />
+</form>
+
+
+
+<nav class="gc-util-screen--tabletAndSmallerOnly">
+	<div class="gc_web_comp_navbar-mobile__outside">
+		<a href="/">
+			<img class="gc_web_comp_navbar-mobile__outside-logo" alt="White GrabCAD Logo" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/logo/grabcad-white-69ffbd57ceb362664748e93188589f101afe294023645493c7e71e4c93d27aa8.svg" />
+		</a>
+		<img class="gc_web_comp_navbar-mobile__outside-hamburger" alt="Show mobile menu" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/mobileNavButton-8e08f31ea9265f3b25bcb21f2a695b938b1faf5778c4dee85f53811b1b1fc9ae.svg" />
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__toggle" />
+
+		<div class="gc_web_comp_navbar-mobile__inside">
+			<div class="gc_web_comp_navbar-mobile__inside-container">
+				<img class="gc_web_comp_navbar-mobile__inside-close-button" alt="Hide mobile menu" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/mobileNavButtonClose-e12499ee0504c21efa0a48408d113964d6c4f8f33e9ae44676837808f2320510.svg" />
+				<a href="/">
+					<img alt="Blue GrabCAD Logo" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/logo/grabcad-mobilenav-fb1eb44ad6ef52456a3faaf3fb8a410f101ec80e4c9b9ac7bb4251c0d11c90fa.svg" />
+				</a>
+
+				<div class="gc_web_comp_navbar-mobile__categories">
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory0">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory0">Products</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/print">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/gcPrint-be7b5541e00069d9b081829367c436c9ccccf80a985f5ffdf385461a2ae4e1d3.svg" /></span>
+					GrabCAD Print
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/shop">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/gcShop-20a713904f5321f78f7d7e4b6136f458785fd0aef3ef890462ae272bf59133b6.svg" /></span>
+					GrabCAD Shop
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/software-development-kit">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/gcSdk-7559eb53de265056ad00bfb0a1a1bb0e60f5b301980c9cbd3340ab019845f1cf.svg" /></span>
+					GrabCAD SDK
+</a>		</div>
+</div>
+
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory1">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory1">Community</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/library">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/navIconLibrary-638746e8f99cba78d6b1cffd9356d4dd75dab1cb800954e9b20ba6f4722083f2.svg" /></span>
+					Library
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/challenges">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/challenges-6b315c3d3db5355c85b3bc26355a236021cca6f14080113ad4cf29e6ef915759.svg" /></span>
+					Challenges
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/groups">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/groups-aab80aeee048178a5ccb3b1bb7a5db2fdfc4303956a3f87a800f69d5905ed361.svg" /></span>
+					Groups
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/questions">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/questions-1dfb2fb3fa258f0cd8dafdefc867af0e4ee80489a73e3fd887bea3e3a3f7b87d.svg" /></span>
+					Questions
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/tutorials">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/tutorials-22e3c07c7f69d0d67f38466d6404fa1dee454d6f37c2e8066c35d4e0862d0434.svg" /></span>
+					Tutorials
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/engineers">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/engineers-93f3ce534709df0e173c5b1719b50dfd6a60a0d1ab7b8690c2bcd7540a429a57.svg" /></span>
+					Engineers
+</a>		</div>
+</div>
+
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory2">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory2">Ecosystem</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" href="https://grabcad.com/featured-software-partners">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/gcSoftwarePartners-743ab5310ce26138a15270fb39236e7ef32d8aae0b2725d2c1c507e3a4c0f7fd.svg" /></span>
+					GrabCAD Software Partners
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" rel="noopener noreferrer" target="_blank" href="https://www.stratasysdirect.com/">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/sdm-2ecac71d8bc902a8309fdbab6e7e7e5220e468a14daf493ec71963674be6463b.svg" /></span>
+					Stratasys Direct Manufacturing
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" rel="noopener noreferrer" target="_blank" href="https://www.stratasys.com/">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/stratasysHardware-e7475cdd7252d09de86318d714faef5f0324eccca28ea70fbd8c9ff92c87b68e.svg" /></span>
+					Stratasys Hardware
+</a>		</div>
+</div>
+
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory3">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory3">Support</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" rel="noopener noreferrer" target="_blank" href="https://help.grabcad.com">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/support-4f3321cd6a1dffb461a522044ffa3a6a45e9bbb0e55b3eb041a31e4a41f240c0.svg" /></span>
+					GrabCAD Help Center
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" rel="noopener noreferrer" target="_blank" href="https://support.stratasys.com">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/naviconTicket-41a432a985841ce3e8a32c1bb57c7706f0fee297ce9a85eb757ce7c8c1068557.svg" /></span>
+					Stratasys Support
+</a>		</div>
+</div>
+
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory4">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory4">Resources</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" href="https://blog.grabcad.com">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/naviconBlog-d1eb861085917b773c51dae026d5a2364563f81140a722610f4cb12c63264a4a.svg" /></span>
+					Blog
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://resources.grabcad.com">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/navIconResources-920deb7ca8b962b4a3b2afffa6bee194e976d75d43271bfd54c5b954c877168b.svg" /></span>
+					Resource Center
+</a>		</div>
+</div>
+
+						<div class="gc_web_comp_navbar-mobile__category ">
+
+		<input type="checkbox" class="gc_web_comp_navbar-mobile__category-toggle" id="navbarMobileCategory5">
+		<label class="gc_web_comp_navbar-mobile__category-title " for="navbarMobileCategory5">About Us</label>
+		<div class="gc_web_comp_navbar-mobile__sublinks">
+				<a class="gc_web_comp_navbar-mobile__sublink" href="https://blog.grabcad.com/jobs/">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/navIconCareers-f38c6154c60a0bfa176a72e966533abcf9cf334bdcc6adb39e89a489f45b4adb.svg" /></span>
+					Careers
+</a>				<a class="gc_web_comp_navbar-mobile__sublink" href="https://resources.grabcad.com/company/">
+					<span class='gc_web_comp_navbar-mobile__sublink-icon'><img alt="" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/navicon/navIconCompany-60463ec26bd5b2cb41aec276790a8a77808a48a07b5111055edbde6ad8c78bbc.svg" /></span>
+					Company
+</a>		</div>
+</div>
+
+					
+				</div>
+
+					<div class="gc_web_comp_navbar-mobile__signin-button-container">
+						<a href="/login" class="gc_web_el-button--primary gc_web_el-button--icon-right-white">Sign In</a>
+					</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="gc_web_layout-wrapper gc_web_comp_navbar-desktop__wrapper gc-util-screen--desktopAndLargerOnly">
+	<div class="gc_web_layout-container">
+		<nav class="gc_web_comp_navbar-desktop">
+			<a href="/" class='gc_web_comp_navbar-desktop__logo'>
+				<img alt="GrabCAD Logo" width="118" height="16" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/logo/grabcad-plain-31f0660018b7c6f5aa2d732a86efc748ed3543c5bffa450ac12fe187a819d83a.svg" />
+			</a>
+
+			<div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">Products</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container gc_web_comp_navbar-desktop__submenu-container--products">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link gc_web_comp_navbar-desktop__menuitem-print"
+				href="https://grabcad.com/print"
+				
+				
+			>
+				<!-- If products menu -->
+					<span class="gc_web_comp_navbar-desktop__products">
+						<span class="gc_web_comp_navbar-desktop__product-name">GrabCAD Print</span>
+						<span>3D print prep software</span>
+					</span>
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link gc_web_comp_navbar-desktop__menuitem-shop"
+				href="https://grabcad.com/shop"
+				
+				
+			>
+				<!-- If products menu -->
+					<span class="gc_web_comp_navbar-desktop__products">
+						<span class="gc_web_comp_navbar-desktop__product-name">GrabCAD Shop</span>
+						<span>Work order management</span>
+					</span>
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link gc_web_comp_navbar-desktop__menuitem-sdk"
+				href="https://grabcad.com/software-development-kit"
+				
+				
+			>
+				<!-- If products menu -->
+					<span class="gc_web_comp_navbar-desktop__products">
+						<span class="gc_web_comp_navbar-desktop__product-name">GrabCAD SDK</span>
+						<span>API integrations</span>
+					</span>
+			</a>
+	</div>
+
+					</div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">Community</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container ">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/library"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.30672 2.9043C4.48331 2.9043 2.75764 4.026 1.5 4.026V13.0955C2.75764 13.0955 4.48331 11.9738 6.30672 11.9738C7.38108 11.9738 8.05443 12.4167 8.45895 12.8602H9.54105C9.9458 12.4172 10.6189 11.9738 11.6933 11.9738C13.5167 11.9738 15.2424 13.0955 16.5 13.0955V4.026C15.2424 4.026 13.5167 2.9043 11.6933 2.9043C9.54456 2.9043 9.00012 4.67732 9.00012 4.67732C9.00012 4.67732 8.45544 2.9043 6.30696 2.9043H6.30672ZM6.30672 12.9738C4.48355 12.9738 2.75787 14.0955 1.5 14.0955V15.0956C2.75764 15.0956 4.48331 13.9739 6.30672 13.9739C7.38108 13.9739 8.05443 14.4173 8.45895 14.8603H9.54105C9.9458 14.4173 10.6189 13.9739 11.6933 13.9739C13.5167 13.9739 15.2424 15.0956 16.5 15.0956V14.0955C15.2424 14.0955 13.5167 12.9738 11.6933 12.9738C10.6189 12.9738 9.94557 13.4173 9.54105 13.8602H8.45895C8.05419 13.4168 7.38108 12.9738 6.30672 12.9738Z" fill="#A4AABD"/>
+</svg>
+ Library
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/challenges"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7916 14.1885C12.6345 14.0707 12.462 13.946 12.2818 13.8159C11.1941 13.0304 9.82888 12.0446 9.92106 11.1491C9.97191 10.6863 10.4288 10.1747 11.021 9.51149C11.2383 9.26809 11.4739 9.00428 11.7143 8.71497C11.8789 8.66338 12.0476 8.60749 12.2184 8.54715C12.9142 8.30134 13.6626 7.9753 14.3047 7.55311C14.9405 7.13509 15.5227 6.58969 15.8072 5.88555L15.8075 5.88497C16.0802 5.20781 16.0527 4.60009 15.7911 4.08942C15.5419 3.60284 15.1147 3.27212 14.7138 3.0499C14.4852 2.92319 14.2499 2.82329 14.0315 2.74518C14.0152 2.59661 13.9447 2.29175 13.8508 2.29175H4.16457C4.07185 2.29175 4.00198 2.58895 3.98457 2.73947C3.76162 2.81841 3.52039 2.92009 3.28621 3.0499C2.88534 3.27212 2.45809 3.60284 2.20887 4.08942C1.94731 4.60009 1.91979 5.20781 2.19254 5.88497L2.19324 5.88672L2.19396 5.88847C2.4826 6.59084 3.06566 7.13541 3.70231 7.55333C4.3452 7.97534 5.09341 8.30132 5.78929 8.54715C5.95718 8.60646 6.12306 8.66147 6.28496 8.71234C6.52653 9.00361 6.76334 9.26905 6.98172 9.51384L6.98173 9.51385C7.57235 10.1759 8.02819 10.6868 8.07898 11.1491C8.17117 12.0446 6.80599 13.0304 5.71828 13.8159C5.53808 13.946 5.3655 14.0707 5.20842 14.1885C5.03956 14.3113 5.20842 14.9867 5.31587 15.4012C5.36192 15.5854 5.53078 15.7082 5.71499 15.7082H12.2697C12.4539 15.7082 12.6228 15.5854 12.6688 15.4012C12.807 15.0021 12.9758 14.3266 12.7916 14.1885ZM13.954 3.8708C13.7798 5.18356 13.3504 6.25197 12.8334 7.13969C13.1457 6.99401 13.4446 6.83267 13.7144 6.65525C14.2634 6.29429 14.6425 5.89954 14.8109 5.48317C14.9831 5.05528 14.9358 4.77661 14.8347 4.57928C14.7213 4.35781 14.4981 4.15893 14.1928 3.98971C14.1149 3.94653 14.0347 3.90697 13.954 3.8708ZM3.80719 3.98971C3.88879 3.94447 3.97295 3.90319 4.05763 3.86563C4.22747 5.17968 4.65421 6.24906 5.16948 7.13751C4.85863 6.99236 4.56107 6.83167 4.29198 6.65503C3.74258 6.29439 3.36077 5.89933 3.18855 5.48174C3.01697 5.05466 3.0643 4.77639 3.16526 4.57928C3.2787 4.35781 3.50193 4.15893 3.80719 3.98971Z" fill="#A4AABD"/>
+</svg>
+ Challenges
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/groups"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.98323 8.90015C6.70682 8.90015 4.86182 11.1094 4.86182 12.5233C4.86182 13.9369 6.70708 14.8166 8.98323 14.8166C11.2594 14.8166 13.1049 13.9369 13.1049 12.5233C13.1049 11.1094 11.2594 8.90015 8.98323 8.90015Z" fill="#A4AABD"/>
+<path d="M8.98326 8.50154C10.2498 8.50154 11.2766 7.31102 11.2766 5.84244C11.2766 4.37387 10.2498 3.18335 8.98326 3.18335C7.7167 3.18335 6.68994 4.37387 6.68994 5.84244C6.68994 7.31102 7.7167 8.50154 8.98326 8.50154Z" fill="#A4AABD"/>
+<path d="M13.9488 8.70593C13.2675 8.70593 12.6402 8.97528 12.1331 9.36301C13.2374 10.2397 13.9488 11.4819 13.9488 12.4184C13.9488 12.6539 13.8991 12.8748 13.8137 13.0831C13.8592 13.0841 13.9031 13.0863 13.9488 13.0863C15.634 13.0863 17.0002 12.4351 17.0002 11.3885C16.9999 10.3414 15.6338 8.70593 13.9488 8.70593Z" fill="#A4AABD"/>
+<path d="M13.9486 8.41066C14.8864 8.41066 15.6467 7.52925 15.6467 6.44197C15.6467 5.35468 14.8864 4.47327 13.9486 4.47327C13.0108 4.47327 12.2505 5.35468 12.2505 6.44197C12.2505 7.52925 13.0108 8.41066 13.9486 8.41066Z" fill="#A4AABD"/>
+<path d="M5.86735 9.36301C5.35946 8.97553 4.73268 8.70593 4.05162 8.70593C2.36615 8.70593 1 10.3414 1 11.3885C1 12.4351 2.36615 13.0863 4.05162 13.0863C4.09706 13.0863 4.14123 13.0841 4.18617 13.0831C4.1011 12.8748 4.05162 12.6539 4.05162 12.4184C4.05162 11.4816 4.76272 10.2394 5.86735 9.36301Z" fill="#A4AABD"/>
+<path d="M4.05161 8.41066C4.98944 8.41066 5.7497 7.52925 5.7497 6.44197C5.7497 5.35468 4.98944 4.47327 4.05161 4.47327C3.11378 4.47327 2.35352 5.35468 2.35352 6.44197C2.35352 7.52925 3.11378 8.41066 4.05161 8.41066Z" fill="#A4AABD"/>
+</svg>
+ Groups
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/questions"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.4698 14.123L16.521 12.0283C16.9328 11.3301 17.1834 10.5245 17.1834 9.66513C17.1655 7.12292 15.1067 5.06409 12.5645 5.06409C12.2959 5.06409 12.0274 5.08199 11.7588 5.1357C12.457 6.19197 12.8688 7.44517 12.8688 8.80579C12.8688 10.8109 11.9737 12.6012 10.5593 13.8186C11.168 14.1051 11.8304 14.2662 12.5465 14.2662C13.4059 14.2662 14.2115 14.0334 14.9097 13.6217L17.0044 14.5705C17.3087 14.6958 17.5952 14.4094 17.4698 14.123Z" fill="#A4AABD"/>
+<path d="M6.28051 3.39929C3.29073 3.39929 0.873836 5.81618 0.873836 8.80597C0.873836 9.82644 1.16028 10.7753 1.64366 11.5809L0.53368 14.0336C0.390457 14.3738 0.730612 14.7139 1.05286 14.5528L3.50556 13.4249C4.31119 13.9083 5.26005 14.1947 6.28051 14.1947C9.2703 14.2126 11.6872 11.7958 11.6872 8.80597C11.6872 5.81618 9.2703 3.39929 6.28051 3.39929ZM6.24471 12.1538C5.85084 12.1538 5.51069 11.8316 5.51069 11.4198C5.51069 11.0259 5.83294 10.6858 6.24471 10.6858C6.63857 10.6858 6.97873 11.008 6.97873 11.4198C6.96082 11.8316 6.63857 12.1538 6.24471 12.1538ZM7.13985 9.19983C6.7997 9.48628 6.7997 9.6295 6.7997 9.68321V9.93385C6.7997 10.0771 6.69228 10.1845 6.54906 10.1845H5.88665C5.74343 10.1845 5.63601 10.0771 5.63601 9.93385V9.68321C5.63601 9.18193 5.88665 8.73436 6.40583 8.30469C6.76389 8.00034 7.15776 7.66018 7.15776 7.32003C7.15776 6.81875 6.92502 6.60391 6.33422 6.60391C5.43908 6.60391 5.42117 7.26632 5.42117 7.30212V7.42745C5.42117 7.57067 5.31376 7.67809 5.17053 7.67809H4.50813C4.3649 7.67809 4.25748 7.57067 4.25748 7.42745V7.30212C4.25748 6.56811 4.81247 5.45813 6.31632 5.45813C7.78436 5.45813 8.30354 6.42488 8.30354 7.33793C8.30354 8.23308 7.56952 8.84177 7.13985 9.19983Z" fill="#A4AABD"/>
+</svg>
+ Questions
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/tutorials"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.59169 10.317C9.37129 10.396 9.14847 10.4123 8.99972 10.4123C8.85097 10.4123 8.62876 10.396 8.40776 10.317L4.14258 8.7937C4.14258 9.41724 4.14258 10.2466 4.14258 11.0796C4.14258 12.7565 6.31736 13.5082 8.99972 13.5082C11.6821 13.5082 13.8569 12.7565 13.8569 11.0796V8.7937L9.59169 10.317Z" fill="#A4AABD"/>
+<path d="M2.3216 11.7321C2.82458 11.7321 3.23232 11.3243 3.23232 10.8214C3.23232 10.3184 2.82458 9.91064 2.3216 9.91064C1.81863 9.91064 1.41089 10.3184 1.41089 10.8214C1.41089 11.3243 1.81863 11.7321 2.3216 11.7321Z" fill="#A4AABD"/>
+<path d="M3.60061 14.486C3.22479 14.8618 1.41733 14.8618 1.04151 14.486C0.665079 14.1096 0.514508 12.3294 2.32136 11.1249C4.12822 12.3294 3.97765 14.1096 3.60061 14.486Z" fill="#A4AABD"/>
+<path d="M0.785964 6.10169C0.596536 6.16908 0.5 6.30629 0.5 6.50726V6.5449C0.5 6.74647 0.596536 6.88308 0.785964 6.95047L2.43557 7.54001C1.71489 8.31229 1.71429 9.42701 1.71429 10.1689H2.92857C2.92857 9.11676 2.99414 8.34872 3.84779 8.04394L8.898 6.24012C9.05768 6.18304 9.2295 6.26622 9.28596 6.42408C9.34243 6.58194 9.25986 6.75558 9.102 6.81204L4.75 8.36572L8.61204 9.74515C8.75107 9.79433 8.89982 9.80526 9 9.80526C9.10018 9.80526 9.24893 9.79433 9.38796 9.74515L17.2146 6.94986C17.4035 6.88247 17.5 6.74586 17.5 6.54429V6.50665C17.5 6.30569 17.4035 6.16847 17.214 6.10108L9.38796 3.3064C9.1105 3.20744 8.89011 3.20744 8.61264 3.3064L0.785964 6.10169Z" fill="#A4AABD"/>
+</svg>
+ Tutorials
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/engineers"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.9067 8.19363H14.3356C14.7817 8.19363 15.1591 8.57108 15.142 9.05147C15.142 9.70343 12.3969 10.2353 8.99982 10.2353C5.60276 10.2353 2.85767 9.70343 2.85767 9.05147C2.85767 8.58824 3.23512 8.21079 3.69835 8.21079H4.16159V6.76961C4.16159 5.36274 4.86502 4.12745 5.9459 3.40686V6.22059C5.9459 6.4951 6.16894 6.70098 6.42629 6.70098C6.68365 6.70098 6.90669 6.47794 6.90669 6.22059V2.66912C6.90669 2.30882 7.19835 2 7.5758 2H10.4925C10.8528 2 11.1616 2.29167 11.1616 2.66912V6.20343C11.1616 6.47794 11.3846 6.68382 11.642 6.68382C11.8993 6.68382 12.1224 6.46078 12.1224 6.20343V3.38971C13.2033 4.12745 13.9067 5.34559 13.9067 6.75245V8.19363ZM9.03406 11.1789C10.7326 11.1789 12.3453 11.0588 13.5635 10.8186C13.5862 10.8141 13.6115 10.8095 13.6384 10.8046C13.713 10.7911 13.8012 10.7752 13.8894 10.75C13.9066 10.8873 13.9066 11.0074 13.9066 11.1275C13.9066 13.8211 11.7277 16 9.03406 16C6.34043 16 4.16151 13.8211 4.16151 11.1275C4.16151 10.9902 4.16151 10.8701 4.17866 10.75C4.26687 10.7752 4.35507 10.7911 4.42968 10.8046C4.45666 10.8095 4.48186 10.8141 4.50464 10.8186C5.72278 11.0417 7.33553 11.1789 9.03406 11.1789Z" fill="#A4AABD"/>
+</svg>
+ Engineers
+			</a>
+	</div>
+
+					</div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">Ecosystem</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container ">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://grabcad.com/featured-software-partners"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.2 6.60077C13.3782 6.60077 14.3334 5.64565 14.3334 4.46744C14.3334 3.28923 13.3782 2.33411 12.2 2.33411C11.0218 2.33411 10.0667 3.28923 10.0667 4.46744C10.0667 5.64565 11.0218 6.60077 12.2 6.60077ZM7.93324 6.06733C7.93324 7.24554 6.97811 8.20066 5.79991 8.20066C4.6217 8.20066 3.66657 7.24554 3.66657 6.06733C3.66657 4.88912 4.6217 3.93399 5.79991 3.93399C6.97811 3.93399 7.93324 4.88912 7.93324 6.06733ZM7.4 9.26742C7.69022 9.26741 7.97909 9.30689 8.25867 9.38475C8.93206 9.57233 9.52551 9.97524 9.94831 10.5319C10.3711 11.0886 10.6 11.7684 10.6 12.4674V15.1341C10.5997 15.225 10.5762 15.3143 10.5317 15.3936C10.4872 15.4729 10.4231 15.5395 10.3457 15.587C10.2682 15.6346 10.1798 15.6615 10.089 15.6653C9.99815 15.6691 9.90786 15.6497 9.82667 15.6088C8.56425 15.0099 7.19565 14.6673 5.8 14.6008C4.4041 14.6656 3.03517 15.0083 1.77333 15.6088C1.69214 15.6497 1.60184 15.6691 1.51101 15.6653C1.42017 15.6615 1.33182 15.6346 1.25434 15.587C1.17685 15.5395 1.11281 15.4729 1.0683 15.3936C1.02379 15.3143 1.00028 15.225 1 15.1341V12.4674C1 11.6187 1.33714 10.8048 1.93726 10.2047C2.53737 9.60456 3.35131 9.26742 4.2 9.26742H7.4ZM10.5999 7.66753H13.7999C14.6486 7.66753 15.4625 8.00467 16.0626 8.60479C16.6627 9.20491 16.9999 10.0188 16.9999 10.8675V13.5342C16.9996 13.6251 16.9761 13.7144 16.9316 13.7937C16.8871 13.873 16.823 13.9396 16.7456 13.9871C16.6681 14.0347 16.5797 14.0616 16.4889 14.0655C16.398 14.0693 16.3077 14.0498 16.2266 14.0089C14.9641 13.41 13.5955 13.0674 12.1999 13.0009H11.6666V12.4675C11.6657 11.5459 11.3666 10.6494 10.8138 9.91202C10.261 9.17464 9.48427 8.63606 8.59989 8.37687C9.16647 7.91982 9.87195 7.66961 10.5999 7.66753Z" fill="#A4AABD"/>
+</svg>
+ GrabCAD Software Partners
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://www.stratasysdirect.com/"
+				 target='_blank' 
+				 rel='noopener noreferrer' 
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3921 7.96578H12.1524C11.9815 7.97104 11.813 7.92551 11.668 7.83495C11.5231 7.74439 11.4082 7.61287 11.3381 7.45703C10.7451 6.29023 10.1537 5.12235 9.56385 3.95341L9.54946 3.92462C9.51901 3.8814 9.50098 3.83067 9.49731 3.77794C9.49365 3.7252 9.50449 3.67246 9.52866 3.62545C9.56151 3.58251 9.60668 3.55062 9.65814 3.53404C9.70959 3.51746 9.76489 3.51698 9.81663 3.53266L12.0564 3.81903L14.3505 4.115C14.5232 4.13333 14.6893 4.19158 14.8357 4.28515C14.982 4.37872 15.1045 4.50505 15.1936 4.65414C15.6463 5.39644 16.095 6.14169 16.5437 6.8868L16.9151 7.50343C16.9383 7.53994 16.9581 7.5785 16.9742 7.61861C16.9917 7.65255 17.0005 7.69022 17 7.72836C16.9995 7.76649 16.9897 7.80392 16.9713 7.83738C16.953 7.87084 16.9268 7.8993 16.895 7.92029C16.8631 7.94128 16.8266 7.95415 16.7887 7.95778C16.7355 7.96268 16.6819 7.96268 16.6287 7.95778H14.3889L14.3921 7.96578ZM14.9008 12.9078C14.9008 13.4869 14.5232 13.8869 13.9281 13.9509C13.3449 14.0149 12.7621 14.0801 12.1793 14.1453C11.5966 14.2105 11.014 14.2757 10.4309 14.3396C10.1126 14.3741 9.79433 14.405 9.47867 14.4357L9.15102 14.4676H8.96864V14.4788C8.88514 14.4719 8.80309 14.466 8.72197 14.4602C8.57773 14.4499 8.43642 14.4398 8.29512 14.4244C7.68189 14.3572 7.06867 14.2873 6.45545 14.2174L6.45537 14.2174L5.84258 14.1477C5.69494 14.1311 5.5473 14.1146 5.39978 14.0982C4.90788 14.0434 4.4173 13.9888 3.93239 13.9285C3.70322 13.8917 3.49437 13.7752 3.34252 13.5997C3.19067 13.4241 3.10554 13.2007 3.10208 12.9686V10.9V8.70026V8.55468H3.23967H5.99937C6.28568 8.56304 6.56838 8.48911 6.81395 8.34166C7.05951 8.19421 7.25763 7.97942 7.38482 7.72277C7.73446 7.07407 8.07729 6.42235 8.42008 5.77072L8.42015 5.77059L8.42034 5.77022C8.57624 5.47386 8.73214 5.17751 8.88865 4.88148C8.8993 4.86115 8.91113 4.84081 8.92625 4.8148L8.92627 4.81478L8.92627 4.81476C8.93613 4.79781 8.94739 4.77844 8.96064 4.75509V4.77269C8.99424 4.82869 9.01184 4.85908 9.02944 4.88948C9.18183 5.17365 9.33364 5.45797 9.48544 5.74225C9.84042 6.40705 10.1953 7.07169 10.5573 7.73397C10.6886 7.99117 10.8904 8.20568 11.1392 8.35243C11.3879 8.49918 11.6733 8.5721 11.9619 8.56268C12.5826 8.56801 13.2026 8.56623 13.8228 8.56446L13.8231 8.56446C14.1332 8.56357 14.4433 8.56268 14.7536 8.56268H14.9024V8.71466C14.9013 10.1118 14.9008 11.5096 14.9008 12.9078ZM1.31985 7.96707H3.6076C3.98276 7.96707 4.36032 7.96827 4.73867 7.96947C5.11863 7.97067 5.49939 7.97187 5.87935 7.97187C6.03889 7.97404 6.19562 7.92985 6.33052 7.84465C6.46542 7.75945 6.57268 7.63691 6.63927 7.49193C7.2336 6.32387 7.82479 5.15267 8.41129 3.99078L8.42788 3.95791C8.45587 3.90318 8.47683 3.84512 8.49027 3.78513C8.50326 3.73931 8.49781 3.69024 8.47509 3.64838C8.45237 3.60653 8.41418 3.57522 8.36868 3.56116C8.30828 3.5419 8.24455 3.53537 8.1815 3.54196C7.67596 3.60427 7.17127 3.66917 6.66618 3.73413C6.48397 3.75756 6.30171 3.781 6.11933 3.80433L3.6364 4.12429C3.46674 4.14185 3.30351 4.1987 3.15966 4.29034C3.01581 4.38198 2.8953 4.50589 2.80769 4.65224C2.27928 5.51163 1.75745 6.38156 1.23504 7.25247C1.18173 7.34135 1.12841 7.43024 1.07508 7.51912C1.03757 7.56239 1.0129 7.61527 1.00386 7.67181C0.994812 7.72834 1.00175 7.78628 1.02388 7.83909C1.05556 7.88675 1.10038 7.92421 1.15291 7.94693C1.20544 7.96964 1.26343 7.97664 1.31985 7.96707Z" fill="#A4AABD"/>
+</svg>
+ Stratasys Direct Manufacturing
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://www.stratasys.com/"
+				 target='_blank' 
+				 rel='noopener noreferrer' 
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.33602 12.5584L3.70421 12.8409C3.58789 12.893 3.49116 12.9797 3.42777 13.0888L3.32251 13.2701V2.49744L4.11586 3.207C4.3214 3.39083 4.44127 3.64957 4.44748 3.92278L4.63306 12.0932C4.63759 12.2928 4.52074 12.4758 4.33602 12.5584Z" fill="#A4AABD"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.32202 13.9845V14.0286V14.136V14.6196V14.9957V15.1031V15.2106V15.2539C3.32202 15.364 3.36544 15.47 3.44329 15.5499L4.0434 16.1656C4.25154 16.3791 4.5405 16.5 4.84271 16.5H5.63726H8.33836H9.66138H12.3625H13.157C13.4592 16.5 13.7482 16.3791 13.9563 16.1656L14.5565 15.5499C14.6343 15.47 14.6777 15.364 14.6777 15.2539V15.2106V15.1031V14.6196V14.136V13.9845C14.6777 13.781 14.5598 13.595 14.373 13.504L14.1053 13.3735C14.0744 13.3585 14.0401 13.3535 14.0071 13.3582L13.6445 13.1933C13.4653 13.1118 13.255 13.1301 13.0935 13.2412L12.5606 13.6079C12.4676 13.6718 12.3565 13.7062 12.2426 13.7062H9.44084H5.74164C5.63744 13.7062 5.53537 13.6774 5.44728 13.6232L4.7976 13.2233C4.63446 13.1228 4.42931 13.1129 4.25671 13.197L3.89509 13.3732L3.89446 13.3735L3.62675 13.504C3.43999 13.595 3.32202 13.781 3.32202 13.9845Z" fill="#A4AABD"/>
+<path d="M13.6644 12.5584L14.2962 12.8409C14.4125 12.893 14.5092 12.9797 14.5726 13.0888L14.6779 13.2701V2.49744L13.8845 3.207C13.679 3.39083 13.5591 3.64957 13.5529 3.92278L13.3673 12.0932C13.3628 12.2928 13.4797 12.4758 13.6644 12.5584Z" fill="#A4AABD"/>
+<path d="M5.88696 6.43987C5.88696 6.26487 6.03115 6.12305 6.20901 6.12305H11.7913C11.9691 6.12305 12.1133 6.26487 12.1133 6.43987V11.9318C12.1133 12.1068 11.9691 12.2487 11.7913 12.2487H6.20901C6.03115 12.2487 5.88696 12.1068 5.88696 11.9318V6.43987Z" fill="#A4AABD"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.24878 4.89149V4.09352H8.55906C8.68011 4.09352 8.7971 4.05093 8.889 3.97345L9.66876 3.31587C9.76066 3.23839 9.87766 3.1958 9.9987 3.1958H12.7514V4.89149C12.7514 5.11185 12.5698 5.29048 12.3458 5.29048H5.65432C5.43035 5.29048 5.24878 5.11185 5.24878 4.89149ZM9.45627 4.06845C9.45627 4.13731 9.38817 4.19313 9.30417 4.19313C9.22018 4.19313 9.15212 4.13731 9.15212 4.06845C9.15212 3.99959 9.22018 3.94377 9.30417 3.94377C9.38817 3.94377 9.45627 3.99959 9.45627 4.06845ZM9.00029 4.49242C8.97226 4.49242 8.94957 4.51475 8.94957 4.5423V4.79166C8.94957 4.81921 8.97226 4.84154 9.00029 4.84154H9.10167C9.12965 4.84154 9.15234 4.81921 9.15234 4.79166V4.5423C9.15234 4.51475 9.12965 4.49242 9.10167 4.49242H9.00029ZM9.35513 4.5423C9.35513 4.51475 9.37782 4.49242 9.40585 4.49242H9.50723C9.53521 4.49242 9.55789 4.51475 9.55789 4.5423V4.79166C9.55789 4.81921 9.53521 4.84154 9.50723 4.84154H9.40585C9.37782 4.84154 9.35513 4.81921 9.35513 4.79166V4.5423ZM10.2423 3.64441C10.2004 3.64441 10.1663 3.6779 10.1663 3.71922V4.66681C10.1663 4.70813 10.2004 4.74162 10.2423 4.74162H12.0166C12.0586 4.74162 12.0927 4.70813 12.0927 4.66681V3.71922C12.0927 3.6779 12.0586 3.64441 12.0166 3.64441H10.2423Z" fill="#A4AABD"/>
+<path d="M5.1053 3.57102L3.62646 2.29797L5.74756 1.60237C5.95432 1.53457 6.17084 1.5 6.38878 1.5H9.20272H11.6111C11.829 1.5 12.0455 1.53457 12.2523 1.60237L14.3734 2.29797L13.8511 2.69327C13.7624 2.76034 13.6537 2.7967 13.542 2.7967H9.93465C9.78944 2.7967 9.64901 2.84781 9.5388 2.94078L8.78744 3.57435C8.69559 3.65183 8.57854 3.69442 8.45755 3.69442H5.43911C5.31632 3.69442 5.19771 3.65057 5.1053 3.57102Z" fill="#A4AABD"/>
+</svg>
+ Stratasys Hardware
+			</a>
+	</div>
+
+					</div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">Support</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container ">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://help.grabcad.com"
+				 target='_blank' 
+				 rel='noopener noreferrer' 
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.3999 6.86667V12.2C15.3999 13.0821 14.682 13.8 13.7999 13.8V14.3333C13.7999 15.2155 13.082 15.9333 12.1999 15.9333H11.0351C10.8143 16.5525 10.2276 17 9.53322 17H8.99989C8.11775 17 7.39989 16.2821 7.39989 15.4C7.39989 14.5179 8.11775 13.8 8.99989 13.8H9.53322C10.2276 13.8 10.8143 14.2475 11.0351 14.8667H12.1999C12.4943 14.8667 12.7332 14.6277 12.7332 14.3333V13.8C12.145 13.8 11.6666 13.3216 11.6666 12.7333V8.46667C11.6666 7.8784 12.145 7.4 12.7332 7.4H13.7999C13.9876 7.4 14.1658 7.4384 14.3332 7.49813V6.86667C14.3332 4.21973 12.1802 2.06667 9.53322 2.06667H8.46655C5.81962 2.06667 3.66655 4.21973 3.66655 6.86667V7.49813C3.83402 7.4384 4.01215 7.4 4.19989 7.4H5.26655C5.85482 7.4 6.33322 7.8784 6.33322 8.46667V12.7333C6.33322 13.3216 5.85482 13.8 5.26655 13.8H4.19989C3.31775 13.8 2.59989 13.0821 2.59989 12.2V6.86667C2.59989 3.632 5.23189 1 8.46655 1H9.53322C12.7679 1 15.3999 3.632 15.3999 6.86667ZM0.466553 10.0667V11.1333C0.466553 12.0155 1.18442 12.7333 2.06655 12.7333V8.46667C1.18442 8.46667 0.466553 9.18453 0.466553 10.0667ZM15.9332 8.46667V12.7333C16.8154 12.7333 17.5332 12.0155 17.5332 11.1333V10.0667C17.5332 9.18453 16.8154 8.46667 15.9332 8.46667Z" fill="#A4AABD"/>
+</svg>
+ GrabCAD Help Center
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://support.stratasys.com"
+				 target='_blank' 
+				 rel='noopener noreferrer' 
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.9518 7.92866H15.9214C16.0749 7.92866 16.222 7.8677 16.3305 7.7592C16.439 7.6507 16.5 7.50353 16.5 7.35009V5.01437C16.5 4.65065 16.3555 4.30182 16.0983 4.04463C15.8411 3.78743 15.4923 3.64294 15.1286 3.64294H2.87143C2.5077 3.64294 2.15887 3.78743 1.90168 4.04463C1.64449 4.30182 1.5 4.65065 1.5 5.01437V7.35009C1.5 7.50353 1.56096 7.6507 1.66946 7.7592C1.77796 7.8677 1.92512 7.92866 2.07857 7.92866H3.04821C3.31157 7.91838 3.56997 8.00224 3.77711 8.1652C3.98425 8.32816 4.12657 8.55957 4.17857 8.81794C4.20535 8.9731 4.19761 9.13224 4.1559 9.28406C4.11419 9.43588 4.03953 9.57664 3.93723 9.69633C3.83493 9.81602 3.70752 9.91169 3.56404 9.97653C3.42057 10.0414 3.26457 10.0738 3.10714 10.0715H2.07857C1.92512 10.0715 1.77796 10.1325 1.66946 10.241C1.56096 10.3495 1.5 10.4966 1.5 10.6501V12.9858C1.5 13.3495 1.64449 13.6984 1.90168 13.9555C2.15887 14.2127 2.5077 14.3572 2.87143 14.3572H15.1286C15.4923 14.3572 15.8411 14.2127 16.0983 13.9555C16.3555 13.6984 16.5 13.3495 16.5 12.9858V10.6501C16.5 10.4966 16.439 10.3495 16.3305 10.241C16.222 10.1325 16.0749 10.0715 15.9214 10.0715H14.8929C14.7354 10.0738 14.5794 10.0414 14.436 9.97653C14.2925 9.91169 14.1651 9.81602 14.0628 9.69633C13.9605 9.57664 13.8858 9.43588 13.8441 9.28406C13.8024 9.13224 13.7946 8.9731 13.8214 8.81794C13.8734 8.55957 14.0158 8.32816 14.2229 8.1652C14.43 8.00224 14.6884 7.91838 14.9518 7.92866ZM8.52321 9.56794H6.81429C6.67221 9.56794 6.53594 9.5115 6.43548 9.41104C6.33501 9.31057 6.27857 9.17431 6.27857 9.03223C6.27857 8.89015 6.33501 8.75389 6.43548 8.65342C6.53594 8.55296 6.67221 8.49652 6.81429 8.49652H8.50714C8.64922 8.49652 8.78548 8.55296 8.88595 8.65342C8.98642 8.75389 9.04286 8.89015 9.04286 9.03223C9.04286 9.17431 8.98642 9.31057 8.88595 9.41104C8.78548 9.5115 8.64922 9.56794 8.50714 9.56794H8.52321ZM11.2018 7.3608H6.91607C6.77399 7.3608 6.63773 7.30436 6.53726 7.20389C6.4368 7.10343 6.38036 6.96717 6.38036 6.82509C6.38036 6.68301 6.4368 6.54675 6.53726 6.44628C6.63773 6.34581 6.77399 6.28937 6.91607 6.28937H11.2018C11.3439 6.28937 11.4801 6.34581 11.5806 6.44628C11.6811 6.54675 11.7375 6.68301 11.7375 6.82509C11.7375 6.96717 11.6811 7.10343 11.5806 7.20389C11.4801 7.30436 11.3439 7.3608 11.2018 7.3608Z" fill="#A4AABD"/>
+</svg>
+ Stratasys Support
+			</a>
+	</div>
+
+					</div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">Resources</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container ">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://blog.grabcad.com"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.56818 3.27002C4.67209 3.27002 3.92613 3.99363 3.92613 4.88933V5.69614H2.64205C1.74596 5.69614 1 6.42435 1 7.32683V12.2018C1 13.1043 1.74596 13.8325 2.64205 13.8325H2.72727V16.3609C2.72631 16.4359 2.74856 16.5094 2.79098 16.5713C2.8334 16.6331 2.89391 16.6803 2.96421 16.7065C3.03452 16.7326 3.11119 16.7364 3.18371 16.7172C3.25624 16.6981 3.32107 16.657 3.36933 16.5996L5.76704 13.8325H12.4318C13.3279 13.8325 14.0739 13.101 14.0739 12.2018V11.395H15.3579C16.254 11.395 17 10.668 17 9.77571V4.88933C17 3.99704 16.254 3.27002 15.3579 3.27002H5.56818ZM5.56818 3.99729H15.3579C15.8618 3.99729 16.2727 4.39946 16.2727 4.88933V9.77571C16.2727 10.2655 15.8618 10.6677 15.3579 10.6677H14.0739V7.32683C14.0739 6.42771 13.3279 5.69614 12.4318 5.69614H4.6534V4.88933C4.6534 4.40287 5.06435 3.99729 5.56818 3.99729ZM4.39773 8.8666C4.95169 8.8666 5.40909 9.31743 5.40909 9.86662C5.40909 10.4158 4.95171 10.8666 4.39773 10.8666C3.84374 10.8666 3.375 10.4221 3.375 9.86662C3.375 9.31118 3.84374 8.8666 4.39773 8.8666ZM7.44318 8.8666C8.00144 8.8666 8.46591 9.31743 8.46591 9.86662C8.46591 10.4158 8.00145 10.8666 7.44318 10.8666C6.8892 10.8666 6.43182 10.4158 6.43182 9.86662C6.43182 9.31743 6.8892 8.8666 7.44318 8.8666ZM10.4886 8.8666C11.042 8.8666 11.5057 9.31208 11.5057 9.86662C11.5057 10.4211 11.042 10.8666 10.4886 10.8666C9.93529 10.8666 9.47158 10.4211 9.47158 9.86662C9.47158 9.31208 9.93529 8.8666 10.4886 8.8666Z" fill="#A4AABD"/>
+</svg>
+ Blog
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://resources.grabcad.com"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.91463 6.13776L6.63279 6.26439C6.71708 6.57708 6.84187 6.87742 7.00402 7.15776L6.58596 7.75449C6.51109 7.86071 6.47612 7.98996 6.48723 8.11944C6.49834 8.24892 6.5548 8.37033 6.64667 8.46225L7.07688 8.89245C7.1688 8.98432 7.2902 9.04078 7.41968 9.05189C7.54916 9.063 7.67841 9.02803 7.78463 8.95316L8.38137 8.5351C8.66173 8.69719 8.96206 8.82199 9.27473 8.90633L9.40137 9.62449C9.4238 9.75223 9.49052 9.86798 9.58982 9.95142C9.68911 10.0349 9.81463 10.0806 9.94433 10.0807H10.5601C10.6898 10.0806 10.8154 10.0349 10.9146 9.95142C11.0139 9.86798 11.0807 9.75223 11.1031 9.62449L11.2297 8.90633C11.5418 8.82189 11.8416 8.69709 12.1214 8.5351L12.7181 8.95316C12.8243 9.02803 12.9536 9.063 13.0831 9.05189C13.2125 9.04078 13.3339 8.98432 13.4259 8.89245L13.8561 8.46225C13.9479 8.37033 14.0044 8.24892 14.0155 8.11944C14.0266 7.98996 13.9916 7.86071 13.9168 7.75449L13.4918 7.15776C13.6515 6.87705 13.7739 6.57673 13.8561 6.26439L14.5742 6.13776C14.702 6.11532 14.8177 6.0486 14.9011 5.94931C14.9846 5.85001 15.0304 5.72449 15.0304 5.5948V4.98592C15.0304 4.85622 14.9846 4.73071 14.9011 4.63141C14.8177 4.53211 14.702 4.46539 14.5742 4.44296L13.8561 4.31633C13.7717 4.00365 13.6469 3.70332 13.4848 3.42296L13.9029 2.82622C13.9796 2.72158 14.0169 2.59326 14.0083 2.46382C13.9997 2.33438 13.9458 2.2121 13.8561 2.11847L13.4189 1.68827C13.3272 1.59613 13.2059 1.53935 13.0764 1.52792C12.9469 1.5165 12.8176 1.55117 12.7112 1.62582L12.1214 2.04388C11.841 1.88173 11.5407 1.75693 11.228 1.67265L11.1014 0.95449C11.0786 0.82736 11.012 0.71224 10.9131 0.629189C10.8142 0.546137 10.6893 0.500419 10.5601 0.5H9.94259C9.81289 0.500085 9.68738 0.545864 9.58808 0.629298C9.48879 0.712732 9.42206 0.828484 9.39963 0.956225L9.273 1.67439C8.9604 1.75816 8.66008 1.88237 8.37963 2.04388L7.78463 1.62582C7.67821 1.55117 7.54885 1.5165 7.41936 1.52792C7.28987 1.53935 7.16858 1.59613 7.07688 1.68827L6.64667 2.11847C6.5548 2.21039 6.49834 2.33179 6.48723 2.46127C6.47612 2.59076 6.51109 2.72 6.58596 2.82622L7.00402 3.42296C6.84129 3.70322 6.71591 4.00355 6.63106 4.31633L5.9129 4.44296C5.78516 4.46539 5.6694 4.53211 5.58597 4.63141C5.50254 4.73071 5.45676 4.85622 5.45667 4.98592V5.5948C5.45683 5.72474 5.50285 5.85046 5.58663 5.94979C5.67041 6.04912 5.78657 6.11569 5.91463 6.13776ZM10.2514 3.24082C10.6563 3.24184 11.0519 3.36287 11.3881 3.58861C11.7243 3.81434 11.9861 4.13466 12.1404 4.5091C12.2946 4.88353 12.3345 5.29529 12.2548 5.69235C12.1752 6.08941 11.9797 6.45396 11.693 6.73995C11.4062 7.02594 11.0412 7.22054 10.6439 7.29917C10.2467 7.3778 9.83501 7.33693 9.46097 7.18171C9.08693 7.0265 8.76728 6.76392 8.54239 6.42713C8.31751 6.09034 8.19749 5.69446 8.19749 5.28949C8.19841 4.74613 8.41478 4.22531 8.79916 3.84126C9.18353 3.45721 9.70454 3.24127 10.2479 3.24082H10.2514ZM4.50606 17.5L1.06616 14.1486L3.52943 11.7009C4.02974 11.204 4.65986 10.8579 5.34766 10.7024C6.03546 10.5469 6.75316 10.5881 7.41861 10.8214L7.9581 11.0105H11.2887C11.4288 11.0104 11.5675 11.0386 11.6965 11.0934C11.8254 11.1482 11.942 11.2284 12.0392 11.3293C12.1363 11.4302 12.2122 11.5497 12.2621 11.6807C12.3119 11.8116 12.3349 11.9512 12.3295 12.0912C12.3139 12.369 12.1914 12.6299 11.9877 12.8194C11.784 13.0089 11.5148 13.1122 11.2367 13.1078H9.24524C9.13713 13.1078 9.03344 13.1507 8.95699 13.2272C8.88054 13.3036 8.83759 13.4073 8.83759 13.5154C8.83759 13.6235 8.88054 13.7272 8.95699 13.8037C9.03344 13.8801 9.13713 13.9231 9.24524 13.9231H11.2436C11.7313 13.9234 12.2006 13.737 12.5551 13.4021C12.9097 13.0673 13.1226 12.6094 13.15 12.1224C13.15 12.1224 13.15 12.1051 13.15 12.0964L14.9992 10.0148C15.1874 9.79748 15.452 9.66094 15.7382 9.63349C16.0243 9.60603 16.3101 9.68978 16.5362 9.86735C16.6491 9.96011 16.7422 10.0746 16.81 10.2041C16.8777 10.3336 16.9187 10.4754 16.9305 10.6211C16.9424 10.7668 16.9247 10.9133 16.8787 11.0521C16.8327 11.1908 16.7593 11.3188 16.6628 11.4286L12.9714 15.6491C12.7284 15.9279 12.4284 16.1514 12.0918 16.3046C11.7552 16.4578 11.3897 16.5371 11.0198 16.5372H5.46881L4.50606 17.5ZM9.15677 5.28949C9.15677 5.07369 9.22077 4.86273 9.34066 4.68329C9.46056 4.50386 9.63097 4.36401 9.83034 4.28142C10.0297 4.19884 10.2491 4.17723 10.4608 4.21933C10.6724 4.26143 10.8668 4.36535 11.0194 4.51795C11.172 4.67055 11.276 4.86497 11.3181 5.07662C11.3602 5.28828 11.3385 5.50767 11.256 5.70704C11.1734 5.90642 11.0335 6.07683 10.8541 6.19672C10.6747 6.31662 10.4637 6.38061 10.2479 6.38061C9.95851 6.38061 9.68098 6.26566 9.47636 6.06103C9.27173 5.8564 9.15677 5.57887 9.15677 5.28949Z" fill="#A4AABD"/>
+</svg>
+ Resource Center
+			</a>
+	</div>
+
+					</div>
+					<div class="gc_web_comp_navbar-desktop__submenu ">
+						<span class="gc_web_comp_navbar-desktop__link">About Us</span>
+							<div class="gc_web_comp_navbar-desktop__submenu-container ">
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://blog.grabcad.com/jobs/"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6923 4.69242H15.4615C15.7588 4.69242 16 4.93365 16 5.23088V8.46165H13.3077V7.92319C13.3077 7.62596 13.0665 7.38473 12.7692 7.38473C12.472 7.38473 12.2308 7.62596 12.2308 7.92319V8.46165H5.76923V7.92319C5.76923 7.62596 5.528 7.38473 5.23077 7.38473C4.93354 7.38473 4.69231 7.62596 4.69231 7.92319V8.46165H2V5.23088C2 4.93365 2.24123 4.69242 2.53846 4.69242H6.30769V3.07704C6.30769 2.7798 6.54892 2.53857 6.84615 2.53857H11.1538C11.4511 2.53857 11.6923 2.7798 11.6923 3.07704V4.69242ZM10.6154 3.6155H7.38462V4.69242H10.6154V3.6155ZM12.7692 10.6155C13.0665 10.6155 13.3077 10.3743 13.3077 10.077V9.53857H16V14.9232C16 15.2204 15.7588 15.4617 15.4615 15.4617H2.53846C2.24123 15.4617 2 15.2204 2 14.9232V9.53857H4.69231V10.077C4.69231 10.3743 4.93354 10.6155 5.23077 10.6155C5.528 10.6155 5.76923 10.3743 5.76923 10.077V9.53857H12.2308V10.077C12.2308 10.3743 12.472 10.6155 12.7692 10.6155Z" fill="#A4AABD"/>
+</svg>
+ Careers
+			</a>
+			<a
+				class="gc_web_comp_navbar-desktop__submenu-link "
+				href="https://resources.grabcad.com/company/"
+				
+				
+			>
+				<!-- If products menu -->
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.8994 2.07715H2.36285C2.15278 2.07715 2 2.22993 2 2.44V15.5599C2 15.77 2.15278 15.9228 2.36285 15.9228H5.38024V13.1727C5.38024 12.829 5.6667 12.5425 6.01045 12.5425H7.51915C7.8629 12.5425 8.14936 12.829 8.14936 13.1727V15.9228H10.8994C11.1095 15.9228 11.2622 15.77 11.2622 15.5599V2.44C11.2622 2.24903 11.1095 2.07715 10.8994 2.07715ZM4.82641 11.9123H3.54689V10.671H4.82641V11.9123ZM4.82641 9.52513H3.54689V8.2838H4.82641V9.52513ZM4.82641 7.13796H3.54689V5.89663H4.82641V7.13796ZM4.82641 4.75078H3.54689V3.50945H4.82641V4.75078ZM7.42366 11.9123H6.14413V10.671H7.42366V11.9123ZM7.42366 9.52513H6.14413V8.2838H7.42366V9.52513ZM7.42366 7.13796H6.14413V5.89663H7.42366V7.13796ZM7.42366 4.75078H6.14413V3.50945H7.42366V4.75078ZM10.0018 11.9123H8.72228V10.671H10.0018V11.9123ZM10.0018 9.52513H8.72228V8.2838H10.0018V9.52513ZM10.0018 7.13796H8.72228V5.89663H10.0018V7.13796ZM10.0018 4.75078H8.72228V3.50945H10.0018V4.75078ZM15.6546 4.52162H11.5105V15.5408C11.5105 15.6745 11.4723 15.8082 11.3959 15.9037H15.6355C15.8456 15.9037 15.9984 15.7509 15.9984 15.5408V4.88446C16.0175 4.67439 15.8647 4.52162 15.6546 4.52162ZM14.4324 14.4905H13.1338V13.2491H14.4324V14.4905ZM14.4324 12.046H13.1338V10.8047H14.4324V12.046ZM14.4324 9.58242H13.1338V8.34109H14.4324V9.58242ZM14.4324 7.13796H13.1338V5.89663H14.4324V7.13796Z" fill="#A4AABD"/>
+</svg>
+ Company
+			</a>
+	</div>
+
+					</div>
+			</div>
+
+				<div class="gc_web_comp_navbar-desktop__right-div">
+					<a class="gc_web_el-button--tertiary gc_web_el-button--icon-right-white gc_web_comp_navbar-desktop__signin" href="/login">
+						Sign In
+					</a>
+				</div>
+		</nav>
+	</div>
+</div>
+
+
+	<img class="gc-util-screen--desktopAndLargerOnly gc_pages-homepage-hero__imageDesktop" alt="GrabCAD Platform Illustration" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/hero/big-5e8eabd176a106bebf5f0bebf7a118d6a6f8fd60a0eef7706b9926f6adc6aaa1.svg" />
+
+	<div class="gc_web_layout-container">
+		<div class="gc_pages-homepage-hero__header">
+			<img class="gc-util-screen--tabletAndSmallerOnly" alt="GrabCAD Platform Illustration" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/hero/small-cb337513417e7229bdfbd2ec3855fbd175ca6d70d3376fd4c8a6476a1a79e310.png" />
+
+			<div class="gc_pages-homepage-hero__title">Making Additive Manufacturing at Scale Possible</div>
+			<div class="gc_pages-homepage-hero__desc">GrabCAD’s open software platform drives additive manufacturing at scale through connected solutions.</div>
+			<a href="#software_platform" class="gc_web_el-button--primary gc_web_el-button--icon-right-white gc_pages-homepage-hero__button">Learn more about the platform</a>
+		</div>
+	</div>
+
+	<img class="gc_pages-homepage-hero__wave" alt="Blue Wave" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/hero/wave-f8fbb7e4f36ab2d96492e93cca6d678f363cfe8b84a3ef81e3328ceb55cffb0e.svg" />
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-partnerlogos__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_pages-homepage-partnerlogos__images">
+				<img class="gc_pages-homepage-partnerlogos__image " alt="AMFG Logo" width="185" height="30" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/amfg-078b277c324aa10910f4fdcae0e9eedb1c749282c06353a5b966a59536bf222e.svg" />
+				<img class="gc_pages-homepage-partnerlogos__image gc_pages-homepage-partnerlogos__image--smaller" alt="Siemens Logo" width="126" height="20" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/siemens-0aa60db65110f414575ba5cabcbd470c0b67bf5b3324cd056948ef3c4e1c361c.svg" />
+				<img class="gc_pages-homepage-partnerlogos__image gc_pages-homepage-partnerlogos__image--smaller" alt="McLaren Logo" width="135" height="20" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/mclaren-92009532ed1809f0b226c1dfdafa27782621a1f7ae3ec1a2610ced5fe08589e8.svg" />
+				<img class="gc_pages-homepage-partnerlogos__image gc_pages-homepage-partnerlogos__image--larger" alt="Identify3D Logo" width="112" height="35" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/identify3d-9367d25c7b6ad196b9ff6a87d90d6446e42d94f09ba949961b4f726e5d56eb9e.gif" />
+				<img class="gc_pages-homepage-partnerlogos__image " alt="Schneider ElectricLogo" width="99" height="30" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/schneider-e773b1740e22fd269a7dde94ace37063143c74422b8f729b88099d617beb1409.svg" />
+				<img class="gc_pages-homepage-partnerlogos__image gc_pages-homepage-partnerlogos__image--larger" alt="Andretti Logo" width="124" height="35" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/andretti-00fef80adb909475a4623075d718b2a2eb9d89ddb00d83fb1ae90f07debf8be1.png" />
+				<img class="gc_pages-homepage-partnerlogos__image " alt="Link3D Logo" width="112" height="30" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/link3d-5ce17af4aea61aba3e8497b23fc98c5b67ebca7e2763cedb18dfdd0a4f177bec.svg" />
+				<img class="gc_pages-homepage-partnerlogos__image " alt="Virginia Tech Logo" width="160" height="30" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/partners/virginiatech-041e0af37cc6b71a00e07261604413ba935b445b8d068b62c2adcb494f7cf20a.svg" />
+		</div>
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-ecosystem__wrapper">
+	<div class="gc_web_layout-container gc_pages-homepage-ecosystem__container">
+		<div class="gc_pages-homepage-ecosystem__header">
+			<div class="gc_web_comp-section__title">Open and connected platform, supported by a diverse ecosystem.</div>
+			<div class="gc_web_comp-section__desc">Our software solutions enable customers to create accurate and effective additive manufacturing workflows, tap new business models and work within the IoT and supply chain ecosystem.</div>
+		</div>
+		<div class="gc_pages-homepage-ecosystem__box-container">
+				<div class="gc_pages-homepage-ecosystem__box">
+					<img class="gc_pages-homepage-ecosystem__box-image" alt="Factory Robot Processing Boxes" width="154" height="88" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/ecosystem/image1-0d2e23f59682ed11d0ea93f13f1c59f72fbcd8d847998e20deb586bc8fa62b62.svg" />
+					<div class="gc_pages-homepage-ecosystem__box-title">Making Additive Manufacturing Possible</div>
+					<p class="gc_pages-homepage-ecosystem__box-desc">Our open software platform makes additive manufacturing at scale possible.</p>
+				</div>
+				<div class="gc_pages-homepage-ecosystem__box">
+					<img class="gc_pages-homepage-ecosystem__box-image" alt="Stratasys FDM 3D Printer, a monitor and a phone running GrabCAD applications" width="154" height="88" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/ecosystem/image2-fd60f21036b20b4c544803c4f0a479737877a5718ccff9711bb8953e6d1bdb90.svg" />
+					<div class="gc_pages-homepage-ecosystem__box-title">Connecting Additive Manufacturing</div>
+					<p class="gc_pages-homepage-ecosystem__box-desc">Our connected solutions enable customers to innovate and accelerate Industry 4.0 initiatives.</p>
+				</div>
+				<div class="gc_pages-homepage-ecosystem__box">
+					<img class="gc_pages-homepage-ecosystem__box-image" alt="Stratasys FDM 3D Printer with purple bar charts around it" width="154" height="88" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/ecosystem/image3-ad78e5a40c7b167a23ac49b6668940e93d93485bee52d9dd1819c9c5d8c56ccf.svg" />
+					<div class="gc_pages-homepage-ecosystem__box-title">Achieving Success with Stratasys</div>
+					<p class="gc_pages-homepage-ecosystem__box-desc">Supported by Stratasys’ leadership in additive manufacturing ensures success for our customers.</p>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-stats__wrapper">
+	<div class="gc_web_layout-container">
+		
+<div class="gc_web_comp-metrics__boxes gc_pages-homepage-stats__metrics">
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				20,000+
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				Stratasys printers
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				10
+					<span class="gc_web_comp-metrics__top-small">million</span>
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				community members
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				12
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				software partners
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				100
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				fortune 200 customers
+			</div>
+		</div>
+</div>
+
+	</div>
+</div>
+
+
+<div id="software_platform" class="gc_web_layout-wrapper gc_pages-homepage-swplatform__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_pages-homepage-swplatform__header">
+			<div class="gc_web_comp-section__caption">The GrabCAD Software Platform</div>
+			<div class="gc_web_comp-section__title">The tools you need for additive manufacturing at scale, all in one platform.</div>
+			<div class="gc_web_comp-section__desc">The GrabCAD software platform makes additive manufacturing at scale possible through asset management, planning, programming, execution, and quality initiatives.</div>
+		</div>
+	</div>
+	<div class="gc_web_layout-container">
+		<div class="gc_pages-homepage-swplatform__boxes">
+				<div>
+					<img class="gc_pages-homepage-swplatform__box-image" alt="GrabCAD Print Logo" height="42" width="192" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/platform/print-1f378b842e6e1e2752b6f4577812a1bd125ceca145e7039e98a70e3db5afc847.svg" />
+					<div class="gc_web_comp-section__bodySmall gc_pages-homepage-swplatform__boxtext">Free 3D printing software to simplify your Stratasys 3D printing workflow. Get professional-quality 3D printed parts faster and simpler.</div>
+					<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="https://grabcad.com/print">Learn More</a>
+				</div>
+				<div>
+					<img class="gc_pages-homepage-swplatform__box-image" alt="GrabCAD Shop Logo" height="42" width="170" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/platform/shop-8747cfaab73aeaef86754e106d12b64121ba4fa1f9340b2745e926729795a938.svg" />
+					<div class="gc_web_comp-section__bodySmall gc_pages-homepage-swplatform__boxtext">3D printing workflow software for 3D printer operators, engineers and designers. Reduce the time and cost wasted tracking and fulfilling part requests.</div>
+					<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="https://grabcad.com/shop">Learn More</a>
+				</div>
+				<div>
+					<img class="gc_pages-homepage-swplatform__box-image" alt="GrabCAD Partners Logo" height="32" width="103" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/platform/partners-9404e9a47cdd1684713abd4e5fd10cddb96468a89f156c31b61321d8954cf878.svg" />
+					<div class="gc_web_comp-section__bodySmall gc_pages-homepage-swplatform__boxtext">An ecosystem of software providers that have connected to Stratasys technology to provide customers with end-to-end additive solutions.</div>
+					<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="https://grabcad.com/featured-software-partners">Learn More</a>
+				</div>
+				<div>
+					<img class="gc_pages-homepage-swplatform__box-image" alt="GrabCAD SDK Logo" height="32" width="91" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/platform/sdk-8e4b73f5b86a9eab175362063ddf441a5051b2b08d58ededb8d694f66cff7b83.svg" />
+					<div class="gc_web_comp-section__bodySmall gc_pages-homepage-swplatform__boxtext">GrabCAD SDKs enable independent software vendors and customer developers to connect their Stratasys printers to their MES, design, and simulation solutions via APIs.</div>
+					<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="https://grabcad.com/software-development-kit">Learn More</a>
+				</div>
+		</div>
+	</div>
+
+	<div class="gc_web_layout-container gc_web_layout-container--zero">
+		<img class="gc_pages-homepage-swplatform__image" alt="Illustration about screenshots of GrabCAD software on monitors and phone" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/platform/bg-3af7ff09d62a4009f05ab4f321f72139df7b95246f1cbbbfb1350db5adbc8ade.svg" />
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-industry__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_web_layout-flexcols gc_pages-homepage-industry__twocols">
+			<div>
+				<div class="gc_web_comp-section__caption">MANUFACTURING INDUSTRY 4.0</div>
+				<div class="gc_web_comp-section__title">Connected solutions accelerating Industry 4.0 initiatives.</div>
+				<div class="gc_web_comp-section__desc gc_pages-homepage-industry__desc">We facilitate connectivity through our systems and software platform, enabling customers to make their additive manufacturing environments ready for Industry 4.0.</div>
+				<ul class="gc_web_el-bulletlist gc_pages-homepage-industry__list">
+						<li>Remote printer monitoring</li>
+						<li>Business intelligence</li>
+						<li>Cloud connectivity</li>
+						<li>Mobile monitoring</li>
+						<li>User license management</li>
+						<li>Access control</li>
+				</ul>
+			</div>
+			<div class="gc_pages-homepage-industry__imagewrapper">
+				<img class="gc_pages-homepage-industry__image" alt="Illustration of Stratasys FDM 3D Printer with a management application in the back" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/industry/industry40-4305dd33e38cb64bea8d245f8c2b43f2bd5c7dbd84e0922785a1f749980bafd9.svg" />
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-solution">
+	<div class="gc_web_layout-container">
+		<div class="gc_web_comp-section__caption">A Stratasys Solution</div>
+		<div class="gc_web_comp-section__title">Combining 3D printing software with Stratasys to ensure success.</div>
+		<div class="gc_web_comp-section__desc">Supported by 30 years of additive excellence, our software integration with Stratasys 3D printers provides all the features a design and manufacturing company needs for additive manufacturing success.</div>
+		<div class="gc_pages-homepage-solution__buttons">
+			<a href="https://www.stratasys.com/" target="_blank" rel="noopener noreferrer" class="gc_web_el-button--primary gc_web_el-button--icon-right-white">Learn More</a>
+		</div>
+	</div>
+
+	<div class="gc_web_layout-container gc_web_layout-container--wide">
+		<div class="gc_pages-homepage-solution__printers">
+				<img alt="Illustration of Stratasys H350 3D Printer" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/printers/h350-8b0f113cfffdd28c93e4a252a4080d9d2edaa41ea2f3444057e72564ea15fdce.svg" />
+				<img alt="Illustration of Stratasys F270 3D Printer" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/printers/f270dark-7c79151cdfd3e2effedf3b32432c07c95d15a6f8fd5ff5afaa0d6c2669f076f4.svg" />
+				<img alt="Illustration of Stratasys F900 3D Printer" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/printers/f900-ea15cb76dc9cc782363065a9bd2e0c880db1a30bdab78db661812b6eb75133e2.svg" />
+				<img alt="Illustration of Stratasys J750 3D Printer" class="gc-util-screen--desktopAndLargerOnly" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/printers/j750dark-8214e9b0b2d89c7daba6c07ae4f23990bb88c97d21fc36e3c6a98629820fe76a.svg" />
+		</div>
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-community__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_web_layout-flexcols gc_pages-homepage-community__twocols">
+			<div>
+				<div class="gc_web_comp-section__caption">GrabCAD Community</div>
+				<div class="gc_web_comp-section__title">The largest online ecosystem of professional engineers, manufacturers, students and software partners.</div>
+				<div class="gc_web_comp-section__desc">Join the community and have access to the largest online CAD library, design and 3D printing tutorials, and a network of additive professionals.</div>
+				<div class="gc_pages-homepage-community__buttons">
+						<a href="/profile/register" class="gc_web_el-button--tertiary gc_web_el-button--icon-right-white">
+							<span class="gc-util-screen--desktopAndLargerOnly">Join the Community</span>
+							<span class="gc-util-screen--tabletAndSmallerOnly">Join Now</span>
+						</a>
+					<a href="https://grabcad.com/library" class="gc_web_el-button--secondary gc_web_el-button--icon-right-white">
+						<span class="gc-util-screen--desktopAndLargerOnly">Browse CAD Library</span>
+						<span class="gc-util-screen--tabletAndSmallerOnly">Browse Library</span>
+					</a>
+				</div>
+			</div>
+			<div>
+				<img class="gc_pages-homepage-community__imageRight" alt="Illustration of a computer displaying the letter G and connected to a small 3D printer and an Earth Globe on a book" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/community/community-76ebd6ef86a61b58039fc661c7adf23f0565d877e63887c4eed96c8bbb2b3dec.svg" />
+			</div>
+		</div>
+
+		
+<div class="gc_web_comp-metrics__boxes gc_pages-homepage-community__metrics">
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				#1
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				3D community
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				10
+					<span class="gc_web_comp-metrics__top-small">million</span>
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+					<span class="gc-util-screen--desktopAndLargerOnly">community members</span>
+					<span class="gc-util-screen--tabletAndSmallerOnly">members</span>
+				
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				5
+					<span class="gc_web_comp-metrics__top-small">million</span>
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+					<span class="gc-util-screen--desktopAndLargerOnly">shared CAD files</span>
+					<span class="gc-util-screen--tabletAndSmallerOnly">CAD files</span>
+				
+			</div>
+		</div>
+		<div>
+			<div class="gc_web_comp-metrics__top">
+				9974
+			</div>
+
+			<div class="gc_web_comp-metrics__bottom">
+				tutorials
+			</div>
+		</div>
+</div>
+
+
+		<img class="gc_pages-homepage-community__imageBottom" alt="Illustration of a computer displaying the letter G and connected to a small 3D printer and an Earth Globe on a book" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/pages/homepage/community/community-76ebd6ef86a61b58039fc661c7adf23f0565d877e63887c4eed96c8bbb2b3dec.svg" />
+	</div>
+</div>
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-featureditems__wrapper">
+	<div class="gc_web_layout-container gc_web_layout-container--zero">
+		
+<div class="gc_web_comp_featurednews-slider hidden glide">
+	<div class="gc_web_comp_featurednews-slider__mainbox">
+		<div class="glide__wrapper">
+			<ul class="glide__track">
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://go.stratasys.com/transforming-manufacturing-grabcad-report.html?utm_campaign=corporate-corp-sw-grabcad-ames&amp;utm_medium=website&amp;utm_source=gc&amp;utm_content=article-ames-report">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">The Key to Transforming Additive Manufacturing</div>
+									<div class="gc_web_comp_featurednews-slide__content">Thanks to advancements in material sciences and printer hardware, additive is able to rapidly produce customized high-quality production-grade end use parts. We dive into this and more in our industry report!</div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/190/medium.png?1649344435);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://www.stratasys.com/en/resources/webinars/a-holistic-approach-to-additive-manufacturing/?utm_campaign=corporate-corp-sw-grabcad-sdk&amp;utm_medium=website&amp;utm_source=gc&amp;utm_content=wbr-holistic-am">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">New Event: A Holistic Approach to Additive Manufacturing</div>
+									<div class="gc_web_comp_featurednews-slide__content">As the rise in additive manufacturing and its uses become more apparent, the need for a trusted, end-to-end solution becomes increasingly necessary for early adopters. Join our upcoming event to learn how our new partners can help! </div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/188/medium.jpg?1647530427);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://www.stratasys.com/en/resources/webinars/scaling-your-additive-manufacturing-operations-with-grabcad-shop/?utm_campaign=corporate-corp-sw-grabcad-shop&amp;utm_medium=website&amp;utm_source=gc&amp;utm_content=wbr-scaling-with-shop">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">Scaling Your Additive Manufacturing Operations with GrabCAD Shop</div>
+									<div class="gc_web_comp_featurednews-slide__content">Join us on April 14, 2022 for a Stratasys event you won’t want to miss! We’ll share best practices for running your factory floor &amp; how GrabCAD Shop can help you scale operations.</div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/185/medium.jpg?1647530364);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://blog.grabcad.com/blog/2022/02/23/radford-used-grabcad-shop-for-3d-printed-car-parts/">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">How Radford Used GrabCAD Shop to Create Over 500 3D-Printed Car Parts</div>
+									<div class="gc_web_comp_featurednews-slide__content">Read the story behind Radford, a global luxury automotive brand, using GrabCAD Shop to create over 500 3D-printed car parts. </div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/152/medium.jpg?1645631858);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://blog.grabcad.com/blog/2022/03/08/riven-joins-the-grabcad-software-partner-program/">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">Riven Ramps Up Accurate Part Production with 3D Reality Intelligence</div>
+									<div class="gc_web_comp_featurednews-slide__content">Riven joins the GrabCAD Software Partner Program to bring 3D reality intelligence to accelerate additive manufacturing production.</div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/186/medium.jpg?1646751216);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://blog.grabcad.com/blog/2022/03/08/oqton-joins-the-grabcad-software-partner-program/">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">Oqton Brings Intelligent Manufacturing OS to 3D Printing</div>
+									<div class="gc_web_comp_featurednews-slide__content"> Oqton joins the GrabCAD Software Partner Program to bring AI and Machine learning to the additive manufacturing process.</div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/187/medium.jpg?1646751301);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="glide__slide">
+					<div class="gc_web_comp_featurednews-slide__wrapper">
+						<a class="gc_web_comp_featurednews-slide__link" href="https://go.stratasys.com/Subscribe-Digital-Thread.html">
+							<div class="gc_web_comp_featurednews-slide__container">
+								<div class="gc_web_comp_featurednews-slide__left">
+									<div class="gc_web_comp_featurednews-slide__caption">Featured News</div>
+									<div class="gc_web_comp_featurednews-slide__title">Sign Up to Receive GrabCAD&#39;s Digital Thread Weekly Newsletter</div>
+									<div class="gc_web_comp_featurednews-slide__content">GrabCAD offers a wealth of useful information and knowledge – and we want to share the very best of it with you week in and week out! The Digital Thread is GrabCAD’s free weekly newsletter to help make your life easier.</div>
+								</div>
+								<div class="gc_web_comp_featurednews-slide__image" style="background-image: url(https://d2t1xqejof9utc.cloudfront.net/featured_items/pictures/4/medium.jpg?1529942266);"></div>
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="gc_web_comp_featurednews-bullets glide__bullets"></div>
+</div>
+
+
+	</div>
+</div>
+
+
+
+<div class="gc_web_layout-wrapper gc_pages-homepage-getstarted__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_pages-homepage-getstarted__header">
+			<div class="gc_web_comp-section__title">Ready to get started?</div>
+			<div class="gc_web_comp-section__desc">Learn how our platform can help your company scale additive manufacturing, compare product features, explore free trials, or connect with the GrabCAD Community.</div>
+		</div>
+	</div>
+	<div class="gc_web_layout-container gc_web_layout-container--wide">
+		<div class="gc_pages-homepage-getstarted__box-container">
+			<div class="gc_pages-homepage-getstarted__box">
+				<div class="gc_pages-homepage-getstarted__box-title">GrabCAD Print</div>
+				<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="/print/register">Download Free</a>
+			</div>
+			<div class="gc_pages-homepage-getstarted__box">
+				<div class="gc_pages-homepage-getstarted__box-title">GrabCAD Shop</div>
+				<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="/shop/register">Request free trial</a>
+			</div>
+			<div class="gc_pages-homepage-getstarted__box">
+				<div class="gc_pages-homepage-getstarted__box-title">Partners + SDKs</div>
+				<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="https://grabcad.com/software-partner/become-a-partner">Explore perks</a>
+			</div>
+			<div class="gc_pages-homepage-getstarted__box">
+				<div class="gc_pages-homepage-getstarted__box-title">Community</div>
+				<a class="gc_web_el-button--secondary gc_web_el-button--icon-right-blue" href="/profile/register">Sign up</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+		
+		
+<div class="gc_web_layout-wrapper gc_web_comp-footer__wrapper">
+	<div class="gc_web_layout-container">
+		<div class="gc_web_comp-footer__toplinks">
+			<div>
+				<div class="gc_web_comp-footer__logos">
+					<a href="https://www.stratasys.com/" target="_blank" rel="noopener noreferrer">
+						<img alt="White Stratasys Logo" width="112" height="25" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/logo/stratasys-white-4b77020b3f456bc74cfda0e64727c838a1670a408727365c16916105579d091f.svg" />
+					</a>
+					<img alt="White GrabCAD Logo" width="112" height="17" src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/gc/shared/logo/grabcad-white-69ffbd57ceb362664748e93188589f101afe294023645493c7e71e4c93d27aa8.svg" />
+				</div>
+				<div class="gc_web_comp-footer__copyright">
+					© 2022 Stratasys Inc.
+				</div>
+			</div>
+
+			<div class="gc_web_comp-footer__sections">
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">About us</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a rel="noopener noreferrer" href="https://resources.grabcad.com/company/">Company</a>
+								</div>
+								<div>
+									<a rel="noopener noreferrer" href="https://blog.grabcad.com/jobs/">Jobs</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Resources</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://blog.grabcad.com">Blog</a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://resources.grabcad.com">Resource Center</a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://help.grabcad.com">Help Center</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Social</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/GrabCAD">Facebook</a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCKObKIn7qvIfd25MQOSbwjA"><span class="translation_missing" title="translation missing: en.navigation.follow.youtube">Youtube</span></a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/grabcadcommunity/">Instagram</a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/grabcad/">LinkedIn</a>
+								</div>
+								<div>
+									<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/grabcad">Twitter</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Print</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a href="https://grabcad.com/print">Overview</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/print/features">Features</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/print/advanced_fdm">Advanced FDM</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/print/advanced_polyjet">Advanced Polyjet</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/print/digital_anatomy">Digital Anatomy</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Shop</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a href="https://grabcad.com/shop">Overview</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/features">Features</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/compare">Compare</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/schools">Teachers &amp; Lab Managers</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/security">IT &amp; Security</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/3d-printing-management-software">Engineering Managers</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/shop/pricing">Pricing</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Partners</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a href="https://grabcad.com/featured-software-partners">Software Partners</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/software-development-kit">GrabCAD SDKs</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Community</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a href="https://grabcad.com/library">Library</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/challenges">Challenges</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/groups">Groups</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/questions">Questions</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/tutorials">Tutorials</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/engineers">Engineers</a>
+								</div>
+						</div>
+					</div>
+					<div class="gc_web_comp-footer__section">
+						<span class="gc_web_comp-footer__section-title">Workbench</span>
+						<div class="gc_web_comp-footer__section-links">
+								<div>
+									<a href="https://grabcad.com/workbench">Overview</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/workbench/features">Features</a>
+								</div>
+								<div>
+									<a href="https://grabcad.com/workbench/compare">Compare</a>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<div class="gc_web_comp-footer__bottomlinks">
+			<a target="_blank" rel="noopener" href="https://resources.grabcad.com/company/">Contact Us</a>
+			<a href="https://grabcad.com/terms">Website Terms of Use</a>
+			<a href="https://grabcad.com/software_terms">Software Terms of Use</a>
+			<a href="https://grabcad.com/privacy_policy">Privacy policy</a>
+			<a target="_blank" rel="noopener" href="https://help.grabcad.com/article/232-your-data-on-grabcad">Your Data on GrabCAD</a>
+		</div>
+
+		<div class="gc_web_comp-footer__bottomtext">
+			The Computer-Aided Design (&quot;CAD&quot;) files and all associated content posted to this website are created, uploaded, managed and owned by third-party users. Each CAD and any associated text, image or data is in no way sponsored by or affiliated with any company, organization or real-world item, product, or good it may purport to portray.			
+		</div>
+	</div>
+</div>
+
+		<script src="https://d1pspl52z5rk07.cloudfront.net/assets/production/app/frontpage-0f65e61be408c5e6f1b9b31f888bcbdd4db555a0e643137c968935c07a5d2d38.js"></script>
+		<script type="text/javascript">
+$.ajax({
+	url: '//munchkin.marketo.net/munchkin.js',
+	dataType: 'script',
+	cache: true,
+	success: function() {
+		Munchkin.init('533-LAV-099', { asyncOnly: true });
+	}
+});
+</script>
+
+			<!-- Google Code for Remarketing Tag -->
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 981400234;
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+		<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/981400234/?value=0&guid=ON&script=0"/>
+		</div>
+	</noscript>
+
+		
+    
+
+		
+	</body>
+</html>

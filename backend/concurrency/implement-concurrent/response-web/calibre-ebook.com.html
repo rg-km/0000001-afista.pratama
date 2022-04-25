@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>calibre - E-book management</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    
+    <meta name="keywords" content="e-book,ebook,library,calibre,software,news,digital text,free,open source" />
+    <meta name="description" content="calibre: The one stop solution for all your e-book needs. Comprehensive e-book software." />
+    
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<!-- See https://www.quantcast.com/protect/sites username is email -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', '593Yp13RM2k2D', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script data-cfasync="false" type="text/javascript">
+    var freestar = freestar || {};
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+    freestar.config.enabled_slots = [];
+    !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/calibre-ebook-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+    freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+    </script>
+    
+
+    <link rel="alternate" type="application/rss+xml" href="/changelog.rss" title="RSS feed of the calibre changelog" />
+
+    <!-- jQuery and associated tools -->
+    <script type="text/javascript" src="/resources/js/jquery.tools.min.js"></script>
+
+    <!-- YUI CSS foundation -->
+    <link rel="stylesheet" type="text/css" href="/resources/styles/yui.css" />
+
+    <!-- Master CSS -->
+    <link rel="stylesheet" type="text/css" href="/resources/styles/base.css" />
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20736318-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-20736318-1');
+    </script>
+    
+
+    
+
+<style type="text/css">
+
+#grid {
+    grid-template-areas: "header header" "content content";
+}
+
+#content {
+    display: flex;
+}
+
+#left {
+    min-height: 350px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    z-index: 1;
+    position: relative;
+}
+
+#left > p {
+    font-weight: bold;
+    font-size: 200%;
+    margin-left: 70px;
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+}
+
+#left:hover {
+    z-index: 3;
+    border-color: black;
+}
+
+#right {
+    z-index: 1;
+    margin-left: -150px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-image: url(/resources/img/blank.png);
+    background-repeat: repeat;
+}
+
+#one_stop {
+    display: block;
+    margin-bottom: 2ex;
+}
+
+#content-wrapper {
+    background: #f6f3e9 url(/resources/img/bg.png) repeat-x top left;
+    width: 100%;
+}
+
+#content {
+    margin: 0px;
+    padding: 0px;
+}
+
+#sidebar {
+    display: none;
+}
+
+#button-download {
+  display: block;
+  width: 174px;
+  height: 40px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: transparent url(/resources/img/button-download.png) no-repeat top left;
+  margin-bottom: 1ex;
+}
+
+#button-getinvolved {
+  display: block;
+  width: 133px;
+  height: 40px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: transparent url(/resources/img/button-getinvolved.png) no-repeat top left;
+  margin-top: 5px;
+}
+
+#grandtour { 
+    text-align:center;
+    display:none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+</style>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById("grandtour");
+        video.addEventListener('pause', function() { this.style.display = 'none'; });
+        video.addEventListener('ended', function() { this.style.display = 'none'; });
+        document.querySelectorAll('#left > img, #left > p').forEach(function(trig) {
+            trig.addEventListener("click", function() {
+                var video = document.getElementById("grandtour");
+                video.style.display = "block";
+                video.play();
+            });
+        });
+    });
+</script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('video.calibre').forEach(function(video) {
+                video.addEventListener('play', function() { this.classList.add('playing'); this.focus(); });
+                video.addEventListener('pause', function() { this.classList.remove('playing'); });
+                video.addEventListener('ended', function() { this.classList.remove('playing'); });
+                video.addEventListener('keydown', function(e) { if (e.key === 'Escape') this.pause(); });
+            });
+        });
+    </script>
+</head>
+
+<body onload="document.getElementById('content-wrapper').focus()"><div id="grid">
+    
+    <div id="header">
+        
+        <h1><a href="/">Calibre E-Book Management</a></h1>
+        
+        <ul id="primary-nav">
+            
+            <li><a id="nav-about" href="/about" title="The features and history of calibre">About Calibre</a></li>
+            <li><a id="nav-demo" href="/demo" title="See calibre in action">Demo</a></li>
+            <li><a id="nav-download" href="/download" title="Download calibre for your operating system">Download</a></li>
+            <li><a id="nav-help" href="/help" title="Get help on using calibre">Help</a></li>
+            <li><a id="nav-whats-new" href="/whats-new" title="What's new in calibre world">What's New</a></li>
+            <li><a id="nav-get-involved" href="/get-involved" title="Contribute to calibre">Get Involved</a></li>
+            <li><a id="nav-bugs" href="/bugs" title="Report bugs / enhancement requests">Bugs</a></li>
+            
+            <li><a id="nav-lang" href="javascript:choose_language()" title="Change the language of this website">Language</a></li>
+            
+            
+        </ul>
+        <div title="Support calibre development" id="donate" alt="Contribute to support calibre development" rel="#donate_box" data-location="top_banner" style="cursor:pointer; border:none" >Support Calibre</div>
+    </div>
+    
+    <div id="content-wrapper" class="yui-cssbase" tabindex="-1">
+        <div id="content">
+            
+<div id="left">
+    <img src="/resources/img/home-feature.jpg" alt="Watch calibre in action" />
+    <p>Click to watch calibre demo</p>
+</div>
+<div id="right">
+    <p style="display:none">calibre is the one stop solution to all your e-book needs</p>
+    <img id="one_stop" src="/resources/img/home-tag.png" alt="calibre is the one stop solution to all your e-book needs" />
+    <a href="/download" id="button-download">Download calibre</a>
+    <a href="/get-involved" id="button-getinvolved">Get involved</a>
+<div style="margin-top:2ex;">
+</div>
+
+</div>
+
+<video class="calibre" id="grandtour" style="display: none" title="Grand tour of calibre" controls preload="metadata">
+    <source type="video/mp4"   src="//download.calibre-ebook.com/videos/grand-tour.mp4" />
+    <source type="video/webm"  src="//download.calibre-ebook.com/videos/grand-tour.webm" />
+    <source type="video/flash" src="//download.calibre-ebook.com/videos/grand-tour.flv" />
+</video>
+
+        </div> <!-- end content -->
+        <ul id="footer">
+            <li>&copy; Kovid Goyal</li>
+            
+            <li><a type="application/rss+xml" href="/changelog.rss" title="RSS feed of the calibre changelog">Feed of new releases</a></li>
+            
+            <li class="last"><a href="https://cs-website.herokuapp.com/" title="Centresource Interactive Agency">Design by Centresource Interactive Agency</a></li>
+        </ul>
+    </div> <!-- end content-wrapper -->
+    <div id="sidebar">
+        
+
+    </div> <!-- end sidebar -->
+    
+    <div id="donate_box" style="display:none" data-location="loc_unknown">
+
+
+<style type="text/css"> 
+
+#donate_box {
+    z-index: 10001;
+    background-color: #eee;
+    color: #000;
+    padding: 10px;
+    width: 675px;
+    max-width: 80%;
+    border: 2px solid #666;
+    box-shadow:0 0 90px 5px #000;
+    border-radius: 6px;
+}
+
+#donate_box .close {
+    background-image:url(/resources/img/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:24px;
+    width:24px;
+}
+
+#donate_box h2 {
+    text-align: center;
+    font-size: xx-large;
+    margin-top: -0.2em;
+    color: #666;
+    background-color: #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.5em;
+}
+
+#donate_box h2:before {
+    content: "♥ ";
+    color: red;
+}
+#donate_box h2:after {
+    content: " ♥";
+    color: red;
+}
+#donate_box .donate_line {
+    background-color: rgb(217, 237, 247);
+    color: rgb(58, 135, 173);
+    border: solid 1px rgb(188, 232, 241);
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#donate_box .donate_line input {
+    border: solid 1px rgba(82, 168, 236, 0.8) !important;
+    padding: 5px 0px;
+    padding-left: 3px;
+    border-radius: 4px;
+    width: 5em;
+}
+
+#donate_box #donate_ok_button {
+    float: right;
+    margin-top: 12px;
+}
+
+#donate_box #donate_bt_button {
+    float: left;
+    text-decoration: none;
+    margin-top: 12px;
+    padding: 9px 2px;
+}
+
+#donate_box div {
+    margin-top: 0.5em;
+}
+
+#donate_box #donate_wait_msg  {
+    text-align: center;
+    margin-top: 1em;
+}
+
+#donate_box #donate_wait_msg img {
+    vertical-align: middle;
+}
+
+</style>
+
+
+
+    <h2>Thank you!</h2>
+    <p>Your support helps keep calibre development alive.</p>
+    <p class="donate_line">
+        Contribute 
+        <input name="price" type="number" value="10" step="1" min="1" />
+        <select id="donate-contribute-currency" required="required" data-val="USD">
+            <option value="USD">USD ($)</option>
+            <option value="INR">INR (₹)</option>
+        </select>
+    </p>
+    <p class="donate_radio">Amount:
+    <label><input type="radio" value="5" name="price_choice" /> <span>$5</span> </label>&nbsp;
+    <label><input type="radio" value="10" name="price_choice" checked="checked" /> <span>$10</span> </label>&nbsp;
+    <label><input type="radio" value="15" name="price_choice" /> <span>$15</span> </label>&nbsp;
+    <label><input type="radio" value="25" name="price_choice" /> <span>$25</span> </label>&nbsp;
+    <label><input type="radio" value="50" name="price_choice" /> <span>$50</span> </label>&nbsp;
+    <label><input type="radio" value="100" name="price_choice" /> <span>$100</span> </label>
+    </p>
+    <div id="donate_wait_msg"><img src="/resources/img/spinner.gif" alt="Working" />&nbsp;Contacting payment provider, please wait&hellip;</div>
+    <div id="donate_buttons">
+        <a id="donate_bt_button" href="https://www.patreon.com/kovidgoyal">
+            Become a calibre patron
+        </a>
+        <span id="donate_ok_button" tooltip="Pay with credit card or PayPal"><span style="color:red">PayPal unavailable!</span></span>
+    </div>
+
+
+
+<script src="https://www.paypalobjects.com/api/checkout.min.js" async="async" id="paypal-checkout-script"></script>
+<script type="text/javascript">
+
+(function() {
+
+    function change_currency() {
+        var curr = document.getElementById('donate-contribute-currency').value;
+        if (curr === document.getElementById('donate-contribute-currency').dataset.val) return; 
+        var mult = curr === 'INR' ? 20 : 1/20;
+        var symbol = curr === 'INR' ? '₹' : '$';
+        var text_input = document.querySelector('#donate_box input[name="price"]');
+        text_input.value = '' + Math.max(1, parseFloat(text_input.value) * mult);
+        document.querySelectorAll('#donate_box input[name="price_choice"').forEach(function(node) {
+            var rval = '' + (parseInt(node.value) * mult);
+            node.value = rval; 
+            node.parentNode.querySelector('span').textContent = symbol + rval;
+        });
+        document.getElementById('donate-contribute-currency').dataset.val = curr;
+    }
+    document.getElementById('donate-contribute-currency').addEventListener('change', change_currency);
+
+    var x = new XMLHttpRequest();
+    x.addEventListener('load', function() {
+        if (this.responseText === 'IND' || this.responseText === 'IN') {
+            document.getElementById('donate-contribute-currency').value = 'INR';
+            change_currency();
+        }
+    });
+    var cc = 'country-code';
+    x.open('GET', '/' + cc);
+    x.send();
+
+    function get_current_value() {
+        var ans = parseFloat($('#donate_box input[name="price"]').val());
+        if (isNaN(ans)) ans = 10;
+        return ans;
+    }
+
+    document.getElementById('paypal-checkout-script').onload = function() {
+        if (!window.paypal) return;
+        // See https://developer.paypal.com/docs/api/payments/#payment
+        var lang = document.documentElement.getAttribute('lang');
+        var locale = 'en_US';
+        var locale_map = {fr: 'fr_FR', de: 'de_DE', es: 'es_ES'}
+        if (locale_map[lang]) locale = locale_map[lang];
+        document.getElementById('donate_ok_button').textContent = '';
+        window.paypal.Button.render({
+            env: 'production',  // sandbox or production
+            client: {
+                sandbox: 'AcbgAJCOt1wze9Xwh8ijAEIQOck5Ykz_UhA3jTtfPjdcl5bOPIgwz7k2E33oJ_24QZe59_gQZIFnvr6n',
+                production: 'AbVJy1AqjPTncpdEQteWqVN-DdULUR9vtpvEKQMAof4SFoiuiuAACRd0fjNvvTsZPnQy3Enai5lmdm1A'
+            },
+            commit: true,
+            style: { tagline: false, label: 'pay'},
+            locale: locale,
+
+            payment: function(data, actions) {
+                $('#donate_box #donate_wait_msg').css('display', 'block');
+                $('#donate_box #donate_buttons').css('display', 'none');
+                return actions.payment.create({
+                    payment: {
+                        application_context: {
+                            shipping_preference: "NO_SHIPPING",
+                            locale: locale,
+                            brand_name: 'calibre - Kovid Goyal',
+                        },
+                        // Disabled as it causes an intrusive popup on the payment page.
+                        // note_to_payer: 'Thank you for supporting calibre!',
+                        transactions: [
+                            {
+                                amount: { 
+                                    total: get_current_value().toFixed(2), 
+                                    currency: document.getElementById('donate-contribute-currency').value
+                                },
+                                description: 'Support calibre development: ' + document.getElementById('donate_box').dataset.location,
+                            }
+                        ]
+                    }
+                });
+            },
+
+            onAuthorize: function(data, actions) {
+                return actions.payment.execute().then(function(response) {
+                    $('#donate_box .close').click();
+                    alert('Payment successful! Thank you for your support.');
+                });
+            },
+
+            onCancel: function(data, actions) {
+                $('#donate_box .close').click();
+            },
+
+            onError: function(data, actions) {
+                alert('Payment failed!');
+            }
+        }, '#donate_ok_button');
+    }
+
+    $(document).ready(function() {
+        $("[rel='#donate_box']").each(function() {
+            var loc = this.getAttribute('data-location');
+            if (!loc) loc = 'loc_unknown';
+            $(this).overlay({
+            expose: $("#donate_box").css('background-color'), // change to mask for jquery.tools >= 1.2
+
+            closeOnClick: false, // Prevent clicking outside from closing the dialog
+
+            onBeforeLoad: function() { 
+                $('#donate_box #donate_wait_msg').css('display', 'none'); 
+                $('#donate_box #donate_buttons').css('display', 'block'); 
+            },
+
+            onLoad: function() {
+                document.getElementById('donate_box').dataset.location = loc;
+                // Keep the box at a fixed position in the viewport (this can be removed when updating jquery.tools to 1.2 as it is the default)
+                $('#donate_box').css('position', 'fixed');
+            },
+
+            top: "5%"
+            });
+        });
+
+        var sync_from_radio = true;
+        // The change() function does not work on IE
+        $('#donate_box input[name="price_choice"]').click(function() {
+            if (sync_from_radio) $('#donate_box input[name="price"]').val(this.value);
+        });
+
+        $('#donate_box input[name="price"]').change(function() {
+            var val = get_current_value();
+            var found = null;
+            if (val % 1 === 0) {
+                // Number is an integer
+                var elem = $('#donate_box input[name="price_choice"][value="' + val.toFixed() + '"]');
+                if (elem.length > 0) {
+                    found = elem;
+                }
+            }
+            sync_from_radio = false;
+            if (found === null) {
+                $('#donate_box input[name="price_choice"]').each(function() { this.checked = false; });
+            } else { found[0].checked = true; }
+            sync_from_radio = true;
+                
+        });
+
+
+        $('#donate_box input[name="price"]').keypress(function(event) {
+            if (event.which == 13) $('#donate_box #donate_ok_button').click();
+        });
+    });
+
+})();
+
+</script>
+
+
+</div>
+    
+
+    <div id="language-box" tabindex="0">
+    <script>
+$(document).ready(function() { 
+        $("#primary-nav a[title]").tooltip({
+            position : 'bottom center',
+            }); 
+        $("#donate").tooltip({
+            position : 'bottom center',
+            }); 
+        $('#language-box').on('keydown', function(ev) {
+            if (ev.key === "Escape") close_language();
+        });
+        redirect_to_preferred_language();
+
+});
+
+function choose_language() {
+    document.getElementById('language-box').style.display = 'flex';
+    document.getElementById('language-box').focus();
+}
+
+function close_language() {
+    document.getElementById('language-box').style.display = 'none';
+}
+
+function change_language(lang_code, is_current, lang_href) {
+    if (document.getElementById("set-default-lang").checked) {
+        window.localStorage.setItem("calibre-web-ui-lang", lang_code);
+    }
+    if (is_current) return close_language();
+    window.location.href = lang_href;
+}
+
+function redirect_to_preferred_language() {
+    var languages = {};
+    var current_language = '';
+    document.querySelectorAll('#language-box [data-lang-code]').forEach(function(item) {
+        languages[item.dataset.langCode] = item.dataset.langHref;
+        if (item.dataset.langIsCurrent === 'true') current_language = item.dataset.langCode;
+    });
+    var preferred_lang = window.localStorage.getItem("calibre-web-ui-lang");
+    if (preferred_lang && current_language && preferred_lang !== current_language && languages[preferred_lang]) {
+        window.location.href = languages[preferred_lang];
+    }
+}
+    </script>
+<style>
+#language-box {
+    display: none;
+    position: absolute;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    justify-content: center;
+    overflow: auto;
+}
+
+#language-box h2 {
+    font-weight: bold;
+    font-size: 160%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+#language-box ul {
+    margin: auto;
+    display: grid;
+    max-width: 75vw;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+}
+
+#language-box li {
+    margin: 1em;
+}
+
+</style>
+        <div>
+            <h2>Choose the language you want</h2>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1ex">
+                <label><input type="checkbox" checked id="set-default-lang"> Save as default language</label>
+                <a href="javascript:close_language()">Cancel</a>
+            </div>
+            <ul>
+                
+                <li><a data-lang-code="pt_BR" data-lang-is-current="false" data-lang-href="/pt_BR" href="javascript: change_language('pt_BR', false, '/pt_BR')">Brazilian Portuguese (Português Brasileiro)</a></li>
+                
+                <li><a data-lang-code="da" data-lang-is-current="false" data-lang-href="/da" href="javascript: change_language('da', false, '/da')">Danish (Dansk)</a></li>
+                
+                <li><a data-lang-code="nl" data-lang-is-current="false" data-lang-href="/nl" href="javascript: change_language('nl', false, '/nl')">Dutch (Netherlands) (Nederlands (Nederland))</a></li>
+                
+                <li><a data-lang-code="en" data-lang-is-current="true" data-lang-href="/" href="javascript: change_language('en', true, '/')">English (English)</a></li>
+                
+                <li><a data-lang-code="et" data-lang-is-current="false" data-lang-href="/et" href="javascript: change_language('et', false, '/et')">Estonian (eesti)</a></li>
+                
+                <li><a data-lang-code="fr" data-lang-is-current="false" data-lang-href="/fr" href="javascript: change_language('fr', false, '/fr')">French (Français)</a></li>
+                
+                <li><a data-lang-code="it" data-lang-is-current="false" data-lang-href="/it" href="javascript: change_language('it', false, '/it')">Italian (Italiano)</a></li>
+                
+                <li><a data-lang-code="pt" data-lang-is-current="false" data-lang-href="/pt" href="javascript: change_language('pt', false, '/pt')">Portuguese (Português)</a></li>
+                
+                <li><a data-lang-code="ru" data-lang-is-current="false" data-lang-href="/ru" href="javascript: change_language('ru', false, '/ru')">Russian (русский)</a></li>
+                
+                <li><a data-lang-code="zh_CN" data-lang-is-current="false" data-lang-href="/zh_CN" href="javascript: change_language('zh_CN', false, '/zh_CN')">Simplified Chinese (简体中文)</a></li>
+                
+                <li><a data-lang-code="es" data-lang-is-current="false" data-lang-href="/es" href="javascript: change_language('es', false, '/es')">Spanish (Español)</a></li>
+                
+                <li><a data-lang-code="sv" data-lang-is-current="false" data-lang-href="/sv" href="javascript: change_language('sv', false, '/sv')">Swedish (Svenska)</a></li>
+                
+                <li><a data-lang-code="uk" data-lang-is-current="false" data-lang-href="/uk" href="javascript: change_language('uk', false, '/uk')">Ukrainian (українська)</a></li>
+                
+            </ul>
+        </div>
+    </div>
+<!-- end languages -->
+ 
+
+</div></body>
+</html>

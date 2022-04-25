@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Downloader Plus</title>
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./assets/vendors/aos/dist/aos.css/aos.css">
+  <link rel="stylesheet" href="./assets/vendors/owl.carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="./assets/vendors/owl.carousel/dist/assets/owl.theme.default.min.css">
+      <link rel="icon" type="image/png" href="/images/icon.png" sizes="128x128">
+
+    
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- endinject -->
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="main-panel masthead v4 overlapping">
+      <header id="header">
+        <div class="container">
+          <!-- partial:partials/_navbar.html -->
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href=""><img src="assets/images/svg/logo.svg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse justify-content-end collapse" id="navbarSupportedContent">
+              <div class="d-flex justify-content-between">
+                <img class="pl-3 d-block d-lg-none" src="./assets/images/svg/logo.svg" alt="">
+                <button class="d-inline-block d-lg-none navbar-toggler border-0 pt-2" type="button"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span>x</span>
+                </button>
+              </div>
+              <div class="d-lg-flex">
+                <!--<ul class="navbar-nav navbar-nav-right align-items-center pt-3 pt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link active" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/features.html">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/blog.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/contact.html">Contact</a>
+                  </li>
+                </ul>-->
+                                    <ul class="navbar-nav align-items-center pt-2 pt-lg-0">
+                  <li class="nav-item">
+                    <a href="login" class="btn btn-secondary font-weight-medium btn-up"
+                      type="submit">Login</a>
+                  </li>
+                  <li class="nav-item mt-2 mt-lg-0">
+                    <a href="register" class="btn btn-primary text-white font-weight-bold btn-up" type="submit">Sign up</a>
+                  </li>
+                </ul>
+                                </div>
+            </div>
+          </nav>
+          <!-- partial -->
+        </div>
+      </header>
+      <div class="banner-wrapper">
+        <div class="container">
+          <div class="row overflow-hidden">
+            <div class="col-12 col-md-5">
+              <h1 class="banner-head2 font-weight-normal display-1">Video Downloader Plus Extension</h1>
+              <p class="text-muted h4 font-weight-normal">No more delays to watch videos online, the evolution of downloaders has come, This extension will become your favorite video downloader.</p>
+              <div class="pt-4">
+                <div id="chrome_btn" style="display: none;">
+                  <a href="https://chrome.google.com/webstore/detail/hkdmdpdhfaamhgaojpelccmeehpfljgf" class="btn btn-primary font-weight-bold text-white btn-up" style=" padding: 13px 20px !important; " type="submit"><img class="img-fluid" src="./assets/images/ball.svg" alt="" style=" width: 33px; "><font style=" font-size: 18px; font-family: 'Karla', sans-serif !important; position: relative; top: 2px; ">&nbsp;&nbsp;&nbsp;Add to Chrome — It's Free</font></a>
+                  <div class="reviews-0-2-124">
+                    <div>
+                      <picture><img alt="[object Object]" class="t-loading-0-2-28 t-load-0-2-29 stars-0-2-125" data-src="" data-srcset="" sizes="" title="" src="assets/images/stars-five-black.png" srcset=""></picture><span class="reviewNum-0-2-126">155,416</span> Chrome Store reviews
+                      <p class="reviewText-0-2-127"><span class="reviewNum-0-2-126">1 million</span> members and counting</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="firefox_btn" style="display: none;">
+                  <a href="https://chrome.google.com/webstore/detail/hkdmdpdhfaamhgaojpelccmeehpfljgf" class="btn btn-primary font-weight-bold text-white btn-up" style=" padding: 13px 20px !important; " type="submit"><img class="img-fluid" src="./assets/images/ball.svg" alt="" style=" width: 33px; "><font style=" font-size: 18px; font-family: 'Karla', sans-serif !important; position: relative; top: 2px; ">&nbsp;&nbsp;&nbsp;Coming Soon..</font></a>
+                  <div class="reviews-0-2-124">
+                    <div>
+                      <picture><img alt="[object Object]" class="t-loading-0-2-28 t-load-0-2-29 stars-0-2-125" data-src="" data-srcset="" sizes="" title="" src="assets/images/stars-five-black.png" srcset=""></picture><span class="reviewNum-0-2-126">155,417</span> Firefox Store reviews
+                      <p class="reviewText-0-2-127"><span class="reviewNum-0-2-126">1 million</span> members and counting</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="opera_btn" style="display: none;">
+                  <a href="https://chrome.google.com/webstore/detail/hkdmdpdhfaamhgaojpelccmeehpfljgf" class="btn btn-primary font-weight-bold text-white btn-up" style=" padding: 13px 20px !important; " type="submit"><img class="img-fluid" src="./assets/images/ball.svg" alt="" style=" width: 33px; "><font style=" font-size: 18px; font-family: 'Karla', sans-serif !important; position: relative; top: 2px; ">&nbsp;&nbsp;&nbsp;Coming Soon..</font></a>
+                  <div class="reviews-0-2-124">
+                    <div>
+                      <picture><img alt="[object Object]" class="t-loading-0-2-28 t-load-0-2-29 stars-0-2-125" data-src="" data-srcset="" sizes="" title="" src="assets/images/stars-five-black.png" srcset=""></picture><span class="reviewNum-0-2-126">155,418</span> Opera Store reviews
+                      <p class="reviewText-0-2-127"><span class="reviewNum-0-2-126">1 million</span> members and counting</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="edge_btn" style="display: none;">
+                  <a href="https://microsoftedge.microsoft.com/addons/detail/cnbnfjhmdaflilgadocmfindhmcfpfnc" class="btn btn-primary font-weight-bold text-white btn-up" style=" padding: 13px 20px !important; " type="submit"><img class="img-fluid" src="./assets/images/edge-browser.svg" alt="" style=" width: 33px; "><font style=" font-size: 18px; font-family: 'Karla', sans-serif !important; position: relative; top: 2px; ">&nbsp;&nbsp;&nbsp;Add to Edge — It's Free</font></a>
+                  <div class="reviews-0-2-124">
+                    <div>
+                      <picture><img alt="[object Object]" class="t-loading-0-2-28 t-load-0-2-29 stars-0-2-125" data-src="" data-srcset="" sizes="" title="" src="assets/images/stars-five-black.png" srcset=""></picture><span class="reviewNum-0-2-126">155,419</span> Edge Store reviews
+                      <p class="reviewText-0-2-127"><span class="reviewNum-0-2-126">1 million</span> members and counting</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="safari_btn" style="display: none;">
+                  <a href="https://chrome.google.com/webstore/detail/hkdmdpdhfaamhgaojpelccmeehpfljgf" class="btn btn-primary font-weight-bold text-white btn-up" style=" padding: 13px 20px !important; " type="submit"><img class="img-fluid" src="./assets/images/ball.svg" alt="" style=" width: 33px; "><font style=" font-size: 18px; font-family: 'Karla', sans-serif !important; position: relative; top: 2px; ">&nbsp;&nbsp;&nbsp;Coming Soon..</font></a>
+                  <div class="reviews-0-2-124">
+                    <div>
+                      <picture><img alt="[object Object]" class="t-loading-0-2-28 t-load-0-2-29 stars-0-2-125" data-src="" data-srcset="" sizes="" title="" src="assets/images/stars-five-black.png" srcset=""></picture><span class="reviewNum-0-2-126">155,419</span> Safari Store reviews
+                      <p class="reviewText-0-2-127"><span class="reviewNum-0-2-126">1 million</span> members and counting</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Button trigger modal -->
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content"> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-left" class="col-12 col-md-7">
+              <img class="img-fluid mt-5 mt-md-0" src="./assets/images/svg/main.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-wrapper">
+      <div class="container">
+        <div data-aos="fade-up" class="partner-content-wrapper">
+          <h3 class="text-center display-2">Supported Websites</h3>
+          <h4 class="text-center text-muted font-weight-normal display-5">More than 1,000 sites are supported by Video Downloader</h4>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="d-flex justify-content-around">
+                <div class="image-box pb-4 pl-0">
+                  <img class="img-svg" src="./assets/images/youtube-grey.svg" alt="">
+                </div>
+                                                <div class="image-box pb-4">
+                  <img class="img-svg" src="./assets/images/vimeo-grey.svg" alt="">
+                </div>
+                     <div class="image-box pb-4">
+                  <img class="img-svg" src="./assets/images/dailymotion-grey.svg" alt="">
+                </div>
+                                    <div class="image-box pb-4">
+                  <img class="img-svg" src="./assets/images/vevo-grey.svg" alt="">
+                </div>
+
+             
+
+    
+                <div class="image-box pb-4 pr-0">
+                  <img class="img-svg" src="./assets/images/twitch-grey.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-up" class="feature-content-wrapper">
+          <h3 class="text-center display-2">Key Features of Video Downloader</h3>
+          <h4 class="text-center feature-sub-head text-muted font-weight-normal display-5">Some of Video Downloader Features.</h4>
+<div class="row">
+            <div class="col-sm-4 text-center display-2">
+              <img class="img-fluid" src="./assets/images/4k.png" alt="" style="
+    width: 77px;
+    position: relative;
+    left: 8px;
+    bottom: 15px;
+">
+              <h4 class="pl-3 display-4">4K Downloading
+
+</h4>
+              
+            </div>
+            <div class="col-sm-4 text-center display-2">
+              <img class="img-fluid" src="./assets/images/later.png" alt="" style="
+    width: 77px;
+    position: relative;
+    left: 8px;
+    bottom: 15px;
+">
+              <h4 class="pl-3 display-4">Save for Later
+</h4>
+              
+            </div>
+            <div class="col-sm-4 text-center display-2">
+              <img class="img-fluid" src="./assets/images/cast.png" alt="" style="
+    /* width: 78px; */
+    width: 77px;
+    position: relative;
+    left: 8px;
+    bottom: 15px;
+">
+              <h4 class="pl-3 display-4">Cast Videos
+
+</h4>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="features-explained gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-push-6 mobile-description">
+                <span class="label label-pro">Pro</span>
+                <h3 style="
+    width: 200px;
+">4K Downloading</h3>
+                <p>download video in 2k, 4k resolution and enjoy the high definition videos on your computer and tv and other devices.</p>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="feature-image">
+<!--                    <img src="images/feature-notifications_2x.png" alt="" class="img-responsive ">-->
+                    <img src="assets/images/svg/4k.svg" alt="" class="img-responsive ">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-push-6 mobile-description">
+                <span class="label label-pro">Pro</span>
+                <h3 style="
+    width: 200px;
+">Save for later</h3>
+                <p>Found a video that you want to save for later? with this feature easily save videos in your account so you can view it at any time.</p>
+            </div>
+
+            <div class="col-sm-6 col-sm-pull-6">
+                <div class="feature-image">
+<!--                    <img src="images/Save-For-Later.png" alt="" class="img-responsive">-->
+                    <img src="assets/images/svg/later.svg" alt="" class="img-responsive">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-push-6 mobile-description">
+                <span class="label label-pro">Pro</span>
+                <h3 style="
+    width: 187px;
+">Cast videos</h3>
+                <p>Basically allows you to easily cast videos that can be played using the Chromecast™ device and suggest you to play them directly by a simple click.</p>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="feature-image">
+<!--                    <img src="images/feature-history_2x.png" alt="">-->
+                    <img src="assets/images/svg/cast.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+      <h3 class="text-center display-2">Some of our users reviews </h3>
+      <h4 class="text-center feature-sub-head text-muted font-weight-normal display-5">What users are saying about us</h4>
+<div class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div class="text">
+                        <p>Excellent extension, does exactly as described and can download from many sites. The best part of this app is that you can play video in another window as well</p>
+                    </div>
+                    <div class="user clearfix">
+                        <div class="user-image">
+<!--                            <img src="images/6.jpg" alt="" class="img-circle" width="42" height="42">-->
+                            <img src="images/pricing/6.jpg" alt="" class="img-circle" width="42" height="42">
+                        </div>
+                        <div class="title">
+                            <h5>Max Smith</h5>
+                            <p>Chrome store reviewer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div class="text">
+                        <p>This is a perfect chrome extention for me cause its very easy to use. I can download anime and movies from any site i want. Very useful and convenient extention.</p>
+                    </div>
+                    <div class="user clearfix">
+                        <div class="user-image">
+<!--                            <img src="images/8.jpg" alt="" class="img-circle" width="42" height="42">-->
+                            <img src="/images/pricing/8.jpg" alt="" class="img-circle" width="42" height="42">
+                        </div>
+                        <div class="title">
+                            <h5>Anna Redford</h5>
+                            <p>Chrome store reviewer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div class="text">
+                        <p>I love how convenient this app is to be able to download videos from the web that standardly don't allow you to, it's great for my video library at home. Thank You.</p>
+                    </div>
+                    <div class="user clearfix">
+                        <div class="user-image">
+<!--                            <img src="images/5.jpg" alt="" class="img-circle" width="42" height="42">-->
+                            <img src="/images/pricing/5.jpg" alt="" class="img-circle" width="42" height="42">
+                        </div>
+                        <div class="title">
+                            <h5>George E. Homier</h5>
+                            <p>Chrome store reviewer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <div class="bottom-wrapper">
+
+      <div class="gradient-wrapper">
+        <div class="container">
+          <div class="signup-form-wrapper">
+            <div class="card py-3">
+              <div class="card-body">
+                <div class="row justify-content-between">
+                  <div class="col-sm-12 col-lg-7">
+                    <h2 class="font-weight-normal display-4"> Subscribe To Our Newsletter</h2>
+                    <h5 class="text-muted font-weight-light pt-2">Learn more about our products and services through
+                      newsletters</h5>
+                  </div>
+                  <div class="col-sm-12 col-lg-5 form-text-btn">
+                       <form method="POST" action="https://027a8493.sibforms.com/serve/MUIEAIj9KTiZqNQzGDpxUd28Y2V12bIWpsGe7nO6SpfbcIJO4YlZeQI-PLR5l-HUYY9e7qCghlvx5yGB-v2G5rGLAamxuFYijm8SKtD0l-uVWzpDztlurC7F8fQ7Lt9KoDe115_nbfpOgE6BSUEZFizh372beiJd9fuckZfg9f6hv3CnXz5VlJdyfAYbZX_hGVqAaAlY_nEGkUG9">
+                         <input class="form-input" id="EMAIL" name="EMAIL" type="email" placeholder="Email Address" data-required="true" required="" autocomplete="on"  oninvalid="this.setCustomValidity('Please input valid email address')"
+                           oninput="this.setCustomValidity('')" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$">
+
+                               
+                                  <input type="hidden" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabindex="-1" autocomplete="nope">
+                                      
+                                       <div class="emailoctopus-form-row-subscribe">
+                                         <input type="hidden" name="successRedirectUrl" form="sib-form" value="https://vidow.io/newsletter?thankyou">
+                                       <button class="btn btn-success form-btn font-weight-bold" type="submit">Get in Touch</button>
+                                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer padded">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="copy">© 2021 Vidow.io All rights reserved</p>
+
+            </div>
+            <div class="col-sm-8">
+                <ul class="nav nav-pills pull-right">
+
+                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/contact">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+          <!-- partial -->
+        </div>
+      </div>
+    </div>
+    <!-- main-panel ends -->
+    <!-- container-scroller ends -->
+    <div class="dark-overlay"></div>
+  </div>
+  <!-- inject:js -->
+  <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.6/form-embed.js">
+</script>
+  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="./assets/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="./assets/vendors/aos/dist/aos.js/aos.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="./assets/js/demo.js"></script>
+ <script src="./assets/js/browser-detection.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

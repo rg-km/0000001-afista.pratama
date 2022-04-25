@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ツイッター動画ダウンローダー | TWIVIDEO</title>
+<meta name="description" content="TWIVIDEOは、ツイッターから動画やGIFをダウンロードして保存するための無料オンラインツール、Twitter Video Downloaderです。" />
+<meta name="keywords" content="twivideo,twidouga,twitter保存ランキング,ツイッター動画ダウンロード,ツイッター動画保存," />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://twivideo.net/templates/style.css?ver=20220425183815" type="text/css">
+<link rel="icon" href="https://twivideo.net/templates/images/icon.ico">
+<link rel="apple-touch-icon" href="https://twivideo.net/templates/images/icon.png">
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179233186-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179233186-1');
+</script>
+
+</head>
+<body>
+<header>
+	<div class="position-relative">
+		<div class="position-absolute top-50 start-50 translate-middle site_title">
+			<h1><a href="https://twivideo.net/">TWIVIDEO</a></h1>
+		</div>
+		<div class="position-absolute top-50 end-0 translate-middle-y">
+			<div class="show_pop btn"><i class="fas fa-bars" style="color:#fff;"></i></div>
+		</div>
+
+
+	</div>
+</header>
+
+<div class="modal_pop">
+<div class="bg js-modal-close"></div>
+<div class="modal_pop_main">
+	  
+  <div class="card card-body modal_header_menu">
+	  <div class="h_m_title">メニュー</div>
+    
+  <ul>
+		<li>
+			 <a href="https://twivideo.net/"><span><i class="fas fa-caret-right"></i>保存</span></a>
+		</li>
+				<li>
+			 <a href="https://twivideo.net/?realtime"><span><i class="fas fa-caret-right"></i>リアルタイム</span></a>
+		</li>
+		<li>
+			 <a href="https://twivideo.net/?archives"><span><i class="fas fa-caret-right"></i>動画リスト</span></a>
+		</li>
+		<li>
+						<a href="https://twivideo.net/?login"><span><i class="fas fa-caret-right"></i>ログイン</span></a>			 
+					</li>
+		<li>
+			 <a href="https://twivideo.net/?contact"><span><i class="fas fa-caret-right"></i>お問い合わせ</span></a>
+		</li>
+	</ul>
+
+  </div>
+
+
+  </div>
+</div>
+<script>
+ $('.modal_pop').hide();
+ $('.show_pop').on('click',function(){
+     $('.modal_pop').fadeIn();
+ })
+ $('.js-modal-close').on('click',function(){
+     $('.modal_pop').fadeOut();
+ })
+ $(function(){
+  var pos = 300;
+  var header = $('header');
+  $(window).on('scroll', function(){
+    if($(this).scrollTop() < pos || $(this).scrollTop() < 500){
+      header.removeClass('hide');
+    }else{
+      header.addClass('hide');
+    }
+    pos = $(this).scrollTop();
+  });
+});
+</script>
+<div class="main_content">
+<div class="container">
+
+	<div class="content_area margin_area text_center">
+
+	<div id="twi_content">
+
+	<h2 class="home text_center">Twitterから動画をダウンロード！</h2>
+
+	<div class="input-group">
+	  <input type="text" class="form-control" id="add_url" value="" placeholder="ここにURLをペースト">
+	  <div class="input-group-append">
+	    <button class="btn btn-primary" id="url_submit" type="button">抜き出し</button>
+	  </div>
+	</div>
+
+
+	<div id="result_url"></div>
+
+	</div>
+	</div>
+
+
+<!-- ad space-->
+
+	<div class="content_area margin_area">
+	<div class="card" style="padding:20px;line-height:1.6;">
+
+<h3>TWIVIDEOとは？</h3>
+<div style="margin-bottom:10px;"> TWIVIDEOは、ツイッターから動画やGIFをダウンロードして保存するための無料オンラインツール「Twitter Video Downloader」です。</div>
+<div style="margin-bottom:18px;"> 公開されている全て動画は、ユーザーが当サイトを利用した際のものであり、当サイトではTwitter動画の収集は一切していません。</div>
+
+<h3>通報・削除のリクエスト</h3>
+<div style="margin-bottom:10px;">不正な動画リンクの通報・削除のリクエストは24時間以内に処理されます。該当するツイートや動画のURLを<a href="https://twivideo.net/?contact" style="color:red;text-decoration:underline;">メール</a>よりお知らせください。</div>
+<div style="margin-bottom:10px;">Twitterの動画が削除されると、このサイトの動画リンクも自動的に削除されます。リクエストで削除できるのは動画へのリンクのみです。</div>
+<div style="margin-bottom:18px;">全ての動画ファイルはTwitter社のサーバー上あり、当サイトではアップロードは一切していません。</div>
+
+<h3>ダウンロード方法</h3>
+<div style="margin-bottom:18px;">ページ上部にあるフォームに、動画が投稿されているツイートのURLをペーストして「抜き出し」ボタンを押してください。</div>
+
+<h3>保存方法</h3>
+<ul>
+<li style="margin-bottom:5px;"> iPhoneで動画を保存する場合は、動画のURLをコピーして「Clipbox+」などのアプリを使って保存。<br>
+最新iOSの場合は、動画リンクを長押しからダウンロードを選択して保存できます。</li>
+<li style="margin-bottom:5px;">Androidで動画を保存する場合は、動画を再生し右下「ダウンロード」を押して保存、または動画リンクを長押しして保存。</li>
+</ul>
+
+<h3>注意事項</h3>
+<ul>
+<li style="margin-bottom:5px;">ダウンロードした動画は（<a href="/?realtime">リアルタイム</a>、<a href="/?archives">動画リスト</a>）ページで公開されます。</li>
+<li style="margin-bottom:5px;">Youtube、ニコニコ動画、vimeo、Vineなど、Twitter以外の動画には対応していません。<br>
+<li style="margin-bottom:5px;">著作権者の許可なくアップロードされた動画をダウンロードすることは法律で禁じられています。<br>
+当サービスはあくまで個人で使用する範囲でご利用ください。</li>
+</ul>
+
+	</div>
+	</div>
+
+
+<!-- ad space-->
+
+</div>
+</div>
+
+<script>
+$("button#url_submit").click(function() {
+var elem_1 = $("#add_url").val();
+if(elem_1 == ''){return false;}
+$.ajax({
+	url : "./templates/ajax_twitteroauth.php",
+	type : "POST",
+	data : {url:elem_1},
+	error : function(XMLHttpRequest, textStatus, errorThrown) {
+	},
+	success : function(data) {
+		if(data == ''){
+
+		}else{
+			$('#result_url').html(data);
+		}
+		$("#add_url").val("");
+	}
+});
+});
+</script>
+
+<!--<div id="page_top"><a href="#"></a></div>-->
+
+<footer class="footer">
+		<div class="footer-inner">
+			<div class="footer_bottom">Copyright c <a href="https://twivideo.net/" title="TWIVIDEO" rel="home">TWIVIDEO </a>All Rights Reserved.<div class="porndude" style="margin-left:10px;"><a href="https://theporndude.com/ja" target="_blank"><img src="https://twivideo.net/templates/images/tpd-b-24px.png">ThePornDude</a></div></div>
+
+		</div>
+</footer>
+
+
+
+
+
+<script>
+jQuery(function() {
+    var pagetop = $('#page_top');   
+    pagetop.hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {  //Display after scrolling 100px
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+    pagetop.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500); //Move to the top in 0.5 seconds
+        return false;
+    });
+});
+
+        var $container = $('.grids');
+ 
+        $container.imagesLoaded(function() {
+            $container.masonry({
+                itemSelector: '.art_li',
+                gutterWidth: 0,
+                isAnimated: true,
+		isResizable: true
+            });
+        });
+
+$(window).on('load resize', function() {
+h = $(window).height();
+t = h - 226;
+$(".main_content").css("min-height", t + "px");
+});
+
+$(document).on("click", ".item_link", function(){
+var id = $(this).data("id");
+    $.ajax({
+        url : "https://twivideo.net/templates/ajax_link_click.php",
+        type : "POST",
+        data : {post_id:id},
+        error : function(XMLHttpRequest, textStatus, errorThrown) {
+        },
+        success : function(data) {
+        }
+    });
+});
+
+$(document).on("click", ".dist", function(){
+var id = $(this).data("id");
+    $.ajax({
+        url : "https://twivideo.net/templates/ajax_userdata.php",
+        type : "POST",
+        data : {post_id:id},
+        error : function(XMLHttpRequest, textStatus, errorThrown) {
+        },
+        success : function(data) {
+	if(data == 'on'){
+		$('#dist_'+id).css('background-color','rgba( 100, 100, 100, 0.6 )');
+	}else{
+		$('#dist_'+id).css('background-color','rgba( 242, 100, 230, 0.7 )');
+	}
+	
+        }
+    });
+});
+</script>
+
+<script> lazyload(); </script>
+
+</body>
+</html>

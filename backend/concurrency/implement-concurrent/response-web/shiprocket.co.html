@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>LaMee Naturals - Track your Order</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="https://sellon.kraftly.com/web/tr:w-300/push/images/1554209037_SR-Monogram.png" />
+<meta property="og:image:width" content="300" />
+<meta property="og:image:height" content="303" />
+
+<link rel="stylesheet" href="/post_order/css/font-awesome.min.css">
+<link rel="stylesheet" href="/post_order/css/bootstrap.min.css">
+<link rel="stylesheet" href="/post_order/css/style.css?v=4.1">
+<link rel="stylesheet" href="/post_order/css/responsive.css?v=4.1">
+<meta name="robots" content="noindex, nofollow">
+<style type="text/css">
+.secondary_header {
+    background: #000;
+}
+.bg-dark-blue.button{
+	background: #2960db;
+}
+.bg-dark-blue.button:hover{
+    background: #3360cc;	
+}
+.delievery_status .edd_date{
+	color: #2960db;
+}
+
+#edd_undelivered_date{
+    color: #2960db;
+}
+
+</style>		<style>
+    .stylish-input-group {
+        background: white !important;
+    }
+    .stylish-input-group .form-control{
+        border-right:0;
+        box-shadow:0 0 0;
+        border-color:#ccc;
+    }
+    .stylish-input-group button{
+        border:0;
+        background:transparent;
+    }
+    #track_icon{
+        width: 40px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    #track_form #search_label{
+        line-height: 58px;
+        margin-right: 14px;
+    }
+@media  (max-width: 767px){
+    #track_form #search_label{
+        line-height: normal;
+    }    
+}    
+</style>
+    </head>
+    <body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v5.0'
+            });
+            FB.Event.subscribe('send_to_messenger', function(e) {
+                // callback for events triggered by the plugin
+                if (e.event === "opt_in"){
+                    $(document).find('#fb-subscribed-message').text('You\'ve subscribed to tracking updates on Facebook Messenger');
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <div>
+            <header class="text-center">
+	<div class="primary_header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+										<a href="#" class="logo">
+																
+																					<img alt='LaMee Naturals' src="https://sellon.kraftly.com/srcdn/tr:f-auto,w-,h-50,c-maintain_ratio,pr-true/kr-shipmultichannel/220932/logos/1599409189_Shiprocket.jpg">
+																		</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</header>
+
+
+            <div class='content'>
+    <div id='main_cont' class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="post_order_wrap inner_page">    
+
+                    <div class="post_order_info">
+                        <span class="title"><img id='track_icon' src="/post_order/img/track_icon.png"><strong>Track status of your shipment</strong></span>
+                        <form id="track_form">
+                            <div id='search_label' class='pull-left'>
+                                <label class="pull-left">Search By:</label>
+                            </div>
+                            <ul class="radio_box clearfix pull-left col-lg-10 col-xs-12">
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" name="track_type" value="order_id" checked> <i class="radio_icon"></i> <span><strong>Order ID</strong></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" name="track_type" value="awb"> <i class="radio_icon"></i> <span><strong>AWB</strong></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="contact_input col-lg-6  col-xs-12">
+                                    <input type="text" class="form-control" id="track_id" name="track_id"  placeholder="Enter Order ID to search" required />
+                                    <strong class="error" id="error_text" style="display: none;margin:0px"></strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="contact_input col-lg-6  col-xs-12" id="mobile_input">
+                                    <input type="text" class="form-control" name="mobile"  placeholder="Enter Mobile number to search" required />
+                                    <strong class="error" id="error_text" style="display: none;margin:0px"></strong>
+                                </div>
+                            </div>    
+                            <div class="contact_input col-xs-12">   
+                                <button id="next" class="btn bg-dark-blue button submit_btn"> Submit </button>
+                            </div>
+
+                            <input type="hidden" name="company_id" value="220932">
+                        </form>
+                        <div style='clear:both;'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<input type="hidden" name="api_url" id="api_url" value="https://apiv2.shiprocket.in">
+            
+            <footer style="bottom:0;width:100%">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+		
+								<div class="pull-left contact_detail">
+																			</div>
+								<div class="pull-right foot_logo text-right">
+					<span>Powered By  <a target="_blank" href="https://www.shiprocket.in?utm_source=postship&amp;utm_medium=track_form&amp;utm_campaign=220932"><img src="/post_order/img/logo-v1-2.png" alt=""></a>  </span>   
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- GA script -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52128413-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-52128413-3', {
+	  'custom_map': {
+	  					'dimension1': 'company_id',
+	  					'dimension2': 'subdomain'
+	  				}
+	});
+
+			gtag('event', 'company_id_dimension', {'company_id': 220932 });
+	
+			gtag('event', 'subdomain_dimension', {'subdomain': 'trackzoobi'});
+	
+</script>
+	<script>
+		function menuLinkEvent(menuLink,company_id,channel_id){
+			gtag('event', 'Clicked on Header listing', {
+					  'event_category': 'Tracking Page',
+					   'event_label':["Menu : "+menuLink,"channelid_companyid:"+channel_id+'_'+company_id],
+					  'non_interaction': true
+
+			});
+		}
+		function bannerlink(bannerLink,company_id,channel_id){
+			gtag('event', 'Clicked on Advertisement', {
+					  'event_category': 'Tracking Page',
+					   'event_label': ["bannerlink : "+bannerLink,"channelid_companyid:"+channel_id+'_'+company_id],
+					  'non_interaction': true
+			});
+		}
+		function emailEvent()
+		{
+
+			gtag('event', 'Clicked on Email id ', {
+			  'event_category': 'Tracking Page',
+			   // 'event_label': "Clicked on Email id",
+			  'non_interaction': true
+			});
+
+		}
+				function phoneEvent()
+		{
+
+			gtag('event', 'Clicked on Phone number', {
+			  'event_category': 'Tracking Page',
+			   // 'event_label': "Clicked on Email id",
+			  'non_interaction': true
+			});
+
+		}
+	</script>
+<script type="text/javascript">
+	function set_body_height(){
+		if(!$('#main_cont').length) return;
+	    //fix body height
+	    height = $(window).height();
+	    if($('.primary_header').length){
+	    	height -= $('.primary_header').outerHeight();
+	    }
+
+	    if($('.secondary_header').length){
+	    	height -= $('.secondary_header').outerHeight();
+	    }
+
+	    if($('footer').length){
+	    	height -= $('footer').outerHeight();
+	    }
+	    $('#main_cont').css('min-height', height +'px');
+	}
+
+	$(document).ready(function(){
+	  
+
+		//hide it when clicking anywhere else except the popup and the trigger
+		$(document).on('click touch', function(event) {
+			 
+			 $('.navbar-collapse').removeClass('right_block');
+			 $(".navbar-collapse").attr("aria-expanded","true");
+			 $(".navbar-collapse").addClass("in");
+			 //$('body > div').addClass('content_overlay');
+			 
+			 $(".navbar-collapse").css("height" , "100%");
+		  	 if (!$(event.target).parents().addBack().is('.navbar')) {
+		     $('.navbar-collapse').addClass('right_block');
+		     $(".navbar-collapse").attr("aria-expanded","false");
+		     //$('body > div').removeClass('content_overlay');
+		  }
+		 
+		});
+		 
+		// Stop propagation to prevent hiding when clicking on it
+		$('.navbar-collapse').on('click touch', function(event) {
+		  event.stopPropagation();
+		});
+	});
+    
+
+	
+</script>
+        </div>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52128413-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-52128413-3', {
+      'custom_map': {
+                        'dimension1': 'company_id',
+                        'dimension2': 'subdomain'
+                    }
+    });
+        gtag('event', 'subdomain_dimension', {'subdomain': 'trackzoobi'});
+</script>
+<script type="text/javascript">
+
+    //fix body height
+    set_body_height();
+    var api_url = $('#api_url').val();
+    $("#track_form").submit(function (e) {
+        e.preventDefault();
+        $("#error_text").hide();
+         gtag('event', 'Clicked on submit (Track status)', {
+                      'event_category': 'Tracking Page',
+                       'event_label': $(this).serialize(),
+                      'non_interaction': true
+            });
+        $.ajax({
+             url: api_url + '/tracking-form-check',
+            type:'GET',
+            dataType: 'json',
+            data:$(this).serialize(),
+            success:function(result){
+                window.location.href = result.url;
+            },
+            error: function (data) {
+                var r = jQuery.parseJSON(data.responseText);
+                $("#error_text").html(r.message);
+                $("#error_text").show();
+            }
+        });
+    });
+
+     $(document).ready(function() {
+           $("input[name$='track_type']").click(function() {
+               var val = $(this).val();
+               $("#error_text").hide();
+               if(val == 'order_id'){
+                    $("input[name$='track_id']").attr("placeholder", "Enter Order ID to search");
+                    $("#mobile_input").show();
+                    $("input[name$='track_id']").val('');
+               }
+               if(val == 'awb'){
+                    $("input[name$='track_id']").attr("placeholder", "Enter AWB number to search");
+                    $("input[name$='mobile']").prop('required',false);
+                    $("#mobile_input").hide();
+                    $("input[name$='mobile']").val('');
+                    $("input[name$='track_id']").val('');
+               }
+              
+           });
+       });
+
+
+</script>
+    </body>
+</html>

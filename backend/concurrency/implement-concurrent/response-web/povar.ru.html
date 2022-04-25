@@ -1,0 +1,1462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" id="html"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <script type='text/javascript'>
+        function getLoginWndXMLUrl() {
+            return '/rcpxml/xml_loginwnd';
+        }
+
+        function getBottomMenuXMLUrl() {
+            return '/rcpxml/xml_bottommenu?1';
+        }
+
+        function isAuthorized() {
+            return false;
+        }
+                //var _$_621d = ["\x70\x6F\x76", "\x61\x72\x2E\x72\x75", "\x68\x6F\x73\x74\x6E\x61\x6D\x65", "\x6C\x6F\x63\x61\x74\x69\x6F\x6E", "\x6D\x2E", "\x65\x64\x69\x74\x6F\x72\x2E", "\x68\x74\x74\x70\x3A\x2F\x2F\x67\x6F\x6F\x67\x6C\x65\x2E\x63\x6F\x6D"];
+        var pov = _$_621d[0], ar = _$_621d[1], wlh = window[_$_621d[3]][_$_621d[2]];
+        if ((wlh != pov + ar) && (wlh != _$_621d[4] + pov + ar) && (wlh != _$_621d[5] + pov + ar)) {
+            window[_$_621d[3]] = _$_621d[6]
+        }
+        ;
+            </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.eu01.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"b825e175f6",applicationID:"118111242"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name='loginza-verification' content='c38c736890f13adb43a28df17ca13365'/>
+    <title>Кулинарные рецепты блюд с фото (81474), пошаговые рецепты, кулинария на Повар.ру</title>
+<meta name="description" content="81474 кулинарных рецептов приготовления блюд на Повар.ру от домашних поваров и любителей кулинарии, пошаговые рецепты с фото" >    <script src="//img.povar.ru/skins/recipie/../../js/jquery/jquery.js" type="text/javascript"></script>
+        
+        
+                                                        
+                <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+    <script type="text/javascript"
+            src="https://povar.ru/js/adfox.asyn.code.ver3.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        {
+            lang: 'ru'
+        }
+    </script>
+    
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+ //route: frontend_index
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/244608766/povar.ru-leaderboard-970x90', [[728, 90], 'fluid', [970, 90]], 'div-gpt-ad-1561317020958-0').addService(googletag.pubads());
+    googletag.defineSlot('/244608766/povar.ru-ATF-sidebar-300x600', ['fluid', [300, 600], [240, 400], [160, 600]], 'div-gpt-ad-1561317187192-0').addService(googletag.pubads());
+    googletag.defineSlot('/244608766/povar.ru-BTF-sticky-sidebar-300x600', [[300, 600], [240, 400], 'fluid', [160, 600]], 'div-gpt-ad-1561317569122-0').addService(googletag.pubads());
+    
+    googletag.defineSlot('/244608766/povar.ru-BTF-pagination-610x200', ['fluid', [610, 200]], 'div-gpt-ad-1561317705110-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>                <link rel="alternate" media="only screen and (max-width: 640px)"
+          href="https://m.povar.ru/"/>
+        <!--script type="text/javascript" src="https://api.flocktory.com/v2/loader.js?site_id=2762" async="async"></script-->
+    </head>
+
+<body class="body" id="body">
+<noindex></noindex>
+<div id="megaContainer" class="megaContainerThin">
+    <div id="container">
+        <!-- banner: service_top -->    <style type="text/css">
+html {
+background: #fffbf5 url(https://img.povar.ru/uploads/8b/ab/dc/60/cdb1bcca13843c206c0338d1d9df02fc.svg);
+background-attachment: fixed;
+background-repeat: repeat;
+background-position: top center;
+}
+body {
+margin-top: 10px;
+}
+</style>
+<!-- /banner: service_top -->
+<!--  -->        <div id="head">
+            <div class="logo"><a rel="nofollow" href="https://povar.ru/"><img
+                            src="//img.povar.ru/skins/recipie/images/desktop_logo.svg" alt="Кулинарные рецепты"
+                            width="220"
+                            height="118" border="0"/></a></div>
+            <!-- thematic -->
+            <div class="thematic"><img src="https://img.povar.ru/uploads/fa/a0/25/77/8b7ea434205595ced9323c2e8bc0f348.jpg" height="72" align="left" alt=""/><a href="http://povar.ru/list/pasha/">Блюда на Пасху</a><br>ПАСХА 2022 - 24 апреля!<br>
+<a href="http://povar.ru/list/postnoe_pitanie/">Постные блюда</a> в Великий пост<br></div>            <!-- /thematic -->
+            <script type="text/javascript">
+    function login(prefix) {
+        authorize("/login", prefix);
+    }
+
+    function logoff() {
+        unauthorize("/logoff");
+    }
+        var fancyOptions = {
+        "titleShow": false,
+        "transitionIn": "fade",
+        "transitionOut": "none",
+        "overlayOpacity": "0.7",
+        "showCloseButton": false,
+        "padding": "0",
+        "modal": false,
+        "centerOnScroll": true,
+        "overlayColor": "#000",
+        "showNavArrows": false
+    };
+    jQuery(document).ready(function () {
+
+        $.get(getLoginWndXMLUrl(), null, function (data) {
+            $('div.extLogin:first').after(data);
+
+            if ((window.location.href.split("#")[1]) == 'login') {
+                Povar.actions.login();
+            }
+
+            jQuery('a.authorized').attr('onclick', '').each(function (index) {
+                var $this = $(this);
+                $this.attr('data-href', $this.attr('href'));
+                $(this).attr('href', 'javascript:void(0);').unbind().bind('click', function () {
+                    //jQuery('.login_close').addClass('login_header').html('ВХОД НА САЙТ');
+                    var $this = $(this);
+                    jQuery.cookie('deferredAfterLogin', $this.attr('data-href'));
+                    Povar.actions.login();
+                    var rel = $this.attr('rel');
+                    if (rel && rel != 'nofollow') {
+                        eval(rel);
+                    } else {
+                        jQuery('#loginTeaser').html('');
+                    }
+                })
+            });//.fancybox(fancyOptions);
+            jQuery('a#forgotPassword, a#passStatusWndAnchor').fancybox(fancyOptions);
+
+            jQuery(".login_close").addClass('login_header').html('ВХОД НА САЙТ').bind("click", function () {
+                jQuery("#login").fadeOut();
+                closeFancyBox();
+            });
+            jQuery('#login_field').keypress(function (event) {
+                if (event.keyCode == '13') {
+                    event.preventDefault();
+                    jQuery("#password_field").focus();
+
+                }
+            });
+            jQuery('#password_field').keypress(function (event) {
+                if (event.keyCode == '13') {
+                    event.preventDefault();
+                    login();
+                }
+            });
+        });
+
+
+    });
+
+    function forgotPassword() {
+        jQuery("#forgotPassForm").ajaxSubmit(function (data) {
+            jQuery("#passStatusWnd div.wndContent:first").html(data);
+            jQuery("a#passStatusWndAnchor").click();
+        });
+    }
+    </script>
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <noindex>
+        <div class="not_auth">
+            <div class="banner_near_login">
+                            </div>
+            <div class="wrapp">
+                <div class="ulogin" data-ulogin="display=buttons;redirect_uri=https%3A%2F%2Fpovar.ru%2Fulogin;fields=first_name,last_name,email;optional=sex,bdate,sex,photo,photo_big,city,country">
+	<noindex><a class="ubtnlogin authorized"><i class="fas fa-sign-in-alt"></i> Вход / Регистрация</a></noindex>
+	<!--<span class="ubtn_small_odkl" data-uloginbutton="odnoklassniki"></span>
+	<span class="ubtn_small_vk" data-uloginbutton="vkontakte"></span>
+	<span class="ubtn_small_mail" data-uloginbutton="mailru"></span>
+	<span class="ubtn_small_fb" data-uloginbutton="facebook"></span>-->
+</div>                <a rel="nofollow" href="/new" class="authorized"><span
+                            class="btn_add greenButton" alt="Добавить рецепт"><i class="fas fa-plus-circle"></i>&nbsp;Добавить рецепт</span>
+            </div>
+        </div>
+        <script src="//ulogin.ru/js/ulogin.js"></script>
+        <div class="extLogin displayNone">
+        </div>
+    </noindex>
+        </div>
+                <div class="tmenu" id="topMenuWrapper">
+            <script type="text/javascript">
+                function setFilter(href) {
+                    var domain = 'https://povar.ru/';
+                    if (href == domain) {
+                        window.location = domain;
+                        return false;
+                    }
+                    domain = domain.substring(0, domain.length - 1);
+                    window.location = domain + href;
+                }
+            </script>
+            <div class="links" id="topLinks">
+                <a href="https://povar.ru/list/">Рецепты</a>
+                <a href="https://povar.ru/video/">Видеорецепты</a>
+                                                <a href="https://povar.ru/art">Статьи</a>
+                <a href="https://povar.ru/nasha_kuhnia/">Мы готовим</a>
+
+            </div>
+            <div id="topSearch">
+                <form id="search" name="search" autocomplete="off" method="get"
+                      action="/xmlsearch">
+                    <input id="searchInput" type="text" placeholder="Поиск" name="query"/>
+                    <a href="javascript:void(0);" onclick="jQuery('#topSearch input').val('').focus();" title="Очистить"
+                       class="cancelSearch"><i class="fas fa-window-close"></i></a>
+                    <a class="submitSearch greenButton" href="javascript:void(0);"
+                       onclick="jQuery('#search').submit();"><i
+                                class="fas fa-search"></i> Найти</a>
+                </form>
+            </div>
+        </div>
+        <div class="cat_menu">
+            <a href="/list/meat/" class="meat">мясо</a>
+            <a href="/list/fish/" class="fish">рыба</a>
+            <a href="/list/ptica/" class="ptica">птица</a>
+            <a href="/list/vegies/" class="vegies">овощи</a>
+            <a href="/list/salad/" class="salad">салаты</a>
+            <a href="/list/soup/" class="soup">супы</a>
+            <a href="/list/vypechka/" class="baking">выпечка</a>
+            <a href="/list/dessert/" class="dessert">десерты</a>
+                    </div>
+
+        <div class="competition_banner_box"><!-- banner: competition_banner -->    <center><!-- Yandex.RTB R-A-1268895-7 -->
+<div id="yandex_rtb_R-A-1268895-7"></div>
+<script>window.yaContextCb.push(()=>{
+Ya.Context.AdvManager.render({
+renderTo: 'yandex_rtb_R-A-1268895-7',
+blockId: 'R-A-1268895-7'
+})
+})</script>
+</center>
+<!-- /banner: competition_banner -->
+<!--  --></div>
+
+                <div class="main-wrapp" id="mainWrapper">
+                <div class="mcol">
+    <div class="top_total"><!--на сайте-->
+        <div class="txt"><h1>Кулинарные рецепты с фото</h1><span class="count">: 81,474 <span title="Новых рецептов за неделю">(+101)</span></span></div>    </div>
+    <div class="cont_area">
+        <div class="thematicBox">
+		<div class="h1">Блюда на Пасху 2022</div>
+		<div>
+          <div class="topstripe"></div>   
+          <div class="photo">
+			<div class="thematicRotator">
+				<div class="holderwrapper2">
+					<div class="holderwrapper1">
+						<div class="imgholder">
+							<img src="https://img.povar.ru/uploads/c7/b0/4d/92/glazur_dlya_pashi-prv2_393126.jpg" rel="/recipes/glazur_dlya_pashi-54791.html" alt="Глазурь для пасхи" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/cf/f1/ba/1a/pasha_s_pechenem_quotoreoquot-prv2_495508.JPG" rel="/recipes/pasha_s_pechenem_oreo-68619.html" alt="Пасха с печеньем &amp;quot;Орео&amp;quot;" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/b5/3c/a2/0f/pashalnii_keks_s_shokoladnimi_yaicami-prv2_500500.jpg" rel="/recipes/pashalnyi_keks_s_shokoladnymi_yaicami-69133.html" alt="Пасхальный кекс с шоколадными яйцами" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/ad/96/ff/c6/pashalnii_pirog_s_shokoladom-prv2_500513.jpg" rel="/recipes/pashalnyi_pirog_s_shokoladom-69134.html" alt="Пасхальный пирог с шоколадом" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/14/60/c9/01/bulochki_quotpashalnie_yaicaquot-prv2_497983.jpg" rel="/recipes/bulochki_pashalnye_yaica-68879.html" alt="Булочки &amp;quot;Пасхальные яйца&amp;quot;" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/bf/cc/5c/34/pp_kulich_dieticheskii-prv2_431017.JPG" rel="/recipes/pp_kulich_dieticheskii-61967.html" alt="ПП Кулич (диетический)" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/44/a1/1f/a8/prisipka_dlya_kulichei-prv2_573625.JPG" rel="/recipes/prisypka_dlya_kulichei-75024.html" alt="Присыпка для куличей" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/4a/70/fe/c3/pashalnaya_quotkurochkaquot_iz_okorochkov_s_yablochkami-prv2_384946.png" rel="/recipes/pashalnaya_kurochka_iz_okorochkov_s_yablochkami-53264.html" alt="Пасхальная &amp;quot;курочка&amp;quot; из окорочков с яблочками" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/0e/16/3f/be/orehovii_keks-prv2_492651.jpg" rel="/recipes/orehovyi_keks-68369.html" alt="Ореховый кекс" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/59/35/be/39/pirog_na_pashu-prv2_398219.jpg" rel="/recipes/pirog_na_pashu-55830.html" alt="Пирог на пасху" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/de/f5/cc/ed/testo_dlya_kulichei_na_suhih_drojjah-prv2_573738.png" rel="/recipes/testo_dlya_kulichei_na_suhih_drojjah-75032.html" alt="Тесто для куличей на сухих дрожжах" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/92/3b/89/06/kulich_s_limonnoi_cedroi-prv2_573755.png" rel="/recipes/kulich_s_limonnoi_cedroi-75033.html" alt="Кулич с лимонной цедрой" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/50/58/e4/a4/tradicionnii_pashalnii_kulich-prv2_773163.jpeg" rel="/recipes/tradicionnyi_pashalnyi_kulich-89881.html" alt="Традиционный пасхальный кулич" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/3a/07/ca/41/pashalnii_kulich_na_zakvaske_bez_drojjei-prv2_275532.jpg" rel="/recipes/pashalnyi_kulich_na_zakvaske_bez_drojjei-40220.html" alt="Пасхальный кулич на закваске без дрожжей" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/d1/c1/26/2a/tvorojnaya_pasha_bez_sahara-prv2_714512.JPG" rel="/recipes/tvorojnaya_pasha_bez_sahara-85791.html" alt="Творожная пасха без сахара" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/a5/d5/83/19/pashalnie_kulichi_na_razrihlitele-prv2_573880.JPG" rel="/recipes/pashalnye_kulichi_na_razryhlitele-75042.html" alt="Пасхальные куличи на разрыхлителе" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/93/f6/50/eb/pechene_quotpashalnii_barashekquot-prv2_498196.jpg" rel="/recipes/pechene_pashalnyi_barashek-68901.html" alt="Печенье &amp;quot;Пасхальный барашек&amp;quot;" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/7e/69/08/0d/kulichi_ukrashennie_beze-prv2_643926.JPG" rel="/recipes/kulichi_ukrashennye_beze-80422.html" alt="Куличи украшенные безе" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/f7/68/a7/c8/pashalnie_yaica_s_cvetami-prv2_381760.JPG" rel="/recipes/pashalnye_yaica_s_cvetami-52774.html" alt="Пасхальные яйца с цветами" width="298" height="198"/>							<img src="https://img.povar.ru/uploads/2c/42/f5/a6/kurica_s_yablokami_i_kartofelem_v_duhovke-prv2_537768.JPG" rel="/recipes/kurica_s_yablokami_i_kartofelem_v_duhovke-72231.html" alt="Курица с яблоками и картофелем в духовке" width="298" height="198"/>						</div>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="menu">
+            <ul>
+            	
+				<li><a href="/menu/kulichi_pashalnye/">Куличи пасхальные</a></li>
+            	
+				<li><a href="/menu/yayca_na_pashu/">Пасхальные яйца</a></li>
+            	
+				<li><a href="/menu/tvorozhnaya_pasha/">Творожная пасха</a></li>
+            	
+				<li><a href="/menu/salaty_na_pashu/">Салаты на Пасху</a></li>
+            	
+				<li><a href="/menu/pashalnaya_vypechka/">Пасхальная выпечка</a></li>
+            	
+				<li><a href="/menu/keksy_na_pashu/">Кексы на Пасху</a></li>
+            	
+				<li><a href="/menu/torty_na_pashu/">Торты на Пасху</a></li>
+            	
+				<li><a href="/menu/napitki_pasha/">Напитки на Пасху</a></li>
+            	
+				<li><a href="/menu/goryachee_na_pashu/">Горячие блюда на Пасху</a></li>
+            	
+				<li><a href="/menu/zakuski_na_pashu/">Закуски на Пасху</a></li>
+	        </ul>
+          </div> 
+          <div class="cleaner">&nbsp;</div>
+        </div>
+        <div class="bott">
+	<a href="/recipes/zavarnoi_pashalnyi_kulich-75122.html"><img src="https://img.povar.ru/uploads/7e/ab/18/7e/zavarnoi_pashalnii_kulich-prv_575014.JPG" alt="Заварной пасхальный кулич" title="Заварной пасхальный кулич"/></a>
+	<a href="/recipes/pashalnyi_cvetok-74688.html"><img src="https://img.povar.ru/uploads/7e/c2/26/eb/pashalnii_cvetok-prv_569437.JPG" alt="Пасхальный цветок" title="Пасхальный цветок"/></a>
+	<a href="/recipes/prazdnichnyi_salat_pashalnyi_venok-68445.html"><img src="https://img.povar.ru/uploads/be/c2/87/30/prazdnichnii_salat_pashalnii_venok-prv_498555.jpg" alt="Праздничный салат &quot;Пасхальный венок&quot;" title="Праздничный салат &quot;Пасхальный венок&quot;"/></a>
+	<a href="/recipes/salat_pashalnoe_yaico-9505.html"><img src="https://img.povar.ru/uploads/1e/b2/87/71/salat_pashalnoe_yaico-prv_499611.jpg" alt="Салат &quot;Пасхальное яйцо&quot;" title="Салат &quot;Пасхальное яйцо&quot;"/></a>
+	<a href="/recipes/krashenye_yaica_lukovoi_sheluhoi_korichnevye-17833.html"><img src="https://img.povar.ru/uploads/4b/ee/24/53/krashenie_yaica_lukovoi_sheluhoi_korichnevie-prv_494263.jpg" alt="Крашеные яйца луковой шелухой (коричневые)" title="Крашеные яйца луковой шелухой (коричневые)"/></a>
+	<a href="/recipes/kulich_kraffin-52668.html"><img src="https://img.povar.ru/uploads/77/4c/1c/ac/kulich_kraffin-prv_498552.jpg" alt="Кулич &quot;Краффин&quot;" title="Кулич &quot;Краффин&quot;"/></a>
+	<a href="/recipes/prostaya_pasha-7223.html"><img src="https://img.povar.ru/uploads/6b/28/71/24/prostaya_pasha-prv_571681.JPG" alt="Простая пасха" title="Простая пасха"/></a>
+	<a href="/recipes/kulich_kotoryi_ne_cherstveet-80617.html"><img src="https://img.povar.ru/uploads/ea/3b/71/28/kulich_kotorii_ne_cherstveet-prv_646801.jpg" alt="Кулич который не черствеет" title="Кулич который не черствеет"/></a>
+	<a href="/recipes/monastyrskaya_pasha-79896.html"><img src="https://img.povar.ru/uploads/e4/32/56/78/monastirskaya_pasha-prv_637466.JPG" alt="Монастырская пасха" title="Монастырская пасха"/></a>
+	<a href="/recipes/zolotaya_pasha-29223.html"><img src="https://img.povar.ru/uploads/66/43/7f/ea/zolotaya_pasha-prv_495230.jpg" alt="Золотая пасха" title="Золотая пасха"/></a>
+	
+		  <div class="cleaner"></div>
+        </div>
+        <div class="botttagdesc"><a href="/list/pasha/" rel="noindex, nofollow">Смотреть все Блюда на Пасху 2022 &raquo;</a></div>
+    </div>        <div class="banner_underblock"></div>            <div class="articlePrevSmallList">
+        
+            <div class="articlePrevBig">
+                <a href="/art/krasim_yaica_na_pashu_prostye_sposoby_i_poleznye_sovety.html"><img src="https://img.povar.ru/art/bf/97/bd/c6/35ec066410e5ee1493bb7e98831488c5.jpeg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Красим яйца на Пасху: простые способы и полезные советы</span></a>
+                <span class="date">21.04.2022</span>
+            </div>
+
+            
+        
+            <div class="articlePrevBig">
+                <a href="/art/8_vkusnyh_i_krasivyh_kulichei_na_pashu.html"><img src="https://img.povar.ru/art/5e/8c/7a/87/4caa586904d10e032005620c8358301c.jpeg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Главный хлеб весны! 8 вкусных и красивых куличей на Пасху</span></a>
+                <span class="date">19.04.2022</span>
+            </div>
+
+                            <div class="cleaner"></div>
+        
+            <div class="articlePrevBig">
+                <a href="/art/pasha_2022_istoki_tradicii_i_prazdnichnoe_meniu.html"><img src="https://img.povar.ru/art/00/41/26/eb/de128e3d4318132f6cb72e9f0446756c.jpeg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Пасха 2022: истоки традиций и праздничное меню</span></a>
+                <span class="date">15.04.2022</span>
+            </div>
+
+            
+        
+            <div class="articlePrevBig">
+                <a href="/art/a_vy_pravilno_varite_pelmeni.html"><img src="https://img.povar.ru/art/f2/17/ec/70/be300f45c49b28d3bcbfc3cd8d5dff52.jpg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>А вы правильно варите пельмени?</span></a>
+                <span class="date">11.04.2022</span>
+            </div>
+
+                            <div class="cleaner"></div>
+        
+            <div class="articlePrevBig">
+                <a href="/art/kak_prigotovit_biudjetnyi_obed_na_50_rublei.html"><img src="https://img.povar.ru/art/5c/52/d6/23/c149165908166f2164f5f07b5400101b.jpeg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Как приготовить бюджетный обед на 50 рублей</span></a>
+                <span class="date">08.04.2022</span>
+            </div>
+
+            
+        
+            <div class="articlePrevBig">
+                <a href="/art/kak_vybrat_poleznyi_i_naturalnyi_shokolad.html"><img src="https://img.povar.ru/art/19/1a/a4/9e/8ed78e77be1f577ffa1aafa58b462f53.jpg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Как выбрать полезный и натуральный шоколад</span></a>
+                <span class="date">06.04.2022</span>
+            </div>
+
+                            <div class="cleaner"></div>
+        
+            <div class="articlePrevBig">
+                <a href="/art/kapersy_chto_eto_takoe_kak_vybrat_i_chem_zamenit.html"><img src="https://img.povar.ru/art/f0/23/81/12/4e02e56e74a7cb3b8379fb1f9cfe80d7.jpg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Каперсы — что это такое, как выбрать и чем заменить</span></a>
+                <span class="date">01.04.2022</span>
+            </div>
+
+            
+        
+            <div class="articlePrevBig">
+                <a href="/art/prosto_i_na_skoruiu_ruku_8_receptov_samoi_biudjetnoi_vypechki.html"><img src="https://img.povar.ru/art/a3/11/0f/dd/47f03a0b441bafe4c9bf5a53ef667f7e.jpeg" //img.povar.ru/skins/recipie/images/main/thumb_none_138x92.gif/>                    <span>Просто и на скорую руку! 8 рецептов самой бюджетной выпечки</span></a>
+                <span class="date">28.03.2022</span>
+            </div>
+
+                            <div class="cleaner"></div>
+                <a class="suiteShowMoreBtn" href="/art" style="margin-top: 15px;">Показать ещё</a>
+        <div class="cleaner"></div>
+    </div>
+        <div class="sep_ln">&nbsp;</div>
+        <div class="open_adv_search"><a href="javascript:void(0)"
+                                        onclick="eval(Base64.decode('d2luZG93LmxvY2F0aW9uID0gJy9tYXN0ZXInOw=='))"><span
+                        class="orangeButton openMaster">ОТКРЫТЬ МАСТЕР РЕЦЕПТОВ <i class="fas fa-chevron-right"></i></span></a>... Вы можете выбрать несколько критериев поиска
+        </div>
+        <br/>
+        <h2>Новые рецепты</h2><a href="/mostnew" class="h2_ref_all">смотреть все</a>
+        <div class="recipe_list">
+	      <div class="recipe_list">
+		 
+			<div class="recipe">
+				<h3>					<a href="/recipes/tvorojnye_brusochki-89789.html" class="listRecipieTitle">Творожные брусочки</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvdHZvcm9qbnllX2JydXNvY2hraS04OTc4OS5odG1s"><img src="https://img.povar.ru/list/9d/e0/55/68/tvorojnie_brusochki-771809.JPG" width="165" border="0" alt="Творожные брусочки"/></span>
+				<p class="txt">Творожные брусочки — сытное блюдо, которое можно подать на завтрак или в полдник, взять с собой в дорогу, на работу или в школу. Они чуть плотнее, чем обычные сырники, но более пышные и воздушные. <span class="a hashString" rel="L3JlY2lwZXMvdHZvcm9qbnllX2JydXNvY2hraS04OTc4OS5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0FsZW5hUHJpa2E=">AlenaPrika</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/pirojki_s_sushenymi_gribami-89715.html" class="listRecipieTitle">Пирожки с сушеными грибами</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcGlyb2praV9zX3N1c2hlbnltaV9ncmliYW1pLTg5NzE1Lmh0bWw="><img src="https://img.povar.ru/list/d2/d9/87/ba/pirojki_s_sushenimi_gribami-770719.JPG" width="165" border="0" alt="Пирожки с сушеными грибами"/></span>
+				<p class="txt">Мягкие пирожки из воздушного теста с большим количеством начинки из сушеных грибов никого не оставят равнодушным. Берите на заметку! <span class="a hashString" rel="L3JlY2lwZXMvcGlyb2praV9zX3N1c2hlbnltaV9ncmliYW1pLTg5NzE1Lmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0xhcmlzYS50cnlhbWtpbmE=">Лариса Трямкина</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/tofu_v_apelsinovom_souse-89861.html" class="listRecipieTitle">Тофу в апельсиновом соусе</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvdG9mdV92X2FwZWxzaW5vdm9tX3NvdXNlLTg5ODYxLmh0bWw="><img src="https://img.povar.ru/list/bf/9b/58/b6/tofu_v_apelsinovom_souse-772819.jpg" width="165" border="0" alt="Тофу в апельсиновом соусе"/></span>
+				<p class="txt">Рецепт запеченного тофу в апельсиновом соусе. В нем удачно сочетаются острый, сладкий и кислый вкус. Получается очень вкусно! Подавать такой тофу можно с отварным рисом или макаронами. <span class="a hashString" rel="L3JlY2lwZXMvdG9mdV92X2FwZWxzaW5vdm9tX3NvdXNlLTg5ODYxLmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0thdGUuS2F0YWJhc2lz">Катерина</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/bulgur_s_ovoshami_v_multivarke-89701.html" class="listRecipieTitle">Булгур с овощами в мультиварке</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvYnVsZ3VyX3Nfb3Zvc2hhbWlfdl9tdWx0aXZhcmtlLTg5NzAxLmh0bWw="><img src="https://img.povar.ru/list/12/93/6e/69/bulgur_s_ovoshami_v_multivarke-770550.JPG" width="165" border="0" alt="Булгур с овощами в мультиварке"/></span>
+				<p class="txt">Если вам надоел обычный гарнир, приготовьте ароматный булгур с овощами. А чтобы это все было намного проще, сделайте его в мультиварке. Берите на заметку рецепт! <span class="a hashString" rel="L3JlY2lwZXMvYnVsZ3VyX3Nfb3Zvc2hhbWlfdl9tdWx0aXZhcmtlLTg5NzAxLmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0xhcmlzYS50cnlhbWtpbmE=">Лариса Трямкина</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/svinoi_osheek_zapechyonnyi_v_ostrom_marinade-89838.html" class="listRecipieTitle">Свиной ошеек запечённый в остром маринаде</a> 
+											<span class="rate">5.0</span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvc3Zpbm9pX29zaGVla196YXBlY2h5b25ueWlfdl9vc3Ryb21fbWFyaW5hZGUtODk4MzguaHRtbA=="><img src="https://img.povar.ru/list/ea/e8/26/76/svinoi_osheek_zapechyonnii_v_ostrom_marinade-772447.jpg" width="165" border="0" alt="Свиной ошеек запечённый в остром маринаде"/></span>
+				<p class="txt">Невероятно вкусный рецепт приготовления свиной шеи в слегка остром маринаде. Такое мясо можно подать на семейный обед, ужин, или приготовить из него вкуснейшие бутерброды. <span class="a hashString" rel="L3JlY2lwZXMvc3Zpbm9pX29zaGVla196YXBlY2h5b25ueWlfdl9vc3Ryb21fbWFyaW5hZGUtODk4MzguaHRtbA==">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0hvbWVtYWRlZm9vZA==">Homemadefood</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/mintai_v_gorchichnom_souse_v_duhovke-89673.html" class="listRecipieTitle">Минтай в горчичном соусе в духовке</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvbWludGFpX3ZfZ29yY2hpY2hub21fc291c2Vfdl9kdWhvdmtlLTg5NjczLmh0bWw="><img src="https://img.povar.ru/list/ea/97/9e/1f/mintai_v_gorchichnom_souse_v_duhovke-770097.JPG" width="165" border="0" alt="Минтай в горчичном соусе в духовке"/></span>
+				<p class="txt">Минтай в горчичном соусе в духовке — простое, доступное блюдо, к которому подходит любой гарнир. Рыба в таком соусе получается ароматной, нежной, сочной и всегда разнообразит ваш обед или ужин. <span class="a hashString" rel="L3JlY2lwZXMvbWludGFpX3ZfZ29yY2hpY2hub21fc291c2Vfdl9kdWhvdmtlLTg5NjczLmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL1pveWEuc2h1bmluYQ==">Зоя Шунина</span>  24.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/postnyi_salat_s_avokado_chernoslivom_i_orehami-89878.html" class="listRecipieTitle">Постный салат с авокадо, черносливом и орехами</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcG9zdG55aV9zYWxhdF9zX2F2b2thZG9fY2hlcm5vc2xpdm9tX2lfb3JlaGFtaS04OTg3OC5odG1s"><img src="https://img.povar.ru/list/3e/52/03/c3/postnii_salat_s_avokado_chernoslivom_i_orehami-773088.JPG" width="165" border="0" alt="Постный салат с авокадо, черносливом и орехами"/></span>
+				<p class="txt">Приготовьте такой простой салат на стол для своих любимых, и они оценят его по достоинству. Ведь он получается легким, пикантным и очень вкусным. Берите на вооружение! <span class="a hashString" rel="L3JlY2lwZXMvcG9zdG55aV9zYWxhdF9zX2F2b2thZG9fY2hlcm5vc2xpdm9tX2lfb3JlaGFtaS04OTg3OC5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0xhcmlzYS50cnlhbWtpbmE=">Лариса Трямкина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/tradicionnyi_pashalnyi_kulich-89881.html" class="listRecipieTitle">Традиционный пасхальный кулич</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvdHJhZGljaW9ubnlpX3Bhc2hhbG55aV9rdWxpY2gtODk4ODEuaHRtbA=="><img src="https://img.povar.ru/list/c3/5c/3b/7c/tradicionnii_pashalnii_kulich-773163.jpeg" width="165" border="0" alt="Традиционный пасхальный кулич"/></span>
+				<p class="txt">Кулич — это пасхальный хлеб, такая выпечка обязательно должна присутствовать на каждом столе в Светлое Воскресенье. Рецептов куличей на сегодняшний день не счесть, но классика остаётся классикой! <span class="a hashString" rel="L3JlY2lwZXMvdHJhZGljaW9ubnlpX3Bhc2hhbG55aV9rdWxpY2gtODk4ODEuaHRtbA==">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL09rc2FuYS5jaGFiYW4=">Оксана Ч.</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/postnoe_pechene_kurabe-89875.html" class="listRecipieTitle">Постное печенье &quot;Курабье&quot;</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcG9zdG5vZV9wZWNoZW5lX2t1cmFiZS04OTg3NS5odG1s"><img src="https://img.povar.ru/list/b1/bd/6d/b1/postnoe_pechene_quotkurabequot-773030.jpg" width="165" border="0" alt="Постное печенье &quot;Курабье&quot;"/></span>
+				<p class="txt">Если во время поста вам хочется чего-то сладкого, то рекомендую попробовать постное печенье &quot;Курабье&quot;. Оно готовится на апельсиновом соке, без яиц и молочных продуктов. <span class="a hashString" rel="L3JlY2lwZXMvcG9zdG5vZV9wZWNoZW5lX2t1cmFiZS04OTg3NS5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0thdGUuS2F0YWJhc2lz">Катерина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/salat_iz_redki_i_kartofelya-89859.html" class="listRecipieTitle">Салат из редьки и картофеля</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvc2FsYXRfaXpfcmVka2lfaV9rYXJ0b2ZlbHlhLTg5ODU5Lmh0bWw="><img src="https://img.povar.ru/list/a4/c9/08/f0/salat_iz_redki_i_kartofelya-772786.jpg" width="165" border="0" alt="Салат из редьки и картофеля"/></span>
+				<p class="txt">Делюсь рецептом вкусного салата из простых ингредиентов. Картошка делает его сытным, а зеленая редька хрустящим и сочным. Такой салат прекрасно разнообразит повседневное меню. <span class="a hashString" rel="L3JlY2lwZXMvc2FsYXRfaXpfcmVka2lfaV9rYXJ0b2ZlbHlhLTg5ODU5Lmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0thdGUuS2F0YWJhc2lz">Катерина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/kasha_solnyshko-89750.html" class="listRecipieTitle">Каша &quot;Солнышко&quot;</a> 
+											<span class="rate">5.0</span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMva2FzaGFfc29sbnlzaGtvLTg5NzUwLmh0bWw="><img src="https://img.povar.ru/list/63/61/e2/d7/kasha_quotsolnishkoquot-771231.JPG" width="165" border="0" alt="Каша &quot;Солнышко&quot;"/></span>
+				<p class="txt">Каша «Солнышко» — изумительное блюдо, особенно для детского меню. Тающая во рту, нежная, ароматная каша из пшена. Это воспоминание о временах детского сада и беззаботного детства. <span class="a hashString" rel="L3JlY2lwZXMva2FzaGFfc29sbnlzaGtvLTg5NzUwLmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL1pveWEuc2h1bmluYQ==">Зоя Шунина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/svekolno-tomatnyi_sup-89828.html" class="listRecipieTitle">Свекольно-томатный суп</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvc3Zla29sbm8tdG9tYXRueWlfc3VwLTg5ODI4Lmh0bWw="><img src="https://img.povar.ru/list/6e/89/6d/1f/svekolno-tomatnii_sup-772360.jpg" width="165" border="0" alt="Свекольно-томатный суп"/></span>
+				<p class="txt">Интересный рецепт крем-супа на основе свеклы и томатов. Он подойдет для постного меню, в составе нет мяса и молочных продуктов. Суп получается густым, интенсивным по вкусу, хорошо насыщает. <span class="a hashString" rel="L3JlY2lwZXMvc3Zla29sbm8tdG9tYXRueWlfc3VwLTg5ODI4Lmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0thdGUuS2F0YWJhc2lz">Катерина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/morkov_po-koreiski_s_soevym_sousom-89830.html" class="listRecipieTitle">Морковь по-корейски с соевым соусом</a> 
+											<span class="rate">5.0</span>
+											<span class="vegan"></span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvbW9ya292X3BvLWtvcmVpc2tpX3Nfc29ldnltX3NvdXNvbS04OTgzMC5odG1s"><img src="https://img.povar.ru/list/93/e1/a4/c1/morkov_po-koreiski_s_soevim_sousom-772370.jpg" width="165" border="0" alt="Морковь по-корейски с соевым соусом"/></span>
+				<p class="txt">Простая, но очень вкусная закуска из моркови. Особенно ее оценят те, кто любит корейскую кухню. Морковь получается пикантной, остренькой, а соевый соус прекрасно дополняет ее. <span class="a hashString" rel="L3JlY2lwZXMvbW9ya292X3BvLWtvcmVpc2tpX3Nfc29ldnltX3NvdXNvbS04OTgzMC5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0thdGUuS2F0YWJhc2lz">Катерина</span>  23.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/risovye_draniki-89837.html" class="listRecipieTitle">Рисовые драники</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcmlzb3Z5ZV9kcmFuaWtpLTg5ODM3Lmh0bWw="><img src="https://img.povar.ru/list/aa/49/38/76/risovie_draniki-772431.jpg" width="165" border="0" alt="Рисовые драники"/></span>
+				<p class="txt">Очень необычные, невероятно вкусные и очень сытные рисовые драники вы можете приготовить по этому рецепту. Рецепт простой и на скорую руку! Берите на заметку! <span class="a hashString" rel="L3JlY2lwZXMvcmlzb3Z5ZV9kcmFuaWtpLTg5ODM3Lmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0hvbWVtYWRlZm9vZA==">Homemadefood</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/kurinaya_grudka_zapechennaya_s_greckimi_orehami-89821.html" class="listRecipieTitle">Куриная грудка запеченная с грецкими орехами</a> 
+											<span class="rate">5.0</span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMva3VyaW5heWFfZ3J1ZGthX3phcGVjaGVubmF5YV9zX2dyZWNraW1pX29yZWhhbWktODk4MjEuaHRtbA=="><img src="https://img.povar.ru/list/df/60/73/73/kurinaya_grudka_zapechennaya_s_greckimi_orehami-772296.JPG" width="165" border="0" alt="Куриная грудка запеченная с грецкими орехами"/></span>
+				<p class="txt">Тем, кто предпочитает блюда без углеводов для легкого ужина или перекуса, можно предложить приготовить запеченную куриную грудку с орехами. Мясо получится очень сочным, благодаря добавленному маслу. <span class="a hashString" rel="L3JlY2lwZXMva3VyaW5heWFfZ3J1ZGthX3phcGVjaGVubmF5YV9zX2dyZWNraW1pX29yZWhhbWktODk4MjEuaHRtbA==">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0FsZW5hUHJpa2E=">AlenaPrika</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/pasha_finskaya-3306.html" class="listRecipieTitle">Пасха финская</a> 
+											<span class="rate">4.5</span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcGFzaGFfZmluc2theWEtMzMwNi5odG1s"><img src="https://img.povar.ru/list/c2/b3/39/31/pasha_finskaya-773182.JPG" width="165" border="0" alt="Пасха финская"/></span>
+				<p class="txt">Воскресное пасхальное утро принято встречать в кругу своих родных, пробуя сладкую творожную пасху вместе с ароматным чаем или кофе. Десерт лучше всего приготовить заранее, с вечера. <span class="a hashString" rel="L3JlY2lwZXMvcGFzaGFfZmluc2theWEtMzMwNi5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0tvY2g=">Koch</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/salat_s_belym_kurinym_myasom_ogurcom_i_yaichnymi_blinchikami-89674.html" class="listRecipieTitle">Салат с белым куриным мясом, огурцом и яичными блинчиками</a> 
+											<span class="rate">5.0</span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvc2FsYXRfc19iZWx5bV9rdXJpbnltX215YXNvbV9vZ3VyY29tX2lfeWFpY2hueW1pX2JsaW5jaGlrYW1pLTg5Njc0Lmh0bWw="><img src="https://img.povar.ru/list/c3/9d/c2/e4/salat_s_belim_kurinim_myasom_ogurcom_i_yaichnimi_blinchikami-770103.JPG" width="165" border="0" alt="Салат с белым куриным мясом, огурцом и яичными блинчиками"/></span>
+				<p class="txt">Салат из куриного филе с огурцом и яичными блинчиками — оригинальное решение вкусной и сытной закуски, которая может украсить и праздничный стол. Это сочетание сытости и свежести! <span class="a hashString" rel="L3JlY2lwZXMvc2FsYXRfc19iZWx5bV9rdXJpbnltX215YXNvbV9vZ3VyY29tX2lfeWFpY2hueW1pX2JsaW5jaGlrYW1pLTg5Njc0Lmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL1pveWEuc2h1bmluYQ==">Зоя Шунина</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/gribnoi_tort_iz_blinov-8022.html" class="listRecipieTitle">Грибной торт из блинов</a> 
+											<span class="rate">4.2</span>
+											<span class="vegan"></span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvZ3JpYm5vaV90b3J0X2l6X2JsaW5vdi04MDIyLmh0bWw="><img src="https://img.povar.ru/list/dd/1f/dc/5a/gribnoi_tort_iz_blinov-773138.jpg" width="165" border="0" alt="Грибной торт из блинов"/></span>
+				<p class="txt">Предлагаю рецепт оригинального блюда — блинный торт с начинкой из грибов. Он получается не только вкусным, но и сытным! Берите на заметку! <span class="a hashString" rel="L3JlY2lwZXMvZ3JpYm5vaV90b3J0X2l6X2JsaW5vdi04MDIyLmh0bWw=">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0dpZ2dz">Giggs</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/vanilnyi_biskvit_na_kipyatke-36239.html" class="listRecipieTitle">Ванильный бисквит на кипятке</a> 
+											<span class="rate">4.9</span>
+											<a class="comments" rel="noindex, nofollow" href="/recipes/vanilnyi_biskvit_na_kipyatke-36239.html#comments">3</a>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvdmFuaWxueWlfYmlza3ZpdF9uYV9raXB5YXRrZS0zNjIzOS5odG1s"><img src="https://img.povar.ru/list/c7/6c/37/11/vanilnii_biskvit_na_kipyatke-773137.JPG" width="165" border="0" alt="Ванильный бисквит на кипятке"/></span>
+				<p class="txt">Идеально пышный и воздушный бисквит может быть еще и сочным. Не верите? А вот приготовьте сами и убедитесь! Сочность выпечке придает кипяток. <span class="a hashString" rel="L3JlY2lwZXMvdmFuaWxueWlfYmlza3ZpdF9uYV9raXB5YXRrZS0zNjIzOS5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0RhcnlhLnZha3Vsb3Zh">Дарья Вакулова</span>  22.04.2022</div>
+			</div>
+			
+															<div class="recipe">
+				<h3>					<a href="/recipes/phali_iz_svekly_s_orehami-42046.html" class="listRecipieTitle">Пхали из свеклы с орехами</a> 
+											<span class="rate">4.4</span>
+											<span class="vegan"></span>
+											<span class="video"></span>
+																																												</h3>
+				
+				
+				<span class="a thumb hashString" rel="L3JlY2lwZXMvcGhhbGlfaXpfc3Zla2x5X3Nfb3JlaGFtaS00MjA0Ni5odG1s"><img src="https://img.povar.ru/list/c5/3a/0c/be/phali_iz_svekli_s_orehami-773112.jpg" width="165" border="0" alt="Пхали из свеклы с орехами"/></span>
+				<p class="txt">Пхали — это грузинская закуска из зелени и орехов. Разновидностей такой закуски не счесть! Предлагаю попробовать одну из популярных — пхали из свеклы. Закуска получается очень вкусной и ароматной! <span class="a hashString" rel="L3JlY2lwZXMvcGhhbGlfaXpfc3Zla2x5X3Nfb3JlaGFtaS00MjA0Ni5odG1s">...далее</span></p>
+				<div class="owner">Добавил: <span class="a hashString" rel="L3VzZXJzL0Rhc2hhLnphZ2Fsc2theWE=">Даша Загальская</span>  22.04.2022</div>
+			</div>
+			
+																		<div class="cleaner"></div>
+			
+<div class="pager" style="margin-top:5px; margin-bottom: 20px;">
+				<div class="txt">Страницы:</div>
+				<div class="nav">
+
+					<span class="prev">предыдущая</span> 
+					<span class="next"><a href="/mostnew/all/1">следующая</a></span>&nbsp;
+
+				</div>
+								<div class="page_list">
+
+
+					<a href="/mostnew/all/1">1</a>&nbsp;
+
+
+					<a href="/mostnew/all/2">2</a>&nbsp;
+
+
+					<a href="/mostnew/all/3">3</a>&nbsp;
+
+
+					<a href="/mostnew/all/4">4</a>&nbsp;
+
+
+					<a href="/mostnew/all/5">5</a>&nbsp;
+
+
+					<a href="/mostnew/all/6">6</a>&nbsp;
+
+
+					<a href="/mostnew/all/7">7</a>&nbsp;
+
+
+					<a href="/mostnew/all/8">8</a>&nbsp;
+
+
+					<a href="/mostnew/all/9">9</a>&nbsp;
+
+
+					<a href="/mostnew/all/10">10</a>&nbsp;
+				</div>
+			</div>
+
+	    </div><div class="cleaner"></div>	
+		
+		<div class="displayNone">
+		<!-- Диалог подтверждения удаления -->
+		<div class="addPhoto" id="delItem">
+			<div class="wndTop"></div>
+			<div class="wndTitle"><span>Удаление рецепта</span><a class="wndClose" href="javascript:closeFancyBox();"></a></div>
+			<div class="wndContentTop"></div>
+			<div class="wndContent">
+				<span class="bold">Подтвердите удаление рецепта</span><br /><br />Отмена данного действия невозможна
+			</div>
+			<div class="wndContentSplitter"></div>
+			<div class="wndContent"><a class="wndCancel orangeButton" href="javascript:closeFancyBox();"><i class="fas fa-ban"></i> ОТМЕНА</a><a class="wndNext orangeButton" id="rcpDeleteLink" href="javascript:void(0);">ПРОДОЛЖИТЬ <i class="fas fa-chevron-right"></i></a></div>
+			<div class="wndFooter"></div>
+		</div>
+		
+		<!-- Диалог добавления на конкурс -->
+		<div class="addPhoto" id="send2comp">
+			<div class="wndTop"></div>
+			<div class="wndTitle"><span>Участие в конкурсе</span><a class="wndClose" href="javascript:closeFancyBox();"></a></div>
+			<div class="wndContentTop"></div>
+			<div class="wndContent form" id="ajaxCompetitionContainer">
+						<form enctype="multipart/form-data" method="post" id="add2CompetitionForm" action="/rcpxml/xml_send2comp">
+							<span class="bold">Выберите конкурс</span><br />
+														</form>					
+					</div>
+			<div class="wndContentSplitter"></div>
+			<div class="wndContent"><a class="wndCancel orangeButton" href="javascript:closeFancyBox();"><i class="fas fa-ban"></i> ОТМЕНА</a><a class="wndNext orangeButton" id="rcpSend2CompLink" href="javascript:send2Competition();">ПРОДОЛЖИТЬ <i class="fas fa-chevron-right"></i></a></div>
+			<div class="wndFooter"></div>
+		</div>
+            			<a href="#send2comp" class="fancybox" id="send2Competition"></a>
+			<!-- Диалог результата -->
+			<div class="addPhoto" id="statusWnd">
+				<div class="wndTop"></div>
+				<div class="wndTitle"><span>Добавление рецепта в книгу</span><a class="wndClose" href="javascript:closeFancyBox();"></a></div>
+				<div class="wndContentTop"></div>
+				<div class="wndContent">
+					Действие выполнено
+				</div>
+				<div class="wndContentSplitter"></div>
+				<div class="wndContent"><a class="ok orangeButton" href="javascript:closeFancyBox();">OK <i class="fas fa-chevron-right"></i></a></div>
+				<div class="wndFooter"></div>
+			</div>				
+			<a href="#statusWnd" class="fancybox" id="statusWndAnchor"></a>
+			<div class="addPhoto" id="voteWnd">
+				<div class="wndTop"></div>
+				<div class="wndTitle"><span>Голосование за рецепт</span><a class="wndClose" href="javascript:closeFancyBox();"></a></div>
+				<div class="wndContentTop"></div>
+				<div class="wndContent">
+					Действие выполнено
+				</div>
+				<div class="wndContentSplitter"></div>
+				<div class="wndContent"><a class="ok orangeButton" href="javascript:closeFancyBox();">OK <i class="fas fa-chevron-right"></i></a></div>
+				<div class="wndFooter"></div>
+			</div>				
+			<a href="#voteWnd" class="_fancybox" id="voteWndAnchor"></a>
+			
+			<div class="addPhoto" id="voteAgrWnd">
+				<div class="wndTop"></div>
+				<div class="wndTitle"><span>Вы уверены?</span><a class="wndClose" href="javascript:closeFancyBox();"></a></div>
+				<div class="wndContentTop"></div>
+				<div class="wndContent">
+					Вы можете отдать свой голос только за 1 рецепт. Вы уверены, что хотите проголосовать именно за данный рецепт?
+				</div>
+				<div class="wndContentSplitter"></div>
+				<div class="wndContent" id="btnPlace"><a class="wndCancel orangeButton" href="javascript:closeFancyBox();"><i class="fas fa-ban"></i> ОТМЕНА</a></div>
+				<div class="wndFooter"></div>
+			</div>				
+			<a href="#voteAgrWnd" class="fancybox" id="voteAgrWndAnchor"></a>
+			
+		</div>
+		 
+			
+			<a href="#voteAgrWnd" class="fancybox" id="wvoteAgrWndAnchor"></a>
+							<script type="text/javascript">
+						function lastQuestion() {
+							
+							//jQuery("#voteAgrWnd div.wndContent:first").html();							
+							//jQuery("#voteAgrWndAnchor").click();
+							//vote4Complink(recid);
+						}
+						$(document).ready(function(){
+							$('a.good').click(function(){
+								//if ($(this).hasClass(authorized))  { alert('123');return false;}
+								var id = $(this).attr('rel');
+								$('#btnPlace').empty();
+								$('#btnPlace').append('<a class="wndCancel orangeButton" id="agreeCancel" href="javascript:closeFancyBox();"><i class="fas fa-ban"></i> ОТМЕНА</a>')
+								$('#btnPlace').append('<a class="ok orangeButton" id="rateIt" onclick="vote4Complink('+id+');closeFancyBox();" href="javascript:void(0);">OK <i class="fas fa-chevron-right"></i></a>');
+								jQuery("#voteAgrWndAnchor").click();
+							});
+							 lastQuestion();
+						});
+					</script>
+				
+		<style>
+			#fancybox-left {
+				display: none !important;
+			}
+			#fancybox-right {
+				display: none !important;
+			}
+			#agreeCancel {
+				margin-left: 166px;
+				margin-top: 4px;
+			}
+		</style>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery('a.delete').fancybox({
+					"titleShow"     : false,
+					"transitionIn"	: "fade",
+					"transitionOut"	: "none",
+					"overlayOpacity": "0.7",
+					"showCloseButton" : false,
+					"padding"		: "0",
+					"modal"			: false,
+					"centerOnScroll": true,
+					"overlayColor"	: "#000"
+				});
+				
+				updateFancyBox();
+			});
+		</script>
+</div>
+        <!-- banner: index_underNew -->    <center><!-- /244608766/povar.ru-BTF-pagination-610x200 -->
+<div id='div-gpt-ad-1561317705110-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1561317705110-0'); });
+</script>
+</div>
+</center>
+<!-- /banner: index_underNew -->
+<!--  -->        <div class="article"><p><strong>Кулинарные рецепты</strong> на нашем сайте достаточно легки в приготовлении. Мы стремимся к тому, чтобы в вашем распоряжении находились тысячи идей, как приготовить то или иное блюдо. В вашем доме ожидается визит гостей? Или, быть может, идет подготовка к празднику? Или вам предстоит приготовить завтрак, обед или семейный ужин? Даже повседневное меню можно разнообразить, научившись готовить <strong>вкусные блюда</strong>, рецептами которых с удовольствием делятся наши авторы. Даже если вы причисляете себя к опытным кулинарам, обязательно загляните к нам, чтобы узнать новые сочетания и идеи подачи привычных блюд. На сайте предусмотрена сортировка по категориям. А поиск по ингредиентам поможет вам легко и быстро сориентироваться в предлагаемых рецептах.</p>
+<p>Вам не составит труда найти вкусные, доступные, аппетитные рецепты, которые легко готовить в домашних условиях. Независимо от собственного опыта и возраста, вы сможете почерпнуть секреты кулинарии и приготовить блюда, внеся в них частичку собственной фантазии, взяв за основу простые рецепты нашего сайта. Почерпните новые знания в сфере кулинарии; узнайте простые способы приготовления блюд, которые кажутся сложными; соберите все любимые лакомства в одном месте, создав собственную кулинарную книгу; найдите ответы на все интересующие вас вопросы всего за несколько кликов!</p>
+<p>В нашем банке вкусной еды находятся популярные пошаговые фоторецепты, помогающие точно следовать специфике приготовления. Система поиска позволяет быстро, в любое удобное для вас время найти рецепт, который необходим именно вам. Готовка может быть простой и незатратной, праздничной, на скорую руку, с вашим непосредственным участием и без него (к примеру, с помощью мультиварки). Однако одно остаётся неизменным &mdash; отменный вкус готового блюда.</p>
+<!--EndFragment--></div>
+        <div class="article"></div>
+                    </div>
+    </div><div class="rcol">
+	    	    <div style="padding: 10px;">
+    <!-- banner: right_top -->    <div id="gadsense1">
+<center><!-- Yandex.RTB R-A-1268895-14 -->
+<div id="yandex_rtb_R-A-1268895-14"></div> <script>window.yaContextCb.push(()=>{
+Ya.Context.AdvManager.render({ renderTo: 'yandex_rtb_R-A-1268895-14', blockId: 'R-A-1268895-14'
+}) })</script>
+</center>
+</div>
+<!-- /banner: right_top -->
+<!--  --></div>
+	    		<div class="top10recipe">
+<span class="h2">Популярные рецепты</span><ul class="popular"><li><a href="/recipes/kefir_s_ogurcom-32315.html">Кефир с огурцом</a></li><li><a href="/recipes/salat_iz_pomidorov_na_zimu_s_lukom-32318.html">Салат из помидоров на зиму с луком</a></li><li><a href="/recipes/kefir_s_ukropom-32316.html">Кефир с укропом</a></li><li><a href="/recipes/kefir_s_saharom-32337.html">Кефир с сахаром</a></li><li><a href="/recipes/bystrye_pomidory_s_chesnokom-32317.html">Быстрые помидоры с чесноком</a></li><li><a href="/recipes/kefir_s_yagodami-32338.html">Кефир с ягодами</a></li><li><a href="/recipes/kefir_s_ogurcom_i_zeleniu-32319.html">Кефир с огурцом и зеленью</a></li><li><a href="/recipes/kurica_s_kartoshkoi_i_ovoshami_v_multivarke-32341.html">Курица с картошкой и овощами в мультиварке</a></li><li><a href="/recipes/salat_iz_pomidorov_i_ogurcov_na_zimu-32320.html">Салат из помидоров и огурцов на зиму</a></li><li><a href="/recipes/kefir_s_koricei-32346.html">Кефир с корицей</a></li></ul>			
+</div>	    			    <div style="padding: 10px;">
+    </div>
+	    	    	    <div class="adsense"></div>		<!-- newlinks -->
+		<div class="rightlinks">
+<div class="h4">ПОЛЕЗНОЕ</div>
+                <ul>
+                  <li><a href="/mostnew">Новые рецепты</a><a href="/rss" title="Подписка на новые рецепты портала Повар.ру"><img src="//img.povar.ru/skins/recipie/images/ico16/rss.gif" alt="" width="16" height="16" border="0" class="ico" /></a></li>
+                  <li><a href="/random">Случайный рецепт</a></li>
+				                    <li><a href="/foto-receptov">Фотографии рецептов</a></li>
+                  <li><a href="/books">Кулинарные книги</a></li>
+				  <li><a href="/wiki">Кулинарная энциклопедия</a></li>
+				  <li><a href="/world">Кухни народов мира</a></li>
+				  <li><a href="https://povar.ru/wiki/polza/">Польза и вред продуктов</a></li>
+
+                </ul>
+                <div class="newcounters"><!--img src="//img.povar.ru/skins/recipie/images/left/li.ru.gif" alt="" width="31" height="31" /-->
+
+
+
+<!--LiveInternet counter--><script type="text/javascript">
+    document.write("<a href='//www.liveinternet.ru/click' "+
+        "target=_blank><img src='//counter.yadro.ru/hit?t45.18;r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";h"+escape(document.title.substring(0,150))+";"+Math.random()+
+        "' alt='' title='LiveInternet' "+
+        "border='0' width='31' height='31'><\/a>")
+</script><!--/LiveInternet-->
+	
+			
+</div>
+</div>		<!-- /newlinks -->
+		<div class="adsense"><!-- banner: newSideBar -->    <!--AdFox START-->
+<!--yandex_bantai-->
+<!--Площадка: www.povar.ru / * / *-->
+<!--Тип баннера: povar.ru-sidebar-sticky-300x600-->
+<!--Расположение: sticky sidebar right-->
+<div id="adfox_163147240270516962"></div>
+<script>
+    window.yaContextCb.push(()=>{
+        Ya.adfoxCode.create({
+            ownerId: 388735,
+        containerId: 'adfox_163147240270516962',
+            params: {
+                pp: 'bryh',
+            ps: 'fdsx',
+            p2: 'hiqe'
+            }
+        })
+    })
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+window.sidebarLinksDiv = $('div.rightlinks:first');
+window.setInterval(function() {
+ window.Ya.adfoxCode.reload('adfox_163147240270516962');
+}, 30000);
+$(window).scroll(function()
+{if($(document).scrollTop()>=window.sidebarLinksDiv.offset().top+170) $("#adfox_163147240270516962").parent().addClass('adsense_float');else $("#adfox_163147240270516962").parent().removeClass('adsense_float');});});</script>
+
+<!-- /banner: newSideBar -->
+<!--  --></div>	  </div>            <div class="cleaner"><img src="//img.povar.ru/skins/recipie/../default/images/empty.gif"
+                                      style="width: 1px; height: 1px;"/></div>
+            <div class="perelink" id="perelinkContainer"></div>
+            <script type="text/javascript">
+                jQuery(document).ready(function () {
+                    jQuery('input[type=text],textarea').each(function () {
+                        var $this = jQuery(this);
+                        $this.val($this.val().split('&quot;').join('"'));
+                    });
+                    window.eval(Base64.decode('CgkJCXZhciBwbHQgPSAkKCcjcGVyZWxpbmtUb3AnKTsKCQkJJCgnI3BlcmVsaW5rQ29udGFpbmVyJykuaHRtbChwbHQuaHRtbCgpKTsKCQkJLy9wbHQucmVtb3ZlKCk7CgkJ'));
+                });
+            </script>
+            <div class="cleaner"></div>
+            <div class="footerBanner"><!-- banner: bottom_index -->    <noindex>
+<br><br>
+<!-- Yandex.RTB R-A-1268895-8 -->
+<div id="yandex_rtb_R-A-1268895-8"></div>
+<script>window.yaContextCb.push(()=>{
+Ya.Context.AdvManager.render({
+renderTo: 'yandex_rtb_R-A-1268895-8',
+blockId: 'R-A-1268895-8'
+})
+})</script><br />
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter24168733 = new Ya.Metrika({
+                    id:24168733,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/24168733" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- /banner: bottom_index -->
+<!--  --></div>
+            <div class="cleaner"></div>
+        </div>
+
+        
+        <div class="footer" id="footer">
+            		<div class="foot_sitemap" id="sitemapWrapper"></div>
+				            <div class="wrapp" style="position: relative;">
+                <div>2022 <span class="hot">&copy; Повар.ру - Все кулинарные рецепты </span>
+                    <div class="soc_medias_wrapp">
+                        <a href="https://vk.com/vpovare" title="Вконтакте" target="_blank" rel="nofollow"
+                           class="soc_medias vk"></a>
+                        <a href="https://ok.ru/vpovare" title="Одноклассники" target="_blank" rel="nofollow"
+                           class="soc_medias ok"></a>
+                        <a href="https://www.youtube.com/channel/UCdD_JLMh0tDP7feDU7Onn4g" title="YouTube"
+                           target="_blank" rel="nofollow" class="soc_medias yt"></a>
+                    </div>
+                    <a class="emailcontact" href="mailto:info@povar.ru">info@povar.ru</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Floating Menu -->
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		var ffTrigger = function() {
+			if (!window.backgroundBanner && (jQuery('body').width() >= 1240)) {
+				jQuery('#floatingMenu').show();
+				jQuery('#megaContainer').removeClass('megaContainerThin');
+                jQuery('#floatingMenuBanner').show();
+                jQuery('#floatingMenuBannerStart').show();
+			} else {
+				jQuery('#floatingMenu').hide();
+                jQuery('#megaContainer').addClass('megaContainerThin');
+                jQuery('#floatingMenuBanner').hide();
+                jQuery('#floatingMenuBannerStart').hide();
+			}
+		};
+		jQuery(window).resize(ffTrigger);
+		ffTrigger();
+		jQuery('#floatingMenu div:not(.plusTrigger)').each(function() {
+			var $this = jQuery(this);
+			if ($this.height() > 100) {
+				$this.addClass('minified');
+				$this.after('<div class="plusTrigger"><div>...</div>+</div>');
+			}
+		});
+		jQuery('#floatingMenu div.plusTrigger').click(function() {
+			var $this = jQuery(this);
+			$this.prev().removeClass('minified');
+			$this.remove();
+		});
+	});
+</script>
+<div class="floatingMenu" id="floatingMenu">
+	<a class="fmHead" href="/list/goryachie_bliuda/">Горячие блюда</a>
+		<div>
+					<a class="fmItem" href="/list/spagetti/">Спагетти</a>&nbsp;
+					<a class="fmItem" href="/list/kashi/">Каши</a>&nbsp;
+					<a class="fmItem" href="/list/kotlety/">Котлеты</a>&nbsp;
+					<a class="fmItem" href="/list/vareniki/">Вареники</a>&nbsp;
+					<a class="fmItem" href="/list/pelmeni/">Пельмени</a>&nbsp;
+					<a class="fmItem" href="/list/otbivnye/">Отбивные</a>&nbsp;
+					<a class="fmItem" href="/list/omlet/">Омлет</a>&nbsp;
+					<a class="fmItem" href="/list/pasta/">Паста</a>&nbsp;
+					<a class="fmItem" href="/list/yaichnica/">Яичница</a>&nbsp;
+					<a class="fmItem" href="/list/podlivy/">Подлива</a>&nbsp;
+					<a class="fmItem" href="/list/golubcy/">Голубцы</a>&nbsp;
+					<a class="fmItem" href="/list/steyk/">Стейк</a>&nbsp;
+					<a class="fmItem" href="/list/gulyash/">Гуляш</a>&nbsp;
+					<a class="fmItem" href="/list/ragu/">Рагу</a>&nbsp;
+					<a class="fmItem" href="/list/antrekot/">Антрекот</a>&nbsp;
+					<a class="fmItem" href="/list/rostbif/">Ростбиф</a>&nbsp;
+					<a class="fmItem" href="/list/bifshteks/">Бифштекс</a>&nbsp;
+					<a class="fmItem" href="/list/tefteli/">Тефтели</a>&nbsp;
+					<a class="fmItem" href="/list/plov/">Плов</a>&nbsp;
+					<a class="fmItem" href="/list/frikadelki/">Фрикадельки</a>&nbsp;
+					<a class="fmItem" href="/list/zharkoe/">Жаркое</a>&nbsp;
+					<a class="fmItem" href="/list/shnicel/">Шницель</a>&nbsp;
+					<a class="fmItem" href="/list/rulety/">Рулеты</a>&nbsp;
+					<a class="fmItem" href="/list/ravioli/">Равиоли</a>&nbsp;
+					<a class="fmItem" href="/list/zrazy/">Зразы</a>&nbsp;
+					<a class="fmItem" href="/list/karri/">Карри</a>&nbsp;
+					<a class="fmItem" href="/list/lazanya/">Лазанья</a>&nbsp;
+					<a class="fmItem" href="/list/kebab/">Кебаб</a>&nbsp;
+					<a class="fmItem" href="/list/manty/">Манты</a>&nbsp;
+					<a class="fmItem" href="/list/dolma/">Долма</a>&nbsp;
+					<a class="fmItem" href="/list/befstroganov/">Бефстроганов</a>&nbsp;
+					<a class="fmItem" href="/list/beshbarmak/">Бешбармак</a>&nbsp;
+					<a class="fmItem" href="/list/bitochki/">Биточки</a>&nbsp;
+					<a class="fmItem" href="/list/myaso_po_francuzski/">Мясо по-французски</a>&nbsp;
+					<a class="fmItem" href="/list/galushki/">Галушки</a>&nbsp;
+					<a class="fmItem" href="/list/azu/">Азу</a>&nbsp;
+					<a class="fmItem" href="/list/buzhenina/">Буженина</a>&nbsp;
+					<a class="fmItem" href="/list/frikase/">Фрикасе</a>&nbsp;
+					<a class="fmItem" href="/list/lobio/">Лобио</a>&nbsp;
+					<a class="fmItem" href="/list/shashlyk/">Шашлык</a>&nbsp;
+					<a class="fmItem" href="/list/babka/">Бабка</a>&nbsp;
+					<a class="fmItem" href="/list/sote/">Соте</a>&nbsp;
+					<a class="fmItem" href="/list/ratatuy/">Рататуй</a>&nbsp;
+					<a class="fmItem" href="/list/chahohbili/">Чахохбили</a>&nbsp;
+					<a class="fmItem" href="/list/eziki/">Ежики</a>&nbsp;
+					<a class="fmItem" href="/list/mamalyga/">Мамалыга</a>&nbsp;
+					<a class="fmItem" href="/list/shaurma/">Шаурма</a>&nbsp;
+					<a class="fmItem" href="/list/paelya/">Паэлья</a>&nbsp;
+					<a class="fmItem" href="/list/zhuljen/">Жульен</a>&nbsp;
+					<a class="fmItem" href="/list/rizotto/">Ризотто</a>&nbsp;
+					<a class="fmItem" href="/list/karbonara/">Карбонара</a>&nbsp;
+					<a class="fmItem" href="/list/polenta/">Полента</a>&nbsp;
+					<a class="fmItem" href="/list/chanahi/">Чанахи</a>&nbsp;
+					<a class="fmItem" href="/list/fetuchini/">Фетучини</a>&nbsp;
+					<a class="fmItem" href="/list/hashlama/">Хашлама</a>&nbsp;
+					<a class="fmItem" href="/list/hinkali/">Хинкали</a>&nbsp;
+					<a class="fmItem" href="/list/bigus/">Бигус</a>&nbsp;
+					<a class="fmItem" href="/list/romshteks/">Ромштекс</a>&nbsp;
+					<a class="fmItem" href="/list/langet/">Лангет</a>&nbsp;
+					<a class="fmItem" href="/list/brizol/">Бризоль</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/salad/">Салаты</a>
+		<div>
+					<a class="fmItem" href="/list/salat_cezar/">Салат Цезарь</a>&nbsp;
+					<a class="fmItem" href="/list/salat_grecheskiy/">Салат Греческий</a>&nbsp;
+					<a class="fmItem" href="/list/salat_olivye/">Салат Оливье</a>&nbsp;
+					<a class="fmItem" href="/list/vinegret/">Винегрет</a>&nbsp;
+					<a class="fmItem" href="/list/salat_mimoza/">Салат Мимоза</a>&nbsp;
+					<a class="fmItem" href="/list/granatovy_braslet/">Салат Гранатовый браслет</a>&nbsp;
+					<a class="fmItem" href="/list/salat_gnezdo_gluharya/">Салат Гнездо глухаря</a>&nbsp;
+					<a class="fmItem" href="/list/salat_nezhnost/">Салат Нежность</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/zakuski/">Закуски</a>
+		<div>
+					<a class="fmItem" href="/list/zakuski_i_buterbrody/">Бутерброды</a>&nbsp;
+					<a class="fmItem" href="/list/kanape/">Канапе</a>&nbsp;
+					<a class="fmItem" href="/list/grenki/">Гренки</a>&nbsp;
+					<a class="fmItem" href="/list/frittata/">Фриттата</a>&nbsp;
+					<a class="fmItem" href="/list/krokety/">Крокеты</a>&nbsp;
+					<a class="fmItem" href="/list/musaka/">Мусака</a>&nbsp;
+					<a class="fmItem" href="/list/popkorn/">Попкорн</a>&nbsp;
+					<a class="fmItem" href="/list/holodec/">Холодец</a>&nbsp;
+					<a class="fmItem" href="/list/brusketta/">Брускетта</a>&nbsp;
+					<a class="fmItem" href="/list/tosty/">Тосты</a>&nbsp;
+					<a class="fmItem" href="/list/takos/">Такос</a>&nbsp;
+					<a class="fmItem" href="/list/tartaletki/">Тарталетки</a>&nbsp;
+					<a class="fmItem" href="/list/pashtety/">Паштеты</a>&nbsp;
+					<a class="fmItem" href="/list/burgery/">Бургеры</a>&nbsp;
+					<a class="fmItem" href="/list/chipsy/">Чипсы</a>&nbsp;
+					<a class="fmItem" href="/list/rolly/">Роллы</a>&nbsp;
+					<a class="fmItem" href="/list/humus/">Хумус</a>&nbsp;
+					<a class="fmItem" href="/list/hot_dog/">Хот-дог</a>&nbsp;
+					<a class="fmItem" href="/list/palochki/">Палочки</a>&nbsp;
+					<a class="fmItem" href="/list/tortilya/">Тортилья</a>&nbsp;
+					<a class="fmItem" href="/list/balyk/">Балык</a>&nbsp;
+					<a class="fmItem" href="/list/zalivnoe/">Заливное</a>&nbsp;
+					<a class="fmItem" href="/list/forshmak/">Форшмак</a>&nbsp;
+					<a class="fmItem" href="/list/kesadilja/">Кесадилья</a>&nbsp;
+					<a class="fmItem" href="/list/basturma/">Бастурма</a>&nbsp;
+					<a class="fmItem" href="/list/sendvich/">Сэндвич</a>&nbsp;
+					<a class="fmItem" href="/list/tartar/">Тартар</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/soup/">Супы</a>
+		<div>
+					<a class="fmItem" href="/list/supy_pure/">Супы-пюре</a>&nbsp;
+					<a class="fmItem" href="/list/holodnye_supy/">Холодные супы</a>&nbsp;
+					<a class="fmItem" href="/list/bulyony/">Бульоны</a>&nbsp;
+					<a class="fmItem" href="/list/okroshka/">Окрошка</a>&nbsp;
+					<a class="fmItem" href="/list/uha/">Уха</a>&nbsp;
+					<a class="fmItem" href="/list/shi/">Щи</a>&nbsp;
+					<a class="fmItem" href="/list/solanka/">Солянка</a>&nbsp;
+					<a class="fmItem" href="/list/ministrone/">Минестроне</a>&nbsp;
+					<a class="fmItem" href="/list/gaspacho/">Гаспачо</a>&nbsp;
+					<a class="fmItem" href="/list/borsh/">Борщ</a>&nbsp;
+					<a class="fmItem" href="/list/rassolnik/">Рассольник</a>&nbsp;
+					<a class="fmItem" href="/list/holodnik/">Холодник</a>&nbsp;
+					<a class="fmItem" href="/list/svekolnik/">Свекольник</a>&nbsp;
+					<a class="fmItem" href="/list/harcho/">Харчо</a>&nbsp;
+					<a class="fmItem" href="/list/shurpa/">Шурпа</a>&nbsp;
+					<a class="fmItem" href="/list/lagman/">Лагман</a>&nbsp;
+					<a class="fmItem" href="/list/kapustnyak/">Капустняк</a>&nbsp;
+					<a class="fmItem" href="/list/krem_sup/">Крем-суп</a>&nbsp;
+					<a class="fmItem" href="/list/bozbash/">Бозбаш</a>&nbsp;
+					<a class="fmItem" href="/list/pohlebki/">Похлебки</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/vypechka/">Выпечка</a>
+		<div>
+					<a class="fmItem" href="/list/pirogi_pirozhki/">Пироги</a>&nbsp;
+					<a class="fmItem" href="/list/torty_pirozhnye/">Торты</a>&nbsp;
+					<a class="fmItem" href="/list/bliny/">Блины</a>&nbsp;
+					<a class="fmItem" href="/list/picca/">Пицца</a>&nbsp;
+					<a class="fmItem" href="/list/pechene/">Печенье</a>&nbsp;
+					<a class="fmItem" href="/list/hleb/">Хлеб</a>&nbsp;
+					<a class="fmItem" href="/list/oladi/">Оладьи</a>&nbsp;
+					<a class="fmItem" href="/list/keks/">Кексы</a>&nbsp;
+					<a class="fmItem" href="/list/glazur/">Глазурь</a>&nbsp;
+					<a class="fmItem" href="/list/pirozhki/">Пирожки</a>&nbsp;
+					<a class="fmItem" href="/list/pirozhnye/">Пирожное</a>&nbsp;
+					<a class="fmItem" href="/list/syrniki/">Сырники</a>&nbsp;
+					<a class="fmItem" href="/list/maffiny/">Маффины</a>&nbsp;
+					<a class="fmItem" href="/list/bulochki/">Булочки</a>&nbsp;
+					<a class="fmItem" href="/list/brauni/">Брауни</a>&nbsp;
+					<a class="fmItem" href="/list/biskvit/">Бисквит</a>&nbsp;
+					<a class="fmItem" href="/list/kish/">Киш</a>&nbsp;
+					<a class="fmItem" href="/list/zapekanki/">Запеканка</a>&nbsp;
+					<a class="fmItem" href="/list/vafli/">Вафли</a>&nbsp;
+					<a class="fmItem" href="/list/ponchiki/">Пончики</a>&nbsp;
+					<a class="fmItem" href="/list/sharlotka/">Шарлотка</a>&nbsp;
+					<a class="fmItem" href="/list/chizkeyk/">Чизкейк</a>&nbsp;
+					<a class="fmItem" href="/list/sufle/">Суфле</a>&nbsp;
+					<a class="fmItem" href="/list/vatrushki/">Ватрушки</a>&nbsp;
+					<a class="fmItem" href="/list/lepeshki/">Лепешки</a>&nbsp;
+					<a class="fmItem" href="/list/pryaniki/">Пряники</a>&nbsp;
+					<a class="fmItem" href="/list/shtrudeli/">Штрудели</a>&nbsp;
+					<a class="fmItem" href="/list/fokacha/">Фокачча</a>&nbsp;
+					<a class="fmItem" href="/list/tarty/">Тарты</a>&nbsp;
+					<a class="fmItem" href="/list/kurnik/">Курник</a>&nbsp;
+					<a class="fmItem" href="/list/rogaliki/">Рогалики</a>&nbsp;
+					<a class="fmItem" href="/list/sloyki/">Слойки</a>&nbsp;
+					<a class="fmItem" href="/list/hachapuri/">Хачапури</a>&nbsp;
+					<a class="fmItem" href="/list/korzhiki/">Коржики</a>&nbsp;
+					<a class="fmItem" href="/list/volovany/">Волованы</a>&nbsp;
+					<a class="fmItem" href="/list/vertuta/">Вертута</a>&nbsp;
+					<a class="fmItem" href="/list/biskotti/">Бискотти</a>&nbsp;
+					<a class="fmItem" href="/list/achma/">Ачма</a>&nbsp;
+					<a class="fmItem" href="/list/belyashi/">Беляши</a>&nbsp;
+					<a class="fmItem" href="/list/kulebyaka/">Кулебяка</a>&nbsp;
+					<a class="fmItem" href="/list/pahlava/">Пахлава</a>&nbsp;
+					<a class="fmItem" href="/list/profitroli/">Профитроли</a>&nbsp;
+					<a class="fmItem" href="/list/eklery/">Эклеры</a>&nbsp;
+					<a class="fmItem" href="/list/kruassany/">Круассаны</a>&nbsp;
+					<a class="fmItem" href="/list/trubochki/">Трубочки</a>&nbsp;
+					<a class="fmItem" href="/list/mannik/">Манник</a>&nbsp;
+					<a class="fmItem" href="/list/nalistniki/">Налистники</a>&nbsp;
+					<a class="fmItem" href="/list/baget/">Багет</a>&nbsp;
+					<a class="fmItem" href="/list/pliushki/">Плюшки</a>&nbsp;
+					<a class="fmItem" href="/list/tvorozhniki/">Творожники</a>&nbsp;
+					<a class="fmItem" href="/list/kapkeyk/">Капкейк</a>&nbsp;
+					<a class="fmItem" href="/list/krekery/">Крекеры</a>&nbsp;
+					<a class="fmItem" href="/list/chebureki/">Чебуреки</a>&nbsp;
+					<a class="fmItem" href="/list/blinchiki/">Блинчики</a>&nbsp;
+					<a class="fmItem" href="/list/korzinochki/">Корзиночки</a>&nbsp;
+					<a class="fmItem" href="/list/hvorost/">Хворост</a>&nbsp;
+					<a class="fmItem" href="/list/keksiki/">Кексики</a>&nbsp;
+					<a class="fmItem" href="/list/baursaki/">Баурсаки</a>&nbsp;
+					<a class="fmItem" href="/list/pankeiki/">Панкейки</a>&nbsp;
+					<a class="fmItem" href="/list/samsa/">Самса</a>&nbsp;
+					<a class="fmItem" href="/list/kovrizhka/">Коврижка</a>&nbsp;
+					<a class="fmItem" href="/list/bubliki/">Бублики</a>&nbsp;
+					<a class="fmItem" href="/list/galety/">Галеты</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/dessert/">Десерты</a>
+		<div>
+					<a class="fmItem" href="/list/konfety/">Конфеты</a>&nbsp;
+					<a class="fmItem" href="/list/muss/">Мусс</a>&nbsp;
+					<a class="fmItem" href="/list/zhele/">Желе</a>&nbsp;
+					<a class="fmItem" href="/list/marmelad/">Мармелад</a>&nbsp;
+					<a class="fmItem" href="/list/morozhenoe/">Мороженое</a>&nbsp;
+					<a class="fmItem" href="/list/puding/">Пудинг</a>&nbsp;
+					<a class="fmItem" href="/list/sirop/">Сироп</a>&nbsp;
+					<a class="fmItem" href="/list/krem/">Крем</a>&nbsp;
+					<a class="fmItem" href="/list/beze/">Безе</a>&nbsp;
+					<a class="fmItem" href="/list/zefir/">Зефир</a>&nbsp;
+					<a class="fmItem" href="/list/sorbet/">Сорбет</a>&nbsp;
+					<a class="fmItem" href="/list/kutya/">Кутья</a>&nbsp;
+					<a class="fmItem" href="/list/tiramisu/">Тирамису</a>&nbsp;
+					<a class="fmItem" href="/list/pastila/">Пастила</a>&nbsp;
+					<a class="fmItem" href="/list/bekmes/">Бекмес</a>&nbsp;
+					<a class="fmItem" href="/list/iriski/">Ириски</a>&nbsp;
+					<a class="fmItem" href="/list/halva/">Халва</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/napitki/">Напитки</a>
+		<div>
+					<a class="fmItem" href="/list/alkogolnye/">Алкогольные</a>&nbsp;
+					<a class="fmItem" href="/list/fruktovye/">Фруктовые</a>&nbsp;
+					<a class="fmItem" href="/list/molochnye/">Молочные</a>&nbsp;
+					<a class="fmItem" href="/list/gazirovannye/">Газированные</a>&nbsp;
+					<a class="fmItem" href="/list/cocktail/">Коктейли</a>&nbsp;
+					<a class="fmItem" href="/list/chay/">Чай</a>&nbsp;
+					<a class="fmItem" href="/list/kompoty/">Компоты</a>&nbsp;
+					<a class="fmItem" href="/list/kiseli/">Кисели</a>&nbsp;
+					<a class="fmItem" href="/list/smuzi/">Смузи</a>&nbsp;
+					<a class="fmItem" href="/list/kvas/">Квас</a>&nbsp;
+					<a class="fmItem" href="/list/kofe/">Кофе</a>&nbsp;
+					<a class="fmItem" href="/list/punshi/">Пунши</a>&nbsp;
+					<a class="fmItem" href="/list/mors/">Морс</a>&nbsp;
+					<a class="fmItem" href="/list/soki/">Соки</a>&nbsp;
+					<a class="fmItem" href="/list/limonad/">Лимонад</a>&nbsp;
+					<a class="fmItem" href="/list/sbiten/">Сбитень</a>&nbsp;
+					<a class="fmItem" href="/list/airan/">Айран</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/sousy/">Соусы</a>
+		<div>
+					<a class="fmItem" href="/list/sous_k_myasu/">К мясу</a>&nbsp;
+					<a class="fmItem" href="/list/sous_k_ptice/">К птице</a>&nbsp;
+					<a class="fmItem" href="/list/sous_k_rybe/">К рыбе</a>&nbsp;
+					<a class="fmItem" href="/list/sous_k_salatu/">К салату</a>&nbsp;
+					<a class="fmItem" href="/list/soevyj_sous/">Соевый соус</a>&nbsp;
+					<a class="fmItem" href="/list/teriyaki/">Терияки</a>&nbsp;
+					<a class="fmItem" href="/list/zapravki_dlya_salatov/">Заправки для салатов</a>&nbsp;
+					<a class="fmItem" href="/list/dipy/">Дипы</a>&nbsp;
+					<a class="fmItem" href="/list/pesto/">Песто</a>&nbsp;
+					<a class="fmItem" href="/list/salsa/">Сальса</a>&nbsp;
+					<a class="fmItem" href="/list/tomatnyj_sous/">Томатный соус</a>&nbsp;
+					<a class="fmItem" href="/list/chesnochnyj_sous/">Чесночный соус</a>&nbsp;
+					<a class="fmItem" href="/list/sousy_na_zimu/">Соусы на зиму</a>&nbsp;
+					<a class="fmItem" href="/list/sous_gribnoy/">Грибной соус</a>&nbsp;
+					<a class="fmItem" href="/list/sous_syrnyj/">Соус сырный</a>&nbsp;
+					<a class="fmItem" href="/list/sacivi/">Сациви</a>&nbsp;
+					<a class="fmItem" href="/list/chatni/">Чатни</a>&nbsp;
+					<a class="fmItem" href="/list/tkemali/">Ткемали</a>&nbsp;
+					<a class="fmItem" href="/list/smetannyj_sous/">Сметанный соус</a>&nbsp;
+					<a class="fmItem" href="/list/marinady/">Маринады</a>&nbsp;
+					<a class="fmItem" href="/list/sous_tartar/">Соус Тартар</a>&nbsp;
+					<a class="fmItem" href="/list/beshamel/">Соус Бешамель</a>&nbsp;
+					<a class="fmItem" href="/list/gorchica/">Горчица</a>&nbsp;
+					<a class="fmItem" href="/list/ketchup/">Кетчуп</a>&nbsp;
+					<a class="fmItem" href="/list/vasabi/">Васаби</a>&nbsp;
+					<a class="fmItem" href="/list/tomatnaja_pasta/">Томатная паста</a>&nbsp;
+					<a class="fmItem" href="/list/sous_dla_pizza/">Соус для пиццы</a>&nbsp;
+				</div>
+	<a class="fmHead" href="/list/zagotovki/">Заготовки</a>
+		<div>
+					<a class="fmItem" href="/list/varenya_i_dzhemy/">Варенье</a>&nbsp;
+					<a class="fmItem" href="/list/marinovanie/">Маринование</a>&nbsp;
+					<a class="fmItem" href="/list/dzemy/">Джемы</a>&nbsp;
+					<a class="fmItem" href="/list/solenie/">Соление</a>&nbsp;
+					<a class="fmItem" href="/list/kvashenie/">Квашение</a>&nbsp;
+					<a class="fmItem" href="/list/konservaciya/">Консервация</a>&nbsp;
+					<a class="fmItem" href="/list/povidlo/">Повидло</a>&nbsp;
+					<a class="fmItem" href="/list/konfitur/">Конфитюр</a>&nbsp;
+					<a class="fmItem" href="/list/lecho/">Лечо</a>&nbsp;
+					<a class="fmItem" href="/list/adzhika/">Аджика</a>&nbsp;
+				</div>
+</div>
+<div id="floatingMenuBannerStart" style="float: left; width: 240px; height: 10px;"></div>
+<div id="floatingMenuBanner" style="float: left; width: 240px; padding-top: 10px; padding-right:1px;">
+    <!-- banner: floating_menu_bottom -->    <!--AdFox START--> 
+<!--yandex_bantai--> 
+<!--Площадка: www.povar.ru / * / *--> 
+<!--Тип баннера: povar.ru-sidebar-sticky-240x400-left-side--> 
+<!--Расположение: sticky sidebar left--> 
+<div id="adfox_163161769802362326"></div> 
+<script> 
+    window.yaContextCb.push(()=>{ 
+        Ya.adfoxCode.create({ 
+            ownerId: 388735, 
+        containerId: 'adfox_163161769802362326', 
+            params: { 
+                pp: 'bryg', 
+            ps: 'fdsx', 
+            p2: 'hiqd' 
+            } 
+        }) 
+    }) 
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+window.fbarLinksDiv = $('#floatingMenuBanner');
+window.fbarLinksStartDiv = $('#floatingMenuBannerStart');
+window.setInterval(function() {
+ window.Ya.adfoxCode.reload('adfox_163161769802362326');
+}, 30000);
+$(window).scroll(function()
+{if($(document).scrollTop()>=window.fbarLinksStartDiv.offset().top+170) fbarLinksDiv.addClass('adsense_float');else fbarLinksDiv.removeClass('adsense_float');});});</script>
+<!-- /banner: floating_menu_bottom -->
+<!--  --></div>
+<!-- /Floating Menu -->    <div class="cleaner"></div>
+</div>
+<!-- banner: no_odkl_popup -->    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter24168733 = new Ya.Metrika({
+                    id:24168733,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/24168733" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- /banner: no_odkl_popup -->
+<!--  --><div id="dev_indicator"></div>
+<div id="vk_subscribePupup">&uarr;</div>
+
+<script type="text/javascript">
+
+    jQuery('#vk_subscribePupup').click(function () {
+        jQuery('html, body').animate({'scrollTop': 0}, 500, 'swing', function () {
+            window.scrollTo(0, 0);
+        });
+    });
+    $(window).scroll(function () {
+        if ($(document).scrollTop() >= 700) $("#vk_subscribePupup").fadeIn(); else $("#vk_subscribePupup").fadeOut();
+    });
+
+    document.oncopy = function () {
+        var bodyElement = document.body;
+        var selection = getSelection();
+        var href = document.location.href;
+        var copyright = ' Подробнее: ' + href;
+        var text = selection + copyright;
+        var divElement = document.createElement('div');
+        divElement.style.position = 'absolute';
+        divElement.style.left = '-99999px';
+        text1 = document.createTextNode(text); //создал текстовый узел
+        divElement.appendChild(text1); //и добавил его
+        bodyElement.appendChild(divElement);
+        selection.selectAllChildren(divElement);
+        setTimeout(function () {
+            bodyElement.removeChild(divElement);
+        }, 0);
+    };
+</script>
+<div class="displayNever">
+    </div>
+<link href="https://povar.ru/js/jquery/jscrollpane/jquery.jscrollpane.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="https://povar.ru/js/jquery/jscrollpane/jquery.jscrollpane.lozenge.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/thematicrotator.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/frontend.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/additional.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/favicon.svg" rel="SHORTCUT ICON" type="image/svg" >
+<link href="/rss" rel="alternate" type="application/rss+xml" title="Подписка на новые рецепты портала Повар.ру" >
+<link href="//img.povar.ru/skins/recipie/slvratph.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/../../js/jquery/fancybox/jquery.fancybox-1.3.0.css" rel="stylesheet" type="text/css" property="stylesheet" >
+<link href="//img.povar.ru/skins/recipie/povar.css" rel="stylesheet" type="text/css" property="stylesheet" >
+
+<link rel="stylesheet" href="//img.povar.ru/skins/recipie/../../skins/recipie/fa/css/all.min.css">
+
+<script type="text/javascript" src="https://povar.ru/rcpxml/ajax.js"></script>
+<script type="text/javascript" src="https://povar.ru/js/jquery/jscrollpane/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript">
+    //<!--
+jQuery(document).ready(function () { jQuery('.thematicBox .menu').jScrollPane({showArrows: true}); });    //-->
+</script>
+<script type="text/javascript" src="https://povar.ru/js/thematicrotator.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/base64.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/jquery.showmessage.min.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/login.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/hashcode.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/copyright.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="https://povar.ru/js/jquery/slvrating/slvrating.js"></script>
+<script type="text/javascript">
+    //<!--
+jQuery(document).ready(function () { jQuery("div.slvRating").slvRatingDisplay(); });    //-->
+</script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/fancybox/jquery.fancybox-1.3.0.pack.js"></script>
+<script type="text/javascript">
+    //<!--
+function closeFancyBox() {jQuery.fancybox.close();}    //-->
+</script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/povar.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/maxlength/jquery.maxlength-min.js"></script>
+<script type="text/javascript" src="//img.povar.ru/skins/recipie/../../js/jquery/form/jquery.form.js"></script>
+<script type="text/javascript" src="https://povar.ru/js/jquery/resize/jquery.ba-resize.min.js"></script>
+<script type="text/javascript" src="https://povar.ru/js/footer.js"></script><script type="text/javascript">
+    var href = jQuery.cookie('deferredAfterLogin');
+    if (href) {
+        jQuery.cookie('deferredAfterLogin', null);
+        window.location = href;
+    }
+    $.each(document.images, function () {
+        var $this_image = $(this);
+        var src = $this_image.attr('src') || '';
+        if (!this.complete && (src.length > 0)) {
+            $this_image.attr('lsrc', src);
+            $this_image.attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        }
+    });
+    $(function () {
+        $.each(document.images, function () {
+            var $this_image = $(this);
+            var this_image = this;
+            var lsrc = $this_image.attr('lsrc') || '';
+            if (lsrc.length > 0) {
+                var img = new Image();
+                img.src = lsrc;
+                $(img).load(function () {
+                    $this_image.css('opacity', 0);
+                    this_image.src = lsrc;
+                    $this_image.animate({
+                        opacity: '1',
+                    });
+                });
+            }
+        });
+        $("#searchInput").autocomplete({
+            delay: 1000,
+            minLength: 3,
+            select: function (event, ui) {
+                $('#searchInput').val(ui.item.value);
+                $('#search').submit();
+                return false;
+            },
+            source: function (request, response) {
+                $.ajax({
+                    url: '//sautocomplete.povar.ru',
+                    method: 'POST',
+                    data: {
+                        text: request.term
+                    },
+                    success: function (data) {
+                        if (data.result) {
+                            response(data.words);
+                        } else {
+                            response([]);
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"b825e175f6","applicationID":"118111242","transactionName":"MhBSZQoZC0NUAEEKWAtacVIMEQpeGhFQAF4VHFUeERYBVU1MXA1TAA0=","queueTime":0,"applicationTime":145,"atts":"HldRE0IDGE0=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script></body>
+</html>

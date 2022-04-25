@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-0&cb=1', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=195-0&cb=14', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=195-0&cb=3', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=195-0&cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+if(typeof isOrig==='undefined'){isOrig=false;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){if((impId!=="0"||isOrig===true)&&adUnit!==""){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}}
+function AddPixelById(impFullId,pixelData,isOrig,revenue){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];var pix={type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig};if(typeof revenue!=='undefined'){pix.revenue=revenue;}
+pixels.push(pix);}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}});}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false;}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-0&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-0&cb=4', false, [], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-0&cb=5', false, [], true, false, true, false);</script>
+    <title>10FastFingers.com - Typing Test, Competitions, Practice &amp; Typing Games</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="10FastFingers - Improve your Typing Speed with our Typing Games"/>
+    <meta name="keywords" content="typing test, typing competition, touchtyping, touch typing, typing speed"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-179742-52', 'auto');  // Replace with your property ID.
+    ga('set', 'anonymizeIp', true);
+    ga(function(tracker) {
+        tracker.send('pageview');
+    });
+
+</script>
+<!-- End Google Analytics -->
+    
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="b9c70e75-4958-46f9-9410-6f8e5a3fca4c" data-blockingmode="auto" type="text/javascript" data-framework="IAB"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css?1650873879"/>
+    <link rel="canonical" href="//10fastfingers.com"/>
+
+    
+
+    <!-- Freestar Ads - PLACE THIS SECTION INSIDE OF YOUR HEAD TAGS -->
+    <script data-cfasync="false" type="text/javascript">
+    var freestar = freestar || {};
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+    freestar.config.enabled_slots = [];
+    !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/10fastfingers";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+    </script>
+
+<script type="text/javascript">var ezouid = "1";</script><base href="https://10fastfingers.com/"><script type='text/javascript'>
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 333680;
+var ezdomain = '10fastfingers.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Probolinggo","country":"ID","days_since_last_visit":-1,"domain_id":333680,"engaged_time_visit":0,"ezcache_level":0,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"67e215cf-0a0b-4d53-7e49-d7a84289ec84","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":13691,"response_time_orig":645,"serverid":"13.215.228.89:25429","state":"JI","t_epoch":1650879467,"template_id":126,"time_on_site_visit":0,"url":"https://10fastfingers.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":455,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_333680=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["67e215cf-0a0b-4d53-7e49-d7a84289ec84", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+<body id="homepage">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 col-sm-1 col-md-2" id="sidebar">
+            <img src="/img/layout/logo%402x.png?1650873879" id="logo-sidebar" class="hidden-xs hidden-sm" alt="Typing Test"/>
+            <a href="" id="language" class="hidden-xs hidden-sm">
+                Language: <strong>English</strong>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </a>
+
+            <div class="list-group">
+                <a href="/typing-test/" class="list-group-item " mode="speedtest">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-play"></i>  <strong>Typing Test</strong>
+                        <small>Top 200 words</small>
+                    </div>
+                    <i class="fa fa-play large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+
+                <a href="/advanced-typing-test/" class="list-group-item " mode="advanced-speedtest">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-forward"></i>  <strong>Advanced Test</strong>
+                        <small>Top 1000 words</small>
+                    </div>
+                    <i class="fa fa-forward large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+
+                <a href="/widgets/typingtest" class="list-group-item " mode="custom">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-cogs"></i>  <strong>Custom Typing Test</strong>
+                        <small> Create your own!</small>
+                    </div>
+                    <i class="fa fa-forward large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+
+                <a href="/competitions" class="list-group-item " mode="competition">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-trophy"></i>  <strong>Typing Competition</strong>
+                        <small>Who can type faster?</small>
+                    </div>
+                    <i class="fa fa-trophy large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+
+                <a href="/text-practice/new" class="list-group-item " mode="text-practice">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-file-text-o"></i>  <strong>Text Practice</strong>
+                        <small>Practice your own Text</small>
+                    </div>
+                    <i class="fa fa-file-text-o large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+
+                <a href="/top1000" class="list-group-item " mode="practice">
+                    <div class="inside-box hidden-xs hidden-sm visible-md visible-lg">
+                        <i class="fa fa-signal"></i>  <strong>Top 1000</strong>
+                        <small> Challenge yourself!</small>
+                    </div>
+                    <i class="fa fa-signal large-alt-icon visible-xs visible-sm hidden-md hidden-lg"></i>
+                </a>
+            </div>
+
+            <a href="/login" id="login-register" class="hidden-xs hidden-sm">
+                <span>Login  |   Register</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </a>
+
+        </div>
+        <div class="col-xs-10 col-sm-11 col-md-8" id="main">
+
+            <div id="centerbox">
+                <img src="/img/layout/logo%402x.png?1650873879" id="main-logo" alt="Typing Test"/>
+                <hr style="margin-bottom:-7px;"/>
+                <h1 id="main-message">Test &amp; Improve your Typing Speed with our<br/> free Typing Games</h1>
+                <hr style="margin-top:25px; margin-bottom: 40px;"/>
+                <a href="/typing-test/english" class="cta_button" id="typing-test">START TYPING TEST <span class="separator"></span> <i class="fa fa-play fa-lg"></i></a>
+                <a href="/competitions" class="cta_button" id="typing-competition">TYPING COMPETITION  <span class="separator" style="background: #fdc543;"></span> <i class="fa fa-trophy fa-lg"></i></a>
+            </div>
+
+            <div id="ads">
+                <!-- Google Adsense Ads -->
+
+
+<!-- <div id="ads-speedtest-view-container" style="width: 700px; max-width: 900px; min-height: 250px; float: left"> -->
+<div id="ads-speedtest-view-container" style="min-width: 720px; min-height: 280px; margin-top: -10px;">
+
+
+	<div style="display:inline-block; width: 340px; height: 280px; margin-left: 160px; margin-bottom: 10px; float: left;">
+		<div id="ezoic-pub-ad-placeholder-112"> </div>
+		<!-- Tag ID: 10FastFingers_Box_BTF -->
+		<div align="center" data-freestar-ad="__336x280" id="10FastFingers_Box_BTF">
+			<script data-cfasync="false" type="text/javascript">
+				freestar.config.enabled_slots.push({ placementName: "10FastFingers_Box_BTF", slotId: "10FastFingers_Box_BTF" });
+			</script>
+		</div>
+	</div>
+
+
+	<div style="display:inline-block; width: 340px; height: 280px; margin-bottom: 10px; float: left;">
+		<div id="ezoic-pub-ad-placeholder-114"></div>
+		<!-- Tag ID: 10FastFingers_336x280 -->
+		<div align="center" data-freestar-ad="__336x280 __336x280" id="10FastFingers_336x280" style="display:inline-block; width: 340px; height: 280px; margin-left: 10px; float: left;">
+			<script data-cfasync="false" type="text/javascript">
+				freestar.config.enabled_slots.push({ placementName: "10FastFingers_336x280", slotId: "10FastFingers_336x280" });
+			</script>
+		</div>
+	</div>
+
+    <!-- Tag ID: 10FastFingers_300x250_ATF_1 -->
+    <!-- <div align="center" id="10FastFingers_300x250_ATF_1" style="display:inline-block; min-width: 300px; height: 280px; margin-left: 190px; margin-bottom: 10px; float: left;">
+		<div id="ezoic-pub-ad-placeholder-112"> </div>
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "10FastFingers_300x250_ATF_1", slotId: "10FastFingers_300x250_ATF_1" });
+        </script>
+    </div> -->
+
+    <!-- Tag ID: 10FastFingers_300x250_ATF_2 -->
+    <!-- <div align="center" id="10FastFingers_300x250_ATF_2" style="display:inline-block; min-width: 300px; height: 280px;  margin-left: 10px; float: left;">
+		<div id="ezoic-pub-ad-placeholder-114"> </div>
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "10FastFingers_300x250_ATF_2", slotId: "10FastFingers_300x250_ATF_2" });
+        </script>
+    </div> -->
+</div>
+
+
+
+
+<!-- Ezoic - top_of_page - top_of_page -->
+<!-- <div id="ezoic-pub-ad-placeholder-109"> </div> -->
+<!-- End Ezoic - top_of_page - top_of_page -->
+
+<!-- Ezoic - 10FastFingers_300x250_ATF_1 - mid_content -->
+<!-- <div id="ezoic-pub-ad-placeholder-101"> </div> -->
+<!-- End Ezoic - 10FastFingers_300x250_ATF_1 - mid_content -->
+
+<!-- Ezoic - 10FastFingers_300x250_ATF_2 (below typingbox right) - mid_content -->
+<!-- <div id="ezoic-pub-ad-placeholder-102"> </div> -->
+<!-- End Ezoic - 10FastFingers_300x250_ATF_2 (below typingbox right) - mid_content -->
+            </div>
+
+            <div class="row" id="content">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                    <h2><a href="/typing-test/english">Typing Test</a></h2>
+                    <p>If you want a quick way to test your typing speed, try out our 1-minute free Typing test (available in over 40 languages). You can quickly see how fast you can type and compare your result with your friends.</p>
+                    <p>One huge benefit: The more you use our typing game, the faster you will be able to type as the typing test uses the top 200 words of each language. If you are able to type the most frequent words faster, you will be able to type everything else faster as well!</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                    <h2><a href="/competitions">Typing Competition</a></h2>
+                    <p>Ready to compete against the big guys? Then check out our typing competitions! Every competition is open for 24 hours, during this time you will have the opportunity to reach the first place. The competitions work in the same way as our Typing Test but instead of having a random list of words everytime you reload the test, the words will stay the same for each competition. If you have a friendly typing competition with just your buddies you should try out the &#34;private competition&#34;-option. </p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                    <h2><a href="/text-practice">Text Practice Mode</a></h2>
+                    <p>The Typing Test is great if you want to practice the most common words of a language, but what if you want to practice more difficult words, punctuations, special characters or just a paragraph from a book? </p>
+                    <p>In this case check out our Text Practice Mode! You can create your own text to practice or pick from a huge list of user generated practice texts. Just select one text from the top-list and you will be garantied to have a fun and challenging experience. Start now and improve your typing skills even further!</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                    <h2><a href="/top1000">Typing Practice</a></h2>
+                    <p>If you want to steadily improve your typing speed or train some specific typing skills you should check out the typing practice page. Improve your typing speed with practicing the Top 1000 words of each language (while unlocking those sweet, sweet stars), or challenge your typing skills with a user-submitted text. The practice mode is currently under development, more features &amp; modes will be added in the near future.</p>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                    <h2>Mobile Typing App</h2>
+                    <p>How fast are your thumbs? Our mobile typing app will let you know! No matter if you use your mobile phone or your tablet (iPad, etc.) the mobile test will surely suit your needs, good luck climbing the highscore list</p>
+                </div>
+
+
+            </div>
+
+            <div id="footer">
+                <a href="/impressum">Impressum</a>  |  <a href="/impressum#datenschutzerklaerung">Datenschutzerklärung</a>
+            </div>
+
+        </div>
+        <div class="hidden-xs hidden-sm col-md-2" id="rightbar"></div>
+    </div>
+</div>
+
+<!-- part of the header ad code -->
+<script type="text/javascript">
+    freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+</script>
+
+
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="10fastfingers_com",_audins_did=333680;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=195-0");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.10fastfingers_com,DomainId.333680" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script type="text/javascript" data-cfasync="false"></script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=0&cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script></body></html>

@@ -1,0 +1,694 @@
+<!doctype html>
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)]><!-->
+<html>
+<!--<![endif]-->
+
+    <head>
+        <title>Small Gigs for Businesses with Jobs for Freelancers | Picoworkers</title>
+        <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam-cell.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"875177040",accountID:"2632909",trustKey:"2632909",xpid:"VgAEU19TARAIU1RTAAcEX1M=",licenseKey:"NRJS-5227eab768865ec54b6",applicationID:"875176397"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+        <meta name="description" content="Online marketplace of easy and quick jobs connecting Employers and Workers all around the world.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap&amp;family=Farsan" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/picoworkers-sweet-alert.css"/>
+        <!-- Hotjar Tracking Code for https://picoworkers.com/ -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2261922,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P6G6QRQ');</script>
+        <!-- End Google Tag Manager -->
+                    <link rel="stylesheet" href="/assets/css/app.min.css?v=202204191746"/>
+            <script src="/assets/js/jquery.min.js"></script>
+            <script src="/assets/js/pico-vendor.min.js?v=202204191746"></script>
+            <script src="/assets/js/pico-app.min.js?v=202204191746"></script>
+                <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="/assets/js/vendor/respond.min.js"></script>
+        <script src="/assets/js/vendor/PIE.js"></script>
+        <![endif]-->
+        <script>
+            var csrf_token = 'e8c620d25862d07d62360a026a836905';
+            var systemAlert = '';
+            var tasks_ok = '';
+        </script>
+            </head>
+
+    <body class="home home--business switch-tour-pending">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6G6QRQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <div class="site d-flex flex-column min-vh-100">
+              <nav class="navbar navbar-expand-lg navbar-light navbar-logged-out navbar--is-transparent navbar--is-sticky">
+  <div class="container-fluid container-fluid--max">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo.svg" alt="PicoWorkers">
+    </a>
+
+    <div class="d-lg-none ml-auto mr-4">
+      <a href="/login.php" class="btn btn-link text-primary mr-2 px-2"><span>Log In</span></a>
+      <a href="/signup.php" class="btn btn-primary text-capitalize px-2"><span>Sign Up</span></a>
+    </div>
+
+    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Open navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="d-none d-lg-block flex-grow-0">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a href="/affiliates.php" class="nav-link"><span>Affiliate Program</span></a></li>
+        <li class="nav-item"><a href="/workers-making-money-online.php" class="nav-link"><span>Freelance &amp; Earn</span></a></li>
+      </ul>
+    </div>
+
+    <div class="d-none d-lg-block">
+      <a href="/login.php" class="btn btn-link text-primary mr-3" data-custom-toggle="modal" data-target="#loginModalCenter" role="button"><span>Log In</span></a>
+      <a href="/signup.php" class="btn btn-primary text-capitalize py-2 px-4" data-custom-toggle="modal" data-target="#signUpModalCenter" role="button"><span>Sign Up</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="side-nav">
+  <div class="side-nav__inner">
+    <div class="side-nav__header d-flex align-items-center justify-content-between p-0">
+      <span>&nbsp;</span>
+      <button class="navbar-btn--close btn btn-link ml-auto mr-0 p-4"><i class="pw-icon pw-icon-cross-2"></i></button>
+    </div>
+    <div class="side-nav__body">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="/affiliates.php" class="nav-link"><span>Affiliate Program</span></a></li>
+        <li class="nav-item"><a href="/workers-making-money-online.php" class="nav-link"><span>Freelance &amp; Earn</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+              <div class="mb-0 rounded-0 pw-banner align-items-center" style="display:none;"></div>
+
+            
+
+
+
+
+
+
+            <div class="main">
+  <div class="home-sections">
+    <section class="m01 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="m01__row">
+          <img src="/assets/images/home-worker/m01-arrow@2x.png" class="m01__arrow" alt="Gigs dashboard preview" draggable="false" width="320" height="89">
+          <div class="m01__text-wrap">
+            <h1 class="m01__title">Where<br> the World Works</h1>
+            <p class="m01__text">An online marketplace that connects freelancers and business owners around the world with easy-to-do affordable tasks.</p>
+            <a href="/signup.php" class="btn btn-primary m01__btn">Get Started</a>
+          </div>
+          <div class="m01__img-wrap">
+            <div class="m01__img-wrap-2"><img src="/assets/images/home-worker/gig-dashboard-preview@2x.png" alt="Gigs dashboard preview" draggable="false"></div>
+            <p class="m01__info-text home-section__info-text">
+              <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10ZM12 16.5v.5m0-10v6-6Z" stroke="#15D164" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Active members in 250+ different countries</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="m03 m02--business home-section">
+      <div class="container-fluid container-fluid--max">
+        <h2 data-landing-show="business" class="home-section__heading">One Marketplace... <br>Multiple Ways to Get Work Done</h2>
+        <h2 data-landing-show="worker" class="home-section__heading">One Marketplace... <br>Multiple Ways to Work and Earn</h2>
+        <div class="switch-to-landing">
+          <a class="switch-to-landing__toggle" href="/home-worker.php">
+            <div class="zawp-toggle zawp-toggle--checked-last not-functional"><span class="zawp-toggle__switch m-0"></span></div>
+          </a>
+          <img src="/assets/images/home-worker/switch-profile-arrow@2x.png" alt="Switch to Freelancer's pros" width="107" height="37">
+          <span data-landing-show="business">Switch to<br>Freelancer's pros</span>
+          <span data-landing-show="worker">Switch to<br>Business owner's pros</span>
+        </div>
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">1</span>
+          <h2 data-landing-show="business" class="numbered-heading__heading">Hire many workers</h2>
+          <h2 data-landing-show="worker" class="numbered-heading__heading">Micro Jobs</h2>
+        </div>
+        <div class="m02__row">
+          <div class="m02__img-wrap">
+            <div class="m02__img-wrap-inner">
+              <img data-landing-show="business" src="/assets/images/home-worker/my-tasks@2x.png" alt="My Tasks" draggable="false" width="476" height="370">
+              <img data-landing-show="worker" src="/assets/images/home-worker/worker-micro-jobs@2x.png?v=1" alt="Micro jobs" draggable="false" width="556" height="348">
+            </div>
+          </div>
+          <div data-landing-show="business" class="m02__text-wrap">
+            <h4 class="home-section__subtitle m02__subtitle text-primary">Business owner’s side</h4>
+            <h3 class="home-section__title m02__title">Set filters and target your ideal freelancer</h3>
+            <p class="home-section__text m02__text">Choose a targeting zone or exclude unwanted countries while posting a job with many tasks. It is a great way to target your perfect freelancer and make sure you only get proper work from the freelancers you desire.</p>
+            <img src="/assets/images/home-worker/m02-arrow-business@2x.png" class="m02__arrow" alt="Gigs dashboard preview" draggable="false" width="114" height="339">
+          </div>
+          <div data-landing-show="worker" class="m02__text-wrap">
+            <h4 class="home-section__subtitle m02__subtitle text-primary">Freelancer’s side</h4>
+            <h3 class="home-section__title m02__title">Deliver work in minutes and get paid fast</h3>
+            <p class="home-section__text m02__text">Micro Jobs are small, easy tasks that require little time to complete. For example, testing an app, helping promote content, data collection, and many others. Get compensated immediately after the task is reviewed, and don’t wait a month or more for payment.</p>
+            <img src="/assets/images/home-worker/m02-arrow@2x.png" class="m02__arrow" alt="Gigs dashboard preview" draggable="false" width="114" height="279">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m03 m03--business home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">2</span>
+          <h2 class="numbered-heading__heading">Expertise Levels</h2>
+        </div>
+        <div class="home-section__header">
+          <div class="home-section__header-left">
+            <h2 class="home-section__header-title home-section__title">Quality work for <br>an affordable price</h2>
+          </div>
+          <div class="home-section__header-right">
+            <p class="home-section__header-text home-section__text">When posting a job you can target a larger worker audience, or select a higher level of expertise to ensure your jobs are completed by more experienced freelancers.</p>
+          </div>
+        </div>
+        <div class="m03__row">
+          <div class="m03__text-wrap">
+            <h3 class="home-section__title m03__title">Overview</h3>
+            <p class="home-section__text m03__text">Workers earn badges for their successful experience on the platform. Our level system allows business owners to choose the level of specialist they would like to work with.</p>
+            <a href="/signup.php" class="btn btn-primary m03__btn">Find Workers</a>
+          </div>
+          <div class="m03__img-wrap">
+            <div class="m03__img-wrap-inner">
+              <img src="/assets/images/home-worker/expertize-levels@2x.png" class="m03__img" alt="Expertise Levels Overview" draggable="false" width="560" height="395">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m03 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">2</span>
+          <h2 class="numbered-heading__heading">Surveys &amp; Offers</h2>
+        </div>
+        <div class="home-section__header">
+          <div class="home-section__header-left">
+            <h2 class="home-section__header-title home-section__title">Take paid surveys and complete offers for quick and easy income</h2>
+          </div>
+          <div class="home-section__header-right">
+            <p class="home-section__header-text home-section__text">The payouts won't push you to financial freedom overnight, but taking surveys and completing offers for money will provide a significant financial boost when you need it.</p>
+          </div>
+        </div>
+        <div class="m03__row">
+          <div class="m03__text-wrap">
+            <h3 class="home-section__title m03__title">How it works:</h3>
+            <ul class="home-section__list">
+              <li>Go to paid surveys tab</li>
+              <li>Choose a survey</li>
+              <li>Answer questions</li>
+              <li>Get paid</li>
+            </ul>
+            <a href="/signup.php" class="btn btn-primary m03__btn">Create Account</a>
+          </div>
+          <div class="m03__img-wrap">
+            <div class="m03__img-wrap-inner">
+              <img src="/assets/images/home-worker/survey@2x.png" class="m03__img" alt="Micro jobs" draggable="false" width="592" height="411">
+              <img src="/assets/images/home-worker/survey-item@2x.png" class="m03__img-2" alt="Micro jobs" draggable="false" width="849" height="182">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m04 m04--layout-2 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">3</span>
+          <h2 class="numbered-heading__heading">Picoworkers API</h2>
+        </div>
+        <div class="home-section__header">
+          <div class="home-section__header-left">
+            <h2 class="home-section__header-title home-section__title">JSON based API where employers can create jobs programatically.</h2>
+          </div>
+          <div class="home-section__header-right">
+            <p class="home-section__header-text home-section__text">The API has a wide offering of features including topping up your spendable balance. If you require additional features, just ask!</p>
+          </div>
+        </div>
+        <div class="m04__row">
+          <div class="m04__text-wrap">
+            <h3 class="home-section__title m04__title">Overview</h3>
+            <p class="home-section__text m04__text">Every API request needs to be authenticated. You can create or reset you API secret in the tab SETTINGS of your Account Settings page.</p>
+            <a href="/api/documentation.php" class="btn btn-primary m04__btn">Go to documentation</a>
+          </div>
+          <div class="m04__img-wrap">
+            <div class="m04__img-wrap-inner">
+              <img src="/assets/images/home-worker/picoworkers-api@2x.png" class="m04__img" alt="Influencer Marketing" draggable="false" width="541" height="427">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m04 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">3</span>
+          <h2 class="numbered-heading__heading">Influencer marketing</h2>
+        </div>
+        <div class="m04__row">
+          <div class="m04__text-wrap">
+            <h3 class="home-section__title m04__title">Become an influencer in a favorite product niche or your local area and grab job opportunities from business owners.</h3>
+            <p class="home-section__text m04__text">Being a micro-influencer, you've got a unique opportunity to hyper-focus your social media presence and get paid by businesses looking for precise targeting. Simply get matched with businesses, promote their products and start earning.</p>
+            <a href="/signup.php" class="btn btn-primary m04__btn">Get Started</a>
+          </div>
+          <div class="m04__img-wrap">
+            <div class="m04__img-wrap-inner">
+              <img src="/assets/images/home-worker/influencer-marketing@2x.png" class="m04__img" alt="Influencer Marketing" draggable="false" width="503" height="370">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m04 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span class="numbered-heading__number">4</span>
+          <h2 class="numbered-heading__heading">Influencer marketing</h2>
+        </div>
+        <div class="m04__row">
+          <div class="m04__text-wrap">
+            <h3 class="home-section__title m04__title">Find influencers in a targeted product niche, or your local area, and get them to promote your business to their audience.</h3>
+            <p class="home-section__text m04__text mb-5">By working with a micro-influencer in a targeted product niche or your local area, you get an affordable way to promote your products & services. Search for your preferred influencer, agree on terms, and get started promoting.</p>
+            <a href="/signup.php" class="btn btn-primary m04__btn">Get Started</a>
+          </div>
+          <div class="m04__img-wrap">
+            <div class="m04__img-wrap-inner">
+              <img src="/assets/images/home-worker/influencer-marketing@2x.png" class="m04__img" alt="Influencer Marketing" draggable="false" width="503" height="370">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="m05 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="numbered-heading">
+          <span data-landing-show="business" class="numbered-heading__number">5</span>
+          <span data-landing-show="worker" class="numbered-heading__number">4</span>
+          <h2 data-landing-show="business" class="numbered-heading__heading">Gig Projects</h2>
+          <h2 data-landing-show="worker" class="numbered-heading__heading">Gig Jobs</h2>
+          <span class="numbered-heading__label">Coming soon</span>
+        </div>
+        <div class="switch-to-landing">
+          <a class="switch-to-landing__toggle" href="/home-worker.php">
+            <div class="zawp-toggle zawp-toggle--checked-last not-functional"><span class="zawp-toggle__switch m-0"></span></div>
+          </a>
+          <img src="/assets/images/home-worker/switch-profile-arrow@2x.png" alt="Switch to Freelancer's pros" width="107" height="37">
+          <span data-landing-show="business">Switch to<br>Freelancer's pros</span>
+          <span data-landing-show="worker">Switch to<br>Business owner's pros</span>
+        </div>
+        <div data-landing-show="business" class="home-section__header">
+          <div class="home-section__header-left">
+            <h2 class="home-section__header-title home-section__title">Get cost-efficient help from top-level freelancers</h2>
+          </div>
+          <div class="home-section__header-right">
+            <p class="home-section__header-text home-section__text">A completely new feature will match you with experienced freelancers who will deliver your most important projects, on time and within a reasonable budget. Just search the offers, select a freelancer, discuss your specific needs, and start your project. Get on board, and let's go!</p>
+          </div>
+        </div>
+        <div data-landing-show="worker" class="home-section__header">
+          <div class="home-section__header-left">
+            <h2 class="home-section__header-title home-section__title">Do you have specialized skills beyond micro jobs?</h2>
+          </div>
+          <div class="home-section__header-right">
+            <p class="home-section__header-text home-section__text">Publishing Gigs allows you to offer your unique skills and create a predictable pipeline of earnings doing your favorite things. Discuss your in-demand skills with clients, agree on the terms and start working. Get on board, and let’s go!</p>
+          </div>
+        </div>
+        <div data-landing-show="business" class="m05__img-wrap">
+          <img src="/assets/images/home-worker/gigs-functionality-business@2x.png" alt="Gigs functionality" draggable="false" width="976" height="494">
+          <img src="/assets/images/home-worker/gigs-functionality-arrow@2x.png" class="m05__arrow" alt="Gigs functionality" draggable="false" width="125" height="226">
+        </div>
+        <div data-landing-show="worker" class="m05__img-wrap">
+          <img src="/assets/images/home-worker/gigs-functionality@2x.png" alt="Gigs functionality" draggable="false" width="976" height="494">
+          <img src="/assets/images/home-worker/gigs-functionality-arrow@2x.png" class="m05__arrow" alt="Gigs functionality" draggable="false" width="125" height="226">
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m06 m06--business home-section">
+      <div class="container-fluid container-fluid--max">
+        <h4 class="m06__subtitle home-section__subtitle text-primary">Business owner's pros</h4>
+        <div class="m06__row">
+          <div class="m06__img-wrap">
+            <div class="m06__img-wrap-inner">
+              <img src="/assets/images/home-worker/business-owner-pros@2x.png" class="m06__img" alt="Influencer Marketing" draggable="false" width="695" height="493">
+                          </div>
+          </div>
+          <div class="m06__text-wrap">
+            <ol class="numbered-feature-list">
+              <li>
+                <span>01</span>
+                <h4>Search the gigs and find the relevant skillset</h4>
+                <p>Send offers to freelancers that might fill your need.</p>
+              </li>
+              <li>
+                <span>02</span>
+                <h4>Get approval and hire an ideal match.</h4>
+                <p>Work with people who match your requirements and have the needed skillset. </p>
+              </li>
+              <li>
+                <span>03</span>
+                <h4>Work with top-level vendors only. </h4>
+                <p>The gigs feature is available for those who proved their expertise. </p>
+              </li>
+            </ol>
+                      </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m06 home-section">
+      <div class="container-fluid container-fluid--max">
+        <h4 class="m06__subtitle home-section__subtitle text-primary">Freelancer's pros</h4>
+        <div class="m06__row">
+          <div class="m06__img-wrap">
+            <div class="m06__img-wrap-inner">
+              <img src="/assets/images/home-worker/freelancer-post-gig@2x.png" class="m06__img" alt="Influencer Marketing" draggable="false" width="439" height="395">
+              <img src="/assets/images/home-worker/freelancer-post-gig-left@2x.png" class="m06__img-left" alt="Post new gigs price edit" draggable="false" width="172" height="90">
+              <img src="/assets/images/home-worker/freelancer-post-gig-right@2x.png" class="m06__img-right" alt="Post new gigs save and continue" draggable="false" width="170" height="114">
+            </div>
+          </div>
+          <div class="m06__text-wrap">
+            <ol class="numbered-feature-list">
+              <li>
+                <span>01</span>
+                <h4>Create gigs to open new opportunities</h4>
+                <p>Get better-paid offers from cash-rich clients.</p>
+              </li>
+              <li>
+                <span>02</span>
+                <h4>Showcase your expertise to be noticeable</h4>
+                <p>Accept offers and make a living doing what you love.</p>
+              </li>
+              <li>
+                <span>03</span>
+                <h4>Successfully complete surveys, offers, or micro jobs, and earn points to attain the advanced level.</h4>
+                <p>Only advanced level workers may post gig offers on the platform.</p>
+              </li>
+            </ol>
+                      </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m07 m07--business home-section pb-6">
+      <div class="container-fluid container-fluid--max">
+        <div class="m07__inner text-center">
+          <div class="m07__inner-2">
+            <h2 class="m07__title home-section__title">Work with top-level freelancers at affordable costs</h2>
+            <p class="home-section__text m07__text">Post jobs, find your perfect match and get the work done.</p>
+            <img src="/assets/images/home-worker/cash-rich-clients-offers@2x.png" class="m07__img" alt="Cash-rich clients offers" draggable="false" width="649" height="239">
+            <img src="/assets/images/home-worker/cash-rich-clients-arrow-left@2x.png" class="m07__arrow-left" alt="Cash-rich clients section arrow left" draggable="false" width="209" height="134">
+            <img src="/assets/images/home-worker/cash-rich-clients-arrow-right@2x.png" class="m07__arrow-right" alt="Cash-rich clients section arrow right" draggable="false" width="205" height="299">
+            <a href="/signup.php" class="btn btn-primary m07__btn">Get Started</a>
+          </div>
+        </div>
+        <p class="m07__info-text home-section__info-text mt-7 pt-6">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10ZM12 16.5v.5m0-10v6-6Z" stroke="#15D164" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>We accept payments in cryptocurrency and pay out in crypto</span>
+        </p>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m07 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="m07__inner text-center">
+          <div class="m07__inner-2">
+            <h2 class="m07__title home-section__title">Gigs allow you to showcase your own expertise</h2>
+            <p class="home-section__text m07__text">Take offers from reliable clients, grow your reputation, and build a successful online business from the safety of our platform.</p>
+            <img src="/assets/images/home-worker/cash-rich-clients-offers@2x.png" class="m07__img" alt="Cash-rich clients offers" draggable="false" width="649" height="239">
+            <img src="/assets/images/home-worker/cash-rich-clients-arrow-left@2x.png" class="m07__arrow-left" alt="Cash-rich clients section arrow left" draggable="false" width="209" height="134">
+            <img src="/assets/images/home-worker/cash-rich-clients-arrow-right@2x.png" class="m07__arrow-right" alt="Cash-rich clients section arrow right" draggable="false" width="205" height="299">
+            <a href="/signup.php" class="btn btn-primary m07__btn">Get Started</a>
+          </div>
+        </div>
+        <p class="m07__info-text home-section__info-text">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10ZM12 16.5v.5m0-10v6-6Z" stroke="#15D164" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>We accept payments in cryptocurrency and pay out in crypto</span>
+        </p>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m08 home-section pt-6">
+      <div class="container-fluid container-fluid--max">
+        <div class="m08__row">
+          <div class="m08__img-wrap">
+            <img src="/assets/images/home-worker/user-picture@2x.png" class="m08__img" alt="Want to get referral image" draggable="false" width="533" height="633">
+          </div>
+          <div class="m08__text-wrap">
+            <h2 class="m08__title home-section__title">Want to get<br><span>5%</span> referral fee?</h2>
+            <p class="home-section__text m08__text">Place affiliate links in social media channels - blogs, websites, forums, etc., or write a review on Picoworkers. Refer new clients or freelancers and get a referral fee for everyone.</p>
+            <a href="/signup.php" class="btn btn-primary m08__btn">Sign up to Get Link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m08 home-section">
+      <div class="container-fluid container-fluid--max">
+        <div class="m08__row">
+          <div class="m08__img-wrap">
+            <img src="/assets/images/home-worker/user-picture@2x.png" class="m08__img" alt="Want to get referral image" draggable="false" width="533" height="633">
+          </div>
+          <div class="m08__text-wrap">
+            <h2 class="m08__title home-section__title">Want to get<br><span>5%</span> referral fee?</h2>
+            <p class="home-section__text m08__text">Place affiliate links in social media channels - blogs, websites, forums, etc., or write a review on Picoworkers. Refer new clients or freelancers and get a referral fee for everyone.</p>
+            <a href="/signup.php" class="btn btn-primary m08__btn">Sign up to Get Link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="business" class="m09 faq-section section">
+      <div class="container-fluid container-fluid--max-lg">
+        <div class="m09__row">
+          <div class="m09__left">
+            <h2 class="m09__title home-section__title">Frequently<br>Asked Questions</h2>
+          </div>
+          <div class="m09__text-wrap">
+            <div class="simple-accordion" id="businessFaqAccordion">
+              <div class="card">
+                <div class="card-header" id="businessFaqHeadingOne">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#businessFaqOne" aria-expanded="true" aria-controls="businessFaqOne">What is Success Rate?</button>
+                  </h3>
+                </div>
+
+                <div id="businessFaqOne" class="collapse" aria-labelledby="headingOne" data-parent="#businessFaqAccordion">
+                  <div class="card-body">
+                    Workers must maintain a success rate of above 75% at all times (Satisfied tasks). Too many Not-Satisfied tasks will lower Worker's success rate. Low success rate prevents a Worker from performing jobs for the next 30 days.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="businessFaqHeadingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#businessFaqTwo" aria-expanded="false" aria-controls="businessFaqTwo">Do job creators get charged for every task?</button>
+                  </h2>
+                </div>
+                <div id="businessFaqTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#businessFaqAccordion">
+                  <div class="card-body">
+                    Businesses pay only for tasks they are satisfied with. Picoworkers does not charge a fees for tasks that do not meet requirements set in the job. All job owners will have a chance to rate every submitted task.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="businessFaqHeadingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#businessFaqThree" aria-expanded="false" aria-controls="businessFaqThree">Unacceptable jobs</button>
+                  </h2>
+                </div>
+                <div id="businessFaqThree" class="collapse" aria-labelledby="headingThree" data-parent="#businessFaqAccordion">
+                  <div class="card-body">
+                    <p>WE DO NOT APPROVE JOBS ASKING WORKERS TO:</p>
+                    <ul>
+                      <li>Complete too many tasks in a single job</li>
+                      <li>Explicitly encourage clicking ads/pop ups, unlock a page, refresh page X times, reload, Play games (or similar) in order to finish the required task</li>
+                      <li>Spam or harm another website or person</li>
+                      <li>Promote Violent/Violence-related content or programs</li>
+                      <li>Promote illegal activities</li>
+                      <li>Involve websites dedicated to pornography</li>
+                      <li>Exchange money between payment systems</li>
+                      <li>Disclose personal information (unless you select Leads)</li>
+                      <li>Use a credit card or Provide Bank Account Details, or use any form of payment</li>
+                      <li>Sign-up for sites that require Membership or Activation Fees</li>
+                      <li>Sign-up for a free 14-day trial or similar offers that might risk involuntary payment after free offer expires</li>
+                      <li>Create fake reviews or testimonials of products or services. Any paid review or testimonial must clearly state they are compensated and the statement is still true and accurate based on a real experience.</li>
+                      <li>Transfer of Funds</li>
+                      <li>Any jobs involving Coinbase, PayPal, AWSurveys, Amazon, MTURK , Yelp, Craigslist, Google Adsense, Piratebay, Google Voice, Alibaba, Google reviews, Uphold, Upstox, Crewdle, Grammarly, Purchase of old accounts.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="businessFaqHeadingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#businessFaqFour" aria-expanded="false" aria-controls="businessFaqFour">Job fees</button>
+                  </h2>
+                </div>
+                <div id="businessFaqFour" class="collapse" aria-labelledby="businessFaqHeadingFour" data-parent="#businessFaqAccordion">
+                  <div class="card-body">
+                    In order to maintain a world class 24/7 platform with a fully staffed administration team, we must charge fees. Please think of our administrators as your work team partners. We charge fees to approve every job, correct jobs, monitor the submmitted tasks, and provide support services. Job approval fee is $0.65. Fee for tasks rated Satisfied is 7% charged to both worker and employer.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section data-landing-show="worker" class="m09 faq-section section">
+      <div class="container-fluid container-fluid--max-lg">
+        <div class="m09__row">
+          <div class="m09__left">
+            <h2 class="m09__title home-section__title">Frequently<br>Asked Questions</h2>
+          </div>
+          <div class="m09__text-wrap">
+            <div class="simple-accordion" id="workerFaqAccordion">
+              <div class="card">
+                <div class="card-header" id="workerFaqHeadingOne">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#workerFaqOne" aria-expanded="true" aria-controls="workerFaqOne">What is Success Rate?</button>
+                  </h3>
+                </div>
+
+                <div id="workerFaqOne" class="collapse" aria-labelledby="headingOne" data-parent="#workerFaqAccordion">
+                  <div class="card-body">
+                    Workers must maintain a success rate of above 75% at all times (Satisfied tasks). Too many Not-Satisfied tasks will lower Worker's success rate. Low success rate prevents a Worker from performing jobs for the next 30 days.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="workerFaqHeadingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#workerFaqTwo" aria-expanded="false" aria-controls="workerFaqTwo">Do job creators get charged for every task?</button>
+                  </h2>
+                </div>
+                <div id="workerFaqTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#workerFaqAccordion">
+                  <div class="card-body">
+                    Businesses pay only for tasks they are satisfied with. Picoworkers does not charge a fees for tasks that do not meet requirements set in the job. All job owners will have a chance to rate every submitted task.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="workerFaqHeadingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#workerFaqThree" aria-expanded="false" aria-controls="workerFaqThree">Unacceptable jobs</button>
+                  </h2>
+                </div>
+                <div id="workerFaqThree" class="collapse" aria-labelledby="headingThree" data-parent="#workerFaqAccordion">
+                  <div class="card-body">
+                    <p>WE DO NOT APPROVE JOBS ASKING WORKERS TO:</p>
+                    <ul>
+                      <li>Complete too many tasks in a single job</li>
+                      <li>Explicitly encourage clicking ads/pop ups, unlock a page, refresh page X times, reload, Play games (or similar) in order to finish the required task</li>
+                      <li>Spam or harm another website or person</li>
+                      <li>Promote Violent/Violence-related content or programs</li>
+                      <li>Promote illegal activities</li>
+                      <li>Involve websites dedicated to pornography</li>
+                      <li>Exchange money between payment systems</li>
+                      <li>Disclose personal information (unless you select Leads)</li>
+                      <li>Use a credit card or Provide Bank Account Details, or use any form of payment</li>
+                      <li>Sign-up for sites that require Membership or Activation Fees</li>
+                      <li>Sign-up for a free 14-day trial or similar offers that might risk involuntary payment after free offer expires</li>
+                      <li>Create fake reviews or testimonials of products or services. Any paid review or testimonial must clearly state they are compensated and the statement is still true and accurate based on a real experience.</li>
+                      <li>Transfer of Funds</li>
+                      <li>Any jobs involving Coinbase, PayPal, AWSurveys, Amazon, MTURK , Yelp, Craigslist, Google Adsense, Piratebay, Google Voice, Alibaba, Google reviews, Uphold, Upstox, Crewdle, Grammarly, Purchase of old accounts.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="workerFaqHeadingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#workerFaqFour" aria-expanded="false" aria-controls="workerFaqFour">Job fees</button>
+                  </h2>
+                </div>
+                <div id="workerFaqFour" class="collapse" aria-labelledby="workerFaqHeadingFour" data-parent="#workerFaqAccordion">
+                  <div class="card-body">
+                    In order to maintain a world class 24/7 platform with a fully staffed administration team, we must charge fees. Please think of our administrators as your work team partners. We charge fees to approve every job, correct jobs, monitor the submmitted tasks, and provide support services. Job approval fee is $0.65. Fee for tasks rated Satisfied is 7% charged to both worker and employer.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+
+</div>
+
+              <footer class="footer footer--logged-out mt-auto">
+  <div class="container-fluid container-fluid--max">
+    <div class="footer__top d-md-flex align-md-items-center">
+      <a href="/"><img src="/assets/images/logo.svg" alt="PicoWorkers"></a>
+      <ul class="footer__nav nav ml-auto">
+        <li class="nav-item"><a href="/wall-of-fame.php" class="nav-link"><span>Wall of Fame</span></a></li>
+        <li class="nav-item"><a href="/affiliates.php" class="nav-link"><span>Affiliate Program</span></a></li>
+        <li class="nav-item"><a href="/workers-making-money-online.php" class="nav-link"><span>Freelance &amp; Earn</span></a></li>
+        <li class="nav-item"><a href="/terms.php" class="nav-link"><span>Terms of Use</span></a></li>
+        <li class="nav-item"><a href="/privacy.php" class="nav-link"><span>Privacy Policy</span></a></li>
+      </ul>
+    </div>
+    <div class="footer__bottom align-items-center justify-content-between d-md-flex">
+      <p class="text-muted mb-md-0">&copy; 2022 Picoworkers.com. All Rights Reserved.</p>
+      <div class="social">
+        <a href="/cdn-cgi/l/email-protection#98bebba9a8ada3bebba9a9a8a3bebba9a8aaa3bebba9a9a9a3bebba8aeaca3bebba9a9aaa3bebba9a8ada3bebba8a1a1a3bebba9a9a9a3bebba9a9a1a3bebba9a9a9a3bebba9a9aca3bebba9a8afa3bebba9a8a9a3bebba9a9aca3bebba9a9ada3bebba8acaea3bebba8a1a1a3bebba9a9a9a3bebba9a8a1a3"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/groups/picoworkersofficialgroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/Picoworkers" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.reddit.com/r/Picoworkers" target="_blank" rel="noopener noreferrer"><i class="fab fa-reddit-square"></i></a>
+      </div>
+    </div>
+    <div class="row mt-3 pl-4">
+      <span class="text-muted text-sm">47 U.S. Code § 230 Disclaimer: Picoworkers shall not be treated as the publisher or speaker of any information provided by job publishers.</span>
+    </div>
+  </div>
+</footer>
+
+        </div>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://js.stripe.com/v3"></script>
+        <script type="text/javascript">
+            if (self == top) {
+                document.getElementsByTagName('body')[0].style.display='block';
+            } else {
+                top.location = self.location;
+            }
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141600439-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-141600439-1');
+                    </script>
+
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"NRJS-5227eab768865ec54b6","applicationID":"875176397","transactionName":"MgBQbURUDEJQUhIKCwtKZ0tfGgtfVVQeTRQNFQ==","queueTime":0,"applicationTime":3,"atts":"HkdTGwxOH0w=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

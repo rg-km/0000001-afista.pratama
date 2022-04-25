@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>爱笑聚 - 最新影视剧分享平台</title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="description" content="爱笑聚提供最新影视剧的百度网盘、迅雷、迅雷云盘、阿里云盘、115网盘、磁力、BT种子以及在线观看，是影视资源聚合分享平台。" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="/themes/site/default/css/build/core.css?v=20200804" />
+<link rel="stylesheet" href="/themes/site/default/css/build/style.css?v=20200226" />
+<!-- <base id="headbase" href="http://www.axjbd.com/" /> -->
+<script>
+//全局变量 Global Variables
+var GV = {
+	JS_ROOT : '/res/js/dev/',										//js目录
+	JS_VERSION : '20200925',											//js版本号(不能带空格)
+	JS_EXTRES : '/themes/extres',
+	TOKEN : 'ed65cbf851bf4a97',	//token $.ajaxSetup data
+	U_CENTER : '/space-index-run',		//用户空间(参数 : uid)
+	U_AVATAR_DEF : '/res/images/face/face_small.jpg',					//默认小头像
+	U_ID : parseInt('0'),									//uid
+	REGION_CONFIG : '',														//地区数据
+	CREDIT_REWARD_JUDGE : '',			//是否积分奖励，空值:false, 1:true
+	URL : {
+		LOGIN : '/u-login-run',										//登录地址
+		QUICK_LOGIN : '/u-login-fast',								//快速登录
+		IMAGE_RES: '/res/images',										//图片目录
+		CHECK_IMG : '/u-login-showverify',							//验证码图片url，global.js引用
+		VARIFY : '/verify-index-get',									//验证码html
+		VARIFY_CHECK : '/verify-index-check',							//验证码html
+		HEAD_MSG : {
+			LIST : '/message-notice-minilist'							//头部消息_列表
+		},
+		USER_CARD : '/space-card-run',								//小名片(参数 : uid)
+		LIKE_FORWARDING : '/bbs-post-doreply',							//喜欢转发(参数 : fid)
+		REGION : '/misc-webData-area',									//地区数据
+		SCHOOL : '/misc-webData-school',								//学校数据
+		EMOTIONS : "/emotion-index-run?type=bbs",					//表情数据
+		CRON_AJAX : '',											//计划任务 后端输出执行
+		FORUM_LIST : '/bbs-forum-list',								//版块列表数据
+		CREDIT_REWARD_DATA : '/u-index-showcredit',					//积分奖励 数据
+		AT_URL: '/bbs-remind-run',									//@好友列表接口
+		TOPIC_TYPIC: '/bbs-forum-topictype'							//主题分类
+	}
+};
+</script>
+<script src="/res/js/dev/wind.js?v=20200925"></script>
+</head>
+<body>
+
+<div class="wrap">
+<header class="header_wrap">
+	<div id="J_header" class="header cc">
+		<div class="logo">
+			<a href="/" title="爱笑聚">爱笑聚</a>
+		</div>
+		<nav class="nav_wrap">
+			<div class="nav">
+				<ul>
+					<li><a href="/">首页</a></li>
+					<li><a href="/bbs-index-run">最新</a></li>
+					<li><a href="/thread-1">电影</a></li>
+					<li><a href="/thread-18">剧集</a></li>
+					<li><a href="/thread-28">综艺</a></li>
+					<li><a href="/tag-%E5%8A%A8%E7%94%BB">动漫</a></li>
+					<li><a href="/like-mylike-run">订阅</a></li>
+					<li><a href="/thread-15">交流</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="header_search" role="search">
+			<form action="/search-s-run" method="post">
+				<input type="text" id="s" aria-label="搜索关键词" accesskey="s" placeholder="输入影片/IMDB编号/影人搜索" x-webkit-speech speech name="keyword"/>
+				<button type="submit" aria-label="搜索"><span>搜索</span></button>
+			<input type="hidden" name="csrf_token" value="ed65cbf851bf4a97"/></form>
+		</div>
+		<div class="header_login">
+	<a rel="nofollow" href="/u-login-run">登录</a><a rel="nofollow" href="/u-register-run">注册</a>
+</div>
+
+	</div>
+</header>
+	<div class="main_wrap">
+		<div class="cc">
+		<div role="structure_btnbox" data-lcm="100" class="box_wrap design_layout_style J_mod_layout_none" id="btnbox">			<h2 role="titlebar" class="design_layout_hd cc J_layout_hd" style="display: none;"><span>100%</span></h2>			<div class="design_layout_ct J_layout_item"><div id="J_mod_195" style="" data-id="195" data-model="thread" class="mod_box J_mod_box">
+		<div class="tags_hot" style="padding:7px 0 7px 11px;">
+<ul class="cc">
+  <li class="newindexbt">电影</li>
+	<li><a href="/thread-1" target="_blank">全部</a></li>
+	<li><a href="/thread-1?tab=digest" target="_blank">精华</a></li>
+     <li><a href="/thread-5" target="_blank">欧美</a></li>
+	<li><a href="/thread-14" target="_blank">华语</a></li>
+     <li><a href="/thread-3" target="_blank">日本</a></li>
+	<li><a href="/thread-2" target="_blank">韩国</a></li>
+	<li><a href="/thread-4" target="_blank">动漫</a></li>
+	<li><a href="/thread-17" target="_blank">亚洲</a></li>
+	<li><a href="/thread-26" target="_blank">往期</a></li>
+</ul>
+</div>
+<div class="tmode_imgGroupnew tmode_tagFront">
+  <ul class="cc" style="margin-left:7px;">
+      <li>
+      <a href="/read-65886" target="_blank"><img data-echo="/attachment/moviedetails/65886.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="你将不再孤单" width="125" height="174"><p>你将不再孤单</p><p class="newindexbt2">04-21 15:49 订阅:49</p></a>
+    </li>
+      <li>
+      <a href="/read-65363" target="_blank"><img data-echo="/attachment/moviedetails/65363.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="新蝙蝠侠" width="125" height="174"><p>新蝙蝠侠</p><p class="newindexbt2">04-12 10:58 订阅:91</p></a>
+    </li>
+      <li>
+      <a href="/read-62328" target="_blank"><img data-echo="/attachment/moviedetails/62328.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="好老板" width="125" height="174"><p>好老板</p><p class="newindexbt2">02-17 23:16 订阅:26</p></a>
+    </li>
+      <li>
+      <a href="/read-65692" target="_blank"><img data-echo="/attachment/moviedetails/65692.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="喜羊羊与灰太狼之筐出未来" width="125" height="174"><p>喜羊羊与灰太狼之筐出未来</p><p class="newindexbt2">04-17 10:30 订阅:3</p></a>
+    </li>
+      <li>
+      <a href="/read-63810" target="_blank"><img data-echo="/attachment/moviedetails/63810.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="奇迹·笨小孩" width="125" height="174"><p>奇迹·笨小孩</p><p class="newindexbt2">03-17 09:13 订阅:30</p></a>
+    </li>
+      <li>
+      <a href="/read-64010" target="_blank"><img data-echo="/attachment/moviedetails/64010.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="X" width="125" height="174"><p>X</p><p class="newindexbt2">03-20 13:46 订阅:30</p></a>
+    </li>
+      <li>
+      <a href="/read-65336" target="_blank"><img data-echo="/attachment/moviedetails/65336.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="责任" width="125" height="174"><p>责任</p><p class="newindexbt2">04-11 16:51 订阅:11</p></a>
+    </li>
+      <li>
+      <a href="/read-65281" target="_blank"><img data-echo="/attachment/moviedetails/65281.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="幻灭" width="125" height="174"><p>幻灭</p><p class="newindexbt2">04-10 18:53 订阅:21</p></a>
+    </li>
+      <li>
+      <a href="/read-65241" target="_blank"><img data-echo="/attachment/moviedetails/65241.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="布莱顿4号" width="125" height="174"><p>布莱顿4号</p><p class="newindexbt2">04-10 07:34 订阅:21</p></a>
+    </li>
+      <li>
+      <a href="/read-65185" target="_blank"><img data-echo="/attachment/moviedetails/65185.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="致那些得不到保护的人" width="125" height="174"><p>致那些得不到保护的人</p><p class="newindexbt2">04-09 17:57 订阅:9</p></a>
+    </li>
+      <li>
+      <a href="/read-65143" target="_blank"><img data-echo="/attachment/moviedetails/65143.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="阻止" width="125" height="174"><p>阻止</p><p class="newindexbt2">04-08 22:56 订阅:17</p></a>
+    </li>
+      <li>
+      <a href="/read-65060" target="_blank"><img data-echo="/attachment/moviedetails/65060.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="母亲" width="125" height="174"><p>母亲</p><p class="newindexbt2">04-08 13:43 订阅:21</p></a>
+    </li>
+      <li>
+      <a href="/read-50954" target="_blank"><img data-echo="/attachment/moviedetails/50954.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="德维塔耶夫" width="125" height="174"><p>德维塔耶夫</p><p class="newindexbt2">2021-06-16 14:05 订阅:25</p></a>
+    </li>
+      <li>
+      <a href="/read-64872" target="_blank"><img data-echo="/attachment/moviedetails/64872.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="雪国" width="125" height="174"><p>雪国</p><p class="newindexbt2">04-04 09:59 订阅:18</p></a>
+    </li>
+    </ul>
+</div>
+		<div class="tags_hot" style="padding:27px 0 7px 11px;">
+<ul class="cc">
+  <li class="newindexbt">剧集</li>
+	<li><a href="/thread-18" target="_blank">全部</a></li>
+	<li><a href="/thread-18?tab=digest" target="_blank">精华</a></li>
+	<li><a href="/thread-19" target="_blank">欧美剧</a></li>
+    <li><a href="/thread-20" target="_blank">大陆剧</a></li>
+	<li><a href="/thread-24" target="_blank">港台剧</a></li>
+    <li><a href="/thread-21" target="_blank">日剧</a></li>
+	<li><a href="/thread-22" target="_blank">韩剧</a></li>
+	<li><a href="/thread-23" target="_blank">动漫</a></li>
+	<li><a href="/thread-36" target="_blank">泰剧</a></li>
+	<li><a href="/thread-27" target="_blank">往期</a></li>
+</ul>
+</div>
+<div class="tmode_imgGroupnew tmode_tagFront">
+  <ul class="cc" style="margin-left:7px;">
+      <li>
+      <a href="/read-65766" target="_blank"><img data-echo="/attachment/moviedetails/65766.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="风骚律师 第六季" width="125" height="174"><p>风骚律师 第六季</p><p class="newindexbt2">欧美剧 订阅:154</p></a>
+    </li>
+      <li>
+      <a href="/read-65581" target="_blank"><img data-echo="/attachment/moviedetails/65581.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="无间行者" width="125" height="174"><p>无间行者</p><p class="newindexbt2">日剧 订阅:44</p></a>
+    </li>
+      <li>
+      <a href="/read-65534" target="_blank"><img data-echo="/attachment/moviedetails/65534.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="夏日重现" width="125" height="174"><p>夏日重现</p><p class="newindexbt2">动漫 订阅:168</p></a>
+    </li>
+      <li>
+      <a href="/read-65506" target="_blank"><img data-echo="/attachment/moviedetails/65506.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="悬崖上的谋杀" width="125" height="174"><p>悬崖上的谋杀</p><p class="newindexbt2">欧美剧 订阅:73</p></a>
+    </li>
+      <li>
+      <a href="/read-65524" target="_blank"><img data-echo="/attachment/moviedetails/65524.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="咆哮 第一季" width="125" height="174"><p>咆哮 第一季</p><p class="newindexbt2">欧美剧 订阅:26</p></a>
+    </li>
+      <li>
+      <a href="/read-65474" target="_blank"><img data-echo="/attachment/moviedetails/65474.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="异物志" width="125" height="174"><p>异物志</p><p class="newindexbt2">大陆剧 订阅:75</p></a>
+    </li>
+      <li>
+      <a href="/read-65307" target="_blank"><img data-echo="/attachment/moviedetails/65307.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="绅士杰克 第二季" width="125" height="174"><p>绅士杰克 第二季</p><p class="newindexbt2">欧美剧 订阅:31</p></a>
+    </li>
+      <li>
+      <a href="/read-65347" target="_blank"><img data-echo="/attachment/moviedetails/65347.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="我的家" width="125" height="174"><p>我的家</p><p class="newindexbt2">日剧 订阅:45</p></a>
+    </li>
+      <li>
+      <a href="/read-65346" target="_blank"><img data-echo="/attachment/moviedetails/65346.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="爱的接力棒" width="125" height="174"><p>爱的接力棒</p><p class="newindexbt2">日剧 订阅:4</p></a>
+    </li>
+      <li>
+      <a href="/read-65286" target="_blank"><img data-echo="/attachment/moviedetails/65286.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="亲爱的小孩" width="125" height="174"><p>亲爱的小孩</p><p class="newindexbt2">大陆剧 订阅:37</p></a>
+    </li>
+      <li>
+      <a href="/read-65230" target="_blank"><img data-echo="/attachment/moviedetails/65230.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="我的出走日记" width="125" height="174"><p>我的出走日记</p><p class="newindexbt2">韩剧 订阅:62</p></a>
+    </li>
+      <li>
+      <a href="/read-65229" target="_blank"><img data-echo="/attachment/moviedetails/65229.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="间谍过家家" width="125" height="174"><p>间谍过家家</p><p class="newindexbt2">动漫 订阅:207</p></a>
+    </li>
+      <li>
+      <a href="/read-64994" target="_blank"><img data-echo="/attachment/moviedetails/64994.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="朋友游戏" width="125" height="174"><p>朋友游戏</p><p class="newindexbt2">动漫 订阅:49</p></a>
+    </li>
+      <li>
+      <a href="/read-64636" target="_blank"><img data-echo="/attachment/moviedetails/64636.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="金宵大厦2" width="125" height="174"><p>金宵大厦2</p><p class="newindexbt2">港台剧 订阅:149</p></a>
+    </li>
+    </ul>
+</div>
+		<div class="tags_hot" style="padding:27px 0 7px 11px;">
+<ul class="cc">
+  <li class="newindexbt">综艺</li>
+	<li><a href="/thread-28" target="_blank">全部</a></li>
+	<li><a href="/thread-30" target="_blank">大陆</a></li>
+    <li><a href="/thread-29" target="_blank">日韩</a></li>
+	<li><a href="/thread-31" target="_blank">港台</a></li>
+    <li><a href="/thread-32" target="_blank">欧美</a></li>
+</ul>
+</div>
+<div class="tmode_imgGroupnew tmode_tagFront" style="padding-bottom:27px;">
+  <ul class="cc" style="margin-left:7px;">
+      <li>
+      <a href="/read-62817" target="_blank"><img data-echo="/attachment/moviedetails/62817.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="半熟恋人" width="125" height="174"><p>半熟恋人</p><p class="newindexbt2">大陆 订阅:1</p></a>
+    </li>
+      <li>
+      <a href="/read-53493" target="_blank"><img data-echo="/attachment/moviedetails/53493.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="披荆斩棘的哥哥" width="125" height="174"><p>披荆斩棘的哥哥</p><p class="newindexbt2">大陆 订阅:41</p></a>
+    </li>
+      <li>
+      <a href="/read-51604" target="_blank"><img data-echo="/attachment/moviedetails/51604.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="期盼已久的大海" width="125" height="174"><p>期盼已久的大海</p><p class="newindexbt2">日韩 订阅:8</p></a>
+    </li>
+      <li>
+      <a href="/read-50925" target="_blank"><img data-echo="/attachment/moviedetails/50925.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="我的青铜时代" width="125" height="174"><p>我的青铜时代</p><p class="newindexbt2">大陆 订阅:22</p></a>
+    </li>
+      <li>
+      <a href="/read-47380" target="_blank"><img data-echo="/attachment/moviedetails/47380.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="向往的生活 第五季" width="125" height="174"><p>向往的生活 第五季</p><p class="newindexbt2">大陆 订阅:21</p></a>
+    </li>
+      <li>
+      <a href="/read-44188" target="_blank"><img data-echo="/attachment/moviedetails/44188.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="偶然的社长" width="125" height="174"><p>偶然的社长</p><p class="newindexbt2">日韩 订阅:7</p></a>
+    </li>
+      <li>
+      <a href="/read-43663" target="_blank"><img data-echo="/attachment/moviedetails/43663.jpg" src="/res/lazyeach/blank.gif" class="layeach" alt="创造营2021" width="125" height="174"><p>创造营2021</p><p class="newindexbt2">大陆 订阅:8</p></a>
+    </li>
+    </ul>
+</div>
+		</div></div></div></div>
+	</div>
+<!--.main-wrap,#main End-->
+<div class="footer_wrap">
+	<div class="footer">
+	<div class="footerleft">&copy; 2022 axjhd.com all rights reserved</div>
+		<div class="footerright">
+<a rel="nofollow" href="?mobile=yes">手机访问</a><a rel="nofollow" href="/read-88">使用帮助</a><a rel="nofollow" href="/read-12258">发布资源</a><a rel="nofollow" href="/read-18436">选择线路</a>
+<span style="display:none"><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?626cc7d92f2952519924f98e7204cc73";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+		</div>
+	</div>
+</div>
+<!--返回顶部-->
+<a href="#" rel="nofollow" role="button" id="back_top" tabindex="-1">返回顶部</a>
+</div>
+<script>
+Wind.use('jquery', 'global', function() {
+	Wind.js('/res/lazyeach/lazyeach.js?v='+ GV.JS_VERSION, function() {
+		Wind.css('/res/lazyeach/lazyeach.css?v='+ GV.JS_VERSION)
+        lazyEcho.init({
+            offset: 0,
+            throttle: 0
+        });
+	});
+});
+</script>
+
+</body>
+</html>

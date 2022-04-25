@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    
+<meta name="robots" content="NOODP"><link rel="shortcut icon" href="//assets.ctfassets.net/qx1dg9syx02d/3pGKZ2dBhL5gD0O9r85oXT/cbc2bb0c1a4f288d53cc416595b7f08a/favicon.ico"><link rel="icon" type="image/png" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=196&h=196" sizes="196x196"><link rel="icon" type="image/png" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=96&h=96" sizes="96x96"><link rel="icon" type="image/png" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=32&h=32" sizes="32x32"><link rel="icon" type="image/png" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=16&h=16" sizes="16x16"><link rel="icon" type="image/png" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=128&h=128" sizes="128x128"><meta name="application-name" content="Young Living"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=144&h=144"><meta name="msapplication-square70x70logo" content="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=70&h=70"><meta name="msapplication-square150x150logo" content="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=150&h=150"><meta name="msapplication-wide310x150logo" content="https://images.ctfassets.net/qx1dg9syx02d/7urDFp5QSScC8MBZxTthq/bcf2a7befa4cdca6ec3d85639dd23977/mstile-310x150.png?w=310&h=150"><meta name="msapplication-square310x310logo" content="https://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=310&h=310"><link rel="apple-touch-icon-precomposed" href="//images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=152&h=152"><link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=57&h=57"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=114&h=114"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=72&h=72"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=144&h=144"><link rel="apple-touch-icon-precomposed" sizes="60x60" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=60&h=60"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=120&h=120"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=76&h=76"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://images.ctfassets.net/qx1dg9syx02d/5jIZO8KajYqKcbg4i02tDF/179a9f82b7987d6821140dd33138191a/favicon-196x196.png?w=152&h=152"><script type='text/javascript' src='//static.queue-it.net/script/queueclient.min.js'></script><script data-queueit-c='youngliving' data-queueit-intercept-domain='youngliving.com' data-queueit-intercept="true" type='text/javascript' src='//static.queue-it.net/script/queueconfigloader.min.js'> </script>    <meta name="description" content="Young Living is the World Leader in Essential Oils®. Through the painstaking steps of our proprietary Seed to Seal® process, we produce pure, authentic essential oil products for every individual, family, and lifestyle.">
+<link rel="canonical" href="https://www.youngliving.com">
+<script type="text/javascript" src="/global/js/languages.js?v=6"></script>
+<script>
+              if (!window.redirected) document.write('<link href="/global/css/youngliving.css?v=22" rel="stylesheet"><link href="/global/css/language.css?v=22" rel="stylesheet"><link href="/shared/css/webfonts.css?v=22" rel="stylesheet"/>');
+</script>
+
+    <title>Young Living Essential Oils | World Leader in Essential Oils</title>
+    
+            <link href="/assets/styles/min/yl.css?v=4xcJpgNhc1zdn5CmU1wAXWk-aesCF2rQfBy2kaUbDIs" rel="stylesheet" />
+        
+</head>
+<body>
+    
+
+
+<script src="/assets/js/min/libs.js?v=dNwcHA-ICTROJumyW7_kQpDdlQAwlq2O5b8ddn6ItTE"></script>
+
+
+    <main id="mainPage">
+
+
+
+        <div id="pageBody" class="">
+            <div class="content-container">
+                <div id="pageBodyContent">
+                    
+
+
+
+<div id="globalHero">
+  <div id="globalLogo">
+    <img src="https://images.ctfassets.net/qx1dg9syx02d/5oUBHKJeQvkrp1ZFH4DnXu/d17b5dd51ef5150c2f6b78fdf6cbb310/yl-logo-color.svg" />
+  </div>
+</div>
+<div class="nfr-info">
+                 <h6 class="nfr-label">
+                    Welcome to Young Living. Please select your country below.<br>
+                    If you do not see your country listed, please click <a
+                        href="vo/#/signup/new-start?isocountrycode=DZ&culture=en-US&type=member">here</a>. 
+                        &nbsp;
+                    <span class="nfr-tooltip">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nfr-tooltiptext">
+                            <div>Young Living does not have a warehouse in your country, please use the United States Not For Resale (NFR) site <a
+                        href="vo/#/signup/new-start?isocountrycode=DZ&culture=en-US&type=member">here</a> to shop.
+</div>
+                        </span>
+                    </span>
+                </h6>
+            </div>
+<div class="global-regions">
+  <div class="region">
+    <h2>North America</h2>
+    <div class="locales">
+      <a href="/en_CA" class="locale">
+        <img src="/assets/flags/ca.svg" />
+        <label>Canada (English)</label>
+      </a>
+      <a href="/fr_CA" class="locale">
+        <img src="/assets/flags/ca.svg" />
+        <label>Canada (French)</label>
+      </a>
+      <a href="/us/en" class="locale">
+        <img src="/assets/flags/us.svg" />
+        <label>United States (English)</label>
+      </a>
+      <a href="/us/es" class="locale">
+        <img src="/assets/flags/us.svg" />
+        <label>United States (Spanish)</label>
+      </a>
+    </div>
+  </div>
+  <div class="region">
+    <h2>Latin America</h2>
+    <div class="locales">
+      <a href="/es_EC" class="locale">
+        <img src="/assets/flags/ec.svg" />
+        <label>Ecuador (Spanish)</label>
+      </a>
+      <a href="/es_MX" class="locale">
+        <img src="/assets/flags/mx.svg" />
+        <label>Mexico</label>
+      </a>
+      <a href="/es_CO" class="locale">
+        <img src="/assets/flags/co.svg" />
+        <label>Colombia</label>
+      </a>
+      <a href="/es_CR" class="locale">
+        <img src="/assets/flags/cr.svg" />
+        <label>Costa Rica (Español)</label>
+      </a>
+      <a href="/pt_BR" class="locale">
+        <img src="/assets/flags/br.svg" />
+        <label>Brazil</label>
+      </a>
+    </div>
+  </div>
+  <div class="region">
+    <h2>Europe</h2>
+    <div class="locales">
+      <a href="/de_AT" class="locale">
+        <img src="/assets/flags/at.svg" />
+        <label>Austria</label>
+      </a>
+      <a href="/cs_CZ" class="locale">
+        <img src="/assets/flags/cz.svg" />
+        <label>Czech Republic</label>
+      </a>
+      <a href="/fi_FI" class="locale">
+        <img src="/assets/flags/fi.svg" />
+        <label>Finland</label>
+      </a>
+      <a href="/fr_FR" class="locale">
+        <img src="/assets/flags/fr.svg" />
+        <label>France</label>
+      </a>
+      <a href="/de_DE" class="locale">
+        <img src="/assets/flags/de.svg" />
+        <label>Germany</label>
+      </a>
+      <a href="/lt_LT" class="locale">
+        <img src="/assets/flags/lt.svg" />
+        <label>Lithuania</label>
+      </a>
+      <a href="/nl_NL" class="locale">
+        <img src="/assets/flags/nl.svg" />
+        <label>Netherlands</label>
+      </a>
+      <a href="/pl_PL" class="locale">
+        <img src="/assets/flags/pl.svg" />
+        <label>Poland</label>
+      </a>
+      <a href="/ro_RO" class="locale">
+        <img src="/assets/flags/ro.svg" />
+        <label>Romania</label>
+      </a>
+      <a href="/es_ES" class="locale">
+        <img src="/assets/flags/es.svg" />
+        <label>Spain</label>
+      </a>
+      <a href="/sv_SE" class="locale">
+        <img src="/assets/flags/se.svg" />
+        <label>Sweden</label>
+      </a>
+      <a href="/ru_RU" class="locale">
+        <img src="/assets/flags/ru.svg" />
+        <label>Russian Federation</label>
+      </a>
+      <a href="/en_GB" class="locale">
+        <img src="/assets/flags/gb.svg" />
+        <label>United Kingdom</label>
+      </a>
+      <button id="moreGlobalRegionsBtn">
+        <span class="text">More</span>
+        <i class="fad fa-arrow-square-down"></i>
+      </button>
+    </div>
+  </div>
+  <div class="region">
+    <h2>Asia</h2>
+    <div class="locales">
+      <a href="/ja_JP" class="locale">
+        <img src="/assets/flags/jp.svg" />
+        <label>日本国 (Japan)</label>
+      </a>
+      <a href="/en_JP" class="locale">
+        <img src="/assets/flags/jp.svg" />
+        <label>Japan (English)</label>
+      </a>
+      <a href="/en_SG" class="locale">
+        <img src="/assets/flags/sg.svg" />
+        <label>Singapore</label>
+      </a>
+      <a href="/en_MY" class="locale">
+        <img src="/assets/flags/my.svg" />
+        <label>Malaysia (English)</label>
+      </a>
+      <a href="/ms_MY" class="locale">
+        <img src="/assets/flags/my.svg" />
+        <label>Malaysia (Melayu)</label>
+      </a>
+      <a href="/zh_MY" class="locale">
+        <img src="/assets/flags/my.svg" />
+        <label>Malaysia (中文)</label>
+      </a>
+      <a href="/en_HK" class="locale">
+        <img src="/assets/flags/hk.svg" />
+        <label>Hong Kong (English)</label>
+      </a>
+      <a href="/zh_HK" class="locale">
+        <img src="/assets/flags/hk.svg" />
+        <label>香港 (中文)</label>
+      </a>
+      <a href="/en_MO" class="locale">
+        <img src="/assets/flags/mo.svg" />
+        <label>Macau (English)</label>
+      </a>
+      <a href="/zh_MO" class="locale">
+        <img src="/assets/flags/mo.svg" />
+        <label>澳门(中文)</label>
+      </a>
+      <a href="/vo" onclick="document.cookie='culture=en-TW;path=/';" class="locale">
+        <img src="/assets/flags/tw.svg" />
+        <label>Taiwan (English)</label>
+      </a>
+      <a href="/zh_TW" class="locale">
+        <img src="/assets/flags/tw.svg" />
+        <label>台灣 (中文)</label>
+      </a>
+      <a href="/en_ID" class="locale">
+        <img src="/assets/flags/id.svg" />
+        <label>Indonesia (English)</label>
+      </a>
+      <a href="/id_ID" class="locale">
+        <img src="/assets/flags/id.svg" />
+        <label>Indonesia (Bahasa)</label>
+      </a>
+      <a href="/en_PH" class="locale">
+        <img src="/assets/flags/ph.svg" />
+        <label>Philippines</label>
+      </a>
+      <a href="/ko_KR" class="locale">
+        <img src="/assets/flags/kr.svg" />
+        <label>대한민국 (한국어)</label>
+      </a>
+    </div>
+  </div>
+  <div class="region">
+    <h2>Oceania</h2>
+    <div class="locales">
+      <a href="/en_AU" class="locale">
+        <img src="/assets/flags/au.svg" />
+        <label>Australia (English)</label>
+      </a>
+      <a href="/en_NZ" class="locale">
+        <img src="/assets/flags/nz.svg" />
+        <label>New Zealand (English)</label>
+      </a>
+    </div>
+    <h2>Africa</h2>
+    <div class="locales">
+      <a href="/en_ZA" class="locale">
+        <img src="/assets/flags/za.svg" />
+        <label>South Africa</label>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="moreGlobalRegions" class="global-regions">
+  <div class="region">
+    <h2>European Union</h2>
+    <div class="locales columns">
+      <div class="column">
+        <a href="/de_AT" class="locale">
+          <img src="/assets/flags/at.svg" />
+          <label>Austria</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=BE" class="locale">
+          <img src="/assets/flags/be.svg" />
+          <label>Belgium</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=BG" class="locale">
+          <img src="/assets/flags/bg.svg" />
+          <label>Bulgaria</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=HR" class="locale">
+          <img src="/assets/flags/hr.svg" />
+          <label>Croatia</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=CY" class="locale">
+          <img src="/assets/flags/cy.svg" />
+          <label>Cyprus</label>
+        </a>
+        <a href="/cs_CZ" class="locale">
+          <img src="/assets/flags/cz.svg" />
+          <label>Czech Republic</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=DK" class="locale">
+          <img src="/assets/flags/dk.svg" />
+          <label>Denmark</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=EE" class="locale">
+          <img src="/assets/flags/ee.svg" />
+          <label>Estonia</label>
+        </a>
+        <a href="/fi_FI" class="locale">
+          <img src="/assets/flags/fi.svg" />
+          <label>Finland</label>
+        </a>
+        <a href="/fr_FR" class="locale">
+          <img src="/assets/flags/fr.svg" />
+          <label>France</label>
+        </a>
+        <a href="/de_DE" class="locale">
+          <img src="/assets/flags/de.svg" />
+          <label>Germany</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=GR" class="locale">
+          <img src="/assets/flags/gr.svg" />
+          <label>Greece</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=HU" class="locale">
+          <img src="/assets/flags/hu.svg" />
+          <label>Hungary</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=IE" class="locale">
+          <img src="/assets/flags/ie.svg" />
+          <label>Ireland</label>
+        </a>
+      </div>
+      <div class="column">
+        <a href="/en_EU?countryIsoCode=IT" class="locale">
+          <img src="/assets/flags/it.svg" />
+          <label>Italy</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=LV" class="locale">
+          <img src="/assets/flags/lv.svg" />
+          <label>Latvia</label>
+        </a>
+        <a href="/lt_LT" class="locale">
+          <img src="/assets/flags/lt.svg" />
+          <label>Lithuania</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=LU" class="locale">
+          <img src="/assets/flags/lu.svg" />
+          <label>Luxembourg</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=MT" class="locale">
+          <img src="/assets/flags/mt.svg" />
+          <label>Malta</label>
+        </a>
+        <a href="/nl_NL" class="locale">
+          <img src="/assets/flags/nl.svg" />
+          <label>Netherlands</label>
+        </a>
+        <a href="/pl_PL" class="locale">
+          <img src="/assets/flags/pl.svg" />
+          <label>Poland</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=PT" class="locale">
+          <img src="/assets/flags/pt.svg" />
+          <label>Portugal</label>
+        </a>
+        <a href="/ro_RO" class="locale">
+          <img src="/assets/flags/ro.svg" />
+          <label>Romania</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=SK" class="locale">
+          <img src="/assets/flags/sk.svg" />
+          <label>Slovakia</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=SI" class="locale">
+          <img src="/assets/flags/si.svg" />
+          <label>Slovenia</label>
+        </a>
+        <a href="/es_ES" class="locale">
+          <img src="/assets/flags/es.svg" />
+          <label>Spain</label>
+        </a>
+        <a href="/sv_SE" class="locale">
+          <img src="/assets/flags/se.svg" />
+          <label>Sweden</label>
+        </a>       
+      </div>
+    </div>
+  </div>
+  <div class="region">
+    <h2>Non European Union</h2>
+    <div class="locales columns">
+      <div class="column">
+        <a href="/en_EU?countryIsoCode=AL" class="locale">
+          <img src="/assets/flags/al.svg" />
+          <label>Albania</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=AD" class="locale">
+          <img src="/assets/flags/ad.svg" />
+          <label>Andorra</label>
+        </a>
+        <a href="/ru_RU?countryIsoCode=AM" class="locale">
+          <img src="/assets/flags/am.svg" />
+          <label>Armenia</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=AZ" class="locale">
+          <img src="/assets/flags/az.svg" />
+          <label>Azerbaijan</label>
+        </a>
+        <a href="/ru_RU?countryIsoCode=BY" class="locale">
+          <img src="/assets/flags/by.svg" />
+          <label>Belarus</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=BA" class="locale">
+          <img src="/assets/flags/ba.svg" />
+          <label>Bosnia & Herzegovina</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=FO" class="locale">
+          <img src="/assets/flags/fo.svg" />
+          <label>Faroe Islands</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=GE" class="locale">
+          <img src="/assets/flags/ge.svg" />
+          <label>Georgia</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=GI" class="locale">
+          <img src="/assets/flags/gi.svg" />
+          <label>Gibraltar</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=GL" class="locale">
+          <img src="/assets/flags/gl.svg" />
+          <label>Greenland</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=IS" class="locale">
+          <img src="/assets/flags/is.svg" />
+          <label>Iceland</label>
+        </a>
+        <a href="/ru_RU?countryIsoCode=KZ" class="locale">
+          <img src="/assets/flags/kz.svg" />
+          <label>Kazakhstan</label>
+        </a>
+        <a href="/ru_RU?countryIsoCode=KG" class="locale">
+          <img src="/assets/flags/kg.svg" />
+          <label>Kyrgyzstan</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=LI" class="locale">
+          <img src="/assets/flags/li.svg" />
+          <label>Liechtenstein</label>
+        </a>
+      </div>
+      <div class="column">
+        <a href="/en_EU?countryIsoCode=MK" class="locale">
+          <img src="/assets/flags/mk.svg" />
+          <label>North Macedonia</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=MD" class="locale">
+          <img src="/assets/flags/md.svg" />
+          <label>Moldova</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=MC" class="locale">
+          <img src="/assets/flags/mc.svg" />
+          <label>Monaco</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=ME" class="locale">
+          <img src="/assets/flags/me.svg" />
+          <label>Montenegro</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=NO" class="locale">
+          <img src="/assets/flags/no.svg" />
+          <label>Norway</label>
+        </a>
+        <a href="/ru_RU" class="locale">
+          <img src="/assets/flags/ru.svg" />
+          <label>Russian Federation</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=SM" class="locale">
+          <img src="/assets/flags/sm.svg" />
+          <label>San Marino</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=RS" class="locale">
+          <img src="/assets/flags/rs.svg" />
+          <label>Serbia</label>
+        </a>
+        <a href="/de_DE" class="locale">
+          <img src="/assets/flags/ch.svg" />
+          <label>Switzerland</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=TJ" class="locale">
+          <img src="/assets/flags/tj.svg" />
+          <label>Tajikistan</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=TM" class="locale">
+          <img src="/assets/flags/tm.svg" />
+          <label>Turkmenistan</label>
+        </a>
+        <a href="/ru_EU?countryIsoCode=UA" class="locale">
+          <img src="/assets/flags/ua.svg" />
+          <label>Ukraine</label>
+        </a>
+        <a href="/en_GB" class="locale">
+          <img src="/assets/flags/gb.svg" />
+          <label>United Kingdom</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=UZ" class="locale">
+          <img src="/assets/flags/uz.svg" />
+          <label>Uzbekistan</label>
+        </a>
+        <a href="/en_EU?countryIsoCode=VA" class="locale">
+          <img src="/assets/flags/va.svg" />
+          <label>Vatican City</label>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <style>
+        #pageBody>.content-container {
+padding: 0;
+margin: 0;
+max-width: 100%;
+}
+
+#globalHero {
+  height: 516px;
+  background-image: url(https://images.ctfassets.net/qx1dg9syx02d/39LESVwHyufXXA7UHLy7Y8/c43334b1056a1bf4bc416b1e01b3001f/landing-lavender.jpg?h=516);
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+}
+
+#globalHero #globalLogo {
+    width: 440px;
+    margin: 0 auto 160px;
+    padding-top: 70px;
+}
+
+#globalHero #globalLogo img {
+  width: 100%;
+}
+
+.global-regions {
+  margin: 50px 0 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#moreGlobalRegions {
+  margin-top: 30px;
+  position: fixed;
+  pointer-events: none;
+}
+
+#moreGlobalRegions:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 0;
+  transform: scaleY(1);
+  transition: transform .5s;
+  transform-origin: bottom center;
+}
+
+#moreGlobalRegions.active {
+  position: relative;
+  pointer-events: initial;
+}
+
+#moreGlobalRegions.active:after {
+  transform: scaleY(0);
+}
+
+.global-regions .region {
+  margin-right: 30px;
+}
+
+.global-regions .region:last-of-type {
+  margin-right: 0;
+}
+
+.global-regions .region h2 {
+    margin: 20px 0 0 0;
+    font-family: montserrat, avenir, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: #797979;
+    white-space: nowrap;
+}
+
+.global-regions .region h2:first-of-type {
+    margin-top: 0;
+}
+
+.global-regions .region .locales {
+  margin-top: 15px;
+}
+
+.global-regions .region .locales.columns {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 40px;
+}
+
+.global-regions .region .locales.columns .column {
+  margin-right: 30px;
+}
+
+.global-regions .region .locales.columns .column:last-of-type {
+  margin-right: 0;
+}
+
+.global-regions .region .locales button {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  color: #6e4a9e;
+  cursor: pointer;
+}
+
+.global-regions .region .locales button:hover {
+  border-bottom-color: #6e4a9e;
+}
+
+.global-regions .region .locales button i {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.global-regions .region .locales button .text {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.global-regions .region .locales .locale {
+  text-decoration: none;
+  color: black;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.global-regions .region .locales .locale:hover label {
+  color: #6e4a9e;
+  text-decoration: underline;
+}
+
+.global-regions .region .locales .locale img {
+  width: 16px;
+}
+
+.global-regions .region .locales .locale label {
+  font-size: 12px;
+  margin: 0 0 2px 5px;
+  cursor: pointer;
+}
+
+.global-regions .region .locales .locale:first-of-type {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+#mainPage {
+ display: block;
+}
+
+#globalHero {
+  height: 200px;
+  background-image: url(https://images.ctfassets.net/qx1dg9syx02d/39LESVwHyufXXA7UHLy7Y8/c43334b1056a1bf4bc416b1e01b3001f/landing-lavender.jpg?h=200);
+}
+
+#globalHero #globalLogo {
+    width: 160px;
+    margin: 0 auto 180px;
+    padding-top: 20px;
+}
+
+#globalHero #globalLogo img {
+  width: 100%;
+}
+
+.global-regions {
+  margin: 50px 0 30px;
+  padding: 0 20px;
+  display: block;
+}
+
+.global-regions .region {
+  margin-top: 30px;
+}
+
+.global-regions .region:first-of-type {
+  margin-top: 0;
+}
+
+#moreGlobalRegionsBtn {
+display: none;
+}
+
+#moreGlobalRegions {
+    margin-top: 30px;
+    position: relative;
+   pointer-events: initial;
+}
+
+#moreGlobalRegions:after{
+  transform: scaleY(0);
+}
+}
+
+.nfr-info {
+  text-align:center;
+  padding-top: 40px;
+}
+.nfr-label {
+  font-family: montserrat, avenir, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #797979;
+  white-space: wrap;
+}
+
+/* Tooltip container */
+.nfr-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.nfr-tooltiptext {
+  visibility: hidden;
+  max-width: 550px;
+  width: 200px;
+  font-size:12px;
+  background-color: #6e4a9e;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  vertical-align: middle;
+  line-height: 1.4;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.nfr-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show tooltip text on hover */
+.nfr-tooltip:hover .nfr-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+    </style>
+
+<script>
+$('#moreGlobalRegionsBtn').on('click', function () {
+  $('#moreGlobalRegions').addClass('active');
+});
+</script>
+
+    
+            <script src="/assets/js/min/libs.js?v=dNwcHA-ICTROJumyW7_kQpDdlQAwlq2O5b8ddn6ItTE"></script>
+            <script src="/assets/js/min/main-yl.js?v=nBiP6tQvPBqxFV5uCCG4RH15Xp5NejzQqLfxAfHPLAw"></script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-LF7K');</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-LF7K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fb535991f2e64a1"></script>        
+    
+    
+    <script src="https://scripts.youngliving.com/onetrust/remoteEntry.js"></script>
+    <script>yl_onetrust_banner.get('./CookieBanner').then(module => {
+            const CB = module();
+            CB.initializeCookieBanner();
+        });</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正在转跳</title>
+</head>
+<script>
+  if (location.host.indexOf('www.') != 0 && location.host.split('.').length == 2) {
+    location.href = 'https://www.' + location.host
+  } else {
+    alert(location.host.indexOf('www.')+'配置错误'+location.host)
+  }
+</script>
+<body>
+</body>
+</html>

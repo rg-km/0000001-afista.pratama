@@ -1,0 +1,2784 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+
+
+<head>
+    
+</meta>
+    <script async type="text/javascript" src="//assets.adobedtm.com/launch-EN2afa083a8c0444a3864ddbb48b27a9a7.min.js"></script>
+	
+<!--BEGIN ADOBE DTM CUSTOM VARIABLES -->
+<script type="text/javascript">
+    
+    var jsonObjFromSessStorage = sessionStorage.getItem("ibsession");
+    var jsonString = jsonObjFromSessStorage ? JSON.parse(jsonObjFromSessStorage) : '';
+    var loggedIn = jsonString && jsonString.user ? jsonString.user.isLoggedIn : '';
+    var favDep = jsonString && jsonString.profile && jsonString.profile.data.consumer.myProfile.customerPreferences.homeStationPref ? jsonString.profile.data.consumer.myProfile.customerPreferences.homeStationPref.locationCode : '';
+    var favArr = jsonString && jsonString.profile && jsonString.profile.data.consumer.myProfile.customerPreferences.arrivalStationPref ? jsonString.profile.data.consumer.myProfile.customerPreferences.arrivalStationPref.locationCode : '';
+    var agrMember = false;
+    var agrNumber = jsonString && jsonString.profile ? jsonString.profile.data.consumer.myProfile.agrNumber : '';
+    var agrTier = jsonString && jsonString.profile ? jsonString.profile.data.consumer.myProfile.myAGRAccountInfo.memberTierCode : '';
+    var agrPts = jsonString && jsonString.profile ? jsonString.profile.data.consumer.myProfile.myAGRAccountInfo.memberPointBalance : '';
+    var promotionInfo = "";
+
+</script>
+
+<script type="text/javascript">
+    var loginstate = "logged-out";
+    if(loggedIn){
+        loginstate = "logged-in";
+    }
+
+    var newDigitalData = {
+        "AccountManagement": {
+            "AGRTier":agrTier,
+            "loginStatus":loginstate,
+            "AGRNumber":agrNumber,
+            "AGRPoints":agrPts,
+            "favDeparture":favDep,
+            "favArrival":favArr
+        },
+        "PageInfo":{
+            "pageName": "HomePage",
+            "pageType": "",
+            "channel": "amtrak.com",
+            "siteSection": "",
+            "siteName": "amtrak",
+        },
+        "PromotionInfo": promotionInfo
+    }
+
+    var digitalData = digitalData || {};
+</script>
+
+<script type="text/javascript">
+    window.addEventListener("message", function(event){
+        if(event.data && event.data.source === "NextIT" && digitalData){
+            var data = event.data.data;
+            var newAskJulieAnalytics = {};
+            newAskJulieAnalytics.state = data.Event;
+            newAskJulieAnalytics.unitName = data.UnitLabel;
+            digitalData.askJulie = newAskJulieAnalytics;
+        };
+    }, false);
+</script>
+<!--END ADOBE DTM CUSTOM VARIABLES -->
+
+<!--BEGIN GOOGLE ANALYTICS -->
+<script type="text/javascript">
+
+    // BEGIN LEGACY GA
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', "UA\u002D23218774\u002D1"]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    // END LEGACY GA
+
+    // BEGIN NEW GA
+    /*
+    (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99330229-1', 'auto');
+    ga('send', 'pageview');
+    */
+    //END NEW GA
+
+
+    //PDF Tracking catch-all
+    document.addEventListener("DOMContentLoaded", function(e) {
+        var ls = document.getElementsByTagName("a");
+        for(i = 0; i < ls.length; ++i){
+            l = ls[i];
+            if(!c(l) && l.href.substr(l.href.length - 4).toLowerCase() == ".pdf"){
+                l.addEventListener("click", function(e){
+                    // LEGACY GA
+                    _gaq.push(['_trackEvent', 'Amtrak.com - PDF', 'Download PDF - Generic', e.target.href]);
+                    // NEW GA
+                    //ga('send', 'event', 'Amtrak.com - PDF', 'Download PDF - Generic', e.target.href);
+                });
+            }
+
+            if(c(l)){
+                (function () {
+                    var ct;
+                    var ev;
+                    var lb;
+                    if(l.hasAttribute("data-ga-category")){
+                        ct = l.dataset.gaCategory;
+                        var r = /\\u([\d\w]{4})/gi;
+                        ct = ct.replace(r, function (match, grp) {
+                            return String.fromCharCode(parseInt(grp, 16)); } );
+                        ct = unescape(ct);
+                    }
+                    else {
+                        ct = "Amtrak.com - Event";
+                    }
+
+                    if(l.hasAttribute("data-ga-event")) {
+                        ev = l.dataset.gaEvent;
+                        var r = /\\u([\d\w]{4})/gi;
+                        ev = ev.replace(r, function (match, grp) {
+                            return String.fromCharCode(parseInt(grp, 16)); } );
+                        ev = unescape(ev);
+                    }
+                    else {
+                        ev = "Link Click"; 
+                    }
+
+                    if(l.hasAttribute("data-ga-label")) {
+                        lb = l.dataset.gaLabel;
+                        var r = /\\u([\d\w]{4})/gi;
+                        lb = lb.replace(r, function (match, grp) {
+                            return String.fromCharCode(parseInt(grp, 16)); } );
+                        lb = unescape(lb);
+                    }
+                    else {
+                        lb = l.href;
+                    }
+                    l.addEventListener("click", function(e){
+                        // LEGACY GA
+                        _gaq.push(['_trackEvent', ct, ev, lb]);
+                        // NEW GA
+                        //ga('send', 'event', ct, ev, lb);
+                    });
+                }());
+            }
+        }
+    });
+
+    function c(l){
+        if (l.hasAttribute("data-ga") || 
+            l.hasAttribute("data-ga-category") || 
+            l.hasAttribute("data-ga-event") ||
+            l.hasAttribute("data-ga-label")){
+
+            return true;
+        }
+        return false;
+    }
+
+</script>
+<!--END GOOGLE ANALYTICS -->
+
+
+    <!--mp_linkcode_begins-->
+    <script type="text/javascript" src="/etc/designs/dotcom-assets/js/mp_linkcode.js"></script>
+    <!--mp_linkcode_ends-->
+    
+<!--– mp_snippet_begins -->
+<script>
+	MP.UrlLang='mp_js_current_lang';
+	MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');
+	MP.oSite=decodeURIComponent('mp_js_origin_baseUrl');
+	MP.tSite=decodeURIComponent('mp_js_translated_baseUrl');
+	MP.init();
+	var mp_langLink = function() {
+		var langlinks = document.querySelectorAll('.langLink');
+		for (var i = 0; i < langlinks.length; i++) {
+			langlinks.item(i).onclick = function() {
+				MP.init();
+				var lang = this.getAttribute('data-lang');
+				var url = this.getAttribute('data-href');
+				var tSite = MP.tSite.replace(/(https?:\/\/|\/?$)/g,'');
+				url = url.replace(/(https?:\/\/|\/?$)/g,'');
+				MP.switchLanguage(tSite.search(url)!=-1?MP.oSite:url, lang, true);
+				return false;
+			}
+		}
+	};
+	if(window.addEventListener){
+		window.addEventListener('load',mp_langLink,false);
+	}else if(window.attachEvent){
+		window.attachEvent('onload',mp_langLink);
+	}
+	</script>
+	<!--– mp_snippet_ends -->
+
+    
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <!-- Include all the SEO metadata here -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/> 
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/> 
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/> 
+	<link rel="manifest" href="/site.webmanifest"/>
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#054f7a"/> 
+	<meta name="msapplication-TileColor" content="#ffffff"/>
+	<meta name="theme-color" content="#ffffff"/>
+	<meta name="theme-color" content="#ffffff"/>
+
+    <!-- Removed meta keywords -->
+    
+            <meta name="description" content="Book your Amtrak train and bus tickets today by choosing from over 30 U.S. train routes and 500 destinations in North America."/>
+      
+      <link rel="canonical" href="https://www.amtrak.com/home"/>
+        
+                <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW"/>
+          
+          
+     
+	
+		<title>Amtrak Tickets, Schedules and Train Routes</title>
+	
+     
+    
+      
+    
+
+    
+    <!--  Old IE styles  -->
+    <!--[if (lte IE 9) & (!IEMobile)]>
+       <sly data-sly-call="" />
+    <![endif]-->
+
+     	<!--  for new Main carousel component  -->
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/clientlibs/granite/jquery-ui.aeeab65fc7671696263825aac469a40d.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/dotcom/components/core/clientlib-base.fea5a798cbc9f6c982a61b341a5ce912.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/amtrak-b2c/components/core/clientlib-base.a692b8af65cee48d7ead01427d64011f.css" type="text/css">
+
+
+
+	
+    
+
+
+
+	
+    
+
+
+
+   
+
+    <!--  RWD styles  -->
+    <!--[if (gt IE 9) | (IEMobile)]><!-->
+    
+    
+<link rel="stylesheet" href="/etc/designs/dotcom-assets/rwd__libs.c0030c887017a681d2b859008b05c241.css" type="text/css">
+
+
+
+    <!--<![endif]-->
+    
+    
+<link rel="stylesheet" href="/etc/designs/tickets/angular/styles.642fecbd0a7281d4edb4dc235f760fda.css" type="text/css">
+
+
+
+
+    <script id="nit-alme-main" type="text/javascript" async="true" language="javascript" src="https://askjulie2.nextit.com/alme/nextit-script-manager.js"></script>  
+
+    
+	
+	
+
+		<!-- ** The User1st Snippet ** --> 
+	
+
+	
+		
+    
+<link rel="stylesheet" href="/etc/designs/dotcom-assets/publish_lib.f32b446bd55a3f8b0134d68d748f424b.css" type="text/css">
+
+
+
+	
+
+<meta property="og:title" content="Amtrak Tickets, Schedules and Train Routes"/>
+
+
+<meta property="og:description" content="Book your train and bus tickets today by choosing from over 30 U.S. train routes and 500 destinations in North America."/>
+ 
+<meta property="og:image" content="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/heros/Home-Hero-Test-Candidate-A.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg"/>
+<meta property="og:url" content="https://www.amtrak.com/home"/>
+<meta property="og:type" content="website"/>
+
+	<style>
+		.framed #kampyleButtonContainer {
+			display: none !important;
+		}
+      .framed .alme--window {
+			display:none !important;
+		}
+	</style>
+</head>
+
+
+
+<script type="text/javascript" src="https://alcdn.msauth.net/browser/2.6.1/js/msal-browser.js" integrity="sha384-kHVR+hnKKUXpL5UEI3dgmdIKZgopBagC1RdQytFqglEGROvOSAGJRkaFWfu8VsSx" crossorigin="anonymous"></script>
+
+	
+		
+		<body class="has-action-url" data-require-authentication="false">
+			<!-- Hide header for below templates -->
+			
+			<div class="page-wrap " id="top_nav_wrapper">
+				<div class="accessibility-links">
+
+					<span><a href="#page-content-section" aria-label="skip to content" tabindex="0" data-redirect-id="#page-content-section" class="hide-from__screen focusable skip-content">skip to Content</a></span>
+					
+					
+						<span><a href="#primary-nav" class="hide-from__screen focusable skip-navigation" aria-label="skip to Navigation" tabindex="0" data-redirect-id="#primary-nav">skip to Navigation</a></span>
+					
+				</div>
+				
+    
+        <div id="top_navigation_body" class="top_navigation_body">
+            
+            
+
+                <header role="banner" class="page-header am-js__page-header fixedsticky">
+                    <div class="page-header__topbar">
+                        <div class="wrapper am-g">
+
+                            
+	<div class="site-logo site-topnav__navlinks">
+	
+	    <a href="https://www.amtrak.com/home.html" class="site-logo__link">
+	    	<span class="hide-from__screen"></span>
+	        <img src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/amtrak-logo__white.svg" class="site-logo__img" alt="Amtrak"/>
+	    </a>
+	
+	
+	</div>
+
+
+                            
+	
+	<script>
+		if (!window.amtrak) {
+			window.amtrak = {};
+		}
+		if (!window.amtrak.conf) {
+			window.amtrak.conf = {};
+		}
+		window.amtrak.conf.profileRefreshUrls = ["ibdev.amtrak.com","ibtest.amtrak.com","ibstage.amtrak.com","tickets.amtrak.com","itd/amtrak","buy-transfer-points/buypoints","buy-transfer-points/giftpoints","buy-transfer-points/sharepoints "];
+	</script>
+	
+		<script src="https://www.google.com/recaptcha/enterprise.js?render=6Le_FmYaAAAAAL_YYFMa4JzOwiyuxNj477iPYoNY"></script>
+		<div id="b2cData" data-validation-error="Enter a valid Guest Rewards number or email address." data-success-message-member="&lt;p>&lt;b>Welcome to &lt;a href=&#34;https://www.amtrak.com/guestrewards/home.html&#34;>Amtrak Guest Rewards&lt;/a>, {{firstName}}. You have successfully subscribed.&lt;/b>&lt;/p>
+&lt;p>Emails will be on their way to your inbox soon.&lt;/p>
+" data-success-message-non-member="&lt;p>&lt;b>Congratulations, {{firstName}}, you have successfully subscribed.&lt;/b>&lt;/p>
+&lt;p>Emails will be on their way to your inbox soon. It&#39;s easy to become an&amp;nbsp;&lt;a href=&#34;https://www.amtrak.com/guestrewards/home.html&#34;>Amtrak Guest Rewards member&lt;/a>&amp;nbsp;at any time and start earning points that quickly add up to Amtrak reward travel, upgrades, hotels and more.&lt;/p>
+" data-error-message-user-logged-in="&lt;p>Amtrak Guest Rewards members can sign up to receive offers or update email preferences from the&amp;nbsp;&lt;a href=&#34;https://www.amtrak.com/guestrewards/account-overview.html#more-about-me&#34;>Account Overview page&lt;/a>.&lt;/p>
+" data-error-message-profile-failure="Unfortunately, we are not able to log you in at this time due to a system issue. Booking tickets and other functionality is still available. We apologize for this inconvenience." data-promotion-success-msg="&lt;p>Thank you for joining Amtrak Guest Rewards, You are also registered for Double Days promotion.&lt;/p>
+" data-enroll-url="/guestrewards/enroll/success.html" data-success-url="/home.html" data-profile-endpoint="/v2/consumers/profile" data-signup-success="/guestrewards/enroll/success.html" data-tnc-endpoint="https://www.amtrak.com/content/amtrak/en-us/api/terms-and-conditions/version.model.json" data-signInRedirect-value="https://www.amtrak.com/progress.html" data-logOutRedirect-value="https://www.amtrak.com/home.html" data-signUpRedirect-value="https://www.amtrak.com/progress.html" data-subscribeAndSaveRedirect-value="https://www.amtrak.com/progress.html" data-changePasswordRedirect-value="https://www.amtrak.com/guestrewards/account-overview/profile.html" data-signInPolicyName-value="b2c_1a_webapp_signin" data-signUpPolicyName-value="b2c_1a_webapp_signup" data-subscribeAndSavePolicyName-value="b2c_1a_webapp_signup_subscriber" data-forgotPasswordPolicyName-value="b2c_1a_webapp_forgotpassword" data-changeEmailPolicyName-value="B2C_1A_WebApp_ProfileEdit" data-mfaEnabledPolicyName-value="B2C_1A_WebApp_MfaEnroll" data-changePasswordPolicyName-value="B2C_1A_WebApp_ChangePassword" data-signInPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/b2c_1a_webapp_signin" data-signUpPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/b2c_1a_webapp_signup" data-subscribeAndSavePolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/b2c_1a_webapp_signup_subscriber" data-forgotPasswordPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/b2c_1a_webapp_forgotpassword" data-changeEmailPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/B2C_1A_WebApp_ProfileEdit" data-mfaEnabledPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/B2C_1A_WebApp_MfaEnroll" data-changePasswordPolicyUrl-value="https://login.amtrak.com/amtrakb2c.onmicrosoft.com/B2C_1A_WebApp_ChangePassword" data-scope-value="openid offline_access email profile https://login.amtrak.com/api/profile.readwrite" data-clientId-value="ec980023-428b-40aa-8fdb-35348b059799" data-headerEnrollmentCode-value="hometop" data-footerEnrollmentCode-value="footer" data-agrHomeEnrollmentCode-value="agrhome" data-subscribeAndSaveEnrollmentCode-value="subsave" data-railPassEnrollmentCode-value="railpass" data-travelInfoEnrollmentCode-value="travelinfo" data-tripDelayEnrollmentCode-value="trpdelay" data-subscribeAndSavePageUrl-value="subscribe-and-save-with-amtrak-emails" data-agrHomePageUrl-value="guestrewards/home" data-travelerPageUrl-value="/tickets/travelers.html" data-railPassPageUrl-value="/tickets/login.html" data-validateAuthority-value="login.amtrak.com" data-siteKey="6Le_FmYaAAAAAL_YYFMa4JzOwiyuxNj477iPYoNY" data-channel-queryparameter="Amtrak.com" data-version-queryparameter="4.0.8" data-app-queryparameter="AND" data-locales-queryparameter="en" data-prompt-queryparameter="login"></div>
+
+	
+	
+
+	
+		<div class="site-topnav am-js__site-topnav" data-tnc-endpoint="https://www.amtrak.com/content/amtrak/en-us/api/terms-and-conditions/version.model.json" data-login-cookie="LoginCookie" data-idle-timer="40" data-timeout-modal-time="40" data-idle-redirect="/home.html" data-email-confirmed="false" data-valid-modal-open="signin-confirm-email" data-agr-signout="https://tickets.amtrak.com/itd/amtrak/CMSLogOff">
+	
+	
+	<ul class="site-topnav__navlinks site-topnav__menu-item">
+		<li class="site-topnav__profile_link">
+			<a href="/content/amtrak/en-us.html" class="site-logo__link" title="Go to Home Page" data-automation-id="linkSiteTopNavProfile">
+				<img src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/amtrak-logo__white.svg" class="site-logo__img" alt="Amtrak"/>
+			</a>
+		</li>
+
+		<li class="site-topnav__navlink is-guest-rewards hide" data-hook="agr-shoebox-nav-link-toggle">
+			<button class="agr-shoebox-nav-link" amt-auto-test-id="header-my-account">
+				<span class="f-icon f-icon__user agr-shoebox-nav-link__icon"></span>
+				<span class="agr-shoebox-nav-link__wrapper">
+					<span class="agr-shoebox-nav-link__text agr-shoebox-nav-link__text--top" id="lblUserFirstName">My Account</span>
+					<span class="agr-shoebox-nav-link__text agr-shoebox-nav-link__text--bottom" data-hook="agr-shoebox-nav-points">Loading...</span>
+				</span>
+			</button>
+		</li>
+		<li class="site-topnav__navlink site-topnav__navlink_is-signup hide">
+			<button type="button" amt-auto-test-id="header-join" class="btn__text am-link am-link-light">
+				Join
+			</button>
+		</li>
+
+		<li class="site-topnav__navlink site-topnav__navlink_is-signin">
+			<button type="button" amt-auto-test-id="header-sign-in" class="btn__text am-link am-link-light">
+				Sign In
+			</button>
+		</li>
+
+		<li class="site-topnav__navlink site-topnav__navlink_my-account hide">
+			<span class="site-topnav__navlink_my-account_icon" aria-hidden="true"></span>
+			<div class="site-topnav__navlink_my-account_content">
+				<button type="button" data-automation-id="btnSiteTopNavMyAccount" class='btn__text site-topnav__navlink_my-account_btn'>My Account</button>
+				<span class="site-topnav__navlink_my-account_points"></span>
+			</div>
+			<div class="site-topnav__my-account">
+				
+<form class="signout-form am-js__signout-form" method="POST" action="https://www.amtrak.com" name="signoutForm" autocomplete="off" data-action-url="/v3/account/signout">
+    <div class="signout-form__content">
+        <button type="submit" data-automation-id="signOutBtn" class="signout-form__content_btn" rel="nofollow">
+            Sign Out
+        </button>
+  </div>
+</form>
+
+
+			</div>
+		</li>
+		<li class="site-topnav__navlink site-topnav__navlink_lang" data-en-url="https://www.amtrak.com">
+			
+<div class="site-language-selector am-js__site-language-selector">
+    <div class="site-language-selector__active">
+        <a href="#" data-automation-id="activeLanguageSelector" class="site-language-selector__active_link" role="button" tabindex="0">
+            <span class="site-language-selector__active_selected_content">English</span>
+            <span class="f-icon__chevron-down site-topnav__navlink_lang-icon"></span>
+        </a>
+    </div>
+    <div class="site-language-selector__list is-hidden" aria-haspopup="listbox" aria-expanded="false">
+        <ul class="site-language-selector__list_items" role="listbox">
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://espanol.amtrak.com" href="https://espanol.amtrak.com" data-lang="es" mporgnav="href" class="site-language__item langLink" aria-label="Espanol">Español</a>
+                </li>
+        
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://francais.amtrak.com" href="https://francais.amtrak.com" data-lang="fr" mporgnav="href" class="site-language__item langLink" aria-label="Français">Français</a>
+                </li>
+        
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://zh.amtrak.com" href="https://zh.amtrak.com" data-lang="zs" mporgnav="href" class="site-language__item langLink" aria-label="Chinese">中文</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+		</li>
+		<li class="site-topnav__navlink_search">
+			
+	<div class="site-search am-js__site-search">
+	    <button type="button" name="button" class="site-search__form-open-btn">
+	        <span class="site-search__form-open-btn_icon" aria-label="Please click to open Ask Julie Search"></span>
+	        <span class="hide-from__screen">Form open button</span>
+	    </button>
+	
+	    <div class="site-search__form">
+	        <input type="search" name="" value="" placeholder="Need help? Ask Julie" class="site-search__form_inp" data-automation-id="inpSiteSearchSearch" aria-label="Please enter your search item" tabindex="0"/>
+	        <button type="button" data-automation-id="siteSearchSubmit" class="site-search__form_btn">
+	            <span class="site-search__form_btn_icon" aria-hidden="true" aria-label="Search Icon"></span>
+	            <span class="f-icon__text">Search</span>
+	        </button>
+	    </div>
+	</div>
+
+		</li>
+		
+        <li style="display: inline;"><div id="nuanceC2CHeader" style="display: inline;"></div></li>
+		<li class="site-topnav__navlink_menu_search">
+			<button type="button" data-automation-id="siteSearchSubmit" class="site-topnav__navlink_search_btn">
+				<span class="site-search__btn_icon" aria-hidden="true" aria-label="Search Icon"></span>
+				<span class="f-icon__text">Search</span>
+			</button>
+			<span class="site-topnav__navlink_menu_search_label"></span>
+		</li>
+
+		<li class="site-topnav__navlink_menu">
+			<span class="site-topnav__navlink_menu-icon" aria-hidden="true" aria-label="Menu Icon"></span>
+			<span class="f-icon__text" aria-label="Menu Icon">Menu</span>
+		</li>
+	</ul>
+
+	<div class="site-topnav__mobile-header"></div>
+	
+
+	<article class="site-mobile-navigation am-js__site-mobile-navigation">
+			<header class="site-mobile-navigation__header">
+					<button data-automation-id="siteMobileNavCloseBtn" class="site-mobile-navigation__header_close-btn" aria-label="close button">
+							<span class="f-icon f-icon__close"></span>
+					</button>
+			</header>
+	    <div class="site-mobile-navigation__body">
+			<!--commenting this section for OMNI-5459 -->
+	      <div class="site-mobile-navigation__body_navlink_search">
+	    
+	<div class="site-search am-js__site-search">
+	    <button type="button" name="button" class="site-search__form-open-btn">
+	        <span class="site-search__form-open-btn_icon" aria-label="Please click to open Ask Julie Search"></span>
+	        <span class="hide-from__screen">Form open button</span>
+	    </button>
+	
+	    <div class="site-search__form">
+	        <input type="search" name="" value="" placeholder="Need help? Ask Julie" class="site-search__form_inp" data-automation-id="inpSiteSearchSearchMobile" aria-label="Please enter your search item" tabindex="0"/>
+	        <button type="button" data-automation-id="siteSearchSubmitMobile" class="site-search__form_btn">
+	            <span class="site-search__form_btn_icon" aria-hidden="true" aria-label="Search Icon"></span>
+	            <span class="f-icon__text">Search</span>
+	        </button>
+	    </div>
+	</div>
+
+	        </div>
+            <div id="nuanceC2CMobile"></div> 
+	      	
+	<div class="site-secondary-nav am-js__site-secondary-nav">
+	    <ul class="site-secondary-nav__ul">
+			<li class="site-secondary-nav__li " data-modalopen="secondary-nav-train-status">
+				<btn-travel-status content='[{"labels":{"travelStatus":"TRAIN STATUS"}}]'></btn-travel-status>
+		  	</li>	
+	        <li class="site-secondary-nav__li  " data-modalopen="secondary-nav-modify-trip">
+				<btn-find-trip content='[{"labels":{"modifyTrip":"MODIFY TRIP"}}]'></btn-find-trip>
+			</li>
+			
+	        
+	        	<a hidden type="button" data-julie="booknow_button"></a>
+	        
+	    </ul>
+	</div>
+
+
+	        <ul class="site-mobile-navigation__body_block">
+
+	        	
+		        
+
+		        			<!-- If schedule search checkbox is checked, show scheduled search component. -->
+	            		
+
+		        		
+
+				            <li class="site-mobile-navigation__body_element">
+				                <a class="site-mobile-navigation__body_link is-subnav-link" href="#" data-automation-id="DestinationsMobile" tabindex="0">
+									
+										Destinations
+									
+				                </a>
+
+				                
+				                	
+	<article class="browse-destination-widget am-js__browse-destination-widget modal" data-modalcontent="browse-destination-widget">
+	    <div class="wrapper">
+	        <div class="browse-destination-widget__container">
+	            <header class="browse-destination-widget__container_header">
+	                <span class="browse-destination-widget__container_header_title">FIND STATION OR ROUTE</span>
+	                <button type="button" data-automation-id="broseStationWidgetClose" class="browse-destination-widget__container_header_close-icon" data-modalclose="browse-destination-widget" aria-label="close button"></button>
+	            </header>
+	
+	            <div class="browse-destination-widget__container_body">
+	               
+    
+        <div class="find-destination-search am-js__find-destination-search" data-search-url="https://www.amtrak.com/services/maps.stationfinder.json?searchTerm=">
+			<span class="form-input-with-label__label search-module__title"> 
+					FIND STATION OR ROUTE
+			</span>
+            <div class="search-module__item">
+                
+	<div class="search-destination-field am-js__search-destination-field state-stations" data-cities-suffix="All stations" data-data-group="destinations" data-enable-links="true" validate-invalid-char="[?._@&#34;$#!%^]" validate-min-char="2">
+
+	    <input class="search-destination-field__inp_hidden" type="hidden" name="stationSearchCode" value=" "/>
+	    <button hidden data-julie="destinations_trigger" class="search-destination-field__trigger-btn" type="button">Ask Julie</button>
+	    <input class="search-destination-field__inp" ${autofocus} autocomplete="off" type="text" placeholder="Enter a city or route name" name="inputStationRouteSearch" value="" aria-label="Please enter station name or code" data-automation-id="stationRouteSearch" data-julie="destinations_search" aria-autocomplete="list" aria-owns="search-station-dropdown__stations_list" aria-expanded="false" role="combobox" aria-activedescendant=""/>
+	    <button type="button" class="search-destination-field__clear-text f-icon f-icon__remove-in-circle hide">
+	            <span class="hide-from__screen">Clear input</span>
+			</button>
+
+			<div class="search-destination-field__no-maps hide"></div>
+
+	 		
+	<article class="search-destination-dropdown am-js__search-destination-dropdown" data-station-redirect-url="https://www.amtrak.com/stations/" data-route-redirect-url="https://www.amtrak.com/routes/" data-enable-links="true" data-show-routes="true">
+	    <div class="search-destination-dropdown__no-result">
+       			  No stations or routes found.
+    	</div>
+
+	    <div class="search-destination-dropdown__explanation">
+	       Enter a city or route name
+	    </div>
+	    <div class="search-destination-dropdown__stations">
+	        <div class="search-destination-dropdown__stations_title">Train Stations</div>
+	        <ul class="search-destination-dropdown__stations_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__routes">
+	        <div class="search-destination-dropdown__routes_title">Routes</div>
+	        <ul class="search-destination-dropdown__routes_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__cities">
+	        <div class="search-destination-dropdown__cities_title">Locations</div>
+	        <ul class="search-destination-dropdown__cities_list"></ul>
+	    </div>
+	</article>
+
+
+			<span class="hide-from__screen anouncement-container" role="status" aria-live="assertive"></span>
+	    
+	    <span class="form-input-with-label__error-msg validate-error-msg" aria-live="assertive"></span>
+
+	    
+	        <span class="form-input-with-label__be-error-msg" aria-live="assertive"></span>
+	   
+
+		 	<div class="search-destination-field__no-maps hide">
+				
+			</div>
+
+	</div>
+
+            </div>
+        </div>
+    
+
+	              
+	            </div>
+	        </div>
+	    </div>
+	</article>
+
+						                <div class="subnavbar site-mobile-navigation__subnavbar">
+						                    <div class="wrapper">
+						                        
+	<div class="site-destinations-drawer am-js__site-destinations-drawer subnavbar__list">
+	    <div class="site-destinations-drawer__map-column">
+	        <span class="site-destinations-drawer__map-column_title" tabindex="0">BROWSE BY REGION</span>
+
+	        <div class="site-destinations-drawer__map-column_container">
+	            
+	<article class="region-map-image am-js__region-map-image" role="application" data-northwest-region-map-link="https://www.amtrak.com/regions/northwest.html" data-california-region-map-link="https://www.amtrak.com/regions/california.html" data-northeast-region-map-link="https://www.amtrak.com/regions/northeast.html" data-south-region-map-link="https://www.amtrak.com/regions/south.html" data-midwest-region-map-link="https://www.amtrak.com/regions/midwest.html" data-west-region-map-link="https://www.amtrak.com/regions/west.html">
+	    <canvas width="561" height="327"></canvas>
+	   	<img class="region-map-image__img" alt="regions map"/>
+	</article>
+
+	        </div>
+	    </div>
+	
+	    <div class="site-destinations-drawer__search-column">
+	        
+    
+        <div class="find-destination-search am-js__find-destination-search" data-search-url="https://www.amtrak.com/services/maps.stationfinder.json?searchTerm=">
+			<span class="form-input-with-label__label search-module__title"> 
+					FIND STATION OR ROUTE
+			</span>
+            <div class="search-module__item">
+                
+	<div class="search-destination-field am-js__search-destination-field state-stations" data-cities-suffix="All stations" data-data-group="destinations" data-enable-links="true" validate-invalid-char="[?._@&#34;$#!%^]" validate-min-char="2">
+
+	    <input class="search-destination-field__inp_hidden" type="hidden" name="stationSearchCode" value=" "/>
+	    <button hidden data-julie="destinations_trigger" class="search-destination-field__trigger-btn" type="button">Ask Julie</button>
+	    <input class="search-destination-field__inp" ${autofocus} autocomplete="off" type="text" placeholder="Enter a city or route name" name="inputStationRouteSearch" value="" aria-label="Please enter station name or code" data-automation-id="stationRouteSearch" data-julie="destinations_search" aria-autocomplete="list" aria-owns="search-station-dropdown__stations_list" aria-expanded="false" role="combobox" aria-activedescendant=""/>
+	    <button type="button" class="search-destination-field__clear-text f-icon f-icon__remove-in-circle hide">
+	            <span class="hide-from__screen">Clear input</span>
+			</button>
+
+			<div class="search-destination-field__no-maps hide"></div>
+
+	 		
+	<article class="search-destination-dropdown am-js__search-destination-dropdown" data-station-redirect-url="https://www.amtrak.com/stations/" data-route-redirect-url="https://www.amtrak.com/routes/" data-enable-links="true" data-show-routes="true">
+	    <div class="search-destination-dropdown__no-result">
+       			  No stations or routes found.
+    	</div>
+
+	    <div class="search-destination-dropdown__explanation">
+	       Enter a city or route name
+	    </div>
+	    <div class="search-destination-dropdown__stations">
+	        <div class="search-destination-dropdown__stations_title">Train Stations</div>
+	        <ul class="search-destination-dropdown__stations_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__routes">
+	        <div class="search-destination-dropdown__routes_title">Routes</div>
+	        <ul class="search-destination-dropdown__routes_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__cities">
+	        <div class="search-destination-dropdown__cities_title">Locations</div>
+	        <ul class="search-destination-dropdown__cities_list"></ul>
+	    </div>
+	</article>
+
+
+			<span class="hide-from__screen anouncement-container" role="status" aria-live="assertive"></span>
+	    
+	    <span class="form-input-with-label__error-msg validate-error-msg" aria-live="assertive">Please enter a valid station, city, or address.</span>
+
+	    
+	        <span class="form-input-with-label__be-error-msg" aria-live="assertive"></span>
+	   
+
+		 	<div class="search-destination-field__no-maps hide">
+				
+			</div>
+
+	</div>
+
+            </div>
+        </div>
+    
+
+															
+	        <ul class="site-destinations-drawer__search-column_link-container">
+	                <li class="site-destinations-drawer__search-column_navlink">
+	                     <a href="https://www.amtrak.com/plan-your-trip.html" class="site-destinations-drawer__search-column_navlink_link" target="_blank" data-automation-id=" Trip Planning MapMobile">
+	                       <span class="site-destinations-drawer__search-column_navlink_link_glyph f-icon__map">
+	                        </span>
+	                        <span class="site-destinations-drawer__search-column_navlink_link_text">
+	                           Trip Planning Map
+	                        </span>
+	                    </a>
+	                </li>
+	        	
+	                <li class="site-destinations-drawer__search-column_navlink">
+	                     <a href="https://www.amtrak.com/routes.html" class="site-destinations-drawer__search-column_navlink_link" data-automation-id=" See all routesMobile">
+	                       <span class="site-destinations-drawer__search-column_navlink_link_glyph f-icon__en-route">
+	                        </span>
+	                        <span class="site-destinations-drawer__search-column_navlink_link_text">
+	                           See all routes
+	                        </span>
+	                    </a>
+	                </li>
+	        	</ul>
+	    </div>
+	
+	    
+	<article class="browse-regions-accordion  am-js__browse-regions-accordion">
+	    <button class="browse-regions-accordion__header" data-control>
+	        BROWSE REGIONS
+	    </button>
+	    <span class="browse-regions-accordion__chevron"></span>
+	    <div data-content class="browse-regions-accordion__list-content">
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/northwest.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">Northwest</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/california.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">California</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/west.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">West</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/midwest.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">Midwest</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/south.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">South</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/northeast.html" data-automation-id="regionMobile">
+	                <span class="subnavbar__link_title">Northeast</span>
+	            </a>
+
+	    </div>
+	</article>
+
+	
+	    <div class="site-destinations-drawer__mobile-links">
+	        <div class="subnavbar__list">
+	            <a class="subnavbar__link browse-station-link" href="#" data-modalopen="browse-destination-widget" data-julie="destinations_button" data-automation-id="findStationOrRoute">
+	                Find station or route
+	            </a>
+		        
+	             <a class="subnavbar__link" href="https://www.amtrak.com/plan-your-trip.html" target="_blank" data-automation-id="Trip Planning MapMobile">
+	                <span class="subnavbar__link_title">Trip Planning Map</span>
+	            </a>
+<a class="subnavbar__link" href="https://www.amtrak.com/routes.html" data-automation-id="See all routesMobile">
+	                <span class="subnavbar__link_title">See all routes</span>
+	            </a>
+
+	        </div>
+	    </div>
+	</div>
+
+						                    </div>
+						                </div>
+				             	
+
+				             	
+			            	</li>
+		            	
+		            
+
+		        			<!-- If schedule search checkbox is checked, show scheduled search component. -->
+	            		
+
+		        		
+
+				            <li class="site-mobile-navigation__body_element">
+				                <a class="site-mobile-navigation__body_link is-subnav-link" href="#" data-automation-id="ExperienceMobile" tabindex="0">
+									
+										Experience
+									
+				                </a>
+
+				                
+
+				             	
+					             	 <div class="subnavbar site-mobile-navigation__subnavbar">
+					                        <div class="wrapper">
+					                            <div class="subnavbar__list">
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/experience/why-amtrak.html" data-automation-id="WHY AMTRAKMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">WHY AMTRAK</span>
+					                                        <span class="subnavbar__link_desc">Amtrak&#39;s unique travel experience for families, individuals and groups</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/planning-booking.html" data-automation-id="BEFORE YOU GOMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">BEFORE YOU GO</span>
+					                                        <span class="subnavbar__link_desc">Tickets &amp; fares, accessible travel service, security &amp; ID requirements</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/at-the-station.html" data-automation-id="AT THE STATIONMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">AT THE STATION</span>
+					                                        <span class="subnavbar__link_desc">Boarding information, station lounges, baggage &amp; station services</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/onboard.html" data-automation-id="ONBOARDMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">ONBOARD</span>
+					                                        <span class="subnavbar__link_desc">Seating &amp; sleeping, baggage info, train amenities, food &amp; dining</span>
+					                                    </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					            
+			            	</li>
+		            	
+		            
+
+		        			<!-- If schedule search checkbox is checked, show scheduled search component. -->
+	            		
+
+		        		
+
+				            <li class="site-mobile-navigation__body_element">
+				                <a class="site-mobile-navigation__body_link is-subnav-link" href="#" data-automation-id="DEALSMobile" tabindex="0">
+									
+										DEALS
+									
+				                </a>
+
+				                
+
+				             	
+					             	 <div class="subnavbar site-mobile-navigation__subnavbar">
+					                        <div class="wrapper">
+					                            <div class="subnavbar__list">
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/promotions/deals.html" data-automation-id="DEALS &amp; PROMOTIONSMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">DEALS &amp; PROMOTIONS</span>
+					                                        <span class="subnavbar__link_desc">Amtrak travel deals, promotions and other partner offers.</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/deals-discounts/everyday-discounts.html" data-automation-id="EVERYDAY DISCOUNTSMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">EVERYDAY DISCOUNTS</span>
+					                                        <span class="subnavbar__link_desc">Savings for Kids, Seniors, Military, Groups and More</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/deals-discounts/rail-vacations-rail-tours.html" data-automation-id="VACATIONS &amp; RAIL TOURSMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">VACATIONS &amp; RAIL TOURS</span>
+					                                        <span class="subnavbar__link_desc">Train vacation packages throughout North America</span>
+					                                    </a>
+					                            
+					                                    <a class="subnavbar__link" href="https://www.amtrak.com/deals-discounts/multi-ride-rail-passes.html" data-automation-id="MULTI-RIDES &amp; RAIL PASSESMobile" tabindex="0">
+					                                        <span class="subnavbar__link_title">MULTI-RIDES &amp; RAIL PASSES</span>
+					                                        <span class="subnavbar__link_desc">USA Rail passes, monthly passes and multi-ride tickets</span>
+					                                    </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					            
+			            	</li>
+		            	
+		            
+
+		        			<!-- If schedule search checkbox is checked, show scheduled search component. -->
+	            		
+
+
+				            <li class="site-secondary-nav__li site-secondary-nav__li-schedule ml-3 pl-1" data-modalopen="site-schedule-search">
+								<btn-train-schedule content='[{"labels":{"trainSchedule":"SCHEDULES"}}]'></btn-train-schedule>
+				            </li>
+				        
+
+		        		
+		            
+
+		        			<!-- If schedule search checkbox is checked, show scheduled search component. -->
+	            		
+
+		        		
+
+				            <li class="site-secondary-nav__li">
+				                <a class="site-secondary-nav__li_link is-subnav-link" href="https://www.amtrak.com/guestrewards/home.html" data-automation-id="Guest RewardsMobile" tabindex="0">
+									<span class="site-secondary-nav__link-text">
+										Guest Rewards
+									</span>
+				                </a>
+
+				                
+
+				             	
+			            	</li>
+		            	
+		            
+
+	            
+
+	            <li class="site-mobile-navigation__body_element site-mobile-navigation__mobile-only">
+	                    <a class="site-mobile-navigation__body_link is-subnav-link" href="#" data-automation-id="siteTopNavContactUsMobile" tabindex="0">
+	                          Contact Us
+	                    </a>
+	                    <div class="subnavbar site-mobile-navigation__subnavbar">
+	                        <div class="wrapper">
+	                            <div class="subnavbar__list">
+                                		
+	                                    <a class="subnavbar__link" href="https://www.amtrak.com/contact-us/top-10-faq-questions.html" data-automation-id="Reservations & Customer ServiceMobile" tabindex="0">
+	                                        <span class="subnavbar__link_title">Top 10 Questions</span>
+	                                        <span class="subnavbar__link_desc"></span>
+	                                    </a>
+                                        
+
+                                        
+                                         <a class="subnavbar__link" href="https://www.amtrak.com/contact-us/email.html" data-automation-id="Reservations & Customer ServiceMobile" tabindex="0">
+	                                        <span class="subnavbar__link_title">Email Us</span>
+	                                        <span class="subnavbar__link_desc"></span>
+	                                    </a>
+                                        
+                                        
+                                         <a class="subnavbar__link" href="https://www.amtrak.com/contact-us/helpful-links-and-phone-numbers.html" data-automation-id="Reservations & Customer ServiceMobile" tabindex="0">
+	                                        <span class="subnavbar__link_title">Call Us</span>
+	                                        <span class="subnavbar__link_desc"></span>
+	                                    </a>
+                                        
+	                            </div>
+	                        </div>
+	                    </div>
+	            </li>
+
+
+	            <li class="site-mobile-navigation__body_element site-mobile-navigation__mobile-only">
+	               
+<div class="site-language-selector am-js__site-language-selector">
+    <div class="site-language-selector__active">
+        <a href="#" data-automation-id="activeLanguageSelector" class="site-language-selector__active_link" role="button" tabindex="0">
+            <span class="site-language-selector__active_selected_content">English</span>
+            <span class="f-icon__chevron-down site-topnav__navlink_lang-icon"></span>
+        </a>
+    </div>
+    <div class="site-language-selector__list is-hidden" aria-haspopup="listbox" aria-expanded="false">
+        <ul class="site-language-selector__list_items" role="listbox">
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://espanol.amtrak.com" href="https://espanol.amtrak.com" data-lang="es" mporgnav="href" class="site-language__item langLink" aria-label="Espanol">Español</a>
+                </li>
+        
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://francais.amtrak.com" href="https://francais.amtrak.com" data-lang="fr" mporgnav="href" class="site-language__item langLink" aria-label="Français">Français</a>
+                </li>
+        
+                <li class="site-language-selector__list_items_item" role="option">
+                    <a data-href="https://zh.amtrak.com" href="https://zh.amtrak.com" data-lang="zs" mporgnav="href" class="site-language__item langLink" aria-label="Chinese">中文</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+	            </li>
+	        </ul>
+	    </div>
+	    	
+<article class="browse-station-widget am-js__browse-station-widget modal" data-modalcontent="browse-station-widget">
+    <div class="wrapper">
+        <div class="browse-station-widget__container">
+            <header class="browse-station-widget__container_header">
+                <span class="browse-station-widget__container_header_title">FIND STATION OR ROUTE </span>
+                <button type="button" data-automation-id="broseStationWidgetClose" class="browse-station-widget__container_header_close-icon" data-modalclose="browse-station-widget" aria-label="close button"></button>
+            </header>
+
+            <div class="browse-station-widget__container_body">
+                 
+	<div class="find-station-search am-js__find-station-search">
+	    <span class="form-input-with-label__label search-module__title ">FIND STATION OR ROUTE</span>
+	    <div class="search-module__item">
+            
+
+
+	
+
+	
+		<div class="search-station-field am-js__search-station-field" data-cities-suffix="All stations" data-train-status="true" data-data-group="stations" data-validate-min-char="2" data-validate-invalid-char="[?_@&quot;$#!%^]" data-validate-station-name=" ">
+	
+
+		<input class="search-station-field__inp_hidden" type="hidden" name="inputStationSearch"/>
+       
+
+
+	   
+      
+      		 <input class="search-station-field__inp form-input-with-label__inp request-missing-points__ticket-form__input" autocomplete="off" type="text" name="inputStationSearch" aria-label="Please enter a valid station, city, or address." data-automation-id="stationSearchCode" aria-autocomplete="list" aria-owns="search-station-dropdown__stations_list" aria-expanded="false" role="combobox" aria-activedescendant=""/>
+     
+
+			 <span class="hide-from__screen anouncement-container" role="status" aria-live="assertive"></span>
+
+       
+        <button type="button" class="search-station-field__clear-text f-icon f-icon__remove-in-circle hide">
+            <span class="hide-from__screen">Clear input for FIND STATION OR ROUTE</span>
+        </button>
+       
+
+       
+       		
+	<article class="search-station-favorites am-js__search-station-favorites">
+	
+	  
+	  	<div class="search-station-favorites__explanation"> Start typing a station </div>
+	  
+	
+		     
+		            <!-- <ul class="search-station-favorites__stations" data-sly-list=,,>
+		            <li>
+		                     <span></span>
+		                     <sly data-sly-list =>
+		                   		 <input type="hidden" value="" data-type="" />
+		                    </sly>
+		            </li>
+		            </ul> -->
+					
+		        
+		     
+		      <!-- <sly data-sly-use.stations="../shared/am-custom-elements/station-list/station-list.html" 
+    					data-sly-call="" /> -->
+    	
+	</article>
+
+    	
+
+
+    	
+	<article class="search-station-dropdown am-js__search-station-dropdown" data-hide-cities="true" data-enable-links="true" data-show-routes="true">
+	    <div class="search-station-dropdown__explanation" id="search-station-dropdown__explanation">
+	         Please select from the results below...
+	    </div>
+	    <div class="search-station-dropdown__routes">
+	        <div class="search-station-dropdown__routes_title">Routes</div>
+		        <ul class="search-station-dropdown__routes_list" id="search-station-dropdown__routes_list" role="listbox" tabindex="0"></ul>
+	        </div>
+	    <!-- <div class="search-station-dropdown__cities"> -->
+	        <!-- <div class="search-station-dropdown__cities_title">Cities</div> -->
+			<!-- <ul class="search-station-dropdown__cities_list"></ul>  -->
+		<!-- </div> -->
+	    <div class="search-station-dropdown__stations">
+	        <!-- <div class="search-station-dropdown__stations_title">Train Stations</div> -->
+	        	<ul class="search-station-dropdown__stations_list" id="search-station-dropdown__stations_list" role="listbox" tabindex="0"></ul>
+	      </div>
+	</article>
+
+
+	    	<span class="search-station-field__hint-station"></span>
+	    	<span class="search-station-field__hint-code"></span>
+	    <span class="form-input-with-label__error-msg validate-error-msg" aria-live="assertive">Please enter a valid station, city, or address.</span>
+
+    </div>
+
+	    </div>
+	    <span class="search-module__hint-station"></span>
+	</div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+	</article>
+
+	</div>
+
+
+                        </div>
+                    </div>
+                    <div class="page-header__navbar show-navbar">
+                        <div class="wrapper am-g">
+
+                            
+
+
+                            
+	<div class="site-primary-nav am-js__site-primary-nav" id="primary-nav">
+	    <nav role="navigation" aria-label="Primary" class="site-primary-nav__container">
+	        <ul class="site-primary-nav__ul">
+				
+
+                
+
+					<li class="site-primary-nav__li">
+						<a class="site-primary-nav__link is-subnav-link" role="button" aria-pressed="false" aria-haspopup="true" href="#" target="_self" data-automation-id="sitePrimarySubnav" data-julie="destinations_button">
+							Destinations
+						</a>
+
+
+						
+							<div class="subnavbar site-primary__subnavbar">
+								<div class="wrapper">
+									
+	<div class="site-destinations-drawer am-js__site-destinations-drawer subnavbar__list">
+	    <div class="site-destinations-drawer__map-column">
+	        <span class="site-destinations-drawer__map-column_title" tabindex="0">BROWSE BY REGION</span>
+
+	        <div class="site-destinations-drawer__map-column_container">
+	            
+	<article class="region-map-image am-js__region-map-image" role="application" data-northwest-region-map-link="https://www.amtrak.com/regions/northwest.html" data-california-region-map-link="https://www.amtrak.com/regions/california.html" data-northeast-region-map-link="https://www.amtrak.com/regions/northeast.html" data-south-region-map-link="https://www.amtrak.com/regions/south.html" data-midwest-region-map-link="https://www.amtrak.com/regions/midwest.html" data-west-region-map-link="https://www.amtrak.com/regions/west.html">
+	    <canvas width="561" height="327"></canvas>
+	   	<img class="region-map-image__img" alt="regions map" src="https://www.amtrak.com/etc/designs/dotcom-assets/dam-assets/region-map.svg"/>
+	</article>
+
+	        </div>
+	    </div>
+	
+	    <div class="site-destinations-drawer__search-column">
+	        
+    
+        <div class="find-destination-search am-js__find-destination-search" data-search-url="https://www.amtrak.com/services/maps.stationfinder.json?searchTerm=">
+			<span class="form-input-with-label__label search-module__title"> 
+					FIND STATION OR ROUTE
+			</span>
+            <div class="search-module__item">
+                
+	<div class="search-destination-field am-js__search-destination-field state-stations" data-cities-suffix="All stations" data-data-group="destinations" data-enable-links="true" validate-invalid-char="[?._@&#34;$#!%^]" validate-min-char="2">
+
+	    <input class="search-destination-field__inp_hidden" type="hidden" name="stationSearchCode" value=" "/>
+	    <button hidden data-julie="destinations_trigger" class="search-destination-field__trigger-btn" type="button">Ask Julie</button>
+	    <input class="search-destination-field__inp" ${autofocus} autocomplete="off" type="text" placeholder="Enter a city or route name" name="inputStationRouteSearch" value="" aria-label="Please enter station name or code" data-automation-id="stationRouteSearch" data-julie="destinations_search" aria-autocomplete="list" aria-owns="search-station-dropdown__stations_list" aria-expanded="false" role="combobox" aria-activedescendant=""/>
+	    <button type="button" class="search-destination-field__clear-text f-icon f-icon__remove-in-circle hide">
+	            <span class="hide-from__screen">Clear input</span>
+			</button>
+
+			<div class="search-destination-field__no-maps hide"></div>
+
+	 		
+	<article class="search-destination-dropdown am-js__search-destination-dropdown" data-station-redirect-url="https://www.amtrak.com/stations/" data-route-redirect-url="https://www.amtrak.com/routes/" data-enable-links="true" data-show-routes="true">
+	    <div class="search-destination-dropdown__no-result">
+       			  No stations or routes found.
+    	</div>
+
+	    <div class="search-destination-dropdown__explanation">
+	       Enter a city or route name
+	    </div>
+	    <div class="search-destination-dropdown__stations">
+	        <div class="search-destination-dropdown__stations_title">Train Stations</div>
+	        <ul class="search-destination-dropdown__stations_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__routes">
+	        <div class="search-destination-dropdown__routes_title">Routes</div>
+	        <ul class="search-destination-dropdown__routes_list"></ul>
+	    </div>
+	    <div class="search-destination-dropdown__cities">
+	        <div class="search-destination-dropdown__cities_title">Locations</div>
+	        <ul class="search-destination-dropdown__cities_list"></ul>
+	    </div>
+	</article>
+
+
+			<span class="hide-from__screen anouncement-container" role="status" aria-live="assertive"></span>
+	    
+	    <span class="form-input-with-label__error-msg validate-error-msg" aria-live="assertive">Please enter a valid station, city, or address.</span>
+
+	    
+	        <span class="form-input-with-label__be-error-msg" aria-live="assertive"></span>
+	   
+
+		 	<div class="search-destination-field__no-maps hide">
+				
+			</div>
+
+	</div>
+
+            </div>
+        </div>
+    
+
+															
+	        <ul class="site-destinations-drawer__search-column_link-container">
+	                <li class="site-destinations-drawer__search-column_navlink">
+	                     <a href="https://www.amtrak.com/plan-your-trip.html" class="site-destinations-drawer__search-column_navlink_link" target="_blank" data-automation-id=" Trip Planning Map">
+	                       <span class="site-destinations-drawer__search-column_navlink_link_glyph f-icon__map">
+	                        </span>
+	                        <span class="site-destinations-drawer__search-column_navlink_link_text">
+	                           Trip Planning Map
+	                        </span>
+	                    </a>
+	                </li>
+	        	
+	                <li class="site-destinations-drawer__search-column_navlink">
+	                     <a href="https://www.amtrak.com/routes.html" class="site-destinations-drawer__search-column_navlink_link" data-automation-id=" See all routes">
+	                       <span class="site-destinations-drawer__search-column_navlink_link_glyph f-icon__en-route">
+	                        </span>
+	                        <span class="site-destinations-drawer__search-column_navlink_link_text">
+	                           See all routes
+	                        </span>
+	                    </a>
+	                </li>
+	        	</ul>
+	    </div>
+	
+	    
+	<article class="browse-regions-accordion  am-js__browse-regions-accordion">
+	    <button class="browse-regions-accordion__header" data-control>
+	        BROWSE REGIONS
+	    </button>
+	    <span class="browse-regions-accordion__chevron"></span>
+	    <div data-content class="browse-regions-accordion__list-content">
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/northwest.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">Northwest</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/california.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">California</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/west.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">West</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/midwest.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">Midwest</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/south.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">South</span>
+	            </a>
+	            <a class="subnavbar__link" href="https://www.amtrak.com/regions/northeast.html" data-automation-id="region">
+	                <span class="subnavbar__link_title">Northeast</span>
+	            </a>
+
+	    </div>
+	</article>
+
+	
+	    <div class="site-destinations-drawer__mobile-links">
+	        <div class="subnavbar__list">
+	            <a class="subnavbar__link browse-station-link" href="#" data-modalopen="browse-destination-widget" data-julie="destinations_button" data-automation-id="findStationOrRoute">
+	                Find station or route
+	            </a>
+		        
+	             <a class="subnavbar__link" href="https://www.amtrak.com/plan-your-trip.html" target="_blank" data-automation-id="Trip Planning Map">
+	                <span class="subnavbar__link_title">Trip Planning Map</span>
+	            </a>
+<a class="subnavbar__link" href="https://www.amtrak.com/routes.html" data-automation-id="See all routes">
+	                <span class="subnavbar__link_title">See all routes</span>
+	            </a>
+
+	        </div>
+	    </div>
+	</div>
+
+								</div>
+							</div>
+						
+
+
+						
+				</li> 
+                 		
+	        
+				
+
+                
+
+					<li class="site-primary-nav__li">
+						<a class="site-primary-nav__link is-subnav-link" role="button" aria-pressed="false" aria-haspopup="true" href="#" target="_self" data-automation-id="sitePrimarySubnav">
+							Experience
+						</a>
+
+
+						
+
+
+						
+							<div class="subnavbar site-primary-nav__subnavbar">
+								<div class="wrapper">
+									<div class="site-primary-nav__subnavbar_list">
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/experience/why-amtrak.html" data-automation-id="WHY AMTRAK">
+											<span class="subnavbar__link_title">WHY AMTRAK</span>
+											<span class="subnavbar__link_desc">Amtrak&#39;s unique travel experience for families, individuals and groups</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/planning-booking.html" data-automation-id="BEFORE YOU GO">
+											<span class="subnavbar__link_title">BEFORE YOU GO</span>
+											<span class="subnavbar__link_desc">Tickets &amp; fares, accessible travel service, security &amp; ID requirements</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/at-the-station.html" data-automation-id="AT THE STATION">
+											<span class="subnavbar__link_title">AT THE STATION</span>
+											<span class="subnavbar__link_desc">Boarding information, station lounges, baggage &amp; station services</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/onboard.html" data-automation-id="ONBOARD">
+											<span class="subnavbar__link_title">ONBOARD</span>
+											<span class="subnavbar__link_desc">Seating &amp; sleeping, baggage info, train amenities, food &amp; dining</span>
+										</a>
+									</div>
+								</div>
+							</div>
+					
+				</li> 
+                 		
+	        
+				
+
+                
+
+					<li class="site-primary-nav__li">
+						<a class="site-primary-nav__link is-subnav-link" role="button" aria-pressed="false" aria-haspopup="true" href="#" target="_self" data-automation-id="sitePrimarySubnav">
+							DEALS
+						</a>
+
+
+						
+
+
+						
+							<div class="subnavbar site-primary-nav__subnavbar">
+								<div class="wrapper">
+									<div class="site-primary-nav__subnavbar_list">
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/promotions/deals.html" data-automation-id="DEALS &amp; PROMOTIONS">
+											<span class="subnavbar__link_title">DEALS &amp; PROMOTIONS</span>
+											<span class="subnavbar__link_desc">Amtrak travel deals, promotions and other partner offers.</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/deals-discounts/everyday-discounts.html" data-automation-id="EVERYDAY DISCOUNTS">
+											<span class="subnavbar__link_title">EVERYDAY DISCOUNTS</span>
+											<span class="subnavbar__link_desc">Savings for Kids, Seniors, Military, Groups and More</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/deals-discounts/rail-vacations-rail-tours.html" data-automation-id="VACATIONS &amp; RAIL TOURS">
+											<span class="subnavbar__link_title">VACATIONS &amp; RAIL TOURS</span>
+											<span class="subnavbar__link_desc">Train vacation packages throughout North America</span>
+										</a>
+									
+										<a class="subnavbar__link subnavbar__link_4" href="https://www.amtrak.com/deals-discounts/multi-ride-rail-passes.html" data-automation-id="MULTI-RIDES &amp; RAIL PASSES">
+											<span class="subnavbar__link_title">MULTI-RIDES &amp; RAIL PASSES</span>
+											<span class="subnavbar__link_desc">USA Rail passes, monthly passes and multi-ride tickets</span>
+										</a>
+									</div>
+								</div>
+							</div>
+					
+				</li> 
+                 		
+	        
+				
+                		<li class="site-primary-nav__li">						
+							<btn-train-schedule content='[{"labels":{"trainSchedule":"SCHEDULES"}}]'></btn-train-schedule>
+						</li> 
+                
+
+                 		
+	        
+				
+
+                
+
+					<li class="site-primary-nav__li">
+						<a class="site-primary-nav__link is-subnav-link" role="button" aria-pressed="false" aria-haspopup="true" href="https://www.amtrak.com/guestrewards/home.html" target="_self" data-automation-id="sitePrimarySubnav">
+							Guest Rewards
+						</a>
+
+
+						
+
+
+						
+				</li> 
+                 		
+	        </ul>
+	    </nav> 
+	</div>
+
+
+
+                            
+	<div class="site-secondary-nav am-js__site-secondary-nav">
+	    <ul class="site-secondary-nav__ul">
+			<li class="site-secondary-nav__li " data-modalopen="secondary-nav-train-status">
+				<btn-travel-status content='[{"labels":{"travelStatus":"TRAIN STATUS"}}]'></btn-travel-status>
+		  	</li>	
+	        <li class="site-secondary-nav__li  " data-modalopen="secondary-nav-modify-trip">
+				<btn-find-trip content='[{"labels":{"modifyTrip":"MODIFY TRIP"}}]'></btn-find-trip>
+			</li>
+			
+	        
+	        	<a hidden type="button" data-julie="booknow_button"></a>
+	        
+	    </ul>
+	</div>
+
+
+
+                        </div>
+                    </div>
+            
+            
+            
+            <button type="button" class="julieTrigger" data-julie="schedules_trigger" hidden>button</button>
+            <div hidden data-stations-data-url="https://www.amtrak.com/services/data.stations.json" data-stations-data-group="stations"></div>
+            <div class="assistive_hidden hide">
+                <a href="https://amtrak.upreus.com/h5/assistive/index"></a>
+            </div>
+            </header>
+            <div>
+    
+
+<!-- TODO: Update sling model-->
+<article class="guest-rewards-shoebox am-js__guest-rewards-shoebox" data-profile-url="/v2/consumers/profile" data-tier-url="/member/tier" data-coupon-url="/v2/ecoupon/list" data-member-text="Member # {{memberNumber}}" data-member-trigger-value="0" data-member-entrance-threshold="0" data-select-trigger-value="5000" data-select-entrance-threshold="0" data-select-plus-trigger-value="10000" data-select-plus-entrance-threshold="5000" data-top-tier-trigger-value="20000" data-top-tier-entrance-threshold="10000" data-coupons-text="{{coupons}}" data-points-text="{{points}}" data-points-date-text="As of {{pointsDate}}" data-tqp-current="{{profile.yearToDateTQPs}}" data-tier-Status-Text="{{tierName}} status" data-tier-Expiration-Text="Expires {{tierExpiration}}" data-inactive-Member-Text="Earn Tier Qualifying Points (TQPs) by traveling on Amtrak® to reach tier status and enjoy more benefits. {{futureTier}} status starts at {{futureTierEntryPoints}} TQPs." data-top-Tier-Member-Text="Be sure to enjoy all the benefits available to you as a {{tier}} member such as unlimited access to station lounges, a 100% point bonus on Amtrak travel and more." data-tqp-Status-Text="{{tqps}} Tier Qualifying Points (current year)" data-renew-Tier-Text="You need {{remainingTierPoints}} TQPs to renew {{tier}} status" data-future-Tier-Text="You&#39;re {{remainingTierPoints}} TQPs away from {{futureTier}} status" data-tier-Code="{{tier.code}}" data-tier-Links="[{&#34;tierCode&#34;:&#34;S&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;},{&#34;tierCode&#34;:&#34;P&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-plus-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;},{&#34;tierCode&#34;:&#34;E&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-executive-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;}]" data-image="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/guest-rewards-logo.svg" data-signout-endpoint="/v3/account/signout" data-tickets-landing="/home.html" data-partner-id="5a414158" data-partner-name="INTERNET">
+    <div class="guest-rewards-shoebox__row guest-rewards-shoebox__wrapper" data-hook="agr-shoebox">
+        <div class="guest-rewards-shoebox__col guest-rewards-shoebox__col--large">
+            <div data-hook="guest-info-container"></div>
+
+            <div data-hook="guest-tier-container"></div>
+            <div class="loader shoebox-loader small-loader">
+                <img class="image" src="https://www.amtrak.com/content/dam/agr/spinners/preloader-blue.gif"/>
+                <span class="title">Loading</span>
+            </div>
+        </div>
+        <div class="guest-rewards-shoebox__col guest-rewards-shoebox__col--small">
+            <nav class="sidebar-nav am-js__sidebar-nav ac-management__sidebar" role="navigation" data-accordion="" aria-label="Secondary">
+                <div class="sidebar-nav__heading hide__desktop-and-above" data-control="">
+                    <span class="sidebar-nav__heading-icon" aria-hidden="true"></span>
+                    <span class="sidebar-nav__heading-icon" aria-hidden="true"></span></div>
+                <ol class="sidebar-nav__ol force-show__desktop-and-above" data-content="" style="max-height: 0px; overflow: hidden;">
+                    
+                        <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                            <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="https://www.amtrak.com/guestrewards/account-overview.html">My Account Overview</a>
+                        </li>
+                    
+                        <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                            <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="https://www.amtrak.com/guestrewards/account-overview/profile.html">My Profile</a>
+                        </li>
+                    
+                        <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                            <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="https://www.amtrak.com/guestrewards/account-overview/my-trips.html">My Trips</a>
+                        </li>
+                    
+                        <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                            <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="https://www.amtrak.com/guestrewards/account-overview/my-coupons.html">My Coupons</a>
+                        </li>
+                    
+                        <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                            <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="https://www.amtrak.com/guestrewards/account-overview/profile.html">Communication Preferences</a>
+                        </li>
+                    
+                    <li class="sidebar-nav__li sidebar-nav__li-toplevel   ">
+                        <a amt-auto-test-id="shoebox-link-parent" data-automation-id="sidebarNavLinkParent" class="sidebar-nav__link" href="#" data-log-out>Sign Out</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</article>
+</div>
+            <div><article class="guest-rewards-shoebox guest-rewards-shoebox--mobile" data-hook="agr-shoebox--mobile" data-profile-url="/v2/consumers/profile" data-tier-url="/member/tier" data-member-text="Member # {{memberNumber}}" data-coupons-text="{{coupons}}" data-points-text="{{points}}" data-points-date-text="As of {{pointsDate}}" data-tqp-current="{{profile.yearToDateTQPs}}" data-tier-Status-Text="{{tierName}} status" data-tier-Expiration-Text="Expires {{tierExpiration}}" data-inactive-Member-Text="Earn Tier Qualifying Points (TQPs) by traveling on Amtrak® to reach tier status and enjoy more benefits. {{futureTier}} status starts at {{futureTierEntryPoints}} TQPs." data-top-Tier-Member-Text="Be sure to enjoy all the benefits available to you as a {{tier}} member such as unlimited access to station lounges, a 100% point bonus on Amtrak travel and more." data-tqp-Status-Text="{{tqps}} Tier Qualifying Points (current year)" data-renew-Tier-Text="You need {{remainingTierPoints}} TQPs to renew {{tier}} status" data-future-Tier-Text="You&#39;re {{remainingTierPoints}} TQPs away from {{futureTier}} status" data-tier-Code="{{tier.code}}" data-tier-Links="[{&#34;tierCode&#34;:&#34;S&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;},{&#34;tierCode&#34;:&#34;P&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-plus-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;},{&#34;tierCode&#34;:&#34;E&#34;,&#34;tierLink&#34;:&#34;https://www.amtrak.com/guestrewards/member-benefits/select-executive-benefits.html&#34;,&#34;tierLinkText&#34;:&#34;{{tier}}&#34;,&#34;tierLinkAriaLabel&#34;:&#34;View {{tier}} benefits&#34;}]" data-image="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/guest-rewards-logo.svg">
+    <nav class="guest-rewards-shoebox--mobile guest-rewards__mobile-nav" data-agr-mobile-nav>
+        <a href="#" class="guest-rewards__mobile-nav__title" data-agr-mobile-nav-toggle aria-hidden="true" tabindex="-1">My Account</a>
+        <ul class="guest-rewards__mobile-nav__list">
+            
+                <li class="guest-rewards__mobile-nav__list__item">
+                    <a href="https://www.amtrak.com/guestrewards/account-overview.html" class="guest-rewards__mobile-nav__list__item__link" tabindex="-1">My Account Overview</a>
+                </li>
+            
+                <li class="guest-rewards__mobile-nav__list__item">
+                    <a href="https://www.amtrak.com/guestrewards/account-overview/profile.html" class="guest-rewards__mobile-nav__list__item__link" tabindex="-1">My Profile</a>
+                </li>
+            
+                <li class="guest-rewards__mobile-nav__list__item">
+                    <a href="https://www.amtrak.com/guestrewards/account-overview/my-trips.html" class="guest-rewards__mobile-nav__list__item__link" tabindex="-1">My Trips</a>
+                </li>
+            
+                <li class="guest-rewards__mobile-nav__list__item">
+                    <a href="https://www.amtrak.com/guestrewards/account-overview/my-coupons.html" class="guest-rewards__mobile-nav__list__item__link" tabindex="-1">My Coupons</a>
+                </li>
+            
+                <li class="guest-rewards__mobile-nav__list__item">
+                    <a href="https://www.amtrak.com/guestrewards/account-overview/profile.html" class="guest-rewards__mobile-nav__list__item__link" tabindex="-1">Communication Preferences</a>
+                </li>
+            
+            <li class="guest-rewards__mobile-nav__list__item">
+                <a data-automation-id="sidebarNavLinkParent" class="guest-rewards__mobile-nav__list__item__link" href="#" tabindex="-1" aria-hidden="true" data-log-out>Sign Out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="guest-rewards-shoebox__row guest-rewards-shoebox--mobile__quick-info">
+        <div class="guest-rewards-shoebox__col" data-hook="guest-info-mobile"></div>
+        <div class="guest-rewards-shoebox__col">
+            <button class="guest-rewards-shoebox--mobile__quick-info__signout" data-log-out aria-hidden="true" tabindex="-1">Sign Out</button>
+        </div>
+    </div>
+    <div class="guest-rewards-shoebox__row guest-rewards-shoebox__wrapper guest-rewards-shoebox__wrapper--mobile" data-hook="agr-shoebox">
+
+        <div class="guest-rewards-shoebox__col guest-rewards-shoebox__col--large">
+            <div data-hook="guest-info-container"></div>
+            <hr/>
+            <div data-hook="guest-tier-container"></div>
+            <div class="loader shoebox-loader small-loader">
+                <img class="image" src="https://www.amtrak.com/content/dam/agr/spinners/preloader-blue.gif"/>
+                <span class="title">Loading</span>
+            </div>
+            <div class="guest-rewards-shoebox__row guest-rewards-shoebox__content--add">
+                <img src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/guest-rewards-logo.svg"/>
+            </div>
+        </div>
+
+    </div>
+
+</article>
+</div>   
+            <div class="page-header__print">
+                <a class="site-logo__link" title="Go to Home Page">
+			        <img src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/logos/amtrak-logo__white.svg" class="site-logo__img" alt="Amtrak"/>
+			    </a>
+            </div>
+        </div>
+    
+
+				
+					<article class="notifications am-js__notifications fixedsticky">
+    <div class="message-container" data-hook="notifications-message-container"></div>
+</article>
+
+				  
+				<load-sessionstorage-store></load-sessionstorage-store>
+				<main role="main" class="page-content content-page" id="page-content" tabindex="-1">
+					<section role="main-section" id="page-content-section" tabindex="-1"></section>
+					
+<section>
+	
+
+    
+		
+
+
+
+
+    
+    
+    <div class="home-alerts basecomponent parbase">
+<article class="home-alerts am-js__home-alerts hide-alert emergency-alerts" action="/content/amtrak/en-us/home.alertsService.emergency-alerts.json" data-method="GET">
+    <div class="home-alerts__wrap emergency-alerts">
+       <div class="home-alerts__wrap_alerts emergency-alerts"></div> 
+    </div>
+</article>
+
+
+
+</div>
+
+
+    
+    
+    <div class="carousel-feature-area basecomponent parbase">
+	
+
+	<section class="carousel-feature-area am-js__carousel-feature-area no-accordion homepage-carousel">
+	    <input type="checkbox" aria-label="A New Standard of Travel during COVID-19" class="carousel-feature-area__dropdown-trigger" id="mobileShowHideTriggerExpA New Standard of Travel during COVID-19" tabindex="-1"/>
+        <div class="carousel-feature-area__dropdown-wrapper">
+            <h2 class="carousel-feature-area__dropdown-button hide-desktop">
+                <label for="mobileShowHideTriggerExpA New Standard of Travel during COVID-19">A New Standard of Travel during COVID-19</label>
+            </h2>
+        </div>
+	    <div class="carousel-feature-area__dropdown-content">
+	        <div data-carousel class="carousel-feature-area__carousel">
+	            <button data-automation-id="hpFeatureLeftControl" data-carousel-control-left class="carousel-feature-area__carousel-control left" tabindex="0">
+            		<span class="hide-from__screen">carousel control left</span>
+            	</button>
+	            <div data-carousel-container class="carousel-feature-area__container">
+	                <div data-carousel-container-content class="carousel-feature-area__container_content">
+	                    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content right">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                                <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-9.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-9.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-9.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-9.jpg/_jcr_content/renditions/cq5dam.web.600.306.jpeg"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Face Coverings</h2>
+                            
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">While Amtrak passengers and employees are no longer required to wear masks while on board trains or in stations, masks are welcome and remain an important preventive measure against COVID-19.  Anyone needing or choosing to wear one is encouraged to do so.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab4" target="_self" data-popupurl="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab4" aria-label="Learn more about Face Coverings" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">Learn More</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content right">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                                <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-12.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-12.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-12.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-12.jpg/_jcr_content/renditions/cq5dam.web.600.306.jpeg"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Pre-Trip COVID Check</h2>
+                            
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">To provide a safe travel environment to Amtrak’s passengers and employees, all passengers must complete a pre-trip COVID-19 check within 24 hours prior to departure.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/planning-booking/policies/covidtravel.html?intcmp=wsp_tab_link_coronavirus_tab2" target="_self" data-popupurl="https://www.amtrak.com/planning-booking/policies/covidtravel.html?intcmp=wsp_tab_link_coronavirus_tab2" aria-label="Learn more about Pre-Trip COVID Check" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">Complete the COVID Check</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content right">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                                <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-6.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-6.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-6.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-6.jpg/_jcr_content/renditions/cq5dam.web.600.306.jpeg"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Air Quality &amp; Cleaning</h2>
+                            
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">All Amtrak trains are equipped with onboard filtration systems with a fresh air exchange rate every 4-5 minutes.</p>
+                        
+                            <p class="feature-area__content_body-text" tabindex="-1">We have enhanced cleaning and disinfecting protocols at stations and onboard our trains.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab3" target="_self" data-popupurl="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab3" aria-label="Learn more about Air Quality &amp; Cleaning" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">Learn More</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content right">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                                <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-13.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-13.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                                <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-13.jpg/_jcr_content/renditions/cq5dam.web.550.550.jpeg"/>
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/tabbed-carousel-13.jpg/_jcr_content/renditions/cq5dam.web.600.306.jpeg"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Trip Flexibility</h2>
+                            
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">Amtrak is waiving all change fees for reservations made by April 30, 2022.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab1" target="_self" data-popupurl="https://www.amtrak.com/planning-booking/policies/coronavirus.html?intcmp=wsp_tab_link_coronavirus_tab1" aria-label="Learn more about Trip Flexibility" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">Learn More</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+	                </div>
+	            </div>
+	            <button data-automation-id="hpFeatureRightControl" data-carousel-control-right class="carousel-feature-area__carousel-control right" tabindex="0">
+	            	<span class="hide-from__screen">carousel control right</span>
+	            </button>
+	        </div>
+            <div data-carousel-progress-indicator>
+                <div class="switch-button" aria label="To navigate through the room types, use up/down keys.">
+                    
+                        <label class="switch-button__label" id="progressBtn0" data-position="0">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Face Coverings" data-automation-id="homeProgBtn1" checked="checked" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Face Coverings</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn1" data-position="1">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Pre-Trip COVID Check" data-automation-id="homeProgBtn2" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Pre-Trip COVID Check</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn2" data-position="2">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Air Quality &amp; Cleaning" data-automation-id="homeProgBtn3" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Air Quality &amp; Cleaning</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn3" data-position="3">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Trip Flexibility" data-automation-id="homeProgBtn4" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Trip Flexibility</span>
+                        </label>
+                    
+                </div>
+            </div>
+	        	
+		  </div>
+	</section>
+
+</div>
+
+
+    
+    
+    <div class="experiencefragment">
+
+    
+    
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    
+    
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/foundation/clientlibs/main.731db1757391070f3ea2ead82acaf408.css" type="text/css">
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/jquery.0811b5e7037ada110b591bbd86240386.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/utils.15b6fc27cccbddb5fb7b88a7c6a2c7e4.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/jquery/granite.ed0d934d509c9dab702088c125c92b4f.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/foundation/clientlibs/jquery.26df26a88f9f71ceabb6a15e7cb9c550.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/foundation/clientlibs/shared.94566c45c6be1835dd4e8957eddeaefb.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/foundation/clientlibs/main.e2198d73b3e90f0b787085da720eb46e.js"></script>
+
+
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    <title>Fare Finder Experience Fragment</title>
+</head>
+    <body>
+
+
+
+
+
+
+    
+    
+    <div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="fareFinder aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+    
+    
+     
+        <amt-md-farefinder content="[{&#34;labels&#34;:{&#34;oneWay&#34;:&#34;One-Way&#34;,&#34;roundTrip&#34;:&#34;Round-Trip&#34;,&#34;multiRide&#34;:&#34;Rail Passes&#34;,&#34;multiRideUrl&#34;:&#34;/deals-discounts/multi-ride-rail-passes/multi-ride.html&#34;,&#34;autoTrain&#34;:&#34;Auto Train&#34;,&#34;autotrainUrl&#34;:&#34;/auto-train-experience&#34;,&#34;seeOtherTravelOptionsDropdownLabel&#34;:&#34;Other Travel Options&#34;,&#34;otherTravelOptionsLabel&#34;:&#34;Other Options&#34;,&#34;otherTravelOptions&#34;:[{&#34;travelOption&#34;:&#34;Multi-City&#34;,&#34;travelOptionLink&#34;:&#34;https://tickets.amtrak.com/itd/amtrak/complexrail&#34;},{&#34;travelOption&#34;:&#34;Group Travel&#34;,&#34;travelOptionLink&#34;:&#34;https://www.amtrak.com/tickets/grouptravel&#34;},{&#34;travelOption&#34;:&#34;Hotels &amp; Cars&#34;,&#34;travelOptionLink&#34;:&#34;https://amtrakpth.pxf.io/c/1420317/447298/7971&#34;}],&#34;passriderTravelOptions&#34;:{&#34;travelOption&#34;:&#34;Employee Pass Rider&#34;,&#34;travelOptionLink&#34;:&#34;https://tickets.amtrak.com/itd/amtrak/passrider&#34;},&#34;addReturnText&#34;:&#34;Return Date&#34;,&#34;removeReturnText&#34;:&#34;Remove Return&#34;,&#34;findTrain&#34;:&#34;FIND TRAINS&#34;,&#34;continueMultiRide&#34;:&#34;Continue&#34;,&#34;multiCityAddSegmentsText&#34;:&#34;Add Segment&#34;,&#34;multiCityClearSegmentsText&#34;:&#34;Clear&#34;,&#34;bookTripText&#34;:&#34;Book Trip&#34;,&#34;advancedOptionsText&#34;:&#34;Advanced Search&#34;,&#34;advancedSearchText&#34;:&#34;Advanced Search&#34;,&#34;allDayText&#34;:&#34;All Day&#34;,&#34;applyText&#34;:&#34;Done&#34;,&#34;refineSearch&#34;:&#34;New Search&#34;,&#34;noTrainText&#34;:&#34;No trains are available.&#34;,&#34;reverseStations&#34;:&#34;Switch departure and arrival stations.&#34;,&#34;filterTrainsBy&#34;:&#34;&#34;,&#34;sortTrainsBy&#34;:&#34;&#34;,&#34;showTrainsBy&#34;:&#34;&#34;,&#34;expireText&#34;:&#34;Exp.&#34;,&#34;fareSearchType&#34;:&#34;&#34;,&#34;selectDateInstruction&#34;:&#34;&#34;,&#34;fromStationText&#34;:&#34;Enter departure station, city or place.&#34;,&#34;toStationText&#34;:&#34;Enter arrival station, city or place.&#34;,&#34;fromStationSelectText&#34;:&#34;Select a station.&#34;,&#34;toStationSelectText&#34;:&#34;Select a station.&#34;,&#34;njTransitStations&#34;:[&#34;ABN&#34;,&#34;ACY&#34;,&#34;ATO&#34;,&#34;CRH&#34;,&#34;EGH&#34;,&#34;HTN&#34;,&#34;LDW&#34;,&#34;PNK&#34;],&#34;ariaEnter&#34;:&#34;enter&#34;,&#34;ariaStationInput&#34;:&#34;station input&#34;,&#34;ariaLabelToSelectOption&#34;:&#34;Press enter to select&#34;,&#34;alternateDaySearchModal&#34;:{&#34;header&#34;:&#34;No Trips on Your Selected Date&#34;,&#34;image&#34;:{&#34;src&#34;:&#34;/content/dam/projects/dotcom/english/public/images/am-img-date-intercept.svg&#34;,&#34;alt&#34;:&#34;No Service Available on This Date&#34;},&#34;message&#34;:&#34;&lt;p>No trains or buses are scheduled on the travel date you selected.&lt;b>&lt;\/b>&lt;br />\r\n&lt;\/p>\r\n&lt;p>Next travel date: ${nextDay}&lt;\/p>\r\n&lt;p>Continue to see trips on the next available date or Cancel to start a new search.&lt;\/p>\r\n&#34;,&#34;buttons&#34;:{&#34;confirm&#34;:&#34;Continue&#34;,&#34;cancel&#34;:&#34;Cancel&#34;}},&#34;stationRadiusSearchText&#34;:&#34;Nearby Stations&#34;,&#34;stationNoResults&#34;:&#34;No stations found.&#34;,&#34;stationHeadingLabel&#34;:&#34;Stations&#34;,&#34;googlePlaceLabel&#34;:&#34;Locations&#34;,&#34;zipCodeLabel&#34;:&#34;&#34;,&#34;loadingText&#34;:&#34;Loading&#34;,&#34;multirideTitle&#34;:&#34;&#34;,&#34;multirideContent&#34;:&#34;&#34;,&#34;railPass&#34;:&#34;Rail Passes&#34;,&#34;railPassUrl&#34;:&#34;/deals-discounts/multi-ride-rail-passes.html&#34;,&#34;route&#34;:&#34;&#34;,&#34;services&#34;:&#34;&#34;,&#34;viewTripDetails&#34;:&#34;&#34;,&#34;passriderFarePolicyLabel&#34;:&#34;Fare Policies&#34;,&#34;passriderFarePolicyModalHeader&#34;:&#34;Pass Rider Fare and Travel Policies&#34;,&#34;passRiderText&#34;:&#34;Employee Pass Rider&#34;},&#34;input&#34;:{&#34;from&#34;:{&#34;placeholder&#34;:&#34;From&#34;,&#34;label&#34;:&#34;From&#34;,&#34;ariaLabel&#34;:&#34;From&#34;,&#34;errorMsg&#34;:&#34;No matching stations.&#34;},&#34;to&#34;:{&#34;placeholder&#34;:&#34;To&#34;,&#34;label&#34;:&#34;To&#34;,&#34;ariaLabel&#34;:&#34;To&#34;,&#34;errorMsg&#34;:&#34;No matching stations.&#34;},&#34;calendarOneWay&#34;:{&#34;placeholder&#34;:&#34;Depart Date&#34;,&#34;label&#34;:&#34;&#34;,&#34;errorMsg&#34;:&#34;Enter a departure date.&#34;},&#34;calendarRoundTrip&#34;:{&#34;placeholder&#34;:&#34;Return Date&#34;,&#34;label&#34;:&#34;&#34;,&#34;errorMsg&#34;:&#34;Enter a departure date.&#34;},&#34;calendarMR&#34;:{&#34;placeholder&#34;:&#34;Select a trip start date&#34;,&#34;label&#34;:&#34;&#34;,&#34;ariaLabel&#34;:&#34;Select a trip start date&#34;,&#34;errorMsg&#34;:&#34;&#34;},&#34;redeemPointsLabel&#34;:{&#34;label&#34;:&#34;Use Points&#34;,&#34;ariaLabel&#34;:&#34;Use Points&#34;},&#34;passriderTravelers&#34;:{&#34;travelersText&#34;:&#34;Pass Rider Travelers&#34;,&#34;travelerText&#34;:&#34;Traveler&#34;,&#34;personalText&#34;:&#34;Personal&#34;,&#34;businessText&#34;:&#34;Business&#34;,&#34;maxTravelerCount&#34;:&#34;8&#34;,&#34;firstNameCharCount&#34;:&#34;2&#34;,&#34;passriderHeaderText&#34;:&#34;Travelers&#34;,&#34;employeeTraveler&#34;:&#34;Employee Traveler&#34;,&#34;dependentTraveler&#34;:&#34;Dependent Traveler Type&#34;,&#34;oneAdultWarningMsg&#34;:&#34;Add at least one adult 18 years old or older.&#34;,&#34;maxTravelWarningMsg&#34;:&#34;Call 1-800-USA-RAIL to make reservations for more than 8 travelers.&#34;,&#34;doneText&#34;:&#34;Done&#34;,&#34;companionInfo&#34;:{&#34;companionText&#34;:&#34;Companions&#34;,&#34;remainingPassText&#34;:&#34;passes remaining&#34;,&#34;modalTitle&#34;:&#34;Pass Rider Companion Information&#34;,&#34;modalContent&#34;:&#34;/ibcontent/passridercompanionfarepolicy.html&#34;}},&#34;rewardsGhostText&#34;:{&#34;label&#34;:&#34;&#34;,&#34;placeholder&#34;:&#34;Coupon Code (15 digits)&#34;,&#34;maxLength&#34;:&#34;14&#34;,&#34;minLength&#34;:&#34;14&#34;,&#34;errorMsgMinLen&#34;:&#34;The coupon code is not valid.&#34;,&#34;errorMsg&#34;:&#34;The coupon is not valid.&#34;},&#34;timeOfDay&#34;:{&#34;label&#34;:&#34;Time of Day&#34;,&#34;ariaLabel&#34;:&#34;Time of Day&#34;,&#34;12to6am&#34;:&#34;12a-6a&#34;,&#34;6to12pm&#34;:&#34;6a-12p&#34;,&#34;12to6pm&#34;:&#34;12p-6p&#34;,&#34;6to12am&#34;:&#34;6p-12a&#34;},&#34;travelers&#34;:{&#34;travelerDropdownHeading&#34;:&#34;Travelers&#34;,&#34;adult&#34;:{&#34;link&#34;:{&#34;text&#34;:&#34;Adult&#34;,&#34;url&#34;:&#34;/ibcontent/omni/adult.html&#34;},&#34;ageRange&#34;:&#34;16+&#34;},&#34;seniors&#34;:{&#34;link&#34;:{&#34;text&#34;:&#34;Senior&#34;,&#34;url&#34;:&#34;/ibcontent/omni/senior.html&#34;},&#34;ageRange&#34;:&#34;65+&#34;},&#34;youth&#34;:{&#34;link&#34;:{&#34;text&#34;:&#34;Youth&#34;,&#34;url&#34;:&#34;/ibcontent/omni/youth.html&#34;},&#34;ageRange&#34;:&#34;13 - 15&#34;},&#34;children&#34;:{&#34;link&#34;:{&#34;text&#34;:&#34;Child&#34;,&#34;url&#34;:&#34;/ibcontent/omni/child.html&#34;},&#34;ageRange&#34;:&#34;2 - 12&#34;},&#34;infants&#34;:{&#34;link&#34;:{&#34;text&#34;:&#34;Infant&#34;,&#34;url&#34;:&#34;/ibcontent/omni/infant.html&#34;},&#34;ageRange&#34;:&#34;Under 2&#34;},&#34;travelingAloneLink&#34;:{&#34;text&#34;:&#34;Traveling Alone?&#34;,&#34;url&#34;:&#34;/ibcontent/omni/unaccompanied-minors.html&#34;,&#34;modalTitle&#34;:&#34;Traveling Alone&#34;},&#34;discountsHeading&#34;:&#34;Discounts&#34;,&#34;promoCodeGhostText&#34;:&#34;&#34;,&#34;doneTextButton&#34;:&#34;Done&#34;,&#34;clearAllText&#34;:&#34;Reset&#34;,&#34;discountsInfo&#34;:{&#34;text&#34;:&#34;Discounts&#34;,&#34;url&#34;:&#34;/ibcontent/omni/discount-rules-oc.html&#34;,&#34;altText&#34;:&#34;&#34;,&#34;target&#34;:&#34;Passenger Types and Discounts&#34;},&#34;groupTravel&#34;:{&#34;text&#34;:&#34;Group Travel&#34;,&#34;url&#34;:&#34;&#34;,&#34;requestText&#34;:&#34;&#34;},&#34;maxAdultCount&#34;:&#34;8&#34;,&#34;maxCount&#34;:&#34;15&#34;,&#34;minCount&#34;:&#34;0&#34;,&#34;infantWarningMsg&#34;:&#34;Only 1 infant per adult can travel for free.&#34;,&#34;infantDiscountMsg&#34;:&#34;Free with a paying adult.&#34;,&#34;childWarningMsg&#34;:&#34;Only 1 child per adult can travel at a discounted fare.&#34;,&#34;discountPerAdultChild&#34;:&#34;1&#34;,&#34;discountPerAdultInfant&#34;:&#34;1&#34;,&#34;discountTypeCount&#34;:&#34;4&#34;,&#34;minGrpCount&#34;:&#34;4&#34;,&#34;maxGrpCount&#34;:&#34;4&#34;,&#34;maxDiscountTypeCount&#34;:&#34;4&#34;,&#34;promoPlaceholder&#34;:&#34;Promo Code (e.g., X000)&#34;,&#34;youthWarningMsg&#34;:&#34;Call 1-800-USA-RAIL to make reservations for youth traveling alone.&#34;,&#34;oneAdultSeniorWarningMsg&#34;:&#34;Add at least one adult 18 years old or older.&#34;,&#34;groupTravelWarningMsg&#34;:&#34;Call 1-800-USA-RAIL to make reservations for 9 to 14 travelers. For reservations with 15 or more,  complete a Group Travel Request.&#34;,&#34;discountWarningMsg&#34;:&#34;Amtrak.com cannot add discount with more than four different passenger types in one reservation.&#34;,&#34;passengerTypesWarningMsg&#34;:&#34;Amtrak.com cannot make reservations with more than four different passenger types in one reservation.&#34;,&#34;moreThanOnePwdWarningMsg&#34;:&#34;To make reservations for more than one traveler with a disability, call 1-800-USA-RAIL. A new experience for multiple traveler bookings is in progress.&#34;,&#34;companionWarningMsg&#34;:&#34;The companion discount can only be used if there is one traveler with disability.                                 To continue with this reservation, change your passenger discount types.&#34;,&#34;companionPwdErrorMsg&#34;:&#34;Reservations are limited to one companion discount with one traveler with disability.&#34;,&#34;sameFromToStnWarningMsg&#34;:&#34;Enter different origin and destination stations.&#34;}},&#34;data&#34;:{&#34;journeySolutionOptionURL&#34;:&#34;/v4/journey-solution-option&#34;,&#34;trainCodesURL&#34;:&#34;/content/dam/projects/dotcom/english/public/config/TrainCodesResource.xml&#34;,&#34;partnerID&#34;:&#34;5a414158&#34;,&#34;partnerName&#34;:&#34;INTERNET&#34;,&#34;validateCouponURL&#34;:&#34;/v2/ecoupon/validate&#34;,&#34;listCouponsURL&#34;:&#34;/v2/ecoupon/list&#34;,&#34;autoCompleteURL&#34;:&#34;https://www.amtrak.com/services/MapDataService/AutoCompleter/getResponseList&#34;,&#34;autoCompleteAddressURL&#34;:&#34;https://www.amtrak.com/services/MapDataService/RadiusSearchRequest/getStationsByAddress&#34;,&#34;arcGisAutoCompleteURL&#34;:&#34;/services/MapDataService/AutoCompleterArcgis/getResponseList&#34;,&#34;arcGisAutoCompleteAddressURL&#34;:&#34;/services/MapDataService/RadiusSearchRequest/getStationsByAddressKey&#34;,&#34;passriderValidationUrl&#34;:&#34;/v1/passrider/validation&#34;,&#34;maxSegments&#34;:&#34;5&#34;,&#34;maxBookingDays&#34;:&#34;335&#34;,&#34;maxMrBookingDays&#34;:&#34;90&#34;,&#34;tooCloseToDeparture&#34;:&#34;15&#34;,&#34;allowManualDateEntry&#34;:true,&#34;alternateDayOption&#34;:true,&#34;useArcGisAutoComplete&#34;:true,&#34;passriderFarePolicyURL&#34;:&#34;/ibcontent/passriderfarepolicylink.html&#34;},&#34;altText&#34;:{&#34;travelerCaretAltTxt&#34;:&#34;Add travelers and discounts&#34;,&#34;travelerAdultIconAltTxt&#34;:&#34;Passenger&#34;,&#34;discountTooltipIconAltTxt&#34;:&#34;About passenger types and discounts&#34;,&#34;travelOptionSelectIconAltTxt&#34;:&#34;Travel Options&#34;,&#34;roundTripIconAltTxt&#34;:&#34;Switch departure and arrival stations&#34;}}]"></amt-md-farefinder>
+    
+
+</div>
+
+    
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript"  src="/DRFdKD4xH/KMiZ/1OW/MLeuMHIqDzA/D7O7V0Vb/VwgDKA/fgA-Sh/J0LgAB"></script></body>
+</html>
+
+</div>
+
+
+    
+    
+    <div class="home-alerts basecomponent parbase">
+<article class="home-alerts am-js__home-alerts hide-alert homepage-alerts" action="/content/amtrak/en-us/home.alertsService.homepage-alerts.json" data-method="GET">
+    <div class="home-alerts__wrap homepage-alerts">
+       <div class="home-alerts__wrap_alerts homepage-alerts"></div> 
+    </div>
+</article>
+
+
+
+</div>
+
+
+    <div class="parsys-column three-columns">
+        <div class="parsys_column three-columns-c0">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/exploreamerica?intcmp=wsp_promo-card_link_auto-train-experience_hpcard1" data-popupurl="https://www.amtrak.com/exploreamerica?intcmp=wsp_promo-card_link_auto-train-experience_hpcard1" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/person-snapping-picture-of-interior-chicago-union-station.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/person-snapping-picture-of-interior-chicago-union-station.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/person-snapping-picture-of-interior-chicago-union-station.jpg/_jcr_content/renditions/original"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/person-snapping-picture-of-interior-chicago-union-station.jpg/_jcr_content/renditions/original" alt="Person snaps picture of Chicago Union Station Interior"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">Discover America</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">With over 500 destinations, Amtrak takes you where you want to go.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="Discover America" aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/exploreamerica?intcmp=wsp_promo-card_link_auto-train-experience_hpcard1" data-popupurl="https://www.amtrak.com/exploreamerica?intcmp=wsp_promo-card_link_auto-train-experience_hpcard1" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    
+        <div class="parsys_column three-columns-c1">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/rooms?intcmp=wsp_promo-card_link_rooms_hpcard6" data-popupurl="https://www.amtrak.com/rooms?intcmp=wsp_promo-card_link_rooms_hpcard6" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/viewliner-roomette.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/viewliner-roomette.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/viewliner-roomette.jpg/_jcr_content/renditions/original"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/viewliner-roomette.jpg/_jcr_content/renditions/original"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">Travel in a Private Room</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">Available on many routes across the country.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="Travel in a Private Room" aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/rooms?intcmp=wsp_promo-card_link_rooms_hpcard6" data-popupurl="https://www.amtrak.com/rooms?intcmp=wsp_promo-card_link_rooms_hpcard6" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    
+        <div class="parsys_column three-columns-c2">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/auto-train-experience.html?intcmp=wsp_promo-card_link_auto-train-experience_hpcard3" data-popupurl="https://www.amtrak.com/auto-train-experience.html?intcmp=wsp_promo-card_link_auto-train-experience_hpcard3" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/checking-in-car-auto-train.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/checking-in-car-auto-train.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/checking-in-car-auto-train.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/checking-in-car-auto-train.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">Road Trip with Your Car on Auto Train</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">Coach fares as low as $89 + the cost of your vehicle.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="Road Trip with Your Car on Auto Train" aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/auto-train-experience.html?intcmp=wsp_promo-card_link_auto-train-experience_hpcard3" data-popupurl="https://www.amtrak.com/auto-train-experience.html?intcmp=wsp_promo-card_link_auto-train-experience_hpcard3" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    </div>
+    <div style='clear:both'></div>
+    
+
+    <div class="parsys-column three-columns">
+        <div class="parsys_column three-columns-c0">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/mobile?intcmp=wsp_promo-card_link_mobile-app_hpcard4" data-popupurl="https://www.amtrak.com/mobile?intcmp=wsp_promo-card_link_mobile-app_hpcard4" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/man-using-mobile-phone.jpg/_jcr_content/renditions/cq5dam.web.960.600.jpeg"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/man-using-mobile-phone.jpg/_jcr_content/renditions/cq5dam.web.960.600.jpeg"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/man-using-mobile-phone.jpg/_jcr_content/renditions/cq5dam.web.960.600.jpeg"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/man-using-mobile-phone.jpg/_jcr_content/renditions/cq5dam.web.960.600.jpeg"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">All Aboard with Just Your Phone</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">Download the free Amtrak mobile app for iPhone and Android today.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="All Aboard with Just Your Phone" aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/mobile?intcmp=wsp_promo-card_link_mobile-app_hpcard4" data-popupurl="https://www.amtrak.com/mobile?intcmp=wsp_promo-card_link_mobile-app_hpcard4" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    
+        <div class="parsys_column three-columns-c1">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/promotions/book-early-save-20-percent-on-train-travel?intcmp=wsp_promo-card_link_national-saver_hpcard5" data-popupurl="https://www.amtrak.com/promotions/book-early-save-20-percent-on-train-travel?intcmp=wsp_promo-card_link_national-saver_hpcard5" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/amtrak-zephyr-train-traveling-round-mountain-bend.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/amtrak-zephyr-train-traveling-round-mountain-bend.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/amtrak-zephyr-train-traveling-round-mountain-bend.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/promotions/DigitalMarketing/featured-images/amtrak-zephyr-train-traveling-round-mountain-bend.jpg/_jcr_content/renditions/cq5dam.web.900.600.jpeg"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">Save up to 20%. No Change Fees.</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">Save across America.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="Save up to 20%. No Change Fees." aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/promotions/book-early-save-20-percent-on-train-travel?intcmp=wsp_promo-card_link_national-saver_hpcard5" data-popupurl="https://www.amtrak.com/promotions/book-early-save-20-percent-on-train-travel?intcmp=wsp_promo-card_link_national-saver_hpcard5" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    
+        <div class="parsys_column three-columns-c2">
+            <div class="promo-overview-tile parbase">
+<article class="promo-overview-card  one-card  promo-overview-card-is-hp">
+
+ 
+
+    <div class="promo-overview-card__full-container">
+        <a class="promo-overview-card__link-img am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" href="https://www.amtrak.com/guestrewards/home.html?intcmp=wsp_promo-card_link_join-agr_hpcard6" data-popupurl="https://www.amtrak.com/guestrewards/home.html?intcmp=wsp_promo-card_link_join-agr_hpcard6" data-popup="popup" data-width="600" data-height="600">      
+            <picture>
+	            <div class="whiteOverlay">
+	                
+	                    
+	                        <source media="(max-width: 690px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/agr-promo-background.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(max-width: 1000px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/agr-promo-background.jpg/_jcr_content/renditions/original"/>
+	                    
+	                        <source media="(min-width: 1001px)" srcset="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/agr-promo-background.jpg/_jcr_content/renditions/original"/>
+	                    
+	                    <img class="promo-overview-card__lg-img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/PromoCard/agr-promo-background.jpg/_jcr_content/renditions/original"/>
+	                
+                </div>
+            </picture>     
+        </a>
+        
+        <div class="promo-overview-card__text halfText">
+            
+            <h3 class="promo-overview-card__text_title">Join Amtrak Guest Rewards</h3>
+            <div class="promo-overview-card__text_desc">
+                <strong class="promo-overview-card__text_desc_detail">Every ride counts as an Amtrak Guest Rewards member. Earn points toward rewards travel, upgrades and more.</strong>
+                <span class="promo-overview-card__text_desc_validity"></span>
+            </div>
+            <div class="promo-overview-card__text_more-container">
+                <a class="promo-overview-card__text_more-container_link am-fm__popup-link" target="_self" data-automation-id="promoOverviewContinueLink" aria-label="Join Amtrak Guest Rewards" aria-describedby="promoOverviewContinueLink" href="https://www.amtrak.com/guestrewards/home.html?intcmp=wsp_promo-card_link_join-agr_hpcard6" data-popupurl="https://www.amtrak.com/guestrewards/home.html?intcmp=wsp_promo-card_link_join-agr_hpcard6" data-popup="popup" data-width="600" data-height="600" alt="promoOverviewContinueLink">Learn More</a>
+            </div>
+        </div>
+    </div>
+	
+	
+</article>
+
+
+</div>
+
+        </div>
+    </div>
+    <div style='clear:both'></div>
+    
+
+    
+    
+    <div class="carousel-feature-area basecomponent parbase">
+	
+
+	<section class="carousel-feature-area am-js__carousel-feature-area   homepage-carousel">
+	    <input type="checkbox" aria-label="Travel Tools" class="carousel-feature-area__dropdown-trigger" id="mobileShowHideTriggerExpTravel Tools" tabindex="-1"/>
+        <div class="carousel-feature-area__dropdown-wrapper">
+            <h2 class="carousel-feature-area__dropdown-button hide-desktop">
+                <label for="mobileShowHideTriggerExpTravel Tools">Travel Tools</label>
+            </h2>
+        </div>
+	    <div class="carousel-feature-area__dropdown-content">
+	        <div data-carousel class="carousel-feature-area__carousel">
+	            <button data-automation-id="hpFeatureLeftControl" data-carousel-control-left class="carousel-feature-area__carousel-control left" tabindex="0">
+            		<span class="hide-from__screen">carousel control left</span>
+            	</button>
+	            <div data-carousel-container class="carousel-feature-area__container">
+	                <div data-carousel-container-content class="carousel-feature-area__container_content">
+	                    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content left">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/Landing-feature_RR.gif" alt="Amtrak Ride Reserve"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Amtrak RideReserve for Multi-Ride Passes</h2>
+                            
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">Passengers traveling with monthly, ten-ride or six-ride passes will be required to confirm their intended trips on reserved services.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/deals-discounts/multi-ride-rail-passes/ride-reserve.html" target="_self" data-popupurl="https://www.amtrak.com/deals-discounts/multi-ride-rail-passes/ride-reserve.html" aria-label="Learn more about Amtrak RideReserve for Multi-Ride Passes" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">Learn About Confirming Trips</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content left">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/Landing-feature_02.gif"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Make Travel a Little Easier</h2>
+                            
+                            
+                                <h3 class="feature-area__content_sub" tabindex="-1">With the Amtrak app.</h3>
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1">Download the Amtrak app to check train status, get gate and track information at select stations, travel with contact-free eTicket scanning and access helpful information at your fingertips.</p>
+                        
+                        
+                            <a href="https://www.amtrak.com/planning-booking/tickets-reservations/mobile.html" target="_self" data-popupurl="https://www.amtrak.com/planning-booking/tickets-reservations/mobile.html" aria-label="Learn more about Make Travel a Little Easier" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">GET THE APP</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content left">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/Landing-feature_01.gif"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Track Your Train</h2>
+                            
+                            
+                                <h3 class="feature-area__content_sub" tabindex="-1">Check train status and track your train&#39;s location.</h3>
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1"></p>
+                        
+                        
+                            <a href="https://www.amtrak.com/track-your-train.html" target="_self" data-popupurl="https://www.amtrak.com/track-your-train.html" aria-label="Learn more about Track Your Train" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">TRACK NOW</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+		                    
+    <article class="feature-area am-js__feature-area  ">
+
+        <div class="feature-area__column-control">
+            <div class="wrapper">
+                <div class="feature-area__content left">
+                    <div class="feature-area__content_media-area" tabindex="-1">
+                        
+                        
+                            <div class="feature-area__content_media-img">
+                                
+                                    <picture>
+                                        
+                                            
+                                            <img class="feature-area__content_media-img_img" src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/Carousel/Landing_Feature_03.gif"/>
+                                        
+                                    </picture>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="feature-area__content_text-area">
+                        
+                        
+                            
+                                <h2 class="feature-area__content_title" tabindex="-1"> Interactive Planning Map</h2>
+                            
+                            
+                                <h3 class="feature-area__content_sub" tabindex="-1">Discover more of America with our interactive planning map.</h3>
+                            
+                        
+                        <p class="feature-area__content_body-text" tabindex="-1"></p>
+                        
+                        
+                            <a href="https://www.amtrak.com/plan-your-trip.html" target="_self" data-popupurl="https://www.amtrak.com/plan-your-trip.html" aria-label="Learn more about Interactive Planning Map" aria-describedby="feature-area__content_cta-btn" class="feature-area__content_cta-btn am-fm__popup-link" data-automation-id="featureCTABtn" tabindex="-1">START PLANNING</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+					    
+	                </div>
+	            </div>
+	            <button data-automation-id="hpFeatureRightControl" data-carousel-control-right class="carousel-feature-area__carousel-control right" tabindex="0">
+	            	<span class="hide-from__screen">carousel control right</span>
+	            </button>
+	        </div>
+            <div data-carousel-progress-indicator>
+                <div class="switch-button" aria label="To navigate through the room types, use up/down keys.">
+                    
+                        <label class="switch-button__label" id="progressBtn0" data-position="0">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="RideReserve" data-automation-id="homeProgBtn1" checked="checked" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">RideReserve</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn1" data-position="1">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Mobile App" data-automation-id="homeProgBtn2" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Mobile App</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn2" data-position="2">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Track Your Train" data-automation-id="homeProgBtn3" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Track Your Train</span>
+                        </label>
+                    
+                        <label class="switch-button__label" id="progressBtn3" data-position="3">
+                            <input class="switch-button__radio" name="carouselProgressBtn" aria-label="Interactive Planning Map" data-automation-id="homeProgBtn4" type="radio"/>
+                            <span class="switch-button__text" role="button" tabindex="0">Interactive Planning Map</span>
+                        </label>
+                    
+                </div>
+            </div>
+	        	
+		  </div>
+	</section>
+
+</div>
+
+
+    
+    
+    <div class="embed-script basecomponent parbase">
+
+
+<div class="scrollDiv" style="padding: px">
+	<style>
+ .hero-banner-and-search-widget__content_text_title{
+    letter-spacing: 0px;
+}
+.hero-slide-info-text[data-position="0"] *, .hero-slide-info-text[data-position="1"] *, .hero-slide-info-text[data-position="2"] * {
+    color: #00344d;
+}
+
+.hero-slide-info-text[data-position="0"] .primary-link-light:hover, 
+.hero-slide-info-text[data-position="1"] .primary-link-light:hover, 
+.hero-slide-info-text[data-position="2"] .primary-link-light:hover {
+    color: #3db8e5!important;
+}
+.feature-area {
+    margin: 30px 0 20px;
+}
+
+.carousel-feature-area__container {
+    min-height: 300px;
+}
+.travel-status, .train-schedule{
+z-index: 9 !important;
+}
+
+#secondarytext{
+padding-top:10px;
+}
+#secondarytext p{
+font-size:1.2rem
+}
+#secondarytext a{
+color:#fff;
+}
+</style> 
+
+<style>
+        .gdpr-footer {
+            position: fixed;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.43rem;
+            left: 0;
+            right:0;
+            bottom: 0;
+            width: 100%;
+            background:rgba(0, 83, 126, 0.95);
+            z-index:999;
+        }
+    
+        @media only screen and (min-width: 43.125em){
+            .gdpr-footer {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.43rem;
+                min-height:70px;
+                overflow: auto;
+                left: 0;
+                right:0;
+                bottom: 0;
+                width: 100%;
+                background:rgba(0, 83, 126, 0.95);
+                z-index:999;
+            }
+        }
+    
+        .gdpr-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            margin: 0 auto;
+            padding: 15px 18px;
+            width: 96%;
+            font-size: 10px;
+        }
+    
+        @media only screen and (min-width: 992px) {
+            .gdpr-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                margin: 0 auto;
+                padding: 15px 18px;
+                max-width: 1200px;
+                width: 95%;
+                font-size: 14px;
+            }
+        }
+
+        div.gdpr-content p {
+        margin: 0;
+        }
+
+        div.gdpr-content a {
+            font-weight: 700;
+        }
+
+        div.gdpr-content a:link {
+            color: inherit;
+        }
+        div.gdpr-content a:visited {
+            color: inherit;
+        }
+        div.gdpr-content a:hover {
+            color: rgba(225, 245, 253,1);
+            text-decoration: underline !important;
+        }
+        div.gdpr-content a:active {
+            color: rgba(225, 245, 253,1);
+        }
+    
+        .gdpr-button {
+            background: transparent;
+            /*background-image:url("https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/icons/close-icon-white.svg");*/
+            background-image:url("https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/icons/close-icon-white.svg");
+            background-size: cover;
+            padding: 0;
+            margin-left: 5%;
+            border: none;
+            line-height: 0;
+            min-width: 17px;
+            min-height: 17px;
+        }
+        @media only screen and (min-width: 992px) {
+            .gdpr-button {
+                background: transparent;
+                /*background-image:url("https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/icons/close-icon-white.svg");*/
+                background-image:url("https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/icons/close-icon-white.svg");
+                background-size: cover;
+                padding: 0;
+                margin-left: 10%;
+                border: none;
+                line-height: 0;
+                min-width: 17px;
+                min-height: 17px;
+            }
+        }
+        </style>
+    
+    <div id="gdpr-footer-container">
+    
+    </div>
+    
+    <script>
+var elm = document.getElementById("b2cData");
+var sitekey=elm.getAttribute("data-sitekey");
+window.onload = gdprCookieCheck; //run the footer only after the dom has loaded
+function gdprCookieCheck() {
+
+ openSignInModal();
+    //gdpr cookie exists
+    if (document.cookie.split(';').filter(function (cookies) {
+            return cookies.trim().indexOf("amtrak_gdpr_accept=") == 0;
+        }).length) {
+        removeGdpr();
+    }
+    //gdpr cookie does not exist
+    else {
+        addGdpr();
+        document.getElementById("cookie").focus();
+    }
+}
+
+function createGdprCookie() {
+    var expirationDate = new Date();
+    expirationDate.setMonth(expirationDate.getMonth() + 1); //set cookie to expire in 1 month
+    console.log(expirationDate);
+    document.cookie = "amtrak_gdpr_accept=true;domain=amtrak.com;path=/;expires=" + expirationDate.toUTCString();
+}
+
+function removeGdpr() {
+    //remove and create gdpr cookie if it doesn't already exist
+    jQuery("#gdpr-footer-container").remove();
+    if (document.cookie.split(';').filter(function (cookies) {
+            return cookies.trim().indexOf("amtrak_gdpr_accept=") == 0;
+        }).length == 0) {
+        createGdprCookie(); //create or reset gdpr cookie after footer dismissal
+    }
+}
+
+//add gdpr-footer and create a global event click listener for removal of the footer
+function addGdpr() {
+    jQuery("#gdpr-footer-container").append(
+        `<div class="gdpr-footer">
+        <div class="gdpr-content">
+        <span>We use cookies on this Site to optimize your user experience, analyze the usage of this Site and deliver advertisements that are more relevant to you. By continuing to use this Site, or closing this box, you consent to such use of cookies. For more information, including how you can delete cookies, please read our <a id="cookie" href="https://www.amtrak.com/planning-booking/policies/cookie-policy.html">Cookie Policy</a> and <a href="https://www.amtrak.com/planning-booking/policies/privacy-policy.html">Privacy Policy</a>.</span>
+    <button class="gdpr-button" aria-label="Close"></button>
+    </div>
+    </div>`
+    );
+    jQuery("*").click(removeGdpr); //global click event listener
+}
+
+function openSignInModal(){ 
+var urlParams = new URLSearchParams(location.search);
+
+if (urlParams.has('login') ){
+
+jQuery( ".signin-register" ).addClass( "is-visible-modal" );
+}
+
+}
+    </script>
+</div>
+
+
+
+</div>
+
+
+    
+    
+    <div class="page-title basecomponent parbase">
+<article class="page-title am-js__page-title  ">
+<div>
+		
+	     	<h1 class="heading-1 page-title__main-title  left hide-from__screen_title">Amtrak Tickets, Schedules and Train Routes</h1> 
+    	
+		
+ 		
+ 		
+ 		
+ 		    	    	    	
+</article></div>
+
+
+    
+    
+    <div class="email-opt basecomponent parbase">
+<section class="email-optin am-js__email-optin modal" data-modalcontent="email-optin" data-coockies-time-interval="90">
+	<div class="email-optin__content">
+		<header class="email-optin__header modal-header-bg">
+			<h2 class="email-optin__header_title" id="email-optin__header_title" aria-hidden="true" role="document">
+			</h2>
+			<button class="email-optin__header_close-icon" id="email-opt-modal-close" data-modalclose="email-optin" data-automation-id="btnemail-optinClose" u1st-aria-label="close button">Close Modal
+			</button>
+		</header>
+		<div class="email-optin__main-wrap">
+
+			<article class="email-optin__body email-optin-body" id="email-optin__body">
+				<div class="email-optin__body_signin" role="application">
+
+					<article class="signin email-optin__body_section">
+
+						<div class="signin email-optin__body_section" id="emailoptintext">
+							<img class="signin email-optin-img" src="/content/dam/amtrak/AGR_HomePage/Desktop/agr-homepage-marquee-logged-out-dt.png" alt="Amtrak Guest Rewards member on train platform"/>
+							<h2 class="signup-form__email-notification-title">Be among the first to know</h2>
+							<div class="rtl-text"><p>Sign up to receive flash sales, member-only promotions and special offers by email.</p>
+</div>
+							<div class="email-optin-footer" id="email-opt-footer">
+							<button class="email-optin-btn active" id="savecont" data-automation-id="btnSigninSignin" tabindex="0">
+								YES, SIGN ME UP </button>
+						</div>
+							<div class="no-button-container">
+							<a href="#" data-redirect-url="#" class="no-button" aria-label="No Label" id="signupEmailOptOut">No thanks</a>
+							</div>
+						</div>
+						<div class="secondary-text" id="secondarytext">
+							<p class=""><p>By continuing, I consent to regularly receiving personalized Amtrak emails. I can withdraw my consent at any time in the future. The lawfulness of sending email before the withrawal of my consent will not be affected. The <a href="/terms-and-conditions.html" target="_blank">Amtrak terms and conditions</a> and <a href="/planning-booking/policies/privacy-policy.html" target="_blank">privacy policy</a> apply.</p>
+</p>
+						</div>
+						<div class="signin email-optin__body_section hide" id="thankstext">
+							<img class="signin email-optin-img" src="/content/dam/amtrak/AGR_HomePage/Desktop/agr-homepage-marquee-logged-out-dt.png" alt="Amtrak Guest Rewards member on train platform"/>
+
+							<h3 class="signup-form__email-notification-title"> Email subscription confirmed </h3>
+							<div class="rtl-text">You will receive flash sales, member-only promotions and special offers directly to your inbox.</div>
+							
+						</div>
+						
+					</article>
+				
+			</article>
+		</div>
+	</div>
+</section>
+
+</div>
+
+
+    
+    
+    <div class="embed-script basecomponent parbase">
+
+
+<div class="scrollDiv" style="padding: px">
+	<script type="text/javascript">
+    try {
+        function getNuanceData() {
+            var sessionData = JSON.parse(sessionStorage.ibsession);
+            var agrProfileData = sessionData.profile.data.consumer.myProfile;
+            var nuanceData = {
+                "MEMBER_NUM": agrProfileData.agrNumber,
+                "CUSTOMER_NAME": (agrProfileData.consumerName.firstname[0] + " " + agrProfileData.consumerName.lastname).toUpperCase(),
+                "MEMBER_TIER": agrProfileData.myAGRAccountInfo.myAGRMembershipStatus
+            };
+            return nuanceData;
+        }
+         
+        var nuanceData = getNuanceData();
+    } catch (err) {
+        console.warn(err);
+        var nuanceData = {
+            "MEMBER_NUM": "",
+            "CUSTOMER_NAME": "",
+            "MEMBER_TIER": ""
+        }
+    }
+
+
+</script>
+</div>
+
+
+
+</div>
+
+
+
+    
+	
+	
+
+</section>
+				</main>
+				
+					
+
+    
+
+        
+        <section class="signin-register am-js__signin-register modal " data-modalcontent="signin-register" data-modal-click="header" role="dialog" aria-labelledby="signin-register__header_title" aria-describedby="signin-register__body">
+            <div class="signin-register__content"

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id" class="">
+<head>
+<meta charset="utf-8" />
+<title>PiliApp</title>
+<link href='https://id.piliapp.com' rel='canonical'/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta name="verify-v1" content="Jdbo4LobtBYhTenKrSZYdiBELyUZ8WhRwRzAKqBt6I4=" />
+<meta name="y_key" content="c55e27d3900849d3" />
+<link rel="shortcut icon" href="//assets.piliapp.com/s3pxy/favicon.ico" /><meta name="google" value="notranslate" />
+<style type="text/css">html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a{background:0 0}a:active,a:hover{outline:0}b{font-weight:700}h1{margin:.67em 0;font-size:2em}img{border:0}hr{height:0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}@media print{*{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}a[href^="#"]:after{content:""}img{page-break-inside:avoid}img{max-width:100%!important}h3{orphans:3;widows:3}h3{page-break-after:avoid}.navbar{display:none}}@font-face{font-family:'Glyphicons Halflings';src:url(//assets.piliapp.com/s3lnk/ajax/libs/twitter-bootstrap/3.2.0/css/tidy/fonts/glyphicons-halflings-regular.eot);src:url(//assets.piliapp.com/s3lnk/ajax/libs/twitter-bootstrap/3.2.0/css/tidy/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(//assets.piliapp.com/s3lnk/ajax/libs/twitter-bootstrap/3.2.0/css/tidy/fonts/glyphicons-halflings-regular.woff) format('woff'),url(//assets.piliapp.com/s3lnk/ajax/libs/twitter-bootstrap/3.2.0/css/tidy/fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(//assets.piliapp.com/s3lnk/ajax/libs/twitter-bootstrap/3.2.0/css/tidy/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}.glyphicon-eye-open:before{content:"\e105"}.glyphicon-folder-open:before{content:"\e118"}.glyphicon-open:before{content:"\e167"}.glyphicon-floppy-open:before{content:"\e176"}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}a{color:#428bca;text-decoration:none}a:focus,a:hover{color:#2a6496;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}img{vertical-align:middle}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}h1,h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h3{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h3{font-size:24px}ul{margin-top:0;margin-bottom:10px}ul ul{margin-bottom:0}.list-inline{padding-left:0;margin-left:-5px;list-style:none}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}.row{margin-right:-15px;margin-left:-15px}.col-sm-12,.col-sm-6{position:relative;min-height:1px;padding-right:15px;padding-left:15px}@media (min-width:768px){.col-sm-12,.col-sm-6{float:left}.col-sm-12{width:100%}.col-sm-6{width:50%}}.form-control::-moz-placeholder{color:#777;opacity:1}.form-control:-ms-input-placeholder{color:#777}.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}.open>.dropdown-toggle.btn-default{background-image:none}.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#3071a9;border-color:#285e8e}.open>.dropdown-toggle.btn-primary{background-image:none}.open>.dropdown-toggle.btn-success{color:#fff;background-color:#449d44;border-color:#398439}.open>.dropdown-toggle.btn-success{background-image:none}.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.open>.dropdown-toggle.btn-info{background-image:none}.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}.open>.dropdown-toggle.btn-warning{background-image:none}.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}.open>.dropdown-toggle.btn-danger{background-image:none}.collapse{display:none}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px solid;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175)}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap}.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{color:#262626;text-decoration:none;background-color:#f5f5f5}.open>.dropdown-menu{display:block}.open>a{outline:0}.btn-group.open .dropdown-toggle{outline:0}.btn-group.open .dropdown-toggle{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-group.open .dropdown-toggle.btn-link{-webkit-box-shadow:none;box-shadow:none}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee}.nav .open>a,.nav .open>a:focus,.nav .open>a:hover{background-color:#eee;border-color:#428bca}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media (min-width:768px){.navbar{border-radius:4px}}@media (min-width:768px){.navbar-header{float:left}}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}}.navbar-brand{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px}.navbar-brand:focus,.navbar-brand:hover{text-decoration:none}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (max-width:767px){.navbar-nav .open .dropdown-menu{position:static;float:none;width:auto;margin-top:0;background-color:transparent;border:0;-webkit-box-shadow:none;box-shadow:none}.navbar-nav .open .dropdown-menu .dropdown-header,.navbar-nav .open .dropdown-menu>li>a{padding:5px 15px 5px 25px}.navbar-nav .open .dropdown-menu>li>a{line-height:20px}.navbar-nav .open .dropdown-menu>li>a:focus,.navbar-nav .open .dropdown-menu>li>a:hover{background-image:none}}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}.navbar-default{background-color:#f8f8f8;border-color:#e7e7e7}.navbar-default .navbar-brand{color:#777}.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover{color:#5e5e5e;background-color:transparent}.navbar-default .navbar-nav>li>a{color:#777}.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{color:#333;background-color:transparent}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color:#555;background-color:#e7e7e7}.navbar-default .navbar-collapse{border-color:#e7e7e7}.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>.open>a:hover{color:#555;background-color:#e7e7e7}@media (max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#777}.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{color:#333;background-color:transparent}.navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:#ccc;background-color:transparent}}.navbar-inverse{background-color:#222;border-color:#080808}.navbar-inverse .navbar-brand{color:#777}.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>li>a{color:#777}.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:focus,.navbar-inverse .navbar-nav>.active>a:hover{color:#fff;background-color:#080808}.navbar-inverse .navbar-collapse{border-color:#101010}.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:focus,.navbar-inverse .navbar-nav>.open>a:hover{color:#fff;background-color:#080808}@media (max-width:767px){.navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header{border-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu .divider{background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{color:#777}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:#444;background-color:transparent}}.modal-open{overflow:hidden}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.row:after,.row:before{display:table;content:" "}.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.row:after{clear:both}.pull-right{float:right!important}@-ms-viewport{width:device-width}.container-fixed{margin:0 auto;width:980px}h1,h2,h3{margin:0;padding:0;font-size:100%}body,button,input,select,textarea{font-family:"Helvetica Neue",Helvetica,Arial,"微軟正黑體","微软雅黑","メイリオ","맑은 고딕",sans-serif}body{background-color:#f2f2f2}#main{padding-top:20px;padding-bottom:10px;border:1px solid gray;background-color:#fff}#navbar{margin-bottom:0}#navbar a{color:#fff}#navbar .active a,#navbar a:hover{color:#ff0}#navbar .dropdown-menu a{color:#000}#filter{text-align:center}.filter-block{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.filter-block{font-size:14px;padding:10px 10px;margin-bottom:20px;display:inline-block;background-color:#dff0d8}#content{min-height:500px}.post{margin:0 20px 30px;min-height:78px}.post .thumb{float:left;border:1px solid gray;margin:0 10px 2px 2px}.post .thumb:hover{border:2px solid #428bca;margin:0 9px 0 1px}.post .content{padding-left:115px}.thumb img{width:100px;height:75px}#content h3 a{font-size:16px;font-weight:700}#content h3{padding-bottom:5px;margin-bottom:2px}.post hr{margin:0;padding:0;margin-bottom:7px}.icon-expand{font-family:arial;font-size:18px;font-style:normal;float:right;margin-bottom:-7px}#footer{margin:10px 0;text-align:center}.piliapp-home{font-family:"Comic Sans MS","Comic Sans",monospace}.piliapp-home:hover{color:coral!important}</style><script type="text/javascript">function rd_add_qs(e){var n=window.location,o=n.search,d=window.filtered_qs||[],a=0<d.length?"&"+d.join("&"):"",s=n.pathname+(o?o+"&":"?")+e+a+n.hash;-1===o.indexOf(e)&&((adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1,window.gpt_pauseads=!0,document.documentElement.style.display="none",setTimeout(function(){n.replace(s)},0))}
+</script><script type="text/javascript">-1!==navigator.userAgent.indexOf("Macintosh")&&"ontouchend"in document&&rd_add_qs("_d=ipados");</script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-973474-10', 'auto'); 
+ga('send', 'pageview', "?hl=id");
+</script><script>var GA_EVENT_ID = "UA-973474-16";</script><script type="text/javascript">window.addEventListener("error",function(e){if(!((e=e||window.event)&&e.message&&e.lineno&&e.colno))return!0;var n=e.message.split("Error:")[1]+" at "+e.filename.replace(/\/$/,"").split("/").pop()+"#"+e.lineno+":"+e.colno,r=window,t="_lasterr";r[t]=r[t]||1,r[t]!==n&&(r[t]=n,ga.hasOwnProperty("getByName")&&ga.getByName("event")||ga("create",GA_EVENT_ID,"auto",{name:"event"}),ga("event.send","event","js-error",n,navigator.userAgent,{nonInteraction:0}))},!1);</script><script type="text/javascript">window.addEventListener("load",function(){var e=document;if(-1===e.cookie.indexOf("npa=1"))return window._CC=0;var n="script",t=e.getElementsByTagName(n)[0],r=e.createElement(n);r.async=1,r.src="/assets/sg/v2/58a6126jai/3f8n7.js",t.parentNode.insertBefore(r,t)});</script>
+<script>var gpt_slots= JSON.parse('{"dfp-0":{"defineSlot":["\/39741531\/piliapp-base-970x90",[970,90],"dfp-0"],"setTargeting":{}}}');</script><script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>window.googletag = window.googletag || {cmd: []};</script>
+<script>window.PAGE_ADS = ["INTERSTITIAL"];</script><script type="text/javascript">var gpt_pageslots=[];googletag.cmd.push(function(){PAGE_ADS.forEach(function(g){var o;(o="INTERSTITIAL"==g?googletag.defineOutOfPageSlot("/39741531/web-interstitial",googletag.enums.OutOfPageFormat[g]):googletag.defineOutOfPageSlot("/39741531/anchor",googletag.enums.OutOfPageFormat[g]))&&(o.setTargeting("out-of-page",g).addService(googletag.pubads()),gpt_pageslots.push(o))}),googletag.pubads().addEventListener("slotOnload",function(g){var o=g.slot.getTargeting("out-of-page");o.length&&console.log(o[0]+" is loaded")})});var gpt_app=gpt_app||location.pathname.split("/")[1],gpt_uri=location.pathname.replace(/\//g," ").replace(/^\s+|\s+$/gm,""),gpt_lazyslots={},gpt_displayslots=[],gpt_logger=function(t){try{console.log(t)}catch(t){}};googletag.cmd.push(function(){var t=gpt_logger;"undefined"==typeof gpt_slots&&(gpt_slots={}),"function"==typeof gpt_slots_callback&&(gpt_slots=gpt_slots_callback(gpt_slots));function e(t){var e=("; "+document.cookie).split("; "+t+"=");if(1<e.length)return e[1].split(";")[0]}var a,g=1*e("hs")||new Date/1e3,s=new Date(1e3*(g+28800)).getUTCHours(),o=((s<12?"0":"").concat(3*parseInt(s/3)),e("gpt_bucket")||parseInt(2*Math.random()).toString());for(var p in s=(s<10?"0":"").concat(s),gpt_slots){var l=gpt_slots[p].defineSlot,n=gpt_slots[p].sizeMapping||null,i=gpt_slots[p].lazyload||null,r=gpt_slots[p].setTargeting;if(a=googletag.defineSlot.apply(this,l).addService(googletag.pubads()),n){var d=googletag.sizeMapping();for(var u in n)d.addSize(n[u][0],n[u][1]);a.defineSizeMapping(d.build())}for(var _ in r)a.setTargeting(_,r[_]);i&&"undefined"==typeof gpt_smartload?gpt_lazyslots[p]=a:gpt_displayslots.push(a)}googletag.pubads().setTargeting("hour",s).setTargeting("bucket",o).setTargeting("bucket2",gpt_app+"-B"+o).setTargeting("uri",gpt_uri||null).setTargeting("app",gpt_app).setTargeting("sub_dn",location.host.split(".")[0]),googletag.pubads().enableSingleRequest(),googletag.pubads().disableInitialLoad(),"undefined"!=typeof gpt_smartload&&googletag.pubads().enableLazyLoad(gpt_smartload),googletag.enableServices(),"undefined"==typeof gpt_pauseads?googletag.pubads().refresh(gpt_displayslots):t("ads paused")});googletag.cmd.push(function(){function e(){googletag.pubads().refresh(gpt_pageslots)}if(0<location.href.indexOf("nolazyload"))return e();var o=window.WI_TIMEOUT||5,t=location.search.match(/wi_timeout=(\d+)/);t&&(o=t[1]);function n(){setTimeout(e,1e3*o)}"complete"===document.readyState?n():window.addEventListener("load",n)});</script>
+</head>
+<body>
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default" role="navigation">
+<div class="container-fixed">
+        <div class="navbar-collapse collapse pull-right">
+        <ul class="nav navbar-nav">
+            <li><a target="_blank" href="/feedback/contact/">Kontak</a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-header">
+          <h1><a class="navbar-brand piliapp-home" href="/">PiliApp</a></h1>
+    </div><!-- /.navbar-header -->
+
+        <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Populer</a></li>
+            <li ><a href="/label/all/">Semuanya</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kategori<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                                <li ><a href="/label/random/">Alat Acak</a></li>
+                                <li ><a href="/label/measurement/">Pengukuran</a></li>
+                                <li ><a href="/label/facebook/">Utilitas Editor Facebook</a></li>
+                                <li ><a href="/label/symbols/">Emoji & Simbol</a></li>
+                                <li ><a href="/label/time-and-date/">Waktu Dan Tanggal</a></li>
+                                <li ><a href="/label/utilities/">Utilitas</a></li>
+                                <li ><a href="/label/travel/">Perjalanan</a></li>
+                                <li ><a href="/label/text/">Text Tool</a></li>
+                                <li ><a href="/label/programming/">Pemrograman</a></li>
+                                <li ><a href="/label/lifestyle/">Gaya Hidup</a></li>
+                                <li ><a href="/label/blog/">Blog</a></li>
+                            </ul>
+            </li>
+
+
+            </ul>
+    </div><!-- /.navbar-collapse -->
+
+
+</div>
+</div><!-- /.navbar -->
+
+
+<div id="dfp-0" class='ads ads-970x90 idx-0' style='width:970px;height:90px;margin:10px auto;'><script>
+googletag.cmd.push(function(){ googletag.display('dfp-0'); });
+</script></div>
+
+<div id="main" class="container-fixed">
+    <div class="row">
+        <div id="content" class="col-sm-12">
+<div class="row">
+
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/lots/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/lots/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/lots/" rel="bookmark">Pemilih nama acak</a></h3>
+        <div class="content">
+            <hr>
+
+            Aplikasi online ini dapat membuat banyak nama menjadi kartu atau secarik kertas, dan kemudian membiarkan orang memilih secara acak.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/list/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/list/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/list/" rel="bookmark">Pembuat daftar acak</a></h3>
+        <div class="content">
+            <hr>
+
+            Ini adalah aplikasi web yang secara acak mengurutkan beberapa item dalam daftar. Item dalam daftar dapat berupa nama, undian, ID atau nomor.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/coin/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/coin/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/coin/" rel="bookmark">Lempar koin</a></h3>
+        <div class="content">
+            <hr>
+
+            Balikkan koin secara online. Kepala atau ekor. Animasi 3d dari koin asli.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/time-now/clock/analog/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/time-now/clock/analog/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/time-now/clock/analog/" rel="bookmark">Jam analog</a></h3>
+        <div class="content">
+            <hr>
+
+            Jam analog /
+Jam ukuran besar. Mendukung mode layar penuh tanpa iklan. 
+Setel zona waktu otomatis        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/instagram/fonts/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/instagram/fonts/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/instagram/fonts/" rel="bookmark">Font instagram</a></h3>
+        <div class="content">
+            <hr>
+
+            𝕚𝕟𝕤𝕥𝕒𝕘𝕣𝕒𝕞 𝕗𝕠𝕟𝕥𝕤<br>
+𝖎𝖓𝖘𝖙𝖆𝖌𝖗𝖆𝖒 𝖋𝖔𝖓𝖙𝖘<br>
+𝓲𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶 𝓯𝓸𝓷𝓽𝓼        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/wheel/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/wheel/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/wheel/" rel="bookmark">Rolet</a></h3>
+        <div class="content">
+            <hr>
+
+            Terkadang sulit bagi orang untuk membuat keputusan. Kemudian buat daftar opsi atau kandidat yang ada, lalu pilih salah satu dari mereka secara acak. Dalam kasus ini, Anda dapat menggunakan alat kami untuk membuat keputusan. Sederhana dan menyenangkan.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/actual-size/label/apple-2021/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/actual-size/label/apple-2021/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/actual-size/label/apple-2021/" rel="bookmark">Tampilkan ukuran sebenarnya untuk iphone 13, apple watch 7 dan ipad mini baru.</a></h3>
+        <div class="content">
+            <hr>
+
+            iPhone 13 akan datang. Ada Pro, Pro Max, 13, dan 13 mini. iPhone mana yang tepat untuk Anda?        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/cool-text/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/cool-text/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/cool-text/" rel="bookmark">Generator font</a></h3>
+        <div class="content">
+            <hr>
+
+            <ul>
+<li>font garis besar / 𝕃𝕠𝕣𝕖𝕞 𝕚𝕡𝕤𝕦𝕞</li>
+<li>teks gelembung /🅛🅞🅡🅔🅜 ​ 🅘🅟🅢🅤🅜</li>
+<li>huruf sambung / 𝓛𝓸𝓻𝓮𝓶 𝓲𝓹𝓼𝓾𝓶 </li>
+<li>kapitalisasi kecil / ʟᴏʀᴇᴍ ɪᴘsᴜᴍ </li>
+</ul>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/speed-test/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/speed-test/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/speed-test/" rel="bookmark">Uji Kecepatan Internet</a></h3>
+        <div class="content">
+            <hr>
+
+            Uji kecepatan internet Anda di web tanpa menginstal aplikasi atau perangkat lunak apa pun. Hanya satu klik untuk mendapatkan kecepatan internet. Sederhana, cepat, dan akurat.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/symbol/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/symbol/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/symbol/" rel="bookmark">Simbol</a></h3>
+        <div class="content">
+            <hr>
+
+            <span style="font-size:18px;">☀  ☁  ☂  ☃  ☯  ☸  ♕  ☎  ✄  ✈ </span><br> Simbol-simbol khusus adalah teks nyata dan tersedia untuk copy dan paste ke mana saja, seperti seperti Microsoft Word, Facebook, Twitter, HTML atau Blogging.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/cool-text/strikethrough-text/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/cool-text/strikethrough-text/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/cool-text/strikethrough-text/" rel="bookmark">Strikethrough text generator</a></h3>
+        <div class="content">
+            <hr>
+
+            Ini adalah sebuah generator teks online yang dapat mengkonversi teks ke berbagai gaya teks, termasuk Strike-melalui, Underline dan simbol slash. Hasil tidak gambar atau HTML, tapi teks biasa, yang mampu menyisipkan ke mana saja.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/counter/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/counter/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/counter/" rel="bookmark">Counter</a></h3>
+        <div class="content">
+            <hr>
+
+            Dapat digunakan untuk menghitung orang, menilai, atau menghitung klik mouse.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/screen/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/screen/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/screen/" rel="bookmark">Alat layar</a></h3>
+        <div class="content">
+            <hr>
+
+            layar penuh hitam / 
+layar penuh putih /
+cermin /
+lampu berkedip        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/timer/alarm-clock/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/timer/alarm-clock/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/timer/alarm-clock/" rel="bookmark">Jam alarm</a></h3>
+        <div class="content">
+            <hr>
+
+            Setelah Anda memulai jam alarm, baris pertama adalah waktu saat ini, dan baris kedua adalah waktu yang tersisa.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/password/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/password/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/password/" rel="bookmark">Password Generator</a></h3>
+        <div class="content">
+            <hr>
+
+            Buat password yang aman, kuat dan acak secara online        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/time-now/converter/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/time-now/converter/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/time-now/converter/" rel="bookmark">Konverter zona waktu</a></h3>
+        <div class="content">
+            <hr>
+
+            Temukan waktu terbaik di antara dua zona waktu. Ini adalah alat perencana rapat gratis untuk menjadwalkan waktu rapat, obrolan skype, webinar, atau panggilan. Antarmuka slider yang sangat sederhana untuk menjadwalkan waktu melintasi zona waktu.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/converter/whitespace/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/converter/whitespace/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/converter/whitespace/" rel="bookmark">Spasi dan konverter baris istirahat</a></h3>
+        <div class="content">
+            <hr>
+
+            Dalam beberapa alasan, SNS tidak mengizinkan spasi putih yang lebih dari satu.
+Tetapi itu membatasi kreativitas tekstual kita.
+Halaman ini membantu Anda untuk menyingkirkan aturan-aturan ini.
+Halaman ini mengonversi teks mentah Anda dan menyuntikkan spasi kosong lebar-nol di antara spasi putih atau karakter pemisah baris.
+              </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/random/dice/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/random/dice/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/random/dice/" rel="bookmark">Lempar dadu</a></h3>
+        <div class="content">
+            <hr>
+
+            Rol dadu. Ini adalah alat dadu online, ia menyediakan animasi 3D yang anggun.
+Semoga berhasil!        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoji/tag/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoji/tag/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoji/tag/" rel="bookmark">Kategori emoji</a></h3>
+        <div class="content">
+            <hr>
+
+            Kami mengumpulkan beberapa kategori / tag emoji populer dan khusus, juga termasuk emotikon teks.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/text-to-speech/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/text-to-speech/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/text-to-speech/" rel="bookmark">Teks pidato</a></h3>
+        <div class="content">
+            <hr>
+
+            Buat beberapa suara seperti Siri atau bot.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/cool-text/zalgo-text/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/cool-text/zalgo-text/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/cool-text/zalgo-text/" rel="bookmark">Pengonversi teks &quot;Zalgo&quot;</a></h3>
+        <div class="content">
+            <hr>
+
+            <br>Z̬̞̙̖̲̳͊̅͗̋̍̾̉ͅa̘̝͖͇̫͗̐̔̔̀͐̚l̜͔̫̩̦̱͕̲̥̖̂̾̄̋͒̐̏ͅḡ̳̝͙̫͐̈̽̾̐̐̂ó͓̘̩͚̖̠͇̪͚̮̋̊̿̏̾̌ͅͅ.̠̥̤͕̬͚̟̪́̓̑̉́̚.̮̤̰̮̭̔͒̀͗̋͒̓̾͋̌̑̑.͙̜̟̞̫̙̜̞̳̌̓͛̐̚        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoji/google/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoji/google/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoji/google/" rel="bookmark">Google Emoji</a></h3>
+        <div class="content">
+            <hr>
+
+            Emoji ini juga disebut &quot;noto emoji&quot; yang merupakan salah satu proyek open source oleh Google.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/facebook/favorite-friends/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/facebook/favorite-friends/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/facebook/favorite-friends/" rel="bookmark">Saya teman-teman favorit facebook</a></h3>
+        <div class="content">
+            <hr>
+
+            Ketika Anda mencari teman di Facebook, teman-teman favorit Anda selalu di bagian atas daftar, karena Facebook memiliki daftar peringkat teman Anda dalam kode sumber. Aplikasi web ini membantu Anda untuk mengambil bahwa daftar teman di kode sumber Facebook.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoji/download/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoji/download/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoji/download/" rel="bookmark">Unduh gambar emoji</a></h3>
+        <div class="content">
+            <hr>
+
+            Anda dapat mengunduh file gambar (.PNG / .SVG) dari emoji.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/cool-text/invisible-ink/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/cool-text/invisible-ink/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/cool-text/invisible-ink/" rel="bookmark">Tinta Tidak Terlihat</a></h3>
+        <div class="content">
+            <hr>
+
+            Sepertinya sinyal bising, dan tumpang tindih dengan charactor sebelumnya. Orang suka menggunakan ini untuk menghiasi string teks. Teks menjadi sulit untuk mengatakan, tapi terlihat. Ini sangat mirip dengan tinta tak terlihat di iPhone.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoticon/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoticon/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoticon/" rel="bookmark">Teks Emoticons</a></h3>
+        <div class="content">
+            <hr>
+
+            <span dir="ltr"><a href="/emoticon/lenny-face/">( ͡° ͜ʖ ͡°)</a> &nbsp; &nbsp; <a href="/emoticon/shrug/">¯\_ツ_/¯</a> &nbsp; &nbsp; <a href="/emoticon/raise-your-dongers/">༼ຈل͜ຈ༽</a> &nbsp; &nbsp; <a href="/emoticon/disapproval-face/">ಠ_ಠ</a> &nbsp; &nbsp; <a href="/emoticon/i-dunno-lol/">¯\(°_o)/¯</a> </span> <br> Di sini kita mengumpulkan emoticon yang umum digunakan.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/time-now/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/time-now/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/time-now/" rel="bookmark">Waktu Dunia</a></h3>
+        <div class="content">
+            <hr>
+
+            Apa waktu itu? Apakah Anda ingin mengatur waktu untuk zona waktu lokal Anda? Anda dapat mengatur waktu dengan alat ini tanpa menginstal perangkat lunak apapun.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/time-now/clock/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/time-now/clock/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/time-now/clock/" rel="bookmark">Jam online</a></h3>
+        <div class="content">
+            <hr>
+
+            Tampilan Waktu Lokal. Mendukung DST perubahan waktu.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/actual-size/inch-ruler/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/actual-size/inch-ruler/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/actual-size/inch-ruler/" rel="bookmark">Inch penguasa</a></h3>
+        <div class="content">
+            <hr>
+
+            Ini adalah sebuah aplikasi online, dukungan cm, inch dan pixel.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/actual-size/cm-ruler/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/actual-size/cm-ruler/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/actual-size/cm-ruler/" rel="bookmark">Cm penguasa</a></h3>
+        <div class="content">
+            <hr>
+
+            Ini adalah sebuah aplikasi online, dukungan cm, inch dan pixel.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/facebook-symbols/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/facebook-symbols/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/facebook-symbols/" rel="bookmark">Simbol facebook</a></h3>
+        <div class="content">
+            <hr>
+
+            Facebook mendukung banyak simbol warna-warni, smiley dan ikon emoticon, termasuk 52 ikon di chat percakapan dan 206 ikon di facebook waktu. Ini adalah alat web online tanpa instalasi perangkat lunak yang diperlukan. Mari kita menulis status facebook yang menarik!        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/twitter-symbols/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/twitter-symbols/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/twitter-symbols/" rel="bookmark">Twitter Simbol: smiley, Emoji dan emoticon</a></h3>
+        <div class="content">
+            <hr>
+
+            Twitter mendukung emoticon! Klik pada ikon untuk menyalin ke clipboard.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/event/facebook-ordered-friends/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/event/facebook-ordered-friends/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/event/facebook-ordered-friends/" rel="bookmark">Teman-teman yang baik didefinisikan oleh facebook</a></h3>
+        <div class="content">
+            <hr>
+
+            Alat ini terinspirasi dari artikel ini yang menggambarkan facebook mungkin didefinisikan teman baik dengan menggunakan beberapa algoritma.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoji/list/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoji/list/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoji/list/" rel="bookmark">Daftar Emoji</a></h3>
+        <div class="content">
+            <hr>
+
+            Klik ikon untuk menyalin, lalu tempel ke mana saja.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/email-html/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/email-html/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/email-html/" rel="bookmark">Email HTML / Link email keren</a></h3>
+        <div class="content">
+            <hr>
+
+            Apakah Anda masih menggunakan tua "mailto:" HTML format?<br>Tidak ada gunanya karena sebagian besar pengunjung tidak memiliki perangkat lunak klien mail lokal.<br>Mari kita coba Link Email dingin yang memiliki fitur auto-copy.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/generator/qr-code/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/generator/qr-code/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/generator/qr-code/" rel="bookmark">Qr code generator</a></h3>
+        <div class="content">
+            <hr>
+
+            Gratis.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/timer/countdown/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/timer/countdown/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/timer/countdown/" rel="bookmark">Penghitung waktu mundur</a></h3>
+        <div class="content">
+            <hr>
+
+            Aplikasi web online tanpa instalasi.        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/timer/stopwatch/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/timer/stopwatch/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/timer/stopwatch/" rel="bookmark">Stopwatch</a></h3>
+        <div class="content">
+            <hr>
+
+            Status stopwatch yang dapat disimpan dan dibagi        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/emoji/in-blog/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/emoji/in-blog/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/emoji/in-blog/" rel="bookmark">Emoji in Blog</a></h3>
+        <div class="content">
+            <hr>
+
+            Gunakan emoji dalam posting blog Anda: Mendukung semua platform yang blogger, termasuk  Wordpress ,  Blogger  dan  Windows Live Writer(WLW) .        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="post">
+
+<a class="thumb" href="/actual-size/">
+<img width=100 height=75 src="//cdnjs.cloudflare.com/ajax/libs/timelinejs/2.36.0/css/blank.gif" data-src="//assets.piliapp.com/s3pxy/thumbs/actual-size/thumb-100x75.jpg" class="lazy"/>
+</a>
+        <h3><a class="title" href="/actual-size/" rel="bookmark">Periksa ukuran sebenarnya</a></h3>
+        <div class="content">
+            <hr>
+
+            Menunjukkan gambar ukuran sebenarnya.        </div>
+    </div>
+</div>
+<div class="col-sm-12"></div>
+
+
+    
+    <div id="filter" class='col-sm-12'>
+    <div class="filter-block">
+        <a href="/label/all/">Semuanya<i class="icon-expand">︾</i></a>
+    </div>
+    </div>
+
+</div><!-- /.row -->
+        </div><!-- /#content -->
+        <div class="col-sm-12">
+        </div>
+    </div>
+
+</div><!-- /#main -->
+    
+<div id="footer">
+    
+
+<style type="text/css">.base-footer div{text-align:center;margin:.5em auto}@media only screen and (max-width:575px){.base-footer div{display:inline}.base-footer div:last-child:before{content:" | "}}.base-footer a{height:1rem;display:inline-block}#languages.win7{background:url(//cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/svg/1f310.svg) no-repeat;background-size:1em;display:inline-block;width:1em;height:1em;line-height:1em;text-indent:-999em;overflow:hidden}</style>
+<div class="base-footer">
+
+<div>
+<a href="https://id.piliapp.com">Beranda</a> | 
+<a href="/label/symbols/">Emoji & Simbol</a> | <a href="/label/text/">Text tool</a> | <a href="/label/time-and-date/">Waktu dan Tanggal</a> | <a href="/label/utilities/">Utilitas</a></div>
+<div>
+<a rel="nofollow" href="/feedback/report/" target="_blank">Laporkan masalah</a>
+
+| <a href="/lnk/*http://global-blog.piliapp.com">Blog</a>
+| <a href="/page/privacy/">Privasi</a>
+| <a href="/page/terms/">Persyaratan</a>
+| <a id="languages" href="/page/language/?app_uri=%2F">🌐</a> | © 2022</div>
+
+    <div>
+    ᴅᴇsɪɢɴᴇᴅ ʙʏ <a style="font-variant:small-caps;color:gray;" href="https://pili.app">pili.app</a><span id="footer-from"> ɪɴ ᴛᴀɪᴡᴀɴ</span><span id="footer-thx"></span>
+    <script type="text/javascript">!function(){var o=navigator.language||"",t=location.host.split(".")[0],e=(("; "+document.cookie).match(/; loc=(\w+)/)||[0,""])[1],a="cn"==t||o.match(/(zh-CN|zh-Hans)/)||e.match(/(CN)/),c=document.querySelector("#footer-from");if(a)c.parentNode.removeChild(c)}();</script>    </div>
+
+</div>
+<script type="text/javascript">0<navigator.userAgent.indexOf("Windows NT 6.1")&&document.querySelector("#languages").classList.add("win7");</script>
+</div>
+
+<script type="text/javascript">function cdnjs_fallback(){rd_add_qs("nocdnjs=1")}
+</script>
+<script onerror="cdnjs_fallback()" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script onerror="cdnjs_fallback()" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/dropdown.min.js"></script>
+<script src="//id.piliapp.com/assets/sg/v2/1m6y47wpfr96cju/4uuum.js"></script>
+
+</body>
+</html>
+

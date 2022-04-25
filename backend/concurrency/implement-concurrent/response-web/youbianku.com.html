@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-1&cb=1', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=195-1&cb=14', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=195-1&cb=3', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=195-1&cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+if(typeof isOrig==='undefined'){isOrig=false;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){if((impId!=="0"||isOrig===true)&&adUnit!==""){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}}
+function AddPixelById(impFullId,pixelData,isOrig,revenue){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];var pix={type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig};if(typeof revenue!=='undefined'){pix.revenue=revenue;}
+pixels.push(pix);}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}});}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false;}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-1&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-1&cb=4', false, [], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-1&cb=5', false, [], true, false, true, false);</script>
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/page/%E9%A6%96%E9%A1%B5_%28Home%29" />
+<link rel="shortlink" href="/node/2" />
+<meta name="description" content="邮编库网站(youbianku.com)创立于1998年，经过20多年来不断完善和扩展，目前以50多种语言提供全世界上百个国家和地区的邮政编码查询服务。 Postal Code Base website (youbianku.com) was established in 1998, after more than 20 years of continuous improvement and expansion, it currently provides postcode inquiry service around hundreds of countries in 50+ languages." />
+<meta name="keywords" content="邮政编码, 邮编查询, Postal Code, Postcode Inquiry, ZIP Code" />
+<link rel="shortcut icon" href="https://youbianku.com/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="msvalidate.01" content="E74DB81ED77BB2E2727FBD32E0F85001" />
+<title>Postal Code</title>
+<link rel="alternate" hreflang="en" href="https://youbianku.com/" />
+<link rel="alternate" hreflang="ar" href="https://youbianku.com/ar/" />
+<link rel="alternate" hreflang="bg" href="https://youbianku.com/bg/" />
+<link rel="alternate" hreflang="ca" href="https://youbianku.com/ca/" />
+<link rel="alternate" hreflang="zh-hans" href="https://youbianku.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-hant" href="https://youbianku.com/zh-hant/" />
+<link rel="alternate" hreflang="hr" href="https://youbianku.com/hr/" />
+<link rel="alternate" hreflang="cs" href="https://youbianku.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://youbianku.com/da/" />
+<link rel="alternate" hreflang="nl" href="https://youbianku.com/nl/" />
+<link rel="alternate" hreflang="et" href="https://youbianku.com/et/" />
+<link rel="alternate" hreflang="fi" href="https://youbianku.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://youbianku.com/fr/" />
+<link rel="alternate" hreflang="de" href="https://youbianku.com/de/" />
+<link rel="alternate" hreflang="el" href="https://youbianku.com/el/" />
+<link rel="alternate" hreflang="hu" href="https://youbianku.com/hu/" />
+<link rel="alternate" hreflang="it" href="https://youbianku.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://youbianku.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://youbianku.com/ko/" />
+<link rel="alternate" hreflang="lv" href="https://youbianku.com/lv/" />
+<link rel="alternate" hreflang="lt" href="https://youbianku.com/lt/" />
+<link rel="alternate" hreflang="ms" href="https://youbianku.com/ms/" />
+<link rel="alternate" hreflang="fa" href="https://youbianku.com/fa/" />
+<link rel="alternate" hreflang="pl" href="https://youbianku.com/pl/" />
+<link rel="alternate" hreflang="pt-pt" href="https://youbianku.com/pt-pt/" />
+<link rel="alternate" hreflang="ro" href="https://youbianku.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://youbianku.com/ru/" />
+<link rel="alternate" hreflang="sr" href="https://youbianku.com/sr/" />
+<link rel="alternate" hreflang="sk" href="https://youbianku.com/sk/" />
+<link rel="alternate" hreflang="sl" href="https://youbianku.com/sl/" />
+<link rel="alternate" hreflang="es" href="https://youbianku.com/es/" />
+<link rel="alternate" hreflang="sv" href="https://youbianku.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://youbianku.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://youbianku.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://youbianku.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://youbianku.com/vi/" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120-precomposed.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+<link type="text/css" rel="stylesheet" href="https://youbianku.com/sites/youbianku.com/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://youbianku.com/sites/youbianku.com/files/css/css_NdVgz6YKifxQUEsW5xls_zI7Pn2F7E5U5Wb29zcu3vo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://youbianku.com/sites/youbianku.com/files/css/css_PGbJgHCUCBf4dg7K9Kt8aAwsApndP4GZ9RuToPy3-Fk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://youbianku.com/sites/youbianku.com/files/css/css_QVPS8bmx44fwY-0RQIb90Le96_rtLthIv1cLLBw0uJM.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://youbianku.com/sites/youbianku.com/files/css/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print" />
+<script type="text/javascript" src="https://youbianku.com/sites/youbianku.com/files/js/js_YD9ro0PAqY25gGWrTki6TjRUG8TdokmmxjfqpNNfzVU.js"></script>
+<script type="text/javascript" src="https://youbianku.com/sites/youbianku.com/files/js/js_Ofj7l77ezpDbolpobDa4RheMhVKbTyVzE5npFE8teE4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"responsive_bartik","theme_token":"ElAX29_Gl2BDQeiApWFM1xGY9_qrfNX76eDM34CJXsY","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/responsive_bartik\/js\/collapsible-menu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/responsive_bartik\/css\/layout.css":1,"sites\/all\/themes\/responsive_bartik\/css\/style.css":1,"sites\/all\/themes\/responsive_bartik\/css\/colors.css":1,"sites\/all\/themes\/responsive_bartik\/css\/print.css":1}}});
+//--><!]]>
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-241337-57']);
+  _gaq.push(['_setDomainName', 'youbianku.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6986676008953522",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+    <script src="/sites/all/themes/responsive_bartik/js/selectivizr-min.js"></script>
+  <![endif]-->
+<!--[if lt IE 9]>
+    <script src="/sites/all/themes/responsive_bartik/js/html5-respond.js"></script>
+  <![endif]-->
+
+<script src="https://kor.youbianku.com/google/jquery.min.js"></script>
+<script type="text/javascript">var ezouid = "1";</script><base href="https://youbianku.com/"><script type='text/javascript'>
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script>
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 330073;
+var ezdomain = 'youbianku.com';
+var ezoicSearchable = 1;
+</script>
+
+
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Probolinggo","country":"ID","days_since_last_visit":-1,"domain_id":330073,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"eb959e13-8b5f-4ad4-7c1b-35923893acf7","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":39402,"response_time_orig":2,"serverid":"3.0.20.233:25260","state":"JI","t_epoch":1650879484,"template_id":120,"time_on_site_visit":0,"url":"https://youbianku.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":487,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_330073=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["eb959e13-8b5f-4ad4-7c1b-35923893acf7", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+<body class="html front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-2 node-type-page i18n-en">
+<div id="skip-link">
+<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+</div>
+<div id="page-wrapper"><div id="page">
+<header id="header" role="banner" class="without-secondary-menu"><div class="section clearfix">
+<a href="/" title="Home" rel="home" id="logo">
+<img src="https://youbianku.com/logo.png" alt="Home" />
+</a>
+<div id="name-and-slogan">
+<h1 id="site-name">
+<a href="/" title="Home" rel="home"><span>Postal Code</span></a>
+</h1>
+</div> 
+<nav id="main-menu" role="navigation" class="navigation">
+<h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-2086 first last"><a href="/country" title="Country">Country</a></li>
+</ul> </nav> 
+</div></header> 
+<div id="main-wrapper" class="clearfix"><div id="main" role="main" class="clearfix">
+<div class="ad-pc"></div><div class="ad-mobile"></div> <div id="content" class="column"><div class="section">
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="1853475327" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<a id="main-content"></a>
+<div class="tabs">
+</div>
+<div class="region region-content">
+<div id="block-system-main" class="block block-system">
+<div class="content">
+<article id="node-2" class="node node-page node-full clearfix" role="article">
+<div class="content clearfix">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div id="mission">
+邮编库网站(youbianku.com)创立于1998年，经过20多年来不断完善和扩展，目前以50多种语言提供全世界上百个国家和地区的邮政编码查询服务。 Postal Code Base website (youbianku.com) was established in 1998, after more than 20 years of continuous improvement and expansion, it currently provides postcode inquiry service around hundreds of countries in 50+ languages.
+</div>
+<br />
+<style>
+                    .adsense_responsive_link_mobile_middle {
+                    height: 300px;
+                    width:100%;
+                    }
+                   </style>
+<div class="ad-mobile web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_mobile_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+<style>
+                     .adsense_responsive_link_pc_middle {
+	                 height: 300px;
+                     width:100%;
+                     }
+                    </style>
+<div class="ad-pc web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_pc_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+<style>
+.flags_arg{background:url(/files/flag/flags.png) -250px 0 no-repeat;width:25px;height:16px}.flags_aus{background:url(/files/flag/flags.png) 0 -296px no-repeat;width:25px;height:13px}.flags_aut{background:url(/files/flag/flags.png) -225px -153px no-repeat;width:25px;height:17px}.flags_bel{background:url(/files/flag/flags.png) -225px -170px no-repeat;width:25px;height:17px}.flags_bgd{background:url(/files/flag/flags.png) -125px -242px no-repeat;width:25px;height:15px}.flags_bgr{background:url(/files/flag/flags.png) -150px -242px no-repeat;width:25px;height:15px}.flags_bih{background:url(/files/flag/flags.png) -75px -296px no-repeat;width:25px;height:13px}.flags_bra{background:url(/files/flag/flags.png) -75px -19px no-repeat;width:25px;height:18px}.flags_can{background:url(/files/flag/flags.png) -50px -257px no-repeat;width:25px;height:13px}.flags_che{background:url(/files/flag/flags.png) -25px 0 no-repeat;width:25px;height:25px}.flags_chn{background:url(/files/flag/flags.png) -100px -89px no-repeat;width:25px;height:17px}.flags_col{background:url(/files/flag/flags.png) -75px -106px no-repeat;width:25px;height:17px}.flags_cze{background:url(/files/flag/flags.png) -100px -106px no-repeat;width:25px;height:17px}.flags_deu{background:url(/files/flag/flags.png) -250px -76px no-repeat;width:25px;height:15px}.flags_dnk{background:url(/files/flag/flags.png) 0 -52px no-repeat;width:25px;height:19px}.flags_dom{background:url(/files/flag/flags.png) -75px -225px no-repeat;width:25px;height:16px}.flags_dza{background:url(/files/flag/flags.png) -125px -17px no-repeat;width:25px;height:17px}.flags_esp{background:url(/files/flag/flags.png) -125px -68px no-repeat;width:25px;height:17px}.flags_eth{background:url(/files/flag/flags.png) -275px 0 no-repeat;width:25px;height:13px}.flags_fin{background:url(/files/flag/flags.png) -250px -91px no-repeat;width:25px;height:15px}.flags_fra{background:url(/files/flag/flags.png) -125px -85px no-repeat;width:25px;height:17px}.flags_gbr{background:url(/files/flag/flags.png) -275px -52px no-repeat;width:25px;height:13px}.flags_gtm{background:url(/files/flag/flags.png) -125px -225px no-repeat;width:25px;height:16px}.flags_hrv{background:url(/files/flag/flags.png) -275px -143px no-repeat;width:25px;height:13px}.flags_hun{background:url(/files/flag/flags.png) -275px -156px no-repeat;width:25px;height:13px}.flags_idn{background:url(/files/flag/flags.png) -150px -68px no-repeat;width:25px;height:17px}.flags_ind{background:url(/files/flag/flags.png) -150px -85px no-repeat;width:25px;height:17px}.flags_ita{background:url(/files/flag/flags.png) -150px -119px no-repeat;width:25px;height:17px}.flags_jpn{background:url(/files/flag/flags.png) 0 -140px no-repeat;width:25px;height:17px}.flags_kor{background:url(/files/flag/flags.png) -100px -140px no-repeat;width:25px;height:17px}.flags_lka{background:url(/files/flag/flags.png) -100px -270px no-repeat;width:25px;height:13px}.flags_ltu{background:url(/files/flag/flags.png) -250px -196px no-repeat;width:25px;height:15px}.flags_lux{background:url(/files/flag/flags.png) -250px -211px no-repeat;width:25px;height:15px}.flags_mda{background:url(/files/flag/flags.png) -150px -270px no-repeat;width:25px;height:13px}.flags_mex{background:url(/files/flag/flags.png) -225px -242px no-repeat;width:25px;height:14px}.flags_mys{background:url(/files/flag/flags.png) -25px -283px no-repeat;width:25px;height:13px}.flags_nld{background:url(/files/flag/flags.png) 0 -174px no-repeat;width:25px;height:17px}.flags_nor{background:url(/files/flag/flags.png) -75px -71px no-repeat;width:25px;height:18px}.flags_nzl{background:url(/files/flag/flags.png) -150px -283px no-repeat;width:25px;height:13px}.flags_pak{background:url(/files/flag/flags.png) -25px -174px no-repeat;width:25px;height:17px}.flags_phl{background:url(/files/flag/flags.png) -225px -283px no-repeat;width:25px;height:13px}.flags_pol{background:url(/files/flag/flags.png) -175px -225px no-repeat;width:25px;height:16px}.flags_prt{background:url(/files/flag/flags.png) -125px -174px no-repeat;width:25px;height:17px}.flags_pry{background:url(/files/flag/flags.png) 0 -242px no-repeat;width:25px;height:15px}.flags_rou{background:url(/files/flag/flags.png) -200px 0 no-repeat;width:25px;height:17px}.flags_rus{background:url(/files/flag/flags.png) -200px -17px no-repeat;width:25px;height:17px}.flags_sau{background:url(/files/flag/flags.png) -200px -51px no-repeat;width:25px;height:17px}.flags_srb{background:url(/files/flag/flags.png) -200px -153px no-repeat;width:25px;height:17px}.flags_svk{background:url(/files/flag/flags.png) 0 -191px no-repeat;width:25px;height:17px}.flags_svn{background:url(/files/flag/flags.png) -300px -52px no-repeat;width:25px;height:13px}.flags_swe{background:url(/files/flag/flags.png) -200px -225px no-repeat;width:25px;height:16px}.flags_tha{background:url(/files/flag/flags.png) -100px -191px no-repeat;width:25px;height:17px}.flags_tur{background:url(/files/flag/flags.png) -175px -191px no-repeat;width:25px;height:17px}.flags_twn{background:url(/files/flag/flags.png) -200px -191px no-repeat;width:25px;height:17px}.flags_ukr{background:url(/files/flag/flags.png) -50px -208px no-repeat;width:25px;height:17px}.flags_usa{background:url(/files/flag/flags.png) -300px -169px no-repeat;width:25px;height:13px}.flags_ven{background:url(/files/flag/flags.png) -125px -208px no-repeat;width:25px;height:17px}.flags_zaf{background:url(/files/flag/flags.png) -225px -17px no-repeat;width:25px;height:17px}
+</style>
+<fieldset class="fieldgroup group-china">
+<legend>中国邮政编码 (中文)</legend>
+<br />
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<a href="https://www.youbianku.com/">邮编库(www.youbianku.com)</a>
+<br />
+<p>请输入地址或者邮编关键字来搜索170万完整中国邮编信息：</p>
+<form action="https://www.youbianku.com/Special:Search" width="336">
+<input id="searchInput" name="search" type="text" value="" />
+<input type="submit" name="go" class="searchButton" id="searchGoButton" value="进入" />
+</form>
+更多：
+<ul>
+<li><a href="https://tw.youbianku.com/">繁体版(tw.youbianku.com)</a></li>
+<li><a href="https://cn.m.youbianku.com/">移动版(cn.m.youbianku.com)</a></li>
+<li><a href="https://www.youbianku.com/xinxi/">分类信息</a></li>
+<li><a href="https://www.chahaoba.com/">查号吧</a></li>
+<li><a href="https://www.chahaoba.cn/">新版查号吧</a></li>
+<li><a href="https://www.youbianku.cn/">新版邮编库</a></li>
+<li><a href="https://www.youbianku.com/address">地址邮编库</a></li>
+<li><a href="https://mingluji.com/">名录集</a></li>
+<li><a href="https://zh-hans.ipshu.com/">IP地址查询</a></li>
+<li><a href="https://bizdirlib.com/">Business Directory Library</a></li>
+<li><a href="https://postcodebase.com/">Postcode Database</a></li>
+<li><a href="https://areacodebase.com/">Area Code Database</a></li>
+</ul>
+</div>
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<br />
+<style>
+                    .adsense_responsive_link_mobile_middle {
+                    height: 300px;
+                    width:100%;
+                    }
+                   </style>
+<div class="ad-mobile web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_mobile_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+<style>
+                     .adsense_responsive_link_pc_middle {
+	                 height: 300px;
+                     width:100%;
+                     }
+                    </style>
+<div class="ad-pc web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_pc_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+</div>
+</fieldset>
+<fieldset class="fieldgroup group-china">
+<legend>工商企业邮政编码名录</legend>
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<br />
+特别推出中国工商企业邮政编码名录，包含1000多万个企事业单位的详细信息。
+按照省份分为31个子网站：
+<table width="336" style="border:1px solid #cef2e0;">
+<tbody><tr style="background-color:#f5faff;">
+<td height="30">
+<b>华北</b>：
+<a href="https://beijing.youbianku.com/">北京</a>
+<a href="https://tianjin.youbianku.com/">天津</a>
+<a href="https://hebei.youbianku.com/">河北</a>
+<a href="https://neimenggu.youbianku.com/">内蒙古</a>
+<a href="https://shanxi.youbianku.com/">山西</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>华东</b>：
+<a href="https://shanghai.youbianku.com/">上海</a>
+<a href="https://anhui.youbianku.com/">安徽</a>
+<a href="https://jiangsu.youbianku.com/">江苏</a>
+<a href="https://zhejiang.youbianku.com/">浙江</a>
+<a href="https://shandong.youbianku.com/">山东</a>
+<a href="https://jiangxi.youbianku.com/">江西</a>
+<a href="https://fujian.youbianku.com/">福建</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>华南</b>：
+<a href="https://guangdong.youbianku.com/">广东</a>
+<a href="https://guangxi.youbianku.com/">广西</a>
+<a href="https://hainan.youbianku.com/">海南</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>华中</b>：
+<a href="https://henan.youbianku.com/">河南</a>
+<a href="https://hubei.youbianku.com/">湖北</a>
+<a href="https://hunan.youbianku.com/">湖南</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>东北</b>：
+<a href="https://heilongjiang.youbianku.com/">黑龙江</a>
+<a href="https://jilin.youbianku.com/">吉林</a>
+<a href="https://liaoning.youbianku.com/">辽宁</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>西北</b>：
+<a href="https://shaanxi.youbianku.com/">陕西</a>
+<a href="https://gansu.youbianku.com/">甘肃</a>
+<a href="https://ningxia.youbianku.com/">宁夏</a>
+<a href="https://qinghai.youbianku.com/">青海</a>
+<a href="https://xinjiang.youbianku.com/">新疆</a>
+</td></tr>
+<tr style="background-color:#f5faff;">
+<td height="30">
+<b>西南</b>：
+<a href="https://chongqing.youbianku.com/">重庆</a>
+<a href="https://sichuan.youbianku.com/">四川</a>
+<a href="https://yunnan.youbianku.com/">云南</a>
+<a href="https://guizhou.youbianku.com/">贵州</a>
+<a href="https://xizang.youbianku.com/">西藏</a>
+</td></tr>
+</tbody></table>
+</div>
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<br />
+<style>
+                    .adsense_responsive_link_mobile_middle {
+                    height: 300px;
+                    width:100%;
+                    }
+                   </style>
+<div class="ad-mobile web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_mobile_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+<style>
+                     .adsense_responsive_link_pc_middle {
+	                 height: 300px;
+                     width:100%;
+                     }
+                    </style>
+<div class="ad-pc web_center">
+
+<ins class="adsbygoogle adsense_responsive_link_pc_middle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="8811444572" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+</div>
+</div>
+</fieldset>
+<fieldset class="fieldgroup group-world">
+<legend>Countries/Regions (国家/地区)</legend>
+<br />
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+Please check ZIP code by country/region:
+(请按照国家/地区来查看邮政编码：)
+<ul>
+<li><a href="https://chn.youbianku.com"><img class="flags_chn" />China Postal Code</a></li>
+<li><a href="https://usa.youbianku.com"><img class="flags_usa" />United States ZIP Code</a></li>
+<li><a href="https://gbr.youbianku.com"><img class="flags_gbr" />United Kingdom Postal Code</a></li>
+<li><a href="https://mex.youbianku.com"><img class="flags_mex" />Mexico Postal Code</a></li>
+<li><a href="https://deu.youbianku.com"><img class="flags_deu" />Germany Postal Code</a></li>
+<li><a href="https://bel.youbianku.com"><img class="flags_bel" />Belgium Postal Code</a></li>
+<li><a href="https://fra.youbianku.com"><img class="flags_fra" />France Postal Code</a></li>
+<li><a href="https://nld.youbianku.com"><img class="flags_nld" />Netherlands Postal Code</a></li>
+<li><a href="https://bih.youbianku.com"><img class="flags_bih" />Bosnia and Herzegovina Postal Code</a></li>
+<li><a href="https://fin.youbianku.com"><img class="flags_fin" />Finland Postal Code</a></li>
+<li><a href="https://hun.youbianku.com"><img class="flags_hun" />Hungary Postal Code</a></li>
+<li><a href="https://ind.youbianku.com"><img class="flags_ind" />India Postal Code</a></li>
+<li><a href="https://idn.youbianku.com"><img class="flags_idn" />Indonesia Postal Code</a></li>
+<li><a href="https://kor.youbianku.com"><img class="flags_kor" />South Korea Postal Code</a></li>
+<li><a href="https://mys.youbianku.com"><img class="flags_mys" />Malaysia Postal Code</a></li>
+<li><a href="https://pak.youbianku.com"><img class="flags_pak" />Pakistan Postal Code</a></li>
+<li><a href="https://pry.youbianku.com"><img class="flags_pry" />Paraguay Postal Code</a></li>
+<li><a href="https://pol.youbianku.com"><img class="flags_pol" />Poland Postal Code</a></li>
+<li><a href="https://srb.youbianku.com"><img class="flags_srb" />Serbia Postal Code</a></li>
+<li><a href="https://svk.youbianku.com"><img class="flags_svk" />Slovakia Postal Code</a></li>
+<li><a href="https://zaf.youbianku.com"><img class="flags_zaf" />South Africa Postal Code</a></li>
+<li><a href="https://swe.youbianku.com"><img class="flags_swe" />Sweden Postal Code</a></li>
+<li><a href="https://twn.youbianku.com"><img class="flags_twn" />Taiwan Postal Code</a></li>
+<li><a href="https://tur.youbianku.com"><img class="flags_tur" />Turkey Postal Code</a></li>
+<li><a href="https://tha.youbianku.com"><img class="flags_tha" />Thailand Postal Code</a></li>
+<li><a href="https://ukr.youbianku.com"><img class="flags_ukr" />Ukraine Postal Code</a></li>
+<li><a href="https://ven.youbianku.com"><img class="flags_ven" />Venezuela Postal Code</a></li>
+<li><a href="https://dza.youbianku.com"><img class="flags_dza" />Algeria Postal Code</a></li>
+<li><a href="https://eth.youbianku.com"><img class="flags_eth" />Ethiopia Postal Code</a></li>
+<li><a href="https://hrv.youbianku.com"><img class="flags_hrv" />Croatia Postal Code</a></li>
+<li><a href="https://rou.youbianku.com"><img class="flags_rou" />Romania Postal Code</a></li>
+<li><a href="https://col.youbianku.com"><img class="flags_col" />Colombia Postal Code</a></li>
+</ul>
+</div>
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<br />
+<ul>
+<li><a href="https://aus.youbianku.com"><img class="flags_aus" />Australia Postal Code</a></li>
+<li><a href="https://can.youbianku.com"><img class="flags_can" />Canada Postal Code</a></li>
+<li><a href="https://bra.youbianku.com"><img class="flags_bra" />Brazil Postal Code</a></li>
+<li><a href="https://arg.youbianku.com"><img class="flags_arg" />Argentina Postal Code</a></li>
+<li><a href="https://aut.youbianku.com"><img class="flags_aut" />Austria Postal Code</a></li>
+<li><a href="https://bgd.youbianku.com"><img class="flags_bgd" />Bangladesh Postal Code</a></li>
+<li><a href="https://bgr.youbianku.com"><img class="flags_bgr" />Bulgaria Postal Code</a></li>
+<li><a href="https://che.youbianku.com"><img class="flags_che" />Switzerland Postal Code</a></li>
+<li><a href="https://cze.youbianku.com"><img class="flags_cze" />Czech Republic Postal Code</a></li>
+<li><a href="https://dnk.youbianku.com"><img class="flags_dnk" />Denmark Postal Code</a></li>
+<li><a href="https://dom.youbianku.com"><img class="flags_dom" />Dominican Republic Postal Code</a></li>
+<li><a href="https://esp.youbianku.com"><img class="flags_esp" />Spain Postal Code</a></li>
+<li><a href="https://gtm.youbianku.com"><img class="flags_gtm" />Guatemala Postal Code</a></li>
+<li><a href="https://hrv.youbianku.com"><img class="flags_hrv" />Croatia Postal Code</a></li>
+<li><a href="https://ita.youbianku.com"><img class="flags_ita" />Italy Postal Code</a></li>
+<li><a href="https://jpn.youbianku.com"><img class="flags_jpn" />Japan Postal Code</a></li>
+<li><a href="https://lka.youbianku.com"><img class="flags_lka" />Sri Lanka Postal Code</a></li>
+<li><a href="https://ltu.youbianku.com"><img class="flags_ltu" />Lithuania Postal Code</a></li>
+<li><a href="https://lux.youbianku.com"><img class="flags_lux" />Luxembourg Postal Code</a></li>
+<li><a href="https://mda.youbianku.com"><img class="flags_mda" />Moldova Postal Code</a></li>
+<li><a href="https://nor.youbianku.com"><img class="flags_nor" />Norway Postal Code</a></li>
+<li><a href="https://nzl.youbianku.com"><img class="flags_nzl" />New Zealand Postal Code</a></li>
+<li><a href="https://phl.youbianku.com"><img class="flags_phl" />Philippines Postal Code</a></li>
+<li><a href="https://prt.youbianku.com"><img class="flags_prt" />Portugal Postal Code</a></li>
+<li><a href="https://rus.youbianku.com"><img class="flags_rus" />Russia Postal Code</a></li>
+<li><a href="https://svn.youbianku.com"><img class="flags_svn" />Slovenia Postal Code</a></li>
+</ul>
+<a href="/node/1">More Subdomain Websites (更多子网站)......</a>
+<br />
+<a href="/page/%E4%B8%87%E5%9B%BD%E9%82%AE%E6%94%BF%E8%81%94%E7%9B%9F%E4%BF%A1%E5%B0%81%E8%A7%84%E8%8C%83_%28Envelope_Examples_from_Universal_Postal_Union%29">Reference: Envelope Examples from Universal Postal Union. (参考：万国邮政联盟信封规范)。</a>
+</div>
+</fieldset>
+<fieldset class="fieldgroup group-multi-language">
+<legend>多语言邮编 (Multilingual Postcode)</legend>
+<br />
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<ul>
+<li><img class="flags_chn" />简体中文: <a href="https://www.youbianku.com/">电脑版‪</a>, <a href="https://m.youbianku.com/">手机版</a></li>
+<li><img class="flags_twn" />正體中文: <a href="https://tw.youbianku.com/">‪传统版</a>, <a href="https://m.youbianku.com/">移动版</a></li>
+<li><img class="flags_sau" /> العربية: <a href="https://ar.youbianku.com/">الكمبيوتر</a>, <a href="https://ar.m.youbianku.com/">المحمول</a></li>
+<li><img class="flags_deu" />Deutsch: <a href="https://de.youbianku.com/">Computer</a>, <a href="https://de.m.youbianku.com/">Handy</a></li>
+<li><img class="flags_gbr" />English: <a href="https://en.youbianku.com/">Computer</a>, <a href="http:/en.m.youbianku.com/">Mobile</a></li>
+<li><img class="flags_esp" />Español: <a href="https://es.youbianku.com/">Komputilo</a>, <a href="https://es.m.youbianku.com/">Mobile</a></li>
+<li><img class="flags_fra" />Français: <a href="https://fr.youbianku.com/">Ordinateur</a>, <a href="https://fr.m.youbianku.com/">Mobile</a></li>
+<li><img class="flags_ita" />Italiano: <a href="https://it.youbianku.com/">Computer</a>, <a href="https://it.m.youbianku.com/">Cellulare</a></li>
+<li><img class="flags_jpn" />日本語: <a href="https://ja.youbianku.com/">コンピュータ</a>, <a href="https://ja.m.youbianku.com/">携帯電話</a></li>
+<li><img class="flags_kor" />한국어: <a href="https://ko.youbianku.com/">컴퓨터</a>, <a href="https://ko.m.youbianku.com/">모바일</a></li>
+<li><img class="flags_prt" />Português: <a href="https://pt.youbianku.com/">Computador</a>, <a href="https://pt.m.youbianku.com/">Móvel</a></li>
+<li><img class="flags_rus" />Русский: <a href="https://ru.youbianku.com/">компьютер</a>, <a href="https://ru.m.youbianku.com/">мобильный</a></li>
+</ul>
+</div>
+<div style="width:336px; vertical-align:top; float:left; margin-right:5px;">
+<br />
+新增更多语言的中国邮编子网站：
+<ul>
+<li>العربية (阿拉伯语): <a href="https://ar.chn.youbianku.com/">الصين الرمز البريدي (中国邮政编码)</a></li>
+<li>Deutsch (德文): <a href="https://de.chn.youbianku.com/">China Postleitzahl (中国邮政编码)</a></li>
+<li>Español (西班牙文): <a href="https://es.chn.youbianku.com/">China Código Postal (中国邮政编码)</a></li>
+<li>Français (法文): <a href="https://fr.chn.youbianku.com/">Chine Code Postal (中国邮政编码)</a></li>
+<li>Italiano (意大利文): <a href="https://it.chn.youbianku.com/">Cina CAP (中国邮政编码)</a></li>
+<li>日本語 (日文): <a href="https://ja.chn.youbianku.com/">中国郵便番号 (中国邮政编码)</a></li>
+<li>한국어 (韩文): <a href="https://ko.chn.youbianku.com/">중국 우편 번호 (中国邮政编码)</a></li>
+<li>Português (葡萄牙文): <a href="https://pt.chn.youbianku.com/">Código Postal da China (中国邮政编码)</a></li>
+<li>Русский (俄文): <a href="https://ru.chn.youbianku.com/">Китай Почтовый индекс (中国邮政编码)</a></li>
+</ul>
+<img src="/files/flag/chn.svg.png" />
+</div>
+</fieldset>
+版权所有 1998-2020 武汉多库科技有限公司<br />
+<a href="http://www.beian.miit.gov.cn">鄂ICP备15002050号-3</a>
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42010402001124"><img src="//youbianku.com/beian.png" /> 鄂公网安备 42010402001124号</a>
+</div></div></div> </div>
+</article>
+</div>
+</div>
+</div>
+<a name="toptitle" href="#" class="stiky_menu">
+<i class="iconfont"></i>
+</a>
+</div></div> 
+<div class="ad-mobile"></div><div class="ad-pc"></div> <div id="sidebar-second" class="column sidebar"><div class="section">
+<div class="region region-sidebar-second">
+<div id="block-country-youbianku-com-language-switcher" class="block block-country-youbianku-com">
+<h2>Languages 🌐</h2>
+<div class="content">
+<select style="width:165px" name="language_switcher_select" onchange="window.open(this.options[this.selectedIndex].value,&#39;_self&#39;)">
+<option value="/ar/">العربية</option>
+<option value="/bg/">Български</option>
+<option value="/ca/">Català</option>
+<option value="/zh-hans/">简体中文</option>
+<option value="/zh-hant/">繁體中文</option>
+<option value="/hr/">Hrvatski</option>
+<option value="/cs/">Čeština</option>
+<option value="/da/">Dansk</option>
+<option value="/nl/">Nederlands</option>
+<option value="/" selected="selected">English</option>
+<option value="/et/">Eesti</option>
+<option value="/fi/">Suomi</option>
+<option value="/fr/">Français</option>
+<option value="/de/">Deutsch</option>
+<option value="/el/">Ελληνικά</option>
+<option value="/hu/">Magyar</option>
+<option value="/it/">Italiano</option>
+<option value="/ja/">日本語</option>
+<option value="/ko/">한국어</option>
+<option value="/lv/">Latviešu</option>
+<option value="/lt/">Lietuvių</option>
+<option value="/ms/">Bahasa Melayu</option>
+<option value="/fa/">فارسی</option>
+<option value="/pl/">Polski</option>
+<option value="/pt-pt/">Português</option>
+<option value="/ro/">Română</option>
+<option value="/ru/">Русский</option>
+<option value="/sr/">Српски</option>
+<option value="/sk/">Slovenčina</option>
+<option value="/sl/">Slovenščina</option>
+<option value="/es/">Español</option>
+<option value="/sv/">Svenska</option>
+<option value="/th/">ภาษาไทย</option>
+<option value="/tr/">Türkçe</option>
+<option value="/uk/">Українська</option>
+<option value="/vi/">Tiếng Việt</option>
+</select>
+<img src="/sites/all/modules/languageicons/flags/en.png" width="16" height="12" alt="English" title="English" />
+</div>
+</div>
+</div>
+<div class="ad-pc">
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6986676008953522" data-ad-slot="6506817341" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-6986676008953522" data-ad-slot="2351589809" data-matched-content-ui-type="image_sidebyside,text_card" data-matched-content-rows-num="4,4" data-matched-content-columns-num="1,1"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div> 
+</div></div> 
+<div id="footer-wrapper"><div class="section">
+</div></div> 
+</div></div> 
+<div style="width:auto; margin:0px auto; text-align:center;">
+<a href="//postcodebase.com/">PostCodeBase</a> <br /> <br /><a href="https://youbianku.com/">youbianku.com</a>  <a href="/contact">Contact Us</a><br />1998-2021 v8.30 a-d-e-2 <p>😄 EmojiAll Link: <a href="https://www.emojiall.com/en">Emoji Book 📕</a>, <a href="https://copy.emojiall.com/en">Emoji ✂️ &amp; 📋</a></p>
+</div>
+<script src="https://youbianku.com/gcudToggle.min.js" async=""></script>
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=1&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=1&shcb=34', false, [], true, false, false, false);
+</script>
+<script>var _audins_dom="youbianku_com",_audins_did=330073;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=195-1");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.youbianku_com,DomainId.330073" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script type="text/javascript" data-cfasync="false"></script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=1&cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70161a895e46897a","token":"64d8524e8b7d4b549da603515bbbec1c","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body></html>

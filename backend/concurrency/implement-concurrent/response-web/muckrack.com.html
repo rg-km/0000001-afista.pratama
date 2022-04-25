@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <noscript>
+            <title>Pardon Our Interruption</title>
+        </noscript>
+
+        <meta name="viewport" content="width=1000">
+        <meta name="robots" content="noindex, nofollow">
+        <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="0">
+
+        <style>
+            .container { max-width: 800px; margin: auto; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color: #7a838c; }
+            h1 { color: #2a2d30; font-weight: 500; }
+            li { margin: 0 0 10px; }
+            a { color: #428bca; }
+            a:hover, a:focus { color: #2a6496; }
+        </style>
+
+        <script>
+            function showBlockPage() {
+                document.title = "Pardon Our Interruption"
+                var elems = document.getElementsByClassName("interruption-message");
+                for (var i = 0; i < elems.length; ++i) {
+                    elems[i].style.display = "block";
+                }
+            }
+            // Display the help message if the JavaScript does not appear to complete
+            setTimeout(showBlockPage, 10000);
+
+            // Language configuration for captcha. See each specific captcha provider for which
+            // languages are supported
+            // window.geetestLang = "en";
+            // window.recaptchaLang = "en";
+        </script>
+
+        <!-- This head template should be placed before the following script tag that loads the challenge script -->
+        
+                    <script>
+                var element = document.createElement('script');
+                var url = 'https://www.google.com/recaptcha/api.js';
+                if (window.recaptchaLang) {
+                    url += '?hl=' + window.recaptchaLang;
+                }
+                element.setAttribute('src', url);
+                document.head.appendChild(element);
+                </script>
+            
+                    <script>
+                        function solvedCaptcha(payload) {
+                            const timeoutMs = 10000;
+                            protectionSubmitCaptcha("recaptcha", payload, timeoutMs, "3:9UwU4JjpYGq+IeZ/AnBkbg==:CgQlDER3VoorAPiXyr28WP2SgLBBWKXxSVw4QBnOMGpFB9C52EXIVHg3FUJ5X7ggU1HzzBK+1bgNJoKkS8N6vQ3Uag/kAqAc4t6MM4IscTqyu94M5FVKxK5C183TKmfUg42eptSs2CJ3+rru5rcpay+/Cer9og0oIPDKbzUgp+gIX7MuB1EEeJ0VbNs4vQTu:nw/QcmehkHw6ljRQOdAFj6GFHJSGXtA+eM9un1uL5Q0=")
+                                .then(
+                                    function() {
+                                        window.location.reload(true);
+                                    },
+                                    function(error) {
+                                        console.log(error);
+                                    },
+                                );
+                        }
+                    </script>
+                
+        <script type="text/javascript" src="/muckrack/e8e7682d059ec37a2e020711a119175b" async defer></script>
+
+        <script type="text/javascript" charset="UTF-8">
+
+        function setContentLanguage(langToUse) {
+
+            // We expect a <div> section to exist for the language eg "interstitial-it" for Italian.
+            // If a section for the language does not exist the interstitials text will not be modified
+
+            var element = document.getElementById("interstitial-" + langToUse) ;
+
+            if ( typeof(element) != 'undefined' && element != null ) {
+                document.getElementById('interstitial-body').innerHTML =
+                    document.getElementById('interstitial-body-' + langToUse ).innerHTML ;
+
+                document.getElementById('identify-msg').innerHTML =
+                    document.getElementById('identify-msg-' + langToUse ).innerHTML ;
+
+                document.getElementById('captcha-msg').innerHTML =
+                    document.getElementById('captcha-msg-' + langToUse ).innerHTML ;
+
+            } else {
+                console.log("No language translation exists for " + langToUse )
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentLang = "en"; // This is the language that is used for the text in the <div class="interruption-message"> section.
+            var browserLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+            var langToUse = browserLang.slice(0,2);
+
+            if ( langToUse != currentLang ) {
+                setContentLanguage(langToUse) ;
+            }
+         });
+        </script>
+
+    </head>
+    <body>
+        
+
+        <noscript><li>You've disabled JavaScript in your web browser. Please enable it and reload this page to proceed.</li></noscript>
+
+        <!-- The following section contains text that is displayed in the interstitial page. It is currently written in English 
+             but can be translated into any language. The variable "currentLang" in the JavaScript callback function for "addEventListener"
+             above must match this language. Sections supporting other languages can be added (eg Italian and German see below) but this
+             section contains the default text that will be displayed if the browsers localisation cannot be found in one of these
+             additional sections.
+          -->
+ 
+        <div class="interruption-message">
+            <script>
+                // Only display the message below if the user has JavaScript disabled
+                var elems = document.getElementsByClassName("interruption-message");
+                for (var i = 0; i < elems.length; ++i) {
+                    elems[i].style.display = "none";
+                }
+            </script>
+
+            <div id="interstitial-body">
+            <h1>Pardon Our Interruption</h1>
+            <p>As you were browsing something about your browser made us think you were a bot. There are a few reasons this might happen:</p>
+            <ul>
+                <li>You're a power user moving through this website with super-human speed.</li>
+                <li>You've disabled cookies in your web browser.</li>
+                <li>A third-party browser plugin, such as Ghostery or NoScript, is preventing JavaScript from running. Additional information is available in this <a title='Third party browser plugins that block javascript' href='https://docs.imperva.com/howto/24e53ba1' target='_blank'>support article</a>.</li>
+            </ul>
+            </div>
+
+            <!-- These paragraphs are displayed depending on if an identify or captcha page is returned  -->
+            <p id="identify-msg" style="display: none">To regain access, please make sure that cookies and JavaScript are enabled before reloading the page.</p>
+
+            <p id="captcha-msg" style="display: none">To regain access, please make sure that cookies and JavaScript are enabled and complete the CAPTCHA below.</p>
+
+            
+                    <script>
+                    showBlockPage()
+                    var e = document.getElementById("captcha-msg");
+                    if (e) {
+                        e.style.display = "";
+                    }
+                    </script>
+                <div class="g-recaptcha" data-sitekey="6LdkTY4dAAAAAELnsfIVGLD49jrTz0esBOfwttGi" data-callback="solvedCaptcha"></div>
+        </div>
+
+        <!-- The following localisation sections are optional, but if present they replace the default language text in the interstitial.
+          -->
+
+        <div id="interstitial-it" style="display: none"> <!-- Italian -->
+
+            <div id="interstitial-body-it"> <!-- Content to replace the "interstitial-body" if "it" language used by browser -->
+                <h1>Scusate la nostra interruzione</h1>
+                <p>Mentre stavi navigando, qualcosa sul tuo browser ci ha fatto pensare che fossi un bot. Ci sono alcuni motivi per cui questo potrebbe accadere:</p>
+                <ul>
+                    <li>Sei un utente esperto che si muove attraverso questo sito Web con una velocità sovrumana.</li>
+                    <li>Hai disabilitato i cookie nel tuo browser web.</li>
+                    <li>Un plug-in per browser di terze parti, come Ghostery o NoScript, impedisce l'esecuzione di JavaScript.
+                    Ulteriori informazioni sono disponibili in questo <a title='Plugin del browser di terze parti che bloccano javascript'
+                                                                        href='https://docs.imperva.com/howto/24e53ba1'
+                                                                        target='_blank'>articolo di supporto</a>.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- The following paragraphs must be present with their "id" tags correct -->
+            <p id="identify-msg-it" style="display: none">Per riottenere l'accesso, assicurati che i cookie e JavaScript siano abilitati prima di ricaricare la pagina.</p>
+            <p id="captcha-msg-it" style="display: none">Dopo aver completato il CAPTCHA di seguito, riacquisterai immediatamente l'accesso al sito.</p>
+        </div>
+
+        <div id="interstitial-de" style="display: none"> <!-- German -->
+
+            <div id="interstitial-body-de"> <!-- Content to replace the "interstitial-body" if "de" language used by browser -->
+                <h1>Verzeihen Sie unsere Unterbrechung</h1>
+                <p>Am Verhalten Ihres Browsers, als Sie im Internet gesurf haben wurde vermutet, dass es sich hierbeu um einen Bot handelte. Es gibt  mehrere Gründe, warum dies passieren kann:</p>
+                <ul>
+                    <li>Sie sind ein Power-User, der sich mit übermenschlicher Geschwindigkeit durch die Website bewegt.</li>
+                    <li>Sie haben in Ihrem Webbrowser die Cookies deaktiviert.</li>
+                    <li>Ein Browser-Plugin eines Drittanbieters, z. B. Ghostery oder NoScript, verhindert die Ausführung von JavaScript.
+                        Weitere Informationen finden Sie in diesem <a title='Browser-Plugins von Drittanbietern, die Javascript blockieren'
+                                                                        href='https://docs.imperva.com/howto/24e53ba1'
+                                                                        target='_blank'>Support-Artikel</a>.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- The following paragraphs must be present with their "id" tags correct -->
+            <p id="identify-msg-de" style="display: none">Um wieder Zugriff zu erhalten, stellen Sie bitte sicher, dass Cookies und JavaScript aktiviert sind, bevor Sie die Seite neu laden the.</p>
+            <p id="captcha-msg-de" style="display: none">Nachdem Sie das untenstehende CAPTCHA ausgefüllt haben, erhalten Sie sofort wieder Zugriff auf die Website.</p>
+        </div>
+
+    </body>
+</html>

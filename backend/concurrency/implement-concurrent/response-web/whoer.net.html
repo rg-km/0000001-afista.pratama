@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Find and check IP address</title>
+<meta name="description" content="What&#39;s my IP address, how to find and check my IP address. Two versions of anonymity check: light and extended" />
+
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/css/ie.css" media="screen"/><![endif]-->
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/css/ie8.css" media="screen"/><![endif]-->
+<link rel="alternate" hreflang="x-default" href="https://whoer.net" />
+<link rel="alternate" hreflang="en" href="https://whoer.net/" />
+<link rel="alternate" hreflang="ru" href="https://whoer.net/ru" />
+<link rel="alternate" hreflang="de" href="https://whoer.net/de" />
+<link rel="alternate" hreflang="fr" href="https://whoer.net/fr" />
+<link rel="alternate" hreflang="es" href="https://whoer.net/es" />
+<link rel="alternate" hreflang="tr" href="https://whoer.net/tr" />
+<link rel="alternate" hreflang="zh" href="https://whoer.net/zh" />
+<link rel="alternate" hreflang="it" href="https://whoer.net/it" />
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="google-site-verification" content="hpqD4A3XBmfYlpu69cOGPgqBEU9u6_YIQAAvN5h2-ec" />
+<meta name='yandex-verification' content='4499c8d1539e0ccc' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/normalize.css?1638277727">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+
+<script src="/js/clipboard.min.js?1.5.12"></script>
+
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'OPT-MM3KTB6':true});</script>
+
+<script> (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-KFCF9VP');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<style>
+body {
+ background-color:#20586f;
+}
+</style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="/css/fonts.css?family=Manrope" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="/css/layout.css?1650441639&bg2021" type="text/css">
+
+<script async src='/cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=70161aa3b865a060'></script></head>
+<body>
+<div id="wrapper">
+<header class="header">
+<div class="header__background ">
+<div class="header__wrapper">
+<a class="header__logo" href="/">
+<svg width="117" height="23" viewBox="0 0 117 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.54097 22.134L0.464966 0.434H4.95997L9.11397 16.523L13.64 0.434H17.298L21.855 16.523L26.009 0.434H30.504L24.428 22.134H19.561L15.469 7.812L11.408 22.134H6.54097Z" fill="currentColor" />
+<path d="M46.5627 0.434H50.8097V22.134H46.5627V13.144H38.5027V22.134H34.2247V0.434H38.5027V9.052H46.5627V0.434Z" fill="currentColor" />
+<path d="M74.3399 19.313C72.1492 21.483 69.4832 22.568 66.3419 22.568C63.2006 22.568 60.5346 21.483 58.3439 19.313C56.1739 17.1223 55.0889 14.446 55.0889 11.284C55.0889 8.122 56.1739 5.456 58.3439 3.286C60.5346 1.09533 63.2006 0 66.3419 0C69.4832 0 72.1492 1.09533 74.3399 3.286C76.5306 5.456 77.6259 8.122 77.6259 11.284C77.6259 14.446 76.5306 17.1223 74.3399 19.313ZM61.3509 16.399C62.6942 17.7217 64.3579 18.383 66.3419 18.383C68.3259 18.383 69.9896 17.7217 71.3329 16.399C72.6762 15.0557 73.3479 13.3507 73.3479 11.284C73.3479 9.21733 72.6762 7.51233 71.3329 6.169C69.9896 4.82567 68.3259 4.154 66.3419 4.154C64.3579 4.154 62.6942 4.82567 61.3509 6.169C60.0076 7.51233 59.3359 9.21733 59.3359 11.284C59.3359 13.3507 60.0076 15.0557 61.3509 16.399Z" fill="currentColor" />
+<path d="M86.1507 18.042H95.2957V22.134H81.8727V0.434H95.1407V4.526H86.1507V9.145H94.3657V13.175H86.1507V18.042Z" fill="currentColor" />
+<path d="M111.455 22.134L107.084 14.601H103.829V22.134H99.5511V0.434H108.231C110.236 0.434 111.941 1.13667 113.346 2.542C114.751 3.94733 115.454 5.642 115.454 7.626C115.454 8.96933 115.072 10.2197 114.307 11.377C113.542 12.5137 112.53 13.3713 111.269 13.95L116.074 22.134H111.455ZM103.829 4.433V10.85H108.231C109.037 10.85 109.729 10.54 110.308 9.92C110.887 9.27934 111.176 8.51467 111.176 7.626C111.176 6.73733 110.887 5.983 110.308 5.363C109.729 4.743 109.037 4.433 108.231 4.433H103.829Z" fill="currentColor" />
+</svg>
+</a>
+<div class="header__right">
+<button onclick="toggleMenu()" class="header__hamburger" type="button">
+<svg width="24" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M.75.63v3.75h22.5V.63H.75zm0 11.24V8.13h22.5v3.74H.75zm0 7.5v-3.75h22.5v3.76H.75z" fill="#fff" />
+</svg>
+</button>
+<nav class="header__nav">
+<ul class="header__nav-list">
+<li>
+<a class="active header__navlink" href="/">
+My IP
+</a>
+</li>
+<li>
+<a class=" header__navlink" href="/vpn">
+VPN
+</a>
+</li>
+<li class="header__nav-list--servers header__nav-list--servers-en">
+<a class="header__navlink" href="/vpn#our_servers-desc">
+Servers
+</a>
+</li>
+<li>
+<a class=" header__navlink" href="/download">
+Download
+</a>
+</li>
+<li class="header__navlink--services">
+<input id="list-services-dropdown-toggle" type="checkbox">
+<label id="list-services-dropdown-label" for="list-services-dropdown-toggle" class="header__navlink header__navlink--label">
+Services
+<span class="header__navlink-triangle">
+<svg width="8" height="4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.58 3.86L.18 1.23c-.24-.18-.24-.48 0-.66L.74.14a.73.73 0 01.85 0L4 2 6.41.14a.73.73 0 01.85 0l.56.43c.24.19.24.48 0 .66l-3.4 2.63a.72.72 0 01-.84 0z" fill="currentColor" />
+</svg>
+</span>
+</label>
+<ul class="button-languages__list-dropdown button-languages__list-dropdown--services" id="list-dropdown-services">
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/webproxy">Web proxy</a>
+</li>
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/speedtest">Speed test</a>
+</li>
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/ping">Ping</a>
+</li>
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/checkwhois">Whois</a>
+</li>
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/dns-leak-test">DNS leak test</a>
+</li>
+<li class="button-languages__list-item--service">
+<a class="button-languages__list-link--service" href="/port-scanner-online">Port scanner</a>
+</li>
+</ul>
+</li>
+</ul>
+<a href="/vpn/buy?utm_content=mainheader" class="header__button button">
+Grab -75% Now
+</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="header__nav-mobile">
+<div class="header__nav-mobile-overlay" onclick="toggleMenu()"></div>
+<div class="header__nav-mobile-wrapper">
+<button onclick="event.preventDefault();toggleMenu()" class="header__hamburger" type="button">
+<svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 13.65L2.95 21.7.3 19.05 8.35 11 .3 2.95 2.95.3 11 8.35 19.05.3l2.65 2.65L13.65 11l8.05 8.05-2.65 2.65L11 13.65z" fill="#fff" />
+</svg>
+</button>
+<ul class="header__nav-list">
+<li>
+<a class="active header__navlink header__navlink--mobile" href="/">
+My IP
+</a>
+</li>
+<li>
+<a class=" header__navlink header__navlink--mobile" href="/vpn">
+VPN
+</a>
+</li>
+<li onclick="toggleMenu();">
+<a class="header__navlink header__navlink--mobile" href="/vpn#our_servers">
+Servers
+</a>
+</li>
+<li>
+<a class=" header__navlink header__navlink--mobile" href="/download">
+Download
+</a>
+</li>
+<li>
+<a class="header__navlink header__navlink--mobile" href="/webproxy">Web proxy</a>
+</li>
+<li>
+<a class="header__navlink header__navlink--mobile" href="/speedtest">Speed test</a>
+</li>
+<li>
+<a class="header__navlink header__navlink--mobile" href="/ping">Ping</a>
+</li>
+<li>
+<a class="header__navlink header__navlink--mobile" href="/checkwhois">Whois</a>
+</li>
+<li>
+<a class="header__navlink header__navlink--mobile" href="/dns-leak-test">DNS leak test</a>
+</li>
+</ul>
+<a href="/vpn/buy?utm_content=mainheader" class="header__button button header__button--mobile">
+Buy VPN now
+</a>
+</div>
+</div>
+</header>
+<script>
+const headerBackground = document.querySelector('.header__background');
+const headerLogo = document.querySelector('.header__logo');
+const body = document.querySelector('body');
+const headerNavMobile = document.querySelector('.header__nav-mobile');
+const headerNavMobileWrapper = document.querySelector('.header__nav-mobile-wrapper');
+let scrollPosition = 0;
+
+function toggleMenu () {
+  headerNavMobile.classList.toggle('header__nav-mobile--show');
+  headerNavMobileWrapper.classList.toggle('header__nav-mobile-wrapper--show');
+  body.classList.toggle('noscroll');
+}
+
+
+window.addEventListener('scroll', function () {
+scrollPosition = window.scrollY;
+if (scrollPosition > 0) {
+  headerBackground.classList.add('header__background--scroll');
+  headerLogo.classList.add('header__logo--scroll')
+} else {
+  headerBackground.classList.remove('header__background--scroll');
+  headerLogo.classList.remove('header__logo--scroll')
+}
+})
+</script>
+<div id="content">
+<link rel="stylesheet" href="/css/ip.css?1638277727" type="text/css">
+<div id="main">
+<section class="section_main section_user-ip section">
+<div class="section__wrapper">
+<div class="section__content">
+<div class="location-info container container_main-ip-info">
+<div class="main-ip-info__ip">
+<img data-fetched="country_code" loading="lazy" alt="iso" class="flag flag_big" src="/images/flags/-.png">
+<h1>
+My IP:
+</h1>
+<div class="button_icon your-ip" data-clipboard-target=".your-ip">
+<strong data-clipboard-target=".your-ip" class="your-ip">
+110.137.102.250
+</strong>
+<span class="icon icon_copy" data-clipboard-target=".your-ip">
+<svg width="22px" height="25px">
+<use xlink:href="#i-clipboard" />
+</svg>
+</span>
+</div>
+</div>
+<div class="safe-block__wrapper" style="display: flex; align-items: center;">
+<div class="main-ip-info__ip isWhoerUser" style="flex-direction: row; display: none !important;">
+<span style="display: block; height: 22px; width: 22px; border-radius: 50%; background-color: #1fb74c;"></span>
+<span style="font-size: 24px; margin-left: 12px;">Secured connection</span>
+</div>
+<div class="main-ip-info__ip isNotWhoerUser" style="display: none !important;">
+<div>
+<label class="form-switch" style="font-size:24px">
+Secure internet
+<input type="checkbox" onclick="window.location='/en/vpn'">
+<i></i>
+</label>
+</div>
+</div>
+</div>
+<div class="row main-ip-info__ip-data">
+<div class="col-md-6 col-sm-12">
+<div class="ip-data__row ip-info">
+<div class="ip-data__col ip-data__col_param">
+<div>
+ISP:
+</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_provider">
+<svg width="18" height="14">
+<use xlink:href="#i-provider" />
+</svg>
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div>
+<span data-fetched="isp">
+</span>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+<div>
+Hostname:
+</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_hostname">
+<svg width="18" height="18">
+<use xlink:href="#i-host" />
+</svg>
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div>
+<span data-resolve="resolved"></span>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+OS:
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_useragent icon_unknown">
+
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div>
+<span>
+Unknown
+</span>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+<div>
+Browser:
+</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_useragent icon_unknown">
+
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div>
+<span>
+2.0
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-12">
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+ <div>
+DNS
+</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_dns">
+<svg width="19" height="18">
+<use xlink:href="#i-dns" />
+</svg>
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div class="dns_br" data-once="1">
+<div class="skel">
+<span class="ico-holder ico-dns-net"> </span>
+<span class="cont dns_br_ip max_ip"><span class="disabled">N/A</span></span>
+<span class="country-holder main-dns">
+<span class="ico-holder no-back dns_br_flag"> </span>
+<span style="font-size: 12px; vertical-align: middle" class="cont dns_br_country"></span>
+</span>
+</div>
+<div class="result"></div>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+<div>Proxy:</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_proxy">
+<svg width="19" height="18">
+<use xlink:href="#i-proxy" />
+</svg>
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div onclick="$('#tab-ext').click();$('html, body').animate({scrollTop: ($('#block-ports').offset().top - ($(window).height() - 3 * $('#block-ports').height() - 80) / 2)}, 400);$('#block-ports + .card__row .card__col_value').addClass('highlighted');setTimeout(function() {$('#block-ports + .card__row .card__col_value').removeClass('highlighted')}, 5000)" class="enabled-status__wrapper">
+<span class="proxy-status enabled-status enabled"></span>
+<span class="cont proxy-status-message">
+No
+</span>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+<div>Anonymizer:</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_anonimizer">
+<svg width="19" height="18">
+<use xlink:href="#i-anonim" />
+</svg>
+</div>
+</div>
+<div id="anonymizer" class="ip-data__col ip-data__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status"></span>
+<span class="value">
+No
+</span>
+</div>
+</div>
+</div>
+<div class="ip-data__row">
+<div class="ip-data__col ip-data__col_param">
+<div>
+Blacklist:
+</div>
+</div>
+<div class="ip-data__col ip-data__col_icon">
+<div class="icon icon_sm icon_black-list">
+<svg width="19" height="18">
+<use xlink:href="#i-blacklist" />
+</svg>
+</div>
+</div>
+<div class="ip-data__col ip-data__col_value">
+<div class="enabled-status__wrapper" id="blStatus">
+ <span data-dsbl="status" class="enabled-status"></span>
+<a data-dsbl="link" rel="nofollow" target="_blank" href="http://www.spamhaus.org/query/bl?ip=110.137.102.250">No</a>
+<span data-dsbl="msg"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="main-ip-info__anonimity">
+<div class="anonimity__level" onclick="showAnonimityDescription()">
+<div class="level__bg"></div>
+<div style="cursor: pointer" class="heading score-default " id="anonym_level">
+<strong id="hidden_rating_link" class="title">Your disguise: N/A
+</strong>
+<span class="description">
+&nbsp;<span class="disabled">N/A</span>
+
+</span>
+</div>
+</div>
+<a href="#" onclick="showAnonimityDescription()" id="moreInfo" class="anonimity__button button button_transparent">More</a>
+<a href="#moreInfo" onclick="hideAnonimityDescription()" style="display:none;" id="enoughInfo" class="anonimity__button button button_transparent">Hide</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section_alevel mobile">
+<div class="section__wrapper">
+<a href="/blog/article/how-do-we-count-our-anonymity-rating/" title="How do we count?"><span class="how-count"></span></a>
+<ul class="alevel__list hide-perсent-list">
+<li class="alevel-flash">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_flash"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Flash enabled</span>
+<span class="desktop description">
+We strongly recommend our users to disable Flash Player in their browsers. If you have to use Flash sites, it is better to do it in another browser and only with a specific trusted site.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-disable-flash-in-browser/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-disable-flash-in-browser/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-java">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_java"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Java enabled</span>
+<span class="desktop description">
+We strongly recommend our users to disable Java in the main browser. If you have to use Flash sites, it is better to do it in another browser and only with a specific trusted site.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-disable-java-in-various-operating-systems/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-disable-java-in-various-operating-systems/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-track">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_track"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">DoNotTrack</span>
+<span class="desktop description">
+You have a browser tracking block disabled.
+</span>
+<div class="desktop">
+<a href="/blog/article/do-not-track-dnt/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/do-not-track-dnt/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-activex">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_activex"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">ActiveX enabled</span>
+<span class="desktop description">
+We strongly recommend our users to disable ActiveX in their main browser. If you have to use ActiveX extensions, for example for payment systems, it is better to use another browser for this purpose, and access only one specific source you know and trust.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-disable-activex/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-disable-activex/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-webrtc_local_net">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_webrtc_local_net"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">WebRTC</span>
+<span class="desktop description">
+We detected A Class network in your local IP addresses. Since you are on this site and we detected it, you are possibly using VPN.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-disable-webrtc-in-various-browsers/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-disable-webrtc-in-various-browsers/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-proxy_ports">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_proxy_ports"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Open proxy ports</span>
+<span class="desktop description">
+We have determined that you work under a proxy server with a low level of anonymity. Proxy servers are intended to increase the speed of your connection with the help of caching. Your IP replacement in the process is just a sideway action rather than a main purpose of proxies, and they can be easily detected. Please use other means, for example VPN.
+</span>
+<div class="desktop">
+<a href="/blog/how-to-remain-100-anonymous-on-whoer-nets-home-page/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/how-to-remain-100-anonymous-on-whoer-nets-home-page/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-dns">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_dns"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">DNS different</span>
+<span class="desktop description">
+Your DNS server country differs from the country of your IP address. As a rule, it reveals your attempts to hide your location.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-hide-your-dns/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-hide-your-dns/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-tor">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_tor"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">TOR detected</span>
+<span class="desktop description">
+IP addresses of Tor exit nodes are known. It means that it's known that you use anonymous network and your actions may be defined as suspicious
+</span>
+<div class="desktop">
+<a href="/blog/what-is-tor/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/what-is-tor/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-ips">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_ips"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">IP addresses different</span>
+<span class="desktop description">
+Our interactive checks have revealed that you are not the one you pretend to be. Your actual IP address differs from the one you show. Please use proper system and VPN settings or disable Flash/Java/ActiveX/WebRTC in your browser.
+</span>
+<div class="desktop">
+<a href="/blog/how-to-disable-webrtc-in-various-browsers/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/how-to-disable-webrtc-in-various-browsers/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-anonymizer">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_anonymizer"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">WebProxy detected</span>
+<span class="desktop description">
+The majority of webproxies are detectable and able to intercept and track your traffic. We do not recommend using them for anonymity.
+</span>
+<div class="desktop">
+<a href="/blog/web-proxies-and-why-vpn-is-better/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/web-proxies-and-why-vpn-is-better/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-proxy">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_proxy"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Proxy detected</span>
+<span class="desktop description">
+The majority of proxies are not anonymous, they are detectable and able to track your traffic. We do not recommend using them for anonymity.
+</span>
+<div class="desktop">
+<a href="/blog/mtu-parameter/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/mtu-parameter/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-datacenter_ip">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_datacenter_ip"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Data Center IP</span>
+<span class="desktop description">
+Your IP address related to data center, you use masking tools.
+</span>
+<div class="desktop">
+<a href="/blog/mtu-parameter/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/mtu-parameter/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-time_mismatch">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_time_mismatch"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">System time different</span>
+<span class="desktop description">
+The time set in your system differs from your IP addresses time zone. You are possibly trying to hide your current location by anonymity means.
+</span>
+<div class="desktop">
+<a href="/blog/article/changing-the-system-date-and-time/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/changing-the-system-date-and-time/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-dsbl">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_dsbl"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Blacklist</span>
+<span class="desktop description">
+Your IP address is blacklisted. This is a bad signal.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-remove-an-ip-address-from-a-blacklist/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-remove-an-ip-address-from-a-blacklist/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-ua_mismatch">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_ua_mismatch"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Browser headers different</span>
+<span class="desktop description">
+User-Agent that your browser sends differs from that we checked via Javascript. You are trying to hide your actual browser.
+</span>
+<div class="desktop">
+<a href="/blog/article/how-to-change-user-agent-in-browser/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="/blog/article/how-to-change-user-agent-in-browser/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+<li class="alevel-langs">
+<div class="alevel__color">
+<div class="desktop anon-icon anon-icon_langs"></div>
+<span class="percent">-10%</span>
+</div>
+<div class="content">
+<span class="desktop title">Languages different</span>
+<span class="desktop description">
+The language set in your system and/or browser differs from the language of your IP address country. You are possibly trying to hide yourself by anonymity means.
+</span>
+<div class="desktop">
+<a href="blog/how-to-change-lang-in-windows-10-and-mac-os/" target="_blank">How to fix?</a>
+</div>
+<div class="mobile">
+<a href="blog/how-to-change-lang-in-windows-10-and-mac-os/" class="button button_transparent" style="text-decoration: none; padding:8px">🔧</a>
+</div>
+</div>
+</li>
+
+</ul>
+<ul class="legend-list">
+<li>Level of insecurity:</li>
+<li><span class="yellow"></span>Low</li>
+<li><span class="orange"></span>Medium</li>
+<li><span class="red"></span>High</li>
+<li><a href="#moreInfo" onclick="hideAnonimityDescription()" class="anonimity__button button button_transparent legend-list__hide">Hide</a></li>
+</ul>
+</div>
+
+</section>
+<section class="section section_promo">
+<div class="section__wrapper">
+<div class="section__content container">
+<div class="promo__brand">
+<img src="/images/brand_vpn/vpn.svg" class="promo__logo" alt="logo">
+
+</div>
+<div class="promo__text">
+<span class="promo__text_vpn">I noticed that you are already using an anonymizer, try Whoer VPN with an excellent discount!</span>
+<span class="promo__text_tor">I noticed that you are already using an anonymizer, try Whoer VPN with an excellent discount!</span>
+<span class="promo__text_hoster">I noticed that you are already using an anonymizer, try Whoer VPN with an excellent discount!</span>
+<span class="promo__text_webproxy">I noticed that you are already using an anonymizer, try Whoer VPN with an excellent discount!</span>
+</div>
+<div class="promo__discount">- 30%</div>
+<div class="promo__button">
+<a href="/vpn/buy" target="_blank" class="button_buy button section_promo-button">Buy!</a>
+</div>
+</div>
+</div>
+<div onclick="$('.section_promo').hide();localStorage.setItem('whpromo_closed', new Date().getTime());" class="section__close-button"></div>
+</section>
+<section class="section section_blue section_plans" style="background:#3f93b7">
+<div class="section__wrapper">
+<div class="section__content container">
+<p class="section__title--tariff section__title--tariff-main">Try Whoer VPN risk-free with money-back guarantee</p>
+<link rel="stylesheet" href="/css/plans-new.css?1650441639&newyear21" type="text/css">
+<div class="new-plans" id="plans-one">
+<div onclick="onClickPlanBlock(this);" data-amount="9.9 " class="plan new-plan new-plan--30 item-01 no-in-trial plan-30  ">
+<input type="hidden" class="days" value="30">
+<span class="corner-ribbon corner-ribbon--30 top-right sticky new-plan__ribbon">
+-30%
+</span>
+<div class="new-plan__wrapper new-plan__wrapper--30 ">
+<p class="new-plan__period new-plan__period--30">
+1
+month
+<svg class="new-plan__selected-icon" width="30" height="29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14.92" cy="14.5" r="14.5" fill="url(#paint0_linear-1)" />
+<path d="M8.47 13.23l5.07 5.07 7.7-7.71" stroke="#82D766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<defs>
+<linearGradient id="paint0_linear-1" x1="14.92" y1="0" x2="14.92" y2="78.62" gradientUnits="userSpaceOnUse">
+<stop offset="1" stop-color="#fff" />
+<stop offset="1" stop-color="#fff" stop-opacity="0" />
+</linearGradient>
+</defs>
+</svg>
+</p>
+<p class="new-plan__monthly-cost">
+<span class="new-plan__monthly-cost-currency">$</span>
+<span class="new-plan__monthly-cost-value" data-cost="6.93" data-monthlyCost="9.90">
+9.90
+</span>
+<span class="new-plan__monthly-cost-period">
+<span class="new-plan__monthly-cost-period--nobr">/month</span>
+</span>
+</p>
+<p class="new-plan__economy">
+0% save
+</p>
+<p class="new-plan__base-price">
+$9.90/month
+</p>
+<a class="new-plan__buy new-plan__buy--not-buy button button_buy" href="/vpn/buy?plan=30">
+<span class="new-plan__buy-text">Buy!</span>
+</a>
+<p class="new-plan__cost-full-period">
+<span class="new-plan__cost" data-cost="$6.93" data-daysCost="9.9">
+$9.9
+</span>
+<span class="new-plan__interval">
+every month
+</span>
+</p>
+</div>
+</div>
+<div onclick="onClickPlanBlock(this);" data-amount="39.0 " class="plan new-plan new-plan--180 item-02 no-in-trial plan-180  ">
+<input type="hidden" class="days" value="180">
+<span class="corner-ribbon corner-ribbon--180 top-right sticky new-plan__ribbon">
+-30%
+</span>
+<div class="new-plan__wrapper new-plan__wrapper--180 ">
+<p class="new-plan__period new-plan__period--180">
+6
+months
+<svg class="new-plan__selected-icon" width="30" height="29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14.92" cy="14.5" r="14.5" fill="url(#paint0_linear-2)" />
+<path d="M8.47 13.23l5.07 5.07 7.7-7.71" stroke="#82D766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<defs>
+<linearGradient id="paint0_linear-2" x1="14.92" y1="0" x2="14.92" y2="78.62" gradientUnits="userSpaceOnUse">
+<stop offset="1" stop-color="#fff" />
+<stop offset="1" stop-color="#fff" stop-opacity="0" />
+</linearGradient>
+</defs>
+</svg>
+</p>
+<p class="new-plan__monthly-cost">
+<span class="new-plan__monthly-cost-currency">$</span>
+<span class="new-plan__monthly-cost-value" data-cost="4.55" data-monthlyCost="6.50">
+6.50
+</span>
+<span class="new-plan__monthly-cost-period">
+<span class="new-plan__monthly-cost-period--nobr">/month</span>
+</span>
+</p>
+<p class="new-plan__economy">
+35% save
+</p>
+<p class="new-plan__base-price">
+$6.50/month
+</p>
+<a class="new-plan__buy new-plan__buy--not-buy button button_buy" href="/vpn/buy?plan=180">
+<span class="new-plan__buy-text">Buy!</span>
+</a>
+<p class="new-plan__cost-full-period">
+<span class="new-plan__cost" data-cost="$27.3" data-daysCost="39.0">
+$39.0
+</span>
+<span class="new-plan__interval">
+every 6 month
+</span>
+</p>
+</div>
+</div>
+<div onclick="onClickPlanBlock(this);" data-amount="29.7 " class="plan new-plan new-plan--360 item-03 no-in-trial plan-360  triangel">
+<input type="hidden" class="days" value="360">
+<span class="corner-ribbon corner-ribbon--360 top-right sticky new-plan__ribbon">
+-30%
+</span>
+<div class="new-plan__wrapper new-plan__wrapper--360 ">
+<p class="new-plan__period new-plan__period--360">
+1
+year
+-75% off
+<svg class="new-plan__selected-icon" width="30" height="29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14.92" cy="14.5" r="14.5" fill="url(#paint0_linear-3)" />
+<path d="M8.47 13.23l5.07 5.07 7.7-7.71" stroke="#82D766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<defs>
+<linearGradient id="paint0_linear-3" x1="14.92" y1="0" x2="14.92" y2="78.62" gradientUnits="userSpaceOnUse">
+<stop offset="1" stop-color="#fff" />
+<stop offset="1" stop-color="#fff" stop-opacity="0" />
+</linearGradient>
+</defs>
+</svg>
+</p>
+<p class="new-plan__bf-title">
+Happy Easter
+</p>
+<p class="new-plan__monthly-cost">
+<span class="new-plan__monthly-cost-currency">$</span>
+<span class="new-plan__monthly-cost-value" data-cost="1.715" data-monthlyCost="2.45">
+2.45
+</span>
+<span class="new-plan__monthly-cost-period">
+<span class="new-plan__base-price new-plan__base-price--360">
+$3.90
+</span>
+<span class="new-plan__monthly-cost-period--nobr">/month</span>
+</span>
+</p>
+<p class="new-plan__economy">
+75% save
+</p>
+<p class="new-plan__base-price">
+$2.45/month
+</p>
+<a class="new-plan__buy new-plan__buy--not-buy button button_buy" href="/vpn/buy?plan=360">
+<span class="new-plan__buy-text">Buy!</span>
+</a>
+<p class="new-plan__cost-full-period">
+<span class="new-plan__cost" data-cost="$20.79" data-daysCost="29.7">
+$29.7
+</span>
+<span class="new-plan__interval">
+every 12 month
+</span>
+</p>
+<p class="new-plan__offer-end">Offer is valid until:</p>
+<div class="new-plan__counter counter-end">
+<span class="discount-counter__days">
+<span class="discount-counter__digits discount-counter__digits--days">00</span>
+<span class="discount-counter__text"> days</span>
+</span>
+<span class="discount-counter__colon">:</span>
+<span class="discount-counter__hours">
+<span class="discount-counter__digits discount-counter__digits--hours">00</span>
+<span class="discount-counter__text"> hours</span>
+</span>
+<span class="discount-counter__colon">:</span>
+<span class="discount-counter__minutes">
+<span class="discount-counter__digits discount-counter__digits--minutes">00</span>
+<span class="discount-counter__text"> minutes</span>
+</span>
+<span class="discount-counter__colon">:</span>
+<span class="discount-counter__seconds">
+<span class="discount-counter__digits discount-counter__digits--seconds">00</span>
+<span class="discount-counter__text"> seconds</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('.plan-360').classList.add('active');
+    });
+
+    const smoothScroll = function() {
+    const firstStep = document.querySelector('#step1');
+    const element = document.querySelector('#email');
+
+    firstStep.scrollIntoView({block: "start", behavior: "smooth"});
+    setTimeout(function() {
+      firstStep.getBoundingClientRect().top <= 1 ? element.click() : '';
+    }, 1000);
+	}
+
+	const onClickPlanBlock = (plan) => {
+      const linkPlan = plan.querySelector('.new-plan__buy--not-buy');
+      if (linkPlan) {
+            window.location.href = linkPlan.getAttribute('href');
+      } else  {
+        smoothScroll();
+        selectPlan(plan.querySelector('.days').value);
+      }
+	}
+</script>
+</div>
+</div>
+</section>
+<section class="section section_ip-check section_white">
+<div class="section__wrapper">
+<div class="section__content container">
+<div class="myip-tabset">
+<h3 class="mobile">IP Address Details</h3>
+<ul class="tab-control" id="version-switcher">
+<li id="tab-lite" class="active">
+<h2 class="desktop" style="color: inherit; padding: 0; margin: 0; font-size: inherit; font-weight: inherit; cursor: pointer;">
+<span>IP Address Details</span>
+</h2>
+<div class="mobile button__wrapper">
+<a class="button_toggler active" href="#extended">
+Extended version
+</a>
+<div class="switch-block">
+<input type="checkbox" name="toggle" class="switch-block-dot" id="toggle-lite" checked>
+<label for="toggle-lite"></label>
+</div>
+</div>
+</li>
+<li id="tab-ext" class="">
+<a class="desktop" href="#extended">
+<span>Extended version</span>
+</a>
+<div class="mobile button__wrapper">
+<a class="button_toggler" href="#lite">
+Extended version
+</a>
+<div class="switch-block">
+<input type="checkbox" name="toggle" class="switch-block-dot" id="toggle-ext">
+<label for="toggle-ext"></label>
+</div>
+</div>
+</li>
+</ul>
+<div class="tab tab_lite" style="position: static;left: 0;display:block">
+<div class="row">
+<div class="col-lg-6 col-md-12">
+
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/real-dns-how-to-hide-it-and-why-it-is-visible/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M53.4834 4.69666H6.51663C2.92333 4.69666 0 7.61998 0 11.2133V48.7867C0 52.38 2.92333 55.3033 6.51663 55.3033H53.4834C57.0767 55.3033 60 52.38 60 48.7867V11.2133C60 7.61998 57.0767 4.69666 53.4834 4.69666ZM58.2387 48.7867C58.2387 51.4088 56.1055 53.5421 53.4834 53.5421H6.51663C3.89448 53.5421 1.76125 51.4088 1.76125 48.7867V11.2133C1.76125 8.59114 3.89448 6.45791 6.51663 6.45791H53.4834C56.1055 6.45791 58.2387 8.59114 58.2387 11.2133V48.7867Z" fill="#65AAC7" />
+<path d="M55.362 14.09H4.63795C4.15161 14.09 3.75732 14.4841 3.75732 14.9706C3.75732 15.457 4.15161 15.8512 4.63795 15.8512H55.362C55.8484 15.8512 56.2426 15.457 56.2426 14.9706C56.2426 14.4841 55.8484 14.09 55.362 14.09Z" fill="#65AAC7" />
+<path d="M6.51637 11.1546C6.74768 11.1546 6.97547 11.0606 7.13868 10.8962C7.30306 10.733 7.39699 10.5064 7.39699 10.2739C7.39699 10.0425 7.30306 9.81484 7.13868 9.65163C6.97547 9.48724 6.74768 9.39331 6.51637 9.39331C6.28388 9.39331 6.05727 9.48724 5.89406 9.65163C5.72968 9.81484 5.63574 10.0425 5.63574 10.2739C5.63574 10.5063 5.72968 10.733 5.89406 10.8962C6.05727 11.0606 6.28388 11.1546 6.51637 11.1546Z" fill="#65AAC7" />
+<path d="M14.0315 11.1546C14.2628 11.1546 14.4906 11.0606 14.6538 10.8962C14.8182 10.733 14.9121 10.5064 14.9121 10.2739C14.9121 10.0425 14.8182 9.81484 14.6538 9.65163C14.4906 9.48724 14.2628 9.39331 14.0315 9.39331C13.799 9.39331 13.5724 9.48724 13.4092 9.65163C13.2448 9.81484 13.1509 10.0425 13.1509 10.2739C13.1509 10.5063 13.2448 10.733 13.4092 10.8962C13.5724 11.0606 13.799 11.1546 14.0315 11.1546Z" fill="#65AAC7" />
+<path d="M10.2737 11.1546C10.5062 11.1546 10.7328 11.0606 10.896 10.8962C11.0604 10.733 11.1543 10.5064 11.1543 10.2739C11.1543 10.0425 11.0604 9.81484 10.896 9.65163C10.7328 9.48724 10.5062 9.39331 10.2737 9.39331C10.0424 9.39331 9.81459 9.48724 9.65138 9.65163C9.487 9.81484 9.39307 10.0425 9.39307 10.2739C9.39307 10.5063 9.487 10.733 9.65138 10.8962C9.81459 11.0606 10.0424 11.1546 10.2737 11.1546Z" fill="#65AAC7" />
+<path d="M13 39.7398H16.8538C17.0882 39.7398 17.852 39.7398 18.4335 39.6618C21.3239 39.2802 22.8255 36.6871 22.8255 33.4957C22.8255 30.3129 21.3239 27.7112 18.4335 27.3296C17.8433 27.2515 17.0968 27.2515 16.8538 27.2515H13V39.7398ZM14.5884 38.2655V28.7259H16.8538C17.2704 28.7259 17.8954 28.7432 18.3033 28.8213C20.3257 29.1855 21.185 31.1368 21.185 33.4957C21.185 35.8112 20.3517 37.7972 18.3033 38.1701C17.8954 38.2482 17.2878 38.2655 16.8538 38.2655H14.5884Z" fill="#65AAC7" />
+<path d="M24.816 39.7398H26.3783V29.9747L32.8968 39.7398H34.4592V27.2515H32.8968V37.008L26.3783 27.2515H24.816V39.7398Z" fill="#65AAC7" />
+<path d="M41.3216 40C43.9169 40 46 38.6731 46 36.2535C46 33.8513 43.9429 33.2355 42.8579 32.932L40.4797 32.2469C39.5509 31.9867 38.3965 31.5878 38.3965 30.4343C38.3965 29.2809 39.5857 28.4483 41.122 28.4657C42.7104 28.483 44.021 29.4196 44.2814 30.9373L45.9219 30.6511C45.4619 28.379 43.6565 27.0174 41.1393 27C38.6483 26.9914 36.7647 28.2922 36.7647 30.5037C36.7647 32.3509 38.0841 33.1575 39.4728 33.5651L42.6583 34.5104C43.5523 34.7792 44.4029 35.2475 44.4029 36.3402C44.4029 37.7018 43.0749 38.5344 41.3997 38.5344C39.6551 38.5344 38.275 37.6064 37.8758 36.028L36.2787 36.2795C36.6953 38.5777 38.6656 40 41.3216 40Z" fill="#65AAC7" />
+</svg>
+</div>
+<h4 class="card__title">DNS leak test</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/dns-leak-test">Go</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.21372 0.180883C1.11373 0.561764 0.332944 1.43035 0.0954236 2.53742C0.00967967 2.93712 -0.0152879 9.51924 0.0085846 25.4802L0.0419842 47.8624L0.272606 48.3605C0.609668 49.0887 1.12402 49.6189 1.82892 49.9649L2.45114 50.2703L9.01815 50.3009C15.9156 50.3332 16.0275 50.3263 16.3629 49.8478C16.5485 49.5828 16.5728 48.9812 16.41 48.6772C16.1211 48.1378 16.0988 48.136 9.35007 48.136C2.50622 48.136 2.5843 48.1427 2.30823 47.5371C2.20847 47.3183 2.17737 42.9358 2.17737 29.0869V10.9236H28.021H53.8646V29.0975C53.8646 48.8611 53.9009 47.7159 53.2654 48.0052C53.0665 48.0959 52.1125 48.136 50.1632 48.136H47.3482L41.7701 42.5602L36.192 36.9842L36.6446 36.0206C40.158 28.5389 37.0167 19.4881 29.5967 15.7145C28.2226 15.0155 27.132 14.6312 25.5685 14.2951C23.981 13.9538 21.1064 13.9546 19.5136 14.297C13.267 15.6396 8.64309 20.2614 7.30547 26.4994C6.98822 27.9787 6.96096 30.8428 7.25006 32.3207C7.87534 35.5171 9.29017 38.1736 11.5938 40.4758C13.844 42.725 16.3202 44.0766 19.456 44.7675C20.8937 45.0843 23.9966 45.1117 25.3928 44.8201C26.6234 44.563 28.1925 44.0475 29.201 43.5691L30.0172 43.1818L32.4957 45.6589L34.9741 48.136H29.9662H24.9583L24.6032 48.4532C24.3093 48.7157 24.2479 48.8496 24.2479 49.2305C24.2479 49.6114 24.3093 49.7453 24.6032 50.0078L24.9583 50.325H31.0565H37.1547L39.6784 52.8232C42.3236 55.4416 42.6247 55.6673 43.8143 55.9223C45.1715 56.2132 46.8918 55.6656 47.8356 54.6422C48.7629 53.6367 49.2407 52.0036 48.9604 50.7977L48.8539 50.34L51.2224 50.3052C53.5597 50.2707 53.5991 50.2662 54.2131 49.9649C54.918 49.6189 55.4323 49.0887 55.7694 48.3605L56 47.8624V25.1519V2.44132L55.6945 1.81944C55.3483 1.11492 54.8178 0.600837 54.0892 0.263954L53.5909 0.0334562L28.1853 0.00915864C4.02015 -0.013935 2.75206 -0.00550742 2.21372 0.180883ZM53.2654 2.29849C53.8255 2.55351 53.8646 2.78751 53.8646 5.88347V8.7346H28.021H2.17737L2.1812 5.86158C2.18536 2.79331 2.21416 2.61009 2.73695 2.32049C3.10292 2.11768 52.821 2.09612 53.2654 2.29849ZM6.46018 4.50946C5.51087 5.03536 5.90805 6.54564 6.99567 6.54564C7.55054 6.54564 8.09074 6.01098 8.09074 5.46177C8.09074 4.64003 7.18216 4.10942 6.46018 4.50946ZM11.2785 4.50946C10.3292 5.03536 10.7264 6.54564 11.814 6.54564C12.3688 6.54564 12.909 6.01098 12.909 5.46177C12.909 4.64003 12.0005 4.10942 11.2785 4.50946ZM16.0968 4.50946C15.1475 5.03536 15.5447 6.54564 16.6323 6.54564C17.1871 6.54564 17.7273 6.01098 17.7273 5.46177C17.7273 4.64003 16.8188 4.10942 16.0968 4.50946ZM24.8573 4.50946C24.1234 4.91595 24.1475 6.07358 24.897 6.41484C25.114 6.51368 28.124 6.54564 37.2302 6.54564C47.4418 6.54564 49.3222 6.52188 49.578 6.38967C50.3067 6.01295 50.3067 4.88935 49.578 4.51263C49.1443 4.28848 25.2617 4.28531 24.8573 4.50946ZM25.1738 16.4457C30.7347 17.6224 34.9105 22.0116 35.7472 27.5593C36.7077 33.9268 32.9076 40.1303 26.799 42.1673C22.7305 43.524 18.2939 42.8729 14.8071 40.4073C13.848 39.7292 12.3408 38.2228 11.6623 37.2642C8.64244 32.998 8.38148 27.3362 10.998 22.8534C12.9709 19.4736 16.4999 16.9993 20.1912 16.408C20.6129 16.3405 21.081 16.2642 21.2316 16.2384C21.7944 16.1421 24.3821 16.2781 25.1738 16.4457ZM20.7333 18.5186C16.1642 19.3919 12.7965 22.5391 11.6799 26.9789C11.3169 28.4224 11.3402 30.815 11.7316 32.279C13.2454 37.9412 18.6311 41.4631 24.3525 40.5323C30.7894 39.4851 34.9688 33.0963 33.3483 26.7806C32.3348 22.8304 29.2711 19.7577 25.3303 18.7391C23.9889 18.3922 21.9146 18.2928 20.7333 18.5186ZM24.3595 20.7627C26.101 21.1219 27.7156 22.0147 28.9641 23.3089C29.7747 24.1492 30.2255 24.8055 30.7051 25.8441C31.3131 27.1609 31.4598 27.8754 31.4621 29.5298C31.4645 31.3021 31.2447 32.2181 30.451 33.7436C30.0357 34.5415 29.7304 34.9374 28.8428 35.8289C27.9348 36.7407 27.5773 37.0162 26.7542 37.4381C25.2089 38.2302 24.3124 38.4439 22.5456 38.4415C20.892 38.4392 20.1753 38.2925 18.8638 37.6875C16.954 36.8066 15.4599 35.3692 14.5672 33.5539C13.8913 32.1794 13.6903 31.4414 13.6051 30.0223C13.3013 24.9657 17.3859 20.6194 22.4909 20.567C22.9727 20.5619 23.8136 20.65 24.3595 20.7627ZM35.4951 42.4709L33.936 44.0291L32.9061 43.004L31.8762 41.9788L32.4946 41.4644C33.2397 40.8447 34.9199 39.0678 34.9199 38.8996C34.9199 38.8336 35.4001 39.2595 35.9871 39.8461L37.0541 40.9127L35.4951 42.4709ZM42.6604 46.5217C46.7736 50.647 46.8535 50.7443 46.8555 51.6257C46.8592 53.189 45.1354 54.2882 43.7425 53.6109C43.4571 53.4721 41.9019 51.9987 39.4107 49.507L35.5243 45.6196L37.0549 44.0869C37.8967 43.2439 38.6123 42.5542 38.6451 42.5542C38.6779 42.5542 40.4848 44.3396 42.6604 46.5217ZM19.6754 48.4532C19.3814 48.7157 19.3201 48.8496 19.3201 49.2305C19.3201 49.6114 19.3814 49.7453 19.6754 50.0078C20.0716 50.3617 20.429 50.4058 20.9052 50.1597C21.291 49.9603 21.4506 49.6884 21.4506 49.2305C21.4506 48.7726 21.291 48.5007 20.9052 48.3013C20.429 48.0553 20.0716 48.0994 19.6754 48.4532Z" fill="#5CA5C3" />
+</svg>
+</div>
+<h4 class="card__title">Port scanner</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/port-scanner-online">Go</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/what-is-evercookie-all-about/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60px" height="58px">
+<use xlink:href="#i-cookies" />
+</svg>
+</div>
+<h4 class="card__title">Evercookie test</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/evercookie">Go</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+
+<div class="ip-check__card ip-info location-info card_table">
+<div class="card__icon icon icon_location">
+<svg width="61px" height="60px">
+<use xlink:href="#i-position" />
+</svg>
+</div>
+<h4 class="card__title">Location</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Country:
+</div>
+<div class="card__col card__col_value">
+<span style="display: flex; align-items: flex-start; line-height: 22px">
+<img data-fetched="country_code" loading="lazy" class="flag flag_sm" alt="iso" src="/images/flags/-.png">
+<span data-fetched="country_name" class="cont">
+</span>
+<span class="location-info">
+&nbsp;(<span data-fetched="country_code"></span>)
+</span>
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Region:
+</div>
+<div class="card__col card__col_value">
+<span data-fetched="subdivision1_name">
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+City:
+</div>
+<div class="card__col card__col_value">
+<span data-fetched="city_name">
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ZIP:
+</div>
+<div class="card__col card__col_value">
+<span data-fetched="postal_code">
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ Hostname:
+</div>
+<div class="card__col card__col_value">
+<span data-resolve="resolved"></span>
+<br />
+<a href="/checkwhois" class="button_whois" target="_blank" data-resolve="root_domain" style="display: none">Whois</a>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Reversed:
+</div>
+<div class="card__col card__col_value" data-resolve="reversed">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+IP range:
+</div>
+<div data-fetched="network" class="card__col card__col_value ip-range">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ISP:
+</div>
+<div data-fetched="isp" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Organization:
+</div>
+<div data-fetched="organization" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+AS Organization:
+</div>
+<div data-fetched="as_organization" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+AS Number:
+</div>
+<div data-fetched="as_number" class="card__col card__col_value">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table">
+<div class="card__icon icon icon_browser">
+<svg width="60px" height="60px">
+<use xlink:href="#i-blowser" />
+</svg>
+</div>
+<h4 class="card__title">Browser</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Headers:
+</div>
+<div id="browser_headers" class="card__col card__col_value">
+Go-http-client/2.0
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ JavaScript:
+</div>
+<div id="browser_js" class="card__col card__col_value">
+<span class="js-ua-headers cont disabled">N/A</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+<div class="row">
+<div class="col-lg-12">
+
+<div class="ip-check__card time-info location-info card_table">
+<a href="https://whoer.net/blog/changing-the-system-date-and-time/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_time">
+<svg width="60px" height="60px">
+<use xlink:href="#i-time" />
+</svg>
+</div>
+<h4 class="card__title">Time</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Zone:
+</div>
+<div data-fetched="time_zone" class="card__col card__col_value matched">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Local:
+</div>
+<div class="card__col card__col_value matched">
+Mon Apr 25 2022 16:38:08 GMT+0700 (WIB)
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+System:
+</div>
+<div class="card__col card__col_value matched">
+<span class="js-time cont disabled">N/A</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/digital-fingerprint/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M52.5235 29.0433C52.9487 27.4016 54.4251 26.185 56.1968 26.185C58.2991 26.185 59.9881 27.8976 59.9881 30C59.9881 32.1024 58.2755 33.815 56.1731 33.815C54.4015 33.815 52.9251 32.5984 52.4999 30.9567H47.055C46.7361 34.8898 45.0708 38.4449 42.5196 41.185L46.5826 45.248C47.1613 44.9055 47.8227 44.7047 48.5078 44.7047C49.5235 44.7047 50.4802 45.0945 51.2007 45.815C51.9094 46.5354 52.3109 47.4921 52.3109 48.5079C52.3109 49.5236 51.9212 50.4803 51.2007 51.2008C50.4802 51.9095 49.5235 52.311 48.5078 52.311C47.492 52.311 46.5353 51.9213 45.8149 51.2008C45.1062 50.4803 44.7046 49.5236 44.7046 48.5079C44.7046 47.8228 44.9054 47.1614 45.2479 46.5827L41.1613 42.4961C38.1613 45.0827 34.2637 46.6535 29.9999 46.6535C25.7361 46.6535 21.8385 45.0827 18.8385 42.4961L14.7519 46.5827C15.0944 47.1614 15.2952 47.8228 15.2952 48.5079C15.2952 49.5236 14.9054 50.4803 14.1849 51.2008C13.4645 51.9095 12.5078 52.311 11.492 52.311C10.4763 52.311 9.51959 51.9213 8.79912 51.2008C8.09046 50.4803 7.68888 49.5236 7.68888 48.5079C7.68888 47.4921 8.07865 46.5354 8.79912 45.815C9.51959 45.1063 10.4763 44.7047 11.492 44.7047C12.1771 44.7047 12.8385 44.9055 13.4172 45.248L17.4802 41.185C14.9409 38.4567 13.2755 34.9016 12.9448 30.9567H7.49991C7.07471 32.5984 5.59833 33.815 3.82668 33.815C1.72432 33.815 0.0117188 32.1024 0.0117188 30C0.0117188 27.8976 1.72432 26.185 3.82668 26.185C5.59833 26.185 7.07471 27.4016 7.49991 29.0433H12.8975C13.0038 24.9685 14.5393 21.248 17.0314 18.3543L13.4172 14.7402C12.8385 15.0827 12.1771 15.2835 11.492 15.2835C10.4763 15.2835 9.51959 14.8937 8.79912 14.1732C8.09046 13.4528 7.68888 12.4961 7.68888 11.4803C7.68888 10.4646 8.07865 9.50787 8.79912 8.7874C10.2401 7.34646 12.744 7.34646 14.1849 8.7874C14.8936 9.50787 15.2952 10.4646 15.2952 11.4803C15.2952 12.1654 15.0944 12.8268 14.7519 13.4055L18.3424 16.9961C21.1889 14.3504 24.933 12.6614 29.055 12.437V7.48819C27.4133 7.06299 26.1968 5.58661 26.1968 3.81496C26.1968 1.7126 27.9094 0 30.0117 0C32.1141 0 33.8267 1.7126 33.8267 3.81496C33.8267 5.58661 32.6101 7.06299 30.9684 7.48819V12.437C35.1023 12.6614 38.8346 14.3504 41.681 16.9961L45.2716 13.4055C44.929 12.8268 44.7283 12.1654 44.7283 11.4803C44.7283 10.4646 45.118 9.50787 45.8385 8.7874C47.2794 7.34646 49.7834 7.34646 51.2243 8.7874C51.933 9.50787 52.3346 10.4646 52.3346 11.4803C52.3346 12.4961 51.9448 13.4528 51.2243 14.1732C50.5038 14.8819 49.5472 15.2835 48.5314 15.2835C47.8464 15.2835 47.1849 15.0827 46.6062 14.7402L42.992 18.3543C45.4842 21.248 47.0078 24.9685 47.1259 29.0433H52.5235ZM48.5314 9.57874C48.0235 9.57874 47.5393 9.77953 47.1849 10.1339C46.8188 10.4882 46.6298 10.9724 46.6298 11.4803C46.6298 11.9882 46.8306 12.4724 47.1849 12.8268C47.9054 13.5472 49.1574 13.5472 49.8779 12.8268C50.2322 12.4724 50.433 11.9882 50.433 11.4803C50.433 10.9724 50.2322 10.4882 49.8779 10.1339C49.5235 9.77953 49.0393 9.57874 48.5314 9.57874ZM10.1456 12.8268C10.866 13.5472 12.118 13.5472 12.8385 12.8268C13.1928 12.4724 13.3936 11.9882 13.3936 11.4803C13.3936 10.9724 13.1928 10.4882 12.8385 10.1339C12.4842 9.77953 11.9999 9.57874 11.492 9.57874C10.9842 9.57874 10.4999 9.77953 10.1456 10.1339C9.79125 10.4882 9.59046 10.9724 9.59046 11.4803C9.59046 11.9882 9.79125 12.4724 10.1456 12.8268ZM1.9251 30C1.9251 31.0512 2.7755 31.9016 3.82668 31.9016C4.86605 31.9016 5.72825 31.0512 5.72825 30C5.72825 28.9488 4.87786 28.0984 3.82668 28.0984C2.7755 28.0984 1.9251 28.9488 1.9251 30ZM10.1456 49.8661C10.866 50.5866 12.118 50.5866 12.8385 49.8661C13.2046 49.5118 13.3936 49.0276 13.3936 48.5197C13.3936 48.0118 13.1928 47.5276 12.8385 47.1732C12.4842 46.8189 11.9999 46.6181 11.492 46.6181C10.9842 46.6181 10.4999 46.8189 10.1456 47.1732C9.79125 47.5276 9.59046 48.0118 9.59046 48.5197C9.59046 49.0276 9.79125 49.5118 10.1456 49.8661ZM48.5314 46.6181C48.0235 46.6181 47.5393 46.8189 47.1849 47.1732C46.8306 47.5276 46.6298 48.0118 46.6298 48.5197C46.6298 49.0276 46.8306 49.5118 47.1849 49.8661C47.9054 50.5866 49.1574 50.5866 49.8779 49.8661C50.2322 49.5118 50.433 49.0276 50.433 48.5197C50.433 48.0118 50.2322 47.5276 49.8779 47.1732C49.5235 46.8071 49.0393 46.6181 48.5314 46.6181ZM30.0117 1.91339C28.9605 1.91339 28.1101 2.76378 28.1101 3.81496C28.1101 4.85433 28.9605 5.71654 30.0117 5.71654C31.0629 5.71654 31.9133 4.86614 31.9133 3.81496C31.9133 2.76378 31.0629 1.91339 30.0117 1.91339ZM14.7755 29.5276C14.7755 37.9252 21.6141 44.7638 30.0117 44.7638C38.4094 44.7638 45.2479 37.9252 45.2479 29.5276C45.2479 21.1299 38.4094 14.2913 30.0117 14.2913C21.6141 14.2913 14.7755 21.1299 14.7755 29.5276ZM54.2952 30C54.2952 31.0512 55.1456 31.9016 56.1968 31.9016C57.2479 31.9016 58.0983 31.0512 58.0983 30C58.0983 28.9488 57.2479 28.0984 56.1968 28.0984C55.1456 28.0984 54.2952 28.9488 54.2952 30ZM30.0117 17.1377C23.185 17.1377 17.6338 22.6889 17.6338 29.5156C17.6338 36.3424 23.185 41.8936 30.0117 41.8936C36.8385 41.8936 42.3897 36.3424 42.3897 29.5156C42.3897 22.6889 36.8385 17.1377 30.0117 17.1377ZM30.0117 40.0038C27.933 40.0038 25.9842 39.3779 24.3543 38.3267C24.7086 35.5157 27.118 33.3306 30.0117 33.3306C32.9054 33.3306 35.3149 35.5157 35.6692 38.3267C34.0393 39.3779 32.0905 40.0038 30.0117 40.0038ZM27.1535 28.5708C27.1535 26.9999 28.4409 25.7125 30.0117 25.7125C31.5826 25.7125 32.87 26.9999 32.87 28.5708C32.87 30.1416 31.5826 31.429 30.0117 31.429C28.4409 31.429 27.1535 30.1416 27.1535 28.5708ZM37.3464 36.992C36.7322 34.8188 35.185 33.0353 33.1653 32.1141C34.1456 31.2401 34.7834 29.9881 34.7834 28.5708C34.7834 25.9487 32.6456 23.8109 30.0236 23.8109C27.4015 23.8109 25.2637 25.9487 25.2637 28.5708C25.2637 29.9881 25.9015 31.2401 26.8818 32.1141C24.8621 33.0353 23.3031 34.8188 22.7007 36.992C20.7637 35.0905 19.559 32.4448 19.559 29.5156C19.559 23.7401 24.2598 19.0393 30.0354 19.0393C35.811 19.0393 40.5117 23.7401 40.5117 29.5156C40.4881 32.4448 39.2834 35.0905 37.3464 36.992ZM30.9689 52.5117V46.6653H30.0122H29.0555V52.5117C27.4138 52.9369 26.1973 54.4133 26.1973 56.185C26.1973 58.2873 27.9099 59.9999 30.0122 59.9999C32.1146 59.9999 33.8272 58.2873 33.8272 56.185C33.8272 54.4133 32.6107 52.9369 30.9689 52.5117ZM30.0122 58.0865C28.9611 58.0865 28.1107 57.2361 28.1107 56.185C28.1107 55.1338 28.9611 54.2834 30.0122 54.2834C31.0634 54.2834 31.9138 55.1456 31.9138 56.185C31.9138 57.2361 31.0634 58.0865 30.0122 58.0865Z" fill="#5CA5C3" />
+</svg>
+</div>
+<h4 class="card__title">social networks</h4>
+<div class="card__data" id="notLoggedIn">We could not find that you are logged in to social networks</div>
+<div class="card__data" id="loggedIn">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/how-to-change-lang-in-windows-10-and-mac-os/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60px" height="60px">
+<use xlink:href="#i-lang" />
+</svg>
+</div>
+<h4 class="card__title">Language</h4>
+<div class="card__data">
+</div>
+</div>
+</div>
+</div>
+<div id="platforms" class="row">
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/article/how-to-disable-webrtc-in-various-browsers/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_webrtc">
+<svg width="60px" height="60px">
+<use xlink:href="#i-ipa" />
+</svg>
+</div>
+<h4 class="card__title">WebRTC</h4>
+<div class="card__data card__data_webrtc">
+<div class="enabled-status__wrapper">
+<span class="enabled-status webrtc-status-icon disabled"> </span>
+<span class="cont">110.137.102.250</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/article/how-to-disable-javascript-in-browsers/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_js">
+ <svg width="52px" height="60px">
+<use xlink:href="#i-js" />
+</svg>
+</div>
+<h4 class="card__title">JavaScript</h4>
+<div class="card__data">
+<div class="enabled-status__wrapper">
+<span class="enabled-status js-status-icon disabled"> </span>
+<span class="cont js-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/article/how-to-disable-flash-in-browser/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_flash">
+<svg width="60px" height="60px">
+<use xlink:href="#i-flash" />
+</svg>
+</div>
+<h4 class="card__title">Flash</h4>
+<div class="card__data">
+<div class="enabled-status__wrapper">
+<span class="enabled-status flash-status-icon disabled"> </span>
+<span class="cont flash-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/article/how-to-disable-activex/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_activex">
+<svg width="58px" height="59px">
+<use xlink:href="#i-activex" />
+</svg>
+</div>
+<h4 class="card__title">ActiveX</h4>
+<div class="card__data">
+<div class="enabled-status__wrapper">
+<span class="enabled-status activex-status-icon disabled"> </span>
+<span class="cont activex-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/article/how-to-disable-java-in-various-operating-systems/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_java">
+<svg width="56px" height="60px">
+<use xlink:href="#i-java" />
+</svg>
+</div>
+<h4 class="card__title">Java</h4>
+<div class="card__data">
+<div class="enabled-status__wrapper">
+<span class="enabled-status java-status-icon disabled"> </span>
+<span class="cont java-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+
+<div class="ip-check__card">
+<a href="https://whoer.net/blog/how-to-clear-cache-in-browsers/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_cookies">
+<svg width="60px" height="58px">
+<use xlink:href="#i-cookies" />
+</svg>
+</div>
+<h4 class="card__title">cookies</h4>
+<div class="card__data">
+<div class="enabled-status__wrapper">
+<span class="enabled-status java-status-icon "> </span> 
+<span class="cont java-status disabled">Enabled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="btn-holder">
+<a href="#" onclick="$('#tab-ext').click();
+                  $('html, body').animate({scrollTop: $('#tab-lite').offset().top}, 400);
+                  event.preventDefault();" class="button button_full-width">
+<span>Want to know more?&nbsp;</span>
+<span>Use extended version</span>
+</a>
+</div>
+</div>
+<div class="tab" style="">
+<div class="row">
+<div class="col-lg-6 col-md-12">
+<div class="row">
+<div class="col-lg-12">
+
+<div id="dns-block" class="ip-check__card card_table ip-info">
+<div class="card__icon icon icon_address">
+<svg width="60px" height="60px">
+<use xlink:href="#i-ip" />
+</svg>
+</div>
+<h4 class="card__title">IP address</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Hostname:
+</div>
+<div class="card__col card__col_value card__col_top">
+<span data-resolve="resolved"></span>
+<br />
+<a href="/checkwhois" class="button_whois" target="_blank" data-resolve="root_domain" style="display: none">Whois</a>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Reversed:
+</div>
+<div class="card__col card__col_value" data-resolve="reversed">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param no-overflow">
+Mail server:
+</div>
+<div class="card__col card__col_value" data-resolve="mx">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+IP range:
+</div>
+<div data-fetched="network" class="card__col card__col_value ip-range">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ISP:
+</div>
+<div data-fetched="isp" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Organization:
+</div>
+<div data-fetched="organization" class="card__col card__col_value">
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/digital-fingerprint/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M52.5235 29.0433C52.9487 27.4016 54.4251 26.185 56.1968 26.185C58.2991 26.185 59.9881 27.8976 59.9881 30C59.9881 32.1024 58.2755 33.815 56.1731 33.815C54.4015 33.815 52.9251 32.5984 52.4999 30.9567H47.055C46.7361 34.8898 45.0708 38.4449 42.5196 41.185L46.5826 45.248C47.1613 44.9055 47.8227 44.7047 48.5078 44.7047C49.5235 44.7047 50.4802 45.0945 51.2007 45.815C51.9094 46.5354 52.3109 47.4921 52.3109 48.5079C52.3109 49.5236 51.9212 50.4803 51.2007 51.2008C50.4802 51.9095 49.5235 52.311 48.5078 52.311C47.492 52.311 46.5353 51.9213 45.8149 51.2008C45.1062 50.4803 44.7046 49.5236 44.7046 48.5079C44.7046 47.8228 44.9054 47.1614 45.2479 46.5827L41.1613 42.4961C38.1613 45.0827 34.2637 46.6535 29.9999 46.6535C25.7361 46.6535 21.8385 45.0827 18.8385 42.4961L14.7519 46.5827C15.0944 47.1614 15.2952 47.8228 15.2952 48.5079C15.2952 49.5236 14.9054 50.4803 14.1849 51.2008C13.4645 51.9095 12.5078 52.311 11.492 52.311C10.4763 52.311 9.51959 51.9213 8.79912 51.2008C8.09046 50.4803 7.68888 49.5236 7.68888 48.5079C7.68888 47.4921 8.07865 46.5354 8.79912 45.815C9.51959 45.1063 10.4763 44.7047 11.492 44.7047C12.1771 44.7047 12.8385 44.9055 13.4172 45.248L17.4802 41.185C14.9409 38.4567 13.2755 34.9016 12.9448 30.9567H7.49991C7.07471 32.5984 5.59833 33.815 3.82668 33.815C1.72432 33.815 0.0117188 32.1024 0.0117188 30C0.0117188 27.8976 1.72432 26.185 3.82668 26.185C5.59833 26.185 7.07471 27.4016 7.49991 29.0433H12.8975C13.0038 24.9685 14.5393 21.248 17.0314 18.3543L13.4172 14.7402C12.8385 15.0827 12.1771 15.2835 11.492 15.2835C10.4763 15.2835 9.51959 14.8937 8.79912 14.1732C8.09046 13.4528 7.68888 12.4961 7.68888 11.4803C7.68888 10.4646 8.07865 9.50787 8.79912 8.7874C10.2401 7.34646 12.744 7.34646 14.1849 8.7874C14.8936 9.50787 15.2952 10.4646 15.2952 11.4803C15.2952 12.1654 15.0944 12.8268 14.7519 13.4055L18.3424 16.9961C21.1889 14.3504 24.933 12.6614 29.055 12.437V7.48819C27.4133 7.06299 26.1968 5.58661 26.1968 3.81496C26.1968 1.7126 27.9094 0 30.0117 0C32.1141 0 33.8267 1.7126 33.8267 3.81496C33.8267 5.58661 32.6101 7.06299 30.9684 7.48819V12.437C35.1023 12.6614 38.8346 14.3504 41.681 16.9961L45.2716 13.4055C44.929 12.8268 44.7283 12.1654 44.7283 11.4803C44.7283 10.4646 45.118 9.50787 45.8385 8.7874C47.2794 7.34646 49.7834 7.34646 51.2243 8.7874C51.933 9.50787 52.3346 10.4646 52.3346 11.4803C52.3346 12.4961 51.9448 13.4528 51.2243 14.1732C50.5038 14.8819 49.5472 15.2835 48.5314 15.2835C47.8464 15.2835 47.1849 15.0827 46.6062 14.7402L42.992 18.3543C45.4842 21.248 47.0078 24.9685 47.1259 29.0433H52.5235ZM48.5314 9.57874C48.0235 9.57874 47.5393 9.77953 47.1849 10.1339C46.8188 10.4882 46.6298 10.9724 46.6298 11.4803C46.6298 11.9882 46.8306 12.4724 47.1849 12.8268C47.9054 13.5472 49.1574 13.5472 49.8779 12.8268C50.2322 12.4724 50.433 11.9882 50.433 11.4803C50.433 10.9724 50.2322 10.4882 49.8779 10.1339C49.5235 9.77953 49.0393 9.57874 48.5314 9.57874ZM10.1456 12.8268C10.866 13.5472 12.118 13.5472 12.8385 12.8268C13.1928 12.4724 13.3936 11.9882 13.3936 11.4803C13.3936 10.9724 13.1928 10.4882 12.8385 10.1339C12.4842 9.77953 11.9999 9.57874 11.492 9.57874C10.9842 9.57874 10.4999 9.77953 10.1456 10.1339C9.79125 10.4882 9.59046 10.9724 9.59046 11.4803C9.59046 11.9882 9.79125 12.4724 10.1456 12.8268ZM1.9251 30C1.9251 31.0512 2.7755 31.9016 3.82668 31.9016C4.86605 31.9016 5.72825 31.0512 5.72825 30C5.72825 28.9488 4.87786 28.0984 3.82668 28.0984C2.7755 28.0984 1.9251 28.9488 1.9251 30ZM10.1456 49.8661C10.866 50.5866 12.118 50.5866 12.8385 49.8661C13.2046 49.5118 13.3936 49.0276 13.3936 48.5197C13.3936 48.0118 13.1928 47.5276 12.8385 47.1732C12.4842 46.8189 11.9999 46.6181 11.492 46.6181C10.9842 46.6181 10.4999 46.8189 10.1456 47.1732C9.79125 47.5276 9.59046 48.0118 9.59046 48.5197C9.59046 49.0276 9.79125 49.5118 10.1456 49.8661ZM48.5314 46.6181C48.0235 46.6181 47.5393 46.8189 47.1849 47.1732C46.8306 47.5276 46.6298 48.0118 46.6298 48.5197C46.6298 49.0276 46.8306 49.5118 47.1849 49.8661C47.9054 50.5866 49.1574 50.5866 49.8779 49.8661C50.2322 49.5118 50.433 49.0276 50.433 48.5197C50.433 48.0118 50.2322 47.5276 49.8779 47.1732C49.5235 46.8071 49.0393 46.6181 48.5314 46.6181ZM30.0117 1.91339C28.9605 1.91339 28.1101 2.76378 28.1101 3.81496C28.1101 4.85433 28.9605 5.71654 30.0117 5.71654C31.0629 5.71654 31.9133 4.86614 31.9133 3.81496C31.9133 2.76378 31.0629 1.91339 30.0117 1.91339ZM14.7755 29.5276C14.7755 37.9252 21.6141 44.7638 30.0117 44.7638C38.4094 44.7638 45.2479 37.9252 45.2479 29.5276C45.2479 21.1299 38.4094 14.2913 30.0117 14.2913C21.6141 14.2913 14.7755 21.1299 14.7755 29.5276ZM54.2952 30C54.2952 31.0512 55.1456 31.9016 56.1968 31.9016C57.2479 31.9016 58.0983 31.0512 58.0983 30C58.0983 28.9488 57.2479 28.0984 56.1968 28.0984C55.1456 28.0984 54.2952 28.9488 54.2952 30ZM30.0117 17.1377C23.185 17.1377 17.6338 22.6889 17.6338 29.5156C17.6338 36.3424 23.185 41.8936 30.0117 41.8936C36.8385 41.8936 42.3897 36.3424 42.3897 29.5156C42.3897 22.6889 36.8385 17.1377 30.0117 17.1377ZM30.0117 40.0038C27.933 40.0038 25.9842 39.3779 24.3543 38.3267C24.7086 35.5157 27.118 33.3306 30.0117 33.3306C32.9054 33.3306 35.3149 35.5157 35.6692 38.3267C34.0393 39.3779 32.0905 40.0038 30.0117 40.0038ZM27.1535 28.5708C27.1535 26.9999 28.4409 25.7125 30.0117 25.7125C31.5826 25.7125 32.87 26.9999 32.87 28.5708C32.87 30.1416 31.5826 31.429 30.0117 31.429C28.4409 31.429 27.1535 30.1416 27.1535 28.5708ZM37.3464 36.992C36.7322 34.8188 35.185 33.0353 33.1653 32.1141C34.1456 31.2401 34.7834 29.9881 34.7834 28.5708C34.7834 25.9487 32.6456 23.8109 30.0236 23.8109C27.4015 23.8109 25.2637 25.9487 25.2637 28.5708C25.2637 29.9881 25.9015 31.2401 26.8818 32.1141C24.8621 33.0353 23.3031 34.8188 22.7007 36.992C20.7637 35.0905 19.559 32.4448 19.559 29.5156C19.559 23.7401 24.2598 19.0393 30.0354 19.0393C35.811 19.0393 40.5117 23.7401 40.5117 29.5156C40.4881 32.4448 39.2834 35.0905 37.3464 36.992ZM30.9689 52.5117V46.6653H30.0122H29.0555V52.5117C27.4138 52.9369 26.1973 54.4133 26.1973 56.185C26.1973 58.2873 27.9099 59.9999 30.0122 59.9999C32.1146 59.9999 33.8272 58.2873 33.8272 56.185C33.8272 54.4133 32.6107 52.9369 30.9689 52.5117ZM30.0122 58.0865C28.9611 58.0865 28.1107 57.2361 28.1107 56.185C28.1107 55.1338 28.9611 54.2834 30.0122 54.2834C31.0634 54.2834 31.9138 55.1456 31.9138 56.185C31.9138 57.2361 31.0634 58.0865 30.0122 58.0865Z" fill="#5CA5C3" />
+</svg>
+</div>
+<h4 class="card__title">social networks</h4>
+<div class="card__data notLoggedIn">We could not find that you are logged in to social networks</div>
+<div class="card__data loggedIn"></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/real-dns-how-to-hide-it-and-why-it-is-visible/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M53.4834 4.69666H6.51663C2.92333 4.69666 0 7.61998 0 11.2133V48.7867C0 52.38 2.92333 55.3033 6.51663 55.3033H53.4834C57.0767 55.3033 60 52.38 60 48.7867V11.2133C60 7.61998 57.0767 4.69666 53.4834 4.69666ZM58.2387 48.7867C58.2387 51.4088 56.1055 53.5421 53.4834 53.5421H6.51663C3.89448 53.5421 1.76125 51.4088 1.76125 48.7867V11.2133C1.76125 8.59114 3.89448 6.45791 6.51663 6.45791H53.4834C56.1055 6.45791 58.2387 8.59114 58.2387 11.2133V48.7867Z" fill="#65AAC7" />
+<path d="M55.362 14.09H4.63795C4.15161 14.09 3.75732 14.4841 3.75732 14.9706C3.75732 15.457 4.15161 15.8512 4.63795 15.8512H55.362C55.8484 15.8512 56.2426 15.457 56.2426 14.9706C56.2426 14.4841 55.8484 14.09 55.362 14.09Z" fill="#65AAC7" />
+<path d="M6.51637 11.1546C6.74768 11.1546 6.97547 11.0606 7.13868 10.8962C7.30306 10.733 7.39699 10.5064 7.39699 10.2739C7.39699 10.0425 7.30306 9.81484 7.13868 9.65163C6.97547 9.48724 6.74768 9.39331 6.51637 9.39331C6.28388 9.39331 6.05727 9.48724 5.89406 9.65163C5.72968 9.81484 5.63574 10.0425 5.63574 10.2739C5.63574 10.5063 5.72968 10.733 5.89406 10.8962C6.05727 11.0606 6.28388 11.1546 6.51637 11.1546Z" fill="#65AAC7" />
+<path d="M14.0315 11.1546C14.2628 11.1546 14.4906 11.0606 14.6538 10.8962C14.8182 10.733 14.9121 10.5064 14.9121 10.2739C14.9121 10.0425 14.8182 9.81484 14.6538 9.65163C14.4906 9.48724 14.2628 9.39331 14.0315 9.39331C13.799 9.39331 13.5724 9.48724 13.4092 9.65163C13.2448 9.81484 13.1509 10.0425 13.1509 10.2739C13.1509 10.5063 13.2448 10.733 13.4092 10.8962C13.5724 11.0606 13.799 11.1546 14.0315 11.1546Z" fill="#65AAC7" />
+<path d="M10.2737 11.1546C10.5062 11.1546 10.7328 11.0606 10.896 10.8962C11.0604 10.733 11.1543 10.5064 11.1543 10.2739C11.1543 10.0425 11.0604 9.81484 10.896 9.65163C10.7328 9.48724 10.5062 9.39331 10.2737 9.39331C10.0424 9.39331 9.81459 9.48724 9.65138 9.65163C9.487 9.81484 9.39307 10.0425 9.39307 10.2739C9.39307 10.5063 9.487 10.733 9.65138 10.8962C9.81459 11.0606 10.0424 11.1546 10.2737 11.1546Z" fill="#65AAC7" />
+<path d="M13 39.7398H16.8538C17.0882 39.7398 17.852 39.7398 18.4335 39.6618C21.3239 39.2802 22.8255 36.6871 22.8255 33.4957C22.8255 30.3129 21.3239 27.7112 18.4335 27.3296C17.8433 27.2515 17.0968 27.2515 16.8538 27.2515H13V39.7398ZM14.5884 38.2655V28.7259H16.8538C17.2704 28.7259 17.8954 28.7432 18.3033 28.8213C20.3257 29.1855 21.185 31.1368 21.185 33.4957C21.185 35.8112 20.3517 37.7972 18.3033 38.1701C17.8954 38.2482 17.2878 38.2655 16.8538 38.2655H14.5884Z" fill="#65AAC7" />
+<path d="M24.816 39.7398H26.3783V29.9747L32.8968 39.7398H34.4592V27.2515H32.8968V37.008L26.3783 27.2515H24.816V39.7398Z" fill="#65AAC7" />
+<path d="M41.3216 40C43.9169 40 46 38.6731 46 36.2535C46 33.8513 43.9429 33.2355 42.8579 32.932L40.4797 32.2469C39.5509 31.9867 38.3965 31.5878 38.3965 30.4343C38.3965 29.2809 39.5857 28.4483 41.122 28.4657C42.7104 28.483 44.021 29.4196 44.2814 30.9373L45.9219 30.6511C45.4619 28.379 43.6565 27.0174 41.1393 27C38.6483 26.9914 36.7647 28.2922 36.7647 30.5037C36.7647 32.3509 38.0841 33.1575 39.4728 33.5651L42.6583 34.5104C43.5523 34.7792 44.4029 35.2475 44.4029 36.3402C44.4029 37.7018 43.0749 38.5344 41.3997 38.5344C39.6551 38.5344 38.275 37.6064 37.8758 36.028L36.2787 36.2795C36.6953 38.5777 38.6656 40 41.3216 40Z" fill="#65AAC7" />
+</svg>
+</div>
+<h4 class="card__title">DNS leak test</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/dns-leak-test">Go</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.21372 0.180883C1.11373 0.561764 0.332944 1.43035 0.0954236 2.53742C0.00967967 2.93712 -0.0152879 9.51924 0.0085846 25.4802L0.0419842 47.8624L0.272606 48.3605C0.609668 49.0887 1.12402 49.6189 1.82892 49.9649L2.45114 50.2703L9.01815 50.3009C15.9156 50.3332 16.0275 50.3263 16.3629 49.8478C16.5485 49.5828 16.5728 48.9812 16.41 48.6772C16.1211 48.1378 16.0988 48.136 9.35007 48.136C2.50622 48.136 2.5843 48.1427 2.30823 47.5371C2.20847 47.3183 2.17737 42.9358 2.17737 29.0869V10.9236H28.021H53.8646V29.0975C53.8646 48.8611 53.9009 47.7159 53.2654 48.0052C53.0665 48.0959 52.1125 48.136 50.1632 48.136H47.3482L41.7701 42.5602L36.192 36.9842L36.6446 36.0206C40.158 28.5389 37.0167 19.4881 29.5967 15.7145C28.2226 15.0155 27.132 14.6312 25.5685 14.2951C23.981 13.9538 21.1064 13.9546 19.5136 14.297C13.267 15.6396 8.64309 20.2614 7.30547 26.4994C6.98822 27.9787 6.96096 30.8428 7.25006 32.3207C7.87534 35.5171 9.29017 38.1736 11.5938 40.4758C13.844 42.725 16.3202 44.0766 19.456 44.7675C20.8937 45.0843 23.9966 45.1117 25.3928 44.8201C26.6234 44.563 28.1925 44.0475 29.201 43.5691L30.0172 43.1818L32.4957 45.6589L34.9741 48.136H29.9662H24.9583L24.6032 48.4532C24.3093 48.7157 24.2479 48.8496 24.2479 49.2305C24.2479 49.6114 24.3093 49.7453 24.6032 50.0078L24.9583 50.325H31.0565H37.1547L39.6784 52.8232C42.3236 55.4416 42.6247 55.6673 43.8143 55.9223C45.1715 56.2132 46.8918 55.6656 47.8356 54.6422C48.7629 53.6367 49.2407 52.0036 48.9604 50.7977L48.8539 50.34L51.2224 50.3052C53.5597 50.2707 53.5991 50.2662 54.2131 49.9649C54.918 49.6189 55.4323 49.0887 55.7694 48.3605L56 47.8624V25.1519V2.44132L55.6945 1.81944C55.3483 1.11492 54.8178 0.600837 54.0892 0.263954L53.5909 0.0334562L28.1853 0.00915864C4.02015 -0.013935 2.75206 -0.00550742 2.21372 0.180883ZM53.2654 2.29849C53.8255 2.55351 53.8646 2.78751 53.8646 5.88347V8.7346H28.021H2.17737L2.1812 5.86158C2.18536 2.79331 2.21416 2.61009 2.73695 2.32049C3.10292 2.11768 52.821 2.09612 53.2654 2.29849ZM6.46018 4.50946C5.51087 5.03536 5.90805 6.54564 6.99567 6.54564C7.55054 6.54564 8.09074 6.01098 8.09074 5.46177C8.09074 4.64003 7.18216 4.10942 6.46018 4.50946ZM11.2785 4.50946C10.3292 5.03536 10.7264 6.54564 11.814 6.54564C12.3688 6.54564 12.909 6.01098 12.909 5.46177C12.909 4.64003 12.0005 4.10942 11.2785 4.50946ZM16.0968 4.50946C15.1475 5.03536 15.5447 6.54564 16.6323 6.54564C17.1871 6.54564 17.7273 6.01098 17.7273 5.46177C17.7273 4.64003 16.8188 4.10942 16.0968 4.50946ZM24.8573 4.50946C24.1234 4.91595 24.1475 6.07358 24.897 6.41484C25.114 6.51368 28.124 6.54564 37.2302 6.54564C47.4418 6.54564 49.3222 6.52188 49.578 6.38967C50.3067 6.01295 50.3067 4.88935 49.578 4.51263C49.1443 4.28848 25.2617 4.28531 24.8573 4.50946ZM25.1738 16.4457C30.7347 17.6224 34.9105 22.0116 35.7472 27.5593C36.7077 33.9268 32.9076 40.1303 26.799 42.1673C22.7305 43.524 18.2939 42.8729 14.8071 40.4073C13.848 39.7292 12.3408 38.2228 11.6623 37.2642C8.64244 32.998 8.38148 27.3362 10.998 22.8534C12.9709 19.4736 16.4999 16.9993 20.1912 16.408C20.6129 16.3405 21.081 16.2642 21.2316 16.2384C21.7944 16.1421 24.3821 16.2781 25.1738 16.4457ZM20.7333 18.5186C16.1642 19.3919 12.7965 22.5391 11.6799 26.9789C11.3169 28.4224 11.3402 30.815 11.7316 32.279C13.2454 37.9412 18.6311 41.4631 24.3525 40.5323C30.7894 39.4851 34.9688 33.0963 33.3483 26.7806C32.3348 22.8304 29.2711 19.7577 25.3303 18.7391C23.9889 18.3922 21.9146 18.2928 20.7333 18.5186ZM24.3595 20.7627C26.101 21.1219 27.7156 22.0147 28.9641 23.3089C29.7747 24.1492 30.2255 24.8055 30.7051 25.8441C31.3131 27.1609 31.4598 27.8754 31.4621 29.5298C31.4645 31.3021 31.2447 32.2181 30.451 33.7436C30.0357 34.5415 29.7304 34.9374 28.8428 35.8289C27.9348 36.7407 27.5773 37.0162 26.7542 37.4381C25.2089 38.2302 24.3124 38.4439 22.5456 38.4415C20.892 38.4392 20.1753 38.2925 18.8638 37.6875C16.954 36.8066 15.4599 35.3692 14.5672 33.5539C13.8913 32.1794 13.6903 31.4414 13.6051 30.0223C13.3013 24.9657 17.3859 20.6194 22.4909 20.567C22.9727 20.5619 23.8136 20.65 24.3595 20.7627ZM35.4951 42.4709L33.936 44.0291L32.9061 43.004L31.8762 41.9788L32.4946 41.4644C33.2397 40.8447 34.9199 39.0678 34.9199 38.8996C34.9199 38.8336 35.4001 39.2595 35.9871 39.8461L37.0541 40.9127L35.4951 42.4709ZM42.6604 46.5217C46.7736 50.647 46.8535 50.7443 46.8555 51.6257C46.8592 53.189 45.1354 54.2882 43.7425 53.6109C43.4571 53.4721 41.9019 51.9987 39.4107 49.507L35.5243 45.6196L37.0549 44.0869C37.8967 43.2439 38.6123 42.5542 38.6451 42.5542C38.6779 42.5542 40.4848 44.3396 42.6604 46.5217ZM19.6754 48.4532C19.3814 48.7157 19.3201 48.8496 19.3201 49.2305C19.3201 49.6114 19.3814 49.7453 19.6754 50.0078C20.0716 50.3617 20.429 50.4058 20.9052 50.1597C21.291 49.9603 21.4506 49.6884 21.4506 49.2305C21.4506 48.7726 21.291 48.5007 20.9052 48.3013C20.429 48.0553 20.0716 48.0994 19.6754 48.4532Z" fill="#5CA5C3" />
+</svg>
+</div>
+<h4 class="card__title">Port scanner</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/port-scanner-online">Go</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="ip-check__card">
+<a href="/blog/what-is-evercookie-all-about/" target="_blank" class="card__info-link"></a>
+<div class="card__icon icon icon_language">
+<svg width="60px" height="58px">
+<use xlink:href="#i-cookies" />
+</svg>
+</div>
+<h4 class="card__title">Evercookie test</h4>
+<div class="card__data">
+<a class="dnsleak-button-start" href="/evercookie">Go</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table">
+<div class="card__icon icon icon_interactive-check">
+<svg width="60px" height="54px">
+<use xlink:href="#i-icheck" />
+</svg>
+</div>
+<h4 class="card__title">Interactive detection</h4>
+
+<div id="flash_container" style="height: 1px; width: 1px;"> </div>
+<div class="card__data location-info">
+<div class="card__row">
+<div class="card__col card__col_param">
+<strong style="color: #000; font-weight: 700;">IP address</strong>
+</div>
+<div style="display: flex;align-items: center;flex-wrap: wrap;" class="card__col card__col_value">
+<span style="margin-right: 12px" onclick="$('#ip-formats').toggle();return false">110.137.102.250</span>
+<span class="country-holder">
+<span class="ico-holder no-back">
+<img alt="iso" loading="lazy" class="flag flag_sm" src="/images/flags/id.svg">
+</span>
+<span style="white-space:nowrap" data-fetched="country_name" class="cont overdots">Indonesia</span>
+</span>
+<span id="ip-formats" style="display: none">
+<br>
+<span class="ico-holder no-back"> </span>
+<span>bin: 01101110 10001001 01100110 11111010 </span>
+<br>
+<span class="ico-holder no-back"> </span>
+<span>dec: 1854498554</span>
+<br>
+<span class="ico-holder no-back"> </span>
+<span>oct: 0156 0211 0146 0372 </span>
+<br>
+<span class="ico-holder no-back"> </span>
+<span>hex: 6E 89 66 FA </span>
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Flash
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="ip_flash_ip"><span class="disabled">N/A</span></span>
+<div class="country-holder">
+<span class="ico-holder no-back" id="ip_flash_flag"> </span>
+<span class="cont" id="ip_flash_country"></span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+WebRTC
+</div>
+<div class="card__col card__col_value">
+<span class="ip_webrtc"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java (TCP)
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="ip_java_tcp_ip"><span class="disabled">N/A</span></span>
+<div class="country-holder">
+<span class="ico-holder no-back" id="ip_java_tcp_flag"> </span>
+<span class="cont" id="ip_java_tcp_country"></span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java (UDP)
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="ip_java_udp_ip"><span class="disabled">N/A</span></span>
+<div class="country-holder">
+<span class="ico-holder no-back" id="ip_java_udp_flag"> </span>
+<span class="cont" id="ip_java_udp_country"></span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java (system)
+</div>
+<div class="card__col card__col_value">
+<span id="ip_java_system"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__subheading">DNS</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Browser
+</div>
+<div class="card__col card__col_value dns-highlight">
+<div class="dns_br">
+<span class="skel">
+<span class="country-holder">
+<span class="ico-holder no-back dns_br_flag"> </span>
+<span class="cont dns_br_country"></span>
+</span>
+<span class="underlined cont dns_br_ip"><span class="disabled">N/A</span></span>
+</span>
+<div class="result"></div>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Flash
+</div>
+<div class="card__col card__col_value">
+<span class="dns_flash">
+<span class="skel">
+<span class="country-holder">
+<span class="ico-holder no-back" id="dns_flash_flag"> </span>
+<span class="cont" id="dns_flash_country"></span>
+</span>
+<span class="cont" id="dns_flash_ip"><span class="disabled">N/A</span></span>
+</span>
+<span class="result"></span>
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java (request)
+</div>
+<div class="card__col card__col_value">
+<span class="dns_java">
+<span class="skel">
+<span class="country-holder">
+<span class="ico-holder no-back" id="dns_java_resolve_flag"> </span>
+<span class="cont" id="dns_java_resolve_country"></span>
+</span>
+<span class="cont" id="dns_java_resolve_ip"><span class="disabled">N/A</span></span>
+</span>
+<span class="result"></span>
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java (system)
+</div>
+<div class="card__col card__col_value">
+<span id="dns_java_system"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__subheading">OS</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Headers:
+</div>
+<div class="card__col card__col_value">
+<span class="cont">
+Unknown
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param no-overflow">
+JavaScript:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="os_js"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Flash:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="os_flash"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java:
+</div>
+<div class="card__col card__col_value">
+<span id="os_java"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+TCP/IP:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="os_mtu"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div id="block-ports" class="card__subheading">Ports</div>
+<div class="card__row">
+<div class="card__col card__col_param no-overflow">
+Open ports:
+</div>
+<div class="card__col card__col_value card__col_top card__col_bottom">
+<span id="proxy_ports"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__subheading">Language</div>
+ <div class="card__row">
+<div class="card__col card__col_param">
+Headers:
+</div>
+<div class="card__col card__col_value">
+<span class="cont">
+(
+<span class="js_language">| <span class="disabled">N/A</span></span>)
+</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+JavaScript:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="lang_js_ext"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Flash:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="lang_flash"><span class="disabled">N/A</span></span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java:
+</div>
+<div class="card__col card__col_value">
+<span class="cont" id="lang_java"><span class="disabled">N/A</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div id="browser-screen" class="ip-check__card card_table">
+<div class="card__icon icon icon_screen">
+<svg width="60px" height="58px">
+<use xlink:href="#i-display" />
+</svg>
+</div>
+<h4 class="card__title">Screen</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+colorDepth:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled colorDepth-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+pixelDepth:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled pixelDepth-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+height:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled height-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+width:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled width-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+availHeight:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled availHeight-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+availWidth:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled availWidth-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+top:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled top-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+left:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled left-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+availTop:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled availTop-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+availLeft:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled availLeft-data">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+window size:
+</div>
+<div class="card__col card__col_value">
+<span class="cont disabled window-size-data">N/A</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table">
+<div class="card__icon icon icon_headers">
+<svg width="60px" height="55px">
+<use xlink:href="#i-http" />
+</svg>
+</div>
+<h4 class="card__title">HTTP headers</h4>
+<div class="card__data card__data_with-overflow">
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_ACCEPT_ENCODING
+</div>
+ <div class="card__col card__col_value">
+gzip
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_CDN_LOOP
+</div>
+<div class="card__col card__col_value">
+cloudflare
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_CONNECTION
+</div>
+<div class="card__col card__col_value">
+close
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_HOST
+</div>
+<div class="card__col card__col_value">
+whoer.net
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_HTTPS
+</div>
+<div class="card__col card__col_value">
+ON
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+HTTP_USER_AGENT
+</div>
+<div class="card__col card__col_value">
+Go-http-client/2.0
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+QUERY_STRING
+</div>
+<div class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+REMOTE_ADDR
+</div>
+<div class="card__col card__col_value">
+110.137.102.250
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+REMOTE_PORT
+</div>
+<div class="card__col card__col_value">
+41552
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+REQUEST_METHOD
+</div>
+<div class="card__col card__col_value">
+GET
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+REQUEST_URI
+</div>
+<div class="card__col card__col_value">
+/
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+SERVER_PROTOCOL
+</div>
+<div class="card__col card__col_value">
+HTTP/1.1
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+<div class="row">
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table ip-check__card_scripts">
+<div class="card__icon icon icon_scripts">
+<svg width="60px" height="58px">
+<use xlink:href="#i-scripts" />
+</svg>
+</div>
+<h4 class="card__title">Scripts</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+JavaScript:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont js-status disabled"></span><span class="cont js-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Flash:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont flash-status disabled"></span><span class="cont flash-status disabled">Disabled</span>
+<span id="version_flash"></span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Java:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont java-status disabled"></span><span class="cont java-status disabled">Disabled</span>
+<span id="version_java"></span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ActiveX:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont activex-status disabled"></span><span class="cont activex-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+WebRTC:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont webrtc-status disabled"></span><span class="cont webrtc-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+VBScript:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont vbscript-status disabled"></span><span class="cont vbscript-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+AdBlock:
+</div>
+<div class="card__col card__col_value">
+<div class="enabled-status__wrapper">
+<span class="enabled-status cont adblock-status disabled"></span><span class="cont adblock-status disabled">Disabled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div class="ip-check__card ip-info location-info card_table">
+<div class="card__icon icon icon_location">
+<svg width="60px" height="60px">
+<use xlink:href="#i-position" />
+</svg>
+</div>
+<h4 class="card__title">Location</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Country:
+</div>
+<div class="card__col card__col_value">
+<div style="display:flex;align-items: center;">
+<img class="flag flag_sm" loading="lazy" data-fetched="country_code" alt="iso" src="/images/flags/-.png">
+<span data-fetched="country_name" class="cont">
+</span>
+<span class="location-info">
+&nbsp;(<span data-fetched="country_code"></span>)
+</span>
+</div>
+</div>
+</div>
+
+
+<div class="card__row">
+<div class="card__col card__col_param">
+Continent:
+</div>
+<div data-fetched="continent_name" class="card__col card__col_value">
+</div>
+</div>
+
+<div class="card__row">
+<div class="card__col card__col_param">
+Region:
+</div>
+<div data-fetched="subdivision1_name" class="card__col card__col_value">
+</div>
+</div>
+
+<div class="card__row">
+<div class="card__col card__col_param">
+City:
+</div>
+<div data-fetched="city_name" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+ZIP:
+</div>
+<div data-fetched="postal_code" class="card__col card__col_value">
+</div>
+</div>
+
+<div class="card__row">
+<div class="card__col card__col_param">
+AS Organization:
+</div>
+<div data-fetched="as_organization" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+AS Number:
+</div>
+<div data-fetched="as_number" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Metro code:
+</div>
+<div data-fetched="metro_code" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Zone:
+</div>
+<div data-fetched="time_zone" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Latitude:
+</div>
+<div data-fetched="latitude" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Longitude:
+</div>
+<div data-fetched="longitude" class="card__col card__col_value">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Map:
+</div>
+<div class="card__col card__col_value">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwepk_kF5VfcBlt47F2kK7JXHp0Ep3yA&language=en"></script>
+<script src="/js/init_map.js?v=1"></script>
+<span class="cont">
+<script>
+                                    $(document).ready(function() {
+                                    $('#gmap_show').click(function(e) {
+                                      $('#gmap').toggle();
+                                      if ($(this).html() == 'Show') {
+                                        $(this).html('Hide');
+                                      } else {
+                                        $(this).html('Show');
+                                      }
+                                      e.preventDefault();
+                                      return false;
+                                      });
+                                    });
+                                  </script>
+<a id="gmap_show" class="link" href="#">Show</a>
+</span>
+</div>
+</div>
+<div>
+<div id="gmap" style="margin-top: 20px;display: none"><img alt="preloader" loading="lazy" data-src="/images/preloader.svg" src="/images/preloader.svg"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div class="ip-check__card time-info location-info card_table">
+<div class="card__icon icon icon_time">
+<svg width="60px" height="60px">
+<use xlink:href="#i-time" />
+</svg>
+</div>
+<h4 class="card__title">Time</h4>
+<div class="card__data">
+<div class="card__row">
+<div class="card__col card__col_param">
+Zone:
+</div>
+<div data-fetched="time_zone" class="card__col card__col_value matched">
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Local:
+</div>
+<div class="card__col card__col_value matched">
+<span data-fetched="local_time" class="time">Mon Apr 25 2022 16:38:08 GMT+0700 (WIB)</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+System:
+</div>
+<div class="card__col card__col_value matched">
+<span class="cont js-time disabled">N/A</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+UTC:
+</div>
+<div class="card__col card__col_value">
+<span data-fetched="utc_time" class="time">Mon Apr 25 2022 09:38:08 UTC</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+GMT:
+</div>
+<div class="card__col card__col_value">
+<span>Mon Apr 25 2022 09:38:08 GMT</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param no-overflow">
+DST:
+</div>
+<div class="card__col card__col_value">
+<span>No</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Sunrise:
+</div>
+<div class="card__col card__col_value">
+<span>05:30:08</span>
+</div>
+</div>
+<div class="card__row">
+<div class="card__col card__col_param">
+Sunset:
+</div>
+<div class="card__col card__col_value">
+<span>17:22:38</span>
+</div>
+</div>
+</div>
+</div>
+ </div>
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table">
+<div class="card__icon icon icon_plugins">
+<svg width="60px" height="60px">
+<use xlink:href="#i-plugins" />
+</svg>
+</div>
+<h4 class="card__title">Plugins</h4>
+<div class="card__data card__data_with-overflow" id="plugins">
+<span class="disabled">N/A</span>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+
+<div class="ip-check__card card_table">
+<div class="card__icon icon icon_navigator">
+<svg width="60px" height="60px">
+<use xlink:href="#i-navigator" />
+</svg>
+</div>
+<h4 class="card__title">Navigator</h4>
+<div class="card__data card__data_with-overflow" id="browser-navigator">
+<span class="disabled">N/A</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="btn-holder">
+<a class="button button_full-width" href="#" onclick="$('#tab-lite').click();
+                     $('html, body').animate({scrollTop: $('#tab-ext').offset().top}, 400);
+                     event.preventDefault();">
+<span>Too much information?&nbsp;</span>
+<span>Use lite version</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section_white section_about">
+<div class="section__wrapper">
+<div class="section__content section__content_text-right container section_about-content">
+<div class="img__wrapper"><img alt="MrWhoer" class="about__img" loading="lazy" data-src="/images/img-02.png" src="/images/img-02.png" width="297" height="439" /></div>
+<div class="logo__wrapper">
+<div class="section__logo"></div>
+<div>
+<h2 class="section__heading">
+— is a service aimed at verifying the information your computer sends to the web.
+</h2>
+<p>It is perfect for checking proxy or socks servers, providing information about your VPN server and scanning black lists for your IP address.
+The service shows whether your computer enables Flash and Java, as well as its language and system settings, OS and web-browser, define the DNS etc.</p>
+<p>The main and the most powerful side of our service is the interactive
+checking by Java, Flash and WebRTC, allowing to detect the actual system settings and its weaknesses, which can be used by third-party resources to find out the information about your computer.</p>
+<p>For your convenience, we have set up two versions of our website: light and extended (for displaying additional information).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script src="/js/socialmedia-leak.js?1638277732" async></script>
+<script>
+      let notNetwork = document.querySelector('#notLoggedIn');
+      let inNetwork = document.querySelector('#loggedIn');
+      let inNetworkClass = document.querySelector('.loggedIn');
+      let notNetworkClass = document.querySelector('.notLoggedIn');
+
+      function renderExtednsBlock(img, alt) {
+
+        if (notNetworkClass) {
+          notNetworkClass.remove();
+        }
+        let icon = document.createElement('img');
+        icon.src =  img;
+        icon.alt = alt;
+        icon.setAttribute('style', 'width: 24px; height: 20px; margin-right: 12px;')
+        inNetworkClass.appendChild(icon);
+      }
+
+  function displayResult(network, loggedIn) {
+      let icon = document.createElement('img');
+      icon.src =  network.icon;
+      icon.alt = network.name;
+      icon.setAttribute('style', 'width: 24px; height: 20px; margin-right: 12px;')
+
+      renderExtednsBlock(network.icon, network.name);
+      inNetwork.appendChild(icon);
+      if (notNetwork) {
+        notNetwork.remove();
+      }
+  }
+    window.onload = function () {leakSocialMediaAccounts(displayResult);};
+
+</script>
+<script>
+const ipDsblYes = 'Yes';
+const ipDsblNo = 'No';
+
+const tariffBlock = document.querySelector('.section__title--tariff');
+function showAnonimityDescription() {
+  $('#enoughInfo').show();
+  $('#moreInfo').hide();
+  $('.section_alevel').addClass('open');
+  $('html, body').animate({scrollTop: $('.alevel__list').offset().top - 93});
+}
+function hideAnonimityDescription() {
+  $('#moreInfo').show();
+  $('#enoughInfo').hide();
+  $('.section_alevel').removeClass('open');
+}
+var pub = {
+    ip_plain: {ip: "110.137.102.250", iso: "id"},
+    ip_flash: {},
+    ip_java_udp: {},
+    ip_java_tcp: {},
+
+    dns : [],
+    ips : [],
+
+    dns_br : {}, //?
+    dns_flash : {}, //?
+    dns_java_resolve : {},//?
+    dns_java_system : {}, //?
+
+    os_java : {},
+    os_flash : {},
+    os_javascript : {},
+    os_tcpip : {},
+
+    lang_br : '',
+    lang_js : [],
+    lang_java : '',
+    lang_flash : '',
+
+    time_mismatch: 0,
+    ua_mismatch: 0,
+    datacenter_ip: 0,
+
+    activex: 0,
+    webrtc: 0,
+    flash: 0,
+    java: 0,
+    firebug: 0,
+    vbscript: 0,
+    adblock: 0,
+
+    langs: [ ],
+    track : 1,
+    anonymizer : 0,
+    tor : 0,
+    vpn_provider : 0,
+    proxy : "0",
+    proxy_ports : 0,
+    dsbl : 0,
+};
+
+var scores = {
+  // primary  [%,
+  "tor" : [30, 'primary'],
+  "anonymizer" : [30, 'primary'],
+  "proxy" : [30, 'primary'],
+  "ua_mismatch": [20, 'primary'],
+  "langs": [20, 'primary'],
+  "dns" : [30, 'primary'],
+  "ips" : [40, 'primary'],
+  // secondary
+  "time_mismatch": [10, 'secondary'],
+  "dsbl" : [10, 'secondary'],
+  "flash": [10, 'secondary'],
+  "java": [10, 'secondary'],
+  "activex": [10, 'secondary'],
+  //"webrtc": [10, 'secondary'],
+  "webrtc_local_net": [10, 'secondary'],
+  "proxy_ports": [10, 'secondary'],
+  "track": [0, 'secondary'],
+  "vpn_provider": [0, 'secondary']
+  // TODO: pdf?
+  // vbscript?
+  // devtools?
+};
+
+var score_res = [
+    [100, 101, "score-best", "Your anonymity measures are safe or you don&#39;t use them"], // green
+    [90, 100, "score-good", "Minor remarks regarding your anonymity and security"], // light-green
+    [80, 90, "score-not-bad", "Security remarks, fixing recommended"], // yellow
+    [70, 80, "score-medium", "Moderate security and anonymity remarks"], // yellow
+    [60, 70, "score-bad", "Serious security and anonymity fails"], // orange
+    [50, 60, "score-very-bad", "Your efforts to conceal yourself detected, your anonymity questioned"], // pink
+    [30, 50, "score-nightmare", "Too much is known about you!"], // red
+    [

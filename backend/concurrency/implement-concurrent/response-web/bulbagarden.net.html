@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulbagarden : The original Pok&#xE9;mon community</title>
+<meta content="Your ultimate Pok&#xE9;mon portal featuring the latest news, forums, community-driven Pok&#xE9;mon encyclopedia and much more." name="description" />
+<link href="https://ahost2.bulbagarden.net/content/bulbagarden/styles/index.css?v=23" rel="stylesheet" />
+<link rel="icon" sizes="48x48" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon48.png" />
+<link rel="icon" sizes="72x72" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon72.png" />
+<link rel="icon" sizes="96x96" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon96.png" />
+<link rel="icon" sizes="144x144" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon144.png" />
+<link rel="icon" sizes="168x168" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon168.png" />
+<link rel="icon" sizes="192x192" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/appicon192.png" />
+<link id="apple-touch-icon" rel="apple-touch-icon" href="https://ahost2.bulbagarden.net/content/bulbagarden/icons/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+<script src="https://havamantis-api.azurewebsites.net/peel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ahost2.bulbagarden.net/content/bulbagarden/scripts/main.js?v=23"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-326511-18"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-326511-18');
+    </script>
+<script src="https://mantis.bulbagarden.net/main.js"></script>
+</head>
+<body>
+<header>
+<div class="bg-global-menu ">
+<a href="/" class="bg-global-nav-logo"></a>
+<nav class="bg-global-nav">
+<ul class="bg-global-nav-primary">
+<li class="bg-global-nav-primary-item">
+<a href="/" class="bg-global-nav-primary-link selected">News</a>
+</li>
+<li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+<a href="https://bulbapedia.bulbagarden.net/" class="bg-global-nav-primary-link bg-global-nav-primary-toggle ">Bulbapedia</a>
+<ul class="bg-global-nav-primary-children">
+<li class="bg-global-nav-secondary row">
+<ul>
+<li class="bg-global-nav-secondary-item bulbapedia">
+<a href="https://bulbapedia.bulbagarden.net/" class="bg-global-nav-secondary-link">Bulbapedia main page</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Pokémon</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number" class="bg-global-nav-secondary-link">National Pokédex</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_name" class="bg-global-nav-secondary-link">By Name</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Legendary_Pok%C3%A9mon" class="bg-global-nav-secondary-link">Legendary</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Mythical_Pok%C3%A9mon" class="bg-global-nav-secondary-link">Mythical</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Event_Pok%C3%A9mon" class="bg-global-nav-secondary-link">Event Pokémon</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Ultra_Beast" class="bg-global-nav-secondary-link">Ultra Beast</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Gigantamax" class="bg-global-nav-secondary-link">Gigantamax</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon" class="bg-global-nav-secondary-link">more...</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Mechanics</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Type" class="bg-global-nav-secondary-link">Types</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Type#Type_chart" class="bg-global-nav-secondary-link">Type Chart</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Abilities" class="bg-global-nav-secondary-link">Abilities</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Nature#List_of_Natures" class="bg-global-nav-secondary-link">Nature</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Status_condition" class="bg-global-nav-secondary-link">Status Conditions</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Moves" class="bg-global-nav-secondary-link">Moves</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Items" class="bg-global-nav-secondary-link">Items</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Game_mechanics" class="bg-global-nav-secondary-link">more...</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Games</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Walkthroughs" class="bg-global-nav-secondary-link">Walkthroughs</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_Sword_and_Shield" class="bg-global-nav-secondary-link">Sword & Shield</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_Sun_and_Moon" class="bg-global-nav-secondary-link">Sun & Moon</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Spin-off_Pok%C3%A9mon_games" class="bg-global-nav-secondary-link">Spin Offs</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon:_Let%27s_Go,_Pikachu!_and_Let%27s_Go,_Eevee!" class="bg-global-nav-secondary-link">Let's GO</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_GO" class="bg-global-nav-secondary-link">GO</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Games" class="bg-global-nav-secondary-link">all games...</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">TCG</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Trading_Card_Game" class="bg-global-nav-secondary-link">About</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Trading_Card_Game#How_to_play" class="bg-global-nav-secondary-link">How to Play</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Rotation_(TCG)" class="bg-global-nav-secondary-link">Rotation</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Promotional_cards_(TCG)" class="bg-global-nav-secondary-link">Promotional Cards</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Vivid_Voltage_(TCG)" class="bg-global-nav-secondary-link">Vivid Voltage</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Darkness_Ablaze_(TCG)" class="bg-global-nav-secondary-link">Darkness Ablaze</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_Trading_Card_Game_expansions" class="bg-global-nav-secondary-link">all expansions...</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Anime & Manga</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Ash_Ketchum" class="bg-global-nav-secondary-link">Ash Ketchum</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Anime" class="bg-global-nav-secondary-link">Anime</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_anime_characters" class="bg-global-nav-secondary-link">Anime Characters</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_Journeys:_The_Series_episodes" class="bg-global-nav-secondary-link">Journeys Episodes</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_movie#List_of_movies" class="bg-global-nav-secondary-link">Movies</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Manga" class="bg-global-nav-secondary-link">Manga</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-primary-item">
+<a href="https://forums.bulbagarden.net/" class="bg-global-nav-primary-link ">Forums</a>
+</li>
+<li class="bg-global-nav-primary-item">
+<a href="https://discord.gg/bulbagarden" class="bg-global-nav-primary-link">Discord</a>
+</li>
+<li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+<a href="#bulbapedia" class="bg-global-nav-primary-link bg-global-nav-primary-toggle">More</a>
+<ul class="bg-global-nav-primary-children">
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Social</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://www.youtube.com/user/Bulbagarden" target="_blank" rel="noopener" class="bg-global-nav-secondary-link">Youtube</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://twitter.com/Bulbagarden" target="_blank" rel="noopener" class="bg-global-nav-secondary-link">Twitter</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://www.facebook.com/Bulbagarden/" target="_blank" rel="noopener" class="bg-global-nav-secondary-link">Facebook</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Apps</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://play.google.com/store/apps/details?id=org.bulbagarden.alpha&hl=en&gl=US" target="_blank" rel="noopener" class="bg-global-nav-secondary-link">Android</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://apps.apple.com/us/app/bulbapedia-wiki-for-pok%C3%A9mon/id1242159382" target="_blank" rel="noopener" class="bg-global-nav-secondary-link">iOS</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Other</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbahandbook.bulbagarden.net" class="bg-global-nav-secondary-link">Handbook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="bg-global-nav-primary utilities">
+<li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+<a href="#bulbapedia" class="bg-global-nav-primary-link bg-global-nav-primary-toggle">Editors</a>
+<ul class="bg-global-nav-primary-children">
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Bulbapedia</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Editor%27s_Hub" class="bg-global-nav-secondary-link">Editor's hub</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://www.mediawiki.org/wiki/Help:Contents" class="bg-global-nav-secondary-link">Help</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:FAQ" class="bg-global-nav-secondary-link">FAQ</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://forums.bulbagarden.net/index.php?forums/bulbawiki-forum.195/" class="bg-global-nav-secondary-link">Bulbawiki forum</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Special:RecentChanges" class="bg-global-nav-secondary-link">Recent changes</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Special:Random" class="bg-global-nav-secondary-link">Random Page</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Special:SpecialPages" class="bg-global-nav-secondary-link">Special pages</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">Archives</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Main_Page" class="bg-global-nav-secondary-link">Main Page</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Archives:FAQ" class="bg-global-nav-secondary-link">FAQ</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Archives:To-do_list" class="bg-global-nav-secondary-link">To-do list</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Special:Upload" class="bg-global-nav-secondary-link">Upload file</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Special:RecentChanges" class="bg-global-nav-secondary-link">Recent Changes</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Special:Log/upload" class="bg-global-nav-secondary-link">Recent Uploads</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://archives.bulbagarden.net/wiki/Special:Random/File" class="bg-global-nav-secondary-link">Random File</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+<a href="#account" class="bg-global-nav-primary-link bg-global-nav-primary-toggle">Account</a>
+<ul class="bg-global-nav-primary-children">
+<li class="bg-global-nav-secondary row">
+<ul>
+<li class="bg-global-nav-secondary-item bulbapedia">
+<a href="https://bulbapedia.bulbagarden.net/w/index.php?title=Special:UserLogin&returnto=Main+Page" class="bg-global-nav-secondary-link">Bulbapedia login</a>
+</li>
+<li class="bg-global-nav-secondary-item forums">
+<a href="https://forums.bulbagarden.net/index.php?login/" class="bg-global-nav-secondary-link">Forum login</a>
+</li>
+</ul>
+</li>
+<li class="bg-global-nav-secondary">
+<ul>
+<li class="bg-global-nav-secondary-item header">New Accounts</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://bulbapedia.bulbagarden.net/wiki/Special:CreateAccount" class="bg-global-nav-secondary-link">Create Bulbapedia Account</a>
+</li>
+<li class="bg-global-nav-secondary-item">
+<a href="https://forums.bulbagarden.net/index.php?register/" class="bg-global-nav-secondary-link">Create Forum Account</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div id="bgMenuToggle" class="bg-global-nav-primary-link menu">Menu</div>
+<div class="bg-global-nav-search-wrapper">
+<form action="https://bulbapedia.bulbagarden.net/w/index.php">
+<input type="hidden" name="title" value="Special:Search" />
+<input type="search" name="search" id="bgGlobalSearch" class="bg-global-nav-search-input" placeholder="Search Bulbapedia" />
+</form>
+</div>
+</div>
+</header>
+<main>
+<div class="pre-column">
+</div>
+<div class="main-column">
+<div class="news-filtermenu">
+<div class="news-label red">Latest news</div>
+<ul class="news-filter-list">
+<li class="news-filter-button active"><a href="/">All</a></li>
+<li class="news-filter-button "><a href="?category=Games">Games</a></li>
+<li class="news-filter-button "><a href="?category=Anime">Anime</a></li>
+<li class="news-filter-button "><a href="?category=TCG">TCG</a></li>
+<li class="news-filter-button "><a href="?category=Manga">Manga</a></li>
+<li class="news-filter-button "><a href="?category=Merchandise">Merchandise</a></li>
+<li class="news-filter-button "><a href="?category=Events">Events</a></li>
+<li class="news-filter-button "><a href="?category=Community">Community</a></li>
+<li class="news-filter-button "><a href="?category=Columns">Columns</a></li>
+</ul>
+</div>
+<div class="news-article-list">
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>24</div>
+<a class="news-article-card-thumbnail" href="threads/292749">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MastersEX_SoloEvent_ASweetSecret.png.158859" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292749">Sweet-toothed trainers feature in new Pok&#xE9;mon Masters EX Solo Event and Spotlight Scout; Blissful Bonanza returns for 3rd month running</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/rhodehawk.94653/">&#xA;Rhodehawk</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Pokémon Masters EX is putting a special spotlight on its female trainers with the game's latest Solo Event and Spotlight Scout. Solo Event: A Sweet Secret, and the associated Triple Feature Spotlight Scout, will both run through until May 7th.
+</div>
+<a href="threads/292749" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>22</div>
+<a class="news-article-card-thumbnail" href="threads/292729">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/7e51646844dcb01331b029f27b0142cf16bcf76f-1.png.158744" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292729">New Pok&#xE9;mon clothing lines for April from Japanese clothing brands UNIQLO and graniph</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/takoyaki.113757/">&#xA;takoyaki</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The Japan-based graniph, which describes itself as a "Japanese art apparel pioneer", and the world-known casual apparel brand UNIQLO, have each listed a range of new clothing items featuring popular Pokémon, in a continuation of each brand's popular collaborations with The Pokémon Company for licensed apparel.
+</div>
+<a href="threads/292729" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>22</div>
+<a class="news-article-card-thumbnail" href="threads/292728">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/SwSh_GlobalChallenge2022_Spring.jpg.158723" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292728">Participate in the Global Challenge 2022 Spring Online Competition on Pok&#xE9;mon Sword and Shield</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The Global Challenge 2022 Spring Online Competition has been announced for Pokémon Sword and Pokémon Shield. Registration has begun and will remain open until May 5th, at 4:59 p.m. (PDT). The competition itself will then take place from May 5th, at 5:00pm to May 9th, at 4:59pm (PDT).
+</div>
+<a href="threads/292728" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>22</div>
+<a class="news-article-card-thumbnail" href="threads/292727">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/EU1C2002G1FT.PNG.158722" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292727">Receive Marc0fier0&#x27;s Dracovish in Pok&#xE9;mon Sword and Shield with code&#x300C;EU1C2022G1FT&#x300D;</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+A limited-time distribution of Dracovish was announced for Pokémon Sword and Pokémon Shield during the 2022 Pokémon Europe International Championships Pokémon VGC Day 1 livestream. This Dracovish is based on the Dracovish used by Marc0fier0 to win the 2020 Pokémon Oceania International Championships. Players can redeem Dracovish using the code「EU1C2022G1FT」. This code can only be redeemed until April 25th, 2022.
+</div>
+<a href="threads/292727" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>22</div>
+<a class="news-article-card-thumbnail" href="threads/292707">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MastersEX_Emmet_SpecialCostume.png.158684" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292707">Special Costume Emmet &amp; Escavalier hop aboard Pok&#xE9;mon Masters EX in a limited-time Costume Scout; Azelf returns to Legendary Arena</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/rhodehawk.94653/">&#xA;Rhodehawk</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Fans of the Train Conducting Trainer Emmet can rejoice as he makes his Special Costume debut together with Escavalier in Pokémon Masters EX, in a limited-time Costume Scout! This Sync Pair is being released with their Sync Grid expanded, and will have the ability to be raised to 6★ EX in conjunction with this sync pair scout.
+</div>
+<a href="threads/292707" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>22</div>
+<a class="news-article-card-thumbnail" href="threads/292706">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/UNITE_ChallengeDay.png.158675" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292706">JCG to run Pok&#xE9;mon UNITE Challenge DAY tournament events across Asia; first two tournaments to be held on April 30th and May 7th</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/takoyaki.113757/">&#xA;takoyaki</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The eSports brand JCG, which deals with eSports tournament managment, stream studio rental, consulting, has partnered with The Pokémon Company to start a series of one-day Pokémon UNITE online tournament events, called Pokémon UNITE Challenge DAY. JCG previously hosted the Pokémon UNITE Winter tournament in December and January.
+</div>
+<a href="threads/292706" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>21</div>
+<a class="news-article-card-thumbnail" href="threads/292702">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/IC_Series_logo_EU_EN.png.158667" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292702">Catch the 2022 Pok&#xE9;mon Europe International Championships this weekend on Twitch to receive a code for Marc0fier0&#x27;s Dracovish</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The Pokémon Company International has announced the livestream commentators for the 2022 Pokémon Europe International Championships held this weekend from April 22th - 24th. The event will be broadcast live on the official Twitch accounts of The Pokémon Company International. Some of the world's best Pokémon Trainers will be competing in tournaments including the Pokémon Trading Card Game, the Pokémon Sword and Pokémon Shield video games, Pokkén Tournament DX, and for the first time on Pokémon GO.
+</div>
+<a href="threads/292702" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>20</div>
+<a class="news-article-card-thumbnail" href="threads/292697">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/CafeReMix_Toucannon.png.158624" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292697">Pok&#xE9;mon Caf&#xE9; ReMix adds new Toucannon Team event, and a new Buizel pack to purchase; Pachirisu now available through Pelipper Delivery</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+A trio of new additions comes to Pokémon Café ReMix this week, with the addition of a new Team Event based around Toucannon, a new Buizel focused pack being added to the in-game shop, and Pachirisu coming to Pelipper Delivery.
+</div>
+<a href="threads/292697" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>20</div>
+<a class="news-article-card-thumbnail" href="threads/292690">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/Samsung_GalaxyZFlip3.png.158590" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292690">Samsung to release Pok&#xE9;mon-themed Galaxy Z Flip 3 phone in South Korea</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/archaic.1/">&#xA;Archaic</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The Galaxy Z Flip 3 was one of South Korea's best selling phones of 2021. So it's somewhat surprising that Samsung's latest collaboration, a new Pokémon-themed special edition of the Galazy Z Flip 3 phone, was announced with such little fanfare yesterday on Samsung's South Korean website.
+</div>
+<a href="threads/292690" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>19</div>
+<a class="news-article-card-thumbnail" href="threads/292251">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/twc20222239-figure-1.jpg.158577" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292251">Twitch (still) plays Pok&#xE9;mon: When spectators become archivists</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?threads/twitch-still-plays-pokemon-when-spectators-become-archivists.292251/">&#xA; </a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+With Twitch Plays Pokémon slated to feature in the upcoming Catch a Million to Conquer Kids’ Cancer charity event in support of St. Baldrick's Foundation, we thought now might be a good time to share some recent research relating to the Twitch Plays Pokémon phenomenon. This article article from our Open Access series comes from Argyrios "Aris" Emmanouloudis, who completed his PhD on online communities and video game fandom at the University of Amsterdam, and until recently was the Games Programme Coordinator at SAE Institute Amsterdam. This short paper, which presents a case study on the Twitch Plays Pokémon community, was originally presented at FanLIS 2021, an interdisciplinary academic conference which brings together researchers from fandom, fan studies, and library and information science.
+</div>
+<a href="threads/292251" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>18</div>
+<a class="news-article-card-thumbnail" href="threads/292679">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MPG_Logo.png.158572" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292679">The Pok&#xE9;mon Company International to buy-out North Carolina-based trading card manufacturer Millennium Print Group</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/open-access.129851/">&#xA;Open Access</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+The Pokémon Company International has today announced that they will be acquiring the North Carolina-based Millennium Print Group, who since 2015 have served as printers for the Pokémon Trading Card Game. Exactly how much TPCI have paid for this acquisition has not been disclosed at this time.
+</div>
+<a href="threads/292679" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>18</div>
+<a class="news-article-card-thumbnail" href="threads/292678">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MastersEX_Story_TrialsontheIsle.png.158575" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292678">Trials on the Isle Story Event returns to Pok&#xE9;mon Masters EX alongside Selene &amp; Elio Spotlight Scout</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/archaic.1/">&#xA;Archaic</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Fans of Alola can rejoice as the Alola-centric Story Event Trials on the Isle makes a return to Pokémon Masters EX this week. The iconic characters from the region featured in this event also make a return in a Spotlight Scout.
+</div>
+<a href="threads/292678" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>16</div>
+<a class="news-article-card-thumbnail" href="threads/292655">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/GO_Community_Day_Logo.jpg.158519" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292655">Pok&#xE9;mon GO Postcards to be distributed in several Asia-Pacific region locations during Stufful Community Day on April 23rd</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/rhodehawk.94653/">&#xA;Rhodehawk</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Niantic has announced that special postcards will be distributed in several cities across countries in the Asia-Pacific region on the Stufful Community Day on April 23rd, between 2:00p.m. and 5:00p.m. local time.
+</div>
+<a href="threads/292655" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>15</div>
+<a class="news-article-card-thumbnail" href="threads/292649">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/Go_Sustainability_2022.jpg.158507" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292649">Sustainability Week event announced for Pok&#xE9;mon GO</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Niantic has announced details of the 2022 edition of the annual Sustainability Week event in Pokémon GO, which will be held from April 20th at 10:00 a.m. to April 25th at 8:00 p.m. local time. The Sage Pokémon Oranguru, and Cherubi's Shiny variant, will each be making their Pokémon GO debut in this event.
+</div>
+<a href="threads/292649" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>15</div>
+<a class="news-article-card-thumbnail" href="threads/292615">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/PokemonCafe_2022April.jpg.158462" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292615">New range of dishes and tableware coming later this month to Pok&#xE9;mon Caf&#xE9; locations in Tokyo and Osaka</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+From April 23rd, the Pokémon Café locations in Tokyo and Osaka will be releasing a range of new original Pokémon-themed menu items and tableware. Customers looking to have the Pokémon Café feeling at home will be able to purchase this tableware from the goods center in-shop at each Pokémon Café location. The new additions to the kids' menu, which is exclusivly available to elementary-school-student ages and below, feature "tons of Pikachu". The adults' menu is also expanding with a new original sandwich that promises to be popular with parents, while a Snorlax-themed pancake set is being added to the sweets menu.
+</div>
+<a href="threads/292615" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>14</div>
+<a class="news-article-card-thumbnail" href="threads/292643">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MastersEX_Ingo_SpecialCostume.png.158461" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292643">Team up with Special Costume Ingo &amp; Accelgor in Pok&#xE9;mon Masters EX in a limited-time Costume Scout</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/takoyaki.113757/">&#xA;takoyaki</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Ingo (Special Costume) & Accelgor scout debut in Pokémon Masters EX today in a limited-time Costume Scout! The Sync Pair is being released with their Sync Grid expanded, and will have the ability to be raised to 6★ EX in conjunction with this sync pair scout.
+</div>
+<a href="threads/292643" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>10</div>
+<a class="news-article-card-thumbnail" href="threads/292577">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/MastersEX_Egg_Ekans.PNG.158334" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292577">Grass-, Poison-, and Ghost-Type Egg Event launches in Pok&#xE9;mon Masters EX</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/armlo_74.136035/">&#xA;Armlo_74</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Pokémon Masters EX's official Twitter account has updated players on an upcoming Egg Event, focused on Grass-, Poison-, and Ghost-Type Pokémon. The Battle Villa is also rotating back into availablility. Both events will begin on Sunday April 10th, at 11pm (PT), and following typical patterns, should close together on April 24th at 10:59pm (PT).
+</div>
+<a href="threads/292577" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>8</div>
+<a class="news-article-card-thumbnail" href="threads/292551">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/Pok&#xE9;mon Air Adventures.jpg.158209" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292551">Ticketed event to be held in Okinawa for collaboration between Pok&#xE9;mon GO and Pok&#xE9;mon Air Adventures</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/rhodehawk.94653/">&#xA;Rhodehawk</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+Niantic has announced that a real-life ticketed event will be held in Okinawa, Japan, in addition to the global collaboration event. This event will be held on May 7th and May 8th, between the hours of 10:00 a.m. and 7:00 p.m. on both days. Unlike the global collaboration event, all players must have a ticket to receive event bonuses. These bonuses will not be active without a ticket even if the Trainer is in Okinawa, Japan.
+</div>
+<a href="threads/292551" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>7</div>
+<a class="news-article-card-thumbnail" href="threads/292548">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/Pok&#xE9;mon GO - Songkran.jpg.158193" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292548">Event announced for Songkran, the traditional Thai New Year, for Pok&#xE9;mon GO players in Thailand</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+A Pokémon GO event has been announced in Thailand to celebrate Songkran, the traditional Thai New Year. From April 13th at 9:00 a.m. to April 17th at 9:00 p.m., Limited Research tasks will be available when players spin Photo Discs at PokéStops. When these Limited Research tasks are completed, players will encounter Water-type Pokémon. A 2× Catch XP bonus will also be active during the event, and special bundles will be available for purchase in the in-game shop.
+</div>
+<a href="threads/292548" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<article class="news-article-card">
+<div class="news-article-card-date"><span>Apr</span>7</div>
+<a class="news-article-card-thumbnail" href="threads/292547">
+<img src="https://forums.bulbagarden.net/index.php?ewr-porta/attachments/Pok&#xE9;mon GO Stufful Community Day.png.158190" alt="" />
+</a>
+<div class="news-article-card-header">
+<h2 class="news-article-card-title">
+<a href="threads/292547">April Community Day meetups to be held in select countries and cities</a>
+</h2>
+<ul class="news-meta-list">
+<li class="news-meta-item author"><a href="https://forums.bulbagarden.net//index.php?ewr-porta/authors/allenwarrior.117818/">&#xA;AllenWarrior</a></li>
+<li class="news-meta-item comments">0</li>
+</ul>
+<ul class="news-tag-list">
+</ul>
+</div>
+<div class="news-article-card-excerpt news-content">
+After the success of the Community Day meetups in March featuring Sandshrew and Alolan Sandshrew, Niantic has announced that the Pokémon GO April Community Day featuring Stufful, will also feature Community Day meetups. To celebrate Earth Day, Niantic will also be working with a non-profit partner to plant a tree for every Trainer who adventures 5 km on Stufful Community Day (up to US$100,000).
+</div>
+<a href="threads/292547" class="news-article-card-cta news-cta-link red">Read more</a>
+</article>
+<a href="https://forums.bulbagarden.net/index.php?forums/pokemon-news-from-bulbanews.280/" class="news-list-loadmore">
+More stories
+</a>
+</div>
+</div>
+<div class="side-column">
+<div class="news-sidebar">
+<div class="news-sidebar-module">
+<div class="news-bulba">
+<a href="https://bulbapedia.bulbagarden.net/" class="news-bulba-logo"></a>
+<div class="news-bulba-tagline">The Original Pokémon Wiki</div>
+<div class="news-bulba-cta-box">
+<div class="news-bulba-cta-text">45,000+ pages<br>over 3.5 million edits</div>
+<a href="https://bulbapedia.bulbagarden.net/" class="news-bulba-cta-button">Browse now</a>
+</div>
+</div>
+</div>

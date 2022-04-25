@@ -1,0 +1,3290 @@
+
+
+
+<!DOCTYPE html>
+<html style="background-color: #060606;" class=" en   mobile-nav-enabled " lang="en">
+<head>
+	<!-- Start Bungie Analytics snippet -->
+	<script src="https://analytics.bungie.net/js"></script>
+	<script>
+		(function()
+		{
+			var source = "net_bungie_www";
+			var userIdCookieName = "bungleme";
+
+			window.initBungieAnalytics = function(cid) {
+				if(window["ba"] && window["ba"].anonymousId) return;
+
+				if (cid && typeof BungieAnalytics !== "undefined") {
+					window["ba"] = new BungieAnalytics(source, cid);
+					window["ba"].setUserIdFromCookie(userIdCookieName, document.cookie);
+				} else {
+					console.warn("Attempted to initialize BungieAnalytics, but client ID wasn't present or BungieAnalytics was not available");
+				}
+			}
+		})();
+	</script>
+	<!-- End Bungie Analytics snippet -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5262186-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-5262186-1', {
+			'linker': {
+				'domains': ['bungie.net', 'bungiestore.com']
+			}
+		});
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i)
+		{
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-MQ5FZJQ');</script>
+	<!-- End Google Tag Manager -->
+	<title>Bungie.net</title>
+
+	<meta charset="utf-8" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="keywords" content="bungie, xbox, playstation, video, games, destiny, halo, myth, marathon, oni, blam, bungie store, 7th Column, Halo, Stats, Xbox Live, Halo 3 Stats" />
+	<meta name="description" content="Bungie.net is the Internet home for Bungie, the developer of Destiny, Halo, Myth, Oni, and Marathon, and the only place with official Bungie info straight from the developers." />
+		<meta name="apple-itunes-app" content="app-id=441444902" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+	<meta name="robots" content="" />
+	<meta content="#393f45" name="theme-color" />
+
+
+	
+
+<meta property="og:title" content="Bungie.net" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.bungie.net:46000/" />
+<meta property="og:site_name" content="Bungie.net" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:description" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Bungie" />
+<meta name="twitter:title" content="Bungie.net" />
+<meta name="twitter:description" />
+<meta name="twitter:image" content="https://www.bungie.net:46000/" />
+<meta name="twitter:creator" content="@Bungie" />
+
+<meta name="twitter:app:url:iphone" content="bungie://bungie.net/en-us/" />
+<meta name="twitter:app:url:ipad" content="bungie://bungie.net/en-us/" />
+<meta name="twitter:app:url:googleplay" content="bungie://bungie.net/en-us/" />
+<meta name="twitter:domain" content="Bungie.net" />
+<meta name="twitter:app:name:iphone" content="Bungie Mobile" />
+<meta name="twitter:app:name:ipad" content="Bungie Mobile" />
+<meta name="twitter:app:name:googleplay" content="Vine" />
+<meta name="twitter:app:id:iphone" content="id441444902" />
+<meta name="twitter:app:id:ipad" content="id441444902" />
+<meta name="twitter:app:id:googleplay" content="com.bungieinc.bungiemobile" />
+
+
+	<script src="/sharedbundle/baselibraries?v=Wp7IYl4SUsWPssIQ4D2NeSw2Zo3p4ThH6ITp_kz0GrU1"></script>
+
+
+	<!-- Localization -->
+	<script type="text/javascript" src="/JSLocalizer.ashx?cv=3983621215&amp;av=1224318893&amp;lc=en&amp;lcin=True&amp;fmt=True"></script>
+
+	<script type="text/javascript">
+		if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+			document.write('<script type="text/javascript" src="/Scripts/bungienet/localizer-ie.js?cv=3983621215&av=1224318893"><\/script>');
+	</script>
+
+		<script type="text/javascript" src="/Scripts/bungienet/localizer.js?cv=3983621215&amp;av=1224318893"></script>
+
+	<script src="/sharedbundle/platformlib?v=m6AmWimvFRFMmGepY81P1DqjlcrUiDCiDHa0msmyjzs1"></script>
+
+	<script src="/sharedbundle/before_render?v=hY7jAOmf8BHVdgpGGXYv_O_QCfhvJT2V-nqNcVwkeCA1"></script>
+
+	<script src="/sharedbundle/utilities?v=j7-uxhG4DEGIO4D4beRlLYCmV4818KP2tf7ylu6eyQE1"></script>
+
+	<script src="/sharedbundle/kobindings?v=RChowPBlr9fjmbY2k-0lsGfsSsXF6AWE7lK9VRZ42WU1"></script>
+
+
+	
+
+
+<script type="text/javascript">
+
+	var ServerVars = {
+		Environment: 'live',
+		Cst: {
+			enabled: true,
+			name: "bunglecst",
+			currentVersion: "6"
+		},
+		AnalyticsEnabled: true,
+		VerboseConsoleLogs: false,
+		ShowErrorsInPage: false,
+		DocumentReadyInteractionDelay: false,
+		SessionContextCookieName: 'bungled',
+		WebMembershipCookieName: 'bungleme',
+		StaticHostEnabled: 'false' === 'true',
+		StaticHost: 'www.bungie.net',
+		ContentVersion: 'cv=3983621215&av=1224318893',
+		GetCountsInterval: 300000,
+		GetCountsEnabled: false,
+		MobileWebView: false,
+		MinimalLayout: false,
+		RealTimeHeartBeat: 90,
+		FeatureFlags: {
+			Is3dEnabled: true,
+			CanUse3d: true,
+			TwitchLink: true
+		},
+		BrowserSupportHelpArticleLink: "/en/Help/Article/46269#CompanionBNET",
+		PCMigrationEntitlements: "false"
+	};
+
+
+</script>
+	
+
+
+<script type="text/javascript">
+
+	var __localizer = __localizer || {};
+
+	__localizer.localeAndCountry = 'en-US';
+
+	var PageUrls = {
+
+		/* different urls */
+		aboutPage: "/en/AboutUs/Index#!page=index",
+		activityPage: "/en/Activity/Index",
+		careersPage: "https://careers.bungie.com/",
+		careers: "https://careers.bungie.com/",
+		careerDetails: "/en/About/Careers/Detail/%7Breplace%7D",
+		clansPage: "/en/ClanV2/Search",
+		clansSearch: "",
+		clanIndex: "/en/ClanV2/Index",
+		clanDetail: "/en/ClanV2/Index",
+		clanForum: "",
+		clanAllianceForum: "/en/Clan/AllianceForum",
+		clanPost: "/en/Clan",
+		clanAdmin: "/en/ClanV2/AdminSections",
+		clanSettings: "",
+		clanCreate: "/en/ClanV2/Search",
+		communityCreationsDetail: "/en/Community/Detail",
+		defaultPostPage: "/en/Forum/Post",
+		defaultTopicsPage: "/en/Forum/Topics",
+		followingTags: "/en/View/Profile/mytags",
+		followingUsers: "/en/View/Profile/usersfollowed",
+		followingGroups: "/en/View/Profile/mygroups",
+		followers: "/en/View/Profile/followers",
+		groupsPage: "/en/Groups/Index",
+		groupMembers: "/en/Groups/Members",
+		groupFollowers: "/en/Groups/Followers",
+		groupAdminPage: "/en/Groups/Admin",
+		groupTopicsPage: "/en/Groups/Forum",
+		groupPostPage: "/en/Groups/Post",
+		groupDetail: "/en/Groups/Chat",
+		groupMyGroups: "/en/Groups/myGroups",
+		homePage: "/",
+		newsArticle: "/en/News/News",
+		newsIndex: "/en/News/Index",
+		newsFeedByCategory: "/en/Rss/NewsByCategory",
+		newPostsPage: "/en/Forum/Post",
+		newTopicsPage: "/en/Forum/Topics",
+		profilePage: "/7/en/User/Profile",
+		profilePageTemplate: "/7/en/User/Profile/{membershipType}/{membershipId}",
+		redeemedCodes: "/7/en/Codes/History",
+		root: "http://www.bungie.net",
+		searchPage: "/en/Search",
+		settingsPage: "/7/en/User/Account",
+		styleguidePage: "/en/AboutUs/Index#!page=styleguide",
+		termsOfUse: "/7/en/legal/terms",
+		userResearch: "/en/Questionnaire/UserResearch",
+
+		psnReauth: "/en/User/Reauth/Psnid",
+		xboxReauth: "/en/User/Reauth/Xuid",
+		applicationDetails: "/en/Application/Detail"
+	};
+
+	var HelperText = {
+		tags: 'Tags (ex: #funny #multiplayer)',
+		postTitle: 'Title',
+		postLink: 'Share a link url, image url, or youtube video',
+		postBody: 'Enter body text',
+		ignoreComments: 'Enter your comments',
+		groupName: 'Group Name',
+		groupDescription: 'Description',
+		messageBody: 'Write a message...',
+		displayName: 'Display Name',
+		email: 'Email Address',
+		groupSearch: 'Search Groups',
+		search: 'Search',
+		searchBungieNet: 'Search Bungie.net',
+		pollTopic: 'Post a Poll',
+		pollAnswer: 'Poll Answer',
+		questionTopic: 'Question Post'
+	};
+
+	var DestinyEquipFailureReasons = {
+		ItemUnequippable: "This item cannot be equipped.",
+		ItemUniqueEquipRestricted: "You cannot equip another item of this type.",
+		ItemFailedLevelCheck: "Level $$CharacterLevel$$ required.",
+		ItemNotOnCharacter: "This item must be in your character&#39;s inventory to equip it."
+	};
+
+	var DestinyVendorItemStatuses = {
+		NoInventorySpace: "No space in inventory",
+		NoFunds: "You can&#39;t afford this item",
+		NoProgression: "Your rank is too low",
+		OutsidePurchaseWindow: "You can&#39;t purchase this... yet",
+		NotAvailable: "The item is currently unavailable",
+		UniquenessViolation: "You can&#39;t have more than one of these",
+		UnknownError: "Unpurchasable"
+	};
+
+	var OfficialTags = [];
+
+			OfficialTags.push("Destiny2");
+			OfficialTags.push("Destiny");
+			OfficialTags.push("Clans");
+			OfficialTags.push("CompanionApp");
+			OfficialTags.push("Help");
+			OfficialTags.push("OffTopic");
+
+
+	var ImageUrls = {
+		defaultGroupBanner: '/img/theme/bungienet/placeholders/defaultGroup.png'
+	};
+	__localizer.Mute = {};
+
+__localizer.Mute[4] = "Disrespect/Hate Speech";__localizer.Mute[64] = "Harassment/Personal Attacks/Bullying";__localizer.Mute[8] = "Name and Shame/Privacy Violation";__localizer.Mute[1] = "Gory Violence/Explicit Sexuality";__localizer.Mute[256] = "Threats of Violence/Illegal Activity";__localizer.Mute[1024] = "Political/Religious Discussion";__localizer.Mute[32] = "Cheating/Hacking";__localizer.Mute[16] = "Spoilers/Distributing Stolen Content";__localizer.Mute[512] = "Soliciting/Plagiarism/Phishing/Impersonation";__localizer.Mute[128] = "Disruption/Evasion";
+	__localizer.BanLength = {
+		"None": "None",
+"Week": "Week",
+"TwoWeeks": "Two Weeks",
+"ThreeWeeks": "Three Weeks",
+"Month": "Month",
+"ThreeMonths": "Three Months",
+"SixMonths": "Six Months",
+"Year": "Year",
+"Forever": "Forever",
+"ThreeMinutes": "Three Minutes",
+"Hour": "An Hour",
+"ThirtyDays": "Thirty Days"
+
+	};
+	__localizer.CurrentCultureName = "en";
+	__localizer.CurrentBrowserCultureName = "";
+
+	if (__localizer.Time != null)
+	{
+		Localizer.Time.MonthAbbr = function(num)
+		{
+			if (num < 1 || num > 12)
+			{
+				return "";
+			}
+			return Localizer.Time["monthabbr" + num];
+		};
+	}
+
+	__localizer.Applications = {
+				"BnetMobile":
+			"Bungie.net Mobile"
+
+
+	};
+
+	IgnoreSettings = [];
+		IgnoreSettings.push(4);
+		IgnoreSettings.push(64);
+		IgnoreSettings.push(8);
+		IgnoreSettings.push(1);
+		IgnoreSettings.push(256);
+		IgnoreSettings.push(1024);
+		IgnoreSettings.push(32);
+		IgnoreSettings.push(16);
+		IgnoreSettings.push(512);
+		IgnoreSettings.push(128);
+
+
+	var TagMetadata = {
+
+			"ReleaseWidget": {
+			}
+				,
+		
+			"Ad": {
+			}
+				,
+		
+			"Asset": {
+			}
+				,
+		
+			"Audio": {
+			}
+				,
+		
+			"CalendarEvent": {
+			}
+				,
+		
+			"Callout": {
+			}
+				,
+		
+			"CharacterItem": {
+			}
+				,
+		
+			"ContentBlock": {
+				"": ""
+					,
+				"AboutUs": "about us page content"
+					,
+				"Careers": "careers page content"
+					,
+				"Feedback": "feedback"
+					,
+				"Foundation": "foundation content block"
+					,
+				"Halo": "halo universe page"
+					,
+				"HelpInstructions": "help-instructions"
+					,
+				"Marathon": "marathon universe page"
+					,
+				"Myth": "myth universe page"
+					,
+				"Publications": "publications page content"
+					,
+				"AboutDestiny": "about-destiny"
+			}
+				,
+		
+			"ContentSet": {
+				"": ""
+					,
+				"Ad300x250": "ad-300x250"
+					,
+				"Ad300x600": "ad-300x600"
+					,
+				"Ad728x90": "ad-728x90"
+					,
+				"FrontPage": "front-page-items"
+					,
+				"CurrentSales": "current-sales"
+					,
+				"DestinyProductFamilySet": "destiny-product-family-set"
+					,
+				"DestinyBuySet": "destiny-sku-group-set"
+					,
+				"ReleasesCategoriesContentSet": "releases-categories-content-set"
+					,
+				"ExploreDismissables": "explore-destiny-dismissables"
+					,
+				"Halo": "halo universe page"
+					,
+				"Marathon": "marathon universe page"
+					,
+				"Myth": "myth universe page"
+					,
+				"GlobalAlertSet": "global-alert-content-set"
+					,
+				"HelpTrending": "help-trending"
+					,
+				"ActiveJobs": "active-jobs-content-set"
+					,
+				"FoundationSidebar": "foundation right side images"
+					,
+				"LiveTiles": "live-tiles-ps4"
+					,
+				"ProductPage": "product-page-content-set"
+					,
+				"Publications": "publications-content-set"
+					,
+				"ScheduledBroadcastContentSet": "scheduled-broadcast-content-set"
+					,
+				"BungieStyleguide": "styleguide-bungie"
+					,
+				"DestinyStyleguide": "styleguide-destiny"
+			}
+				,
+		
+			"CountdownTimer": {
+			}
+				,
+		
+			"CustomHelpForm": {
+			}
+				,
+		
+			"DestinyAdvisor": {
+				"": ""
+					,
+				"milestone_clan_objectives": "milestone_clan_objectives"
+					,
+				"milestone_daily_pvp": "milestone_daily_pvp"
+					,
+				"milestone_daily_gambit": "milestone_daily_gambit"
+					,
+				"milestone_daily_strikes": "milestone_daily_strikes"
+					,
+				"milestone_raid_eater_of_worlds": "milestone_raid_eater_of_worlds"
+					,
+				"milestone_hotspot": "milestone_hotspot"
+					,
+				"milestone_heroic_adventures": "milestone_heroic_adventures"
+					,
+				"milestone_raid_gluttony": "milestone_raid_gluttony"
+					,
+				"milestone_raid_spire_of_stars": "milestone_raid_spire_of_stars"
+					,
+				"milestone_weekly_crucible": "milestone_weekly_crucible"
+					,
+				"milestone_weekly_gambit": "milestone_weekly_gambit"
+					,
+				"milestone_weekly_story": "milestone_weekly_story"
+					,
+				"milestone_nightfall": "milestone_nightfall"
+					,
+				"milestone_nightfall_high_score": "milestone_nightfall_high_score"
+					,
+				"milestone_weekly_strikes": "milestone_weekly_strikes"
+					,
+				"milestone_xur": "milestone_xur"
+			}
+				,
+		
+			"DestinyItem": {
+			}
+				,
+		
+			"DestinyProductFamily": {
+			}
+				,
+		
+			"DestinySkuItem": {
+				"": ""
+					,
+				"sku-forsaken": "sku-forsaken"
+					,
+				"sku-legendaryedition": "sku-legendaryedition"
+					,
+				"sku-freetoplay": "sku-freetoplay"
+					,
+				"sku-huntsilverbundle": "sku-huntsilverbundle"
+					,
+				"sku-silverbundle": "sku-silverbundle"
+					,
+				"sku-shadowkeepdigitaldeluxe": "sku-shadowkeepdigitaldeluxe"
+					,
+				"sku-shadowkeepstandard": "sku-shadowkeepstandard"
+					,
+				"sku-shadowkeepforsakenupgradeedition": "sku-shadowkeepforsakenupgradeedition"
+			}
+				,
+		
+			"DestinyVendor": {
+			}
+				,
+		
+			"DirectVideoPage": {
+			}
+				,
+		
+			"EventPage": {
+			}
+				,
+		
+			"GeneralArticle": {
+			}
+				,
+		
+			"GlobalAlert": {
+			}
+				,
+		
+			"GuidePage": {
+				"": ""
+					,
+				"guide-destiny2": "guide-destiny2"
+			}
+				,
+		
+			"Help": {
+				"": ""
+					,
+				"DestinyLegacyPlatformInaccessible": "destinylegacyplatforminaccessible"
+					,
+				"DestinyLegacyPlatformInUse": "destinylegacyplatforminuse"
+					,
+				"DestinyLegacyPlatformRestricted": "destinylegacyplatformrestricted"
+					,
+				"allplatforms": "allplatforms"
+					,
+				"Destiny2": "destiny2"
+					,
+				"DestinyLegacySupport": "destinylegacysupport"
+					,
+				"PS3": "ps3"
+					,
+				"XBox360": "xbox360"
+					,
+				"pc": "pc"
+					,
+				"PS4": "ps4"
+					,
+				"XBONE": "xbone"
+			}
+				,
+		
+			"HelpStep": {
+				"DestinyLegacyPlatformInaccessible": "destinylegacyplatforminaccessible"
+					,
+				"DestinyLegacyPlatformInUse": "destinylegacyplatforminuse"
+					,
+				"DestinyLegacyPlatformRestricted": "destinylegacyplatformrestricted"
+					,
+				"allplatforms": "allplatforms"
+					,
+				"Destiny2": "destiny2"
+					,
+				"DestinyLegacySupport": "destinylegacysupport"
+					,
+				"PS3": "ps3"
+					,
+				"XBox360": "xbox360"
+					,
+				"pc": "pc"
+					,
+				"PS4": "ps4"
+					,
+				"XBONE": "xbone"
+			}
+				,
+		
+			"CalendarRow": {
+			}
+				,
+		
+			"EventCalendar": {
+				"": ""
+					,
+				"calendar-events": "calendar-events"
+			}
+				,
+		
+			"ReleaseCalendar": {
+				"": ""
+					,
+				"calendar-releases": "calendar-releases"
+			}
+				,
+		
+			"ReleaseItem": {
+			}
+				,
+		
+			"ReleaseSet": {
+			}
+				,
+		
+			"HomepageCallToAction": {
+			}
+				,
+		
+			"InformationBlock": {
+				"": ""
+					,
+				"Faq": "bungie faq page 2"
+					,
+				"Trademarks": "bungie trademarks page 3"
+					,
+				"Conduct": "bungie conduct page"
+					,
+				"CookiePolicyPage": "bungie cookiepolicy page"
+					,
+				"EULA": "bungie eula page"
+					,
+				"MobileFaq": "bungie mobile faq"
+					,
+				"GameConduct": "game conduct page"
+					,
+				"Mobile": "mobile app page"
+					,
+				"PrivacyPage": "bungie privacy page 2"
+					,
+				"Publications": "publications intro"
+					,
+				"RedemptionCodeFaq": "destiny code faq"
+					,
+				"Terms": "bungie terms page"
+			}
+				,
+		
+			"Job": {
+			}
+				,
+		
+			"DestinyLandingItem": {
+				"": ""
+					,
+				"Guardians": "destiny-guardians"
+					,
+				"Landing": "destiny-landing"
+					,
+				"Media": "destiny-media"
+					,
+				"Enemies": "destiny-our-enemies"
+					,
+				"Story": "destiny-story"
+					,
+				"Frontier": "destiny-frontier"
+					,
+				"CharacterItemSet": "destiny-character-set-parent"
+			}
+				,
+		
+			"Link": {
+				"": ""
+					,
+				"DestinyPressRelease": "destiny-pressrelease"
+					,
+				"Featured": "news-featured"
+			}
+				,
+		
+			"LinkedImage": {
+			}
+				,
+		
+			"LiveTile": {
+				"": ""
+					,
+				"CombinedArms": "tile-combined-arms"
+					,
+				"IronBanner": "tile-iron-banner"
+					,
+				"QueensWrath": "tile-queens-wrath"
+					,
+				"Salvage": "tile-salvage"
+			}
+				,
+		
+			"MarketingContentBlock": {
+			}
+				,
+		
+			"MarketingMediaAsset": {
+			}
+				,
+		
+			"MarketingNewsAndMedia": {
+			}
+				,
+		
+			"MessageOfTheDay": {
+				"Android": "platform-android"
+					,
+				"iOS": "platform-ios"
+					,
+				"Web": "platform-web"
+					,
+				"WindowsPhone": "platform-windows"
+			}
+				,
+		
+			"News": {
+				"": ""
+					,
+				"Bungie": "news-bungie"
+					,
+				"Community": "news-community"
+					,
+				"Destiny": "news-destiny"
+					,
+				"Tech": "news-tech"
+					,
+				"Updates": "news-updates"
+					,
+				"BreakingIn": "news-breaking-in"
+					,
+				"BungiePodcast": "news-bungie-podcast"
+					,
+				"CommunityFocus": "news-community-focus"
+					,
+				"DrawingBoard": "news-drawing-board"
+					,
+				"Featured": "news-featured"
+					,
+				"MailSack": "news-mail-sack"
+					,
+				"TopStories": "news-top-stories"
+					,
+				"WeeklyUpdates": "news-weekly-update"
+			}
+				,
+		
+			"PlayerSpotlight": {
+			}
+				,
+		
+			"ProductDescription": {
+			}
+				,
+		
+			"PromoWidget": {
+				"": ""
+					,
+				"Anonymous": "promo-anonymous"
+					,
+				"NoDestinyAccount": "promo-no-account"
+					,
+				"NoLatestExpansion": "promo-no-expansion"
+					,
+				"HasLatestExpansion": "promo-has-expansion"
+			}
+				,
+		
+			"Publication": {
+			}
+				,
+		
+			"RegistrationBlock": {
+			}
+				,
+		
+			"ReleaseMarketingLink": {
+				"": ""
+					,
+				"DestinyPressRelease": "destiny-pressrelease"
+					,
+				"Featured": "news-featured"
+			}
+				,
+		
+			"Sale": {
+			}
+				,
+		
+			"ScheduledBroadcast": {
+			}
+				,
+		
+			"Screenshot": {
+			}
+				,
+		
+			"ServerToClientMessage": {
+			}
+				,
+		
+			"StaticAsset": {
+				"": ""
+					,
+				"AboutUs": "about us rotator"
+					,
+				"Careers": "careers rotator images"
+					,
+				"Foundation": "foundation rotator"
+					,
+				"HaloHeader": "halo header image"
+					,
+				"MarathonHeader": "marathon header image"
+					,
+				"MythHeader": "myth header image"
+			}
+				,
+		
+			"StreamingAlert": {
+			}
+				,
+		
+			"StringCollection": {
+				"": ""
+					,
+				"raid-race-filter-list": "raid-race-filter-list"
+			}
+				,
+		
+			"Stylesheet": {
+			}
+				,
+		
+			"Video": {
+			}
+				,
+		
+			"Wallpaper": {
+			}
+	};
+
+	TagMetadata.getTag = function(contentType, name, defaultValue)
+	{
+		return (TagMetadata[contentType] && TagMetadata[contentType][name])
+					? TagMetadata[contentType][name]
+					: defaultValue;
+	};
+</script>
+	
+
+
+<script type="text/javascript">
+	bungieNetPlatform.platformSettings.initialize({
+		platformUrl: "/Platform",
+		baseUrl: "/",
+		currentLocale: 'en',
+		locInherit: 'true' == 'true',
+		isMobileDevice: 'false' == 'true',
+		isTouchDevice: Modernizr.touch,
+		renderContentEditLinks: 'false' == 'true',
+		internalLinkRegex:
+			/https?\:\/\/(((www)|(stage)|(alpha)|(nike)|(bnetdev)|(bnetint)|(static-internal)|(local-static)|(static01))\.bungie(store)?\.(net|com))/gi,
+		contentVersion: "103796.22.04.05.1900-1-bnet.43900"
+	});
+		
+	bungieNetPlatform.contentCache = {};
+	bungieNetPlatform.defaultData = {};
+
+	templateEngine.version = "cv=3983621215&av=1224318893";
+
+	//cancels all outstanding ajax calls via the bungienetPlatform
+	$(window)
+		.on("unload", function() {
+			for (var i = 0; i < currentRequests.length; i++)
+			{
+				currentRequests[i].abort();
+			}
+		});
+</script>
+
+
+
+
+	<script src="/sharedbundle/plugins?v=x0LcfmFNCyDmD-WjWk7U7Ukk_H4M-k3noBUfmpI6mV01"></script>
+
+
+	<script type="text/javascript">
+	var myID_cookie = Bnet.Utilities.User.loggedInUserBnetMembershipId;
+
+	$(document).ready(function () {
+		//localstorage deleted for different user
+		if (Modernizr.localstorage) {
+
+			if (typeof localStorage["myID_cookie"] !== "undefined" && localStorage.getItem("myID_cookie") != myID_cookie) {
+			    localStorage.removeItem("myID_cookie")
+			}
+
+		}
+	});
+
+	Utility.alertSuccess = function (message, successMessageType) {
+		if (viewModels.loggedInUserModel()) {
+			if ((viewModels.loggedInUserModel().user.successMessageFlags() & successMessageType) != successMessageType) {
+				var checkbox = "<p class='successMessageContainer container_checkbox'><input type='checkbox' class='successMessageCheckbox' data-successMessageType='" + successMessageType + "' /> ";
+				checkbox += Localizer.Messages.dontshowmessagecheckbox;
+				checkbox += "</p>";
+				var finalMessage = message + checkbox;
+				Utility.alert(finalMessage, true);
+				$("#alert").find(".successMessageContainer").bind("click.lightbox", function (e) {
+					// Don't close the box if they click in here
+					e.stopImmediatePropagation();
+				});
+				$("#alert").find(".successMessageCheckbox").bind("change", function (e) {
+					var doNotShow = $(this).is(":checked");
+					if (doNotShow) {
+						// add the flag.
+						viewModels.loggedInUserModel().user.successMessageFlags(viewModels.loggedInUserModel().user.successMessageFlags() | successMessageType);
+					} else {
+						// Remove the flag (AND the inverse of the flag)
+						viewModels.loggedInUserModel().user.successMessageFlags(viewModels.loggedInUserModel().user.successMessageFlags() & ~successMessageType);
+					}
+
+					bungieNetPlatform.userService.EditSuccessMessageFlags(
+						viewModels.loggedInUserModel().user.successMessageFlags(),
+						function (result) {
+							// Now that we've changed the flag, close the lightbox.
+							customAlert.closeLightbox();
+						},
+						function (error) {
+							// If we couldn't change the flag, it isn't the end of the world.  We'll have logged whatever the problem was, let's not bother the user with it.
+						}
+					);
+				});
+			} else {
+				customAlert.closeLightbox();
+			}
+		} else {
+			// If no logged in user or for some reason it hasn't loaded yet, just show the message as-is.
+			Utility.alert(message, true);
+		}
+	};
+
+</script>
+
+
+	<script src="/sharedbundle/shared?v=hMabA-V6NBgLIkvxgnBdH7EEJLvf6QiAEAohIpU1Sb81"></script>
+
+
+	<script src="/sharedbundle/trackingscripts?v=kUHYJV9fmnXmB0O5tYvYrjynnB7t4NdXkHRHgHoYuT01"></script>
+
+	<script type="text/javascript">Bnet.Analytics.BnetTracking.Instance.loadTrackers();</script>
+
+	
+
+
+	<script src="/sharedbundle/basev2?v=WeCVxwq44EgU8NkUzyqKV4MJfQiRl1SgDcy7CXy3kaU1"></script>
+
+
+
+
+	<link href="/img/theme/bungienet/logo.png" rel="image_src" />
+
+	<link rel="icon" href="/favicon.png" sizes="256x256" type="image/png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
+	<link rel="shortcut icon" href="/favicon.ico?v=1">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="theme-color" content="#ffffff">
+	<link href="/sharedstyle/site?v=n8ZZV2iyJre3xkYjxAOBUMy97YBgy2e6iIxSW05KUHo1" rel="stylesheet"/>
+
+	
+	<link href="/css/main_v2.css?cv=3983621215&amp;av=1224318893" rel="stylesheet" type="text/css">
+	<link href="/css/shared/companion.css?cv=3983621215&amp;av=1224318893" rel="stylesheet" type="text/css">
+	<link href="/sharedstyle/pcmigrationbar?v=qc4RY3B7sgvAfBjZMk3icvmq7myENdnT1Lpjy_1L0BI1" rel="stylesheet"/>
+
+	<link href="/sharedstyle/pcmigrationinterrupts?v=oPic-ebEdMJsWvlVAMm-p6-Skikl3PCQNuVYEV8IClc1" rel="stylesheet"/>
+
+	
+
+	<link href="/sharedstyle/uikit?v=WzMASbXApZ8q9uKS1p9TAKndoZ-X32unLL5LlYPQuP81" rel="stylesheet"/>
+
+	
+
+	
+	<link href="/areastyles/explore?v=lmYP80L2R-_cA33EQ19ySEiCKzW9QCXd9HLdP8FD82I1" rel="stylesheet"/>
+
+
+
+
+
+</head>
+
+<body class=" News  Explore  Companion  NoSidebar  noSubNav  en  bg cf  " data-bind="css : { loggedIn : loggedInUserModel().user.membershipId() != 0 }">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQ5FZJQ"
+				height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+
+
+
+
+
+
+
+
+
+
+
+<div class="noJS">
+	<p>JavaScript is required to use Bungie.net</p>
+</div>
+<div class="bg_secondary JS cf">
+
+	<div class="bg_top"></div>
+
+	
+
+
+
+
+
+<header>
+    <nav class="Nav_Top">
+        <div class="nav_top cf">
+            <div class="left nav_logo h1">
+                <div class="small-menu"></div>
+                <h1>
+                    <a href="/" class="ir logo">Destiny</a>
+                </h1>
+            </div>
+
+			<div id="nav-items" class="left">
+				<div class="loggedOutButtons">
+					
+
+
+<a class="button-join-up control-kit button  gold medium  js-join-up  loButton clickable" href="/en/User/JoinUp?bru=%2F"   data-identifier="join-up" >
+
+
+
+Join Up
+</a>
+					
+
+
+<div class="button-sign-in control-kit button  white medium  js-sign-in  loButton"   data-identifier="sign-in" >
+
+
+
+Sign In
+</div>
+				</div>
+
+
+					<div class="nav-bucket  " data-id="" data-show-collapsed-at="max">
+						<a href="/7/en/Destiny/NewLight" class="" >
+Destiny 2						</a>
+							<i class="material-icons expand">
+								expand_more
+							</i>
+							<div class="nav-bucket-items">
+		<a data-hide-at="max" class=" TopNavwitchqueen" data-id="witchqueen" href="/7/en/Destiny/WitchQueen" >
+				<div class="secondary-label">Year 5 Expansion</div>
+			
+			<div>THE WITCH QUEEN</div>
+		</a>
+		<hr />
+		<a data-hide-at="max" class=" TopNavnewLight" data-id="newLight" href="/7/en/Destiny/NewLight" >
+			
+			<div>Play for Free</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavanniversarypack" data-id="anniversarypack" href="/7/en/Direct/Anniversary" >
+			
+			<div>30TH ANNIVERSARY EVENT</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavbeyondlight" data-id="beyondlight" href="/7/en/Destiny/BeyondLight" >
+				<div class="secondary-label">Year 4 Expansion</div>
+			
+			<div>Beyond Light</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavshadowkeep" data-id="shadowkeep" href="/7/en/Destiny/Shadowkeep" >
+				<div class="secondary-label">Year 3 Expansion</div>
+			
+			<div>Shadowkeep</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavforsaken" data-id="forsaken" href="/7/en/Destiny/Forsaken" >
+				<div class="secondary-label">Year 2 Expansion</div>
+			
+			<div>Forsaken Pack</div>
+		</a>
+							</div>
+					</div>
+					<div class="nav-bucket  " data-id="seasons" data-show-collapsed-at="max">
+						<a href="/7/en/Seasons" class="" >
+Seasons						</a>
+							<i class="material-icons expand">
+								expand_more
+							</i>
+							<div class="nav-bucket-items">
+		<a data-hide-at="max" class=" TopNavSeasonOfTheRisen" data-id="SeasonOfTheRisen" href="/7/en/Seasons/SeasonOfTheRisen" >
+				<div class="secondary-label">Current Season</div>
+			
+			<div>SEASON OF THE RISEN</div>
+		</a>
+		<hr />
+		<a data-hide-at="max" class=" TopNavPastSeasons" data-id="PastSeasons" href="/7/en/Seasons/#past-seasons" >
+			
+			<div>PAST SEASONS</div>
+		</a>
+							</div>
+					</div>
+					<div class="nav-bucket  " data-id="" data-show-collapsed-at="max">
+						<a href="/en/ClanV2/MyClans" class="" >
+Community						</a>
+							<i class="material-icons expand">
+								expand_more
+							</i>
+							<div class="nav-bucket-items">
+		<a data-hide-at="max" class=" TopNavnews" data-id="news" href="/en/News" >
+			
+			<div>News</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavclan" data-id="clan" href="/en/ClanV2/MyClan" >
+			
+			<div>My Clan</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavclans" data-id="clans" href="/en/ClanV2/MyClans" >
+			
+			<div>Clan Search</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavfireteams" data-id="fireteams" href="/en/ClanV2/FireteamSearch?activityType=0&amp;platform=0" >
+			
+			<div>Find Fireteam</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavforums" data-id="forums" href="/en/Forum/Topics" >
+			
+			<div>Forums</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavgroups" data-id="groups" href="/en/Groups" >
+			
+			<div>Groups</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavcreations" data-id="creations" href="/en/Community/Creations" >
+			
+			<div>Creations</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavcomics" data-id="comics" href="https://comics.bungie.net" >
+			
+			<div>Comics</div>
+		</a>
+							</div>
+					</div>
+					<div class="nav-bucket  " data-id="" data-show-collapsed-at="max">
+						<a href="/en/Support" class="" >
+Help						</a>
+							<i class="material-icons expand">
+								expand_more
+							</i>
+							<div class="nav-bucket-items">
+		<a data-hide-at="max" class=" TopNavhelp" data-id="help" href="/en/Support" >
+			
+			<div>Help Center</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavdestiny2guide" data-id="destiny2guide" href="/Guide" >
+			
+			<div>New Player Guide</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavhelpforum" data-id="helpforum" href="/en/Forums/Topics/?tg=Help" >
+			
+			<div>Help Forum</div>
+		</a>
+		<a data-hide-at="max" class=" TopNaveverversehelp" data-id="everversehelp" href="/Silver" >
+			
+			<div>Eververse</div>
+		</a>
+		<a data-hide-at="max" class=" TopNaveverversehelpforum" data-id="everversehelpforum" href="/en/Forums/Topics/?tg=Help%20Eververse" >
+			
+			<div>Eververse Help Forum</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavmentalhealtharticle" data-id="mentalhealtharticle" href="https://help.bungie.net/hc/articles/4402601695252" >
+			
+			<div>Mental Health Resources</div>
+		</a>
+							</div>
+					</div>
+					<div class="nav-bucket  " data-id="store" data-show-collapsed-at="max">
+						<a href="https://bungiestore.com" class="" >
+Store						</a>
+							<i class="material-icons expand">
+								expand_more
+							</i>
+							<div class="nav-bucket-items">
+		<a data-hide-at="max" class=" TopNavbuyDestiny" data-id="buyDestiny" href="/7/en/Destiny/Buy" >
+			
+			<div>Buy Destiny 2</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavbungiestore" data-id="bungiestore" href="https://bungiestore.com" >
+			
+			<div>Bungie Store</div>
+		</a>
+		<a data-hide-at="max" class=" TopNavrewards" data-id="rewards" href="/7/en/Direct/Rewards" >
+			
+			<div>Bungie Rewards</div>
+		</a>
+							</div>
+					</div>
+
+				
+
+
+<a class="button-buyDestiny2 control-kit button  gold small  js-buyDestiny2  buy-destiny2 clickable" href="/7/en/Destiny/Buy"   data-identifier="buyDestiny2" >
+
+
+
+PLAY DESTINY 2
+</a>
+			</div>
+
+			
+
+			
+			
+
+            
+<div class="right nav_identity cf">
+	<div class="signedOut">
+		<div class="nav-bucket">
+			
+			<a href="javascript:void(0);" class="connect">My Account</a>
+			<div class="nav-bucket-items sign-in-triggers">
+					<div class="registrationNavHeader">Sign In</div>
+
+				
+
+
+	<a class="live exempt" title="Xbox" href="/en/User/SignIn/Xuid?flowStart=1">Xbox</a>
+	<a class="psn exempt" title="PlayStation" href="/en/User/SignIn/Psnid?flowStart=1">PlayStation</a>
+	<a class="steam exempt" title="Steam" href="/en/User/SignIn/SteamId?flowStart=1">Steam</a>
+	<a class="stadia exempt" title="Stadia" href="/en/User/SignIn/StadiaId?flowStart=1">Stadia</a>
+	<a class="twitch exempt" title="Twitch" href="/en/User/SignIn/TwitchId?flowStart=1">Twitch</a>
+	
+
+
+
+					<div class="registrationNavFooter">
+						
+
+
+<div class="button-joinUp control-kit button  gold small js-joinUp"   data-identifier="joinUp" >
+
+
+
+Join Up
+</div>
+					</div>
+				
+			</div>
+		</div>
+	</div>	
+</div>
+            <div class="user-menu-bucket nav-bucket right">
+                <div class="user-menu js-user-menu">
+
+                    <div class="right search">
+                        <a class="search-button" href="/en/Search">
+                            <i class="material-icons">search</i>
+                        </a>
+                    </div>
+
+	                
+	                <div class="right user-avatar">
+		                <div class="signedInContainer signedIn">
+			                <div class="user-menu-avatar signedIn"
+			                     v-if="bungieName"
+			                     v-bind:title="bungieName"
+			                     v-bind:style="{ backgroundImage: 'url(' + userDetail.user.profilePicturePath + ')' }"
+			                     v-on:click="openAccountSidebar">
+			                </div>
+			            </div>
+	                </div>
+                    
+                    <div class="locale-selector js-locale-selector">
+				<div class="locale-selector-trigger js-locale-selector-trigger">
+					<i class="material-icons">
+						language
+					</i>
+				</div>
+				<div class="locale-selector-options">
+                                <div class="locale-item js-locale-item " data-locale="de">
+                                    Deutsch
+                                </div>
+                                <div class="locale-item js-locale-item current" data-locale="en">
+                                    English
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="es">
+                                    Español
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="es-mx">
+                                    Español (México)
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="fr">
+                                    Français
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="it">
+                                    Italiano
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="ja">
+                                    日本語
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="ko">
+                                    한국어
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="pl">
+                                    Polski
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="pt-br">
+                                    Português (Brasil)
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="ru">
+                                    Русский
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="zh-chs">
+                                    简体中文
+                                </div>
+                                <div class="locale-item js-locale-item " data-locale="zh-cht">
+                                    繁體中文
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="bungie-friends">
+                        <a class="bungie-friends-button" href="/7/en/User/Account/BungieFriends">
+                            <i class="material-icons">people_alt</i>
+                        </a>
+                    </div>
+
+                    <div class="right signedIn notification-badges js-notification-badges">
+                        <a href="/en/Messages" class="notification-button js-open-notifications" v-on:click="toggleNotifications">
+                            <i class="material-icons" v-if="allNotificationCount === 0">notifications_none</i>
+                            <template v-else>
+                                <i class="material-icons has-notifications">notifications</i>
+                                <span class="count-pip">{{allNotificationCount}}</span>
+                            </template>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+	<div class="global-sidebar" id="notifications-sidebar">
+	</div>
+
+	<div class="global-sidebar" id="account-sidebar">
+		
+
+
+<div class="nav-bucket-items">
+	<template v-if="userDetail">
+		<div class="user-info-header">
+			<div class="theme" v-bind:style="{ backgroundImage: 'url(' + getProfileThemePath() + ')' }"></div>
+			<div class="user-information">
+				<div class="user-avatar" v-bind:style="{ backgroundImage: 'url(' + userDetail.user.profilePicturePath + ')' }"></div>
+				<div class="text-content">
+					<div class="user-display-name">{{`${userDetail.user.displayName}${userDetail.user.cachedBungieGlobalDisplayNameCode ? `#${userDetail.user.cachedBungieGlobalDisplayNameCode}` : ""}`}}</div>
+					<div class="user-clans">{{getUserClans()}}</div>
+				</div>
+			</div>
+		</div>
+			<template v-if="isNewAccount()">
+				<a class="newUserLink" href="/7/en/Registration/">
+					<div>
+						<strong>New User Setup</strong>
+						<p>Setup your new account</p>
+					</div>
+					<span><i class="material-icons">keyboard_arrow_right</i></span>
+				</a>
+				<div class="divider"></div>
+			</template>
+		
+	</template>
+	
+
+
+<a class="one-line-item-seasonsprogress-link companion-kit one-line-item  basic-size-small  js-seasonsprogress-link   clickable" href="/7/en/Seasons/Progress"   data-identifier="seasonsprogress-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_seasons.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Season Progress</div>
+</div>
+
+
+</a>
+
+	
+
+
+<a class="one-line-item-triumphs-link companion-kit one-line-item  basic-size-small  js-triumphs-link   clickable" href="/en/Triumphs"   data-identifier="triumphs-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_triumphs_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Triumphs</div>
+</div>
+
+
+</a>
+
+	
+
+
+<a class="one-line-item-collections-link companion-kit one-line-item  basic-size-small  js-collections-link   clickable" href="/en/Collections"   data-identifier="collections-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_collections_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Collections</div>
+</div>
+
+
+</a>
+
+	
+
+
+<a class="one-line-item-gamehistory-link companion-kit one-line-item  basic-size-small  js-gamehistory-link   clickable" href="/en/Profile/GameHistory"   data-identifier="gamehistory-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_game_history_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Game History</div>
+</div>
+
+
+</a>
+
+	<div class="divider"></div>
+
+	
+
+
+<a class="one-line-item-crosssave-link companion-kit one-line-item  basic-size-small  js-crosssave-link   clickable" href="/7/en/CrossSave"   data-identifier="crosssave-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_cross_save_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Cross Save</div>
+</div>
+
+
+</a>
+	
+	
+
+
+<a class="one-line-item-rewards-link companion-kit one-line-item  basic-size-small  js-rewards-link   clickable" href="/7/en/Direct/Rewards"   data-identifier="rewards-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_rewards_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Rewards</div>
+</div>
+
+
+</a>
+
+	
+
+
+<a class="one-line-item-codes-link companion-kit one-line-item  basic-size-small  js-codes-link   clickable" href="/7/en/Codes/Redeem"   data-identifier="codes-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_seventh_column_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Redeem Codes</div>
+</div>
+
+
+</a>
+
+	<div class="divider"></div>
+
+	
+
+
+<a class="one-line-item-new-profile-link companion-kit one-line-item  basic-size-small  js-new-profile-link   clickable" href="/7/en/User/Profile"   data-identifier="new-profile-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_profile_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">View Profile</div>
+</div>
+
+
+</a>
+
+	
+
+
+<a class="one-line-item-new-settings-link companion-kit one-line-item  basic-size-small  js-new-settings-link   clickable" href="/7/en/User/Account/IdentitySettings"   data-identifier="new-settings-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_settings_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Settings</div>
+</div>
+
+
+</a>
+
+<div class="divider"></div>
+
+	
+
+
+<a class="one-line-item-sign-out-link companion-kit one-line-item  basic-size-small  js-sign-out-link   clickable" href="/en/User/SignOut?bru=%2F"   data-identifier="sign-out-link" >
+
+
+	<div class="icon-slot">
+		<div class="icon" style="background-image: url('/img/theme/bungienet/icons/icon_sign_out_light.png?cv=3983621215&amp;av=1224318893')">
+	<div class="icon-overlay"></div>
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Sign Out</div>
+</div>
+
+
+</a>
+
+	<div class="is-loading-slowly" v-if="isLoadingSlowly">
+		Loading...
+	</div>
+
+	<template v-if="userDetail">
+		<a v-if="isReporter()" href="/7/en/Admin/Reports" class="companion-kit one-line-item  basic-size-small clickable">
+			New Admin Reports</a>
+		<a v-if="isReporter()" href="/en/Admin/Reports" class="companion-kit one-line-item  basic-size-small clickable">
+			Admin Reports
+		</a>
+		<a v-if="isReporter()" href="/en/Admin/UserReports" class="companion-kit one-line-item  basic-size-small clickable">
+			Review User Bans
+		</a>
+		<a v-if="isUserEditor()" href="/en/Admin/UserEditor" class="companion-kit one-line-item  basic-size-small clickable">
+			User Editor
+		</a>
+		<a v-if="isAdminHistoryViewer()" href="/en/Admin/AdminHistory" class="companion-kit one-line-item  basic-size-small clickable">
+			Admin History
+		</a>
+		<a v-if="isCommunityContentCurator()" href="/en/CommunityCurator" class="companion-kit one-line-item  basic-size-small clickable">
+			Creations Curator
+		</a>
+		<a v-if="isPlayerSupport()" href="/en/Admin/Tokens"  class="companion-kit one-line-item  basic-size-small clickable">
+			Token Search
+		</a>
+	</template>
+</div>
+	</div>
+
+	<script id="streaming-alerts-template" type="text/html">
+		<div id="streaming-alerts">
+			<div class="streaming-alerts-content flex">
+				<div class="dot-container flex">
+					<div class="dot">
+						<div class="streaming-alerts-pulse"></div>
+					</div>
+				</div>
+				<div class="streaming-alerts-text">
+					<div class="top">Bungie is <span>LIVE</span> //</div>
+					<div class="bottom">WATCH NOW</div>
+				</div>
+				<div class="arrows"></div>
+			</div>
+		</div>
+	</script>
+
+	
+
+
+<template id="notifications-template">
+	<div class="notifications-container">
+		<div class="tabs-container">
+			
+			<div class="tabs js-notification-pane-tabs">
+				<a href="/" class="logo-link">
+					<i class="material-icons">arrow_back</i>
+					<div class="logo"></div>
+				</a>
+				<div class="tab-wrapper">
+					<div class="tab messages active" data-tab="Messages">
+						<span class="tab-label">
+							Chat
+							<span v-if="messageCount > 0">{{messageCount}}</span>
+						</span>
+					</div>
+					<div class="tab notifications" data-tab="Notifications">
+						<span class="tab-label">
+							Notifications
+							<span v-if="notificationCount > 0">{{notificationCount}}</span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-contents-container">
+				
+				<div class="tab-contents messages js-messages-container active" data-tab="Messages">
+					<div class="conversation-list">
+						<div class="create-message">
+							<label for="textArea_Send a message..."><div class="js-new-message-button button">New Message</div></label>
+						</div>
+
+						
+
+
+<div class="listview-item-messages-list control-kit listview-item  js-messages-list"  data-vue-list-item-name="messageItem" v-on:scroll="onScroll"  data-identifier="messages-list" data-render-type="Vue" v-cloak data-root-var-name="messageslist" >
+
+
+
+
+<div class="list-item-container">
+	<template v-if="vueData && vueData.items && vueData.items.length > 0">
+		<message-item-template
+		v-cloak
+		v-for="(messageslist, index) in vueData.items"
+		v-bind:message-item="messageslist">
+		</message-item-template>
+	</template>
+	<template v-else>
+		<div class="no-items">No items found</div>
+	</template>
+</div>
+</div>
+
+						<template id="message-item-template">
+							
+
+
+<div class="two-line-item-messageItem companion-kit two-line-item  basic-size-medium  js-messageItem  conversation-item clickable" v-bind:title="messageItem.title" v-on:click="showMessageDetail(messageItem)" v-bind:class="{ current: messageItem.isCurrent, unread: !messageItem.message.detail.isRead }"   data-identifier="messageItem" data-render-type="Vue" v-cloak >
+
+
+
+
+<template v-if="messageItem.iconCoin">
+	<div class="icon-slot">
+		<div class="icon"
+			 v-bind:class="{ 'icon-font' : messageItem.iconCoin.iconName }"
+		     v-bind:style="{ backgroundImage: messageItem.iconCoin.imagePath ? 'url(' + messageItem.iconCoin.imagePath + ')' : '' }">
+			
+			<span v-if="messageItem.iconCoin.text">{{messageItem.iconCoin.text}}</span>
+			<span v-if="messageItem.iconCoin.iconName">
+				<template v-if="messageItem.iconCoin.iconFont === 0">
+					<i class="material-icons">{{messageItem.iconCoin.iconName}}</i>
+				</template>
+				<template v-if="messageItem.iconCoin.iconFont === 1">
+					<i v-bind:class="'fa fa-' + messageItem.iconCoin.iconName" aria-hidden="true"></i>
+				</template>
+				<template v-if="messageItem.iconCoin.iconFont === 2">
+					<i v-bind:class="'icon-' + messageItem.iconCoin.iconName"></i>
+				</template>
+			</span>
+		</div>
+	</div>
+</template>
+<div class="text-content">
+	<div class="title" v-html="messageItem.title"></div>
+	<div class="subtitle" v-html="messageItem.subtitle"></div>
+</div>
+<template v-if="messageItem.flairCoin">
+	<div class="flair-slot">
+		<div class="flair">{{messageItem.flairCoin.text}}</div>
+	</div>
+</template>
+</div>
+						</template>
+						<div class="view-all">
+							<a class="button" href="/en/Messages?tab=Messages">View All Messages</a>
+						</div>
+					</div>
+
+					<div class="conversation-detail js-conversation-detail">
+						<div class="conversation-detail-header js-conversation-metadata" v-if="hasRun" v-bind:class="{ 'show-participant-options': composeParticipantsOptions.length > 0 }">
+
+
+	
+<div class="header-line-one">
+	<div class="show-conversation-list" v-on:click="hideMessageDetail">
+		<i class="material-icons">arrow_back</i>
+	</div>
+	<div v-if="metadata" class="message-participants" v-bind:title="getParticipants(metadata)">{{getParticipants(metadata)}}</div>
+	<div v-else class="compose-participants">
+		<div class="added-participants">
+			<div class="participant" v-for="participant in addedParticipants">
+				{{participant.displayName}} <i class="material-icons" v-on:click="removeParticipant(participant)">close</i>
+			</div>
+		</div>
+		
+
+
+<div class="input-box-item-edit-participants form-kit input-box-item   js-edit-participants"   data-identifier="edit-participants" >
+			<div class="validation-errors"></div>
+
+
+
+
+<div class="input-box-container">
+	<input class="js-companion-kit-input-box-input" id="input_v-on:keyup=&quot;updateParticipantSuggestions&quot; v-on:focus=&quot;updateParticipantSuggestions&quot; v-model=&quot;toText&quot; "type="text" placeholder="To:" v-on:keyup="updateParticipantSuggestions" v-on:focus="updateParticipantSuggestions" v-model="toText"   value="">
+	<label for="input_v-on:keyup=&quot;updateParticipantSuggestions&quot; v-on:focus=&quot;updateParticipantSuggestions&quot; v-model=&quot;toText&quot; "><i class="js-clear material-icons">close</i></label>
+</div>
+</div>
+
+	</div>
+	<div class="toggle-conversation-options" v-if="metadata" v-on:click="toggleConversationOptions">
+		<i class="material-icons">more_vert</i>
+	</div>
+
+	<div class="conversation-options" v-if="metadata" v-bind:class="{ visible: conversationOptionsVisible }">
+
+
+
+<div class="close-bar">
+	<div class="toggle-conversation-options" v-on:click="toggleConversationOptions">
+		<i class="material-icons">close</i>
+	</div>
+</div>
+<div class="conversation-options-section" v-if="messagesType === 0">
+	<div class="conversation-options-label">Participants</div>
+	<div class="participant-list">
+		
+
+
+<a class="one-line-item-participant companion-kit one-line-item  basic-size-small  js-participant   clickable" v-for="participant in getOneLineItemParticipants(metadata.participants)" v-bind:href="getUserProfileUrl(participant.membershipId)" target="_blank"   data-identifier="participant" data-render-type="Vue" v-cloak >
+
+
+
+
+<template v-if="participant.iconCoin">
+	<div class="icon-slot">
+		<div class="icon"
+			 v-bind:class="{ 'icon-font' : participant.iconCoin.iconName }"
+		     v-bind:style="{ backgroundImage: participant.iconCoin.imagePath ? 'url(' + participant.iconCoin.imagePath + ')' : '' }">
+			
+			<span v-if="participant.iconCoin.text">{{participant.iconCoin.text}}</span>
+			<span v-if="participant.iconCoin.iconName">
+				<template v-if="participant.iconCoin.iconFont === 0">
+					<i class="material-icons">{{participant.iconCoin.iconName}}</i>
+				</template>
+				<template v-if="participant.iconCoin.iconFont === 1">
+					<i v-bind:class="'fa fa-' + participant.iconCoin.iconName" aria-hidden="true"></i>
+				</template>
+				<template v-if="participant.iconCoin.iconFont === 2">
+					<i v-bind:class="'icon-' + participant.iconCoin.iconName"></i>
+				</template>
+			</span>
+		</div>
+	</div>
+</template>
+
+<div class="text-content">
+	<div class="title" v-html="participant.title"></div>
+</div>
+<template v-if="participant.flairCoin">
+	<div class="flair-slot">
+		<div class="flair">{{participant.flairCoin.text}}</div>
+	</div>
+</template>
+</a>
+	</div>
+</div>
+<div class="conversation-options-section">
+	<div class="conversation-options-label">Options</div>
+	<div class="tools">
+		
+
+
+<div class="one-line-item-pop-out companion-kit one-line-item  basic-size-small  js-pop-out   clickable" v-on:click="popOutConversation"   data-identifier="pop-out" >
+
+
+
+<div class="text-content">
+	<div class="title">Pop Out Conversation</div>
+</div>
+
+
+</div>
+
+		
+
+
+<div class="one-line-item-leave-conversation companion-kit one-line-item  basic-size-small  js-leave-conversation   clickable" v-on:click="leaveConversation"   data-identifier="leave-conversation" >
+
+
+
+<div class="text-content">
+	<div class="title">Leave Conversation</div>
+</div>
+
+
+</div>
+	</div>
+</div>
+
+	</div>
+</div>
+<div class="header-line-two" v-if="composeParticipantsOptions.length > 0">
+	<div class="compose-participant" v-for="participant in composeParticipantsOptions">
+		
+
+
+<div class="one-line-item-participant companion-kit one-line-item  basic-size-small  js-participant   clickable" v-on:click="addParticipant(participant)"   data-identifier="participant" data-render-type="Vue" v-cloak >
+
+
+
+
+<template v-if="participant.iconCoin">
+	<div class="icon-slot">
+		<div class="icon"
+			 v-bind:class="{ 'icon-font' : participant.iconCoin.iconName }"
+		     v-bind:style="{ backgroundImage: participant.iconCoin.imagePath ? 'url(' + participant.iconCoin.imagePath + ')' : '' }">
+			
+			<span v-if="participant.iconCoin.text">{{participant.iconCoin.text}}</span>
+			<span v-if="participant.iconCoin.iconName">
+				<template v-if="participant.iconCoin.iconFont === 0">
+					<i class="material-icons">{{participant.iconCoin.iconName}}</i>
+				</template>
+				<template v-if="participant.iconCoin.iconFont === 1">
+					<i v-bind:class="'fa fa-' + participant.iconCoin.iconName" aria-hidden="true"></i>
+				</template>
+				<template v-if="participant.iconCoin.iconFont === 2">
+					<i v-bind:class="'icon-' + participant.iconCoin.iconName"></i>
+				</template>
+			</span>
+		</div>
+	</div>
+</template>
+
+<div class="text-content">
+	<div class="title" v-html="participant.title"></div>
+</div>
+<template v-if="participant.flairCoin">
+	<div class="flair-slot">
+		<div class="flair">{{participant.flairCoin.text}}</div>
+	</div>
+</template>
+</div>
+
+	</div>
+</div>
+<div class="header-line-two" v-if="toText.length > 0 && showSearchAllUsers">
+	
+	
+
+
+<div class="one-line-item-search-all-users companion-kit one-line-item  basic-size-small  js-search-all-users   clickable" v-on:click="searchAllUsers"   data-identifier="search-all-users" >
+
+
+	<div class="icon-slot">
+		<div class="icon icon-font">
+			<i class="material-icons">search</i>
+
+</div>
+
+	</div>
+
+<div class="text-content">
+	<div class="title">Search All Users</div>
+</div>
+
+
+</div>
+</div>
+
+						</div>
+
+						<div class="conversation-detail-body js-conversation-detail-body">
+
+
+<div class="conversation-container js-conversation-container" v-bind:data-author-count="client.userCount" v-bind:class="{ 'new-message': !client.messages || client.messages.length === 0 }">
+	<div class="loading" v-bind:class="{ 'is-visible' : client.isLoadingOlder }">
+		<p>Loading...</p>
+	</div>
+
+	<div class="message-list-wrapper js-message-list" v-on:scroll="onScroll">
+		<ul class="chat-message-list js-chat-messages">
+			<template v-for="message in client.messages">
+
+
+<div class="date-time" v-if="!isWithinTimeThreshold(message)">
+	{{getTimestampAgo(message)}}
+</div>
+<li v-bind:data-messageid="message.messageId" 
+	v-bind:class="{ me: isMe(message), consecutive: isConsecutive(message), 'last-consecutive': isLastConsecutive(message), video: isVideo(message) }"
+	v-bind:title="getTimestamp(message)">
+	<div class="content">
+		<div class="authorMeta" v-if="message.systemId && client.users[message.memberFromId]">
+			<a class="displayName" v-bind:data-membershipid="message.memberFromId" v-bind:href="getUserProfileUrl(message.memberFromId)">
+				{{client.users[message.memberFromId].displayName}}
+			</a>
+		</div>
+		<a class="avatar"
+		   v-if="!message.systemId && client.users[message.memberFromId] && !isMe(message) && isLastConsecutive(message)"
+		   v-bind:href="getUserProfileUrl(message.memberFromId)"
+		   v-bind:data-membershipid="message.memberFromId">
+			<img v-bind:src="client.users[message.memberFromId].profilePicturePath" v-bind:alt="client.users[message.memberFromId].displayName">
+
+		</a>
+
+		<p class="body" v-bind:data-messageid="message.messageId" v-bind:class="{ fromserver: message.fromServer, fromlocal: !message.fromServer }" v-html="formatBody(message)">
+		</p>
+
+		<div class="meta">
+			<p class="date" v-bind:data-time="message.dateSent" v-bind:class="{ fromserver: message.fromServer, fromlocal: !message.fromServer }"></p>
+			<span v-if="!isMe(message)" v-on:click="report(message)" class="wall-action">Report</span>
+			<span v-if="selfIsAdmin" v-on:click="moderate(message)" class="wall-action">Moderate</span>
+		</div>
+	</div>
+</li>
+<div class="cf"></div>
+			</template>
+		</ul>
+	</div>
+	<div class="whoistyping isVisible" v-if="whoIsTyping">{{whoIsTyping}}</div>
+	<div class="new-message-banner js-new-message-banner" v-bind:class="{ 'is-visible' : newMessageBannerVisible }" v-on:click="scrollToBottom">
+		<p>New Messages</p>
+	</div>
+</div>
+<div class="edit-message-container js-edit-message-container" v-if="showEditor">
+	<div class="edit-container js-edit-container">
+		<textarea class="js-compose"
+				  v-on:keydown="onTextareaKeydown"
+				  v-model="textareaValue"
+				  tabindex="1"
+				  data-groupid=""
+				  data-conversationid=""
+				  placeholder="Send a message..."
+				  maxlength="4000"
+				  data-maxlength="4000"
+				  data-required="true"
+				  data-errormessage-required="Message Required"
+				  data-errormessage-maxlength="A message can only have a maximum of 4000 characters."
+				  aria-required="true"
+				  id="textArea_Send a message..."></textarea>
+
+	</div>
+	<div class="submit-container">
+		<button class="button submit-button js-submit" tabindex="2" v-on:click="submitMessage">
+			Send
+		</button>
+	</div>
+</div>
+						</div>
+					</div>
+				</div>
+				
+
+				<div class="tab-contents notifications js-notifications-container" data-tab="Notifications">
+
+					<div class="notifications-list">
+						
+
+
+<div class="listview-item-notifications-list control-kit listview-item  js-notifications-list"  data-vue-list-item-name="notification" v-on:scroll="onScroll"  data-identifier="notifications-list" data-render-type="Vue" v-cloak data-root-var-name="notificationslist" >
+
+
+
+
+<div class="list-item-container">
+	<template v-if="vueData && vueData.items && vueData.items.length > 0">
+		<notification-item
+		v-cloak
+		v-for="(notificationslist, index) in vueData.items"
+		v-bind:notification="notificationslist">
+		</notification-item>
+	</template>
+	<template v-else>
+		<div class="no-items">No notifications</div>
+	</template>
+</div>
+</div>
+
+
+<template id="notification-item">
+	<div class="notification-item" v-if="notification">
+		
+
+
+<a class="two-line-item-notification companion-kit two-line-item  basic-size-medium allow-wrap js-notification   clickable" v-bind:href="getNotificationLink(notification)" v-bind:class="{ new: notification.notification.isNew }"   data-identifier="notification" data-render-type="Vue" v-cloak >
+
+
+
+
+<template v-if="notification.iconCoin">
+	<div class="icon-slot">
+		<div class="icon"
+			 v-bind:class="{ 'icon-font' : notification.iconCoin.iconName }"
+		     v-bind:style="{ backgroundImage: notification.iconCoin.imagePath ? 'url(' + notification.iconCoin.imagePath + ')' : '' }">
+			
+			<span v-if="notification.iconCoin.text">{{notification.iconCoin.text}}</span>
+			<span v-if="notification.iconCoin.iconName">
+				<template v-if="notification.iconCoin.iconFont === 0">
+					<i class="material-icons">{{notification.iconCoin.iconName}}</i>
+				</template>
+				<template v-if="notification.iconCoin.iconFont === 1">
+					<i v-bind:class="'fa fa-' + notification.iconCoin.iconName" aria-hidden="true"></i>
+				</template>
+				<template v-if="notification.iconCoin.iconFont === 2">
+					<i v-bind:class="'icon-' + notification.iconCoin.iconName"></i>
+				</template>
+			</span>
+		</div>
+	</div>
+</template>
+<div class="text-content">
+	<div class="title" v-html="notification.title"></div>
+	<div class="subtitle" v-html="notification.subtitle"></div>
+</div>
+<template v-if="notification.flairCoin">
+	<div class="flair-slot">
+		<div class="flair">{{notification.flairCoin.text}}</div>
+	</div>
+</template>
+</a>
+	</div>
+</template>
+
+						<div class="notifications-actions">
+							
+
+
+<div class="button-clear-notifications control-kit button  none medium js-clear-notifications"   data-identifier="clear-notifications" >
+
+
+
+Clear
+</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</template>
+
+</header>
+
+
+
+
+
+<script type="text/html" id="template_conversationMain">
+	<!-- ko if :  inMain() -->
+	<div id="mail_conversation" class="panel_mail hide mail_conversation" data-bind="attr: {
+		'data-conversationId' : conversationId,
+		'data-groupId' : group.groupId,
+		'data-groupName' : group.name
+	}">
+
+		<div class="hgroup cf">
+			<a class="link_blueArrow_left link_back">Back</a>
+			
+			<!-- ko if : group.name !== "" -->
+			<h4><a data-bind="text: group.name, attr: { href: PageUrls.clanIndex + '/' + group.groupId }"></a></h4>
+			<!-- /ko -->
+			<!-- ko if : group.name === "" -->
+			<h4>
+				<!-- ko template : {name : 'template_recipients', foreach : $data.users, afterRender : Mail.cleanUpPinned } --><!-- /ko -->
+			</h4>
+			<!--/ko -->
+		</div>
+		<div class="container_dropdown container_section">
+			<ul class="section" data-bind="template:{name : 'template_message_main', foreach : messages }"></ul>
+		</div>
+		<div class="container_textfield container_textarea floatingLabel">
+			<textarea cols="1" rows="2" class="autoGrow" maxlength="4000" data-maxlength="4000" data-errormessage-maxlength="Message can only have a maximum of 4000 characters" 
+					  data-required="true" data-errormessage-required="Message Required" placeholder="Write a message..."></textarea>
+		</div>
+		<div class="whoIsTyping" data-bind="visible: whoIsTyping() != '', html: Localizer.Format(Localizer.Community.useristyping, { user: whoIsTyping() })"></div>
+		<!-- ko if : group.name === "" -->
+		<a class="btn_blue btn_reply" data-bind="attr: { 'data-conversationId': conversationId, 'data-conversationWith': Mail.getMemberIds(users()).join(',') }" tabindex="2">Send Message</a>
+		<!-- /ko -->
+		<!-- ko if : group.name !== "" -->
+		<a class="btn_blue btn_reply groupReply" data-bind="attr: { 'data-groupId': group.groupId, 'data-conversationId': conversationId }" data-conversationwith="" tabindex="2">Send Message</a>
+		<!-- /ko -->
+	</div>
+	<!-- /ko -->
+</script>
+<script type="text/html" id="template_message_main">
+	<!-- ko if: conversationId != 0 && $parent.users() -->
+
+	<li data-bind="if : conversationId != 0, css:{ 'me' : (memberFromId() == myID_cookie) },attr:{'data-mfid' : memberFromId(), 'data-mID' : messageId()  },finishedRenderingMessage_main : true">
+		<article class="cf">
+			<div class="container_avatar">
+				<a data-bind="attr: { href: PageUrls.profilePage + '/' + memberFromId() }" class="avatar only exempt">
+					<img alt="" data-bind="attr: { src: Mail.getUserFromId(memberFromId(), $parent.users).profilePicturePath, 'data-membershipId': memberFromId() }">
+				</a>
+			</div>
+			<div class="content">
+				<h1>
+					<a class="exempt" data-bind="attr: { href: PageUrls.profilePage + '/' + memberFromId(), 'data-membershipId': memberFromId() }, text: Mail.getUserFromId(memberFromId(), $parent.users).displayName"></a>
+					&nbsp; <a class="exempt btn_reportMessage" data-bind="visible: memberFromId() != myID_cookie, click: function() { fnReportMessage(memberFromId(), body(), messageId()); }, attr: { 'data-membershipId': memberFromId() }">Report</a>
+				</h1>
+				<time data-bind="attr: {'datetime' : dateSent() }"></time>
+				<p data-bind="html : bungieNetPlatform.linkHelper.injectLinks(bungieNetPlatform.tagHelper.injectSpans( body().replace(/\n/gi, '<br>') ))"></p>
+				<!-- ko if: typeof $data.invitationId != "undefined" -->
+				<!-- ko if: $data.invitationId() > 0 && typeof $parent.invitationDetails[$data.invitationId()] != "undefined" && $parent.invitationDetails[$data.invitationId()] != null -->
+				<div data-bind="with: $parent.invitationDetails[$data.invitationId()]">
+					<p data-bind="routeBindingHtml: $data.message"></p>
+					<!-- ko ifnot: $data.hasExpired -->
+					<!-- ko if: $data.canRespond -->
+					<p class="actions">
+						<a data-bind="click: function() { viewModels.reviewInvitation($data, 1); }">Approve</a>
+						<a data-bind="click: function() { viewModels.reviewInvitation($data, 2); }">Deny</a>
+					</p>
+					<!-- /ko -->
+					<!-- /ko -->
+				</div>
+				<!-- /ko -->
+				<!-- /ko -->
+			</div>
+
+		</article>
+	</li>
+	<!--/ko -->
+</script>
+
+
+<script type="text/html" id="template_conversationMobile">
+	<!-- ko if :  inMobile() -->
+	<div id="mail_conversation" class="panel_mail hide mail_conversation mobile" data-bind="attr: { 'data-conversationId': conversationId }">
+		<div class="hgroup cf">
+			<a class="link_blueArrow_left link_back">Back</a>
+			
+			<!-- ko if : group.name !== "" -->
+			<h4><a data-bind="text: group.name, attr: { href: PageUrls.clanIndex + '/' + group.groupId }"></a></h4>
+			<!-- /ko -->
+			<!-- ko if : group.name === "" -->
+			<h4>
+				<!-- ko template : {name : 'template_recipients', foreach : details().usersTo, afterRender : Mail.cleanUpPinned } --><!-- /ko -->
+			</h4>
+			<!-- /ko -->
+		</div>
+		<div class="container_dropdown container_section">
+			<ul class="section" data-bind="template: { name: 'template_message_mobile', foreach: messages }"></ul>
+		</div>
+
+		<div class="container_textfield container_textarea floatingLabel"><textarea cols="1" rows="2" class="autoGrow" maxlength="4000" data-maxlength="4000" data-errormessage-maxlength="Message can only have a maximum of 4000 characters" data-required="true" data-errormessage-required="Message Required" placeholder="Write a message..."></textarea></div>
+		<!-- ko if : group.name === "" -->
+		<a class="btn_blue btn_reply" data-bind="attr: { 'data-conversationId': conversationId, 'data-conversationWith': Mail.getMemberIds(details().membersToId()).join(',') }" tabindex="2">Send Message</a>
+		<!-- /ko -->
+		<!-- ko if : group.name !== "" -->
+		<a class="btn_blue btn_reply" data-bind="attr: { 'data-groupId': group.groupId }" tabindex="2">Send Message</a>
+		<!-- /ko -->
+
+	</div>
+	<!-- /ko -->
+</script>
+<script type="text/html" id="template_message_mobile">
+	<!-- ko if: conversationId != 0 && $parent.users() -->
+	<li data-bind="if: conversationId != 0, css: { 'me': (memberFromId() == myID_cookie) }, attr: { 'data-mfid': memberFromId(), 'data-mID': messageId() }, finishedRenderingMessage_mobile: true">
+		<article class="cf">
+			<div class="container_avatar">
+				<a data-bind="attr: { href:  PageUrls.profilePage + '/' + memberFromId() }" class="avatar only">
+					<img alt="" data-bind="attr: { src: Mail.getUserFromId(memberFromId(), $parent.users()).profilePicturePath(), 'data-membershipId': memberFromId() }">
+				</a>
+			</div>
+			<div class="content">
+				<h1>
+					<a data-bind="attr: { href: PageUrls.profilePage + '/' + memberFromId(), 'data-membershipId': memberFromId() }, text: Mail.getUserFromId(memberFromId(), $parent.users).displayName()"></a>
+				</h1>
+				<time data-bind="attr: { 'datetime': dateSent() }"></time>
+				<p data-bind="html: bungieNetPlatform.linkHelper.injectLinks(bungieNetPlatform.tagHelper.injectSpans(body().replace(/\n/gi, '<br>')))"></p>
+				<!-- ko if: typeof $data.invitationId != "undefined" -->
+				<!-- ko if: $data.invitationId() > 0 && typeof $parent.invitationDetails[$data.invitationId()] != "undefined" && $parent.invitationDetails[$data.invitationId()] != null -->
+				<div data-bind="with: $parent.invitationDetails[$data.invitationId()]">
+					<p data-bind="routeBindingHtml: $data.message"></p>
+					<!-- ko ifnot: $data.hasExpired -->
+					<p class="actions">
+						<a data-bind="click: function() { viewModels.reviewInvitation($data, 1); }">Approve</a>
+						<a data-bind="click: function() { viewModels.reviewInvitation($data, 2); }">Deny</a>
+					</p>
+					<!-- /ko -->
+				</div>
+				<!-- /ko -->
+				<!-- /ko -->
+			</div>
+
+		</article>
+	</li>
+	<!--/ko-->
+</script>
+
+
+
+
+<script type="text/html" id="template_conversationPinned">
+	<!-- ko if : inPinned() -->
+	<div data-bind="attr : {'data-conversationId' : conversationId}, renderedPinned :  true" class="pinned">
+		<div class="tab">
+			<!-- ko template : {name : 'template_recipients', foreach : details().usersTo, afterRender : Mail.cleanUpPinned } --><!-- /ko -->
+			<a class="btn_close">X</a>
+		</div>
+		<div class="container_dropdown container_section">
+			<ul class="section" data-bind="template:{name : 'template_message_pinned', foreach : messages }"></ul>
+		</div>
+		<div class="footer cf">
+			<div class="container_textfield container_textarea floatingLabel">
+				<textarea placeholder="Write a message..." data-maxlength="10000" data-errormessage-maxlength="Only 10000 characters allowed" data-required="true" data-errormessage-required="Message Required"></textarea>
+				<a class="ir btn_reply_pinned" data-bind="attr:{'data-conversationId' : conversationId, 'data-conversationWith' : Mail.getMemberIds(details().membersToId()).join(',') }">submit</a>
+			</div>
+		</div>
+	</div>
+	<!-- /ko-->
+</script>
+
+<script type="text/html" id="template_message_pinned"> 
+	<li data-bind="if : conversationId != 0, css:{ 'me' : (memberFromId() == myID_cookie) },attr:{'data-mfid' : memberFromId(), 'data-mID' : messageId()  },finishedRenderingMessage_pinned : true">
+		<article class="cf">
+			<a data-bind="attr: { href: PageUrls.profilePage + '/' + memberFromId()}" class="avatar exempt">
+				<img alt="" data-bind="attr: { src: Mail.getUserFromId(memberFromId(), $parent.users()).profilePicturePath(), 'data-membershipId': memberFromId() }">
+			</a>
+			<div class="content">
+				<h1>
+					<a data-bind="attr: { href: PageUrls.profilePage + '/' + memberFromId(), 'data-membershipId': memberFromId() }, text: Mail.getUserFromId(memberFromId()).displayName()"></a>
+				</h1>
+				<time data-bind="attr: {'datetime' : dateSent() }"></time>
+				<p data-bind="html : bungieNetPlatform.linkHelper.injectLinks(bungieNetPlatform.tagHelper.injectSpans( body().replace(/\n/gi, '<br>') ))"></p>
+			</div>
+		</article>
+	</li>
+
+</script>
+<script type="text/html" id="template_recipients">
+	<!-- ko if: (membershipId != Bnet.Utilities.User.loggedInUserBnetMembershipId) -->
+	<a data-bind="attr: {'data-membershipId' : membershipId, href : PageUrls.profilePage + '/' + membershipId},text : displayName, conversationAddComma:true" class="flyoutExempt9"></a>
+	<!-- /ko -->
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template id="sign-in-options">
+	
+
+
+
+
+<a class="button-live control-kit button  gold medium  js-live   clickable" href="/en/User/SignIn/Xuid?flowStart=1"   data-identifier="live" >
+
+
+
+Xbox
+</a>
+
+
+<a class="button-psn control-kit button  gold medium  js-psn   clickable" href="/en/User/SignIn/Psnid?flowStart=1"   data-identifier="psn" >
+
+
+
+PlayStation
+</a>
+
+
+<a class="button-steam control-kit button  gold medium  js-steam   clickable" href="/en/User/SignIn/SteamId?flowStart=1"   data-identifier="steam" >
+
+
+
+Steam
+</a>
+
+
+<a class="button-stadia control-kit button  gold medium  js-stadia   clickable" href="/en/User/SignIn/StadiaId?flowStart=1"   data-identifier="stadia" >
+
+
+
+Stadia
+</a>
+
+
+<a class="button-twitch control-kit button  gold medium  js-twitch   clickable" href="/en/User/SignIn/TwitchId?flowStart=1"   data-identifier="twitch" >
+
+
+
+Twitch
+</a>	
+
+
+</template>
+
+	
+
+	
+	<div id="outsideContent">
+		
+	</div>
+
+	<div id="content">
+
+		<div id="mainContent">
+			
+
+
+
+
+
+	
+        <div class="featured-item featured-product-item parallax-banner left-aligned on">
+            <div class="image" style="background-image: url('/pubassets/pkgs/157/157065/d2_witch_queen_launch_homepage_hero-desktop-bg_1.jpg');">
+            </div>
+            <div class="image mobile-only" style="background-image: url('/pubassets/pkgs/157/157065/d2_witch_queen_launch_homepage_hero-mobile-bg_1.jpg');"></div>
+            <div class="featured-text-content ">
+                    <div class="title-image" style="background-image: url('/pubassets/pkgs/156/156225/hero_logo_en.png');"></div>
+                <div class="subtitle ">
+                    Take Back the Light
+                </div>
+                <div class="button-container">
+                    
+
+
+<a class="button-button-two control-kit button  gold medium  js-button-two   clickable" href="https://www.bungie.net:443/7/en/Destiny/WitchQueen?ciid=50638"   data-identifier="button-two" >
+
+
+
+Available Now
+</a>
+
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+<div id="explore-container">
+
+	
+
+	
+
+
+		<div class="emailmessage bungiereward-message grid flex">
+		<div class="emailmessage-container grid-col-12">
+			<p class="email-title"><span></span>Receive gifts, exclusive rewards and more from Bungie.<a href=/7/en/Direct/Rewards?utm_campaign=bungierewards-homepage-banner>Visit Bungie Rewards to learn more.</a></p>
+			<i class="hide-emailmessage material-icons">cancel</i>
+		</div>
+	</div>
+
+		<div class="emailmessage newsletter-message grid flex">
+		<div class="emailmessage-container grid-col-12">
+			<p class="email-title"><span></span>Don&#39;t have an account? Want to stay up to date with Bungie and our games?<a href=/en/Emails/SignUp?utm_campaign=newsletter-homepage-banner>Sign up for our Newsletter.</a></p>
+			<i class="hide-emailmessage material-icons">cancel</i>
+		</div>
+	</div>
+
+
+
+
+
+<div class="basic-sub-nav-explore-subnav nav-kit basic-sub-nav  js-explore-subnav"   data-identifier="explore-subnav" >
+
+
+
+
+
+<div class="sub-nav-wrapper grid">
+	<div class="sub-nav-items grid-col-12">
+<a  class='current js-subnav-link' href='/en/Explore/News'>News</a><a  class=' js-subnav-link' href='/en/Explore/Category?category=Creations'>Creations</a><a  class=' js-subnav-link' href='/en/Explore/Category?category=Communities'>Communities</a>	</div>
+	
+</div>
+</div>
+	
+
+
+
+<div class="news-container grid flex">
+		<div class="news-header grid-col-12">
+			<span>Featured</span>
+		</div>
+		<div class="pinned-items-container grid-col-12" data-count="4">
+	<a class="pinned-item" href="https://www.bungie.net/7/en/Seasons/SeasonOfTheRisen" data-index="0">
+		<div class="background" style="background-image: url('/pubassets/pkgs/156/156620/d2_season-of-risen_homepage_1920x590_bg_1.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="featured-text-content ">
+			<div class="title"></div>
+			<div class="subtitle">Season of the Risen</div>
+		</div>
+	</a>
+	<a class="pinned-item" href="/en/Explore/Detail/News/50989" data-index="1">
+		<div class="background" style="background-image: url('/pubassets/pkgs/156/156162/lightspeed_1920x590_bng_bnet-home_1.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="featured-text-content ">
+			<div class="title"></div>
+			<div class="subtitle">Destiny 2: Our Shared Vision</div>
+		</div>
+	</a>
+	<a class="pinned-item" href="/en/Explore/Detail/News/50988" data-index="2">
+		<div class="background" style="background-image: url('/pubassets/pkgs/156/156161/bng_ls_graphic_1920x470_TWAB1_1.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="featured-text-content ">
+			<div class="title"></div>
+			<div class="subtitle">BUNGIE JOINS SONY INTERACTIVE ENTERTAINMENT</div>
+		</div>
+	</a>
+	<a class="pinned-item" href="https://www.bungie.net/Anniversary" data-index="3">
+		<div class="background" style="background-image: url('/pubassets/pkgs/152/152527/FrontpageBanner_1920x590_1.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="featured-text-content ">
+			<div class="title"></div>
+			<div class="subtitle">30th Anniversary</div>
+		</div>
+	</a>
+		</div>
+
+		<div class="recent-news-container">
+			<div class="news-header grid-col-12">
+				<span>Latest</span>
+			</div>
+			<div class="news-items grid-col-8 grid-col-12-mobile">
+				
+	<a class="news-item " href="/en/Explore/Detail/News/51267">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157864/Bungie-knitehawk_banner_997.png?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">&quot;Welcome to Trials, I&#8217;m your tour guide to the Lighthouse&quot; – 4/22/2022</div>
+			<div class="subtitle">Community Focus - Knitehawk</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item " href="/en/Explore/Detail/News/51250">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157828/ArticleBanner_997x500.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">That&#39;s a lot of sand – 4/21/2022</div>
+			<div class="subtitle">This Week at Bungie - 4/21/2022</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item " href="/en/Explore/Detail/News/51249">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/156/156617/Update_Patch_Blog.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">The One About Rhulk And Their Routine – 4/19/2022</div>
+			<div class="subtitle">Destiny 2 Update 4.0.1</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item mini" href="/en/Explore/Detail/News/51245">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157789/New_InDee_Banner_Bungie_997x500.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">In kindness and in good faith, one Twitch Mom takes the streaming world by storm. – 4/15/2022</div>
+			<div class="subtitle">Community Focus - InDeeDee</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item mini" href="/en/Explore/Detail/News/51241">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157788/ArticleBanner_997x500.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">The one where our Vows became just a little more serious.  – 4/14/2022</div>
+			<div class="subtitle">This Week at Bungie - 4/14/2022</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item mini" href="/en/Explore/Detail/News/51228">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157712/Bungie_997x500.png?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">Helping people, making dad jokes, and learning about the world around us. – 4/8/2022</div>
+			<div class="subtitle">Community Focus - PRONE</div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+	<a class="news-item mini" href="/en/Explore/Detail/News/51229">
+		<div class="thumbnail" style="background-image: url('/pubassets/pkgs/157/157713/ArticleBanner_997x500.jpg?cv=3983621215&amp;av=1224318893');"></div>
+		<div class="text-content">
+			<div class="title-date">Kilts and Pixels  – 4/7/2022</div>
+			<div class="subtitle">This Week At Bungie &#8211; 4/07/2022 </div>
+			<div class="summary"> [...]</div>
+		</div>
+	</a>
+
+				<div class="more-news-container">
+					
+
+
+<a class="button-more-news control-kit button  none medium  js-more-news   clickable" href="/en/News/Index"   data-identifier="more-news" >
+
+
+
+More News
+</a>
+				</div>
+			</div>
+			<div class="spacer grid-col-1 grid-hide-medium">
+				&nbsp;
+			</div>
+			<div class="twitter-feed grid-col-3 grid-hide-medium">
+				
+
+
+	<div class="content">
+				<a class="tweet-item" href="https://twitter.com/Bungie/status/1517603954175131650" target="_null">
+					<div class="main-account">
+						<div class="icon"></div>
+						<div class="account-name">Bungie</div>
+						<div class="handle">@Bungie</div>
+					</div>
+					<span class="date">Apr 22</span>
+					&quot;A Twitch Partner that absolutely loves to help the community with all things PVP!&qu...
+				</a>
+				<a class="tweet-item" href="https://twitter.com/Bungie/status/1517196773315334145" target="_null">
+					<div class="main-account">
+						<div class="icon"></div>
+						<div class="account-name">Bungie</div>
+						<div class="handle">@Bungie</div>
+					</div>
+					<span class="date">Apr 21</span>
+					RT @BungieLove: We&rsquo;re in the last 24 hours of @RMHCSeattle #KiltsforKids. Donate her...
+				</a>
+				<a class="tweet-item" href="https://twitter.com/Bungie/status/1517188149159546883" target="_null">
+					<div class="main-account">
+						<div class="icon"></div>
+						<div class="account-name">Bungie</div>
+						<div class="handle">@Bungie</div>
+					</div>
+					<span class="date">Apr 21</span>
+					This week at Bungie, we seem to have written a short novel about upcoming weapon sandbox c...
+				</a>
+			<a href="https://twitter.com/Bungie/" target="_null" class="view-more-tweets">View More</a>
+	</div>
+			</div>
+		</div>
+</div>
+
+
+
+
+</div>
+
+
+
+			<div id="toast-container">
+	<script type="text/html" id="toast-message-template">
+		<div class="toast-message">
+			<div class="text"></div>
+		</div>
+	</script>
+</div>
+		</div>
+
+
+		
+	</div>
+
+
+		<div id="sidebar"></div>
+
+	<div id="tooltips"></div>
+
+	
+<footer class="footer">
+	<a href="/">
+		<img src="/img/theme/bungienet/logos/bungie_logo_footer.png?cv=3983621215&amp;av=1224318893" class="footerLogo" />
+	</a>
+	<div class="nav_bottom">
+		<!--removed-->
+		<!--<li><a href="/en/View/bungie/trademarks">Trademarks</a></li>-->
+		<!--<li><a href="/">Bungie.net</a></li>-->
+		<!--<li><a href="/contactus">Contact Us</a></li>-->
+		<!--<li><a href="/en/AboutUs/Index#!page=index">About Bungie</a></li>-->
+		<!--<li><a href="/en/ClanV2/Search">Clans</a></li>
+		<li><a href="/en/Groups/Index">Groups</a></li>
+		<li><a href="/en/Forum/Topics/0/0/0/Destiny">Forums</a></li>
+		<li><a href="/en/Destiny/Credits">Credits</a></li>
+		<li><a href="/en/Forum/Topics/0/0/None/Help">Forums</a></li>
+			-->
+		<!--Destiny 2-->
+		<div class="column">
+			<ul>
+				<li><a href="/7/en/Destiny/NewLight">Destiny 2</a></li>
+				<li><a href="/en/News/Index">News</a></li>
+				<li><a href="/7/en/Destiny/Buy">Get Destiny 2</a></li>
+				<li><a href="/7/en/Destiny/Buy/Promo">Expansions</a></li>
+				<li><a href="/Seasons">Seasons</a></li>
+				<li><a href="/en/ClanV2/MyClan">Community</a></li>
+				<li><a href="/en/ClanV2/FireteamSearch">Find Fireteam</a></li>
+					<li><a href="/en/Application" class="exempt">Developer Portal</a></li>
+			</ul>
+		</div>
+		<!--Companion-->
+		<div class="column">
+			<ul>
+				<li><a href="/7/en/Destiny/Companion">Companion</a></li>
+				<li><a href="/7/en/User/SignIn?bru=%2F">Sign Up/Sign In</a></li>
+				<li><a href="/7/en/Seasons/Progress">Season Progress</a></li>
+				<li><a href="/en/Triumphs">Triumphs</a></li>
+				<li><a href="/7/en/CrossSave">Cross Save</a></li>
+				<li><a href="/7/en/Direct/Rewards">Rewards</a></li>
+				<li><a href="/7/en/Codes/Redeem">Redeem Codes</a></li>
+			</ul>
+		</div>
+		<!--Help-->
+		<div class="column">
+			<ul>
+				<li><a href="/en/Support/Index">Help</a></li>
+				<li><a href="/en/Guide/Destiny2">Guides</a></li>
+				<li><a href="/en/Support/Index">FAQ</a></li>
+        				
+				<li><a href="/7/en/legal/sla">Legal</a></li>
+				<li><a href="/7/en/legal/terms">Terms of Use</a></li>
+				<li><a href="/7/en/legal/privacypolicy">Privacy Policy</a></li>
+					<li><a href="/7/en/legal/paymentservicesact">Payment Services Act</a></li>
+				<li><a href="/en/Help/Troubleshoot?oid=48626">Do Not Sell My Personal Information</a></li>
+			</ul>
+		</div>
+		<!--Bungie-->
+        		<div class="column">
+        			<ul>
+        				<li><a href="https://careers.bungie.com/?utm_source=BungieNet&amp;utm_medium=footerlink&amp;utm_campaign=BNET_2020">Bungie</a></li>
+        				<li><a href="https://careers.bungie.com/jobs">Careers</a></li>
+	                    <li><a href="/en/Newsroom/Index?page=0">Bungie Newsroom</a></li>
+	                    <li><a href="/en/BungieTech/Index">Tech Blog</a></li>
+                        					<li><a href="https://press.bungie.com/">Press Room</a></li>
+        			</ul>
+        		</div>
+		<!--Store-->
+		<div class="column">
+			<ul>
+				<li><a href="http://bungiestore.com?utm_source=BungieNet&utm_medium=footerlink&utm_campaign=BNET_2020" target="_null">Store</a></li>
+				<li><a href="https://bungiestore.com/collections/whats-new" target="_null">What&#39;s New</a></li>
+				<li><a href="http://bungiestore.com/collections/" target="_null">Merchandise</a></li>
+				<li><a href="https://bungiestore.com/collections/soundtracks" target="_null">Soundtracks</a></li>
+				<li><a href="https://bungiestore.com/collections/community-artist-series" target="_null">Community Artist Series</a></li>
+				<li><a href="https://bungiestore.com/collections/bungie-rewards" target="_null">Bungie Rewards</a></li>
+				<li><a href="https://bungiestore.com/collections/last-chance" target="_null">Last Chance</a></li>
+			</ul>
+		</div>
+		
+		
+		<!--Foundation-->
+		<div class="column">
+			<ul>
+				<li><a href="http://www.bungiefoundation.org/?utm_source=BungieNet&amp;utm_medium=footerlink&amp;utm_campaign=BNET_2020">Bungie Foundation</a></li>
+				<li><a href="https://bungiefoundation.org/ipadforkids">iPads for Kids</a></li>
+				<li><a href="https://bungiefoundation.org/news-events">News & Events</a></li>
+				<li><a href="https://thebungiefoundation.kindful.com/">Donate</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="nav_bottom lower">
+		<p class="copyright">
+			&copy; 2022 Bungie, Inc. All rights reserved.
+		</p>
+		<div class="followUs">
+			<p>Follow Us</p>
+			<ul>
+				<li class="facebook"><a href="https://www.facebook.com/Bungie" class="ir" title="Bungie on Facebook"></a></li>
+				<li class="instagram"><a href="https://www.instagram.com/bungie/" class="ir" title="Bungie on Instagram"></a></li>
+				<li class="twitter"><a href="https://twitter.com/bungie" class="ir" title="Bungie on Twitter"></a></li>
+				<li class="youtube"><a href="https://www.youtube.com/user/Bungie" class="ir" title="Bungie on YouTube"></a></li>
+				<li class="twitch"><a href="https://www.twitch.tv/bungie" class="ir" title="Bungie on Twitch"></a></li>
+			</ul>
+		</div>
+		<div class="esrb">
+			<a href="http://www.esrb.org/ratings/Synopsis.aspx?Certificate=35008&amp;Title=Destiny+2" class="esrb">
+				<img src="/img/theme/bungienet/img/rating_esrb_t_dest2.png?cv=3983621215&amp;av=1224318893" alt="Rated T For Teen" />
+			</a>
+		</div>
+	</div>
+	<div class="appLinks">
+		<p>Download the Destiny Companion App</p>
+		<p>
+			<a href="http://itunes.apple.com/us/app/bungie-mobile/id441444902" class="btn_appStore">Download on the AppStore</a>
+			<a href="http://play.google.com/store/apps/details?id=com.bungieinc.bungiemobile" class="btn_googlePlay">Get it on Google play</a>
+		</p>
+	</div>
+
+</footer>
+<script type="text/javascript">
+	$(document).ready(function ()
+	{
+		if (Bnet.Utilities.User.isAuthenticated)
+		{
+			$("#authConversationPinned").removeClass("invisible");
+		}
+	});
+</script>
+
+
+<script type="text/html" id="container_signIn_script">
+	
+
+
+	<ul id="container_signIn" class="sign-in-triggers dropdown menu">
+			<li>
+				<a class="btn_login live exempt" title="Xbox" href="/en/User/SignIn/Xuid?flowStart=1">
+					Xbox
+				</a>
+			</li>
+			<li>
+				<a class="btn_login psn exempt" title="PlayStation" href="/en/User/SignIn/Psnid?flowStart=1">
+					PlayStation
+				</a>
+			</li>
+			<li>
+				<a class="btn_login steam exempt" title="Steam" href="/en/User/SignIn/SteamId?flowStart=1">
+					Steam
+				</a>
+			</li>
+			<li>
+				<a class="btn_login stadia exempt" title="Stadia" href="/en/User/SignIn/StadiaId?flowStart=1">
+					Stadia
+				</a>
+			</li>
+			<li>
+				<a class="btn_login twitch exempt" title="Twitch" href="/en/User/SignIn/TwitchId?flowStart=1">
+					Twitch
+				</a>
+			</li>
+
+	</ul>
+
+</script>
+	<div class="ageGateTemplate">
+	<div class="ageGatePrompt" data-minimumAge="0">
+        <div class="ageGatePromptContents">
+            <div>
+			    <img class="ratingImage" src="/img/theme/bungienet/placeholders/blank.gif?cv=3983621215&amp;av=1224318893" alt="rating image" />
+		    </div>
+		    <div class="ratingChoiceSet">
+			    <ul class="panel_ageGateSelection ratingAllowed">
+				    <li class="ratingChoice" data-value="1"><a >I am over the age of #AGE</a></li>
+			    </ul>
+		    </div>
+        </div>
+	</div>
+	<div class="ageGateForbidden hide">
+		You are not allowed to view this content.
+	</div>
+	<div class="ageGateContents hide" data-minimumAge="0">
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).on("click", ".ratingChoice a", function (e) {
+            e.preventDefault()
+		    
+		    var button = $(this);
+			var container = button.closest(".ageGate");
+			var allowed = button.parent().attr("data-value") == "1";
+			var agePosted = parseInt(container.find(".ageGatePrompt").attr("data-minimumAge"), 10);
+			
+			if (allowed) {
+
+				if (viewModels.userMinimumAge() <= agePosted) {
+					viewModels.userMinimumAge(agePosted);
+					$(".ageGateContents").each(function () {
+						var contents = $(this);
+
+						var minimumAge = parseInt(contents.attr("data-minimumAge"), 10);
+
+						if (agePosted >= minimumAge) {
+							contents.removeClass("hide");
+							contents.parent().find(".ageGatePrompt").addClass("hide");
+							contents.parent().find(".ageGateForbidden").addClass("hide");
+						}
+					});
+				}
+			} else {
+				$(".ageGateContents").each(function () {
+					var contents = $(this);
+
+					var minimumAge = parseInt(contents.attr("data-minimumAge"), 10);
+
+					if (agePosted <= minimumAge) {
+						contents.parent().find(".ageGateForbidden").removeClass("hide");
+						contents.parent().find(".ageGatePrompt").addClass("hide");
+						contents.addClass("hide");
+					}
+				});
+			}
+		});
+	});
+</script>
+
+
+	<script type="text/html" id="alert-validateemail">
+	<div class=" globalAlertsBar globalBar validate-email js-validate-email-global-alert">
+		<div class="grid">
+			<p class=" grid-col-12"><span class="content"></span><i class="js-remove-email-bar material-icons btn-close">close</i></p>
+		</div>
+	</div>
+</script>
+
+
+		
+
+
+
+	<style type="text/css">
+		/*
+				Adding a background image if one hasn't been loaded already.
+				It's important that this is at the end of the body, because it
+				won't load if another image has been declared for a more
+				specific body selector.
+			*/
+		body
+		{
+			background: rgb(18, 23, 28);
+			background-size: cover;
+		}
+	</style>
+
+
+</div>
+
+	<amp-geo layout="nodisplay">
+		<script type="application/json">
+			{
+			"AmpBind": true,
+			"ISOCountryGroups": {
+			"eea": [ "preset-eea" ]
+			}
+			}
+		</script>
+	</amp-geo>
+
+	<div id="ServerVarsPageData">
+		<script type="text/javascript">
+
+		$.extend(ServerVars,
+			{
+				PageData: {"RouteValues":{"locale":"en","controller":"Explore","action":"News"},"BuyButton":{"FetchEntitlements":true},"PCMigration":{"PCMigrationLoginInterrupt":false,"PCMigrationSteamLocalStorageKey":"show-pcmigration-steam-interrupt","PCMigrationBlizzardLocalStorageKey":"show-pcmigration-blizzard-interrupt"},"SiteTagging":{"SessionTracking":true,"SessionTimeoutSeconds":1800}}
+			});
+		</script>
+	</div>
+
+	<script src="/sharedbundle/site?v=FIIGcl4qqAXHG0mdVn9cE7Yy4hZsRhkh5L14ra98OPk1"></script>
+
+	<script src="/sharedbundle/uikit?v=G5uq68KIUjVg6tuzQspL_Xm8FAu-ntYfzMEMQ_-J_HA1"></script>
+
+
+	
+		
+	<script src="/sharedbundle/gearitemdetail?v=nT7Nz-ZsveDknGf7ACh2dDJ4ijMTW_0ssAVagBx2yS81"></script>
+
+	<script src="/areascripts/explore?v=iGlg0C8-qc0kpd7RdVc6rkjPaSjxfbQcVH6ACupfevY1"></script>
+
+
+	
+
+	
+
+
+
+	
+
+
+
+<template id="report-item-template">
+	<h3 class="section-header" v-html="title"></h3>
+
+	
+
+
+<div class="dropdown-item-report-item form-kit dropdown-item   js-report-item"   data-identifier="report-item" >
+			<div class="validation-errors"></div>
+
+
+
+
+
+
+	<select class="js-select-box"  name="">
+<option value="4" >Disrespect/Hate Speech</value><option value="64" >Harassment/Personal Attacks/Bullying</value><option value="8" >Name and Shame/Privacy Violation</value><option value="1" >Gory Violence/Explicit Sexuality</value><option value="256" >Threats of Violence/Illegal Activity</value><option value="1024" >Political/Religious Discussion</value><option value="32" >Cheating/Hacking</value><option value="16" >Spoilers/Distributing Stolen Content</value><option value="512" >Soliciting/Plagiarism/Phishing/Impersonation</value><option value="128" >Disruption/Evasion</value>	</select>
+	<div class="select-box js-toggle-select ">
+		<div class="current-option">
+				<div class="select-option js-option-selectable " data-value="4" >
+
+		<div class="option-label">
+			Disrespect/Hate Speech
+		</div>
+	</div>
+
+		</div>
+
+		<div class="select-options js-select-options" data-col="1">
+			<div class="children">
+	<div class="select-option js-option-selectable " data-value="4" >
+
+		<div class="option-label">
+			Disrespect/Hate Speech
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="64" >
+
+		<div class="option-label">
+			Harassment/Personal Attacks/Bullying
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="8" >
+
+		<div class="option-label">
+			Name and Shame/Privacy Violation
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="1" >
+
+		<div class="option-label">
+			Gory Violence/Explicit Sexuality
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="256" >
+
+		<div class="option-label">
+			Threats of Violence/Illegal Activity
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="1024" >
+
+		<div class="option-label">
+			Political/Religious Discussion
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="32" >
+
+		<div class="option-label">
+			Cheating/Hacking
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="16" >
+
+		<div class="option-label">
+			Spoilers/Distributing Stolen Content
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="512" >
+
+		<div class="option-label">
+			Soliciting/Plagiarism/Phishing/Impersonation
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="128" >
+
+		<div class="option-label">
+			Disruption/Evasion
+		</div>
+	</div>
+
+				<div class="cf"></div>
+			</div>
+		</div>
+		<div class="cf"></div>
+	</div>
+
+
+</div>
+
+	<p v-html="description"></p>
+
+</template>
+
+
+
+
+<template id="report-item-ninja-template">
+
+	<h3 class="section-header" v-html="title"></h3>
+
+	
+
+
+<div class="dropdown-item-report-item form-kit dropdown-item   js-report-item"   data-identifier="report-item" >
+			<div class="validation-errors"></div>
+
+
+
+
+
+
+	<select class="js-select-box"  name="">
+<option value="4" >Disrespect/Hate Speech</value><option value="64" >Harassment/Personal Attacks/Bullying</value><option value="8" >Name and Shame/Privacy Violation</value><option value="1" >Gory Violence/Explicit Sexuality</value><option value="256" >Threats of Violence/Illegal Activity</value><option value="1024" >Political/Religious Discussion</value><option value="32" >Cheating/Hacking</value><option value="16" >Spoilers/Distributing Stolen Content</value><option value="512" >Soliciting/Plagiarism/Phishing/Impersonation</value><option value="128" >Disruption/Evasion</value>	</select>
+	<div class="select-box js-toggle-select ">
+		<div class="current-option">
+				<div class="select-option js-option-selectable " data-value="4" >
+
+		<div class="option-label">
+			Disrespect/Hate Speech
+		</div>
+	</div>
+
+		</div>
+
+		<div class="select-options js-select-options" data-col="1">
+			<div class="children">
+	<div class="select-option js-option-selectable " data-value="4" >
+
+		<div class="option-label">
+			Disrespect/Hate Speech
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="64" >
+
+		<div class="option-label">
+			Harassment/Personal Attacks/Bullying
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="8" >
+
+		<div class="option-label">
+			Name and Shame/Privacy Violation
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="1" >
+
+		<div class="option-label">
+			Gory Violence/Explicit Sexuality
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="256" >
+
+		<div class="option-label">
+			Threats of Violence/Illegal Activity
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="1024" >
+
+		<div class="option-label">
+			Political/Religious Discussion
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="32" >
+
+		<div class="option-label">
+			Cheating/Hacking
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="16" >
+
+		<div class="option-label">
+			Spoilers/Distributing Stolen Content
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="512" >
+
+		<div class="option-label">
+			Soliciting/Plagiarism/Phishing/Impersonation
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="128" >
+
+		<div class="option-label">
+			Disruption/Evasion
+		</div>
+	</div>
+
+				<div class="cf"></div>
+			</div>
+		</div>
+		<div class="cf"></div>
+	</div>
+
+
+</div>
+
+	<p v-html="description"></p>
+
+
+
+		<div class="moderator-report-actions">
+			<p>Your role as a moderator enables you immediately ban this user from messaging (bypassing the report queue) if you select a punishment.</p>
+			
+
+
+<div class="dropdown-item-mod-report-item form-kit dropdown-item   js-mod-report-item"   data-identifier="mod-report-item" >
+			<div class="validation-errors"></div>
+
+
+
+
+
+
+	<select class="js-select-box"  name="">
+<option value="2" >7 Day Ban</value><option value="3" >30 Day Ban</value><option value="255" >Permanent Ban</value>	</select>
+	<div class="select-box js-toggle-select ">
+		<div class="current-option">
+				<div class="select-option js-option-selectable " data-value="2" >
+
+		<div class="option-label">
+			7 Day Ban
+		</div>
+	</div>
+
+		</div>
+
+		<div class="select-options js-select-options" data-col="1">
+			<div class="children">
+	<div class="select-option js-option-selectable " data-value="2" >
+
+		<div class="option-label">
+			7 Day Ban
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="3" >
+
+		<div class="option-label">
+			30 Day Ban
+		</div>
+	</div>
+	<div class="select-option js-option-selectable " data-value="255" >
+
+		<div class="option-label">
+			Permanent Ban
+		</div>
+	</div>
+
+				<div class="cf"></div>
+			</div>
+		</div>
+		<div class="cf"></div>
+	</div>
+
+
+</div>
+		</div>
+
+
+</template>
+
+	<template id="cookie-consent-template">
+		<div id="cookie-consent">
+			<div class="cookie-consent-content">
+				<span>
+					This site uses cookies to provide you with the best possible user experience. By clicking &#39;Accept&#39;, you agree to the policies documented at <a href='/7/en/legal/cookiepolicy'>Cookie Policy</a> and <a href='/7/en/legal/privacypolicy'>Privacy Policy</a>.
+				</span>
+
+				
+
+
+<div class="button-accept-button control-kit button  gold medium js-accept-button"   data-identifier="accept-button" >
+
+
+
+Accept
+</div>
+			</div>
+		</div>
+	</template>
+
+	<template id="cookie-passive-consent-template">
+		<div id="cookie-consent">
+			<div class="cookie-consent-content">
+				<span>
+					This site uses cookies to provide you with the best possible user experience. By continuing to use this site, you agree to the policies documented at <a href='/7/en/legal/cookiepolicy'>Cookie Policy</a> and <a href='/7/en/legal/privacypolicy'>Privacy Policy</a>.
+				</span>
+				<div class="close-me js-close-me">
+					<i class="material-icons">close</i>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<template id="cookie-consent-update-template">
+		<div id="cookie-consent">
+			<div class="cookie-consent-content">
+				<span>
+					Our policies have recently changed.  By clicking &#39;Accept&#39;, you agree to the updated policies documented at <a href='/7/en/legal/cookiepolicy'>Cookie Policy</a> and <a href='/7/en/legal/privacypolicy'>Privacy Policy</a>.
+				</span>
+
+				
+
+
+<div class="button-accept-button control-kit button  gold medium js-accept-button"   data-identifier="accept-button" >
+
+
+
+Accept
+</div>
+			</div>
+		</div>
+	</template>
+
+	<template id="cookie-passive-consent-update-template">
+		<div id="cookie-consent">
+			<div class="cookie-consent-content">
+				<span>
+					Our policies have recently changed.  By continuing to use this site, you agree to the updated policies documented at <a href='/7/en/legal/cookiepolicy'>Cookie Policy</a> and <a href='/7/en/legal/privacypolicy'>Privacy Policy</a>.
+				</span>
+				<div class="close-me js-close-me">
+					<i class="material-icons">close</i>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<div id="alert" class="alert">
+		<img class="preloader" src="/img/theme/bungienet/icons/icon_loading_gray.gif?cv=3983621215&amp;av=1224318893" alt="preload icon" />
+		<div class="content">
+			<div class="header cf">
+				<a class="btn_close"></a>
+			</div>
+			<div class="innerContent"></div>
+		</div>
+	</div>
+	<div id="alert_noClose" class="alert">
+		<img class="preloader" src="/img/theme/bungienet/icons/icon_loading_gray.gif?cv=3983621215&amp;av=1224318893" alt="preload icon" />
+		<div class="content">
+			<div class="header"></div>
+			<div class="innerContent"></div>
+		</div>
+	</div>
+	<div id="signInAlert" class="alert">
+		<img class="preloader" src="/img/theme/bungienet/icons/icon_loading_gray.gif?cv=3983621215&amp;av=1224318893" alt="preload icon" />
+		<div class="content">
+			<div class="header"></div>
+			<div class="innerContent"></div>
+		</div>
+	</div>
+	<div id="lightbox">
+		<img id="preloader" src="/img/theme/bungienet/icons/icon_loading_gray.gif?cv=3983621215&amp;av=1224318893" alt="preload icon" />
+		<div id="content_lightbox" class="content"></div>
+	</div>
+	<div id="showsExtraInfo">
+		<div class="content_popout"></div>
+	</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70161a565aaf8932","token":"d9037c24bdf84e8bb712f1597ca7e783","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
