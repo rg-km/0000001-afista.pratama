@@ -1,7 +1,5 @@
 package main
 
-import "sync"
-
 func testWG(output chan<- []bool) {
 	// TODO: answer here
 

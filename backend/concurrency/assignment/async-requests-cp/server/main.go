@@ -12,6 +12,7 @@ func main() {
 	http.HandleFunc("/", handler.GetMessage)
 
 	fmt.Println("starting server")
+	fmt.Println("running on server: 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }

@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 	"time"
 )
@@ -11,6 +12,8 @@ func GetMessage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	time.Sleep(5 * time.Millisecond)
+
+	log.Println("GET, hi")
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("hi"))
 }
