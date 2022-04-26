@@ -25,6 +25,7 @@ func main() {
 			counter += <-c
 		}
 	}()
+
 	time.Sleep(200 * time.Millisecond)
 	fmt.Println(counter)
 }

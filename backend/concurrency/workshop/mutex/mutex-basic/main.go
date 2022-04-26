@@ -12,14 +12,15 @@ import (
 //lebih mudah daripada menggunakan channel
 //kali ini kita menggunakan contoh sederhana
 func main() {
-	mu := &sync.Mutex{}
+	mu := &sync.Mutex{} // unlock mutex
 	counter := 0
 
+	//mu.Unlock() // error
 	for i := 0; i < 1000; i++ {
 		go func() {
-			mu.Lock() //terjadi blocking saat memanggil lock, jika sudah ada goroutine lain yang memanggil lock
-			counter += 1
-			mu.Unlock() //membuka lock agar goroutine lain bisa lanjut memanggil lock
+			mu.Lock()         //terjadi blocking saat memanggil lock, jika sudah ada goroutine lain yang memanggil lock
+			defer mu.Unlock() //membuka lock agar goroutine lain bisa lanjut memanggil lock
+			counter += 1      // critical content
 		}()
 
 		go func() {

@@ -20,6 +20,7 @@ func main() {
 		urls = append(urls, baseURL)
 	}
 	results := helper.AsyncHttpGets(urls)
+	//results := helper.SyncHttpGets(urls)
 	for _, result := range results {
 		if result != nil && result.Body != nil {
 			fmt.Printf("%s. Waktu %v\n", result.Status, time.Since(start))

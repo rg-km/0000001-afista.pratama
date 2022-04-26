@@ -27,6 +27,7 @@ var _ = Describe("Load balancer", func() {
 				expected[data] = true
 			}
 		}
+
 		time.Sleep(1000 * time.Millisecond)
 		mu.Lock()
 		Eventually(data).Should(Equal(expected))
