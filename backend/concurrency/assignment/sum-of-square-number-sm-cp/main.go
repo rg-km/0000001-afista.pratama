@@ -19,6 +19,8 @@ func squareWorker(workerInput <-chan int, workerOutput chan<- int) {
 func createRequest(workerInput chan<- int, workerOutput <-chan int, wg *sync.WaitGroup) {
 	for i := 1; i < 100; i++ {
 		// TODO: answer here
+		// membuat share memori / share content
+		// membuat variable public
 
 		go func(i int) {
 			// TODO: answer here
