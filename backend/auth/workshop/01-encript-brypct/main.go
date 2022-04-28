@@ -12,6 +12,8 @@ func main() {
 		panic(err)
 	}
 
+	//bcrypt.CompareHashAndPassword([]byte(hashedStr), []byte("hello"))
+
 	fmt.Printf("Hashed String = %s", hashedStr)
 }
 
@@ -19,5 +21,10 @@ func main() {
 func encryptToBcrypt(str string) (string, error) {
 	// Task: Hashing the password with the default cost of 10
 
-	return "", nil // TODO: replace this
+	encrypted, err := bcrypt.GenerateFromPassword([]byte(str), bcrypt.DefaultCost)
+	if err != nil {
+		return "", err
+	}
+
+	return string(encrypted), nil // TODO: replace this
 }
