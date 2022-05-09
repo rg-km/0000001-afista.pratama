@@ -1,13 +1,9 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
-	"time"
-
-	"github.com/dgrijalva/jwt-go"
 )
 
 // Authorization menggunakan claim JWT

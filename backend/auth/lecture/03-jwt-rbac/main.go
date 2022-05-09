@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
+	"github.com/ruang-guru/playground/backend/auth/lecture/04-jwt-abac/service"
 )
 
 // Authorization menggunakan claim JWT
@@ -23,7 +24,7 @@ func Routes() *http.ServeMux {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/signin", func(w http.ResponseWriter, r *http.Request) {
-		var creds Credentials
+		var creds service.Credentials
 		// JSON body diconvert menjadi creditial struct
 		err := json.NewDecoder(r.Body).Decode(&creds)
 		if err != nil {
@@ -33,7 +34,7 @@ func Routes() *http.ServeMux {
 		}
 
 		// Ambil password dari username yang dipakai untuk login
-		expectedPassword, ok := users[creds.Username]
+		expectedPassword, ok := service.Users[creds.Username]
 
 		// return unauthorized jika password salah
 		if !ok || expectedPassword.Password != creds.Password {
@@ -46,7 +47,7 @@ func Routes() *http.ServeMux {
 		expirationTime := time.Now().Add(5 * time.Minute)
 
 		// Buat claim menggunakan variable yang sudah didefinisikan diatas
-		claims := &Claims{
+		claims := &service.Claims{
 			Username: creds.Username,
 			Role:     expectedPassword.Role,
 			StandardClaims: jwt.StandardClaims{
@@ -59,7 +60,7 @@ func Routes() *http.ServeMux {
 		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 		// Buat jwt string dari token yang sudah dibuat menggunakan JWT key yang telah dideklarasikan
-		tokenString, err := token.SignedString(jwtKey)
+		tokenString, err := token.SignedString(service.JwtKey)
 		if err != nil {
 			// return internal error ketika ada kesalahan ketika pembuatan JWT string
 			w.WriteHeader(http.StatusInternalServerError)
@@ -81,17 +82,20 @@ func Routes() *http.ServeMux {
 		w.Write([]byte("Public Page"))
 	})
 
-	mux.Handle("/admin", AuthMiddleWare("admin", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// req -> pengecekan token JWT, di dalamnya ada payload "role" , cek dengan akses parameter
+	// kalau sama , berarti kasih akses
+	// kalau tidak , berarti anggap unauthorize
+	mux.Handle("/admin", service.AuthMiddleWare("admin", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Admin Page"))
 	})))
 
-	mux.Handle("/student", AuthMiddleWare("student", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	mux.Handle("/student", service.AuthMiddleWare("student", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Student Page"))
 	})))
 
-	mux.Handle("/school", AuthMiddleWare("all", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	mux.Handle("/school", service.AuthMiddleWare("all", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("School Page"))
 	})))

@@ -1,9 +1,10 @@
-package main
+package service
 
 import (
 	"context"
-	"github.com/dgrijalva/jwt-go"
 	"net/http"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 func AuthMiddleWare(role string, next http.Handler) http.Handler {
@@ -29,7 +30,7 @@ func AuthMiddleWare(role string, next http.Handler) http.Handler {
 
 		//parse JWT token ke dalam claim
 		tkn, err := jwt.ParseWithClaims(tknStr, claims, func(token *jwt.Token) (interface{}, error) {
-			return jwtKey, nil
+			return JwtKey, nil
 		})
 		if err != nil {
 			if err == jwt.ErrSignatureInvalid {

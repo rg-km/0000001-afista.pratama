@@ -118,7 +118,7 @@ func ActionStudent(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/student", ActionStudent)
+	http.HandleFunc("/student", ActionStudent) // only for admin
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		_, ok := Auth(w, r)
 		if !ok {

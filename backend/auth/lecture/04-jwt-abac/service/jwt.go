@@ -1,4 +1,4 @@
-package main
+package service
 
 import (
 	//...
@@ -8,10 +8,10 @@ import (
 )
 
 // Jwt key yang akan dipakai untuk membuat signature
-var jwtKey = []byte("key")
+var JwtKey = []byte("key")
 
 // Data user - password yang bisa mengakses api
-var users = map[string]*User{
+var Users = map[string]*User{
 	"user1": {
 		ID:       1,
 		Password: "password1",

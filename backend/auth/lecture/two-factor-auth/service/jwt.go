@@ -1,14 +1,23 @@
-package main
+package service
 
 import (
 	"fmt"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt"
 )
 
 func SignJwt(claims jwt.MapClaims, secret string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString([]byte(secret))
+
+	fmt.Println(token)
+
+	tokenStr, err := token.SignedString([]byte(secret))
+	fmt.Println(tokenStr)
+	if err != nil {
+		return "", err
+	}
+
+	return tokenStr, nil
 }
 
 func VerifyJwt(token string, secret string) (map[string]interface{}, error) {

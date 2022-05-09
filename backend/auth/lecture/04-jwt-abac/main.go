@@ -12,6 +12,7 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
+	"github.com/ruang-guru/playground/backend/auth/lecture/04-jwt-abac/service"
 )
 
 // Authorization menggunakan claim JWT
@@ -25,7 +26,7 @@ func Routes() *mux.Router {
 	route := mux.NewRouter()
 
 	route.HandleFunc("/signin", func(w http.ResponseWriter, r *http.Request) {
-		var creds Credentials
+		var creds service.Credentials
 		// JSON body diconvert menjadi creditial struct
 		err := json.NewDecoder(r.Body).Decode(&creds)
 		if err != nil {
@@ -35,7 +36,7 @@ func Routes() *mux.Router {
 		}
 
 		// Ambil password dari username yang dipakai untuk login
-		expectedPassword, ok := users[creds.Username]
+		expectedPassword, ok := service.Users[creds.Username]
 
 		// return unauthorized jika password salah
 		if !ok || expectedPassword.Password != creds.Password {
@@ -48,7 +49,7 @@ func Routes() *mux.Router {
 		expirationTime := time.Now().Add(5 * time.Minute)
 
 		// Buat claim menggunakan variable yang sudah didefinisikan diatas
-		claims := &Claims{
+		claims := &service.Claims{
 			Username: creds.Username,
 			Role:     expectedPassword.Role,
 			StandardClaims: jwt.StandardClaims{
@@ -61,7 +62,7 @@ func Routes() *mux.Router {
 		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 		// Buat jwt string dari token yang sudah dibuat menggunakan JWT key yang telah dideklarasikan
-		tokenString, err := token.SignedString(jwtKey)
+		tokenString, err := token.SignedString(service.JwtKey)
 		if err != nil {
 			// return internal error ketika ada kesalahan ketika pembuatan JWT string
 			w.WriteHeader(http.StatusInternalServerError)
@@ -78,8 +79,8 @@ func Routes() *mux.Router {
 		w.Write([]byte("Login Success"))
 	})
 
-	route.Handle("/profile/{userID:[0-9]+}", AuthMiddleWare("all", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		user, ok := users[r.Context().Value("props").(*Claims).Username]
+	route.Handle("/profile/{userID:[0-9]+}", service.AuthMiddleWare("all", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		user, ok := service.Users[r.Context().Value("props").(*service.Claims).Username]
 
 		fmt.Println(user)
 		if !ok {
@@ -99,7 +100,7 @@ func Routes() *mux.Router {
 			return
 		}
 
-		resp, err := json.Marshal(users)
+		resp, err := json.Marshal(service.Users)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			return
