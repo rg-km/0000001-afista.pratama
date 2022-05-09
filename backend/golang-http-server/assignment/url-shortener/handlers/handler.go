@@ -1,10 +1,6 @@
 package handlers
 
 import (
-	"errors"
-	"net/http"
-
-	"github.com/ruang-guru/playground/backend/golang-http-server/assignment/url-shortener/entity"
 	"github.com/ruang-guru/playground/backend/golang-http-server/assignment/url-shortener/repository"
 
 	"github.com/gin-gonic/gin"

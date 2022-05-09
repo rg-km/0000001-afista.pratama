@@ -41,6 +41,10 @@ func main() {
 		Handler: handler,
 	}
 
+	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	w.Write([]byte("Hello World"))
+	// })
+
 	err := server.ListenAndServe()
 	if err != nil {
 		panic(err)

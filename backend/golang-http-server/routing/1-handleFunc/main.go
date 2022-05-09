@@ -17,6 +17,7 @@ func main() {
 		w.Write([]byte("hello"))
 	}
 
+	// no setup required
 	// Route "/" dengan indexHandler
 	http.HandleFunc("/", indexHandler)
 
