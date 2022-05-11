@@ -16,6 +16,14 @@ func NewURLHandler(repo *repository.URLRepository) URLHandler {
 	}
 }
 
+// bit.ly/sdasdsadas
+// -> google.com/aku/ganteng/sekali
+
+// short : localhost:8080/
+// long : localhost:8080/long/long/long
+
+// dynamic route param
+
 func (h *URLHandler) Get(c *gin.Context) {
 	// TODO: answer here
 }

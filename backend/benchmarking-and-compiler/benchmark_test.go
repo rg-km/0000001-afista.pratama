@@ -47,7 +47,7 @@ var _ = Describe("Benchmark", func() {
 
 	Describe("report.txt", func() {
 		It("what you can get by reading", func() {
-			answer := `pada report tersebut kita dapat mengetahui bahwa library fastJson 37% lebih cepat dari std library dan mempunyai 19.8
+			answer := `pada report tersebut kita dapat mengetahui bahwa library fastJson 37% lebih cepat dari std library dan mempunyai 19.8b
 			lebih sedikit allocation tetapi memakan sekitar 123%`
 			Expect(answer).To(Not(BeEmpty()))
 		})

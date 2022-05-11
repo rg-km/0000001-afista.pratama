@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/pkg/profile"
 	"testing"
+
+	"github.com/pkg/profile"
 )
 
 func add(a int, b int) int {

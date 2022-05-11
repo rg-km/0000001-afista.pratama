@@ -1,0 +1,7 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/ruang-guru/playground/backend/benchmarking-and-compiler/std-benchmark
+cpu: VirtualApple @ 2.50GHz
+BenchmarkUnmarshal-8   	 4795753	       251.3 ns/op	     271 B/op	       6 allocs/op
+PASS
+ok  	github.com/ruang-guru/playground/backend/benchmarking-and-compiler/std-benchmark	1.915s

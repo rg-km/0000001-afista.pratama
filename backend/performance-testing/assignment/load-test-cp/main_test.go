@@ -23,7 +23,7 @@ var _ = Describe("load test with vegeta library", func() {
 			w := setupRouter()
 			ts := httptest.NewServer(w)
 			defer ts.Close()
-			sendFakeData(ts.URL)
+			sendFakeData(ts.URL) // root route "/" + "/movie"
 			metrics := getMoviesTest(ts.URL)
 			Expect(int(metrics.Requests)).To(Equal(20))
 			Expect(metrics.StatusCodes["200"]).To(Equal(20))

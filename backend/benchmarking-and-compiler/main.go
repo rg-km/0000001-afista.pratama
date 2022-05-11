@@ -11,7 +11,7 @@ import (
 //TODO: Make sure benchcmp `go install golang.org/x/tools/cmd/benchcmp@latest` or `go install golang.org/x/perf/cmd/...@latest``
 func RunBenchmark(benchmarkDir string, fileName string) error {
 	var cmd *exec.Cmd
-	commandString := fmt.Sprintf("???", benchmarkDir, fileName) // TODO: replace this
+	commandString := fmt.Sprintf("go test -bench=. -benchmem %s > %s", benchmarkDir, fileName) // TODO: replace this
 	os := runtime.GOOS
 	if os == "windows" {
 		cmd = exec.Command("powershell", commandString)
@@ -61,7 +61,7 @@ func RunBenchcmp() error {
 	if err != nil {
 		return err
 	}
-	commandString := fmt.Sprintf("???", GoBin,fileName) // TODO: replace this
+	commandString := fmt.Sprintf("%s/benchcmp std.txt fast.txt > %s", GoBin, fileName) // TODO: replace this
 	if os == "windows" {
 		cmd = exec.Command("powershell", commandString)
 	} else {

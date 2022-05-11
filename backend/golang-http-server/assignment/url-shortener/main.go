@@ -13,3 +13,7 @@ func main() {
 
 	r.Run()
 }
+
+// clean arch
+
+// storage data <- entity -> repository <- service / usecase -> handler -> output

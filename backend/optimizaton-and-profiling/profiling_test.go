@@ -2,12 +2,13 @@ package main
 
 import (
 	"bufio"
-	"github.com/pkg/profile"
 	"io"
 	"log"
 	"os"
 	"testing"
 	"unicode"
+
+	"github.com/pkg/profile"
 )
 
 const fileName = "./lorem.txt"
