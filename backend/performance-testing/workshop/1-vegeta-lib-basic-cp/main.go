@@ -9,7 +9,7 @@ import (
 //menjalankan vegeta attack dengan method GET
 //durasi yang digunakan 2 detik dan rate/frequency 10
 //target didapatkan dari parameter
-func vegetaGet(target string) *vegeta.Metrics {
+func vegetaGet(target string) *vegeta.Metrics { // url http://localhost:8080 // 127.0.0.1:8080
 	metrics := &vegeta.Metrics{}
 	// TODO: answer here
 	return metrics

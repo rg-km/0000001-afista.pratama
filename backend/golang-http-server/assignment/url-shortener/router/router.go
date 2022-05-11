@@ -6,5 +6,11 @@ import (
 )
 
 func SetupRouter(urlHandler handlers.URLHandler) *gin.Engine {
+	// setup
+
+	// handler
+
+	// return
+
 	return &gin.Engine{} // TODO: replace this
 }

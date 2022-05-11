@@ -16,17 +16,27 @@ func main() {
 }
 
 func testGet() {
-	duration := 1 * time.Second                            //durasi attack
-	frequency := 40                                        //jumlah request
-	target := "http://localhost:8090"                      //target
-	rate := vegeta.Rate{Freq: frequency, Per: time.Second} //mengatur rate request
+	duration := 1 * time.Second //durasi attack
+	//frequency := 40                                        //jumlah request
+	target := "http://localhost:8090"               //target
+	rate := vegeta.Rate{Freq: 40, Per: time.Second} //mengatur rate request
+
+	// targeter
 	targeter := vegeta.NewStaticTargeter(vegeta.Target{
 		Method: "GET",
 		URL:    target,
 	}) //mengatur targeter vegeta
-	metrics := vegetaAttack(targeter, rate, duration) //menjalankan vegeta attack
-	fmt.Println(metrics.StatusCodes)                  //menampilkan status code
-	fmt.Println(metrics.Latencies.Max)                // menampilkan latency maksimum
+
+	attacker := vegeta.NewAttacker() //membuat attacker baru
+	var metrics vegeta.Metrics       // menyiapkan metrics
+	for res := range attacker.Attack(targeter, rate, duration, "Example") {
+		metrics.Add(res) //menambahkan hasil attack ke dalam metrics
+	} //melakukan vegeta attack
+	metrics.Close()
+
+	// metrics := vegetaAttack(targeter, rate, duration) //menjalankan vegeta attack
+	fmt.Println(metrics.StatusCodes)   //menampilkan status code
+	fmt.Println(metrics.Latencies.Max) // menampilkan latency maksimum
 }
 
 func testPost() {
