@@ -19,5 +19,5 @@ func SetupRouter(urlHandler handlers.URLHandler) *gin.Engine {
 
 	// return
 
-	return &gin.Engine{} // TODO: replace this
+	return r
 }

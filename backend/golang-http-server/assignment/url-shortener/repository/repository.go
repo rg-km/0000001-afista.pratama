@@ -19,13 +19,45 @@ func NewMapRepository() URLRepository {
 }
 
 func (r *URLRepository) Get(path string) (*entity.URL, error) {
-	&entity.URL{} , nil // TODO: replace this
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	if url, exist := r.Data[path]; exist {
+		return &entity.URL{
+			LongURL:  url,
+			ShortURL: path,
+		}, nil
+	} else {
+		return nil, entity.ErrURLNotFound
+	}
 }
 
 func (r *URLRepository) Create(longURL string) (*entity.URL, error) {
-	&entity.URL{} , nil // TODO: replace this
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	randomShortURL := entity.GetRandomShortURL(longURL)
+	r.Data[randomShortURL] = longURL
+
+	return &entity.URL{
+		LongURL:  longURL,
+		ShortURL: randomShortURL,
+	}, nil
 }
 
 func (r *URLRepository) CreateCustom(longURL, customPath string) (*entity.URL, error) {
-	&entity.URL{} , nil // TODO: replace this
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	// checking
+	if _, exist := r.Data[customPath]; exist {
+		return nil, entity.ErrCustomURLIsExists
+	} else {
+		r.Data[customPath] = longURL
+
+		return &entity.URL{
+			LongURL:  longURL,
+			ShortURL: customPath,
+		}, nil
+	}
 }

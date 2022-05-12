@@ -15,5 +15,4 @@ func main() {
 }
 
 // clean arch
-
 // storage data <- entity -> repository <- service / usecase -> handler -> output

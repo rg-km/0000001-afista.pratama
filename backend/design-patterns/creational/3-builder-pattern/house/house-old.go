@@ -6,6 +6,11 @@ type HouseOld struct {
 	numOfDoors      int
 	hasGarage       bool
 	hasSwimmingPool bool
+	yearofHouse     int
+	//
+	//
+	//
+	//
 }
 
 // Nah misalnya kita mau buat object House baru nih. Apakah semua komponen yang kita butuhkan harus kita buat disini `NewHouse()`
@@ -13,11 +18,20 @@ type HouseOld struct {
 // Jadi bukan hanya itu saja yang dirubah tapi semua kode yang memakai NewHouse harus dirubah juga
 // Belum lagi kalau ada logic ketika membuat sebuah parameter tersebut. Apakah mau taruh di NewHouse() juga ?
 // Builder pattern menyelesaikan hal tersebut
-func NewHouse(numOfWindows int, numOfDoors int, hasgarage bool, hasSwimmingPool bool) *HouseOld {
+func NewHouse(numOfWindows int, numOfDoors int, hasgarage bool, hasSwimmingPool bool, yearofHouse int) *HouseOld {
 	return &HouseOld{
 		numOfWindows:    numOfWindows,
 		numOfDoors:      numOfDoors,
 		hasGarage:       hasgarage,
 		hasSwimmingPool: hasSwimmingPool,
+		yearofHouse:     yearofHouse,
+	}
+}
+
+func NewHouse2(numOfWindows int, hasSwimmingPool bool, yearofHouse int) *HouseOld {
+	return &HouseOld{
+		numOfWindows:    numOfWindows,
+		hasSwimmingPool: hasSwimmingPool,
+		yearofHouse:     yearofHouse,
 	}
 }

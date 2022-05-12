@@ -1,0 +1,8 @@
+benchmark                old ns/op     new ns/op     delta
+BenchmarkUnmarshal-8     254           96.3          -62.05%
+
+benchmark                old allocs     new allocs     delta
+BenchmarkUnmarshal-8     6              3              -50.00%
+
+benchmark                old bytes     new bytes     delta
+BenchmarkUnmarshal-8     271           96            -64.58%

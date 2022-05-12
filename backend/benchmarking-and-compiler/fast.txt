@@ -1,7 +1,0 @@
-goos: darwin
-goarch: amd64
-pkg: github.com/ruang-guru/playground/backend/benchmarking-and-compiler/fast-benchmark
-cpu: VirtualApple @ 2.50GHz
-BenchmarkUnmarshal-8   	11680740	        99.04 ns/op	      96 B/op	       3 allocs/op
-PASS
-ok  	github.com/ruang-guru/playground/backend/benchmarking-and-compiler/fast-benchmark	1.440s

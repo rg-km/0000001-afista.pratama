@@ -14,10 +14,16 @@ func main() {
 		"bodi",
 	)
 
-	houseRumah2 := houseRumah.Clone()
-	houseRumah4 := houseRumah2.(*house.House)
-	houseRumah4.NumOfWindows = 3
+	houseRumah2 := house.CloneHouse(houseRumah)
+	houseRumah3 := house.CloneHouse(houseRumah2).(*house.House)
+
+	houseRumah3.NumOfDoors = 4
+	houseRumah3.NumOfWindows = 4
+
+	//houseRumah4 := houseRumah2.(*house.House)
+	//houseRumah4.NumOfWindows = 3
 
 	fmt.Println(houseRumah)
-	fmt.Println(houseRumah4)
+	fmt.Println(houseRumah2)
+	fmt.Println(houseRumah3)
 }

@@ -4,7 +4,7 @@ package house
 // Seperti ini
 
 type Prototype interface {
-	Clone() Prototype
+	clone() Prototype
 }
 
 type House struct {
@@ -17,7 +17,7 @@ type House struct {
 // Nah function NewHouse ini akan dipanggil oleh client yang ingin meng-copy object House
 // Perlu diperhatikan NewHouse menerima interace Prototype yang berisi method Clone
 func CloneHouse(p Prototype) Prototype {
-	return p.Clone()
+	return p.clone()
 }
 
 func NewHouse(numWindows, numDoors int, typeOfJamban, typeOfLamp string) *House {
@@ -29,7 +29,7 @@ func NewHouse(numWindows, numDoors int, typeOfJamban, typeOfLamp string) *House 
 	}
 }
 
-func (h *House) Clone() Prototype {
+func (h *House) clone() Prototype {
 	return &House{
 		NumOfWindows: h.NumOfWindows,
 		NumOfDoors:   h.NumOfDoors,

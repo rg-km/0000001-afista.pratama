@@ -18,8 +18,8 @@ func main() {
 	fmt.Printf("Rumah di Indonesia mempunyai garasi: %t\n", indonesianHouse.HasGarage)
 	fmt.Printf("Rumah di Indonesia mempunyai kolam berenang: %t\n", indonesianHouse.HasSwimmingPool)
 
-	kontraktor = house.NewKontraktor(zimbabweHouseBuilder)
-	zimbabweHouse := kontraktor.BuildHouse()
+	zimbabweHouse := house.NewKontraktor(zimbabweHouseBuilder).BuildHouse()
+	//zimbabweHouse := kontraktor.BuildHouse()
 
 	fmt.Printf("Rumah di Zimbabwe mempunyai jumlah jendela sebanyak: %d\n", zimbabweHouse.NumOfWindows)
 	fmt.Printf("Rumah di Zimbabwe mempunyai jumlah pintu sebanyak: %d\n", zimbabweHouse.NumOfDoors)
