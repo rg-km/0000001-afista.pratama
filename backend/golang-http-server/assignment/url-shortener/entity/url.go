@@ -9,7 +9,7 @@ import (
 // Buatlah entity URL dengan atribut LongURL dan ShortURL masing-masing string
 
 type URL struct {
-	LongURL  string `json:"long_url"` // tagging json
+	LongURL  string `json:"long_url" binding:"required"` // tagging json
 	ShortURL string `json:"short_url"`
 }
 

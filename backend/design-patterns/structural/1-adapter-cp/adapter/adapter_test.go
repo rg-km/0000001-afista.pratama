@@ -9,10 +9,17 @@ import (
 var _ = Describe("Adapter", func() {
 	Context("when adapting a walkman to a kaset", func() {
 		It("should play the kaset", func() {
+			// arrange
+			// Given
 			mp3 := adapter.Mp3{Data: []byte(`this is taylor swift song`)}
 			walkman := adapter.Walkman{}
 
+			// act
+			// When
 			ad := adapter.Mp3ToKasetAdapter{Adaptee: walkman}
+
+			// assert
+			// Then
 			Expect(ad.Play(mp3)).To(Equal("this is taylor swift song"))
 		})
 	})

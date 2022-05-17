@@ -27,7 +27,7 @@ func (l Laptop) Press() {
 	}
 }
 
-// Anggaplah kitap unya satu func yang nanyain kalau Laptop nya bisa nyala
+// Anggaplah kita punya satu func yang nanyain kalau Laptop nya bisa nyala
 func (l Laptop) CanTurnOnLaptop() bool {
 	return l.State == On
 }

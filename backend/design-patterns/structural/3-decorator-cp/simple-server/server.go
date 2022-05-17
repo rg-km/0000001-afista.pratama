@@ -1,8 +1,6 @@
 package simpleserver
 
 import (
-	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
@@ -32,5 +30,5 @@ type Logging struct {
 
 // Karena agak ribet untuk melakukan testing pada stdout. Maka disini kita menggantinya dengan Header
 func (l Logging) AddLogging(endpoint func(http.ResponseWriter, *http.Request)) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) // TODO: replace this
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {}) // TODO: replace this
 }

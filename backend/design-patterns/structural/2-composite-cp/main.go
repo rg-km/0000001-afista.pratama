@@ -6,6 +6,23 @@ import (
 	"github.com/ruang-guru/playground/backend/design-patterns/structural/2-composite-cp/perusahaan"
 )
 
+// visualisasi
+// 3 jabatan
+// CTO, VP, Junior
+
+// CTO, bisa membawahi banyak VP (VP, Junior)
+// VP, bisa membawahi banyak Junior
+// Junior, tidak memiliki bawahan
+
+/*
+	CTO ----------------------------
+	|								|
+	|--- VP							|
+	|	|							|
+	|	|--- Junior |--- Junior		| --- Junior (gaji dia sendiri)
+	|	|
+*/
+
 func main() {
 	j1 := perusahaan.Junior{}
 	j2 := perusahaan.Junior{}
