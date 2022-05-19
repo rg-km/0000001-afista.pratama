@@ -20,7 +20,7 @@ var _ = Describe("SQL Open", func() {
 	Describe("Open ConnectSQLite()", func() {
 		It("should return successfully open", func() {
 			res, err := ConnectSQLite()
-			Expect(err).To(BeNil())
+			Expect(err).To(BeNil()) // nil / tidak boleh error
 			Expect(res).To(Equal("You are successfully opening the database studentData.db"))
 		})
 	})

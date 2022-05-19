@@ -59,5 +59,6 @@ func (h *HashMap) GetSmallerThan(reqKey int) ([]string, error) {
 			res = append(res, h.m[key])
 		}
 	}
+
 	return res, nil
 }

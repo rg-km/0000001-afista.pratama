@@ -12,10 +12,18 @@ type UserRow struct {
 	Name string
 	Age  int
 }
+
+// conjuction table
 type UserPhoneRow struct {
-	UserID  int // primary key
-	PhoneID int // primary key
+	UserID  int // foreign key
+	PhoneID int // foreign key
 }
+
+// table A							table b
+// data 1							data 1
+// data 1							data 2
+// data 2							data 1
+// data 2							data 2
 
 type PhoneTable []PhoneRow
 type UserTable []UserRow

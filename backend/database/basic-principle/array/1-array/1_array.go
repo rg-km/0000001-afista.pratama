@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type StudentRow struct {
-	ID          int
+	ID          int // primary Key
 	NIM         string
 	StudentName string
 	Class       string

@@ -33,9 +33,33 @@ func (db *EmployeeDB) Insert(name string, position string, salary int, managerID
 }
 
 func (db *EmployeeDB) Update(id int, name string, position string, salary int, managerID int) {
-	// TODO: answer here
+	// lakukan pencarian dari array, menggunakan looping
+	// kalau ketemu dengan parameter ID, maka kita ubah datanya
+
+	for i := 0; i < len(*db); i++ {
+		if (*db)[i].ID == id {
+			(*db)[i].Name = name
+			(*db)[i].Position = position
+			(*db)[i].Salary = salary
+			(*db)[i].ManagerID = managerID
+			return
+		}
+	}
 }
 
 func (db *EmployeeDB) Delete(id int) {
-	// TODO: answer here
+	// lakukan pencarian dari array data, menggunakan looping
+	// cocokkan id dengan parameter id yang ada di function
+	// kalau sama, maka kita hapus datanya
+
+	for i := 0; i < len(*db); i++ {
+		if (*db)[i].ID == id {
+			// 1,2,3,4,5,6
+			// menghapus id 3
+			// [1,2] + [4,5,6]
+			// 1,2,4,5,6
+			(*db) = append((*db)[:i], (*db)[i+1:]...)
+			return
+		}
+	}
 }
