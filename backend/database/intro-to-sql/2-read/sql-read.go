@@ -18,16 +18,18 @@ func (r *StudentRepo) FetchStudentByNIM(nim string) (*model.Student, error) {
 	// sql statement dibawah ini akan mengambil data dari tabel student dengan nim yang diberikan
 	sqlStmt := `
 	SELECT 
-	    id, name, age, nim
+	    name, id, age, nim
     FROM 
         students 
     WHERE nim = ?`
+
+	//sql := `SELECT * FROM students WHERE nim = ?`
 
 	// queryrow untuk mengambil data dari tabel student dengan nim yang diberikan
 	row := r.db.QueryRow(sqlStmt, nim)
 	// row.Scan digunakan untuk mengambil data dari tabel student dengan nim yang diberikan
 	var student model.Student
-	err := row.Scan(&student.ID, &student.Name, &student.Age, &student.NIM)
+	err := row.Scan(&student.Name, &student.ID, &student.Age, &student.NIM)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +53,7 @@ func (r *StudentRepo) FetchStudents() ([]model.Student, error) {
 	// slice students untuk menampung data dari tabel students
 	var students []model.Student
 	// rows.Scan digunakan untuk mengambil data dari tabel students dan dimasukkan ke dalam slice students
-	for rows.Next() {
+	for rows.Next() { // loopinf for i = 0 ; i < .......
 		var student model.Student
 		err := rows.Scan(&student.ID, &student.Name, &student.Age, &student.NIM)
 		if err != nil {

@@ -2,7 +2,7 @@
 
 -- INSERT INTO EMployees (EmployeeSalary, EmployeeName, EmployeeID) VALUES (20000000, 'Jane', 2);
 
---INSERT INTO Employees
+-- INSERT INTO Employees
 --	VALUES  (3, 'John', 20000000),
 --			(4, 'Jane', 20000000),
 --			(6, 'Jake', 20000000),

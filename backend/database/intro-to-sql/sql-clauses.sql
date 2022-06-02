@@ -25,7 +25,7 @@
 -- FROM Employees
 -- LIMIT 100; -- LIMIT 100
 
---SELECT *
+--SELECT *`
 --FROM Employees
 --ORDER BY EmployeeName ASC; -- ASC | DESC
 

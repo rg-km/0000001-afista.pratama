@@ -24,7 +24,16 @@ func (r *EmployeeRepository) CreateEmployee(employee *model.Employee) (int64, er
 	// Lihat model.Employee untuk data yang dibutuhkan
 
 	// TODO: answer here
+	sqlStmt = `INSERT INTO employees 
+		(nik, first_name, last_name, email) 
+		VALUES (?, ?, ?, ?);`
 
+	// nik 1231231
+	// john
+	// doe
+	// johndoe@gmail.com
+
+	// INSERT INTO employees (nik, first_name, last_name, email) VALUES (123123, john, doe, johndoe@gmail.com)
 	result, err := r.db.Exec(sqlStmt, employee.NIK, employee.FirstName, employee.LastName, employee.Email)
 	if err != nil {
 		return 0, err

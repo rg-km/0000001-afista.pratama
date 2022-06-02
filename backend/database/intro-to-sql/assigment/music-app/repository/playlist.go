@@ -77,4 +77,3 @@ func (p *PlaylistRepository) FetchPlaylistTrack(playlistID int64) ([]model.Playl
 
 	return playlistTracks, nil
 }
-
