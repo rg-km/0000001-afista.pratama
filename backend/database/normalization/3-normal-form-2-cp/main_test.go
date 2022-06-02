@@ -18,7 +18,6 @@ var _ = Describe("SQL Create", func() {
 		if err != nil {
 			panic(err)
 		}
-
 	})
 
 	AfterEach(func() {

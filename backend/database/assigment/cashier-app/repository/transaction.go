@@ -3,7 +3,6 @@ package repository
 import (
 	"database/sql"
 	"fmt"
-	"time"
 )
 
 type TransactionRepository struct {
@@ -28,7 +27,7 @@ func (u *TransactionRepository) Pay(cartItems []CartItem, amount int) (int, erro
 		return 0, fmt.Errorf("not enough money")
 	}
 
-	tx, err := u.db.Begin()
+	tx, err := u.db.Begin() // BEGIN TRANSACTION;
 	if err != nil {
 		return 0, err
 	}
@@ -45,19 +44,27 @@ func (u *TransactionRepository) Pay(cartItems []CartItem, amount int) (int, erro
 			return 0, err
 		}
 
-		// TODO: Implement SQL Query using the transaction connection to decrease current product's quantity
+		// Implement SQL Query using the transaction connection to decrease current product's quantity
 		// HINT: use `tx.Exec("... query ...")` instead of `u.db.Exec("... query ...")`
-		// TODO: answer here
+		_, err = tx.Exec("UPDATE products SET quantity = quantity - ? WHERE id = ?", cartItem.Quantity, cartItem.ProductID)
+		if err != nil {
+			tx.Rollback()
+			return 0, err
+		}
 
-		// TODO: Implement SQL Query using the transaction connection to add cart item to sales table
+		// Implement SQL Query using the transaction connection to add cart item to sales table
 		// HINT: use `tx.Exec("... query ...")` instead of `u.db.Exec("... query ...")`
-		// TODO: answer here
+		_, err = tx.Exec("INSERT INTO sales (product_id, quantity, price) VALUES (?, ?, ?)", cartItem.ProductID, cartItem.Quantity, cartItem.Price)
+		if err != nil {
+			tx.Rollback()
+			return 0, err
+		}
 	}
 
 	// clear cart
 	_, err = tx.Exec("DELETE FROM cart_items")
 	if err != nil {
-		tx.Rollback()
+		tx.Rollback() // ROLLBACK;
 		return 0, err
 	}
 
@@ -66,7 +73,7 @@ func (u *TransactionRepository) Pay(cartItems []CartItem, amount int) (int, erro
 		return 0, err
 	}
 
-	tx.Commit()
+	tx.Commit() // COMMIT;
 
 	moneyChanges := amount - totalPrice
 	return moneyChanges, nil
